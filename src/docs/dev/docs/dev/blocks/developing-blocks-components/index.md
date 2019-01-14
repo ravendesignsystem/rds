@@ -11,7 +11,7 @@ Blocks and components are built in a managed approach that follow a predictable 
 
 ## BEM Naming Convention
 
-To better understand the relationship between our HTML and CSS, RDS uses a declarative syntax based on the [BEM methodology](https://en.bem.info/methodology/). 
+To better understand the relationship between our HTML and CSS, RDS uses a declarative syntax based on the [BEM methodology](https://en.bem.info/methodology/).
 
 ```css
 .block {}
@@ -25,16 +25,16 @@ To better understand the relationship between our HTML and CSS, RDS uses a decla
 
 For more reading on BEM [check the awesome resources](https://github.com/sturobson/BEM-resources).
 
-## Core Block Class namespacing 
+## Core Block Class namespacing
 
 To glean even more information from the HTML, the block name must use the following pattern:
 
 ```html
 <div class="prefix-section/type-name">
 ```
-Where the: 
+Where the:
 
-* __prefix__ is either 'b-' or 'c-' indicating whether it is a block or a component. 
+* __prefix__ is either 'b-' or 'c-' indicating whether it is a block or a component.
 
 * __section__ refers to the section of the template where the block can be used. Available sections include: `header`, `main`, `footer` and `modal`. If a block can be used in multiple template sections, it is given a type. Examples of block types are: `nav` and `listing`.
 
@@ -45,12 +45,12 @@ Where the:
 Below is the opening HTML markup for the [Banner block](/docs/blocks/header/banner/):
 
 ```html
-<div class="b-header-banner u-block-full u-block-full--grey">
+<div class="b-banner u-block-full u-block-full--grey">
 ```
-Note: 
+Note:
 
-- `b-` signifies this as a block.  
-- `header-` tells us this block can only be used in the semantic Header element.  
+- `b-` signifies this as a block.
+- `header-` tells us this block can only be used in the semantic Header element.
 - `banner` tells us the block name.
 
 ### Namespacing Example - the List Group block
@@ -62,8 +62,8 @@ Below is the opening HTML markup for the [List Group block](/docs/blocks/listing
 ```
 Note:
 
--  `b-` signifies this as a block.  
-- `listing-` tells us this can be used in multiple sections and belongs to the Listing block type.  
+-  `b-` signifies this as a block.
+- `listing-` tells us this can be used in multiple sections and belongs to the Listing block type.
 - `listgroup` tells us the block name.
 
 **Important note**:
@@ -72,9 +72,9 @@ Note:
 
 toDO add and link - View all of our CSS namespacing here - (u-, l-)
 
-## Core Component class namespacing 
+## Core Component class namespacing
 
-Components follow the same namespacing rules as blocks but since components are never restricted to sections of a template their convention only use type and never section. 
+Components follow the same namespacing rules as blocks but since components are never restricted to sections of a template their convention only use type and never section.
 
 ```html
 <div class="prefix-type-name">
@@ -100,7 +100,7 @@ These naming conventions help make the code more transparent and help us find as
 ```
 
 ## Five important naming rules
- 
+
 The following rules are key for creating consistent blocks and components in RDS.
 
 ### 1. Only use the prefix-type-name convention in the first tag
@@ -151,10 +151,10 @@ While sub elements should exclude the prefix pattern, modifiers on the block's p
     <li class="foo__item">
         <a class="foo__url" href="https://en.wikipedia.org/wiki/Common_raven">foo</a>
     </li>
-</ul> 
+</ul>
 ```
 ### 2. Don't use grandchildren BEM selectors
-The double underscore pattern should only appear once in a selector class name. Don't use extra grandchildren selectors when elements are nested two or more levels deep. 
+The double underscore pattern should only appear once in a selector class name. Don't use extra grandchildren selectors when elements are nested two or more levels deep.
 
 #### Incorrect
 ```html
@@ -173,7 +173,7 @@ The double underscore pattern should only appear once in a selector class name. 
 </ul>
 ```
 ### 3. Don't add class names to elements without any associated styles
-While a unique class name (even if it has no css) is required at the parent block name level, do not add class names to elements if they don't have any styles associated with them. 
+While a unique class name (even if it has no css) is required at the parent block name level, do not add class names to elements if they don't have any styles associated with them.
 
 #### Incorrect
 
@@ -182,7 +182,7 @@ While a unique class name (even if it has no css) is required at the parent bloc
     <p class="content__para">This paragraph uses the base p style.</p>
 </div>
 ```
-#### Correct  
+#### Correct
 
 ```html
 <div class="b-main-content">
@@ -211,7 +211,7 @@ Names made up of two words, or more, should never be broken up with a hyphen. Th
 
 For further reference, see the next item below.
 
-## Theme Block and Component class namespacing 
+## Theme Block and Component class namespacing
 
 All of the namespacing rules above apply when you are creating new block for your own theme, **except you must add an extra namespace for your theme**.
 
@@ -220,11 +220,11 @@ All of the namespacing rules above apply when you are creating new block for you
 ```html
 <div class="prefix-themeShortName-section/type-name">
 ```
-Where the: 
+Where the:
 
-* __prefix__ is either 'b-' or 'c-' indicating whether it is a block or a component. 
+* __prefix__ is either 'b-' or 'c-' indicating whether it is a block or a component.
 
-* __themeShortName__ To avoid naming collisions, add a unique theme name (best if short or abbreviated) to your block classed. 
+* __themeShortName__ To avoid naming collisions, add a unique theme name (best if short or abbreviated) to your block classed.
 
 * __section__ refers to the section of the template where the block can be used. Available sections include: `header`, `main`, `footer` and `modal`. If a block can be used in multiple template sections, it is given a type. Examples of block types are: `nav` and `listing`.
 

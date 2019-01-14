@@ -1,17 +1,17 @@
 {% if page.banner.img.img_url %}
 <style>
-    .b-header-banner--img {
+    .b-banner--img {
         background-image: url({{ page.banner.img.img_url_s }});
     }
     @media (min-width: 769px) {
-        .b-header-banner--img {
+        .b-banner--img {
             background-image: url({{ page.banner.img.img_url }});
         }
     }
 </style>
 {% endif %}
 <div class="u-block {% if page.banner.img.img_url %}u-block--full{% else %}u-block--s u-block--grey{% endif %}">
-<div class="b-header-banner{% if page.banner.img.img_url|length %} b-header-banner--img{% endif %}{% if page.banner.img.img_opacity == "dark" %} b-header-banner--img-dark{% elseif page.banner.img.img_opacity == "light" %} b-header-banner--img-light{% endif %}{% if page.banner.img.img_position == "top" %} b-header-banner--img-top{% elseif data.img.img_position == "bottom" %} b-header-banner--img-bottom{% endif %}">
+<div class="b-banner{% if page.banner.img.img_url|length %} b-banner--img{% endif %}{% if page.banner.img.img_opacity == "dark" %} b-banner--img-dark{% elseif page.banner.img.img_opacity == "light" %} b-banner--img-light{% endif %}{% if page.banner.img.img_position == "top" %} b-banner--img-top{% elseif data.img.img_position == "bottom" %} b-banner--img-bottom{% endif %}">
     <div class="banner__container">
 {#{% if page.banner.breadcrumbs.parent %}#}
         <nav aria-label="breadcrumb">

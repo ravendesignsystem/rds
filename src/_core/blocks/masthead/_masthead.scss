@@ -72,7 +72,7 @@ $b-height: 75px;
 	z-index: 10;
 	border-bottom: 1px solid $grey;
 
-	& ~ .b-header-banner,
+	& ~ .b-banner,
 	& ~ .tns-outer {
 		margin-top: 78px !important; // avoid the jumping from the loss of masthead height when made position fixed.
 	}

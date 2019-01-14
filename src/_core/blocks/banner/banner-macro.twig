@@ -1,18 +1,18 @@
 {% macro banner(settings, data) %}
 {% if data.img.img_url %}
 <style>
-    .b-header-banner--img {
+    .b-banner--img {
         background-image: url({{ data.img.img_url_s }});
     }
     @media (min-width: 769px) {
-        .b-header-banner--img {
+        .b-banner--img {
             background-image: url({{ data.img.img_url }});
         }
     }
 </style>
 {% endif %}
 <div class="u-block {% if data.img.img_url %}u-block--full{% else %}u-block--s u-block--grey{% endif %}">
-    <div class="b-header-banner{% if data.img.img_url %} b-header-banner--img{% endif %}{% if data.img.img_opacity == "dark" %} b-header-banner--img-dark{% elseif data.img.img_opacity == "light" %} b-header-banner--img-light{% endif %}{% if data.img.img_position == "top" %} b-header-banner--img-top{% elseif data.img.img_position == "bottom" %} b-header-banner--img-bottom{% endif %}">
+    <div class="b-banner{% if data.img.img_url %} b-banner--img{% endif %}{% if data.img.img_opacity == "dark" %} b-banner--img-dark{% elseif data.img.img_opacity == "light" %} b-banner--img-light{% endif %}{% if data.img.img_position == "top" %} b-banner--img-top{% elseif data.img.img_position == "bottom" %} b-banner--img-bottom{% endif %}">
         <div class="banner__container">
 {% if data.breadcrumbs.parent %}
             <nav aria-label="breadcrumb">
