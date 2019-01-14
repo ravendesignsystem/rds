@@ -1,8 +1,8 @@
-.u-block--black + .u-block--black > .b-footer-brand {
+.u-block--black + .u-block--black > .b-footerbrand {
 	padding-top: 40px;
 }
 
-.b-footer-brand {
+.b-footerbrand {
 	max-width: 280px;
 
 	@include media('>s') {
@@ -10,13 +10,13 @@
 	}
 }
 
-.brand__logo {
+.footerbrand__logo {
 	svg {
 		width: 100%;
 	}
 }
 
-.brand__legal {
+.footerbrand__legal {
 	display: flex;
 	justify-content: space-between;
 	margin: 20px auto 0 auto;
