@@ -1,4 +1,6 @@
-# RDS v1.0.0
+# Raven Design System (RDS)
+
+RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. 
 
 Let my heart be still a moment and this mystery explore...
 
