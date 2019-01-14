@@ -27,16 +27,16 @@ The Sitemap Footer helps users and search engines determine how the website is l
 {%include 'rds/inc/close.twig'%}
 {%include 'footer-sitemap/footer-sitemap.twig'%}
 {%include 'rds/inc/open-b-content.twig'%}
-    
+
 ```html
 <div class="u-block u-block--black">
-	<div class="b-footer-sitemap">
-		<div class="sitemap__links">
+	<div class="b-footersitemap">
+		<div class="footersitemap__links">
 			<div class="u-width-l">
-				<div class="sitemap__columns">
-					<div class="sitemap__column">
-						<h2 class="sitemap__heading">Admissions</h2>
-						<ul class="sitemap__list">
+				<div class="footersitemap__columns">
+					<div class="footersitemap__column">
+						<h2 class="footersitemap__heading">Admissions</h2>
+						<ul class="footersitemap__list">
 							<li><a href="https://admissions.carleton.ca/programs/">Programs</a></li>
 							<li><a href="https://admissions.carleton.ca/">Undergraduate</a></li>
 							<li><a href="https://graduate.carleton.ca/">Graduate</a></li>
@@ -47,9 +47,9 @@ The Sitemap Footer helps users and search engines determine how the website is l
 							<li><a href="https://carleton.ca/cie/">Initiatives In Education</a></li>
 						</ul>
 					</div>
-					<div class="sitemap__column">
-						<h2 class="sitemap__heading">Students / Academics</h2>
-						<ul class="sitemap__list sitemap__list--two">
+					<div class="footersitemap__column">
+						<h2 class="footersitemap__heading">Students / Academics</h2>
+						<ul class="footersitemap__list footersitemap__list--two">
 							<li><a href="https://students.carleton.ca/">Undergrad Homepage</a></li>
 							<li><a href="https://gradstudents.carleton.ca/">Grad Homepage</a></li>
 							<li><a href="https://calendar.carleton.ca/">Calendars</a></li>
@@ -68,9 +68,9 @@ The Sitemap Footer helps users and search engines determine how the website is l
 							<li><a href="https://carleton.ca/academics/support/">Support Services</a></li>
 						</ul>
 					</div>
-					<div class="sitemap__column">
-						<h2 class="sitemap__heading">Campus</h2>
-						<ul class="sitemap__list">
+					<div class="footersitemap__column">
+						<h2 class="footersitemap__heading">Campus</h2>
+						<ul class="footersitemap__list">
 							<li><a href="https://carleton.ca/campus/">Campus Map</a></li>
 							<li><a href="https://carleton.ca/campus/directions/">Directions</a></li>
 							<li><a href="https://events.carleton.ca/">Events</a></li>
@@ -80,9 +80,9 @@ The Sitemap Footer helps users and search engines determine how the website is l
 							<li><a href="https://cusaonline.ca/clubs/">Clubs &amp; Societies</a></li>
 						</ul>
 					</div>
-					<div class="sitemap__column">
-						<h2 class="sitemap__heading">Ravens for life</h2>
-						<ul class="sitemap__list">
+					<div class="footersitemap__column">
+						<h2 class="footersitemap__heading">Ravens for life</h2>
+						<ul class="footersitemap__list">
 							<li><a href="https://futurefunder.carleton.ca">Giving to Carleton</a></li>
 							<li><a href="https://athletics.carleton.ca/">Athletics &amp; Recreation</a></li>
 							<li><a href="https://goravens.ca/">Go Ravens - Varsity</a></li>
@@ -133,5 +133,5 @@ Avoid using this block if your site does not have many pages in it.
 
 ## Resources
 
-https://www.interaction-design.org/literature/article/how-to-implement-sitemap-footers-to-keep-users-going 
+https://www.interaction-design.org/literature/article/how-to-implement-sitemap-footers-to-keep-users-going
 
