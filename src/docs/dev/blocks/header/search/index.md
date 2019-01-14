@@ -16,7 +16,7 @@ Add a desc.
 
 ```html
 <div class="u-block u-block--s u-block--grey">
-    <div class="b-header-search">
+    <div class="b-search">
     <form class="c-form-search u-width-s" role="search" method="get" action="https://carleton.ca">
     <label for="search__input">Search</label>
     <input class="search__input" id="search__input" name="s" type="search" autocomplete="off" placeholder="Search">
