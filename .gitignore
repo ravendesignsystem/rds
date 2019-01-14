@@ -4,3 +4,7 @@
 /vendor/
 composer.phar
 .DS_Store
+
+# Auto Generated Files
+# mix-manifest.json
+# package-lock.json
