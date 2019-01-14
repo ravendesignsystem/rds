@@ -13,7 +13,8 @@ content: true
 
 ## RDS current version
 
-Version: {{ site.version }}
+Version: {{ site.version }} 
+
 
 
 

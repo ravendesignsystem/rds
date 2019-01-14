@@ -38,8 +38,7 @@ Both of the following commands need to running simultaneously in two terminal wi
 
 To deploy, terminate the above scripts and run the scripts below consecutively:
 
-- run `npm run-sculpin-prod`
-- run `prod`
+- run `npm run sculpin-prod ; prod`
 
 ### Break down into end to end tests
 
