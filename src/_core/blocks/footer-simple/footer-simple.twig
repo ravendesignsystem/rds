@@ -1,8 +1,8 @@
 {% macro simple(settings, data) %}
 <div class="u-block u-block--black">
-    <div class="b-footer-simple">
+    <div class="b-footersimple">
         <div itemscope itemtype="http://schema.org/Organization">
-            <address class="simple__contact h-card">
+            <address class="footersimple__contact h-card">
 {% if data.address|length %}
                 <p class="p-adr">
                     <a class="p-name u-url" href="{{ site.url }}">{{ data.address.name }}</a><br>
@@ -63,7 +63,7 @@
                 </p>
 {% endif %}
 {% if data.social|length %}
-                <ul class="simple__social">
+                <ul class="footersimple__social">
 {% if data.social.facebook|length %}
                     <li><a class="u-icon u-icon--circle u-icon--circle-white u-icon--facebook u-icon--s" href="{{ data.social.facebook }}">{% include "icons/facebook.svg" -%}{# #}<span class="u-visually-hidden">Like us on Facebook</span></a></li>
 {% endif %}
