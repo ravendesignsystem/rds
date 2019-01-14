@@ -5,7 +5,7 @@ inc: true
 title: CMS Global Nav
 banner:
   settings:
-    variant: 
+    variant:
   data:
     breadcrumbs: true
     breadcrumb:
@@ -27,7 +27,7 @@ meta:
     restricted: header section
 dependencies:
     js: N/A
-    selector: b-cms-header-globalnav
+    selector: b-globalnav
     restricted: div
     maxwidth: n/a
 wild: n/a

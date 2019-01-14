@@ -1,35 +1,35 @@
 // Version 0.0.1
 // =======================================
 
-.b-cms-header-globalnav {
+.b-globalnav {
 	display: none;
 }
 
 @include media(">s") {
-	.b-cms-header-globalnav {
+	.b-globalnav {
 		display: block;
 		height: 35px;
 		background-color: $black;
 	}
 
-	.cms-globalnav__list {
+	.globalnav__list {
 		display: flex; // removes space between inline li's
 		margin: 0;
 		list-style-type: none;
 	}
 
-	.cms-globalnav__item {
+	.globalnav__item {
 		position: relative;
 		flex: 0 0 auto;
 
 		// Reveals dropdown is in use
 		&:hover {
-			.cms-globalnav__item-submenu {
+			.globalnav__item-submenu {
 				display: block;
 			}
 
 			// Keep parent hover state active when submenu is visible
-			& > .cms-globalnav__item-expand {
+			& > .globalnav__item-expand {
 				background-color: $grey-emperor;
 
 				&:after {
@@ -39,11 +39,11 @@
 		}
 	}
 
-	.cms-globalnav__item--divider {
+	.globalnav__item--divider {
 		border-right: 1px solid $grey-emperor;
 	}
 
-	.cms-globalnav__item-link, .cms-globalnav__item-expand {
+	.globalnav__item-link, .globalnav__item-expand {
 		display: inline-block;
 		font-size: 11px;
 		padding: 0 18px;
@@ -57,11 +57,11 @@
 	}
 
 	// Makes parent link white, parent items have a sub menu with or without a main link
-	.cms-globalnav__item-expand a {
+	.globalnav__item-expand a {
 		color: white;
 	}
 
-	.cms-globalnav__item-expand {
+	.globalnav__item-expand {
 		position: relative;
 		padding-right: 25px;
 
@@ -79,7 +79,7 @@
 		}
 	}
 
-	.cms-globalnav__item-submenu {
+	.globalnav__item-submenu {
 		display: none;
 		position: absolute;
 		z-index: 1;
