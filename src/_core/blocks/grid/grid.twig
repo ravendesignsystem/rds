@@ -1,6 +1,6 @@
 {% macro grid(settings, data) %}
 <div class="u-block{% if settings.width|length %} u-block--{{ settings.width }}{% endif %}">
-    <div class="b-listing-grid">
+    <div class="b-gridblock">
         <ul class="u-grid{% if settings.columns|length %} u-grid--{{ settings.columns }}{% endif %}">
     {% for item in data %}
             <li>

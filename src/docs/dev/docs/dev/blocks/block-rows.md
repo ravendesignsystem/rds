@@ -7,10 +7,10 @@ Block rows wrap [fixed blocks](#) in a full width container with a unique backgr
 
 Here is an example of the Grid block **without a block row surrounding it**:{%include "/rds/templates/close.twig"%}
 
-<div class="b-listing-grid u-block">
+<div class="b-gridblock u-block">
     <ul class="u-grid u-grid--3">
-        <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
-        <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
+        <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
+        <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
         <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
     </ul>
 </div>{%include "/rds/templates/open-content.twig"%}
@@ -18,11 +18,11 @@ Here is an example of the Grid block **without a block row surrounding it**:{%in
 **Code**:
 
 ```html
-<div class="b-listing-grid u-block">
+<div class="b-gridblock u-block">
     <ul class="u-grid u-grid--3">
-        <li>{ code to include card component }</li> 
-        <li>{ code to include card component }</li> 
-        <li>{ code to include card component }</li> 
+        <li>{ code to include card component }</li>
+        <li>{ code to include card component }</li>
+        <li>{ code to include card component }</li>
     </ul>
 </div>
 
@@ -33,10 +33,10 @@ Note how the code is the same except it is wrapped in a div with the class `u-bl
 Below is a [grid block](#) **with a grey block row surrounding it**.{%include "/rds/templates/close.twig"%}
 
 <div class="u-block-row-grey">
-    <div class="b-listing-grid u-block">
+    <div class="b-gridblock u-block">
         <ul class="u-grid u-grid--3">
-            <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
-            <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
+            <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
+            <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
             <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
         </ul>
     </div>
@@ -47,10 +47,10 @@ Below is a [grid block](#) **with a grey block row surrounding it**.{%include "/
 
 ```html
 <div class="u-block-row-grey">
-    <div class="b-listing-grid u-block">
+    <div class="b-gridblock u-block">
         <ul class="u-grid u-grid--3">
-            <li>{ code to include card component }</li> 
-            <li>{ code to include card component }</li> 
+            <li>{ code to include card component }</li>
+            <li>{ code to include card component }</li>
             <li>{ code to include card component }</li>
         </ul>
     </div>
@@ -72,10 +72,10 @@ Note: that each class has its own unique name. They are not modifiers of the def
 <div class="u-block-row">
     <section class="u-block">
         <h3>White block row</h3>
-        <div class="b-listing-grid">
+        <div class="b-gridblock">
             <ul class="u-grid u-grid--3">
-                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
-                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
+                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
+                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
                 <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
             </ul>
         </div>
@@ -84,10 +84,10 @@ Note: that each class has its own unique name. They are not modifiers of the def
 <div class="u-block-row-grey">
     <section class="u-block">
         <h3>Grey block row</h3>
-        <div class="b-listing-grid">
+        <div class="b-gridblock">
             <ul class="u-grid u-grid--3">
-                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
-                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
+                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
+                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
                 <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
             </ul>
         </div>
@@ -96,10 +96,10 @@ Note: that each class has its own unique name. They are not modifiers of the def
 <div class="u-block-row-black">
     <section class="u-block">
         <h3>Black block row</h3>
-        <div class="b-listing-grid">
+        <div class="b-gridblock">
             <ul class="u-grid u-grid--3">
-                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
-                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
+                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
+                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
                 <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
             </ul>
         </div>
@@ -132,7 +132,7 @@ Note: that each class has its own unique name. They are not modifiers of the def
 ## Content guidelines
 
 When working with block rows..
- 
+
 **you should avoid**:
 
 - using black rows within the header or content areas. They are reserved for the footer. Go Ravens theme is the exception.
@@ -150,10 +150,10 @@ When working with block rows..
 <div class="u-block-row-grey">
     <section class="u-block">
         <h3>A section with a grey background</h3>
-        <div class="b-listing-grid">
+        <div class="b-gridblock">
             <ul class="u-grid u-grid--3">
-                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
-                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
+                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
+                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
                 <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
             </ul>
         </div>
@@ -162,10 +162,10 @@ When working with block rows..
 <div class="u-block-row">
     <section class="u-block">
         <h3>Followed by a white block row</h3>
-        <div class="b-listing-grid">
+        <div class="b-gridblock">
             <ul class="u-grid u-grid--3">
-                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
-                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
+                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
+                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
                 <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
             </ul>
         </div>
@@ -174,10 +174,10 @@ When working with block rows..
 <div class="u-block-row-grey">
     <section class="u-block">
         <h3>Switching colours helps delinate clear sections</h3>
-        <div class="b-listing-grid">
+        <div class="b-gridblock">
             <ul class="u-grid u-grid--3">
-                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
-                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
+                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
+                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
                 <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
             </ul>
         </div>
@@ -186,15 +186,15 @@ When working with block rows..
 
 ## Automatic spacing
 
-The RDS system automatically adjusted the spacing when rows of the same colour are stacked on top of each other. 
+The RDS system automatically adjusted the spacing when rows of the same colour are stacked on top of each other.
 
 {%include "/rds/templates/close.twig"%}<div class="u-block-row-grey">
     <section class="u-block">
         <h3>A grey block row followed by a...</h3>
-        <div class="b-listing-grid">
+        <div class="b-gridblock">
             <ul class="u-grid u-grid--3">
-                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
-                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
+                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
+                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
                 <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
             </ul>
         </div>
@@ -203,10 +203,10 @@ The RDS system automatically adjusted the spacing when rows of the same colour a
 <div class="u-block-row-grey">
     <section class="u-block">
         <h3>...a grey block row automatically has its spacing adjusted</h3>
-        <div class="b-listing-grid">
+        <div class="b-gridblock">
             <ul class="u-grid u-grid--3">
-                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
-                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li> 
+                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
+                <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
                 <li>{%include "/cards/card/data/card.twig" ignore missing%}</li>
             </ul>
         </div>
