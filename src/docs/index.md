@@ -1,11 +1,6 @@
 ---
 layout: base
-title: Raven Design System
-banner:
-  img:
-    img_url: https://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore.jpg
-    img_url_s: https://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore-s.jpg
-    img_opacity: light
+title: Raven Design System (RDS)
 content: true
 ---
 
