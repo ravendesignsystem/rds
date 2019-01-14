@@ -6,5 +6,6 @@ composer.phar
 .DS_Store
 
 # Auto Generated Files
-# mix-manifest.json
-# package-lock.json
+composer.lock
+mix-manifest.json
+package-lock.json
