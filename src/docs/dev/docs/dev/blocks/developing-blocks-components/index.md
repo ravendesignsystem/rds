@@ -58,7 +58,7 @@ Note:
 Below is the opening HTML markup for the [List Group block](/docs/blocks/listing/list-group/):
 
 ```html
-<ul class="b-listing-listgroup">
+<ul class="b-listing">
 ```
 Note:
 
@@ -205,7 +205,7 @@ Names made up of two words, or more, should never be broken up with a hyphen. Th
 #### Correct
 
 ```html
-<div class="b-listing-listgroup">
+<div class="b-listing">
 ```
 ### 5. Theme blocks, not a part of core require a unique theme identifier within each class name.
 

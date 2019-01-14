@@ -3,24 +3,24 @@
 
 // No padding on right for mobile
 @include media('<=s') {
-	.b-listing-listgroup {
+	.b-listing {
 		padding-right: 0 !important;
 	}
 }
 
-.listgroup__list {
+.listing__list {
 	list-style: none;
 	border-top: 1px solid $grey-yoda;
 	border-bottom: 1px solid $grey-yoda;
 	margin-left: 0;
 }
 
-.u-block--grey .listgroup__list {
+.u-block--grey .listing__list {
 	border-top: 1px solid $grey-kenobi;
 	border-bottom: 1px solid $grey-kenobi;
 }
 
-.listgroup__item {
+.listing__item {
 	position: relative;
 	background-size: 12px;
 	background-position: right 15px center;
@@ -44,18 +44,18 @@
 	&:hover {
 		background-color: $grey;
 
-        .listgroup__body {
+        .listing__body {
             color: $red;
         }
 
-        .listgroup__subtitle, .listgroup__excerpt {
+        .listing__subtitle, .listing__excerpt {
             color: $black;
         }
 	}
 
 	// Remove border from last items content wrapper
 	&:last-child {
-		.listgroup__body {
+		.listing__body {
 			border: none;
 		}
 	}
@@ -68,12 +68,12 @@
 }
 
 //TDT design review does this look good
-.u-row .listgroup__item:hover,
-.u-block--grey .listgroup__item:hover {
+.u-row .listing__item:hover,
+.u-block--grey .listing__item:hover {
 	background-color: white;
 }
 
-.listgroup__url {
+.listing__url {
 	display: flex;
 	// align-items: center;
 	position: relative;
@@ -81,23 +81,23 @@
 	color: $black !important;
 }
 
-.listgroup__body {
+.listing__body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	width: 100%;
-	border-bottom: 1px solid $grey-yoda; // This gets removed from last item as nested element of listgroup__item
+	border-bottom: 1px solid $grey-yoda; // This gets removed from last item as nested element of listing__item
 	padding: 15px 40px 15px 0;
 }
 
-.u-block--grey .listgroup__body {
+.u-block--grey .listing__body {
 	border-bottom: 1px solid $grey-kenobi;
 }
 
 // Content
 //================================
 
-.listgroup__title {
+.listing__title {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -114,12 +114,12 @@
 }
 
 // Title turns into a heading when there is a subtitle.
-h3.listgroup__title,
-h4.listgroup__title {
+h3.listing__title,
+h4.listing__title {
 	font-weight: 500;
 }
 
-.listgroup__subtitle {
+.listing__subtitle {
 	margin: 0;
 	word-wrap: break-word;
 	font-size: 14px;
@@ -133,14 +133,14 @@ h4.listgroup__title {
 // NOTE: first 3 flex properties only apply to video image with overlay and icon,
 // should we do a modifier at the group__item level like we do in other areas?
 // see news image variants for example of targeting image based on group__item modifier
-.listgroup__figure {
+.listing__figure {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	padding: 4px 15px 4px 0;
 }
 
-.listgroup__img {
+.listing__img {
 	@include media('<=s') {
 		max-width: 80px;
 	}
@@ -151,13 +151,13 @@ h4.listgroup__title {
 // News Variants
 //================================
 
-.listgroup__body--news {
+.listing__body--news {
 	// padding-top: 20px;
 	// padding-bottom: 20px;
 	min-height: 160px;
 }
 
-.b-listing-listgroup--news .listgroup__figure {
+.b-listing--news .listing__figure {
 	display: none;
 
 	@include media('>=s') {
@@ -167,25 +167,25 @@ h4.listgroup__title {
 }
 
 @include media('>=s') {
-	.b-listing-listgroup--news .listgroup__img {
+	.b-listing--news .listing__img {
 		max-height: 180px;
 	}
 }
 
-.listgroup__date {
+.listing__date {
 	font-size: 13px;
 	font-weight: 400;
 	color: $grey-luke;
 	padding-bottom: 2px;
 }
 
-.listgroup__excerpt {
+.listing__excerpt {
 	word-wrap: break-word;
 	font-size: 14px;
 	font-weight: 300;
 }
 
-.b-listing-listgroup--news h3 {
+.b-listing--news h3 {
 	font-size: 18px;
 }
 
@@ -193,25 +193,25 @@ h4.listgroup__title {
 //================================
 
 // Remove border from body element
-.b-listing-listgroup--event .listgroup__body {
+.b-listing--event .listing__body {
 	border: none;
 }
 
 // Place bottom borner on url element, allowing it to span full width
-.b-listing-listgroup--event .listgroup__item:not(:last-child) {
-	.listgroup__url {
+.b-listing--event .listing__item:not(:last-child) {
+	.listing__url {
 		border-bottom: 1px solid $grey-yoda;
 	}
 }
 
 // Added to keep consistent spacing at top and bottom of entire li items, important for when the body element is only 1 line
 // To see the impact, comment out and check third li in even variant example
-.listgroup__event-date,
-.listgroup__time {
+.listing__event-date,
+.listing__time {
 	padding: 15px 0;
 }
 
-.listgroup__event-date {
+.listing__event-date {
 	color: $red;
 	text-transform: uppercase;
 	font-size: 12px;
@@ -219,12 +219,12 @@ h4.listgroup__title {
 	width: 60px;
 }
 
-.listgroup__event-day {
+.listing__event-day {
 	color: $black;
 	font-size: 24px;
 }
 
-.listgroup__time {
+.listing__time {
 	display: none;
 
 	@include media('>=s') {
@@ -238,7 +238,7 @@ h4.listgroup__title {
 // People Variants
 //================================
 
-.listgroup__img--people {
+.listing__img--people {
 	border-radius: 100%;
 	border: 4px solid hsla(0, 0%, 93%, 0.75);
 }
