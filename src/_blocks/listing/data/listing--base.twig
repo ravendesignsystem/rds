@@ -1,0 +1,37 @@
+{% if docs %}
+    <div class="u-block u-block--white u-block--s">
+        <div class="b-content">
+            <h2>Base example</h2>
+            <p>Listing blocks display a series of related content in vertical lists as a single continuous element. The Listing block has several options and variants for dealing with different content types.
+            </p>
+        </div>
+    </div>
+{% endif %}
+{% from "listing/listing.twig" import listing %}
+{{ listing (
+    {
+        color: "white",
+    },
+    [
+        {
+            title: "White-necked Raven",
+            url: "https://en.wikipedia.org/wiki/White-necked_raven",
+        },
+        {
+            title: "Common raven",
+            url: "https://en.wikipedia.org/wiki/Common_raven"
+        },
+        {
+            title: "Australian raven",
+            url: "https://en.wikipedia.org/wiki/Australian_raven"
+        },
+        {
+            title: "Thick-billed raven",
+            url: "https://en.wikipedia.org/wiki/Thick-billed_raven"
+        },
+        {
+            title: "Chihuahuan raven",
+            url: "https://en.wikipedia.org/wiki/Chihuahuan_raven"
+        }
+    ]
+) }}

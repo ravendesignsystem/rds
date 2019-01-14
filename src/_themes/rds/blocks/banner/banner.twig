@@ -1,0 +1,48 @@
+{% if page.banner.img.img_url %}
+<style>
+    .b-header-banner--img {
+        background-image: url({{ page.banner.img.img_url_s }});
+    }
+    @media (min-width: 769px) {
+        .b-header-banner--img {
+            background-image: url({{ page.banner.img.img_url }});
+        }
+    }
+</style>
+{% endif %}
+<div class="u-block {% if page.banner.img.img_url %}u-block--full{% else %}u-block--s u-block--grey{% endif %}">
+<div class="b-header-banner{% if page.banner.img.img_url|length %} b-header-banner--img{% endif %}{% if page.banner.img.img_opacity == "dark" %} b-header-banner--img-dark{% elseif page.banner.img.img_opacity == "light" %} b-header-banner--img-light{% endif %}{% if page.banner.img.img_position == "top" %} b-header-banner--img-top{% elseif data.img.img_position == "bottom" %} b-header-banner--img-bottom{% endif %}">
+    <div class="banner__container">
+{#{% if page.banner.breadcrumbs.parent %}#}
+        <nav aria-label="breadcrumb">
+            <ol class="banner__breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+                {% if page.subsite %}
+                <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="{{ site.url }}">Home</a></li>
+                {% endif %}
+                {% if (page.subsite == 'dev') and ('Subsite' not in page.title) %}
+                <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="{{ site.url }}/dev/">Dev</a></li>
+                {% endif %}
+{% if page.banner.breadcrumbs.greatgrandparent %}
+                <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../..">{{ page.banner.breadcrumbs.greatgrandparent }}</a></li>
+{%  endif %}
+{% if page.banner.breadcrumbs.grandparent %}
+                <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="..">{{ page.banner.breadcrumbs.grandparent }}</a></li>
+{%  endif %}
+{% if page.banner.breadcrumbs.parent %}
+                <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../header">{{ page.banner.breadcrumbs.parent }}</a></li>
+{%  endif %}
+                <li class="banner__breadcrumb-item active u-visually-hidden" itemprop="breadcrumb" aria-current="page">{{ data.title }}</li>
+            </ol>
+        </nav>
+{#{%  endif %}#}
+        <h1 class="banner__title">{{ page.title }} {{ page.meh }}</h1>
+{% if page.banner.button %}
+        <p class="banner__buttons">
+{% for item in page.banner.button %}
+            <a class="c-buttons-button" href="{{ item.url }}" role="button">{{ item.title }}</a>
+{% endfor %}
+        </p>
+{% endif %}
+    </div>
+</div>
+</div>

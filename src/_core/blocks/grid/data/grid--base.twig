@@ -1,0 +1,19 @@
+{% from "blocks/main/grid/grid.twig" import grid %}
+{{ grid (
+    {
+        columns: "3",
+        heading: "",
+        width: ''
+    },
+    [
+        {
+            inc: "components/cards/card/data/card--news.twig",
+        },
+        {
+            inc: "components/cards/card/data/card--news.twig",
+        },
+        {
+            inc: "components/cards/card/data/card--news.twig",
+        }
+    ]
+) }}

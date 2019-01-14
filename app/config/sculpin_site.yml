@@ -1,0 +1,47 @@
+# Site wide vars - eg. {{ site.title }} can be used
+title: RDS Local
+subtitle: RDS
+version: 1.0.0
+coreSize: 26KB
+url: http://localhost:8000/docs/
+cssPath: http://localhost:3000/docs/css/app.css
+jsPath: http://localhost:3000/docs/js/app.js
+
+font: gotham
+
+images: https://cu-raven.s3.amazonaws.com/assets/img/raven/
+some_global_images:
+    -
+        filename: img1.jpg
+        alt: /
+    -
+        filename: img2.jpg
+        alt: /
+    -
+        filename: img3.jpg
+        alt: /
+sitemenu:
+    -
+        title: first item
+        url: url
+    -
+        title: second item
+        url: url
+
+        submenu:
+            -
+                title: level 2 first
+                url: url
+
+                level3:
+                    -
+                        title: level 3 first
+                        url: url
+                    -
+                        title: level 3 two
+                        url: url
+
+        submenu:
+            -
+                title: last item
+                url: url

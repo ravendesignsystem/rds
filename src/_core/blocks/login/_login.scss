@@ -1,0 +1,29 @@
+.b-nav-login {
+	max-width: 440px;
+	margin: 0 auto;
+
+	& form {
+		padding: 20px;
+		font-size: 14px;
+		background-color: #fff;
+		border-radius: 0 0 3px 3px;
+		border: 1px solid $grey-kenobi;
+		margin-bottom: 20px;
+	}
+}
+
+.login__heading {
+	margin-bottom: 15px;
+	text-align: center;
+	font-size: 22px;
+	font-weight: 400;
+	letter-spacing: -0.5px;
+}
+
+.login__account {
+	padding: 15px 20px;
+	text-align: center;
+	border: 1px solid $grey-kenobi;
+	border-radius: 5px;
+	font-size: 14px;
+}

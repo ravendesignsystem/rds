@@ -1,0 +1,603 @@
+//  RDS utility classes
+//  ---------------------
+//
+//  Table of Contents:
+//
+//   1. Grid
+//   2. Block utils
+//   3. Icon utils
+//   4. Property overrides
+//   5. Centering
+//   6. Misc utils
+//   7. Content
+
+// 1. Grid system
+// --------------
+
+// CSS Grid IE11 Fallback
+// ----------------------
+
+// TODO: look into @support grid
+@media screen and (-ms-high-contrast: active),
+	screen and (-ms-high-contrast: none) {
+	.u-grid {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: -#{$grid-gutter} !important;
+
+		& > * {
+			margin-bottom: $grid-gutter;
+
+			&:not(:last-child) {
+				margin-right: $grid-gutter;
+			}
+		}
+	}
+
+	.u-grid--2 > * {
+		width: calc(50% - #{$grid-gutter - 10});
+
+		&:nth-child(2n) {
+			margin-right: 0 !important;
+		}
+	}
+
+	.u-grid--3 > * {
+		width: calc(33.333333% - #{$grid-gutter - 6.5});
+
+		&:nth-child(3n) {
+			margin-right: 0 !important;
+		}
+	}
+
+	.u-grid--4 > * {
+		width: calc(25% - #{$grid-gutter - 5});
+
+		&:nth-child(4n) {
+			margin-right: 0 !important;
+		}
+	}
+}
+
+// CSS Grid
+// -----------------
+
+.u-grid {
+	display: grid;
+	grid-gap: $grid-gutter;
+}
+
+.u-grid--2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.u-grid--3 {
+	grid-template-columns: repeat(2, 1fr);
+
+	@include media('>s') {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.u-grid--4 {
+	grid-template-columns: repeat(2, 1fr);
+
+	@include media('>s') {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+.u-grid--s1 {
+	grid-template-columns: repeat(1, 1fr);
+}
+
+// 2. Block utils
+// --------------
+
+.u-block {
+	padding: 25px;
+
+	@include media('>s') {
+		padding: 40px 30px;
+	}
+}
+
+.u-block--grey {
+	background-color: $grey;
+}
+
+.u-block--black {
+	background-color: $black;
+	color: white;
+}
+
+// Block Spacing
+// -------------
+
+.u-block--white:not(.u-block--full) + .u-block--white,
+.u-block--grey:not(.u-block--full) + .u-block--grey,
+.u-block--black:not(.u-block--full) + .u-block--black {
+	padding-top: 0;
+}
+
+// Utility Widths
+// --------------
+
+.u-block--s > *, .u-width-s {
+	max-width: #{map-get($breakpoints, s)};
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.u-block--m > * {
+	max-width: #{map-get($breakpoints, m)};
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.u-block--l > * {
+	max-width: #{map-get($breakpoints, l)};
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Width Modifiers
+// ---------------
+
+.u-block--full {
+	padding: 0 !important;
+}
+
+.u-block--border-top {
+	border-top: 1px solid $grey-vader;
+}
+
+
+// 3. Icon utils
+// -------------
+
+.u-icon--txt svg {
+	margin-right: 5px;
+}
+.u-icon {
+	fill: $black;
+
+	& svg {
+		vertical-align: top; // removes the default inline space under svg
+	}
+}
+
+.u-icon--red svg path {
+	fill: $red;
+}
+
+.u-icon--grey svg path {
+	fill: $grey-vader;
+}
+
+.u-icon--white svg path {
+	fill: white;
+}
+
+// match svg size to accompanying text
+.u-icon--text {
+	display: inline-flex;
+	align-items: center;
+
+	// svg element
+	& svg {
+		display: inline-block;
+		height: 1em !important;
+		width: 1em !important;
+		margin-right: 0.175em; // you can change this
+		flex-shrink: 0;
+		top: 0.125em;
+		position: relative;
+	}
+}
+
+.u-icon--circle {
+	border-radius: 50%;
+	background-color: $grey;
+	display: inline-block;
+	padding: 15px;
+	line-height: 1 !important;
+}
+
+.u-icon--circle-white {
+	background-color: white;
+
+	&:hover {
+		background-color: $grey-vader;
+	}
+
+	&:hover svg path {
+		fill: white;
+	}
+}
+
+.u-icon--circle.u-icon--xxs {
+	padding: 2px;
+	height: 15px;
+}
+
+.u-icon--circle.u-icon--xs {
+	padding: 5px;
+	height: 25px;
+}
+
+.u-icon--circle.u-icon--s {
+	padding: 12px;
+}
+
+.u-icon--circle.u-icon--l {
+	padding: 18px;
+}
+
+.u-icon--circle.u-icon--xl {
+	padding: 22px;
+}
+
+.u-icon--circle.u-icon--xxl {
+	padding: 25px;
+}
+
+.u-icon-text--right svg {
+	margin-left: 0.175em; // you can change this
+}
+
+.u-icon--facebook:hover {
+	background-color: #3b5998;
+
+	svg path {
+		fill: white;
+	}
+}
+
+.u-icon--instagram:hover {
+	// background: #d6249f; // TODO: test that this is not needed for browser support
+	background: radial-gradient(
+		circle at 30% 107%,
+		#fdf497 0%,
+		#fdf497 5%,
+		#fd5949 45%,
+		#d6249f 60%,
+		#285aeb 90%
+	);
+
+	svg path {
+		fill: white;
+	}
+}
+
+.u-icon--twitter:hover {
+	background-color: #1da1f2;
+	svg path {
+		fill: white;
+	}
+}
+
+.u-icon--youtube:hover {
+	background-color: #ff0000;
+
+	svg path {
+		fill: white;
+	}
+
+	& svg path:last-child {
+		fill: #ff0000;
+	}
+}
+
+.u-icon--pinterest:hover {
+	background-color: #bd081c;
+
+	svg path {
+		fill: white;
+	}
+}
+
+.u-icon--linkedin:hover {
+	background-color: #007bb5;
+
+	svg path {
+		fill: white;
+	}
+}
+
+// TODO: NOT USED?
+//.u-icon--open {
+//    transition: all .4s ease-in-out;
+//}
+
+.u-icon-bg,
+.u-img-bg {
+	display: block;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.u-icon-bg--overlay {
+	position: absolute; // note: containing element needs to be position: relative
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	width: 100%;
+	height: 100%;
+}
+
+.u-icon-bg--m {
+	background-size: 30px;
+	width: 30px;
+	height: 30px;
+	display: block;
+}
+
+.u-icon--left svg {
+	margin-right: 4px;
+}
+
+.u-icon--xxs svg {
+	width: 10px;
+	height: 10px;
+}
+
+.u-icon--xs svg {
+	width: 20px;
+	height: 20px;
+}
+
+.u-icon--s svg {
+	width: 25px;
+	height: 25px;
+}
+
+.u-icon--m svg {
+	width: 30px;
+	height: 30px;
+}
+
+.u-icon--l svg {
+	width: 40px;
+	height: 40px;
+}
+
+.u-icon--xl svg {
+	width: 55px;
+	height: 55px;
+}
+
+.u-icon--xxl svg {
+	width: 75px;
+	height: 75px;
+}
+
+// 4. Property overrides
+// ----------------------
+
+.u-link {
+	color: $red !important;
+
+	&:hover {
+		text-decoration: underline !important;
+	}
+}
+
+.u-bg-kenobi {
+	background-color: $grey-yoda !important;
+}
+
+.u-bg-grey {
+	background-color: $grey !important;
+}
+
+.u-color-red {
+	color: $red;
+}
+
+.u-no-borders {
+	border: none;
+}
+
+.u-no-margin {
+	margin: 0 !important;
+}
+
+.u-no-margin-bottom {
+	margin-bottom: 0 !important;
+}
+
+.u-no-padding-bottom {
+	padding-bottom: 0 !important;
+}
+
+.u-no-padding-top {
+	padding-top: 0 !important;
+}
+
+.u-no-margin-right {
+	margin-right: 0 !important;
+}
+
+.u-margin-top-30 {
+	margin-top: 30px !important;
+}
+
+.u-margin-bottom-60 {
+	margin-top: 60px !important;
+}
+
+.u-width-full {
+	width: 100% !important;
+}
+
+// 5. Centering
+// ------------
+
+.u-v-center {
+	//todo review
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+}
+
+// per https://codepen.io/cuweb/pen/XoWEaW
+.u-center {
+	display: flex;
+	margin-bottom: 20px; // remove
+
+	&--center> * {
+		margin: auto;
+		align-self: center;
+	}
+
+	&--left > * {
+		margin-right: auto !important;
+		align-self: center !important;
+	}
+
+	&--right > *{
+		margin-left: auto;
+		align-self: center;
+	}
+
+	&--x-center > * {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	&--x-left > * {
+		margin-right: auto;
+	}
+
+	&--x-right > * {
+		margin-left: auto;
+	}
+
+	&--y-center > * {
+		align-self: center;
+	}
+
+	&--y-top > * {
+		align-self: flex-start;
+	}
+
+	&--y-bottom > * {
+		align-self: flex-end;
+	}
+}
+
+//TODO Replace two below with new utils above
+.u-center-vert {
+	display: flex;
+	align-items: center;
+}
+
+.u-center-hor {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	//margin: 0 auto;
+}
+
+// add to block level parent
+.u-center-inline {
+	text-align: center;
+	vertical-align: middle; // Align children to middle of line
+}
+
+.u-center-absolute {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate (-50% -50%);
+}
+
+// 6. Misc utils
+// -------------
+
+.u-btn-reset {
+	padding: 0;
+	border: none;
+	outline: none;
+	font: inherit;
+	color: inherit;
+	background: none;
+}
+.u-sticky {
+	position: sticky;
+	//top: 15px;
+}
+
+.u-display-none,
+.is-hidden {
+	display: none !important;
+}
+
+.u-display-inline-b {
+	display: inline-block !important;
+}
+
+.u-whitespace-wrap {
+	white-space: normal !important;
+}
+
+.u-visually-hidden {
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
+	position: absolute;
+}
+
+// add transparent, dark overlay over images, banners, etc.
+.u-overlay {
+	position: relative;
+}
+
+.u-overlay:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.45);
+}
+
+.u-overlay--light:before {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.u-overlay--dark:before {
+	background-color: rgba(0, 0, 0, 0.65);
+}
+
+// 7. Content
+// -----------
+
+// TODO look for function to replace wp"s alignleft
+.u-img-left,
+.alignleft {
+	float: left;
+	margin-right: 30px;
+}
+
+// TODO look for function to replace wp"s alignright
+.u-img-right,
+.alignright {
+	float: right;
+	margin-left: 30px;
+}
+
+// todo why is this here?
+// hide on small screens
+@include media('<=s') {
+	.u-hide-s {
+		display: none;
+	}
+}

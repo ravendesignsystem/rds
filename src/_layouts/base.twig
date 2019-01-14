@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="no-js" lang="en">
+{% block head %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <meta name="robots" content="noodp, noydir"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}"/>
+
+    {% if site.font == "gotham" -%}
+    {#Makes fonts jump but avoids render blocking #}
+    {##<link rel="stylesheet" href="https://cloud.typography.com/6307052/6144772/css/fonts.css" type="text/css" media="none" onload="if(media!='all')media='all'"/>#}
+    <link rel="stylesheet" href="https://cloud.typography.com/6307052/6144772/css/fonts.css" type="text/css"/>
+    {% endif -%}
+    {% block critical %}
+    {#Load Masthead and Banner CSS#}
+    {#<style>{% include "critical.css" %}</style>#}
+    {% endblock %}
+    <link rel="stylesheet" href="{{ site.cssPath }}" media="none" onload="if(media!='all')media='all'">
+    {#<noscript><link rel="stylesheet" href="{{ site.url }}/css/app.css"></noscript>#}
+    <link rel="manifest" href="/manifest.json">
+    {#<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>#}
+    {# <link rel="apple-touch-icon-precomposed" href="http://mysite.com/images/apple-retina.png" sizes="114x114" /> #}
+    {# <link rel="apple-touch-icon-precomposed" href="http://mysite.com/images/apple-ipad.png" sizes="72x72" /> #}
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <title>{% block title %}{{ page.title }}{% endblock %} | {{ site.title }} | {{ site.subtitle }}</title>
+    {#  If page has a description #}
+    {% if page.desc is defined %}
+    <meta name="description" content="{{ page.desc }}">
+    {% endif %}
+    {#  If page has keywords #}
+    {% if page.keywords is defined %}
+    <meta name="keywords" content="{{ page.keywords }}" />
+    {% endif %}
+    {#  Facebook Meta Tags #}
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page.title }}">
+    {#  If page has a description #}
+    {% if page.desc is defined %}
+    <meta property="og:description" content="{{ page.desc }}">
+    {% endif %}
+    {#  If page has an img defined #}
+    {% if page.img is defined %}
+    <meta property="og:image" content="{{ page.img }}">
+    {% endif %}
+    {# Twitter Meta Tags #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }}">
+    {#  If page has a description #}
+    {% if page.desc is defined %}
+    <meta name="twitter:description" content="{{ page.desc }}">
+    {% endif %}
+    {#  If page has an img defined #}
+    {% if page.img is defined %}
+    <meta name="twitter:image" content="{{ page.img }}">
+    {% endif -%}
+</head>
+{% endblock %}
+
+<body>
+<a class="u-visually-hidden" href="#content">Skip to main content</a>
+<div id="app">
+{% block header %}
+    {#<header class="l-header-banner-img">#}
+    <header role="banner">
+        {% include "rds/blocks/masthead/masthead.twig" %}
+        {% block banner %}
+        {% include "rds/blocks/banner/banner.twig" %}
+        {% endblock %}
+        {#{% include "header/search/search.twig" %}#}
+    </header>
+{% endblock %}
+
+{% block body %}
+    {% block main %}
+        <main id="content">
+            {% if page.content == true %}
+            <div class="u-block u-block--white u-block--s">
+                <div class="b-content">
+            {% endif %}
+        {% block content %}
+        {% endblock %}
+            {% if page.content == true %}
+                </div>
+            </div>
+            {% endif %}
+            {#<p class="b-content u-block" style="border-top: 1px solid #f3f3f3;padding-top: 20px;">Running RDS Core v. {{ site.core }}/{{ site.coreSize }} | <a href="https://github.com/dannybrown73/rds-docs/tree/master/docs/{{ page.url }}">Improve these docs.</a></p>#}
+        </main>
+    {% endblock %}
+{% endblock %} {# END body block #}
+
+{% block footer %}
+    <footer>
+        {% from "blocks/footer-simple/footer-simple.twig" import simple %}
+        {{ simple (
+            {
+            },
+            {
+                contact:
+                {
+                    email: "web@carleton.ca",
+                    phone: "613-520-2600",
+                    fax: "613-520-2600",
+                    contactPage: "https://carleton.ca/contact/"
+                },
+                social:
+                {
+                    facebook: "https://www.facebook.com/carletonuniversity/",
+                    instagram: "https://www.instagram.com/carleton_u/",
+                    twitter: "https://twitter.com/@Carleton_U",
+                    youtube: "https://www.youtube.com/user/carletonuvideos"
+                },
+            }
+        ) }}
+
+        {% include "blocks/footer-brand/footer-brand.twig" ignore missing %}
+    </footer>
+{% endblock %} {# END footer block #}
+
+    <div class="l-overlay-modal is-hidden">
+        <div class="modal__search is-hidden">
+            {% include "blocks/search/search.twig" %}
+        </div>
+        <div class="modal__menu is-hidden">
+            <div class="is-hidden has-b-nav-menu">
+                {% block menu %}
+                    {% include "blocks/menu/data/menu.twig" %}
+                {% endblock %}
+            </div>
+        </div>
+
+        {# Good to wrap in an is-logged-in conditional...#}
+        <div class="modal__login is-hidden">
+            <div class="b-nav-login u-block">
+                <h1 class="login__heading">Login to Your App</h1>
+                <form class="c-form login__form" name="loginform" action="/" method="post" accept-charset="UTF-8">
+
+                    <label for="user_login">Username or Email</label>
+                    <input type="text" id="user_login" name="log" class="login__field" value="" tabindex="1" autocapitalize="off" autocorrect="off" autofocus="autofocus" aria-required="true">
+
+                    <label for="user_pass">Password <a class="login__link" href="/password-reset/">Forgot password?</a></label>
+                    <input type="password" name="pwd" id="user_pass" value="" class="form-control form-control input-block" tabindex="2" aria-required="true">
+
+                    <input type="submit" value="Login" tabindex="3" class="u-width-full">
+                </form>
+                <p class="login__account">Not registered?
+                    <a class="u-link" href="/register/">Create an account</a>.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div> {#END APP ID #}
+{% block scripts %}
+    <script src="{{ site.jsPath }}"></script>
+{% endblock %}  {#END SCRIPTS #}
+
+</body>
+</html>

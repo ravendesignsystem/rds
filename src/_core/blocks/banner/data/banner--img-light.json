@@ -1,0 +1,24 @@
+{
+  "settings": [
+    {
+      "variant": "img"
+    }
+  ],
+  "data": [
+    {
+      "img_url": "http://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore.jpg"
+    },
+    {
+      "img_url_s": "http://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore-s.jpg"
+    },
+    {
+      "img_opacity": "light"
+    },
+    {
+      "img_position": "top"
+    },
+    {
+      "title": "Hero Image Lightened and Aligned to the Top"
+    }
+  ]
+}

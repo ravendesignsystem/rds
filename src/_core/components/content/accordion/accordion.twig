@@ -1,0 +1,13 @@
+{% macro accordion(settings, data) %}
+{% for item in data %}
+<div class="c-accordion">
+    <input id="accordion-id-{{ loop.index }}{% if settings.variant == "single" %}s{% endif %}" class="c-accordion__input{% if settings.variant == "single" %} c-accordion__input--single{% endif %}" name="accordion-{% if settings.variant == "single" %}radio{% else %}checkbox{% endif %}" type="checkbox">
+    <label for="accordion-id-{{ loop.index }}{% if settings.variant == "single" %}s{% endif %}" aria-controls="accordion-aria-control-{{ loop.index }}{% if settings.variant == "single" %}s{% endif %}" aria-expanded="false" id="accordion-labelledby-{{ loop.index }}{% if settings.variant == "single" %}s{% endif %}" class="c-accordion__toggle" role="heading">{{ item.title }}</label>
+    <div id="accordion-aria-control-{{ loop.index }}{% if settings.variant == "single" %}s{% endif %}" class="c-accordion__content" role="region" aria-labelledby="accordion-labelledby-{{ loop.index }}" aria-hidden="true">
+        <div class="c-accordion__spacing">
+{{ item.content|raw }}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endmacro %}

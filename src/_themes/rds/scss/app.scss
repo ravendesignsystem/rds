@@ -1,0 +1,38 @@
+/*
+ * RDS Docs v1.0.0
+ * Copyright 2011-2019 Carleton University
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// RDS Core - *** REQUIRED ***
+@import '../../../_core/scss/core';
+
+// ----------
+// RDS BLOCKS
+// ----------
+// Chose your project blocks by uncommenting the imports below.
+
+// Header Blocks:
+// --------------
+
+// Nav-global
+@import '../../../_blocks/global-nav/global-nav';
+
+// Content Blocks:
+// ---------------
+
+// Listing block
+@import '../../../_blocks/listing/listing';
+
+// Footer Blocks:
+// ---------------
+
+// Footer sitemap
+@import '../../../_blocks/footer-sitemap/footer-sitemap';
+
+// -----------------------------
+// CUSTOM THEME - RDSDOCS BLOCKS
+// -----------------------------
+// RDS Docs theme styles
+@import '../blocks/tabs/tabs';
+@import 'vendor/highlight-js--github';

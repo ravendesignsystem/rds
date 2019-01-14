@@ -1,0 +1,44 @@
+{
+	"name": "rds",
+	"version": "0.0.1",
+	"description": "Never more",
+	"scripts": {
+		"dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"hot": "NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"prod": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"sculpin": "vendor/bin/sculpin generate --watch --server",
+		"sculpin-prod": "vendor/bin/sculpin generate --clean --server --env=prod"
+	},
+	"prettier": {
+		"useTabs": true,
+		"printWidth": 80,
+		"tabWidth": 1,
+		"singleQuote": true,
+		"trailingComma": "es5",
+		"jsxBracketSameLine": false,
+		"noSemi": true,
+		"rcVerbose": true
+	},
+	"main": "index.js",
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"ajv": "^6.5.4",
+		"debug": "^4.0.1",
+		"hoek": "^5.0.4",
+		"imagemin": "^6.0.0"
+	},
+	"devDependencies": {
+		"babel-plugin-syntax-dynamic-import": "^6.18.0",
+		"browser-sync": "^2.24.7",
+		"browser-sync-webpack-plugin": "^2.0.1",
+		"clean-webpack-plugin": "^1.0.0",
+		"css-mqpacker": "^7.0.0",
+		"cssnano": "^4.1.4",
+		"laravel-mix": "^2.1.14",
+		"node-sass": "^4.9.3",
+		"postcss-pxtorem": "^4.0.1",
+		"prettier": "^1.14.3"
+	}
+}

@@ -1,0 +1,91 @@
+{% macro simple(settings, data) %}
+<div class="u-block u-block--black">
+    <div class="b-footer-simple">
+        <div itemscope itemtype="http://schema.org/Organization">
+            <address class="simple__contact h-card">
+{% if data.address|length %}
+                <p class="p-adr">
+                    <a class="p-name u-url" href="{{ site.url }}">{{ data.address.name }}</a><br>
+{% if data.address.building|length %}
+                    <a class="p-name u-url" itemprop="name" href="https://carleton.ca">Carleton University</a><br>
+{% endif %}
+{% if data.address.building|length %}
+                    <span class="p-extended-address" itemprop="name">{% if data.address.number|length %}{{ data.address.number }} {% endif %}<a href="#">{{ data.address.building }}</a></span><br>
+                    <span class="p-street-address" itemprop="streetAddress">1125 Colonel By Drive</span><br>
+                    <span class="p-locality" itemprop="addressLocality">Ottawa, </span>
+                    <span class="p-region" itemprop="addressRegion">ON, </span>
+                    <span class="p-postal-code" itemprop="postalCode">K1S 5B6</span><br>
+                    <span class="p-country-name">Canada</span><br>
+                    <span><a href="#">View Map</a></span>
+{% else %}
+{% if data.address.buildingOff|length %}
+                    <span class="p-extended-address" itemprop="name">{% if data.address.number|length %}{{ data.address.number }} {% endif %}<a href="#">{{ data.address.buildingOff }}</a></span><br>
+{% endif %}
+{% if data.address.street|length %}
+                    <span class="p-street-address" itemprop="streetAddress">{{ data.address.street }}</span><br>
+{% endif %}
+{% if data.address.city|length %}
+                    <span class="p-locality" itemprop="addressLocality">{{ data.address.city }}, </span>
+{% endif %}
+{% if data.address.province|length %}
+                    <span class="p-region" itemprop="addressRegion">{{ data.address.province }}, </span>
+{% endif %}
+{% if data.address.postal|length %}
+                    <span class="p-postal-code" itemprop="postalCode">{{ data.address.postal }}</span><br>
+{% endif %}
+{% if data.address.country|length %}
+                    <span class="p-country-name" itemprop="country">{{ data.address.country }}</span><br>
+{% endif %}
+{% endif %}
+                </p>
+{% endif %}
+{% if data.contact|length %}
+                <p>
+{% if data.contact.email|length %}
+                    <span class="u-email" itemprop="email"><a href="mailto:history@carleton.ca">{{ data.contact.email }}</a></span><br>
+{% endif %}
+{% if data.contact.phone|length %}
+                    <span class="p-tel" itemprop="telephone">Phone: <a href="tel:+1-613-520-2600">{{ data.contact.phone }}</a></span><br>
+{% endif %}
+{% if data.contact.fax|length %}
+                    <span class="p-tel-fax" itemprop="faxNumber">Fax: {{ data.contact.fax }}</span><br>
+{% endif %}
+{% if data.contact.contactPage|length %}
+                    <span itemprop="url"><a href="{{ data.contact.contactPage }}">Contact page</a></span><br>
+{% endif %}
+                </p>
+{% endif %}
+{% if data.hours|length %}
+                <p itemprop="hoursAvailable">
+                <strong>Hours</strong><br>
+                <span>{{ data.hours.dayFrom }}-{{ data.hours.dayUntil }},</span>
+                <time datetime="08:30">{{ data.hours.timeFrom }}</time>-<time datetime="16:30">{{ data.hours.timeUntil }}</time>
+                </p>
+{% endif %}
+{% if data.social|length %}
+                <ul class="simple__social">
+{% if data.social.facebook|length %}
+                    <li><a class="u-icon u-icon--circle u-icon--circle-white u-icon--facebook u-icon--s" href="{{ data.social.facebook }}">{% include "icons/facebook.svg" -%}{# #}<span class="u-visually-hidden">Like us on Facebook</span></a></li>
+{% endif %}
+{% if data.social.instagram|length %}
+                    <li><a class="u-icon u-icon--circle u-icon--circle-white u-icon--instagram u-icon--s" href="{{ data.social.instagram }}">{% include "icons/instagram.svg" -%}<span class="u-visually-hidden">Follow us on Instagram</span></a></li>
+{% endif %}
+{% if data.social.twitter|length %}
+                    <li><a class="u-icon u-icon--circle u-icon--circle-white u-icon--twitter u-icon--s" href="{{ data.social.twitter }}">{% include "icons/twitter.svg" -%}<span class="u-visually-hidden">Follow us on Twitter</span></a></li>
+{% endif %}
+{% if data.social.youtube|length %}
+                    <li><a class="u-icon u-icon--circle u-icon--circle-white u-icon--youtube u-icon--s" href="{{ data.social.youtube }}">{{ source('icons/youtube.svg') }}<span class="u-visually-hidden">Subscribe to our Youtube channel</span></a></li>
+{% endif %}
+{% if data.social.linkedin|length %}
+                    <li><a class="u-icon u-icon--circle u-icon--circle-white u-icon--linkedin u-icon--s" href="{{ data.social.linkedin }}">{% include "icons/linkedin.svg" -%}<span class="u-visually-hidden">View us on Linkedin</span></a></li>
+{% endif %}
+{% if data.social.pinterest|length %}
+                    <li><a class="u-icon u-icon--circle u-icon--circle-white u-icon--pinterest u-icon--s" href="{{ data.social.pinterest }}">{% include "icons/pinterest.svg" -%}<span class="u-visually-hidden">Check us out on Pinterest</span></a></li>
+{% endif %}
+                </ul>
+{% endif %}
+            </address>
+        </div>
+    </div>
+</div>
+{% endmacro %}

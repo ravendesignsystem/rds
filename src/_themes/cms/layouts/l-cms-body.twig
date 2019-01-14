@@ -1,0 +1,18 @@
+{% extends "base" %}
+{% block body %}
+    <div class="l-cms-body">
+        <nav class="l-cms-body__nav" role="navigation">
+            {% include "nav/menu.twig" %}
+        </nav>
+
+        <main class="l-cms-body__main">
+            {% block main %}
+                <div class="b-content">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            {% endblock %}
+        </main>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,167 @@
+// Layout: Main Wrapper
+// =======================================
+
+// give more right-side space to the desktop menu
+.has-b-nav-menu {
+	padding-right: 5px !important;
+}
+
+.l-body {
+	display: flex;
+	margin: 40px auto; // adds space between layout and header and footer
+	max-width: calc(768px + #{$block-padding-m} * 2);
+
+	main {
+		overflow: hidden;
+	}
+}
+
+.body__container {
+	width: 100%;
+}
+
+// Layout: Lefthand Aside
+// =======================================
+
+.l-body--aside-main {
+	max-width: calc(1018px + #{$block-padding-m} * 2);
+}
+
+// Layout: Righthand Aside
+// =======================================
+
+.l-body--main-aside {
+	max-width: calc(1108px + #{$block-padding-m} * 2);
+
+	.body__container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+
+		@include media('>868px') {
+			flex-direction: row;
+		}
+	}
+
+	@include media('<=868px') {
+		.body__container--reverse {
+			.body__content {
+				order: 2;
+			}
+
+			.body__sidebar {
+				order: 1;
+			}
+		}
+	}
+}
+
+// Layout: Lefthand and Righthand Aside
+// =======================================
+
+.l-body--aside-main-aside {
+	max-width: calc(1368px + #{$block-padding-m} * 2);
+
+	.body__container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+
+		@include media('>1112px') {
+			flex-direction: row;
+		}
+	}
+
+	@include media('<=1112px') {
+		.body__container--reverse {
+			.body__content {
+				order: 2;
+			}
+
+			.body__sidebar {
+				order: 1;
+			}
+		}
+	}
+}
+
+// Page Content Wrapper
+// =======================================
+
+.body__content {
+	overflow: hidden;
+	width: 100%;
+
+	// remove empty p tags caused by markdown and editors
+	p:empty {
+		display: none;
+	}
+
+	.u-block:last-child {
+		margin-bottom: $block-margin / 2;
+	}
+}
+
+// Asides: Nav
+// =======================================
+
+.body__nav {
+	display: none;
+
+	@include media('>s') {
+		border-right: 1px solid $grey;
+		display: block;
+		flex-basis: calc(
+			200px + #{$block-padding-m} * 2
+		); // Set the width you want in px, the calc + var accommodates for the padding added by both sides of u-block
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+}
+
+// Asides: Sidebar
+// =======================================
+
+.body__sidebar {
+	flex: 0 0 auto;
+}
+
+// Apply sidebar sizes above break point for main + sidebar view
+@include media('>868px') {
+	.l-body--main-aside .body__sidebar {
+		border-left: 1px solid $grey;
+		flex-basis: calc(
+			280px + #{$block-padding-m} * 2
+		); // Set the width you want in px, the calc + var accommodates for the padding added by both sides of u-block
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+
+	.l-body--main-aside .body__sidebar-l {
+		flex-basis: calc(
+			350px + #{$block-padding-m} * 2
+		); // Set the width you want in px, the calc + var accommodates for the padding added by both sides of u-block
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+}
+
+// Apply sidebar sizes above break point for main + nav + sidebar view
+@include media('>1112px') {
+	.l-body--aside-main-aside .body__sidebar {
+		border-left: 1px solid $grey;
+		flex-basis: calc(
+			280px + #{$block-padding-m} * 2
+		); // Set the width you want in px, the calc + var accommodates for the padding added by both sides of u-block
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+
+	.l-body--aside-main-aside .body__sidebar-l {
+		flex-basis: calc(
+			350px + #{$block-padding-m} * 2
+		); // Set the width you want in px, the calc + var accommodates for the padding added by both sides of u-block
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+}

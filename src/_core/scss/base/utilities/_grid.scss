@@ -1,0 +1,76 @@
+// CSS Grid IE11 Fallback
+// ----------------------
+
+// TODO: look into @support grid
+@media screen and (-ms-high-contrast: active),
+	screen and (-ms-high-contrast: none) {
+	.u-grid {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: -#{$grid-gutter} !important;
+
+		& > * {
+			margin-bottom: $grid-gutter;
+
+			&:not(:last-child) {
+				margin-right: $grid-gutter;
+			}
+		}
+	}
+
+	.u-grid--2 > * {
+		width: calc(50% - #{$grid-gutter - 10});
+
+		&:nth-child(2n) {
+			margin-right: 0 !important;
+		}
+	}
+
+	.u-grid--3 > * {
+		width: calc(33.333333% - #{$grid-gutter - 6.5});
+
+		&:nth-child(3n) {
+			margin-right: 0 !important;
+		}
+	}
+
+	.u-grid--4 > * {
+		width: calc(25% - #{$grid-gutter - 5});
+
+		&:nth-child(4n) {
+			margin-right: 0 !important;
+		}
+	}
+}
+
+// CSS Grid
+// -----------------
+
+.u-grid {
+	display: grid;
+	grid-gap: $grid-gutter;
+}
+
+.u-grid--2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.u-grid--3 {
+	grid-template-columns: repeat(2, 1fr);
+
+	@include media('>s') {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.u-grid--4 {
+	grid-template-columns: repeat(2, 1fr);
+
+	@include media('>s') {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+.u-grid--s1 {
+	grid-template-columns: repeat(1, 1fr);
+}

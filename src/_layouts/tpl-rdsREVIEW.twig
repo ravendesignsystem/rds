@@ -1,0 +1,34 @@
+{% extends "base" %}
+{% block body %}
+<div class="l-body{% if (page.bodyLayout == 'a-m-a') or ( page.bodyLayout == 'a-m-aside--top') or (page.bodyLayout == 'a-m-a--top') or ( page.bodyLayout == 'a-m-aside') %} l-body--aside-main-aside{% elseif 'a-m' in page.bodyLayout %} l-body--aside-main{% elseif (page.bodyLayout == 'm-a') or (page.bodyLayout == 'm-aside') or (page.bodyLayout == 'm-a--top') or (page.bodyLayout == 'm-aside--top') %} l-body--main-aside{% endif %} u-block-row">
+    {% if (page.bodyLayout != 'm-a') and (page.bodyLayout != 'm-aside') and (page.bodyLayout != 'm-a--top') and (page.bodyLayout != 'm-aside--top') %}
+    <aside class="body__nav">
+        <nav class="has-b-nav-menu u-block u-sticky">
+            {% include "nav/menu/data/menu.twig" %}
+        </nav>
+    </aside>
+    {% endif %}
+{% block main %}
+    <main id="content" class="body__container{% if 'top' in page.bodyLayout %} body__container--reverse{% endif %}">
+        <div class="body__content">
+            {% if page.content == true %}
+            <div class="b-content u-block">
+            {% endif %}
+            {% block content %}
+            {% endblock %}
+            {% if page.content == true %}</div>{% endif %}
+        </div>
+        {% if ('-a' in page.bodyLayout) or ('-aside' in page.bodyLayout) %}
+        <aside class="body__sidebar{% if 'aside' in page.bodyLayout  %} body__sidebar-l{% endif %}">
+            <div class="u-block">
+                <p>This is the right hand aside {{ page.bodyLayout }}</p>
+            </div>
+        </aside>
+        {% endif %}
+    </main>
+{% endblock %}
+</div> {# END layout block #}
+{% endblock %}
+{% block menu %}
+   {% include "nav/menu/data/menu.twig" %}
+{% endblock %}

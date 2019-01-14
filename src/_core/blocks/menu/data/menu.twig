@@ -1,0 +1,74 @@
+<div class="u-block u-block-full">
+   <section class="b-nav-menu">
+      <h2 class="menu__title">Site Navigation</h2>
+      {% from "blocks/menu/menu-macro.twig" import menuMacro %}
+      {{ menuMacro (
+         [
+            {
+               title: "Level 1-1",
+               url: "#",
+               submenu: [
+               {
+                  title: "Level 2-1",
+                  url: "#",
+                  submenu: [
+                  {
+                     title: "Third Level",
+                     url: "#"
+                  }
+               ]
+               },
+               {
+                  title: "Second Level",
+                  url: "#"
+               },
+               {
+                  title: "Second Level",
+                  url: "#",
+                  submenu: [
+                  {
+                     title: "Third Level",
+                     url: "#"
+                  }
+               ]
+               },
+            ]
+            },
+            {
+               title: "First Level",
+               url: "#",
+               submenu: [
+               {
+                  title: "Second Level",
+                  url: "#",
+                  submenu: [
+                  {
+                     title: "Third Level",
+                     url: "#"
+                  }
+               ]
+               },
+               {
+                  title: "Second Level",
+                  url: "#"
+               },
+               {
+                  title: "Second Level",
+                  url: "#",
+                  submenu: [
+                  {
+                     title: "Third Level",
+                     url: "#"
+                  }
+               ]
+               },
+            ]
+            },
+            {
+               title: "First Level",
+               url: "#"
+            }
+         ]
+      )}}
+   </section>
+</div>

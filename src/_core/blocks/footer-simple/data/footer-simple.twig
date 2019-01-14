@@ -1,0 +1,41 @@
+{% from "blocks/footer-simple/footer-simple.twig" import simple %}
+{{ simple (
+    {
+    },
+    {
+        address:
+        {
+            name: "Department Name",
+            building: "Dunton Tower",
+            number: "666",
+            buildingOff: "Chateau Laurier",
+            street: "222 Fairway",
+            city: "Toronto",
+            province: "ON",
+            country: "Canada"
+        },
+        contact:
+        {
+            email: "web@carleton.ca",
+            phone: "613-520-2600",
+            fax: "613-520-2600",
+            contactPage: "https://carleton.ca/contact/"
+        },
+        hours:
+        {
+            dayFrom: "Monday",
+            dayUntil: "Friday",
+            timeFrom: "8:30 am",
+            timeUntil: "4:30 pm"
+        },
+        social:
+        {
+            facebook: "https://www.facebook.com/carletonuniversity/",
+            instagram: "https://www.instagram.com/carleton_u/",
+            linkedin: "https://www.linkedin.com/company/sprott/?originalSubdomain=ca",
+            pinterest:"https://www.pinterest.ca/carletonu/",
+            twitter: "https://twitter.com/@Carleton_U",
+            youtube: "https://www.youtube.com/user/carletonuvideos"
+        },
+    }
+) }}

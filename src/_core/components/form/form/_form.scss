@@ -1,0 +1,94 @@
+.c-form {
+	h2,
+	h3 {
+		margin-bottom: 20px;
+		border-bottom: 1px solid #f3f3f3;
+		padding-bottom: 0.5em;
+		max-width: 730px;
+	}
+
+	input:not([type='button']):not([type='reset']):not([type='checkbox']):not([type='submit']):not([type='image']):not([type='radio']),
+	textarea {
+		padding: 14px;
+		vertical-align: middle;
+		width: 100%;
+		max-width: 728px;
+		border: 1px solid #cdcdcd;
+		font-size: 16px;
+		margin: 10px 0 25px 0;
+		display: block;
+		background-color: #ffffff;
+	}
+
+	input[type='radio']:not(:last-of-type),
+	.form__label input[type='radio'],
+	.form__label input[type='checkbox'] {
+		margin-bottom: 15px;
+	}
+
+	.form__label:last-of-type input[type='radio'] {
+		margin-bottom: 5px;
+	}
+
+	input[type='radio'],
+	input[type='checkbox'] {
+		margin-right: 8px;
+		vertical-align: baseline;
+	}
+
+	section {
+		margin: 10px 0 25px 0;
+	}
+
+	select {
+		display: block;
+		margin: 10px 0 25px 0;
+		min-width: 100px;
+	}
+
+	label,
+	legend {
+		font-weight: 600;
+		// font-size: 14px;
+		display: block;
+	}
+
+	fieldset {
+		padding: 14px;
+		margin-bottom: 25px;
+		border: 1px solid #dfdfdf;
+		max-width: 728px;
+	}
+
+	fieldset ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	abbr {
+		text-decoration: none;
+		color: #bf112b;
+	}
+
+	.form__note {
+		min-height: 17px;
+		margin: -20px 0 25px 0;
+		font-size: 12px;
+		color: #767676;
+	}
+
+	.form__label {
+		font-weight: 400 !important;
+	}
+
+	a {
+		color: $red;
+		font-size: 12px;
+		float: right;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+}

@@ -1,0 +1,8 @@
+---
+data:
+- breadcrumbs:
+  - breadcrumb_grandparent: Blocks
+  - breadcrumb_parent: Banners
+  - title: Banner with Breadcrumbs
+
+*NOTE: creating breadcrumbs really depend on your app. These static docs simply look for a relative ../../ and ../ thus all we need to give it are names.

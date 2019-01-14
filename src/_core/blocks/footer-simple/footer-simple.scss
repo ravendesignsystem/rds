@@ -1,0 +1,39 @@
+.b-footer-simple {
+	text-align: center;
+	color: $grey-luke;
+
+	& span {
+		line-height: 1.9;
+	}
+
+	& a,
+	& strong {
+		color: white;
+	}
+
+	& a:hover {
+		color: $red;
+	}
+}
+
+.simple__social {
+	list-style: none;
+	margin-left: 0;
+
+	li {
+		display: inline-block;
+
+		&:not(:last-child) {
+			margin-right: 8px;
+		}
+	}
+
+	.u-icon {
+		padding: 8px;
+
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}

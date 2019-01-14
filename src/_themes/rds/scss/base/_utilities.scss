@@ -1,0 +1,35 @@
+// for quickly testing components on small screens
+
+// icon colours for component status
+.u-icon--green svg path {
+	fill: #228b22;
+}
+
+.u-icon--orange svg path {
+	fill: #ff4500;
+}
+
+.u-iconography {
+	background-color: $grey;
+	padding: 50px;
+	margin-bottom: 8px;
+}
+
+.u-wrap--mobile {
+	max-width: 320px;
+	margin-left: auto;
+	margin-right: auto;
+
+	& .b-tabs {
+		display: none;
+	}
+
+	// until element queries these are just small size style changes for testing some blocks
+	& .b-list--news .b-list__figure {
+		display: none;
+	}
+
+	& .u-hide-s {
+		display: none;
+	}
+}

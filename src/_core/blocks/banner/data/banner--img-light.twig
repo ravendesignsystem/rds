@@ -1,0 +1,22 @@
+{% if docs %}
+    <div class="u-block u-block--white u-block--s">
+        <div class="b-content">
+            <h2>Hero image lightened and aligned to the top</h2>
+            <p>For accesibility reasons, RDS banners provide text contrast by adding a semi-transparent overlay to the background image. Control the opacity of the overlay to conform with your image's lightness/darkness. In addition, you can position the image to either the top or the bottom of the banner.</p>
+        </div>
+    </div>
+{% endif %}
+{% from "blocks/banner/banner-macro.twig" import banner %}
+{{ banner (
+    {
+    },
+    {
+        img: {
+            img_url: "https://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore.jpg",
+            img_url_s: "https://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore-s.jpg",
+            img_opacity: "light",
+            img_position: "top"
+        },
+        title: "Hero Image lightened and aligned to the top"
+    }
+) }}

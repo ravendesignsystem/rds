@@ -1,0 +1,270 @@
+// Masthead block - v3.0.0
+// =======================
+
+// masthead height
+$b-height: 75px;
+
+.b-header-masthead {
+	display: flex;
+	justify-content: space-between;
+	background-color: white;
+	border-top: 2px solid $red;
+	height: $b-height;
+
+	& > div {
+		display: flex;
+	}
+
+	& h2 {
+		margin: 0;
+		float: left;
+
+		& a {
+			font-size: 17px;
+			padding-left: 7px;
+
+			@include media('>=s') {
+				padding-left: 12px;
+				font-size: 19px;
+			}
+		}
+	}
+
+	& ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		display: table;
+	}
+
+	& li {
+		&:hover > a {
+			color: $red;
+		}
+	}
+
+	& a,
+	& button {
+		display: flex;
+		height: 73px;
+		padding-left: 17px;
+		padding-right: 17px;
+		font-size: 14px;
+		white-space: nowrap;
+		align-items: center;
+
+		&:hover {
+			color: $red;
+		}
+	}
+
+	& .c-but-hamburger {
+		display: flex;
+	}
+}
+
+// used in conjunction with js to stick the masthead on scroll up
+.b-header-masthead--sticky-scroll {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	border-bottom: 1px solid $grey;
+
+	& ~ .b-header-banner,
+	& ~ .tns-outer {
+		margin-top: 78px !important; // avoid the jumping from the loss of masthead height when made position fixed.
+	}
+}
+
+.b-header-masthead--shadow {
+	box-shadow: 0 10px 11px -7px $grey-yoda;
+}
+
+div.b-header-masthead ul.submenu__menu {
+	top: 60px !important;
+}
+
+.masthead__site {
+	white-space: nowrap;
+	line-height: $b-height;
+	border-bottom: none;
+	cursor: pointer;
+
+	& svg {
+		min-width: 40px;
+		width: 40px;
+		height: 40px;
+		vertical-align: middle;
+		margin-right: 5px;
+	}
+
+	& + .submenu__menu {
+		left: 20px !important;
+	}
+
+	& a {
+		cursor: pointer;
+
+		@include media('<=s') {
+			max-width: 300px;
+			//min-width: 200px;
+			white-space: normal;
+			line-height: 1;
+		}
+	}
+
+	& a:after {
+		top: 43% !important;
+	}
+}
+
+.masthead__primarynav {
+	overflow: hidden;
+
+	& h2 {
+		display: none;
+
+		@include media('>=s') {
+			display: block;
+		}
+	}
+
+	& ul {
+		position: relative;
+		display: none;
+
+		@include media('>=s') {
+			display: table;
+			border-left: 1px solid $grey-yoda;
+		}
+	}
+
+	& li {
+		display: inline-flex;
+	}
+
+	& a {
+		display: flex;
+		align-items: center;
+	}
+
+	& .submenu__menu {
+		position: fixed !important;
+		margin-left: 5px !important;
+	}
+
+	& span svg {
+		margin-right: 26px;
+	}
+}
+
+nav + .masthead__primarynav > .masthead__site {
+	padding-left: 10px;
+
+	&::before {
+		content: '/';
+		color: $grey-kenobi;
+		margin-left: -8px;
+		position: fixed;
+		font-size: 18px;
+	}
+
+	& a {
+		padding-left: 10px;
+	}
+}
+
+.masthead__more {
+	position: absolute;
+	right: 0;
+	bottom: 73px;
+	box-shadow: -10px 0 30px 20px white;
+	background-color: white;
+}
+
+.masthead__controls {
+	& ul {
+		display: flex;
+	}
+
+	& li:not(.masthead__search):not(.masthead__hamburger) {
+		display: none;
+
+		@include media('>=s') {
+			display: list-item;
+		}
+	}
+
+	& li:hover > a {
+		color: $black;
+		background-color: $grey-yoda;
+
+		&:after {
+			color: black !important;
+		}
+		& svg {
+			fill: $black;
+		}
+	}
+
+	& a,
+	& button {
+		border-left: 1px solid $grey-yoda;
+
+		&:hover {
+			background-color: $grey-yoda;
+			color: $black;
+		}
+	}
+
+	& svg {
+		width: 20px;
+		height: 20px;
+	}
+
+	.c-menu-submenu a {
+		padding-right: 25px;
+	}
+
+	.c-menu-submenu a:after {
+		margin-right: 8px;
+	}
+}
+
+a.masthead__cta {
+	background-color: $red;
+	color: white;
+	display: none;
+
+	@include media('>500px') {
+		display: flex;
+	}
+
+	&:after {
+		color: white !important;
+		right: 15px !important;
+	}
+
+	& svg {
+		fill: white;
+	}
+}
+
+li.masthead__signup,
+li.masthead__login {
+	display: none;
+
+	@include media('>600px') {
+		display: table;
+	}
+}
+
+.masthead__hamburger {
+	display: list-item;
+
+	@include media('>=s') {
+		display: none;
+	}
+}

@@ -1,0 +1,74 @@
+// Main Accordion Styles
+// ----------------------------------------------
+
+.c-accordion {
+	position: relative;
+	margin-bottom: 1px;
+	width: 100%;
+	//color: $black;
+	overflow: hidden;
+}
+
+.c-accordion input {
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+}
+
+.c-accordion label {
+	position: relative;
+	display: block;
+	padding-left: 20px;
+	background-color: $grey;
+	font-weight: 400;
+	line-height: 4;
+	cursor: pointer;
+}
+
+.c-accordion__content {
+	max-height: 0;
+	overflow: hidden;
+	background-color: white;
+	transition: max-height 0.75s;
+}
+
+.c-accordion__spacing {
+	padding: 25px 30px;
+}
+
+// Add Height when Content is Revealed
+// ----------------------------------------------
+
+.c-accordion input:checked ~ .c-accordion__content {
+	max-height: 1000px;
+	transition: max-height 1.5s;
+}
+
+// Accordion Icon Styles
+// ----------------------------------------------
+
+.c-accordion label::after {
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: block;
+	width: 3em;
+	height: 4em;
+	line-height: 4;
+	text-align: center;
+	transition: all 0.35s;
+}
+
+// Checkboxes: Multiple Open
+// ----------------------------------------------
+
+.c-accordion input[type="checkbox"] + label::after {
+	content: "+";
+}
+
+// Checkboxes: Single Open
+// ----------------------------------------------
+
+.c-accordion input[type="checkbox"]:checked + label::after {
+	transform: rotate(135deg);
+}

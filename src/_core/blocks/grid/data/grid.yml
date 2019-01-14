@@ -1,0 +1,7 @@
+---
+settings:
+- columns: 3
+data:
+- inc: cards/card/data/card--news.twig,
+- inc: cards/card/data/card--news.twig,
+- inc: cards/card/data/card--news.twig

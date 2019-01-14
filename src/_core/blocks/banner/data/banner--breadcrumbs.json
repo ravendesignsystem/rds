@@ -1,0 +1,18 @@
+{
+  "settings": [
+      {
+        "breadcrumbs": true
+      }
+    ],
+  "data": [
+    {
+      "breadcrumb_grandparent": "Blocks"
+    },
+    {
+      "breadcrumb_parent": "Banners"
+    },
+    {
+      "title": "Banner with Breadcrumbs"
+    }
+  ]
+}

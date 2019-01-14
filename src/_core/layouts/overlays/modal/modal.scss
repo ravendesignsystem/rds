@@ -1,0 +1,18 @@
+.l-overlay-modal {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 1000;
+	background: white;
+	overflow-y: auto;
+	top: 75px; //account for masthead
+	left: 0;
+}
+
+.modal__search {
+	margin-bottom: -20px;
+}
+
+.modal__login {
+	margin-top: 40px;
+}

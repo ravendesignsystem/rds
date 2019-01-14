@@ -1,0 +1,75 @@
+.c-buttons-button {
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	border: 1px solid transparent;
+	padding: 0.85rem 1.35rem;
+	font-size: 12px;
+	line-height: 1.5;
+	transition: background 200ms, box-shadow 200ms;
+	background-color: $red;
+	color: white !important;
+	text-transform: uppercase;
+	border-radius: 0.2rem;
+	box-shadow: 0 4px 9px rgba(black, 0.15);
+	display: inline-flex;
+	text-decoration: none !important;
+	margin: 0 5px 0 0;
+
+	&:hover {
+		text-decoration: none;
+		cursor: pointer;
+		background-color: $black;
+	}
+
+	& svg {
+		width: 15px;
+		height: 15px;
+		margin-right: 7px;
+		top: 0;
+	}
+
+	& path {
+		fill: white;
+	}
+}
+
+.c-buttons-button--ghost {
+	background-color: white;
+	color: $red !important;
+	border: 1px solid $red;
+	box-shadow: 0 4px 9px rgba(0, 0, 0, 0.05);
+
+	&:hover, &:hover path {
+		background-color: $red;
+		color: white !important;
+		fill: white;
+	}
+
+	& path {
+		fill: $red;
+	}
+}
+
+.c-buttons-button--grey {
+	background-color: $grey;
+	color: $black !important;
+	border: 1px solid $grey-yoda;
+	box-shadow: 0 4px 9px rgba(black, 0.05);
+
+	&:hover, &:hover path {
+		background-color: $black;
+		color: white !important;
+		fill: white;
+	}
+
+	& path {
+		fill: $red;
+	}
+}
+
+.c-buttons-button--center {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}

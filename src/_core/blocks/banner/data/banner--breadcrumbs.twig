@@ -1,0 +1,20 @@
+{% if docs %}
+    <div class="u-block u-block--white u-block--s">
+        <div class="b-content">
+            <h2>Banner with breadcrumbs</h2>
+            <p>For websites that have a lot of pages, enhance the way users find their way around by adding breadcrumb navigation.</p>
+        </div>
+    </div>
+{% endif %}
+{% from "blocks/banner/banner-macro.twig" import banner %}
+{{ banner (
+    {
+    },
+    {
+        breadcrumbs: {
+            grandparent: "Blocks",
+            parent: "Banners"
+        },
+        title: "Banner with Breadcrumbs"
+    }
+) }}

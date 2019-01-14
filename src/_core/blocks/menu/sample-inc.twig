@@ -1,0 +1,25 @@
+{% from "nav/macro.twig" import menuMacro %}
+{{ menuMacro (
+[
+    {
+        title: "First Level",
+        url: "#",
+        submenu: [
+            {
+                title: "Second Level",
+                url: "#",
+                submenu: [
+                    {
+                        title: "Third Level",
+                        url: "#"
+                    }
+               ]
+            }
+        ]
+    },
+    {
+        title: "First Level",
+        url: "#"
+    }
+]
+)}}

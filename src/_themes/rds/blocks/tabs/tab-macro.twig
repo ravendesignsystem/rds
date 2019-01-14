@@ -1,0 +1,20 @@
+{% macro tab(tabs) %}
+<div class="b-tabs" role="tablist">
+    {% for item in tabs %}
+    <div class="b-tabs__tab" role="tab">
+        <a class="b-tabs__button" href="#">{{ item.name }}</a>
+        <div class="b-tabs__panel" role="tabpanel">
+        {% if 'HTML' in item.name %}
+            <pre>
+                <code class="html">{% filter escape -%}{% include item.file ignore missing %}{% endfilter %}
+                </code>
+            </pre>
+        {% else %}
+            {% include item.file ignore missing %}
+        {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endmacro %}
+

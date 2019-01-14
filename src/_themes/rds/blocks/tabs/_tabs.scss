@@ -1,0 +1,152 @@
+.b-tabs {
+	$base-border-color: $grey-kenobi !default;
+	$base-border-radius: 3px !default;
+	$base-background-color: $grey !default;
+	$action-color: $red !default;
+	$medium-screen: 40em !default;
+	$gutter: 10px !default;
+	$tab-border: 1px solid $base-border-color;
+	$tab-active-background: white;
+	$tab-mode: $medium-screen;
+	padding: 6px 0 0 0;
+	background-color: $base-background-color;
+	border: 1px solid $base-border-color;
+	border-radius: $base-border-radius;
+
+	/* Clearfix */
+	&::before,
+	&::after {
+		display: table;
+		content: '';
+		clear: both;
+	}
+
+	@include media (">=s") {
+		border: $tab-border;
+		border-radius: $base-border-radius;
+	}
+
+	.b-tabs__tab {
+		padding: 0 6px;
+		list-style: none;
+
+		@include media (">=s") {
+			display: inline;
+		}
+
+		//&:first-child .b-tabs__button {
+		//	border-top-left-radius: $base-border-radius;
+		//	border-top-right-radius: $base-border-radius;
+		//	@include media (">=s") {
+		//		border-top: 0;
+		//	}
+		//
+		//}
+		//&:last-child .b-tabs__button {
+		//	@media(max-width: $tab-mode) {
+		//		border-bottom-left-radius: $base-border-radius;
+		//		border-bottom-right-radius: $base-border-radius;
+		//	}
+		//}
+
+		&.active {
+			.b-tabs__button {
+				background-color: $tab-active-background;
+
+				@include media (">=s") {
+					background-color: $tab-active-background;
+					border: $tab-border;
+					border-bottom-color: $tab-active-background;
+					margin-bottom: -1px;
+				}
+			}
+			.b-tabs__panel {
+				display: block;
+			}
+		}
+	}
+
+	.b-tabs__button {
+		border-top: $tab-border;
+		color: $grey-emperor;
+		display: block;
+		font-weight: 700;
+		font-size: 13px;
+		padding: 5px 15px;
+		text-decoration: none;
+		line-height: 1.5;
+
+		@include media (">=s") {
+			border-top-left-radius: $base-border-radius;
+			border-top-right-radius: $base-border-radius;
+			border-top: 0;
+			display: inline-block;
+		}
+
+		&:hover {
+			color: $action-color;
+		}
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.b-tabs__panel {
+		background: white;
+		display: none;
+		padding: 20px;
+		width: 100%;
+		@include media (">=s") {
+			border-top: 1px solid $base-border-color;
+			float: left;
+		}
+
+		& dl {
+			display: flex;
+			flex-flow: row;
+			flex-wrap: wrap;
+			overflow: visible;
+			font-size: 13px;
+			margin-bottom: 12px;
+		}
+
+		dl dt {
+			flex: 0 0 25%;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			border-bottom: 1px solid $grey;
+			line-height: 2.5;
+			font-weight: 400;
+		}
+
+		dl dd {
+			margin-left: auto;
+			text-align: left;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			flex: 0 0 75%;
+			border-bottom: 1px solid $grey;
+			line-height: 2.5;
+			font-weight: 300;
+		}
+
+		dl dd a {
+			color: $red;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		& h2 {
+			font-size: 11px;
+			text-transform: uppercase;
+			color: $grey-kenobi;
+			margin-bottom: 2px;
+			border-bottom: 1px solid $grey;
+		}
+	}
+	& pre {
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,73 @@
+// Search Component
+// ====================================
+
+.c-form-search {
+	padding: 5px;
+	background-color: white;
+	border-radius: 50px;
+	vertical-align: middle;
+
+	@include media('>=s') {
+		padding: 15px;
+	}
+
+	label {
+		display: none;
+	}
+}
+
+.search__input {
+	width: calc(100% - 57px);
+	appearance: none; // prevents browser from hijacking border, font sizes, and more
+	-webkit-appearance: none;
+	border: none;
+	font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', 'Helvetica Neue',
+		'Helvetica', 'Arial', sans-serif;
+	font-size: 16px; // Needs to be at least 16px to avoid mobile Safari zoom
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 0 2px 0 10px;
+
+	@include media('>=s') {
+		font-size: 18px;
+	}
+
+	&::placeholder {
+		color: $grey-vader;
+		opacity: 1;
+		transition: opacity 0.35s ease-in-out;
+	}
+
+	&:focus::placeholder {
+		opacity: 0.3;
+		transition: opacity 0.35s ease-in-out;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.search__button {
+	background: none;
+	border: none;
+	fill: $grey-vader;
+	padding-right: 15px;
+	display: inline;
+	line-height: 20px;
+
+	span {
+		display: none;
+	}
+
+	@include media('<=s') {
+		svg {
+			width: 18px;
+			height: 18px;
+		}
+	}
+
+	@include media('>=s') {
+		line-height: 25px;
+	}
+}

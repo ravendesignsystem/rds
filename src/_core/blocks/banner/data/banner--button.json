@@ -1,0 +1,29 @@
+{
+  "settings": [
+    {
+      "breadcrumbs": true
+    },
+    {
+      "buttons": true
+    }
+  ],
+  "data": [
+    {
+      "breadcrumb_grandparent": "Blocks"
+    },
+    {
+      "breadcrumb_parent": "Banners"
+    },
+    {
+      "button": [
+        {
+          "title": "Learn about Calls to Action",
+          "url": "https://writtent.com/blog/15-call-action-samples-rocking-blog-posts-convert/"
+        }
+      ]
+    },
+    {
+      "title": "Banner with Call to Action Button"
+    }
+  ]
+}

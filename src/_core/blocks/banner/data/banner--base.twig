@@ -1,0 +1,20 @@
+{% if docs %}
+    <div class="u-block u-block--white u-block--s">
+        <div class="b-content">
+            <h2>Base banner</h2>
+            <p>The banner block provides a variety of functions relating to being the first visual a visitor encounters on each page. At the minimum, the base banner provides the primary page heading. To take advantage of the its prime position, the banner block affords many options including: breadcrumb navigational aids, call to action buttons and hero images.
+            </p>
+        </div>
+    </div>
+{% endif %}
+{% from "blocks/banner/banner-macro.twig" import banner %}
+{{ banner (
+    {
+    },
+    {
+        title: "Base Banner"
+    }
+) }}
+
+
+

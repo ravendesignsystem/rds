@@ -1,0 +1,44 @@
+{% if docs %}
+    <div class="u-block u-block--white u-block--s">
+        <div class="b-content">
+            <h2>Listing block - News variant</h2>
+            <p>Display a list of articles.</p>
+        </div>
+    </div>
+{% endif %}
+{% from "listing/listing.twig" import listing %}
+{{ listing (
+    {
+        color: "white"
+    },
+    [
+        {
+            date: "2018-03-14",
+            title: "Ravens seeking Recruiting Coordinator ahead of 2018 season",
+            subtitle: "Carleton Ravens football is looking to expand its list of coaches by 1 position.  Having started a program from scratch in 2013, the Ravens have continued to develop and improve over the past four years.",
+            url: "https://goo.gl/LnS148"
+        },
+        {
+            date: "2018-03-11",
+            title: "Ravens complete Cinderella story to stand alone as U SPORTS champions",
+            subtitle: "A storybook season came to a close on Sunday night in front of an energetic crowd, many of whom were Ravens fans who had made the trip from Ottawa to support Carleton.",
+            url: "https://goo.gl/Bt7RPY"
+        },
+        {
+            date: "2018-03-14",
+            title: "Ravens seeking Recruiting Coordinator ahead of 2018 season",
+            subtitle: "Carleton Ravens football is looking to expand its list of coaches by 1 position.  Having started a program from scratch in 2013, the Ravens have continued to develop and improve over the past four years.",
+            url: "https://goo.gl/LnS148"
+        },
+        {
+            date: "2018-03-11",
+            title: "Ravens complete Cinderella story to stand alone as U SPORTS champions",
+            subtitle: "A storybook season came to a close on Sunday night in front of an energetic crowd, many of whom were Ravens fans who had made the trip from Ottawa to support Carleton.",
+            url: "https://goo.gl/Bt7RPY"
+        }
+    ],
+    {
+        level: "h3",
+        subheading: ""
+    }
+) }}

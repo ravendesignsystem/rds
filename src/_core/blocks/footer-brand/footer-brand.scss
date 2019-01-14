@@ -1,0 +1,39 @@
+.u-block--black + .u-block--black > .b-footer-brand {
+	padding-top: 40px;
+}
+
+.b-footer-brand {
+	max-width: 280px;
+
+	@include media('>s') {
+		max-width: 330px;
+	}
+}
+
+.brand__logo {
+	svg {
+		width: 100%;
+	}
+}
+
+.brand__legal {
+	display: flex;
+	justify-content: space-between;
+	margin: 20px auto 0 auto;
+	list-style: none;
+
+	& li {
+		font-size: 12px;
+
+		a {
+			color: $grey-kenobi;
+			border-bottom: 1px solid $grey-vader;
+			padding-bottom: 4px;
+
+			&:hover {
+				color: white;
+				border-bottom: 1px solid white;
+			}
+		}
+	}
+}

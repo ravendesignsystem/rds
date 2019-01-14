@@ -1,0 +1,9 @@
+---
+settings:
+- variant: img
+data:
+- img_url: http://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore.jpg
+- img_url_s: http://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore-s.jpg
+- img_opacity: dark
+- img_position: bottom
+- title: Hero Image Darkened and Aligned to the Bottom

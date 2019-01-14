@@ -1,0 +1,37 @@
+{% macro menuMacro(menu, level) %}
+    {# Set our default level as an integer. #}
+    {% set default_level = 1 %}
+    <ul class="{% if level|length %}menu__child menu__child--{{ level|default(default_level) }}{% else %}menu__list{% endif %}" role="navigation">
+        {% for menu_item in menu %}
+            {% set itemKey = random(200) %}
+            {# Check if this is the active item. #}
+            {% set active = (menu_item.active) ? ' is-active' : '' %}
+
+            {# Check if this item is in the active trail. #}
+            {% set active = active ~ ((menu_item.active_trail) ? ' is-active-trail' : '') %}
+
+            <li class="menu__list-item">
+                {% if menu_item.submenu %}
+                <input class="menu__checkbox" id="menu-{{ level }}-{{ default_item +1 }}-{{ itemKey }}" type="checkbox" hidden/>
+                    <label for="menu-{{ level }}-{{ default_item +1 }}-{{ itemKey }}">
+                        <a class="menu__url {{ active }}" href="{{ menu_item.url }}">{{ menu_item.title }}</a>
+                        {#<i class="c-icon-plus u-icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>#}
+                        <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
+                    </label>
+                {% else %}
+                    <a href="{{ menu_item.url }}" class="menu__url">{{ menu_item.title }}</a>
+                {% endif %}
+                {% if menu_item.submenu %}
+                    {# Since this menu item has a submenu, recall function and increment counter. #}
+                    {{ _self.menuMacro(menu_item.submenu, level|default(default_level) + 1) }}
+                {% endif %}
+            </li>
+        {% endfor %}
+        {% if level is null  %}
+            <li class="menu__list-item">
+                {#<a class="menu__expand" href="#" ><span class="u-icon--xxs u-icon--left u-icon--plus">{% include "icons/plus.svg" ignore missing %}<i class="menu__expand-text">Expand all</i></span></a>#}
+                <a href="#" ><span class="menu__expand-text menu__expand-text--not-selected">Expand all</span></a>
+            </li>
+        {% endif %}
+    </ul>
+{%- endmacro %}

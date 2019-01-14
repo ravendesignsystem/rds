@@ -1,0 +1,108 @@
+// fw text img block
+// -----------------
+
+.fw-txtimg__item {
+	position: relative;
+
+	@include media('>=s', '<=l') {
+		text-align: center;
+	}
+
+	& + & {
+		margin-top: 30px; // Give more white space when back to back
+
+		@include media('>=m') {
+			margin-top: 60px;
+		}
+	}
+
+	&:after {
+		// make sure to clear floats
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+.fw-txtimg__heading {
+	line-height: 1.25;
+	text-align: left;
+	border-bottom: none;
+
+	@include media('>=s', '<=m') {
+		text-align: center;
+	}
+
+	@include media('>=m') {
+		max-width: 420px;
+	}
+}
+
+.fw-txtimg__img {
+	margin: 0 auto 20px;
+
+	@include media('>=s', '<=l') {
+		max-height: 320px;
+	}
+	@include media('>=m') {
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@include media('>=m') {
+		right: 30px;
+		position: absolute;
+		top: 0;
+		max-width: 500px;
+		max-height: 100%;
+	}
+}
+
+.fw-txtimg__desc {
+	margin: 0 auto 20px;
+	max-width: 768px;
+	text-align: left;
+
+	@include media('>=s') {
+		text-align: center;
+	}
+
+	@include media('>=m') {
+		max-width: 420px;
+		font-size: 18px;
+		margin-left: 0;
+		text-align: left;
+	}
+
+	& .c-buttons-button {
+		display: block;
+		margin-top: 20px;
+		white-space: normal;
+
+		@include media('>=s', '<=m') {
+			max-width: 420px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+@include media('>=m') {
+	.fw-txtimg__item--txtimg {
+		min-height: 350px;
+
+		& .fw-txtimg__img {
+			left: 0;
+			position: absolute;
+			top: 0;
+			max-width: 450px;
+			margin-left: 0;
+			min-width: 450px;
+		}
+
+		& .fw-txtimg__wrapper {
+			float: right;
+		}
+	}
+}

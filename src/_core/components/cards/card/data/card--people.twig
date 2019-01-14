@@ -1,0 +1,25 @@
+{% if docs %}
+    <div class="u-block u-block--s u-block--white">
+        <div class="b-content">
+            <h2>People card variant</h2>
+            <p>To list groups of people, use the people card variant </p>
+        </div>
+    </div>
+<div class="u-block u-block--s u-block--grey">
+    <div class="b-main-grid u-grid u-grid--3">
+{% endif %}
+{% from "components/cards/card/card-macro.twig" import card %}
+{{ card (
+    {
+    },
+    {
+        img: "http://fillmurray.com/500/500",
+        text: "Actor and Writer",
+        name: "Bill Murray",
+        url: "https://en.wikipedia.org/wiki/Bill_Murray"
+    }
+) }}
+{% if docs %}
+    </div>
+</div>
+{% endif %}

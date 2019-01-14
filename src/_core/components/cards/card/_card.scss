@@ -1,0 +1,148 @@
+/*
+ * Base Card Styles
+ * =======================================
+ */
+
+.c-cards-card {
+	position: relative;
+	height: 100%; // helps with equal vert height in listings
+	box-shadow: 0 1px 2px rgba($black, 0.2);
+	background-color: white;
+	max-width: 768px;
+
+	&:hover {
+		box-shadow: 0 5px 8px 2px rgba($grey-emperor, 0.1);
+		overflow: visible;
+	}
+
+	&:hover .card__title {
+		color: $red;
+		text-decoration: none;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		width: 25px;
+		height: 1px;
+		left: 15px;
+		bottom: 15px;
+		margin-top: 20px;
+		background: $red;
+
+		@include media('>s') {
+			left: 25px;
+		}
+	}
+
+	// to use if we ever use a card without an image
+	&--no-img {
+		max-width: 384px;
+	}
+}
+
+.card__url {
+	height: 100%;
+	display: block;
+	color: $black !important;
+
+	&:hover {
+		text-decoration: none !important;
+	}
+}
+
+.card__img {
+	width: 100%;
+}
+
+/*
+ * Card Content Elements
+ * =======================================
+ */
+
+.card__body {
+	min-height: 130px;
+	padding: 15px 15px 40px 15px;
+
+	@include media('>s') {
+		padding: 25px 25px 50px;
+	}
+}
+
+.card__title {
+	font-size: 16px;
+	margin: 0 0 5px;
+	line-height: 1.25;
+	border-bottom: 0;
+
+	@include media('>s') {
+		font-size: 17px;
+	}
+}
+
+.card__date, .card__category {
+	display: none;
+
+	@include media(">s") {
+		display: block;
+		margin-bottom: 6px;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 1.25;
+		color: $grey-vader;
+	}
+}
+
+.card__text {
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 1.4;
+
+	@include media('>s') {
+		font-size: 15px;
+	}
+}
+
+.card__text--action {
+	color: $red;
+}
+
+/*
+ * Card Icon Styles
+ * =======================================
+ */
+
+.card__icon {
+	background-size: 60px;
+}
+
+@include media('<=s') {
+	.u-grid--s2 .card__icon {
+		background-size: 45px;
+	}
+}
+
+/*
+ * People Card Styles
+ * ==================
+ */
+
+.c-cards-card--people {
+	text-align: center;
+
+	&:after {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.c-cards-card--people .card__figure {
+	padding-top: 20px;
+}
+
+.c-cards-card--people .card__img {
+	border-radius: 50%;
+	border: 5px solid rgba($grey-yoda, 0.75);
+	margin: 0 auto;
+	max-width: 55%;
+}

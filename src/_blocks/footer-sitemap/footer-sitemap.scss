@@ -1,0 +1,155 @@
+.sitemap__links {
+	display: none;
+}
+
+@include media('>m') {
+
+	.b-footer-sitemap {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.sitemap__links {
+		display: block;
+		padding-right: 25px;
+		padding-left: 25px;
+
+		@include media(">=s") {
+			padding-right: 30px;
+			padding-left: 30px;
+		}
+	}
+
+	.sitemap__columns {
+		display: flex;
+		padding-bottom: 40px;
+	}
+
+	.sitemap__column {
+		flex: 1 1 auto;
+
+		&:not(:last-child):not(.sitemap__column--no-border) {
+			padding-right: 20px;
+			margin-right: 35px;
+			border-right: 1px solid $grey-vader;
+		}
+	}
+
+	.sitemap__heading {
+		font-size: 13px;
+		font-weight: 700;
+		text-transform: uppercase;
+		border-bottom: 0;
+	}
+
+	.sitemap__list {
+		margin: 0;
+		list-style-type: none;
+		font-size: 11px;
+		line-height: 1.6;
+		color: $grey-luke;
+		text-transform: uppercase;
+
+		li:not(:last-child) {
+			padding-bottom: 8px;
+		}
+
+		a {
+			color: $grey-luke;
+
+			&:hover {
+				color: white;
+			}
+		}
+
+		svg {
+			margin-top: 25px;
+		}
+	}
+
+	.sitemap__list--two {
+		column-count: 2;
+	}
+
+	.sitemap__list--three {
+		column-count: 3;
+	}
+}
+
+// Footer Contact Block
+// ====================================
+
+.b-footer-cu-contact {
+	padding: 0 25px 40px;
+
+	@include media('>m') {
+		border-top: 1px solid $grey-vader;
+		padding: 40px 30px;
+	}
+}
+
+@include media('>m') {
+	.cu-contact__group {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.cu-contact__item {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 5px;
+	font-size: 14px;
+	line-height: 1.6;
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
+
+	@include media('>m') {
+		flex: 1 1 auto;
+		margin-bottom: 0;
+		text-align: left;
+
+		&:first-child {
+			justify-content: flex-start;
+		}
+
+		&:last-child {
+			justify-content: flex-end;
+		}
+	}
+
+	a {
+		color: $grey-luke;
+
+		&:hover {
+			color: white;
+		}
+	}
+}
+
+.cu-contact__item--social {
+	margin: 30px 0 0 0;
+	list-style: none;
+
+	@include media('>m') {
+		margin: 0;
+	}
+
+	li {
+		display: inline-block;
+
+		&:not(:last-child) {
+			margin-right: 8px;
+		}
+	}
+
+	.u-icon {
+		padding: 8px;
+
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}
