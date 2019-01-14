@@ -16,8 +16,8 @@
 		navSearch = document.querySelector('.masthead__search-btn'),
 		navLogin = document.querySelector('.masthead__login-btn'),
 		// for swapping menu from elsewhere into modal
-		navBody = document.querySelector('.has-b-nav-menu'),
-		navMenu = document.querySelector('.b-nav-menu');
+		navBody = document.querySelector('.has-b-menu'),
+		navMenu = document.querySelector('.b-menu');
 
 	// Prevent bg scrolling behind modal
 	const preventScroll = function() {

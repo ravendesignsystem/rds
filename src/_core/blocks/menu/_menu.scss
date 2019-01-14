@@ -4,7 +4,7 @@
 // Main Nav Styles
 // =======================================
 
-.b-nav-menu {
+.b-menu {
 	background-color: white;
 }
 
@@ -36,7 +36,7 @@
 }
 
 // hide the menu title
-.has-b-nav-menu .menu__title {
+.has-b-menu .menu__title {
 	display: none;
 }
 
@@ -167,74 +167,74 @@
 // > then small screen styles
 // =======================================
 
-.has-b-nav-menu ul li {
+.has-b-menu ul li {
 	border-bottom: 1px solid $grey;
 	margin-right: 20px;
 }
 
-.has-b-nav-menu ul li li {
+.has-b-menu ul li li {
 	margin-right: 0;
 }
 
-.has-b-nav-menu .menu__url {
+.has-b-menu .menu__url {
 	line-height: 2.4;
 }
 
-.has-b-nav-menu .menu__icon {
+.has-b-menu .menu__icon {
 	line-height: 2.15;
 	right: -15px;
 }
 
-.has-b-nav-menu .menu__child {
+.has-b-menu .menu__child {
 	background-color: white !important;
 }
 
-.has-b-nav-menu .menu__child--2 {
+.has-b-menu .menu__child--2 {
 	box-shadow: none;
 }
 
-.has-b-nav-menu .menu__child--2 a {
+.has-b-menu .menu__child--2 a {
 	padding-left: 15px;
 	font-size: 15px;
 	color: $grey-vader;
 }
 
-.has-b-nav-menu .menu__child--3 a {
+.has-b-menu .menu__child--3 a {
 	padding-left: 25px;
 	color: $grey-vader;
 }
 
-.has-b-nav-menu a,
-.has-b-nav-menu li li {
+.has-b-menu a,
+.has-b-menu li li {
 	border-bottom: none;
 }
 
-.has-b-nav-menu .menu__child--2 .menu__url {
+.has-b-menu .menu__child--2 .menu__url {
 	line-height: 2.3;
 }
 
-.has-b-nav-menu .menu__child--2 .menu__icon {
+.has-b-menu .menu__child--2 .menu__icon {
 	line-height: 1.8;
 }
 
 // Dark Nav Modifier
 // =======================================
 //
-//.b-nav-menu--dark {
+//.b-menu--dark {
 //	background-color: $black;
 //}
 //
-//.b-nav-menu--dark .menu__url {
+//.b-menu--dark .menu__url {
 //	border-bottom: 1px solid $grey-emperor;
 //	color: white;
 //}
 //
-//.b-nav-menu--dark .menu__list-item label:hover a,
-//.b-nav-menu--dark .menu__url:hover {
+//.b-menu--dark .menu__list-item label:hover a,
+//.b-menu--dark .menu__url:hover {
 //	background: darken($black, 3%);
 //}
 //
-//.b-nav-menu--dark .menu__child--second {
+//.b-menu--dark .menu__child--second {
 //	background-color: lighten($black, 3%);
 //
 //	.menu__url:focus, .menu__url:hover {
@@ -242,7 +242,7 @@
 //	}
 //}
 //
-//.b-nav-menu--dark .menu__child--third {
+//.b-menu--dark .menu__child--third {
 //	background-color: lighten($black, 8%);
 //
 //	.menu__url:focus, .menu__url:hover {
@@ -250,7 +250,7 @@
 //	}
 //}
 //
-//.b-nav-menu--dark .menu__child--fourth {
+//.b-menu--dark .menu__child--fourth {
 //	background-color: lighten($black, 11%);
 //
 //	.menu__url:focus, .menu__url:hover {

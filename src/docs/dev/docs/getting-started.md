@@ -87,8 +87,8 @@ To quickly get started building or prototyping with RDS, use the starter templat
             </div>
              -->
             <div class="modal__menu is-hidden">
-                <div class="is-hidden has-b-nav-menu">
-                    <section class="b-nav-menu u-block-full">
+                <div class="is-hidden has-b-menu">
+                    <section class="b-menu u-block-full">
                         <h2 class="menu__title">Site Navigation</h2>
                         <ul class="menu__list" role="navigation">
                             <li class="menu__list-item">

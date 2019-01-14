@@ -23,7 +23,7 @@ The masthead block requires the use of JavaScript to function. Make sure the fol
 
 ### Mobile Menu
 
-The elements available within the masthead block differ depending on screen size. A key masthead element that is only visible on small screens is the mobile menu ("hamburger") button. The mobile menu button launches a modal containing the the block `b-nav-menu`, which should contain your site-wide navigation. All of the code below assumes your application requires a mobile menu and includes the code for the button. The menu that gets called by the button is another block, 'b-nav-menu', that needs to be on all pages. View the [b-nav-menu](#) documentation for further implementation notes and reference.
+The elements available within the masthead block differ depending on screen size. A key masthead element that is only visible on small screens is the mobile menu ("hamburger") button. The mobile menu button launches a modal containing the the block `b-menu`, which should contain your site-wide navigation. All of the code below assumes your application requires a mobile menu and includes the code for the button. The menu that gets called by the button is another block, 'b-menu', that needs to be on all pages. View the [b-menu](#) documentation for further implementation notes and reference.
 
 ### Getting started with the masthead block
 

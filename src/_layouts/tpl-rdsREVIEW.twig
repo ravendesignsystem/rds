@@ -3,7 +3,7 @@
 <div class="l-body{% if (page.bodyLayout == 'a-m-a') or ( page.bodyLayout == 'a-m-aside--top') or (page.bodyLayout == 'a-m-a--top') or ( page.bodyLayout == 'a-m-aside') %} l-body--aside-main-aside{% elseif 'a-m' in page.bodyLayout %} l-body--aside-main{% elseif (page.bodyLayout == 'm-a') or (page.bodyLayout == 'm-aside') or (page.bodyLayout == 'm-a--top') or (page.bodyLayout == 'm-aside--top') %} l-body--main-aside{% endif %} u-block-row">
     {% if (page.bodyLayout != 'm-a') and (page.bodyLayout != 'm-aside') and (page.bodyLayout != 'm-a--top') and (page.bodyLayout != 'm-aside--top') %}
     <aside class="body__nav">
-        <nav class="has-b-nav-menu u-block u-sticky">
+        <nav class="has-b-menu u-block u-sticky">
             {% include "nav/menu/data/menu.twig" %}
         </nav>
     </aside>

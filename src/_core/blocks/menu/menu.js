@@ -25,7 +25,7 @@ if (navExpand) {
 		}
 	}
 
-	if (document.querySelector('.has-b-nav-menu')) {
+	if (document.querySelector('.has-b-menu')) {
 		navExpand.addEventListener('click', expandMenu);
 	}
 }
