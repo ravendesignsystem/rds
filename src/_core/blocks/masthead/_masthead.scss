@@ -127,7 +127,7 @@ div.b-masthead ul.submenu__menu {
 		display: none;
 
 		@include media('>=s') {
-			display: block;
+			display: flex;
 		}
 	}
 
@@ -167,7 +167,6 @@ nav + .masthead__primarynav > .masthead__site {
 		content: '/';
 		color: $grey-kenobi;
 		margin-left: -8px;
-		position: fixed;
 		font-size: 18px;
 	}
 
