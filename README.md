@@ -12,29 +12,29 @@ Clone this repo https://github.com/ravendesignsystem/rds.git into your project d
 
 Make sure you have composer, node and npm installed.
 
-Check if they are installed and what version is installed. If either is not installed, used the link provided to get documentation on how to install them.
+Check if they are installed and what version is installed. If either is not installed, use the links below to learn how.
 
-* `composer --version` Read more about [Composer](https://getcomposer.org)
+* `composer --version` -- Read more about [Composer](https://getcomposer.org)
 * `node --version` -- Read more about [Node.js](https://nodejs.org/en/)
 * `npm --version` -- NPM is install as a part of Node.js
 
 #### Install packages
 
-After confirming the dependencies above are installed, you need to install the required packages, coming from the `package.json` and the `composer.json` files.
+Once the dependencies above are installed, run the commands below to install the required packages.
 
-* `npm install` -- this installs all the dependencies set in the package.json file
-* `composer install` -- this installs all the dependencies set in the composer.json file
+* `npm install` -- installs all the dependencies set in the package.json file
+* `composer install` -- installs all the dependencies set in the composer.json file
 
 ## Running RDS Locally
 
-Both of the following commands need to run simultaneously, so open two terminal windows for them.
+Both of the following commands need to running simultaneously in two terminal windows.
 
-* `npm run sculpin` -- run sculpin static site generator, [read more](https://sculpin.io)
-* `npm run watch` -- run the laravel mix watch task, [read more](https://laravel-mix.com)
+- `npm run sculpin` -- run sculpin static site generator, [read more](https://sculpin.io)
+- `npm run watch` -- run the laravel mix watch task, [read more](https://laravel-mix.com)
 
 ## Deployment
 
-To deploy, terminate the above scripts and:
+To deploy, terminate the above scripts and run the scripts below consecutively:
 
 - run `npm run-sculpin-prod`
 - run `prod`
@@ -43,18 +43,15 @@ To deploy, terminate the above scripts and:
 
 TODO
 
-## Deployment
+## Technologies
 
-TODO
+RDS and its documentation are built with:
 
-## RDS Built With
-
-- [SCSS](https://sass-lang.com) - CSS superpower provider used
 - [Love](https://i.redd.it/qh713wbo4r8y.jpg) - <3
-
-## Documentation Website Built With
-
-TODO
+- [Laravel Mix](https://laravel-mix.com)
+- [SCSS](https://sass-lang.com) - CSS superpower provider used
+- [read more](https://sculpin.io)
+- [webpack](https://webpack.js.org)
 
 ## Contributing
 
@@ -76,7 +73,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-- Hat tip to anyone who's code was used
+- Hat tip to anyone who's code was used.
 - We've stood on the backs of giants for sure.
 - Inspiration
 - TODO
