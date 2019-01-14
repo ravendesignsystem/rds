@@ -1,5 +1,6 @@
 ---
-layout: l-rdsdocs-markdown
+layout: base
+content: true
 title: The makeup of RDS sites
 ---
 

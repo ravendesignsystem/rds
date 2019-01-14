@@ -1,6 +1,4 @@
 {
     "/build/docs/js/app.js": "/build/docs/js/app.js",
-    "/build/docs/css/app.css": "/build/docs/css/app.css",
-    "/dist/core/css/rds-core-min/core.css": "/dist/core/css/rds-core-min/core.css",
-    "/dist/core/js/rds-core-min/core.js": "/dist/core/js/rds-core-min/core.js"
+    "/build/docs/css/app.css": "/build/docs/css/app.css"
 }

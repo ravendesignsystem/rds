@@ -1,5 +1,6 @@
 ---
-layout: l-rdsdocs-markdown
+layout: base
+content: true
 title: Page Templates
 ---
 Page templates exist within your sites theme or app and express how your site is displayed. Varying between projects, these are dynamic files written in languages like PHP or templating engines like Handlebars or Twig, that contain a mixture variables or expressions, which get replaced with values when the template is evaluated.

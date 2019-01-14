@@ -1,6 +1,6 @@
 ---
-layout: l-rdsdocs-markdown
-maxwidth: tablet
+layout: base
+content: true
 title: The Naming of Things
 ---
 

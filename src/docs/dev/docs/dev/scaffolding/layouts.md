@@ -1,5 +1,6 @@
 ---
-layout: l-rdsdocs-markdown
+layout: base
+content: true
 title: Layouts
 ---
 Layouts are used to arrange content [blocks](#) within sections of page templates. Layouts, generally, setup columns and act as containers to control blocks in a responsive manner across all screen sizes.
