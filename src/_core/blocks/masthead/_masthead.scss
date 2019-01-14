@@ -4,7 +4,7 @@
 // masthead height
 $b-height: 75px;
 
-.b-header-masthead {
+.b-masthead {
 	display: flex;
 	justify-content: space-between;
 	background-color: white;
@@ -64,7 +64,7 @@ $b-height: 75px;
 }
 
 // used in conjunction with js to stick the masthead on scroll up
-.b-header-masthead--sticky-scroll {
+.b-masthead--sticky-scroll {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -78,11 +78,11 @@ $b-height: 75px;
 	}
 }
 
-.b-header-masthead--shadow {
+.b-masthead--shadow {
 	box-shadow: 0 10px 11px -7px $grey-yoda;
 }
 
-div.b-header-masthead ul.submenu__menu {
+div.b-masthead ul.submenu__menu {
 	top: 60px !important;
 }
 

@@ -47,7 +47,7 @@
 
 		// target all lis items except hamburger
 		const x = document.querySelectorAll(
-			'.b-header-masthead li:not(.masthead__hamburger)'
+			'.b-masthead li:not(.masthead__hamburger)'
 		);
 		let i;
 
