@@ -6,7 +6,7 @@ banner:
   breadcrumbs:
     grandparent: Blocks
 content: true
-meta: 
+meta:
     version: 1.0.0
     status: under review
     handle: grid
@@ -29,7 +29,7 @@ The Grid block uses RDS' [responsive grid](#) to list [Card components](#) in eq
 <div class="u-block u-block--white u-block--s u-no-padding-bottom">
 <h2>Base example</h2>
 <div class="b-main-grid u-grid u-grid--3">
-    <div><article class="c-cards-card" itemscope="" itemtype="http://schema.org/VideoObject">
+    <div><article class="c-card" itemscope="" itemtype="http://schema.org/VideoObject">
              <a class="card__url" href="https://www.youtube.com/watch?v=lrYPm6DD44M" itemprop="url">
                  <figure class="card__figure u-overlay u-overlay--light" itemscope="" itemtype="http://schema.org/ImageObject">
                      <img class="card__img " src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Raven standing">
@@ -41,7 +41,7 @@ The Grid block uses RDS' [responsive grid](#) to list [Card components](#) in eq
              </a>
          </article>
      </div>
-    <div><article class="c-cards-card" itemscope="" itemtype="http://schema.org/VideoObject">
+    <div><article class="c-card" itemscope="" itemtype="http://schema.org/VideoObject">
              <a class="card__url" href="https://www.youtube.com/watch?v=lrYPm6DD44M" itemprop="url">
                  <figure class="card__figure u-overlay u-overlay--light" itemscope="" itemtype="http://schema.org/ImageObject">
                      <img class="card__img " src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Raven standing">
@@ -53,7 +53,7 @@ The Grid block uses RDS' [responsive grid](#) to list [Card components](#) in eq
              </a>
          </article>
      </div>
-     <div><article class="c-cards-card" itemscope="" itemtype="http://schema.org/VideoObject">
+     <div><article class="c-card" itemscope="" itemtype="http://schema.org/VideoObject">
               <a class="card__url" href="https://www.youtube.com/watch?v=lrYPm6DD44M" itemprop="url">
                   <figure class="card__figure u-overlay u-overlay--light" itemscope="" itemtype="http://schema.org/ImageObject">
                       <img class="card__img " src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Raven standing">
@@ -102,10 +102,10 @@ Four and three column grids are available. To control the number of columns, adj
     </div>
 </div>
 ```
-    
+
 ## Block settings
 
-Control the block's width and background colour using the following [block settings](#) 
+Control the block's width and background colour using the following [block settings](#)
 
 - **Block widths**: `u-block--s`*, `u-block--m`, `u-block--l`
 - **Block colours**: `u-block--white`*, `u-block--grey`
@@ -117,7 +117,7 @@ Control the block's width and background colour using the following [block setti
 <section class="u-block u-block--grey u-block--m">
 <h2>Grid block with medium width and white background settings</h2>
 <div class="b-main-grid u-grid u-grid--4">
-    <div><article class="c-cards-card" itemscope="" itemtype="http://schema.org/VideoObject">
+    <div><article class="c-card" itemscope="" itemtype="http://schema.org/VideoObject">
              <a class="card__url" href="https://www.youtube.com/watch?v=lrYPm6DD44M" itemprop="url">
                  <figure class="card__figure u-overlay u-overlay--light" itemscope="" itemtype="http://schema.org/ImageObject">
                      <img class="card__img " src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Raven standing">
@@ -129,7 +129,7 @@ Control the block's width and background colour using the following [block setti
              </a>
          </article>
      </div>
-    <div><article class="c-cards-card" itemscope="" itemtype="http://schema.org/VideoObject">
+    <div><article class="c-card" itemscope="" itemtype="http://schema.org/VideoObject">
              <a class="card__url" href="https://www.youtube.com/watch?v=lrYPm6DD44M" itemprop="url">
                  <figure class="card__figure u-overlay u-overlay--light" itemscope="" itemtype="http://schema.org/ImageObject">
                      <img class="card__img " src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Raven standing">
@@ -141,7 +141,7 @@ Control the block's width and background colour using the following [block setti
              </a>
          </article>
      </div>
-     <div><article class="c-cards-card" itemscope="" itemtype="http://schema.org/VideoObject">
+     <div><article class="c-card" itemscope="" itemtype="http://schema.org/VideoObject">
               <a class="card__url" href="https://www.youtube.com/watch?v=lrYPm6DD44M" itemprop="url">
                   <figure class="card__figure u-overlay u-overlay--light" itemscope="" itemtype="http://schema.org/ImageObject">
                       <img class="card__img " src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Raven standing">
@@ -154,7 +154,7 @@ Control the block's width and background colour using the following [block setti
           </article>
       </div>
       <div>
-        <article class="c-cards-card" itemscope="" itemtype="http://schema.org/VideoObject">
+        <article class="c-card" itemscope="" itemtype="http://schema.org/VideoObject">
             <a class="card__url" href="https://www.youtube.com/watch?v=lrYPm6DD44M" itemprop="url">
                 <figure class="card__figure u-overlay u-overlay--light" itemscope="" itemtype="http://schema.org/ImageObject">
                     <img class="card__img " src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Raven standing">
@@ -190,7 +190,7 @@ Grid block cards should:
 
 ##Implementation Notes
 
--  If you are building pages with Grid blocks but without [Content blocks](#), use the four column grid and the medium-size width setting `u-block--m`. 
+-  If you are building pages with Grid blocks but without [Content blocks](#), use the four column grid and the medium-size width setting `u-block--m`.
 
 ##When To Avoid
 

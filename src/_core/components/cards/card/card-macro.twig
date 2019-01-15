@@ -3,7 +3,7 @@
 <section class="u-block u-block--s{% if settings.color|length %} u-block--{{ settings.color }}{% endif %}">
     <h2 class="u-no-borders">{{ settings.heading }}</h2>
 {% endif %}
-<article class="c-cards-card{% if data.img == false %} c-cards-card--no-img{% endif %}{% if data.name %} c-cards-card--people{% endif %}" itemscope itemtype="{% if settings.variant == "news" %}http://schema.org/NewsArticle{% elseif settings.variant == "people" %}http://schema.org/Person{% elseif settings.variant == "video" %}http://schema.org/VideoObject{% else %}http://schema.org/Article{% endif %}">
+<article class="c-card{% if data.img == false %} c-card--no-img{% endif %}{% if data.name %} c-card--people{% endif %}" itemscope itemtype="{% if settings.variant == "news" %}http://schema.org/NewsArticle{% elseif settings.variant == "people" %}http://schema.org/Person{% elseif settings.variant == "video" %}http://schema.org/VideoObject{% else %}http://schema.org/Article{% endif %}">
     <a class="card__url" href="{{ data.url }}" itemprop="url">
 {% if data.img|length %}
         <figure class="card__figure{% if settings.variant == "video" %} u-overlay u-overlay--light{% endif %}" itemscope itemtype="http://schema.org/ImageObject">
