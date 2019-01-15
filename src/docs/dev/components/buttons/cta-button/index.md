@@ -14,7 +14,7 @@ meta:
     type: button
     path: components/buttons/cta/
     theme: Core
-context: 
+context:
 - name: ghost
 modifiers:
 - name: ghost
@@ -47,21 +47,21 @@ The CTA button component should only be used within the following blocks:
 
 ##Implementation Notes
 
-CTA button classes are designed to be used with the  `<a>` element. Do NOT use the `<button>` element for CTA buttons. 
+CTA button classes are designed to be used with the  `<a>` element. Do NOT use the `<button>` element for CTA buttons.
 
 ### Ghost button usage
 
-[Ghost buttons](https://www.smashingmagazine.com/2018/01/ghost-button-design/) have proven to be less effective then our default solid buttons. While Ghost Buttons have their place in web design, they should be used less frequently and in the right context. 
+[Ghost buttons](https://www.smashingmagazine.com/2018/01/ghost-button-design/) have proven to be less effective then our default solid buttons. While Ghost Buttons have their place in web design, they should be used less frequently and in the right context.
 
 Ghost buttons should:
 
 - be used as secondary call-to-actions.
 
-<a class="c-buttons-button" href="http://www.imdb.com/title/tt0087332/" role="button">Main action</a> <a class="c-buttons-button c-buttons-button--ghost" href="http://www.imdb.com/title/tt0087332/" role="button">Secondary action</a>
+<a class="c-button" href="http://www.imdb.com/title/tt0087332/" role="button">Main action</a> <a class="c-button c-button--ghost" href="http://www.imdb.com/title/tt0087332/" role="button">Secondary action</a>
 
 - Should only be used on solid white backgrounds. If placed over a busy image without sufficient contrast, it can be difficult for users to read the button's text.
 
-<a class="c-buttons-button c-buttons-button--ghost" href="http://www.imdb.com/title/tt0087332/" role="button">Read Ghostbuster reviews</a>
+<a class="c-button c-button--ghost" href="http://www.imdb.com/title/tt0087332/" role="button">Read Ghostbuster reviews</a>
 
 ### Margins
 By default, buttons only have a 5px right-margin and no bottom margin. To add the proper spacing between buttons and following blocks, wrap the button in a `<p>` tag.
@@ -69,12 +69,12 @@ By default, buttons only have a 5px right-margin and no bottom margin. To add th
 If you are using a button component within a block and need to adjust margin spacing around the button, use the block element styles to do so.
 
 ### Centering
-To center a button, add the modifier class `c-buttons-button--center`.
+To center a button, add the modifier class `c-button--center`.
 
-<a class="c-buttons-button c-buttons-button--center" href="https://gist.github.com/dannybrown73/30bf8390d63dda2bce39dacb0c562e7d" role="button">View this Gist</a>
+<a class="c-button c-button--center" href="https://gist.github.com/dannybrown73/30bf8390d63dda2bce39dacb0c562e7d" role="button">View this Gist</a>
 
 ```html
-<a class="c-buttons-button c-buttons-button--center" href="https://gist.github.com/dannybrown73/30bf8390d63dda2bce39dacb0c562e7d" role="button">View this Gist</a>
+<a class="c-button c-button--center" href="https://gist.github.com/dannybrown73/30bf8390d63dda2bce39dacb0c562e7d" role="button">View this Gist</a>
 ```
 
 ##Content guidelines
@@ -82,7 +82,7 @@ To center a button, add the modifier class `c-buttons-button--center`.
 Buttons should:
 
 - Communicate the action that will occur when the user touches them.
-- Be used as calls to action (cta).  
+- Be used as calls to action (cta).
 - Be clearly and accurately labeled and start with strong, actionable verbs.
 - Be brief: A couple of words is best, no more than five is ideal
 - Be used for the most important actions on a page.
@@ -90,15 +90,15 @@ Buttons should:
 
 Examples of buttons with good calls to action:
 
-<a class="c-buttons-button" href="https://central.wordcamp.org" role="button">{% include "icons/arrow-down.svg" ignore missing %}Download our free ebook now</a>
+<a class="c-button" href="https://central.wordcamp.org" role="button">{% include "icons/arrow-down.svg" ignore missing %}Download our free ebook now</a>
 
-<a class="c-buttons-button" href="https://central.wordcamp.org" role="button">Start a free trial</a>
+<a class="c-button" href="https://central.wordcamp.org" role="button">Start a free trial</a>
 
-<a class="c-buttons-button" href="https://central.wordcamp.org" role="button">{% include "icons/heart.svg" ignore missing %}Like this post</a>
+<a class="c-button" href="https://central.wordcamp.org" role="button">{% include "icons/heart.svg" ignore missing %}Like this post</a>
 
-<a class="c-buttons-button" href="https://central.wordcamp.org" role="button">{% include "icons/plus.svg" ignore missing %}Book an appointment</a>
+<a class="c-button" href="https://central.wordcamp.org" role="button">{% include "icons/plus.svg" ignore missing %}Book an appointment</a>
 
-<a class="c-buttons-button" href="https://central.wordcamp.org" role="button">Register for WordCamp Ottawa 2018</a> 
+<a class="c-button" href="https://central.wordcamp.org" role="button">Register for WordCamp Ottawa 2018</a>
 
 ## Avoid
 

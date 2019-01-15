@@ -218,7 +218,7 @@ The RDS system automatically adjusted the spacing when rows of the same colour a
 
 Test these concepts on [Codepen](https://codepen.io/cuweb/pen/qYyVKQ)
 
-<a class="c-buttons-button" href="https://codepen.io/cuweb/pen/qYyVKQ">Codepen demo</a>
+<a class="c-button" href="https://codepen.io/cuweb/pen/qYyVKQ">Codepen demo</a>
 
 <p data-height="402" data-theme-id="light" data-slug-hash="qYyVKQ" data-default-tab="result" data-user="cuweb" data-embed-version="2" data-pen-title="Storybook - block rows" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/cuweb/pen/qYyVKQ/">Storybook - block rows</a> by Carleton (<a href="https://codepen.io/cuweb">@cuweb</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>

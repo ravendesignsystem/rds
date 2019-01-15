@@ -1,4 +1,4 @@
 {% macro cta(settings, data) %}
-<a class="c-buttons-button{% if settings.variant == "ghost" %} c-buttons-button--ghost{% endif %}{% if settings.variant == "grey" %} c-buttons-button--grey{% endif %}" href="{{ data.url }}">{% if data.icon %}{% include
+<a class="c-button{% if settings.variant == "ghost" %} c-button--ghost{% endif %}{% if settings.variant == "grey" %} c-button--grey{% endif %}" href="{{ data.url }}">{% if data.icon %}{% include
     'components/icons/' ~ data.icon ~ '.svg' ignore missing %}{% endif %} {{ data.title }}</a>
 {% endmacro %}

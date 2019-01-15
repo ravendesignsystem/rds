@@ -1,4 +1,4 @@
-.c-buttons-button {
+.c-button {
 	text-align: center;
 	white-space: nowrap;
 	vertical-align: middle;
@@ -34,7 +34,7 @@
 	}
 }
 
-.c-buttons-button--ghost {
+.c-button--ghost {
 	background-color: white;
 	color: $red !important;
 	border: 1px solid $red;
@@ -51,7 +51,7 @@
 	}
 }
 
-.c-buttons-button--grey {
+.c-button--grey {
 	background-color: $grey;
 	color: $black !important;
 	border: 1px solid $grey-yoda;
@@ -68,7 +68,7 @@
 	}
 }
 
-.c-buttons-button--center {
+.c-button--center {
 	position: relative;
 	left: 50%;
 	transform: translateX(-50%);

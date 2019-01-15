@@ -7,7 +7,7 @@ banner:
     grandparent: Dev
     parent: Blocks
 ---
-Utility classes are used to control block spacing and layout. Almost always, blocks require at least one block utility class. 
+Utility classes are used to control block spacing and layout. Almost always, blocks require at least one block utility class.
 
 ## Block layout types
 
@@ -20,7 +20,7 @@ There are two types of blocks, in terms of layout:
 
 ## Fixed blocks
 
-Centered on the screen, fixed width blocks have containers with a maximum width applied to them. The available max-width sizes correspond with the RDS media query breakpoints, including: 
+Centered on the screen, fixed width blocks have containers with a maximum width applied to them. The available max-width sizes correspond with the RDS media query breakpoints, including:
 
 - small
 - medium
@@ -40,11 +40,11 @@ Below is simple example of how to build a default sized fixed block. Note: we've
 <div class="b-main-foo u-block">
     <p style="background: #eee">Hello world</p>
 </div>
-``` 
+```
 
 **Note** the `u-block` class should reside on the block's first tag and should be the last class name assigned.
 
-Output: 
+Output:
 {%include "/rds/inc/close.twig"%}
 <div class="b-main-foo u-block">
     <p style="background: #eee">Hello world</p>
@@ -58,9 +58,9 @@ To create a medium-sized fixed width block, apply the modifier class `u-block--m
 <div class="b-main-foo u-block u-block--m">
     <p style="background: #eee">Hello world</p>
 </div>
-``` 
+```
 
-Output: 
+Output:
 {%include "/rds/inc/close.twig"%}
 <div class="b-main-foo u-block u-block--m">
     <p style="background: #eee">Hello world</p>
@@ -74,9 +74,9 @@ To create a large-sized fixed width block, apply the modifier class `u-block--l`
 <div class="b-main-foo u-block u-block--l">
     <p style="background: #eee">Hello world</p>
 </div>
-``` 
+```
 
-Output: 
+Output:
 {%include "/rds/inc/close.twig"%}
 <div class="b-main-foo u-block u-block--l">
     <p style="background: #eee">Hello world</p>
@@ -88,7 +88,7 @@ Note: there is no `u-block--s` because the default width of `u-block` is its equ
 
 Fixed blocks have max-widths, not set widths, so they are still responsive. If you are reading this documentation on a phone or on a viewport smaller then the widths used in these demos, all of the block examples above are the same size.
 
-It is **important to note that `u-block` controls the left and right padding** creating a consistent padding for all block on small and large screens. You need to take this into account when building [layouts](#) to contain blocks. 
+It is **important to note that `u-block` controls the left and right padding** creating a consistent padding for all block on small and large screens. You need to take this into account when building [layouts](#) to contain blocks.
 
 ## Fixed blocks with Headings
 
@@ -107,10 +107,10 @@ Fixed blocks can have headings associated with them. The heading is technically 
         <p style="background: #eee">Hello world</p>
     </div>
 </section>
-``` 
+```
 **Note** in the code above, how the `u-block` class has been moved up to be on the `<section>` tag.
 
-Output: 
+Output:
 {%include "/rds/inc/close.twig"%}
 <section class="u-block">
     <h2>Example of a fixed block with a heading</h2>
@@ -130,7 +130,7 @@ Full width blocks have a container that spans the entire width of the page.
 </div>
 ```
 
-Output: 
+Output:
 {%include "/rds/templates/close.twig"%}
 <div class="b-header-foo u-block-full" style="height:400px;background-image:url('http://cu-raven.s3.amazonaws.com/assets/img/raven/raven-bg.png');">
 </div>{%include "/rds/templates/open-content.twig"%}
@@ -163,7 +163,7 @@ RDS is set up to recognize when either...
 - `u-block-full--grey`,
 - `u-block-full-black`
 
-...blocks are stacked one after another and removes the default bottom-margin from the top block. This lets you use full blocks one after another without any unwanted margin gaps. 
+...blocks are stacked one after another and removes the default bottom-margin from the top block. This lets you use full blocks one after another without any unwanted margin gaps.
 
 For example, if we consider the layout in the image below...
 
@@ -171,7 +171,7 @@ For example, if we consider the layout in the image below...
 
 ... we do not want margin spacing between the masthead block and the banner block. Since they both have `u-block-full` applied to them, this gap is removed automatically.
 
-#### Side padding 
+#### Side padding
 
 By setting a consistent `padding-left` and `padding-right` we prevent fixed blocks from becoming full blocks when the block width meets the screen's edge. This applies for any screen size but the primary need for the side padding is to provide consitent gutters for all fixed blocks on small screens.
 
@@ -186,7 +186,7 @@ To review, the available block utility classes and modifiers are:
     - u-block--l
 - u-block-full
 
-### u-block 
+### u-block
 
 The  `u-block` utility class:
 
@@ -210,7 +210,7 @@ The `u-block--l` modifer:
 ### u-block-full
 
 The `u-block-full` class:
- 
+
 - sets the width of the blocks content area to 100%.
 - adds system-wide bottom margin for spacing.
 
@@ -229,7 +229,7 @@ Check out and play around with straight forward rendered examples on [Codepen](h
 {%include "/rds/templates/close.twig"%}<div class="u-block u-block--l"><p data-height="415" data-theme-id="light" data-slug-hash="odyjrg" data-default-tab="result" data-user="cuweb" data-embed-version="2" data-pen-title="Storybook - block sizing" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/cuweb/pen/odyjrg/">Storybook - block sizing</a> by Carleton (<a href="https://codepen.io/cuweb">@cuweb</a>) on <a href="https://codepen.io">CodePen</a>.</p><script async src="https://static.codepen.io/assets/embed/ei.js"></script></div>
 {%include "/rds/templates/open-content.twig"%}
 
-<a class="c-buttons-button" href="https://codepen.io/cuweb/pen/odyjrg?editors=1010">Test these Concepts on Codepen</a>
+<a class="c-button" href="https://codepen.io/cuweb/pen/odyjrg?editors=1010">Test these Concepts on Codepen</a>
 
  - explain variants
  -- setting - data options
@@ -241,7 +241,7 @@ Check out and play around with straight forward rendered examples on [Codepen](h
 
 
 
-Next: [Developing Blocks and Components](developing-blocks-components/) 
+Next: [Developing Blocks and Components](developing-blocks-components/)
 
 {%include "/rds/templates/close.twig"%}
 
