@@ -11,7 +11,7 @@
 		mastheadSite = document.querySelector('.masthead__site'),
 		mastheadSiteMenu = document.querySelector('.submenu__menu'),
 		// masthead buttons
-		hamburger = document.querySelector('.c-but-hamburger'),
+		hamburger = document.querySelector('.c-hamburger'),
 		navMoreBtn = document.querySelector('.masthead__more'),
 		navSearch = document.querySelector('.masthead__search-btn'),
 		navLogin = document.querySelector('.masthead__login-btn'),

@@ -43,9 +43,9 @@ To quickly get started building or prototyping with RDS, use the starter templat
                      </li>
                      -->
                      <li class="masthead__hamburger">
-                         <button aria-label="Open Menu" class="c-but-hamburger c-but-hamburger--spin" type="button">
-                             <span class="c-but-hamburger__box">
-                                 <span class="c-but-hamburger__inner"></span>
+                         <button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
+                             <span class="c-hamburger__box">
+                                 <span class="c-hamburger__inner"></span>
                               </span>
                          </button>
                      </li>

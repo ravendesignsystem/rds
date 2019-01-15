@@ -9,7 +9,7 @@
 		mastheadSearch = document.querySelector('.masthead__search'),
 		mastheadHamburger = document.querySelector('.masthead__hamburger'),
 		// masthead buttons
-		hamburger = document.querySelector('.c-but-hamburger'),
+		hamburger = document.querySelector('.c-hamburger'),
 		navMoreBtn = document.querySelector('.masthead__nav-item--more'),
 		navSearch = document.querySelector('.masthead__search-btn'),
 		navLogin = document.querySelector('.masthead__login-btn'),

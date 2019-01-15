@@ -44,9 +44,9 @@ The masthead block has many options and configurations. At it's simplest, the ma
 	</div>
 	<ul class="masthead__btns">
         <li class="masthead__hamburger">
-            <button aria-label="Open Menu" class="c-but-hamburger c-but-hamburger--spin" type="button">
-                <span class="c-but-hamburger__box">
-                    <span class="c-but-hamburger__inner"></span>
+            <button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
+                <span class="c-hamburger__box">
+                    <span class="c-hamburger__inner"></span>
                  </span>
             </button>
         </li>
@@ -63,9 +63,9 @@ The masthead block has many options and configurations. At it's simplest, the ma
 	</div>
 	<ul class="masthead__btns">
         <li class="masthead__hamburger">
-            <button aria-label="Open Menu" class="c-but-hamburger c-but-hamburger--spin" type="button">
-                <span class="c-but-hamburger__box">
-                    <span class="c-but-hamburger__inner"></span>
+            <button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
+                <span class="c-hamburger__box">
+                    <span class="c-hamburger__inner"></span>
                  </span>
             </button>
         </li>
@@ -94,9 +94,9 @@ Navigation in masthead appears right after the brand and will grow to occupy as 
     </nav>
     <ul class="masthead__btns">
         <li class="masthead__hamburger">
-            <button aria-label="Open Menu" class="c-but-hamburger c-but-hamburger--spin" type="button">
-                <span class="c-but-hamburger__box">
-                    <span class="c-but-hamburger__inner"></span>
+            <button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
+                <span class="c-hamburger__box">
+                    <span class="c-hamburger__inner"></span>
                  </span>
             </button>
         </li>
@@ -121,9 +121,9 @@ Navigation in masthead appears right after the brand and will grow to occupy as 
     </nav>
     <ul class="masthead__btns">
         <li class="masthead__hamburger">
-            <button aria-label="Open Menu" class="c-but-hamburger c-but-hamburger--spin" type="button">
-                <span class="c-but-hamburger__box">
-                    <span class="c-but-hamburger__inner"></span>
+            <button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
+                <span class="c-hamburger__box">
+                    <span class="c-hamburger__inner"></span>
                  </span>
             </button>
         </li>
@@ -156,9 +156,9 @@ A single call to action button is availble in the masthead block to promote a ke
             <a class="masthead__button-link" href="#">Button</a>
         </li>
         <li class="masthead__hamburger">
-            <button aria-label="Open Menu" class="c-but-hamburger c-but-hamburger--spin" type="button">
-                <span class="c-but-hamburger__box">
-                    <span class="c-but-hamburger__inner"></span>
+            <button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
+                <span class="c-hamburger__box">
+                    <span class="c-hamburger__inner"></span>
                  </span>
             </button>
         </li>
@@ -186,9 +186,9 @@ A single call to action button is availble in the masthead block to promote a ke
             <a class="masthead__button-link" href="#">Button</a>
         </li>
         <li class="masthead__hamburger">
-            <button aria-label="Open Menu" class="c-but-hamburger c-but-hamburger--spin" type="button">
-                <span class="c-but-hamburger__box">
-                    <span class="c-but-hamburger__inner"></span>
+            <button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
+                <span class="c-hamburger__box">
+                    <span class="c-hamburger__inner"></span>
                  </span>
             </button>
         </li>
@@ -225,9 +225,9 @@ Add multiple calls to action under a CTA drop-0down to promote a several key are
             </ul>
         </li>
         <li class="masthead__hamburger">
-            <button aria-label="Open Menu" class="c-but-hamburger c-but-hamburger--spin" type="button">
-                <span class="c-but-hamburger__box">
-                    <span class="c-but-hamburger__inner"></span>
+            <button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
+                <span class="c-hamburger__box">
+                    <span class="c-hamburger__inner"></span>
                  </span>
             </button>
         </li>
@@ -260,9 +260,9 @@ Add multiple calls to action under a CTA drop-0down to promote a several key are
 			</ul>
 		</li>
         <li class="masthead__hamburger">
-            <button aria-label="Open Menu" class="c-but-hamburger c-but-hamburger--spin" type="button">
-                <span class="c-but-hamburger__box">
-                    <span class="c-but-hamburger__inner"></span>
+            <button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
+                <span class="c-hamburger__box">
+                    <span class="c-hamburger__inner"></span>
                  </span>
             </button>
 		</li>
@@ -302,9 +302,9 @@ You can use the CTA buttons above to highlight an application login button or yo
             </li>
         </li>
         <li class="masthead__hamburger">
-            <button aria-label="Open Menu" class="c-but-hamburger c-but-hamburger--spin" type="button">
-                <span class="c-but-hamburger__box">
-                    <span class="c-but-hamburger__inner"></span>
+            <button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
+                <span class="c-hamburger__box">
+                    <span class="c-hamburger__inner"></span>
                  </span>
             </button>
         </li>
@@ -340,9 +340,9 @@ You can use the CTA buttons above to highlight an application login button or yo
 			<button class="u-btn-reset">Login</button>
 		</li>
         <li class="masthead__hamburger">
-            <button aria-label="Open Menu" class="c-but-hamburger c-but-hamburger--spin" type="button">
-                <span class="c-but-hamburger__box">
-                    <span class="c-but-hamburger__inner"></span>
+            <button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
+                <span class="c-hamburger__box">
+                    <span class="c-hamburger__inner"></span>
                  </span>
             </button>
 		</li>
@@ -381,9 +381,9 @@ To include the search button, add the following code is in your masthead block..
             </button>
          </li>
         <li class="masthead__hamburger">
-            <button aria-label="Open Menu" class="c-but-hamburger c-but-hamburger--spin" type="button">
-                <span class="c-but-hamburger__box">
-                    <span class="c-but-hamburger__inner"></span>
+            <button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
+                <span class="c-hamburger__box">
+                    <span class="c-hamburger__inner"></span>
                  </span>
             </button>
         </li>
@@ -405,9 +405,9 @@ To include the search button, add the following code is in your masthead block..
             </button>
          </li>
         <li class="masthead__hamburger">
-            <button aria-label="Open Menu" class="c-but-hamburger c-but-hamburger--spin" type="button">
-                <span class="c-but-hamburger__box">
-                    <span class="c-but-hamburger__inner"></span>
+            <button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
+                <span class="c-hamburger__box">
+                    <span class="c-hamburger__inner"></span>
                  </span>
             </button>
         </li>
