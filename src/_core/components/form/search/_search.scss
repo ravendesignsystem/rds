@@ -1,7 +1,7 @@
 // Search Component
 // ====================================
 
-.c-form-search {
+.c-searchform {
 	padding: 5px;
 	background-color: white;
 	border-radius: 50px;
@@ -16,7 +16,7 @@
 	}
 }
 
-.search__input {
+.searchform__input {
 	width: calc(100% - 57px);
 	appearance: none; // prevents browser from hijacking border, font sizes, and more
 	-webkit-appearance: none;
@@ -48,7 +48,7 @@
 	}
 }
 
-.search__button {
+.searchform__button {
 	background: none;
 	border: none;
 	fill: $grey-vader;

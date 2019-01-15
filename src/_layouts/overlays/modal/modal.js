@@ -55,7 +55,7 @@
 			if (btn === 'search') {
 				modalSearch.classList.remove('is-hidden'),
 					modalLogin.classList.add('is-hidden'),
-					document.querySelector('.modal__search .search__input').focus();
+					document.querySelector('.modal__search .searchform__input').focus();
 			} else {
 				modalLogin.classList.remove('is-hidden');
 				modal.classList.add('u-bg-grey'),
