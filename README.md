@@ -1,6 +1,6 @@
 # Raven Design System (RDS)
 
-RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. 
+RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language.
 
 Let my heart be still a moment and this mystery explore...
 
@@ -38,7 +38,8 @@ Both of the following commands need to running simultaneously in two terminal wi
 
 To deploy, terminate the above scripts and run the scripts below consecutively:
 
-- run `npm run sculpin-prod ; prod`
+- run `npm run sculpin-prod`, then stop the process
+- run `npm run prod`
 
 ### Break down into end to end tests
 
