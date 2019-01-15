@@ -1,4 +1,4 @@
-.c-content-img-caption {
+.c-imagecaption {
 	display: table;
 	margin-bottom: 20px;
 
@@ -16,7 +16,7 @@
 	}
 }
 
-.img-caption__text {
+.imagecaption__text {
 	display: table-caption;
 	caption-side: bottom;
 	background-color: $grey;

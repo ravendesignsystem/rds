@@ -7,7 +7,7 @@ banner:
     grandparent: Blocks
     parent: Main
 content: true
-desc: Always found within the HTML 5 main tag, the Content block consists of content that is directly related to or expands upon the central topic of a page. This includes the words on the page but also images, components and multimedia.  
+desc: Always found within the HTML 5 main tag, the Content block consists of content that is directly related to or expands upon the central topic of a page. This includes the words on the page but also images, components and multimedia.
 meta:
   version: 1.0.1
   status: ready
@@ -55,7 +55,7 @@ Content within this block should follow the <a href="#">RDS HTML coding conventi
             <li>keep your code tidy, clean and well-formed.</li>
             <li>use lowercase element and attribute names.</li>
             <li>close all HTML elements.</li>
-        </ul> 
+        </ul>
     </div>
 </div>
 ```
@@ -89,8 +89,8 @@ The following [block settings](#) are available for this block.
 
 Content contributors should:
 
-- follow the RDS content standards. 
-- follow any content guidelines specific for any components used within the Content block. 
+- follow the RDS content standards.
+- follow any content guidelines specific for any components used within the Content block.
 - consider following the RDS Writing Guidelines.
 - make use of proper headings and document structure.
 - should follow RDS accessibility guidelines.
@@ -103,7 +103,7 @@ Content contributors should:
 
 Avoid using the Content block if:
 
-- your content isn't suitable for the `<main>` section. Instead, consider using a different block. 
+- your content isn't suitable for the `<main>` section. Instead, consider using a different block.
 
 ## QA: all content types
 
@@ -469,9 +469,9 @@ Avoid using the Content block if:
 
 <h3>Using HTML5 Figure &amp; Figcaption</h3>
 <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
-<figure class="c-content-img-caption">
+<figure class="c-imagecaption">
     <img src="http://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-full-caption1.jpg" alt="" width="1200" height="625" srcset="https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-full-caption1.jpg 1200w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-full-caption1-160x83.jpg 160w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-full-caption1-240x125.jpg 240w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-full-caption1-768x400.jpg 768w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-full-caption1-400x208.jpg 400w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-full-caption1-360x188.jpg 360w" sizes="(max-width: 1200px) 100vw, 1200px">
-    <figcaption class="img-caption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
+    <figcaption class="imagecaption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
 </figure>
 
 <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
@@ -500,9 +500,9 @@ Avoid using the Content block if:
 <h3>Using HTML5 Figure &amp; Figcaption</h3>
 <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
 
-<figure class="c-content-img-caption">
+<figure class="c-imagecaption">
     <img src="https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-400x208.jpg" alt="" width="400" height="208" srcset="https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-400x208.jpg 400w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-160x83.jpg 160w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-240x125.jpg 240w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-768x400.jpg 768w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-360x188.jpg 360w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1.jpg 1200w" sizes="(max-width: 400px) 100vw, 400px">
-    <figcaption class="img-caption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
+    <figcaption class="imagecaption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
 </figure>
 
 <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
@@ -532,9 +532,9 @@ Avoid using the Content block if:
 <h3>Using HTML5 Figure &amp; Figcaption</h3>
 <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
 
-<figure class="c-content-img-caption u-img-left">
+<figure class="c-imagecaption u-img-left">
     <img src="https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-400x208.jpg" alt="" width="400" height="208" srcset="https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-400x208.jpg 400w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-160x83.jpg 160w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-240x125.jpg 240w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-768x400.jpg 768w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-360x188.jpg 360w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1.jpg 1200w" sizes="(max-width: 400px) 100vw, 400px">
-    <figcaption class="img-caption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
+    <figcaption class="imagecaption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
 </figure>
 
 <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
@@ -566,9 +566,9 @@ Avoid using the Content block if:
 <h3>Using HTML5 Figure &amp; Figcaption</h3>
 <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
 
-<figure class="c-content-img-caption u-img-right">
+<figure class="c-imagecaption u-img-right">
     <img src="https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-400x208.jpg" alt="" srcset="https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-400x208.jpg 400w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-160x83.jpg 160w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-240x125.jpg 240w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-768x400.jpg 768w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-360x188.jpg 360w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1.jpg 1200w" sizes="(max-width: 400px) 100vw, 400px">
-    <figcaption class="img-caption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
+    <figcaption class="imagecaption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
 </figure>
 
 <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
@@ -940,9 +940,9 @@ Avoid using the Content block if:
 
     <h3>Using HTML5 Figure &amp; Figcaption</h3>
     <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
-    <figure class="c-content-img-caption">
+    <figure class="c-imagecaption">
         <img src="http://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-full-caption1.jpg" alt="" width="1200" height="625" srcset="https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-full-caption1.jpg 1200w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-full-caption1-160x83.jpg 160w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-full-caption1-240x125.jpg 240w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-full-caption1-768x400.jpg 768w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-full-caption1-400x208.jpg 400w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-full-caption1-360x188.jpg 360w" sizes="(max-width: 1200px) 100vw, 1200px">
-        <figcaption class="img-caption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
+        <figcaption class="imagecaption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
     </figure>
 
     <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
@@ -971,9 +971,9 @@ Avoid using the Content block if:
     <h3>Using HTML5 Figure &amp; Figcaption</h3>
     <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
 
-    <figure class="c-content-img-caption">
+    <figure class="c-imagecaption">
         <img src="https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-400x208.jpg" alt="" width="400" height="208" srcset="https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-400x208.jpg 400w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-160x83.jpg 160w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-240x125.jpg 240w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-768x400.jpg 768w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-360x188.jpg 360w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1.jpg 1200w" sizes="(max-width: 400px) 100vw, 400px">
-        <figcaption class="img-caption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
+        <figcaption class="imagecaption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
     </figure>
 
     <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
@@ -1003,9 +1003,9 @@ Avoid using the Content block if:
     <h3>Using HTML5 Figure &amp; Figcaption</h3>
     <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
 
-    <figure class="c-content-img-caption u-img-left">
+    <figure class="c-imagecaption u-img-left">
         <img src="https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-400x208.jpg" alt="" width="400" height="208" srcset="https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-400x208.jpg 400w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-160x83.jpg 160w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-240x125.jpg 240w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-768x400.jpg 768w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-360x188.jpg 360w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1.jpg 1200w" sizes="(max-width: 400px) 100vw, 400px">
-        <figcaption class="img-caption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
+        <figcaption class="imagecaption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
     </figure>
 
     <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
@@ -1037,9 +1037,9 @@ Avoid using the Content block if:
     <h3>Using HTML5 Figure &amp; Figcaption</h3>
     <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
 
-    <figure class="c-content-img-caption u-img-right">
+    <figure class="c-imagecaption u-img-right">
         <img src="https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-400x208.jpg" alt="" srcset="https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-400x208.jpg 400w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-160x83.jpg 160w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-240x125.jpg 240w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-768x400.jpg 768w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1-360x188.jpg 360w, https://devsite.carleton.ca/dev-cms/wp-content/uploads/delme-large1.jpg 1200w" sizes="(max-width: 400px) 100vw, 400px">
-        <figcaption class="img-caption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
+        <figcaption class="imagecaption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
     </figure>
 
     <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
