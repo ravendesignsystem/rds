@@ -423,7 +423,7 @@ Avoid using the Content block if:
 
 <h2>YouTube Embed with Video Wrapper</h2>
 
-<div class="c-content-video">
+<div class="c-video">
     <iframe width="500" height="281" src="https://www.youtube.com/embed/ngElkyQ6Rhs?feature=oembed&rel=0&showinfo=0" frameborder="0" allowfullscreen=""></iframe>
 </div>
 
@@ -894,7 +894,7 @@ Avoid using the Content block if:
 
     <h2>YouTube Embed with Video Wrapper</h2>
 
-    <div class="c-content-video">
+    <div class="c-video">
         <iframe width="500" height="281" src="https://www.youtube.com/embed/ngElkyQ6Rhs?feature=oembed&rel=0&showinfo=0" frameborder="0" allowfullscreen=""></iframe>
     </div>
 
