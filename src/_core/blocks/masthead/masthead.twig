@@ -4,7 +4,7 @@
 	<div>
 		<nav aria-label="Site title and subsite navigation" role="navigation">
 
-			<h2 class="masthead__site c-menu-submenu">
+			<h2 class="masthead__site c-submenu">
 				<a href="{{ site.url }}">{% include 'icons/mark-ravens.svg' %}RDS</a>
 			</h2>
 
@@ -52,7 +52,7 @@
 			</h2>
 			<ul role="menu">
                 {% if page.subsite == 'dev' %}
-				<li class="c-menu-submenu"><a href="#">Docs</a>
+				<li class="c-submenu"><a href="#">Docs</a>
 					<ul class="submenu__menu" aria-label="submenu">
 						<li>
 							<a href="/dev/docs/start/">Getting started</a>
@@ -96,7 +96,7 @@
 	</div>
 	<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
 		<ul>
-			<li class="c-menu-submenu c-menu-submenu--right">
+			<li class="c-submenu c-submenu--right">
 				<a class="u-icon--txt" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %} Github</a>
 				<ul class="submenu__menu" aria-label="submenu" aria-expanded="false">
 					<li>

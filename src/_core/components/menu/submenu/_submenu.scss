@@ -1,10 +1,10 @@
-.c-menu-submenu {
+.c-submenu {
 	position: relative;
 	cursor: pointer;
 }
 
 // carrot
-.c-menu-submenu > a::after {
+.c-submenu > a::after {
 	position: absolute;
 	content: '';
 	width: 0;
@@ -18,8 +18,8 @@
 	//margin-left: 4px;
 }
 
-.c-menu-submenu .submenu__menu,
-.c-menu-submenu + .submenu__menu {
+.c-submenu .submenu__menu,
+.c-submenu + .submenu__menu {
 	background-color: white;
 	background-clip: padding-box;
 	visibility: hidden;
@@ -88,8 +88,8 @@
 	}
 }
 
-.c-menu-submenu--right .submenu__menu,
-.c-menu-submenu--right + .submenu__menu {
+.c-submenu--right .submenu__menu,
+.c-submenu--right + .submenu__menu {
 	right: 0;
 	left: auto;
 
@@ -107,17 +107,17 @@
 		left: auto;
 	}
 }
-.c-menu-submenu:hover + .submenu__menu,
-.c-menu-submenu + .submenu__menu:hover,
-.c-menu-submenu:hover > .submenu__menu,
-.c-menu-submenu:focus-within > .submenu__menu,
-.c-menu-submenu .submenu__menu:hover,
-.c-menu-submenu .submenu__menu:focus {
+.c-submenu:hover + .submenu__menu,
+.c-submenu + .submenu__menu:hover,
+.c-submenu:hover > .submenu__menu,
+.c-submenu:focus-within > .submenu__menu,
+.c-submenu .submenu__menu:hover,
+.c-submenu .submenu__menu:focus {
 	visibility: visible;
 	opacity: 1;
 }
 
-.c-menu-submenu .submenu__menu li {
+.c-submenu .submenu__menu li {
 	&:first-of-type {
 		margin: 5px 0 0 0;
 	}

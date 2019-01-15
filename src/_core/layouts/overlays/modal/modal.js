@@ -45,7 +45,7 @@
 			modal.classList.toggle('is-hidden');
 			hamburger.classList.toggle('is-active');
 			modal.classList.remove('u-bg-grey');
-			mastheadSite.classList.toggle('c-menu-submenu');
+			mastheadSite.classList.toggle('c-submenu');
 			window.setTimeout(function() {
 				mastheadSiteMenu.classList.toggle('is-hidden');
 			}, 350);
@@ -61,7 +61,7 @@
 			if (btn === 'search') {
 				modalSearch.classList.remove('is-hidden'),
 					modalLogin.classList.add('is-hidden'),
-					document.querySelector('.modal__search .search__input').focus();
+					document.querySelector('.modal__search .searchform__input').focus();
 			} else {
 				modalLogin.classList.remove('is-hidden');
 				modal.classList.add('u-bg-grey'),
