@@ -6,14 +6,14 @@ banner:
   breadcrumbs:
     grandparent: Blocks
     parent: Footer
-desc: The Simple Footer is designed to help visitors by adding expected footer information including contact information, location, hours of operation and social media links. The name simple refers to how easy the block is to implement due to its one column design that presents this information clearly on both large and small screens. 
+desc: The Simple Footer is designed to help visitors by adding expected footer information including contact information, location, hours of operation and social media links. The name simple refers to how easy the block is to implement due to its one column design that presents this information clearly on both large and small screens.
 meta:
     version: 1.0.0
     status: ready
-    handle: footer-simple
+    handle: footersimple
     type: Full-width
     section: footer
-    path: blocks/footer-simple/
+    path: blocks/footersimple/
     theme: core
     heading: N/A
 dependencies:
