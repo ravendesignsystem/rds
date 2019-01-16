@@ -10,10 +10,10 @@ banner:
 meta:
     version: 1.0.1
     status: ready
-    handle: footer-brand
+    handle: footerbrand
     type: Full-width
     section: footer
-    path: blocks/footers/footer-brand/
+    path: blocks/footers/footerbrand/
     theme: core
     heading: N/A
 dependencies:
@@ -29,7 +29,7 @@ alternatives: n/a
 The Footer Brand block is a mandatory core block that should be included in the footer section of all pages and views within your Carleton app. This block contains the Carleton logo, which acts as navigation to the university's homepage and is important to conveying trust and our brand. It also holds key legal links to our copyright, accessibility and privacy policies.
 
 {%include 'rds/inc/close.twig'%}
-{%include 'blocks/footer-brand/footer-brand.twig'%}
+{%include 'blocks/footerbrand/footerbrand.twig'%}
 {%include 'rds/inc/open-b-content.twig'%}
 
 ```html
