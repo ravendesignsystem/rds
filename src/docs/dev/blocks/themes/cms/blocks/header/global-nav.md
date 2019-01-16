@@ -17,7 +17,7 @@ desc: The Global Nav block is a required include block that appears at the top o
 meta:
     version: 0.0.1
     theme: CMS
-    handle: global-nav
+    handle: globalnav
     type: Header block
     path: cms/blocks/header/
     ff: Full
