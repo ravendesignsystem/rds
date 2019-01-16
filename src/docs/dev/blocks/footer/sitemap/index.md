@@ -10,10 +10,10 @@ banner:
 meta:
     version: 1.0.0
     status: ready
-    handle: footer-sitemap
+    handle: footersitemap
     type: Full-width
     section: footer
-    path: footer-sitemap/
+    path: footersitemap/
     theme: core
 dependencies:
     js: n/a
@@ -25,7 +25,7 @@ alternatives: simple
 The Sitemap Footer helps users and search engines determine how the website is laid out and makes them aware of all your important pages. Having the sitemap in the footer as oppose to on an individual page will save visitors clicks.
 
 {%include 'rds/inc/close.twig'%}
-{%include 'footer-sitemap/footer-sitemap.twig'%}
+{%include 'footersitemap/footersitemap.twig'%}
 {%include 'rds/inc/open-b-content.twig'%}
 
 ```html
