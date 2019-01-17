@@ -1,4 +1,8 @@
-{% macro textimg(settings, data) %}
+{% macro textimg(settings, data, docs) %}
+{% if docs.content == 'close' %}
+    </div>
+    </div>
+{% endif %}
 <div class="u-block {% if settings.width %}u-block--{{ settings.width }}{% else %}u-block--m{% endif %} {% if settings.color %}u-block--{{ settings.color }}{% else %}u-block--white{% endif %}">
 {#<h2>Has heading</h2> TODO ADD CENTER HEADING#}
     <div class="b-textimg{% if settings.variant %} b-textimg--imgtext{% endif %}">
@@ -13,4 +17,8 @@
         </div>
     </div>
 </div>
-{% endmacro %}
+{% if docs.content == 'open' %}
+<div class="u-block u-block--s">
+    <div class="b-content">
+{% endif %}
+{% endmacro textimg %}

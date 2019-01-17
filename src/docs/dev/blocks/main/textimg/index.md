@@ -37,19 +37,15 @@ When Text-Image blocks are repeated back to back, it is best to:
 - alternate the column order and image location.
 - group sectioning blocks with related content together by using the same background color.
 
-{%include "rds/inc/close.twig"%}
-{%include "textimg/data/textimg--base.twig"%}
+{%include "textimg/data/textimg--base.twig" with {'content': 'close'}%}
 {%include "textimg/data/textimg--imgtext.twig"%}
-{%include "textimg/data/textimg--base.twig"%}
-{%include "rds/inc/open.twig"%}
+{%include "textimg/data/textimg--base.twig" with {'content': 'open'}%}
 
 - Use different background colours to divide the non-sectioning blocks.
 
-{%include "rds/inc/close.twig"%}
-{%include "textimg/data/textimg--base.twig"%}
+{%include "textimg/data/textimg--base.twig" with {'content': 'close'}%}
 {%include "textimg/data/textimg--white.twig"%}
-{%include "textimg/data/textimg--base.twig"%}
-{%include "rds/inc/open.twig"%}
+{%include "textimg/data/textimg--base.twig" with {'content': 'open'}%}
 
 - Stub
 ##Content guidelines
