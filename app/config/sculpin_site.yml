@@ -1,4 +1,4 @@
-# Site wide vars - eg. {{ site.title }} can be used
+# Site wide vars can be used globally - eg. {{ site.title }} can be used
 title: RDS Local
 subtitle: RDS
 version: 1.0.0
@@ -7,7 +7,64 @@ url: http://localhost:8000/docs/
 cssPath: http://localhost:3000/docs/css/app.css
 jsPath: http://localhost:3000/docs/js/app.js
 
-font: gotham
+blocks:
+    -
+        name: Banner
+        handle: banner
+        section: header
+        theme: core
+    -
+        name: Content
+        handle: content
+        section: main
+        theme: core
+    -
+        name: Global Nav
+        handle: globalnav
+        section: header
+        theme: cms
+    -
+        name: Grid Block
+        handle: gridblock
+        section: main
+        theme: core
+    -
+        name: Footer Brand
+        handle: footerbrand
+        section: footer
+        theme: core
+    -
+        name: Footer Sitemap
+        handle: footersitemap
+        section: footer
+        theme: fw
+    -
+        name: Footer Simple
+        handle: footersimple
+        section: footer
+        theme: na
+    -
+        name: Listing
+        handle: listing
+        section: main
+        theme: na
+    -
+        name: Masthead
+        handle: masthead
+        section: header
+        theme: core
+    -
+        name: Search
+        handle: search
+        section: header
+        theme: core
+    -
+        name: Text-Image
+        handle: textimg
+        section: main
+        theme: fw
+
+
 
 images: https://cu-raven.s3.amazonaws.com/assets/img/raven/
 some_global_images:
