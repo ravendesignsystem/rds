@@ -18,9 +18,8 @@ banner:
 ## Understanding the RDS System
 
 - [Scaffolding - concepts that makeup of RDS](docs/the-system/)
-- [Blocks and Components](docs/blocks/)
-    - [About Blocks - a deep dive](docs/blocks/blocks/)
-    - [Block Spacing and Layout](docs/blocks/block-spacing-layout/)
+- [Blocks - deep dive - spacing ](docs/blocks/)
+- [Components](docs/blocks/)
 - [Layouts](docs/scaffolding/layouts/)
 - [Themes](docs/scaffolding/templates/)
 - [Principles](#)

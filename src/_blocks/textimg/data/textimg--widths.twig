@@ -1,0 +1,27 @@
+{% if docs %}
+    <div class="u-block u-block--white u-block--s">
+        <div class="b-content">
+            <h2>Small width block setting</h2>
+            <p>While the default and preferred width for this block is medium, the small width block setting (using the <code>u-block--s</code> modifier) is also available. Note: a lesser amount of content should be used in the small-width block.</p>
+        </div>
+    </div>
+{% endif %}
+{% from "textimg/textimg.twig" import textimg %}
+{{ textimg (
+    {
+        color: "grey",
+        width: "s"
+    },
+    {
+        title: "Raven Design System",
+        img: {
+                alt: "Provide good alt text.",
+                url: "https://via.placeholder.com/640x480"
+        },
+        content: "<p>RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. more…</p>
+                    <p>RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. more…</p>"
+    },
+    {
+        content: content
+    }
+) }}
