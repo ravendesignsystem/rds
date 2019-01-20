@@ -6,3 +6,4 @@ hljs.initHighlightingOnLoad();
 
 // Tabs use on docs
 import '../blocks/tabs/tabs';
+import '../blocks/textimg/textimg';
