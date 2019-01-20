@@ -5,17 +5,18 @@
 //
 //  Table of Contents:
 //
-//   1. Media query breakpoints
-//   2. Grid vars
-//   3. Margins/spacing
-//   4. Colors
+//  1. Media query breakpoints
+//  2. Grid vars
+//  3. Margins/spacing
+//  4. Colors
+//	5. Type scale
 
 // 1. Media query breakpoints
 // --------------------------
 $breakpoints: (
 	s: 768px,
-	m: 960px, // previously 1024
-	l: 1200px // previously 1366
+	m: 960px,
+	l: 1200px
 );
 
 // 2. Grid vars
@@ -54,5 +55,16 @@ $grey-anakin: #939393;
 $grey-vader: #767676;
 $grey-emperor: #535353;
 
-// secondary block bg color
-$secondary: $grey;
+// 5. Type Scale
+// -------------
+$type12: 12px;
+$type14: 14px;
+$type16: 16px;
+$type18: 18px;
+$type20: 20px;
+$type24: 24px;
+$type30: 30px;
+$type36: 36px;
+$type48: 48px;
+$type60: 60px;
+$type72: 72px;
