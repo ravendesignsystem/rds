@@ -10,12 +10,14 @@
 
 	@include media('>=m') {
 		min-width: 430px;
+		max-width: 50%;
 	}
 }
 
 .u-block--s {
 	& .b-textimg__section {
 		@include media('>=m') {
+			max-width: 45%;
 			min-width: 230px;
 		}
 	}
@@ -40,11 +42,7 @@
 		top: 0;
 		width: auto;
 		max-width: 50%;
-		max-height: 360px;
-	}
-
-	@include media('>=m') {
-		max-height: 354px;
+		max-height: 320px;
 	}
 }
 
