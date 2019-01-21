@@ -1,13 +1,13 @@
 {% macro listing(settings, data) %}
 {% set blockHeading, itemHeading = 'h2', 'h3' %}
 {% if settings.heading|length -%}
-<section class="u-block u-block--s{% if settings.color|length %} u-block--{{ settings.color }}{% endif %}">
+<section class="u-block u-block--s{% if settings.color %} u-block--{{ settings.color }}{% endif %}">
     <{{ blockHeading }} class="u-no-borders">{{ settings.heading }}</{{ blockHeading }}>
 {% else %}
-<div class="u-block u-block--s{% if settings.color|length %} u-block--{{ settings.color }}{% endif %}">
+<div class="u-block u-block--s{% if settings.color %} u-block--{{ settings.color }}{% endif %}">
 {% endif %}
     <div class="b-listing">
-        <ul class="listing__list{% if settings.context|length %} b-listing--{{ settings.context }}{% endif %}" itemscope{% if settings.context == "people" -%} itemtype="http://schema.org/Person"{% elseif settings.context == "event" %} itemtype="http://schema.org/Event"{% else %} itemtype="http://schema.org/ItemList"{% endif %}>
+        <ul class="listing__list{% if settings.context %} b-listing--{{ settings.context }}{% endif %}" itemscope{% if settings.context == "people" -%} itemtype="http://schema.org/Person"{% elseif settings.context == "event" %} itemtype="http://schema.org/Event"{% else %} itemtype="http://schema.org/ItemList"{% endif %}>
 {% for item in data %}
             <li class="listing__item{% if item.badge is null %} c-icon-chevron-right{% endif %}" itemprop="item">
                 <a class="listing__url" href="{{ item.url }}" itemprop="url">

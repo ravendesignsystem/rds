@@ -25,19 +25,15 @@ dependencies:
 examples:
 - name: base
 - name: subtitle
-  nicename: List Group with subtitle
 - name: img
-  nicename: List Group with image
 - name: badge
-  nicename: List Group with badge
 - name: icon
-  nicename: List Group with icon
 - name: event
 - name: news
 - name: news-img
-  nicename: List Group - News variant with image
 - name: people
 - name: video
+- name: 2column
 wild: n/a
 alternatives: grid-list
 data:
