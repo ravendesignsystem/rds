@@ -11,7 +11,7 @@
     }
 </style>
 {% endif %}
-<div class="u-block {% if data.img.img_url %}u-block--full{% else %}u-block--s u-block--grey{% endif %}">
+<div class="u-block {% if data.img.img_url %}u-block--black u-block--full {% else %}u-block--s u-block--grey{% endif %}">
     <div class="b-banner{% if data.img.img_url %} b-banner--img{% endif %}{% if data.img.img_opacity == "dark" %} b-banner--img-dark{% elseif data.img.img_opacity == "light" %} b-banner--img-light{% endif %}{% if data.img.img_position == "top" %} b-banner--img-top{% elseif data.img.img_position == "bottom" %} b-banner--img-bottom{% endif %}">
         <div class="banner__container">
 {% if data.breadcrumbs.parent %}

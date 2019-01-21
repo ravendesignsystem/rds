@@ -106,7 +106,7 @@
 		top: 0;
 		left: 0;
 		content: "";
-		background-color: rgba(0,0,0,.6);
+		background-color: rgba(0,0,0,1);
 	}
 
 	@include media(">s") {
@@ -192,12 +192,23 @@
  * =======================================
  */
 
+
+
+.b-banner-img-fade:after {
+	background-color: rgba(0, 0, 0, 1);
+	animation-name: u-ani-fadeout;
+	animation-duration: 1000ms;
+	animation-fill-mode: forwards;
+}
 .b-banner--img-faint:after {
 	background-color: rgba(0, 0, 0, 0.20);
 }
 
 .b-banner--img-light:after {
-	background-color: rgba(0, 0, 0, 0.35);
+	//background-color: rgba(0, 0, 0, 0.35);
+	//animation-name: u-ani-fadein;
+	//animation-duration: 3000ms;
+	//animation-fill-mode: forwards;
 }
 
 .b-banner--img-dark:after {
@@ -206,7 +217,7 @@
 
 // Main Carousel Styles
 //-------------------------
-
+// TODO remove from core?
 .b-banner--carousel {
 	height: 300px;
 	padding-top: $block-padding-s;
