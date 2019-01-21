@@ -33,7 +33,7 @@ examples:
 - name: news-img
 - name: people
 - name: video
-- name: 2column
+- name: 2col
 wild: n/a
 alternatives: grid-list
 data:
