@@ -9,10 +9,13 @@ banner:
     img_url_s: https://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore-s.jpg
     img_opacity: light
 ---
+
 ## Blocks
+
 {% include "rds/inc/content-block-list.twig" %}
 
 ## Components
+
 {% include "rds/inc/content-components-list.twig" %}
 
 ## Understanding the RDS System
@@ -24,7 +27,7 @@ banner:
 - [Themes](docs/scaffolding/templates/)
 - [Principles](#)
 - [Contributing](#)
-    
+
 ## Using RDS
 
 - [Getting Started](docs/getting-started/)
@@ -35,7 +38,11 @@ banner:
 - [Releases - whats new](#)
 - [Getting help](#)
 
-## Custom Dev/Theming
+## Custom Development (Finished)
+
+- [Download](#)
+
+## Custom Dev/Theming (Unlinked)
 
 - [Download](#)
 - [Set up - tooling](#)
@@ -50,4 +57,3 @@ banner:
 - [Iconography](docs/grid/)
 - [Utility classes](docs/grid/)
 - [Guides](/)
-
