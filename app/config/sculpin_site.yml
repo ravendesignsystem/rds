@@ -25,7 +25,7 @@ blocks:
         theme: cms
     -
         name: Grid Block
-        handle: gridblock
+        handle: grid
         section: main
         theme: core
     -

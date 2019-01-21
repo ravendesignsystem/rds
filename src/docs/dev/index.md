@@ -20,40 +20,40 @@ banner:
 
 ## Understanding the RDS System
 
-- [Scaffolding - concepts that makeup of RDS](docs/the-system/)
-- [Blocks - deep dive - spacing ](docs/blocks/)
-- [Components](docs/blocks/)
-- [Layouts](docs/scaffolding/layouts/)
-- [Themes](docs/scaffolding/templates/)
-- [Principles](#)
-- [Contributing](#)
+- [Scaffolding: Concepts that Makeup of RDS](docs/the-system/) - Incomplete
+- [Blocks](#) - Incomplete
+- [Components](#) - Incomplete
+- [Layouts](understanding-rds/layouts/) - Incomplete
+- [Themes](docs/scaffolding/templates/) - Incomplete
+- [Principles](#) - Incomplete
+- [Contributing](#) - Incomplete
 
 ## Using RDS
 
-- [Getting Started](docs/getting-started/)
-- [Starter Themes](docs/getting-started/)
-- [Starter templates](docs/getting-started/)
-- [Compatibility - Browsers and devices](#)
-- [Accessibility](#)
-- [Releases - whats new](#)
-- [Getting help](#)
+- [Getting Started](using-rds/getting-started/)
+- [Starter Themes](#) - Incomplete
+- [Starter Templates](#) - Incomplete
+- [Bowser and Device Compatibility](#) - Incomplete
+- [Accessibility](#) - Incomplete
+- [Releases Notes](#) - Incomplete
+- [Getting Help](#) - Incomplete
 
 ## Custom Development (Finished)
 
-- [Download](#)
+- [Add Item](#) - Incomplete
 
 ## Custom Dev/Theming (Unlinked)
 
-- [Download](#)
-- [Set up - tooling](#)
-- [Directory Structure](/)
-- [The naming of things and terminology](docs/grid/)
-- [Theming - Custom starter themes](docs/blocks/)
-- [Styling - SASS](#)
-- [Creating Blocks](docs/blocks/)
-- [Creating Components](docs/blocks/)
-- [Custom layouts](/)
-- [Grid System](docs/grid/)
-- [Iconography](docs/grid/)
-- [Utility classes](docs/grid/)
-- [Guides](/)
+- [Download](#) - Incomplete
+- [Set up - tooling](#) - Incomplete
+- [Directory Structure](#) - Incomplete
+- [The naming of things and terminology](#) - Incomplete
+- [Theming - Custom starter themes](#) - Incomplete
+- [Styling - SASS](#) - Incomplete
+- [Creating Blocks](#) - Incomplete
+- [Creating Components](#) - Incomplete
+- [Custom layouts](/) - Incomplete
+- [Grid System](#) - Incomplete
+- [Iconography](#) - Incomplete
+- [Utility classes](#) - Incomplete
+- [Guides](#) - Incomplete
