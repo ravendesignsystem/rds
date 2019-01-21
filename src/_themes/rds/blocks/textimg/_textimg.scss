@@ -9,10 +9,10 @@
 
 		& .b-textimg__img {
 			max-height: 290px;
-			animation-name: fadeInAnimation;
+			animation-name: u-ani-fadein;
 			animation-duration: 1000ms;
 			animation-fill-mode: forwards;
-			transition: background-color 10000ms linear;
+			//transition: background-color 10000ms linear;
 		}
 
 		& .b-textimg__desc p {
@@ -28,14 +28,5 @@
 				color: $red;
 			}
 		}
-	}
-}
-
-@keyframes fadeInAnimation {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
 	}
 }

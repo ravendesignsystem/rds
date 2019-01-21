@@ -601,3 +601,29 @@
 		display: none;
 	}
 }
+
+//TODO Add more animations?
+
+.u-ani-fadein--1000 {
+	animation-name: u-ani-fadein;
+	animation-duration: 1000ms;
+	animation-fill-mode: forwards;
+}
+
+@keyframes u-ani-fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes u-ani-fadeout {
+	100% {
+		opacity: 0;
+	}
+	0% {
+		opacity: 1;
+	}
+}

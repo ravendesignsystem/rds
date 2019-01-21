@@ -5,7 +5,7 @@
 .b-textimg__section {
 	@include media('>=s') {
 		max-width: 45%;
-		min-height: 355px;
+		//min-height: 355px;
 	}
 
 	@include media('>=m') {

@@ -21,7 +21,6 @@
 // Content Blocks:
 // ---------------
 @import '../../../_blocks/textimg/textimg';
-// Listing block
 @import '../../../_blocks/listing/listing';
 
 // Footer Blocks:
@@ -34,6 +33,7 @@
 // CUSTOM THEME - RDSDOCS BLOCKS
 // -----------------------------
 // RDS Docs theme styles
+@import '../blocks/gridhome/gridhome';
 @import '../blocks/textimg/textimg';
 @import '../blocks/tabs/tabs';
 @import 'vendor/highlight-js--github';

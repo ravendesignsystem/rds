@@ -1,0 +1,63 @@
+.b-docs-gridhome {
+	margin-bottom: 60px;
+}
+
+.b-docs-gridhome__panel {
+	overflow: hidden;
+	position: relative;
+	background-color: $grey-kenobi;
+	padding: 30px;
+	color: $black;
+
+	& svg {
+		position: absolute;
+	}
+
+	& h2 {
+		border: none;
+	}
+}
+
+.b-docs-gridhome__panel--dev {
+	min-height: 420px;
+	display: flex;
+
+	& svg {
+		bottom: 30px;
+		left: 90px;
+		width: 450px;
+	}
+}
+
+.b-docs-gridhome__panel--content {
+	//flex: 1;
+	margin-bottom: 30px;
+	min-height: 215px;
+
+	& svg {
+		bottom: -32px;
+		left: 168px;
+	}
+
+	& h2 {
+		max-width: 160px;
+	}
+}
+
+.b-docs-gridhome__panel--design {
+
+	& svg {
+		bottom: -10px;
+		left: 130px;
+	}
+}
+
+.b-docs-gridhome__panel--a11y {
+
+	& svg {
+		bottom: -20px;
+		left: 140px;
+		width: 110px;
+		height: 110px;
+	}
+}

@@ -87,29 +87,29 @@
 
     {% block footer %}
         <footer>
-            {% from "blocks/footersimple/footersimple.twig" import simple %}
-            {{ simple (
-                {
-                },
-                {
-                    contact:
-                    {
-                        email: "web@carleton.ca",
-                        phone: "613-520-2600",
-                        fax: "613-520-2600",
-                        contactPage: "https://carleton.ca/contact/"
-                    },
-                    social:
-                    {
-                        facebook: "https://www.facebook.com/carletonuniversity/",
-                        instagram: "https://www.instagram.com/carleton_u/",
-                        twitter: "https://twitter.com/@Carleton_U",
-                        youtube: "https://www.youtube.com/user/carletonuvideos"
-                    },
-                }
-            ) }}
+            {#{% from "blocks/footersimple/footersimple.twig" import simple %}#}
+            {#{{ simple (#}
+                {#{#}
+                {#},#}
+                {#{#}
+                    {#contact:#}
+                    {#{#}
+                        {#email: "web@carleton.ca",#}
+                        {#phone: "613-520-2600",#}
+                        {#fax: "613-520-2600",#}
+                        {#contactPage: "https://carleton.ca/contact/"#}
+                    {#},#}
+                    {#social:#}
+                    {#{#}
+                        {#facebook: "https://www.facebook.com/carletonuniversity/",#}
+                        {#instagram: "https://www.instagram.com/carleton_u/",#}
+                        {#twitter: "https://twitter.com/@Carleton_U",#}
+                        {#youtube: "https://www.youtube.com/user/carletonuvideos"#}
+                    {#},#}
+                {#}#}
+            {#) }}#}
 
-            {% include "blocks/footerbrand/footerbrand.twig" ignore missing %}
+            {% include "footerbrand/footerbrand.twig" ignore missing %}
         </footer>
     {% endblock %} {# END footer block #}
 

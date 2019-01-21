@@ -13,7 +13,7 @@ meta:
     handle: footerbrand
     type: Full-width
     section: footer
-    path: blocks/footers/footerbrand/
+    path: footers/footerbrand/
     theme: core
     heading: N/A
 dependencies:
@@ -24,12 +24,12 @@ dependencies:
 wild: n/a
 alternatives: n/a
 ---
-## Brand Footer block example
+## Footer Brand block example
 
 The Footer Brand block is a mandatory core block that should be included in the footer section of all pages and views within your Carleton app. This block contains the Carleton logo, which acts as navigation to the university's homepage and is important to conveying trust and our brand. It also holds key legal links to our copyright, accessibility and privacy policies.
 
 {%include 'rds/inc/close.twig'%}
-{%include 'blocks/footerbrand/footerbrand.twig'%}
+{%include 'footerbrand/footerbrand.twig'%}
 {%include 'rds/inc/open-b-content.twig'%}
 
 ```html
@@ -56,6 +56,8 @@ The Footer Brand block is a mandatory core block that should be included in the 
 ## Implementation Notes
 
 Include the HTML globally in your footer. This block can be used in conjunction with other [footer blocks](#) as long as it is the last block on all pages. No other visible blocks should appear after it.
+
+If possible, use a server-side date function for the copyright notice.
 
 ##When To Avoid
 
