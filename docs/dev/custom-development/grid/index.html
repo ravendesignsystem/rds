@@ -164,10 +164,10 @@ RDS</a>
 </div>
                                 </header>
     
-            <main>
-    <div class="u-block u-block--s u-block--white">
-        <div class="b-content">
-              <p>This base setup provides a super simple, responsive CSS Grid to easily list components or other types of content in equal width and equal height columns without having to write cluttered markup. Not intended for broader page layouts, the CSS Grid is intended to be used inside a block <a href="https://github.com/troychaplin79/theme-base/wiki/Blocks">(read more about blocks)</a>, and currently provides a 2, 3 and 4 column grid option.</p>
+                        <main id="content">
+                                <div class="u-block u-block--white u-block--s">
+                    <div class="b-content">
+                                                <p>This base setup provides a super simple, responsive CSS Grid to easily list components or other types of content in equal width and equal height columns without having to write cluttered markup. Not intended for broader page layouts, the CSS Grid is intended to be used inside a block <a href="blocks">(read more about blocks)</a>, and currently provides a 2, 3 and 4 column grid option.</p>
 
 <h1 id="building-a-grid">Building a Grid</h1>
 
@@ -182,7 +182,7 @@ RDS</a>
 
 <p>This 4 column grid examples uses nested div for each individual grid item.</p>
 
-<pre><code>&lt;div class="u-grid u-grid--4"&gt;
+<pre><code class="html">&lt;div class="u-grid u-grid--4"&gt;
     &lt;div&gt;This is grid item 1&lt;/div&gt;
     &lt;div&gt;This is grid item 2&lt;/div&gt;
     &lt;div&gt;This is grid item 3&lt;/div&gt;
@@ -192,7 +192,7 @@ RDS</a>
 
 <p>Alternatively, you can use ordered or unordered lists to build your grid:</p>
 
-<pre><code>&lt;ul class="u-grid u-grid--4"&gt;
+<pre><code class="html">&lt;ul class="u-grid u-grid--4"&gt;
     &lt;li&gt;This is grid item 1&lt;/li&gt;
     &lt;li&gt;This is grid item 2&lt;/li&gt;
     &lt;li&gt;This is grid item 3&lt;/li&gt;
@@ -206,7 +206,7 @@ RDS</a>
 
 <p>The following grid will have 2 rows or 3 grid items:</p>
 
-<pre><code>&lt;div class="u-grid u-grid--3"&gt;
+<pre><code class="html">&lt;div class="u-grid u-grid--3"&gt;
     &lt;div&gt;This is grid item 1&lt;/div&gt;
     &lt;div&gt;This is grid item 2&lt;/div&gt;
     &lt;div&gt;This is grid item 3&lt;/div&gt;
@@ -220,7 +220,7 @@ RDS</a>
 
 <p>The following example is a 3 column grid that contains only 5 grid items. There will be an empty space where the 6th item would normally exist.</p>
 
-<pre><code>&lt;div class="u-grid u-grid--3"&gt;
+<pre><code class="html">&lt;div class="u-grid u-grid--3"&gt;
     &lt;div&gt;This is grid item 1&lt;/div&gt;
     &lt;div&gt;This is grid item 2&lt;/div&gt;
     &lt;div&gt;This is grid item 3&lt;/div&gt;
@@ -235,7 +235,7 @@ RDS</a>
 
 <p>The following example would break a 3 column grid to 1 column at the small breakpoint:</p>
 
-<pre><code>&lt;div class="u-grid u-grid--3 u-grid--s1"&gt;
+<pre><code class="html">&lt;div class="u-grid u-grid--3 u-grid--s1"&gt;
     &lt;div&gt;This is grid item 1&lt;/div&gt;
     &lt;div&gt;This is grid item 2&lt;/div&gt;
     &lt;div&gt;This is grid item 3&lt;/div&gt;
@@ -248,7 +248,7 @@ RDS</a>
 
 <p>To remove the gutters on a grid, add <code>u-grid--no-gutters</code> to the main grid container, as the following example shows:</p>
 
-<pre><code>&lt;div class="u-grid u-grid--3 u-grid--no-gutters"&gt;
+<pre><code class="html">&lt;div class="u-grid u-grid--3 u-grid--no-gutters"&gt;
     &lt;div&gt;This is grid item 1&lt;/div&gt;
     &lt;div&gt;This is grid item 2&lt;/div&gt;
     &lt;div&gt;This is grid item 3&lt;/div&gt;
@@ -257,10 +257,10 @@ RDS</a>
     &lt;div&gt;This is grid item 6&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-        </div>
-    </div>
-</main>
-     
+                                            </div>
+                </div>
+                                            </main>
+             
             <footer>
                                                                                                                                                                                                                                                                                                                                                                                                                             
             <div class="u-block u-block--black u-block--border-top u-center u-center--center">
@@ -310,8 +310,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu--1-104" type="checkbox" hidden/>
-                    <label for="menu--1-104">
+                                <input class="menu__checkbox" id="menu--1-95" type="checkbox" hidden/>
+                    <label for="menu--1-95">
                         <a class="menu__url " href="#">Level 1-1</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -319,8 +319,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-25" type="checkbox" hidden/>
-                    <label for="menu-2-1-25">
+                                <input class="menu__checkbox" id="menu-2-1-194" type="checkbox" hidden/>
+                    <label for="menu-2-1-194">
                         <a class="menu__url " href="#">Level 2-1</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -340,8 +340,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-63" type="checkbox" hidden/>
-                    <label for="menu-2-1-63">
+                                <input class="menu__checkbox" id="menu-2-1-137" type="checkbox" hidden/>
+                    <label for="menu-2-1-137">
                         <a class="menu__url " href="#">Second Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -358,8 +358,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu--1-172" type="checkbox" hidden/>
-                    <label for="menu--1-172">
+                                <input class="menu__checkbox" id="menu--1-40" type="checkbox" hidden/>
+                    <label for="menu--1-40">
                         <a class="menu__url " href="#">First Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -367,8 +367,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-184" type="checkbox" hidden/>
-                    <label for="menu-2-1-184">
+                                <input class="menu__checkbox" id="menu-2-1-149" type="checkbox" hidden/>
+                    <label for="menu-2-1-149">
                         <a class="menu__url " href="#">Second Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -388,8 +388,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-170" type="checkbox" hidden/>
-                    <label for="menu-2-1-170">
+                                <input class="menu__checkbox" id="menu-2-1-173" type="checkbox" hidden/>
+                    <label for="menu-2-1-173">
                         <a class="menu__url " href="#">Second Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
