@@ -20,40 +20,42 @@ banner:
 
 ## Understanding the RDS System
 
-- [Scaffolding: Concepts that Makeup of RDS](docs/the-system/) - Incomplete
-- [Blocks](#) - Incomplete
-- [Components](#) - Incomplete
-- [Layouts](understanding-rds/layouts/) - Incomplete
-- [Themes](docs/scaffolding/templates/) - Incomplete
-- [Principles](#) - Incomplete
-- [Contributing](#) - Incomplete
+- [About RDS](understanding-rds/about-rds) - Review Required
+- [Concepts that Makeup of RDS](understanding-rds/concepts-makeup) - Review Required
+- [Blocks](#) - Not Linked
+- [Components](#) - Not Linked
+- [Layouts](understanding-rds/layouts/) - Review Required
+- [Themes and Templates](understanding-rds/themes-templates/) - Review Required
+- [Principles](#) - Not Linked
+- [Contributing](#) - Not Linked
 
 ## Using RDS
 
-- [Getting Started](using-rds/getting-started/)
-- [Starter Themes](#) - Incomplete
-- [Starter Templates](#) - Incomplete
-- [Bowser and Device Compatibility](#) - Incomplete
-- [Accessibility](#) - Incomplete
-- [Releases Notes](#) - Incomplete
-- [Getting Help](#) - Incomplete
+- [Getting Started](using-rds/getting-started/) - Review Required
+- [Starter Themes](using-rds/#) - Not Linked
+- [Starter Templates](using-rds/#) - Not Linked
+- [Bowser and Device Compatibility](using-rds/#) - Not Linked
+- [Accessibility](using-rds/accessibility/) - Not Linked
+- [Releases Notes](using-rds/#) - Not Linked
+- [Getting Help](using-rds/#) - Not Linked
 
 ## Custom Development (Finished)
 
-- [Add Item](#) - Incomplete
+- [Custom layouts](custom-development/layouts/) - Review Required
+- [Mobile and Progressive Web Apps](custom-development/mobile/) - Review Required
+- [Naming Conventions and Terminology](custom-development/naming/) - Review Required
+- [Security Checklist](custom-development/security/) - Review Required
 
 ## Custom Dev/Theming (Unlinked)
 
-- [Download](#) - Incomplete
-- [Set up - tooling](#) - Incomplete
-- [Directory Structure](#) - Incomplete
-- [The naming of things and terminology](#) - Incomplete
-- [Theming - Custom starter themes](#) - Incomplete
-- [Styling - SASS](#) - Incomplete
-- [Creating Blocks](#) - Incomplete
-- [Creating Components](#) - Incomplete
-- [Custom layouts](/) - Incomplete
-- [Grid System](#) - Incomplete
-- [Iconography](#) - Incomplete
-- [Utility classes](#) - Incomplete
-- [Guides](#) - Incomplete
+- [Download](custom-development/#) - Not Linked
+- [Set up - tooling](custom-development/#) - Not Linked
+- [Directory Structure](custom-development/#) - Not Linked
+- [Theming - Custom starter themes](custom-development/#) - Not Linked
+- [Styling - SASS](custom-development/#) - Not Linked
+- [Creating Blocks](custom-development/#) - Not Linked
+- [Creating Components](custom-development/#) - Not Linked
+- [Grid System](custom-development/#) - Not Linked
+- [Iconography](custom-development/#) - Not Linked
+- [Utility classes](custom-development/#) - Not Linked
+- [Guides](custom-development/#) - Not Linked

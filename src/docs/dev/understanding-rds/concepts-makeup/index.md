@@ -1,7 +1,7 @@
 ---
 layout: base
 content: true
-title: The makeup of RDS sites
+title: Concepts that Makeup RDS Sites
 ---
 
 ## Pages
@@ -10,16 +10,16 @@ RDS apps and sites are a collection of related pages. A page refers to the full 
 
 ![img of page](http://cu-raven.s3.amazonaws.com/assets/img/docs/page.png)
 
-### Page templates 
+### Page templates
 
 Page templates control the page’s design and establish predefined sections to display content. You will define separate templates for the various aspects of your site. Typical templates found in RDS themes include:
 
 - base
-- home 
+- home
 - single
 - category
 
-#### Page template sections 
+#### Page template sections
 
 Page templates in RDS, are made up of the following sections:
 
@@ -43,14 +43,14 @@ Themes package up and contain all of the assests and styles that make up an enti
 ## In summary
 
 RDS sites are made up of a collection of page templates that arrange layouts to control blocks. It becomes clearer as you work with the system and get use to the nomenclature.
- 
+
 ![img of the RDS makeup](http://cu-raven.s3.amazonaws.com/assets/img/docs/makeup.png)
 
-Remember: 
+Remember:
 
 - Layouts go inside specific template sections
 - Template sections never nest within other template sections
 - Blocks never nest within other blocks
 
- 
+
 
