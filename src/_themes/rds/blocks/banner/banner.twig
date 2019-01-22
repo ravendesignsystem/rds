@@ -24,13 +24,13 @@
                 <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="{{ site.url }}/dev/">Dev</a></li>
                 {% endif %}
 {% if page.banner.breadcrumbs.greatgrandparent %}
-                <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../..">{{ page.banner.breadcrumbs.greatgrandparent }}</a></li>
+                <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../../../">{{ page.banner.breadcrumbs.greatgrandparent }}</a></li>
 {%  endif %}
 {% if page.banner.breadcrumbs.grandparent %}
-                <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="..">{{ page.banner.breadcrumbs.grandparent }}</a></li>
+                <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../../">{{ page.banner.breadcrumbs.grandparent }}</a></li>
 {%  endif %}
 {% if page.banner.breadcrumbs.parent %}
-                <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../header">{{ page.banner.breadcrumbs.parent }}</a></li>
+                <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../">{{ page.banner.breadcrumbs.parent }}</a></li>
 {%  endif %}
                 <li class="banner__breadcrumb-item active u-visually-hidden" itemprop="breadcrumb" aria-current="page">{{ data.title }}</li>
             </ol>

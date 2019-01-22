@@ -6,14 +6,13 @@ title: Footer Brand block
 banner:
  breadcrumbs:
   grandparent: Blocks
-  parent: Footer
 meta:
  version: 1.0.1
  status: ready
  handle: footerbrand
  type: Full-width
  section: footer
- path: footer/footerbrand/
+ path: footerbrand/
  theme: core
  heading: N/A
 dependencies:
