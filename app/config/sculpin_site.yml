@@ -1,4 +1,4 @@
-# Site wide vars can be used globally - eg. {{ site.title }} can be used
+# Site wide global vars - eg. {{ site.title }} can be used
 title: RDS Local
 subtitle: RDS
 version: 1.0.0
