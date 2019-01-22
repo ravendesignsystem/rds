@@ -52,7 +52,7 @@ must be imported  */
 // Blocks
 // ------
 // header blocks
-@import '../blocks/masthead/masthead'; //inlined as critical CSS*/
+@import '../../_blocks/masthead/masthead'; //inlined as critical CSS*/
 @import '../../_blocks/banner/banner';
 @import '../../_blocks/search/search';
 
@@ -65,8 +65,8 @@ must be imported  */
 @import '../../_blocks/footersitemap/footersitemap';
 
 // nav blocks
-@import '../blocks/login/login';
-@import '../blocks/menu/menu';
+@import '../../_blocks/login/login';
+@import '../../_blocks/menu/menu';
 
 // Core Components
 // ---------------
