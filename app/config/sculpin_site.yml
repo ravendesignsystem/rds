@@ -14,6 +14,11 @@ blocks:
         section: header
         theme: core
     -
+        name: Card Grid
+        handle: cardgrid
+        section: main
+        theme: core
+    -
         name: Content
         handle: content
         section: main
@@ -23,11 +28,6 @@ blocks:
         handle: globalnav
         section: header
         theme: cms
-    -
-        name: Grid Block
-        handle: grid
-        section: main
-        theme: core
     -
         name: Footer Brand
         handle: footerbrand

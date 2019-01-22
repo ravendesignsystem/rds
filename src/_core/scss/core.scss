@@ -53,15 +53,15 @@ must be imported  */
 // ------
 // header blocks
 @import '../blocks/masthead/masthead'; //inlined as critical CSS*/
-@import '../blocks/banner/banner';
-@import '../blocks/search/search';
+@import '../../_blocks/banner/banner';
+@import '../../_blocks/search/search';
 
 // content blocks
-@import '../blocks/content/content';
+@import '../../_blocks/content/content';
 
 // footer blocks
 @import '../../_blocks/footerbrand/footerbrand';
-@import '../blocks/footersimple/footersimple';
+@import '../../_blocks/footersimple/footersimple';
 @import '../../_blocks/footersitemap/footersitemap';
 
 // nav blocks

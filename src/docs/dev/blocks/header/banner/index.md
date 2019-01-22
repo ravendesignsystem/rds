@@ -12,7 +12,7 @@ meta:
   handle: banner
   type: Full-width
   section: Header
-  path: blocks/banner/
+  path: banner/
   theme: Core
   heading: na
 context: 

@@ -38,7 +38,7 @@ banner: none
             <div style="flex: 1;display: flex" class="b-docs-">
                 <a style="display: flex" href="design/">
                     <div class="b-docs-gridhome__panel b-docs-gridhome__panel--design" style="flex: 1;margin-right: 30px;" >
-                        <h2>Design and brand</h2>
+                        <h2>Design & brand</h2>
                         {% include "rds/assets/img/design.svg" %}
                     </div>
                 </a>

@@ -1,7 +1,7 @@
 ---
 layout: base
 subsite: dev
-title: Grid block
+title: Card Grid block
 banner:
   breadcrumbs:
     grandparent: Blocks
@@ -9,12 +9,12 @@ content: true
 meta:
     version: 1.0.0
     status: under review
-    handle: grid
+    handle: cardgrid
     type: Fixed-width
     section: Any
-    path: listing/grid/
+    path: cardgrid/
     theme: Core
-    heading: "true"
+    heading: true
 dependencies:
     js: n/a
 examples:
@@ -25,7 +25,7 @@ data:
   type: string
   desc: Card component inc path.
 ---
-The Grid block uses RDS' [responsive grid](#) to list [Card components](#) in equal-width columns. **Note**: this block should not be used for general layout purposes.{%include "/rds/inc/close.twig"%}
+The Card Grid block uses RDS' [responsive grid](#) to list [Card components](#) in equal-width columns. **Note**: this block should not be used for general layout purposes.{%include "/rds/inc/close.twig"%}
 <div class="u-block u-block--white u-block--s u-no-padding-bottom">
 <h2>Base example</h2>
 <div class="b-main-grid u-grid u-grid--3">
@@ -181,18 +181,18 @@ Control the block's width and background colour using the following [block setti
 </div>
 ```
 
-##Content guidelines
+## Content guidelines
 
 Grid block cards should:
 
 - Present objects of the same content and type.
 - Images should have a similar tone and treatment to visually unify the panel.
 
-##Implementation Notes
+## Implementation Notes
 
 -  If you are building pages with Grid blocks but without [Content blocks](#), use the four column grid and the medium-size width setting `u-block--m`.
 
-##When To Avoid
+## When To Avoid
 
 - Don't use this block inside of a content block. If you need a grid within a content block, use the `u-grid` modifier. Remember, blocks can never be nested.
 

@@ -1,4 +1,11 @@
-{% from "blocks/footersimple/footersimple.twig" import simple %}
+{% if docs %}
+    <div class="u-block u-block--white u-block--s">
+        <div class="b-content">
+            <h2>Simple Footer without social media links</h2>
+        </div>
+    </div>
+{% endif %}
+{% from "footersimple/footersimple.twig" import simple %}
 {{ simple (
     {
     },
@@ -7,7 +14,7 @@
         {
             name: "Department Name",
             building: "Dunton Tower",
-            number: "666",
+            number: "123",
             buildingOff: "Chateau Laurier",
             street: "222 Fairway",
             city: "Toronto",

@@ -1,0 +1,13 @@
+{% if 'close' in content %}
+    </div>
+    </div>
+{% endif %}
+<div class="u-block u-block--s u-block--grey">
+    <div class="b-search">
+    {% include "components/form/search/search.twig" %}
+    </div>
+</div>
+{% if 'open' in content %}
+<div class="u-block u-block--s">
+    <div class="b-content">
+{% endif %}
