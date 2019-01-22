@@ -2,7 +2,7 @@
 layout: base
 subsite: dev
 content: true
-title: Search block
+title: Search Block
 banner:
   breadcrumbs:
     grandparent: Blocks

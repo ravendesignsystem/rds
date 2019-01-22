@@ -9,57 +9,57 @@ jsPath: http://localhost:3000/docs/js/app.js
 
 blocks:
     -
-        name: Banner
+        name: Banner (Review Required)
         handle: banner
         section: header
         theme: core
     -
-        name: Card Grid
+        name: Card Grid (Review Required)
         handle: cardgrid
         section: main
         theme: core
     -
-        name: Content
+        name: Content (Review Required)
         handle: content
         section: main
         theme: core
     -
-        name: Global Nav
+        name: Global Nav (Review Required)
         handle: globalnav
         section: header
         theme: cms
     -
-        name: Footer Brand
+        name: Footer Brand (Review Required)
         handle: footerbrand
         section: footer
         theme: core
     -
-        name: Footer Sitemap
+        name: Footer Sitemap (Review Required)
         handle: footersitemap
         section: footer
         theme: fw
     -
-        name: Footer Simple
+        name: Footer Simple (Review Required)
         handle: footersimple
         section: footer
         theme: na
     -
-        name: Listing
+        name: Listing (Review Required)
         handle: listing
         section: main
         theme: na
     -
-        name: Masthead
+        name: Masthead (Review Required)
         handle: masthead
         section: header
         theme: core
     -
-        name: Search
+        name: Search (Review Required)
         handle: search
         section: header
         theme: core
     -
-        name: Text-Image
+        name: Text-Image (Review Required)
         handle: textimg
         section: main
         theme: fw

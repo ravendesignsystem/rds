@@ -2,7 +2,7 @@
 layout: base
 subsite: dev
 content: true
-title: CMS Global Nav
+title: Global Nav
 banner:
   breadcrumbs:
     grandparent: Blocks

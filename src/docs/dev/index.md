@@ -47,6 +47,8 @@ banner:
 
 ## Custom Development
 
+- [Working with Blocks](custom-development/blocks)
+- [Working with the CSS Grid](custom-development/grid)
 - [Custom layouts](custom-development/layouts/) - Review Required
 - [Mobile and Progressive Web Apps](custom-development/mobile/) - Review Required
 - [Naming Conventions and Terminology](custom-development/naming/) - Review Required

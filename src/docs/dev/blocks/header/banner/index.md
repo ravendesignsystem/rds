@@ -5,7 +5,7 @@ title: Banner Block
 banner:
   breadcrumbs:
     grandparent: Blocks
-desc: The banner block provides a variety of functions relating to being the first visual a visitor encounters on each page. At the minimum, the base banner provides the primary page heading. To take advantage of the its prime position, the banner block affords many options including: breadcrumb navigational aids, call to action buttons and hero images. 
+desc: The banner block provides a variety of functions relating to being the first visual a visitor encounters on each page. At the minimum, the base banner provides the primary page heading. To take advantage of the its prime position, the banner block affords many options including: breadcrumb navigational aids, call to action buttons and hero images.
 meta:
   version: 1.0.1
   status: ready
@@ -15,7 +15,7 @@ meta:
   path: banner/
   theme: Core
   heading: na
-context: 
+context:
 - name: image
 - name: carousel
 dependencies:
@@ -67,11 +67,11 @@ data:
 
 Banner blocks should:
 
-- 
+-
 
 ##When To Avoid
 
-- Don't use this block.  
+- Don't use this block.
 
 https://www.optimizely.com/optimization-glossary/hero-image/
 
