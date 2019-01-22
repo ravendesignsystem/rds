@@ -8,11 +8,11 @@ banner:
     grandparent: Components
     parent: Buttons
 meta:
-    version: 0.1.0
+    version: 1.0.0
     status: under review
-    handle: cta
+    handle: buttoncta
     type: button
-    path: components/buttons/cta/
+    path: buttoncta/
     theme: Core
 context:
 - name: ghost

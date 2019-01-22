@@ -1,0 +1,20 @@
+{% if docs %}
+<div class="u-block u-block--s u-block--white">
+    <div class="b-content">
+        <h2>Base example</h2>
+        <p>The CTA button is used to make common actions visible and easy to perform with one click or tap. CTA buttons are labeled using text or both text and an icon.</p>
+{% endif %}
+{% from "buttoncta/buttoncta.twig" import cta %}
+{{ cta (
+    {
+    },
+    {
+        title: "Join the darkside",
+        url: "http://www.nooooooooooooooo.com"
+    }
+) }}
+{% if docs %}
+    </div>
+</div>
+{% endif %}
+

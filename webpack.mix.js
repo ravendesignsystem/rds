@@ -33,8 +33,8 @@ mix
 
 if ( env === 'production' ) {
 	mix
-		.sass('src/_core/scss/core.scss', 'dist/core/css/rds-core-min')
-		.js('src/_core/js/core.js', 'dist/core/js/rds-core-min')
+		.sass('src/_themes/core/scss/core.scss', 'dist/core/css/rds-core-min')
+		.js('src/_themes/core/js/core.js', 'dist/core/js/rds-core-min')
 		.copy('build/docs', 'docs');
 		// .sass('src/_themes/cms/scss/_cms.scss', 'dist/themes/cms/css/cms-min')
 		// .sass('src/_themes/ff/scss/_ff.scss', 'dist/themes/ff/css/ff-min')

@@ -1,5 +1,5 @@
 // *** CORE JS ***
-import '../../../_core/js/core';
+import '../../../_themes/core/js/core';
 
 // *** THEME JS ***
 

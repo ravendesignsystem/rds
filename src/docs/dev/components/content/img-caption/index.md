@@ -12,14 +12,14 @@ meta:
     status: under review
     handle: img-caption
     type: Content
-    path: components/content/img-caption/
+    path: imgcaption/
     theme: Core
 ---
 Use this component to further explain,add commentary or provide context to your images contained in the `<figure>` element.
 
 ## Base example
 
-{%include "components/content/img-caption/img-caption.twig"%}
+{%include 'imgcaption/imgcaption'%}
 
 ```html
 <figure aria-labelledby="figcaption_id_1" class="c-imagecaption">

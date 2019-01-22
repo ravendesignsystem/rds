@@ -1,0 +1,27 @@
+{% if docs %}
+    <div class="u-block u-block--s u-block--white">
+        <div class="b-content">
+            <h2>Video card variant</h2>
+            <p>Use the video card variant to highlight that the linked item's content contains a video.</p>
+        </div>
+    </div>
+<div class="u-block u-block--s u-block--grey">
+    <div class="b-main-grid u-grid u-grid--3">
+{% endif %}
+{% from "card/card.twig" import card %}
+{{ card (
+    {
+        variant: "video"
+    },
+    {
+        img: "http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg",
+        text: "Watch this amazing and complicated test of their intelligence.",
+        title: "Amazing Raven intelligence",
+        url: "https://www.youtube.com/watch?v=lrYPm6DD44M"
+    }
+) }}
+{% if docs %}
+    </div>
+</div>
+{% endif %}
+

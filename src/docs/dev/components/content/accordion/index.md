@@ -12,14 +12,14 @@ meta:
     status: under review
     handle: accordion
     type: Fixed-width
-    path: components/content/accordion/
+    path: accordion/
     theme: Core
 ---
 The Accordion block is a vertically stacked list of items with content sections collapsed by default. Each item's content can be expanded and then collapsed by clicking the title allowing users to expose content in a progressive manner. Accordions minimize scrolling on long pages and display critical information first.
 
 ## Base example
 
-{%include "components/content/accordion/data/accordion.twig" ignore missing%}<br>
+{%include "accordion/data/accordion.twig" ignore missing%}<br>
 
 ```html
 <div class="c-accordion">
@@ -64,7 +64,7 @@ The Accordion block is a vertically stacked list of items with content sections 
 
 Only one section is open at any given time.
 
-{%include "components/content/accordion/data/accordion--single.twig" ignore missing%}<br>
+{%include 'accordion/data/accordion--single.twig' ignore missing%}<br>
 
 ```html
 <div class="c-accordion">

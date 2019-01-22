@@ -9,7 +9,7 @@ banner:
 meta:
     handle: card
     type: Card
-    path: components/cards/card/
+    path: card/
     version: core 1.0.0
     status: under review
     since: 1.0.0

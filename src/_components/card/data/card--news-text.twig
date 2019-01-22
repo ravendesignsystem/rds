@@ -1,0 +1,29 @@
+{% if docs %}
+    <div class="u-block u-block--s u-block--white">
+        <div class="b-content">
+            <h2>News card variant with text</h2>
+            <p>Provide more information about the linked news item by adding text to the card.</p>
+        </div>
+    </div>
+<div class="u-block u-block--s u-block--grey">
+    <div class="b-main-grid u-grid u-grid--3">
+{% endif %}
+{% from "card/card.twig" import card %}
+{{ card (
+    {
+        variant: "news"
+    },
+    {
+        date: "2018-03-11",
+        img: "http://cu-raven.s3.amazonaws.com/assets/img/raven/img-2.jpg",
+        text: "The birds are surprisingly skilled at planning how to get food in the future, and will even trade for it.",
+        title: "We knew ravens are smart. But not this smart",
+        url: "https://news.nationalgeographic.com/2017/07/ravens-problem-solving-smart-birds/"
+    }
+) }}
+{% if docs %}
+    </div>
+</div>
+{% endif %}
+
+
