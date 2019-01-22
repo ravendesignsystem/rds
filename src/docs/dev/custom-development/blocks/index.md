@@ -1,7 +1,8 @@
 ---
-layout: t-block-docs
+layout: base
 subsite: dev
 title: Working with Blocks
+content: true
 banner:
   breadcrumbs:
     grandparent: Custom Development

@@ -9,7 +9,7 @@ jsPath: http://localhost:3000/docs/js/app.js
 
 blocks:
     -
-        name: Banner (Review Required)
+        name: Banner
         handle: banner
         section: header
         theme: core
