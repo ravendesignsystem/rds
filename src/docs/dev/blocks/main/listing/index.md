@@ -34,6 +34,8 @@ examples:
 - name: people
 - name: video
 - name: 2col
+- name: heading
+- name: subheading
 wild: n/a
 alternatives: grid-list
 data:
@@ -77,10 +79,15 @@ List Group items should:
 - It is important to note the markup changes when different context variants and data attributes are used. 
 - If you are using the base H2 heading with a slight underline before this block, it looks best removed by adding the class 'u-no-borders' to the h2 tag.
 
-##When To Avoid
+## When To Avoid
 
 - Don't use this block to replace default content ordered and unordered lists.
 - Don't us this block if you are listing items that don't link anywhere.  
 
 ## Dates and Times
 Date and time format should always be CCYY-MM-DDThh:mm:ss as per [W3C](https://www.w3.org/TR/NOTE-datetime)
+
+## References
+
+- http://html5doctor.com/howto-subheadings/
+- https://stackoverflow.com/questions/43178019/html5-subtitle-mark-up-for-every-level-of-headings-ie-h1-to-h6

@@ -1,16 +1,9 @@
-{% if docs %}
-    <div class="u-block u-block--white u-block--s">
-        <div class="b-content">
-            <h2>Base example</h2>
-            <p>Listing blocks display a series of related content in vertical lists as a single continuous element. The Listing block has several options and variants for dealing with different content types.
-            </p>
-        </div>
-    </div>
-{% endif %}
 {% from "listing/listing.twig" import listing %}
 {{ listing (
     {
-        color: "white"
+        color: "white",
+        heading: "Example with heading",
+        headingContent: "none"
     },
     [
         {
@@ -35,3 +28,12 @@
         }
     ]
 ) }}
+{% if docs %}
+    <div class="u-block u-block--white u-block--s">
+        <div class="b-content">
+            <h3>Implementation note:</h3>
+            <p>If the Listing block directly follows a heading, a standard <code>H2</code> or <code>H3</code> should be used instead of using the <code>c-heading</code> component.
+            </p>
+        </div>
+    </div>
+{% endif %}
