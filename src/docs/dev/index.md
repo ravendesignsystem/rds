@@ -22,16 +22,22 @@ banner:
 
 - [About RDS](understanding-rds/about-rds) - Review Required
 - [Concepts that Makeup of RDS](understanding-rds/concepts-makeup) - Review Required
-- [Blocks](#) - Not Linked
-- [Components](#) - Not Linked
 - [Layouts](understanding-rds/layouts/) - Review Required
 - [Themes and Templates](understanding-rds/themes-templates/) - Review Required
+
+#### Others: Unlinked / Unknown
+
+- [Blocks](#) - Not Linked
+- [Components](#) - Not Linked
 - [Principles](#) - Not Linked
 - [Contributing](#) - Not Linked
 
 ## Using RDS
 
 - [Getting Started](using-rds/getting-started/) - Review Required
+
+#### Others: Unlinked / Unknown
+
 - [Starter Themes](using-rds/#) - Not Linked
 - [Starter Templates](using-rds/#) - Not Linked
 - [Bowser and Device Compatibility](using-rds/#) - Not Linked
@@ -39,14 +45,15 @@ banner:
 - [Releases Notes](using-rds/#) - Not Linked
 - [Getting Help](using-rds/#) - Not Linked
 
-## Custom Development (Finished)
+## Custom Development
 
 - [Custom layouts](custom-development/layouts/) - Review Required
 - [Mobile and Progressive Web Apps](custom-development/mobile/) - Review Required
 - [Naming Conventions and Terminology](custom-development/naming/) - Review Required
 - [Security Checklist](custom-development/security/) - Review Required
 
-## Custom Dev/Theming (Unlinked)
+
+#### Others: Unlinked / Unknown
 
 - [Download](custom-development/#) - Not Linked
 - [Set up - tooling](custom-development/#) - Not Linked
