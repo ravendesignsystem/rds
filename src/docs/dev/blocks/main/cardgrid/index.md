@@ -85,10 +85,10 @@ Four and three column grids are available. To control the number of columns, adj
 ### Four column grid example
 
 <div class="b-main-grid u-grid u-grid--4">
-    <div>{%include "components/cards/card/data/card--base.twig"%}</div>
-    <div>{%include "components/cards/card/data/card--base.twig"%}</div>
-    <div>{%include "components/cards/card/data/card--base.twig"%}</div>
-    <div>{%include "components/cards/card/data/card--base.twig"%}</div>
+    <div>{%include "card/data/card--base"%}</div>
+    <div>{%include "card/data/card--base"%}</div>
+    <div>{%include "card/data/card--base"%}</div>
+    <div>{%include "card/data/card--base"%}</div>
 </div><br>
 
 
