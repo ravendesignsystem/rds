@@ -25,7 +25,7 @@ data:
   type: string
   desc: Card component inc path.
 ---
-The Card Grid block uses RDS' [responsive grid](#) to list [Card components](#) in equal-width columns. **Note**: this block should not be used for general layout purposes.{%include "/rds/inc/close.twig"%}
+The Card Grid block uses RDS' [responsive grid](#) to list [Card components](#) in equal-width columns. **Note**: this block should not be used for general layout purposes.{%include "/docs/inc/close.twig"%}
 <div class="u-block u-block--white u-block--s u-no-padding-bottom">
 <h2>Base example</h2>
 <div class="b-main-grid u-grid u-grid--3">
@@ -66,7 +66,7 @@ The Card Grid block uses RDS' [responsive grid](#) to list [Card components](#) 
           </article>
       </div>
 </div>
-</div>{%include "/rds/inc/open-b-content.twig"%}
+</div>{%include "/docs/inc/open-b-content.twig"%}
 
 ```html
 <div class="u-block u-block--white u-block--s">
@@ -113,7 +113,7 @@ Control the block's width and background colour using the following [block setti
 **Notes**: * = default
 
 **Important**: if you are using the [CMS theme](#), only the default settings can be used.
-{%include "/rds/inc/close.twig"%}
+{%include '/docs/inc/close.twig'%}
 <section class="u-block u-block--grey u-block--m">
 <h2>Grid block with medium width and white background settings</h2>
 <div class="b-main-grid u-grid u-grid--4">
@@ -168,7 +168,7 @@ Control the block's width and background colour using the following [block setti
        </div>
 </div>
 </section>
-{%include "/rds/inc/open-b-content.twig"%}
+{%include '/docs/inc/open-b-content'%}
 
 ```html
 <div class="u-block u-block--grey u-block--m">

@@ -34,7 +34,7 @@ The simplest way to get started with a setup that includes the masthead block an
 
 The masthead block has many options and configurations. At it's simplest, the masthead provides the application's title and brand along with the default search and mobile menu functionality.
 
-{%include "/rds/inc/close.twig"%}
+{%include "/docs/inc/close.twig"%}
 
 <div class="b-masthead b-masthead--shadow u-block-full">
     <div class="masthead__brand">
@@ -52,7 +52,7 @@ The masthead block has many options and configurations. At it's simplest, the ma
             </button>
         </li>
     </ul>
-</div>{%include "/rds/inc/open-b-content.twig"%}
+</div>{%include "/docs/inc/open-b-content.twig"%}
 
 ```html
 <div class="b-masthead js-sticky-scroll u-block-full">
@@ -130,7 +130,7 @@ The masthead block has many options and configurations. At it's simplest, the ma
 
 Navigation in masthead appears right after the brand and will grow to occupy as much horizontal space as possible. This should be your application's primary navigation.
 
-{%include "/rds/inc/close.twig"%}
+{%include "/docs/inc/close.twig"%}
 
  <div class="b-masthead b-masthead--shadow u-block-full">
      <div class="masthead__brand">
@@ -156,7 +156,7 @@ Navigation in masthead appears right after the brand and will grow to occupy as 
             </button>
         </li>
     </ul>
-</div>{%include "/rds/inc/open-b-content.twig"%}
+</div>{%include "/docs/inc/open-b-content.twig"%}
 
 ```html
 <div class="b-masthead js-sticky-scroll u-block-full">
@@ -244,7 +244,7 @@ Navigation in masthead appears right after the brand and will grow to occupy as 
 
 A single call to action button is availble in the masthead block to promote a key area of your web application.
 
-{%include "/rds/inc/close.twig"%}
+{%include "/docs/inc/close.twig"%}
 
  <div class="b-masthead b-masthead--shadow u-block-full">
      <div class="masthead__brand">
@@ -273,7 +273,7 @@ A single call to action button is availble in the masthead block to promote a ke
             </button>
         </li>
     </ul>
-</div>{%include "/rds/inc/open-b-content.twig"%}
+</div>{%include "/docs/inc/open-b-content.twig"%}
 
 ```html
 <div class="b-masthead js-sticky-scroll u-block-full">
@@ -364,7 +364,7 @@ A single call to action button is availble in the masthead block to promote a ke
 
 Add multiple calls to action under a CTA drop-0down to promote a several key areas of your web application. Note: you should use either the single CTA link mentioned above or this multiple drop-down, never both.
 
-{%include "/rds/inc/close.twig"%}
+{%include "/docs/inc/close.twig"%}
 
  <div class="b-masthead b-masthead--shadow u-block-full">
      <div class="masthead__brand">
@@ -398,7 +398,7 @@ Add multiple calls to action under a CTA drop-0down to promote a several key are
             </button>
         </li>
     </ul>
-</div>{%include "/rds/inc/open-b-content.twig"%}
+</div>{%include "/docs/inc/open-b-content.twig"%}
 
 ```html
 <div class="b-masthead js-sticky-scroll u-block-full">
@@ -464,7 +464,7 @@ Add multiple calls to action under a CTA drop-0down to promote a several key are
 
 You can use the CTA buttons above to highlight an application login button or you can add an additional button for login as per the code below.
 
-{%include "/rds/inc/close.twig"%}
+{%include "/docs/inc/close.twig"%}
 
  <div class="b-masthead b-masthead--shadow u-block-full">
      <div class="masthead__brand">
@@ -501,7 +501,7 @@ You can use the CTA buttons above to highlight an application login button or yo
             </button>
         </li>
     </ul>
-</div>{%include "/rds/inc/open-b-content.twig"%}
+</div>{%include "/docs/inc/open-b-content.twig"%}
 
 ```html
 <div class="b-masthead js-sticky-scroll u-block-full">
@@ -592,7 +592,7 @@ To include the search button, add the following code is in your masthead block..
 
 ...as per the example code below:
 
-{%include "/rds/inc/close.twig"%}
+{%include "/docs/inc/close.twig"%}
 
 <div class="b-masthead b-masthead--shadow u-block-full">
     <div class="masthead__brand">
@@ -615,7 +615,7 @@ To include the search button, add the following code is in your masthead block..
             </button>
         </li>
     </ul>
-</div>{%include "/rds/inc/open-b-content.twig"%}
+</div>{%include "/docs/inc/open-b-content.twig"%}
 
 ```html
 <div class="b-masthead js-sticky-scroll u-block-full">

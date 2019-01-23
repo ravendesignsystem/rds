@@ -2,8 +2,8 @@ const mix = require('laravel-mix');
 const env = process.env.NODE_ENV;
 
 mix
-	// .sass('src/_scss/rds/critical.scss', 'src/_css')
-	.sass('src/_themes/rds/scss/app.scss', 'build/docs/css')
+	// .sass('src/_scss/docs/critical.scss', 'src/_css')
+	.sass('src/_themes/docs/scss/app.scss', 'build/docs/css')
 	.options({
 		postCss: [
 			require('cssnano')({
@@ -22,7 +22,7 @@ mix
 			require('css-mqpacker'),
 		],
 	})
-	.js('src/_themes/rds/js/app.js', 'build/docs/js')
+	.js('src/_themes/docs/js/app.js', 'build/docs/js')
 	.browserSync({
 		host: 'localhost',
 		proxy: 'http://localhost:8000/',

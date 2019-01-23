@@ -28,9 +28,9 @@ alternatives: n/a
 ---
 The Global Nav block is a required include block that appears at the top of all CMS theme templates. This block provides global navigation for carleton.ca.
 
-{%include 'rds/inc/close.twig'%}
+{%include 'docs/inc/close.twig'%}
 {%include 'globalnav/globalnav.twig'%}
-{%include 'rds/inc/open-b-content.twig'%}
+{%include 'docs/inc/open-b-content.twig'%}
 
 ```html
 <div class="u-block u-block--full">

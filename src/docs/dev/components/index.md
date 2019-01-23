@@ -14,5 +14,5 @@ content: true
 ---
 ##  Components
 
-{% include "rds/inc/content-components-list.twig" %}
+{% include "docs/inc/content-components-list.twig" %}
 

@@ -24,9 +24,9 @@ alternatives: simple
 
 The Sitemap Footer helps users and search engines determine how the website is laid out and makes them aware of all your important pages. Having the sitemap in the footer as oppose to on an individual page will save visitors clicks.
 
-{%include 'rds/inc/close.twig'%}
+{%include 'docs/inc/close.twig'%}
 {%include 'footersitemap/footersitemap.twig'%}
-{%include 'rds/inc/open-b-content.twig'%}
+{%include 'docs/inc/open-b-content.twig'%}
 
 ```html
 <div class="u-block u-block--black">

@@ -12,11 +12,11 @@ banner:
 
 ## Blocks
 
-{% include "rds/inc/content-block-list.twig" %}
+{% include "docs/inc/content-block-list.twig" %}
 
 ## Components
 
-{% include "rds/inc/content-components-list.twig" %}
+{% include "docs/inc/content-components-list.twig" %}
 
 ## Understanding the RDS System
 

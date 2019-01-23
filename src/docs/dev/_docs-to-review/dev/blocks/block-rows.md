@@ -67,7 +67,7 @@ Utility classes are responsible for creating block rows. There are three block r
 
 Note: that each class has its own unique name. They are not modifiers of the default white 'u-block-row' class.
 
-{%include "/rds/templates/close.twig"%}
+{%include "/docs/templates/close.twig"%}
 
 <div class="u-block-row">
     <section class="u-block">
@@ -104,7 +104,7 @@ Note: that each class has its own unique name. They are not modifiers of the def
             </ul>
         </div>
     </section>
-</div>{%include "/rds/templates/open-content.twig"%}
+</div>{%include "/docs/templates/open-content.twig"%}
 
 ## To make a block row:
 
@@ -145,7 +145,7 @@ When working with block rows..
 - try and use grey rows (`u-block-row-grey`) on grid lists displaying cards.
 - help to define areas on the page and visually delineate clear sections by staggering rows of different background colours.
 
-{%include "/rds/templates/close.twig"%}
+{%include "/docs/templates/close.twig"%}
 
 <div class="u-block-row-grey">
     <section class="u-block">
@@ -182,13 +182,13 @@ When working with block rows..
             </ul>
         </div>
     </section>
-</div>{%include "/rds/templates/close.twig"%}{%include "/rds/templates/open-content.twig"%}
+</div>{%include "/docs/templates/close.twig"%}{%include "/docs/templates/open-content.twig"%}
 
 ## Automatic spacing
 
 The RDS system automatically adjusted the spacing when rows of the same colour are stacked on top of each other.
 
-{%include "/rds/templates/close.twig"%}<div class="u-block-row-grey">
+{%include "/docs/templates/close.twig"%}<div class="u-block-row-grey">
     <section class="u-block">
         <h3>A grey block row followed by a...</h3>
         <div class="b-gridblock">
@@ -212,7 +212,7 @@ The RDS system automatically adjusted the spacing when rows of the same colour a
         </div>
     </section>
 </div>
-{%include "/rds/templates/open-content.twig"%}
+{%include "/docs/templates/open-content.twig"%}
 
 ## Block rows storybook
 
@@ -223,6 +223,6 @@ Test these concepts on [Codepen](https://codepen.io/cuweb/pen/qYyVKQ)
 <p data-height="402" data-theme-id="light" data-slug-hash="qYyVKQ" data-default-tab="result" data-user="cuweb" data-embed-version="2" data-pen-title="Storybook - block rows" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/cuweb/pen/qYyVKQ/">Storybook - block rows</a> by Carleton (<a href="https://codepen.io/cuweb">@cuweb</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-{%include "/rds/templates/close.twig"%}
+{%include "/docs/templates/close.twig"%}
 
 

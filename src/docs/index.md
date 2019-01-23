@@ -25,21 +25,21 @@ banner: none
         <a href="dev/">
             <div class="b-docs-gridhome__panel b-docs-gridhome__panel--dev">
                 <h2>For developers</h2>
-                {% include "rds/assets/img/laptop.svg" %}
+                {% include "docs/assets/img/laptop.svg" %}
             </div>
         </a>
         <div style="display: flex;flex-direction: column;min-height: 420px;">
             <a href="content/">
                 <div class="b-docs-gridhome__panel b-docs-gridhome__panel--content">
                     <h2>For content creators</h2>
-                    {% include "rds/assets/img/keyboard.svg" %}
+                    {% include "docs/assets/img/keyboard.svg" %}
                 </div>
             </a>
             <div style="flex: 1;display: flex" class="b-docs-">
                 <a style="display: flex" href="design/">
                     <div class="b-docs-gridhome__panel b-docs-gridhome__panel--design" style="flex: 1;margin-right: 30px;" >
                         <h2>Design & brand</h2>
-                        {% include "rds/assets/img/design.svg" %}
+                        {% include "docs/assets/img/design.svg" %}
                     </div>
                 </a>
                 <a style="display: flex"  href="a11y/">

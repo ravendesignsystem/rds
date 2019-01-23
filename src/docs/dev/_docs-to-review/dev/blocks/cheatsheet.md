@@ -28,11 +28,11 @@ content: true
     <img src="https://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore.jpg"/>
 </div>
 ```
-{%include "/rds/inc/close.twig"%}
+{%include "/docs/inc/close.twig"%}
 <div class="u-block--full">
     <img src="https://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore.jpg"/>
 </div>
-{%include "/rds/inc/open-b-content.twig"%}
+{%include "/docs/inc/open-b-content.twig"%}
 
 ## u-block
 ```HTML
@@ -40,44 +40,44 @@ content: true
      <p>A simple block</p>
 </div>
 ```
-{%include "/rds/inc/close.twig"%}
+{%include "/docs/inc/close.twig"%}
 <div class="u-block">
      <p>A simple block</p>
 </div>
-{%include "/rds/inc/open-b-content.twig"%}
+{%include "/docs/inc/open-b-content.twig"%}
 ## u-block--m
 ```HTML
 <div class="u-block u-block--m">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel nunc a felis facilisis facilisis quis et sem. Proin libero nunc, pulvinar id scelerisque in, feugiat at quam.</p>
 </div>
 ```
-{%include "/rds/inc/close.twig"%}
+{%include "/docs/inc/close.twig"%}
 <div class="u-block u-block--m">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel nunc a felis facilisis facilisis quis et sem. Proin libero nunc, pulvinar id scelerisque in, feugiat at quam.</p>
       </div>
-{%include "/rds/inc/open-b-content.twig"%}
+{%include "/docs/inc/open-b-content.twig"%}
 ## u-block--grey
 ```HTML
 <div class="u-block u-block--grey">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel nunc a felis facilisis facilisis quis et sem. Proin libero nunc, pulvinar id scelerisque in, feugiat at quam. </p>
 </div>
 ```
-{%include "/rds/inc/close.twig"%}
+{%include "/docs/inc/close.twig"%}
 <div class="u-block u-block--grey">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel nunc a felis facilisis facilisis quis et sem. Proin libero nunc, pulvinar id scelerisque in, feugiat at quam. </p>
 </div>
-{%include "/rds/inc/open-b-content.twig"%}
+{%include "/docs/inc/open-b-content.twig"%}
 ## u-block-m & u-block--grey
 ```HTML
 <div class="u-block u-block--m u-block--grey">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel nunc a felis facilisis facilisis quis et sem. Proin libero nunc, pulvinar id scelerisque in, feugiat at quam. </p>
 </div>
 ```
-{%include "/rds/inc/close.twig"%}
+{%include "/docs/inc/close.twig"%}
 <div class="u-block u-block--m u-block--grey">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel nunc a felis facilisis facilisis quis et sem. Proin libero nunc, pulvinar id scelerisque in, feugiat at quam.</p>
 </div>
-{%include "/rds/inc/open-b-content.twig"%}
+{%include "/docs/inc/open-b-content.twig"%}
 
 ## Important Note
 
@@ -93,7 +93,7 @@ For example, you can't use the following code with success:
 
 
 
-{%include "/rds/inc/close.twig"%}
+{%include "/docs/inc/close.twig"%}
 
 
 

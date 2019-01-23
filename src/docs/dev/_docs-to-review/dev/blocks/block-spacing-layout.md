@@ -45,10 +45,10 @@ Below is simple example of how to build a default sized fixed block. Note: we've
 **Note** the `u-block` class should reside on the block's first tag and should be the last class name assigned.
 
 Output:
-{%include "/rds/inc/close.twig"%}
+{%include "/docs/inc/close.twig"%}
 <div class="b-main-foo u-block">
     <p style="background: #eee">Hello world</p>
-</div>{%include "/rds/inc/open-b-content.twig"%}
+</div>{%include "/docs/inc/open-b-content.twig"%}
 
 ### Medium fixed width block example
 
@@ -61,10 +61,10 @@ To create a medium-sized fixed width block, apply the modifier class `u-block--m
 ```
 
 Output:
-{%include "/rds/inc/close.twig"%}
+{%include "/docs/inc/close.twig"%}
 <div class="b-main-foo u-block u-block--m">
     <p style="background: #eee">Hello world</p>
-</div>{%include "/rds/inc/open-b-content.twig"%}
+</div>{%include "/docs/inc/open-b-content.twig"%}
 
 ### Large fixed width block example
 
@@ -77,10 +77,10 @@ To create a large-sized fixed width block, apply the modifier class `u-block--l`
 ```
 
 Output:
-{%include "/rds/inc/close.twig"%}
+{%include "/docs/inc/close.twig"%}
 <div class="b-main-foo u-block u-block--l">
     <p style="background: #eee">Hello world</p>
-</div>{%include "/rds/inc/open-b-content.twig"%}
+</div>{%include "/docs/inc/open-b-content.twig"%}
 
 Note: there is no `u-block--s` because the default width of `u-block` is its equivalent.
 
@@ -111,13 +111,13 @@ Fixed blocks can have headings associated with them. The heading is technically 
 **Note** in the code above, how the `u-block` class has been moved up to be on the `<section>` tag.
 
 Output:
-{%include "/rds/inc/close.twig"%}
+{%include "/docs/inc/close.twig"%}
 <section class="u-block">
     <h2>Example of a fixed block with a heading</h2>
     <div class="b-main-foo">
         <p style="background: #eee">Hello world</p>
     </div>
-</section>{%include "/rds/inc/open-b-content.twig"%}
+</section>{%include "/docs/inc/open-b-content.twig"%}
 
 ## Full width blocks
 
@@ -131,9 +131,9 @@ Full width blocks have a container that spans the entire width of the page.
 ```
 
 Output:
-{%include "/rds/templates/close.twig"%}
+{%include '/docs/templates/close'%}
 <div class="b-header-foo u-block-full" style="height:400px;background-image:url('http://cu-raven.s3.amazonaws.com/assets/img/raven/raven-bg.png');">
-</div>{%include "/rds/templates/open-content.twig"%}
+</div>{%include "/docs/templates/open-content.twig"%}
 
 ### To make a full width block:
 
@@ -226,8 +226,8 @@ Note: by design, the system automatically removes the bottom margin when full wi
 
 Check out and play around with straight forward rendered examples on [Codepen](https://codepen.io/cuweb/pen/odyjrg?editors=1010) or change some classes below and view the results.
 
-{%include "/rds/templates/close.twig"%}<div class="u-block u-block--l"><p data-height="415" data-theme-id="light" data-slug-hash="odyjrg" data-default-tab="result" data-user="cuweb" data-embed-version="2" data-pen-title="Storybook - block sizing" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/cuweb/pen/odyjrg/">Storybook - block sizing</a> by Carleton (<a href="https://codepen.io/cuweb">@cuweb</a>) on <a href="https://codepen.io">CodePen</a>.</p><script async src="https://static.codepen.io/assets/embed/ei.js"></script></div>
-{%include "/rds/templates/open-content.twig"%}
+{%include "/docs/templates/close.twig"%}<div class="u-block u-block--l"><p data-height="415" data-theme-id="light" data-slug-hash="odyjrg" data-default-tab="result" data-user="cuweb" data-embed-version="2" data-pen-title="Storybook - block sizing" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/cuweb/pen/odyjrg/">Storybook - block sizing</a> by Carleton (<a href="https://codepen.io/cuweb">@cuweb</a>) on <a href="https://codepen.io">CodePen</a>.</p><script async src="https://static.codepen.io/assets/embed/ei.js"></script></div>
+{%include "/docs/templates/open-content.twig"%}
 
 <a class="c-button" href="https://codepen.io/cuweb/pen/odyjrg?editors=1010">Test these Concepts on Codepen</a>
 
@@ -243,7 +243,7 @@ Check out and play around with straight forward rendered examples on [Codepen](h
 
 Next: [Developing Blocks and Components](developing-blocks-components/)
 
-{%include "/rds/templates/close.twig"%}
+{%include "/docs/templates/close.twig"%}
 
 
 

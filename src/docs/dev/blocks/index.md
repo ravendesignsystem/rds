@@ -13,6 +13,6 @@ banner:
 content: true
 ---
 ##  Blocks
-{% include "rds/inc/content-block-list.twig" %}
+{% include 'docs/inc/content-block-list' %}
 
 
