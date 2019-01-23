@@ -29,17 +29,14 @@ Once the dependencies above are installed, run the commands below to install the
 
 ## Running RDS Locally
 
-Both of the following commands need to running simultaneously in two terminal windows.
+To run RDS locally and watch all relevant files for changes use `npm run dev`.
 
-- `npm run sculpin` -- run sculpin static site generator, [read more](https://sculpin.io)
-- `npm run watch` -- run the laravel mix watch task, [read more](https://laravel-mix.com)
+The above command runs both the sculpin static site generator, [read more](https://sculpin.io) and the laravel mix watch task, [read more](https://laravel-mix.com) concurrently.
 
 ## Deployment
 
-To deploy, terminate the above scripts and run the scripts below consecutively:
+To deploy, terminate the above script and use `npm run prod`.
 
-- run `npm run sculpin-prod`, then stop the process
-- run `npm run prod`
 
 ### Break down into end to end tests
 
