@@ -97,11 +97,11 @@ h6 {
 }
 
 h1 {
-	font-size: $type30;
+	font-size: $type28;
 	padding-bottom: 0.3em;
 
 	@include media('>s') {
-		font-size: $type36;
+		font-size: $type30;
 	}
 }
 
@@ -110,7 +110,7 @@ h2 {
 	padding-bottom: 0.3em;
 
 	@include media('>s') {
-		font-size: $type30;
+		font-size: $type28;
 	}
 }
 
@@ -300,7 +300,7 @@ pre,
 code {
 	font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', Courier,
 		monospace;
-	font-size: $type12;
+	font-size: 1em;
 	line-height: 1.4;
 	background-color: $grey;
 	padding: 0.2em 0.4em;

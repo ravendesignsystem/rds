@@ -20,8 +20,8 @@ banner:
 
 ## Understanding the RDS System
 
+- [Concepts that makeup of RDS](understanding-rds/concepts-makeup) - Review Required
 - [About RDS](understanding-rds/about-rds) - Review Required
-- [Concepts that Makeup of RDS](understanding-rds/concepts-makeup) - Review Required
 - [Layouts](understanding-rds/layouts/) - Review Required
 - [Themes and Templates](understanding-rds/themes-templates/) - Review Required
 
