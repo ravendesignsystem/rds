@@ -140,7 +140,7 @@ ul,
 ol {
 	font-size: $type16;
 	line-height: 1.7;
-	margin-bottom: 20px;
+	margin-bottom: 25px;
 
 	&:last-child {
 		margin-bottom: 0;
@@ -213,7 +213,7 @@ video {
 // ---------------
 table {
 	width: 100%;
-	font-size: 15px;
+	font-size: $type14;
 	margin-bottom: 20px;
 	border-collapse: collapse;
 	border-spacing: 0;
