@@ -1,5 +1,7 @@
-// List Group - Version 1.0.0
-//================================
+/**
+ * Listing Block
+ * =============
+ */
 
 // No padding on right for mobile
 @include media('<=s') {
@@ -8,237 +10,187 @@
 	}
 }
 
-.listing__list {
+// Main Selectors
+//================================
+
+.new-listing__list {
 	list-style: none;
+	margin-left: 0;
 	border-top: 1px solid $grey-yoda;
 	border-bottom: 1px solid $grey-yoda;
-	margin-left: 0;
 }
 
-.u-block--grey .listing__list {
-	border-top: 1px solid $grey-kenobi;
-	border-bottom: 1px solid $grey-kenobi;
-}
-
-.listing__item {
+.new-listing__list li a {
 	position: relative;
+	display: flex;
+	align-items: center;
+	font-weight: 400;
 	background-size: 12px;
 	background-position: right 15px center;
 	background-repeat: no-repeat;
-	padding-left: 2px;
-
-	//&:after {
-	//	content: '';
-	//	position: absolute;
-	//	bottom: 0;
-	//	left: 0;
-	//	width: 0%;
-	//	border-bottom: 1px solid $red;
-	//	transition: 0.4s;
-	//}
-    //
-	//&:hover:after {
-	//	width: 100%;
-	//}
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cpath fill='none' stroke='%23535353' stroke-linecap='round' stroke-linejoin='round' stroke-width='18' d='M37 118l54-54-54-54'/%3E%3C/svg%3E");
 
 	&:hover {
 		background-color: $grey;
+		color: $red;
 
-        .listing__body {
-            color: $red;
-        }
-
-        .listing__subtitle, .listing__excerpt {
-            color: $black;
-        }
-	}
-
-	// Remove border from last items content wrapper
-	&:last-child {
-		.listing__body {
-			border: none;
+		.new-listing__subtitle,
+		.new-listing__excerpt {
+			color: initial;
 		}
-	}
-
-	& .c-badge {
-		position: absolute;
-		right: 10px;
-		top: 40%;
 	}
 }
 
-//TDT design review does this look good
-.u-row .listing__item:hover,
-.u-block--grey .listing__item:hover {
+// Grey Block Overrides
+//================================
+
+// Change border color when grey block is used
+.u-block--grey .new-listing__list,
+.u-block--grey .new-listing__list li:not(:last-child) .new-listing__body {
+	border-color: $grey-kenobi;
+}
+
+// Change hover color when grey block is used
+.u-block--grey .new-listing__list li a:hover {
 	background-color: white;
 }
 
-.listing__url {
-	display: flex;
-	// align-items: center;
-	position: relative;
-	font-weight: 400;
-	color: $black !important;
-}
-
-.listing__body {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 100%;
-	border-bottom: 1px solid $grey-yoda; // This gets removed from last item as nested element of listing__item
-	padding: 15px 40px 15px 0;
-}
-
-.u-block--grey .listing__body {
-	border-bottom: 1px solid $grey-kenobi;
-}
-
-// Content
+// Body Content
 //================================
 
-.listing__title {
+.new-listing__body {
+	flex: 1;
+	min-width: 0; // this allows text to be truncated inside a flex item
+	padding: 15px 50px 15px 0;
+}
+
+.new-listing__list li:not(:last-child) .new-listing__body {
+	border-bottom: 1px solid $grey-yoda;
+}
+
+.new-listing__title {
+	font-size: 16px;
+	line-height: 1.4em;
+	margin: 3px 0 2px 0;
+}
+
+// Truncating title and subtitle
+.new-listing__title:not(.new-listing__title--news),
+.new-listing__subtitle {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	margin: 0;
-	width: 100%;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 1.4em;
-	padding-bottom: 3px;
+}
 
-	@include media('>=s') {
-		font-size: 17px;
+.new-listing__subtitle,
+.new-listing__excerpt {
+	font-size: 14px;
+	font-weight: 300;
+	word-wrap: break-word;
+}
+
+@include media('<=s') {
+	.new-listing__excerpt {
+		display: none;
 	}
 }
 
-// Title turns into a heading when there is a subtitle.
-h3.listing__title,
-h4.listing__title {
-	font-weight: 500;
-}
-
-.listing__subtitle {
-	margin: 0;
-	word-wrap: break-word;
-	font-size: 14px;
-	font-weight: 300;
-	padding: 0;
-}
-
-// Images & Icons
+// Images, Icons & Badges
 //================================
-// TODO review note below
-// NOTE: first 3 flex properties only apply to video image with overlay and icon,
-// should we do a modifier at the group__item level like we do in other areas?
-// see news image variants for example of targeting image based on group__item modifier
-.listing__figure {
+
+.new-listing__figure {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	padding: 4px 15px 4px 0;
-}
+	height: 100%;
+	margin-right: 15px;
 
-.listing__img {
-	@include media('<=s') {
-		max-width: 80px;
+	img {
+		width: 80px;
+		height: auto;
+		// margin: 5px 0;
 	}
-	max-height: 70px;
-	min-width: 70px;
 }
 
-// News Variants
+.new-listing__figure--large {
+	img {
+		width: 140px;
+		margin: 10px 0;
+
+		@include media('>s') {
+			width: 200px;
+		}
+	}
+
+	& + .new-listing__body {
+		min-height: 125px;
+
+		@include media('>s') {
+			min-height: 170px;
+		}
+	}
+}
+
+.new-listing__figure--round img {
+	border: 4px solid hsla(0, 0%, 93%, 0.75);
+	border-radius: 50%;
+	height: 80px;
+}
+
+.new-listing__figure--dark {
+	position: relative;
+
+	&:before {
+		content: '';
+		display: block;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: rgba(black, 0.4);
+	}
+
+	img {
+		margin: 0;
+	}
+}
+
+.new-listing__list .c-badge {
+	position: absolute;
+	right: 10px;
+	top: 40%;
+}
+
+// Events, Times & Dates
 //================================
 
-.listing__body--news {
-	// padding-top: 20px;
-	// padding-bottom: 20px;
-	min-height: 160px;
-}
-
-.b-listing--news .listing__figure {
-	display: none;
-
-	@include media('>=s') {
-		display: flex;
-		min-height: 160px;
-	}
-}
-
-@include media('>=s') {
-	.b-listing--news .listing__img {
-		max-height: 180px;
-	}
-}
-
-.listing__date {
-	font-size: 13px;
-	font-weight: 400;
-	color: $grey-luke;
-	padding-bottom: 2px;
-}
-
-.listing__excerpt {
-	word-wrap: break-word;
-	font-size: 14px;
-	font-weight: 300;
-}
-
-.b-listing--news h3 {
-	font-size: 18px;
-}
-
-// Event Variants
-//================================
-
-// Remove border from body element
-.b-listing--event .listing__body {
-	border: none;
-}
-
-// Place bottom borner on url element, allowing it to span full width
-.b-listing--event .listing__item:not(:last-child) {
-	.listing__url {
-		border-bottom: 1px solid $grey-yoda;
-	}
-}
-
-// Added to keep consistent spacing at top and bottom of entire li items, important for when the body element is only 1 line
-// To see the impact, comment out and check third li in even variant example
-.listing__event-date,
-.listing__time {
-	padding: 15px 0;
-}
-
-.listing__event-date {
+.new-listing__event-date {
+	flex: 0 0 60px;
 	color: $red;
 	text-transform: uppercase;
 	font-size: 12px;
 	line-height: 1.25;
-	width: 60px;
+	padding-top: 4px;
 }
 
-.listing__event-day {
+.new-listing__event-day {
 	color: $black;
 	font-size: 24px;
 }
 
-.listing__time {
+.new-listing__time {
 	display: none;
 
-	@include media('>=s') {
+	@include media('>s') {
 		display: flex;
-		min-width: 100px;
+		flex: 0 0 100px;
 		flex-direction: column;
 		justify-content: center;
 	}
 }
 
-// People Variants
-//================================
-
-.listing__img--people {
-	border-radius: 100%;
-	border: 4px solid hsla(0, 0%, 93%, 0.75);
+.new-listing__date {
+	font-size: 12px;
+	font-weight: 400;
+	color: $grey-anakin;
 }

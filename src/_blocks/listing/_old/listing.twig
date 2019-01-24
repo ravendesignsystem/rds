@@ -1,0 +1,80 @@
+{% macro listing(settings, data) %}
+{% set blockHeading, itemHeading = 'h2', 'h3' %}
+{% if settings.heading %}
+<section class="u-block u-block--s{% if settings.color %} u-block--{{ settings.color }}{% endif %}">
+    <{{ blockHeading }}{% if settings.headingContent != 'none' %} class="c-heading"{% endif %}>{{ settings.heading }}</{{ blockHeading }}>
+{% if settings.headingContent != 'none' and settings.headingContent %}
+    {{ settings.headingContent|raw }}
+{% endif %}
+{% else %}
+{#u-no-borders#}
+<div class="u-block u-block--s{% if settings.color %} u-block--{{ settings.color }}{% endif %}">
+{% endif %}
+    <div class="b-listing">
+        <ul class="listing__list{% if settings.context %} b-listing--{{ settings.context }}{% endif %}" itemscope{% if settings.context == "people" -%} itemtype="http://schema.org/Person"{% elseif settings.context == "event" %} itemtype="http://schema.org/Event"{% else %} itemtype="http://schema.org/ItemList"{% endif %}>
+{% for item in data %}
+            <li class="listing__item{% if item.badge is null %} c-icon-chevron-right{% endif %}" itemprop="item">
+                <a class="listing__url" href="{{ item.url }}" itemprop="url">
+{% if item.img|length %}
+                    <figure class="listing__figure">
+{% if settings.context == "video" %}
+                        <span class="u-overlay u-overlay--light">
+{% endif %}
+                        <img class="listing__img{% if settings.context == "people" %} listing__img--people{% endif %}" src="{{ item.img }}" alt="" itemprop="image">
+{% if settings.context == "video" %}
+                             <span class="c-icon-play-button--white u-icon-bg u-icon-bg--overlay u-icon-bg--m" aria-hidden="true"></span>
+                         </span>
+{% endif %}
+                    </figure>
+{% elseif item.icon|length %}
+                    <figure class="listing__figure u-icon--l">
+                        {% include "icons/" ~ item.icon ~ ".svg" ignore missing %}
+                    </figure>
+{% endif %}
+{# news context #}
+{% if item.date == "news" %}
+                    <div class="listing__body {% if item.img|length %}listing__body--news{% endif %}" itemscope itemtype="http://schema.org/NewsArticle">
+                        <time class="listing__date" datetime="{{ item.date }}" itemprop="datePublished" content="{{ item.date }}">{{ item.date|date("l, F jS") }}</time>
+                        {# Limit length of text to 2 lines if there is an image -#}
+                        <{{ itemHeading }} class="listing__title u-whitespace-wrap" itemprop="headline">{% if item.img|length -%}{{ item.title|length > 240 ? item.title|slice(0, 240) ~ '...' : item.title  }}{% else %}{{ item.title }}{%  endif %}</{{itemHeading}}>
+                        {# Trying to limit length of text to 2 lines if there is an image -#}
+                        <p class="listing__excerpt">{% if item.img|length -%}{{ item.subtitle|length > 240 ? item.subtitle|slice(0, 240) ~ '...' : item.subtitle  }}{% else %}{{ item.subtitle }}{% endif %}</p>
+                    </div>
+{# Events #}
+{% elseif item.startDate %}
+                    <time class="listing__event-date" itemprop="startDate" datetime="{{ item.startDate }}" content="{{ item.startDate }}">
+                        {{ item.startDate|date("M") }}<br>
+                        <span class="listing__event-day">{{ item.startDate|date("j") }}</span>
+                    </time>
+                     <div class="listing__time">
+                        <h3 class="listing__title">{{ item.startDate|date("h:i a") }}</h3>
+                        <p class="listing__subtitle">{{ item.endDate|date("h:i a") }}</p>
+                    </div>
+                    <div class="listing__body">
+                        <h3 class="listing__title" itemprop="name">{{ item.title }}</h3>
+                        <p class="listing__subtitle" itemprop="description">{{ item.location }}</p>
+                    </div>
+{# with subtitle -#}
+{% elseif item.subtitle|length %}
+                    <div class="listing__body{% if item.badge|length %} listing__body--badge{% endif %}">
+                        <{{ itemHeading }} class="listing__title" itemprop="name">{{ item.title }}</{{itemHeading}}>
+                        <p class="listing__subtitle" itemprop="description">{{ item.subtitle }}</p>
+                    </div>
+{% else %}
+                 <div class="listing__body{% if not item.img|length %} listing__body--s{% endif %}{% if item.badge|length %} listing__body--badge{% endif %}" itemprop="name">{{ item.title }}</div>
+{% endif %}
+{% if item.badge|length %}
+                    <span class="c-badge c-badge--primary">{{ item.badge }}</span>
+{% endif %}
+                </a>
+            </li>
+{% endfor %}
+        </ul>
+{% if settings.heading|length == 0 %}
+    </div>
+</div>
+{% else %}
+    </div>
+</section>
+{% endif %}
+{% endmacro %}
