@@ -172,6 +172,10 @@
 	}
 }
 
+.new-listing__list--img-large li a {
+	align-items: initial;
+}
+
 // Set the width of the figure element
 .new-listing__list--img-large .new-listing__figure {
 	flex: 0 0 140px;
@@ -185,13 +189,13 @@
 //================================
 
 // Set individual item underline
-.new-listing__list--img-round li:not(:last-child):before {
+.new-listing__list--img-people li:not(:last-child):before {
 	width: calc(100% - 95px);
 	left: 95px;
 }
 
 // Set the width of the figure element
-.new-listing__list--img-round .new-listing__figure {
+.new-listing__list--img-people .new-listing__figure {
 	flex: 0 0 80px;
 
 	img {
@@ -204,13 +208,13 @@
 //================================
 
 // Set individual item underline
-.new-listing__list--img-dark li:not(:last-child):before {
+.new-listing__list--img-video li:not(:last-child):before {
 	width: calc(100% - 95px);
 	left: 95px;
 }
 
 // Set the width of the figure element
-.new-listing__list--img-dark .new-listing__figure {
+.new-listing__list--img-video .new-listing__figure {
 	flex: 0 0 80px;
 	position: relative;
 

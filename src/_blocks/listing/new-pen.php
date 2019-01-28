@@ -51,7 +51,7 @@
 			<li itemprop="item">
 				<a href="#" itemprop="url">
 					<div class="new-listing__body">
-						<h3 class="new-listing__title" itemprop="name">Base example three with a longer title to test that the elipsis is doing exactly what we need it to do for specific block variants</h3>
+<h3 class="new-listing__title" itemprop="name">Base example three with a longer title to test that the elipsis is doing exactly what we need it to do for specific block variants</h3>
 						<p class="new-listing__excerpt" itemprop="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tortor nec lacinia molestie. Sed pulvinar volutpat mi vitae interdum. Donec tincidunt finibus enim.</p>
 					</div>
 				</a>
@@ -395,7 +395,7 @@
 <div class="u-block u-block--s u-block--white">
 	<div class="b-listing">
 		<h2>Listing block, people variant</h2>
-		<ul class="new-listing__list new-listing__list--img-round" itemscope itemtype="http://schema.org/ItemList">
+		<ul class="new-listing__list new-listing__list--img-people" itemscope itemtype="http://schema.org/ItemList">
 			<li itemprop="item">
 				<a href="#" itemprop="url">
 					<figure class="new-listing__figure">
@@ -447,7 +447,7 @@
 <div class="u-block u-block--s u-block--white">
 	<div class="b-listing">
 		<h2>Listing block, video variant</h2>
-		<ul class="new-listing__list new-listing__list--img-dark" itemscope itemtype="http://schema.org/ItemList">
+		<ul class="new-listing__list new-listing__list--img-video" itemscope itemtype="http://schema.org/ItemList">
 			<li itemprop="item">
 				<a href="#" itemprop="url">
 					<figure class="new-listing__figure new-listing__figure--dark">
