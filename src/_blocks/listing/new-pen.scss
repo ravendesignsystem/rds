@@ -6,14 +6,14 @@
 // Main Selectors
 //================================
 
-.new-listing__list {
+.listing__list {
 	list-style-type: none;
 	margin: 0;
 	border-top: 1px solid $grey-yoda;
 	border-bottom: 1px solid $grey-yoda;
 }
 
-.new-listing__list li {
+.listing__list li {
 	position: relative;
 
 	&:not(:last-child):before {
@@ -41,8 +41,8 @@
 			background-color: $grey;
 			color: $red;
 
-			.new-listing__subtitle,
-			.new-listing__excerpt {
+			.listing__subtitle,
+			.listing__excerpt {
 				color: initial;
 			}
 		}
@@ -54,12 +54,12 @@
 
 // Change border & hover color when grey block is used
 .u-block--grey {
-	.new-listing__list {
+	.listing__list {
 		border-top: 1px solid $grey-luke;
 		border-bottom: 1px solid $grey-luke;
 	}
 
-	.new-listing__list li {
+	.listing__list li {
 		&:not(:last-child):before {
 			border-bottom: 1px solid $grey-luke;
 		}
@@ -73,32 +73,32 @@
 // Body Content
 //================================
 
-.new-listing__body {
+.listing__body {
 	flex: 1;
 	min-width: 0; // this allows text to be truncated inside a flex item
 }
 
-.new-listing__title {
+.listing__title {
 	font-size: 16px;
 	line-height: 1.4em;
 	margin: 3px 0 2px 0;
 }
 
-.new-listing__excerpt {
+.listing__excerpt {
 	font-size: 14px;
 	font-weight: 300;
 	word-wrap: break-word;
 }
 
 // Truncating title and subtitle
-.new-listing__title,
-.new-listing__excerpt {
+.listing__title,
+.listing__excerpt {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
-.new-listing__post-date {
+.listing__post-date {
 	font-size: 12px;
 	font-weight: 400;
 	color: $grey-vader;
@@ -107,7 +107,7 @@
 // Events, Times & Dates
 //================================
 
-.new-listing__event-date {
+.listing__event-date {
 	flex: 0 0 60px;
 	color: $red;
 	text-transform: uppercase;
@@ -116,12 +116,12 @@
 	padding-top: 4px;
 }
 
-.new-listing__event-day {
+.listing__event-day {
 	color: $black;
 	font-size: 24px;
 }
 
-.new-listing__event-time {
+.listing__event-time {
 	display: none;
 
 	@include media('>s') {
@@ -135,7 +135,7 @@
 // Images, Icons & Badges
 //================================
 
-.new-listing__figure {
+.listing__figure {
 	margin-right: 15px;
 
 	svg {
@@ -148,13 +148,13 @@
 //================================
 
 // Set individual item underline
-.new-listing__list--img-small li:not(:last-child):before {
+.listing__list--img-small li:not(:last-child):before {
 	width: calc(100% - 95px);
 	left: 95px;
 }
 
 // Set the width of the figure element
-.new-listing__list--img-small .new-listing__figure {
+.listing__list--img-small .listing__figure {
 	flex: 0 0 80px;
 }
 
@@ -162,7 +162,7 @@
 //================================
 
 // Set individual item underline
-.new-listing__list--img-large li:not(:last-child):before {
+.listing__list--img-large li:not(:last-child):before {
 	width: calc(100% - 155px);
 	left: 155px;
 
@@ -172,12 +172,12 @@
 	}
 }
 
-.new-listing__list--img-large li a {
+.listing__list--img-large li a {
 	align-items: initial;
 }
 
 // Set the width of the figure element
-.new-listing__list--img-large .new-listing__figure {
+.listing__list--img-large .listing__figure {
 	flex: 0 0 140px;
 
 	@include media('>s') {
@@ -189,13 +189,13 @@
 //================================
 
 // Set individual item underline
-.new-listing__list--img-people li:not(:last-child):before {
+.listing__list--img-people li:not(:last-child):before {
 	width: calc(100% - 95px);
 	left: 95px;
 }
 
 // Set the width of the figure element
-.new-listing__list--img-people .new-listing__figure {
+.listing__list--img-people .listing__figure {
 	flex: 0 0 80px;
 
 	img {
@@ -208,13 +208,13 @@
 //================================
 
 // Set individual item underline
-.new-listing__list--img-video li:not(:last-child):before {
+.listing__list--img-video li:not(:last-child):before {
 	width: calc(100% - 95px);
 	left: 95px;
 }
 
 // Set the width of the figure element
-.new-listing__list--img-video .new-listing__figure {
+.listing__list--img-video .listing__figure {
 	flex: 0 0 80px;
 	position: relative;
 
@@ -238,13 +238,13 @@
 //================================
 
 // Set individual item underline
-.new-listing__list--icon li:not(:last-child):before {
+.listing__list--icon li:not(:last-child):before {
 	width: calc(100% - 60px);
 	left: 60px;
 }
 
 // Set the width of the figure element
-.new-listing__list--icon .new-listing__figure {
+.listing__list--icon .listing__figure {
 	flex: 0 0 45px;
 	display: flex;
 	align-items: center;
@@ -254,7 +254,7 @@
 //================================
 
 // Set individual item underline
-.new-listing__list--events li:not(:last-child):before {
+.listing__list--events li:not(:last-child):before {
 	width: calc(100% - 60px);
 	left: 60px;
 
@@ -267,8 +267,8 @@
 // News Block Type Modifiers
 //================================
 
-.new-listing__list--full-text {
-	.new-listing__excerpt {
+.listing__list--full-text {
+	.listing__excerpt {
 		display: none;
 
 		@include media('>s') {
@@ -276,8 +276,8 @@
 		}
 	}
 
-	.new-listing__title,
-	.new-listing__excerpt {
+	.listing__title,
+	.listing__excerpt {
 		white-space: initial;
 		overflow: initial;
 		text-overflow: initial;
