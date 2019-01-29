@@ -57,6 +57,11 @@
 			margin-right: 0 !important;
 		}
 	}
+
+	.u-grid--s1 > * {
+		width: 100%;
+		margin-right: 0 !important;
+	}
 }
 
 // CSS Grid
@@ -123,7 +128,8 @@
 // Utility Widths
 // --------------
 
-.u-block--s > *, .u-width-s {
+.u-block--s > *,
+.u-width-s {
 	max-width: #{map-get($breakpoints, s)};
 	margin-left: auto;
 	margin-right: auto;
@@ -151,7 +157,6 @@
 .u-block--border-top {
 	border-top: 1px solid $grey-vader;
 }
-
 
 // 3. Icon utils
 // -------------
@@ -447,7 +452,7 @@
 	display: flex;
 	margin-bottom: 20px; // remove
 
-	&--center> * {
+	&--center > * {
 		margin: auto;
 		align-self: center;
 	}
@@ -457,7 +462,7 @@
 		align-self: center !important;
 	}
 
-	&--right > *{
+	&--right > * {
 		margin-left: auto;
 		align-self: center;
 	}
