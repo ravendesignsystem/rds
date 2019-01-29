@@ -1,4 +1,8 @@
-# Listing block - v1.1.0
+# Listing block - v2.0.0
+
+## [2.0.0] - 2019-01-29
+### Changed
+- Refactored again.
 
 ## [1.1.0] - 2019-01-12
 ### Changed

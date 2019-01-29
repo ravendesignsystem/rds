@@ -11,30 +11,30 @@
 <div class="u-block u-block--s{% if settings.color %} u-block--{{ settings.color }}{% endif %}">
 {% endif %}
     <div class="b-listing">
-        <ul class="listing__list" itemscope{% if settings.context == "people" -%} itemtype="http://schema.org/Person"{% elseif settings.context == "event" %} itemtype="http://schema.org/Event"{% else %} itemtype="http://schema.org/ItemList"{% endif %}>
+        <ul class="listing__list{% if settings.variant == "news" %} listing__list--news{% elseif settings.variant == "event" %} listing__list--events{% endif %}{% for item in data %}{% if item.img %}{% if (settings.variant == "video") and (loop.first) %} listing__list--img-video{% elseif (settings.variant == "news") and (loop.first) %} listing__list--img-large{% elseif (settings.variant == "people") and (loop.first) %} listing__list--img-people{% elseif loop.first %} listing__list--img-small{% endif %}{% endif %}{% endfor %}" itemscope{% if settings.variant == 'people' %} itemtype="http://schema.org/Person"{% elseif settings.variant == "event" %} itemtype="http://schema.org/Event"{% else %} itemtype="http://schema.org/ItemList"{% endif %}>
 {% for item in data %}
             <li itemprop="item">
                 <a href="{{ item.url }}" itemprop="url">
-{% if item.img|length %}
-                    <figure class="listing__figure{% if settings.context == "news" %} listing__figure--large{% endif %}{% if settings.context == "video" %} listing__figure--dark{% endif %}{% if settings.context == "people" %} listing__figure--round{% endif %}">
+{% if item.img %}
+                    <figure class="listing__figure">
                         <img src="{{ item.img }}" alt="" itemprop="image">
-{% if settings.context == "video" %}
+{% if settings.variant == "video" %}
                         <span class="c-icon-play-button--white u-icon-bg u-icon-bg--overlay u-icon-bg--m" aria-hidden="true"></span>
 {% endif %}
                     </figure>
-{% elseif item.icon|length %}
-                    <figure class="listing__figure u-icon--l">
+{% elseif item.icon %}
+                    <figure class="listing__figure">
                         {% include "icons/" ~ item.icon ~ ".svg" ignore missing %}
                     </figure>
 {% endif %}
-{# news context #}
-{% if settings.context == "news" %}
+{# news variant #}
+{% if settings.variant == "news" %}
                     <div class="listing__body" itemscope itemtype="http://schema.org/NewsArticle">
-                        <time class="listing__date" datetime="{{ item.date }}" itemprop="datePublished" content="{{ item.date }}">{{ item.date|date("l, F jS") }}</time>
+                        <time class="listing__post-date" datetime="{{ item.date }}" itemprop="datePublished" content="{{ item.date }}">{{ item.date|date("l, F jS") }}</time>
                         {# Limit length of text to 2 lines if there is an image -#}
-                        <{{ itemHeading }} class="listing__title u-whitespace-wrap" itemprop="headline">{% if item.img|length -%}{{ item.title|length > 240 ? item.title|slice(0, 240) ~ '...' : item.title  }}{% else %}{{ item.title }}{%  endif %}</{{itemHeading}}>
+                        <{{ itemHeading }} class="listing__title" itemprop="headline">{% if item.img|length -%}{{ item.title|length > 240 ? item.title|slice(0, 240) ~ '...' : item.title  }}{% else %}{{ item.title }}{%  endif %}</{{itemHeading}}>
                         {# Trying to limit length of text to 2 lines if there is an image -#}
-                        <p class="listing__excerpt">{% if item.img|length -%}{{ item.subtitle|length > 240 ? item.subtitle|slice(0, 240) ~ '...' : item.subtitle  }}{% else %}{{ item.subtitle }}{% endif %}</p>
+                        <p class="listing__excerpt">{% if item.img %}{{ item.subtitle|length > 240 ? item.subtitle|slice(0, 240) ~ '...' : item.subtitle  }}{% else %}{{ item.subtitle }}{% endif %}</p>
                     </div>
 {# Events #}
 {% elseif item.startDate %}
@@ -42,26 +42,26 @@
                         {{ item.startDate|date("M") }}<br>
                         <span class="listing__event-day">{{ item.startDate|date("j") }}</span>
                     </time>
-                     <div class="listing__time">
+                     <div class="listing__event-time">
                         <h3 class="listing__title">{{ item.startDate|date("h:i a") }}</h3>
-                        <p class="listing__subtitle">{{ item.endDate|date("h:i a") }}</p>
+                        <p class="listing__excerpt">{{ item.endDate|date("h:i a") }}</p>
                     </div>
                     <div class="listing__body">
                         <h3 class="listing__title" itemprop="name">{{ item.title }}</h3>
-                        <p class="listing__subtitle" itemprop="description">{{ item.location }}</p>
+                        <p class="listing__excerpt" itemprop="description">{{ item.location }}</p>
                     </div>
 {# with subtitle -#}
-{% elseif item.subtitle|length %}
+{% elseif item.subtitle %}
                     <div class="listing__body">
                         <{{ itemHeading }} class="listing__title" itemprop="name">{{ item.title }}</{{itemHeading}}>
-                        <p class="listing__subtitle" itemprop="description">{{ item.subtitle }}</p>
+                        <p class="listing__excerpt" itemprop="description">{{ item.subtitle }}</p>
                     </div>
 {% else %}
                     <div class="listing__body" itemprop="name">
                         <p class="listing__title">{{ item.title }}</p>
                     </div>
 {% endif %}
-{% if item.badge|length %}
+{% if item.badge %}
                     <span class="c-badge c-badge--primary">{{ item.badge }}</span>
 {% endif %}
                 </a>

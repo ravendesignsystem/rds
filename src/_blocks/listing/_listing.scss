@@ -3,40 +3,48 @@
  * =============
  */
 
-// No padding on right for mobile
-@include media('<=s') {
-	.b-listing {
-		padding-right: 0 !important;
-	}
-}
-
 // Main Selectors
 //================================
 
 .listing__list {
-	list-style: none;
-	margin-left: 0;
+	list-style-type: none;
+	margin: 0;
 	border-top: 1px solid $grey-yoda;
 	border-bottom: 1px solid $grey-yoda;
 }
 
-.listing__list li a {
+.listing__list li {
 	position: relative;
-	display: flex;
-	align-items: center;
-	font-weight: 400;
-	background-size: 12px;
-	background-position: right 15px center;
-	background-repeat: no-repeat;
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cpath fill='none' stroke='%23535353' stroke-linecap='round' stroke-linejoin='round' stroke-width='18' d='M37 118l54-54-54-54'/%3E%3C/svg%3E");
 
-	&:hover {
-		background-color: $grey;
-		color: $red;
+	&:not(:last-child):before {
+		content: '';
+		position: absolute;
+		border-bottom: 1px solid $grey-yoda;
+		width: 100%;
+		left: 0;
+		bottom: 0;
+		height: 1px;
+	}
 
-		.listing__subtitle,
-		.listing__excerpt {
-			color: initial;
+	a {
+		display: flex;
+		align-items: center;
+		min-height: 60px;
+		padding: 10px 50px 10px 0;
+
+		background-size: 12px;
+		background-position: right 15px center;
+		background-repeat: no-repeat;
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cpath fill='none' stroke='%23535353' stroke-linecap='round' stroke-linejoin='round' stroke-width='18' d='M37 118l54-54-54-54'/%3E%3C/svg%3E");
+
+		&:hover {
+			background-color: $grey;
+			color: $red;
+
+			.listing__subtitle,
+			.listing__excerpt {
+				color: initial;
+			}
 		}
 	}
 }
@@ -44,15 +52,22 @@
 // Grey Block Overrides
 //================================
 
-// Change border color when grey block is used
-.u-block--grey .listing__list,
-.u-block--grey .listing__list li:not(:last-child) .listing__body {
-	border-color: $grey-kenobi;
-}
+// Change border & hover color when grey block is used
+.u-block--grey {
+	.listing__list {
+		border-top: 1px solid $grey-luke;
+		border-bottom: 1px solid $grey-luke;
+	}
 
-// Change hover color when grey block is used
-.u-block--grey .listing__list li a:hover {
-	background-color: white;
+	.listing__list li {
+		&:not(:last-child):before {
+			border-bottom: 1px solid $grey-luke;
+		}
+
+		a:hover {
+			background-color: white;
+		}
+	}
 }
 
 // Body Content
@@ -61,11 +76,6 @@
 .listing__body {
 	flex: 1;
 	min-width: 0; // this allows text to be truncated inside a flex item
-	padding: 15px 50px 15px 0;
-}
-
-.listing__list li:not(:last-child) .listing__body {
-	border-bottom: 1px solid $grey-yoda;
 }
 
 .listing__title {
@@ -74,92 +84,24 @@
 	margin: 3px 0 2px 0;
 }
 
-// Truncating title and subtitle
-.listing__title:not(.listing__title--news),
-.listing__subtitle {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.listing__subtitle,
 .listing__excerpt {
 	font-size: 14px;
 	font-weight: 300;
 	word-wrap: break-word;
 }
 
-@include media('<=s') {
-	.listing__excerpt {
-		display: none;
-	}
+// Truncating title and subtitle
+.listing__title,
+.listing__excerpt {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-// Images, Icons & Badges
-//================================
-
-.listing__figure {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	margin-right: 15px;
-
-	img {
-		width: 80px;
-		height: auto;
-		// margin: 5px 0;
-	}
-}
-
-.listing__figure--large {
-	img {
-		width: 140px;
-		margin: 10px 0;
-
-		@include media('>s') {
-			width: 200px;
-		}
-	}
-
-	& + .listing__body {
-		min-height: 125px;
-
-		@include media('>s') {
-			min-height: 170px;
-		}
-	}
-}
-
-.listing__figure--round img {
-	border: 4px solid hsla(0, 0%, 93%, 0.75);
-	border-radius: 50%;
-	height: 80px;
-	margin: 10px 0;
-}
-
-.listing__figure--dark {
-	position: relative;
-
-	&:before {
-		content: '';
-		display: block;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		background-color: rgba(black, 0.4);
-	}
-
-	img {
-		margin: 0;
-	}
-}
-
-.listing__list .c-badge {
-	position: absolute;
-	right: 10px;
-	top: 40%;
+.listing__post-date {
+	font-size: 12px;
+	font-weight: 400;
+	color: $grey-vader;
 }
 
 // Events, Times & Dates
@@ -179,7 +121,7 @@
 	font-size: 24px;
 }
 
-.listing__time {
+.listing__event-time {
 	display: none;
 
 	@include media('>s') {
@@ -190,8 +132,149 @@
 	}
 }
 
-.listing__date {
-	font-size: 12px;
-	font-weight: 400;
-	color: $grey-anakin;
+// Images, Icons & Badges
+//================================
+
+.listing__figure {
+	margin-right: 15px;
+
+	svg {
+		width: 45px;
+		height: auto;
+	}
+}
+
+// Image Small Block Type Modifiers
+//================================
+
+// Set individual item underline
+.listing__list--img-small li:not(:last-child):before {
+	width: calc(100% - 95px);
+	left: 95px;
+}
+
+// Set the width of the figure element
+.listing__list--img-small .listing__figure {
+	flex: 0 0 80px;
+}
+
+// Image Large Block Type Modifiers
+//================================
+
+// Set individual item underline
+.listing__list--img-large li:not(:last-child):before {
+	width: calc(100% - 155px);
+	left: 155px;
+
+	@include media('>s') {
+		width: calc(100% - 215px);
+		left: 215px;
+	}
+}
+
+.listing__list--img-large li a {
+	align-items: initial;
+}
+
+// Set the width of the figure element
+.listing__list--img-large .listing__figure {
+	flex: 0 0 140px;
+
+	@include media('>s') {
+		flex: 0 0 200px;
+	}
+}
+
+// Image Rounded Block Type Modifiers
+//================================
+
+// Set individual item underline
+.listing__list--img-people li:not(:last-child):before {
+	width: calc(100% - 95px);
+	left: 95px;
+}
+
+// Set the width of the figure element
+.listing__list--img-people .listing__figure {
+	flex: 0 0 80px;
+
+	img {
+		border: 4px solid hsla(0, 0%, 93%, 0.75);
+		border-radius: 50%;
+	}
+}
+
+// Image Dark Block Type Modifiers
+//================================
+
+// Set individual item underline
+.listing__list--img-video li:not(:last-child):before {
+	width: calc(100% - 95px);
+	left: 95px;
+}
+
+// Set the width of the figure element
+.listing__list--img-video .listing__figure {
+	flex: 0 0 80px;
+	position: relative;
+
+	&:before {
+		content: '';
+		display: block;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: rgba(black, 0.4);
+	}
+
+	img {
+		margin: 0;
+	}
+}
+
+// Icon Block Type Modifiers
+//================================
+
+// Set individual item underline
+.listing__list--icon li:not(:last-child):before {
+	width: calc(100% - 60px);
+	left: 60px;
+}
+
+// Set the width of the figure element
+.listing__list--icon .listing__figure {
+	flex: 0 0 45px;
+	display: flex;
+	align-items: center;
+}
+
+// Event Block Type Modifiers
+//================================
+
+// Set individual item underline
+.listing__list--events li:not(:last-child):before {
+	width: calc(100% - 60px);
+	left: 60px;
+}
+
+// News Block Type Modifiers
+//================================
+
+.listing__list--news {
+	.listing__excerpt {
+		display: none;
+
+		@include media('>s') {
+			display: block;
+		}
+	}
+
+	.listing__title,
+	.listing__excerpt {
+		white-space: initial;
+		overflow: initial;
+		text-overflow: initial;
+	}
 }
