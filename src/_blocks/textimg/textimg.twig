@@ -6,11 +6,11 @@
 <div class="u-block {% if settings.width %}u-block--{{ settings.width }}{% else %}u-block--m{% endif %} {% if settings.color %}u-block--{{ settings.color }}{% else %}u-block--white{% endif %}">
 {#<h2>Has heading</h2> TODO ADD CENTER HEADING#}
     <div class="b-textimg{% if settings.variant %} b-textimg--imgtext{% endif %}{% if docs.modifier %} {{ docs.modifier }}{% endif %}">
-        <div class="b-textimg__wrapper">
-            <div class="b-textimg__section">
-                <h2 class="b-textimg__heading">{{ data.title }}</h2>
-                <img class="b-textimg__img" src="{{ data.img.url }}" alt="{{ data.img.alt }}" />
-                <div class="b-textimg__desc">
+        <div class="textimg__wrapper">
+            <div class="textimg__section">
+                <h2 class="textimg__heading">{{ data.title }}</h2>
+                <img class="textimg__img" src="{{ data.img.url }}" alt="{{ data.img.alt }}" />
+                <div class="textimg__desc">
                     {{ data.content|raw }}
                 </div>
             </div>
