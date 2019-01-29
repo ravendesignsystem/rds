@@ -8,6 +8,8 @@ RDS is Carleton's system for creating digital harmony across our many web proper
 
 While this section is a must read for RDS developers, we encourage content creators and site users to read on to get a better understanding of the core concepts that make up RDS.
 
+> Our design system isn’t our UI kit or our style guide. It’s the shared language we have when we talk about our work. https://ux.shopify.com/the-system-always-kicks-back-d94b945407f2
+
 ## A shared vocabulary
 
 The following terms are used throughout RDS to articulate the systems’s underlying structure:

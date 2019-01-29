@@ -6,15 +6,32 @@ title: Blocks in-depth
 ---
 RDS Blocks are the equivalent of "components" in other [design systems](#). They are chunks of reusable code that can be assembled together in different combinations to build any number of user interfaces. 
 
-This section takes a deep dive into Blocks as they make up the bulk of user interfaces in RDS. 
+Pretty much every UI element on screen is a Block. Since they make up the bulk of user interfaces in RDS, this section in the documentation offers a deep dive into Blocks.
 
-## Block standards
+## Block usage standards
 
-In their simplest form, RDS Blocks are grouped snippets of HTML, CSS, and sometimes JS. They are, however, guided by clear standards and a shared set of principles in order to:
+In their simplest form, RDS Blocks are grouped snippets of HTML, CSS, and sometimes JS. The UI equivalent to Lego blocks, you can build each Block by itself and then easily attach them together.
+
+However, RDS Blocks are guided by clear standards and a shared set of principles in order to:
 
 - create consistent UI and UX experiences, 
 - dictate where and how Blocks can be used,
-- establish consistent spacing across the system.
+- establish consistent spacing across the system,
+- meet Carleton's online branding standards.
+
+To further the Lego analogy... unlike when you grab a tub of randomly sized and coloured Lego blocks and start building without any real forethought, we are trying to to build the equivalent of a themed [Lego set](https://en.wikipedia.org/wiki/Lego#Lego_set_themes) While not quite as strict, our goal is comparable to using Star-Wars lego to build an (X-Wing)[https://shop.lego.com/en-CA/product/X-Wing-Starfighter-75218]. The theme provides standarized 
+
+### Creativity within a box
+
+Extending the Lego analogy... some critics suggest in recent decades Lego has become [less creative](specialised pieces and instruction manuals) because of the increase of specialised pieces and instruction manuals. The goal of any good design system should not be to stifle creative. 
+
+If RDS interfaces were to Star-Wars lego Starships, we don't provide step by step instructions to build an (X-Wing)[https://shop.lego.com/en-CA/product/X-Wing-Starfighter-75218]. But we do have guidelines and rules for how certain types of blocks can be used. So, when you are building your ships (interfaces) your cockpit blocks (header blocks) need to go on top and your landing gear (footer blocks) must go on the bottom. Some sane guidelines so your pilot can eject properly and land the ship on its wheels. But by all means, when building the rest, add on the Millennium Falcon's secret compartment or a Star Destroyers proton beam. Make the best interfaces that match your content requirements.
+
+Note: to further creativity we have instructions for [building your own Blocks](#).
+
+
+
+
 
 ### Block terms and common attributes
 
