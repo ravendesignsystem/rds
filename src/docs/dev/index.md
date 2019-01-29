@@ -21,6 +21,7 @@ banner:
 ## Understanding the RDS System
 
 - [Concepts that makeup of RDS](understanding-rds/concepts-makeup) - Review Required
+- [Block in-depth](understanding-rds/blocks-in-depth)
 - [About RDS](understanding-rds/about-rds) - Review Required
 - [Layouts](understanding-rds/layouts/) - Review Required
 - [Themes and Templates](understanding-rds/themes-templates/) - Review Required
@@ -34,37 +35,37 @@ banner:
 
 ## Using RDS
 
-- [Getting Started](using-rds/getting-started/) - Review Required
+- [Getting Started](getting-started/getting-started/) - Review Required
 
 #### Others: Unlinked / Unknown
 
-- [Starter Themes](using-rds/#) - Not Linked
-- [Starter Templates](using-rds/#) - Not Linked
-- [Bowser and Device Compatibility](using-rds/#) - Not Linked
-- [Accessibility](using-rds/accessibility/) - Not Linked
-- [Releases Notes](using-rds/#) - Not Linked
-- [Getting Help](using-rds/#) - Not Linked
+- [Starter Themes](getting-started/#) - Not Linked
+- [Starter Templates](getting-started/#) - Not Linked
+- [Bowser and Device Compatibility](getting-started/#) - Not Linked
+- [Accessibility](getting-started/accessibility/) - Not Linked
+- [Releases Notes](getting-started/#) - Not Linked
+- [Getting Help](getting-started/#) - Not Linked
 
 ## Custom Development
 
-- [Working with Blocks](custom-development/blocks)
-- [Working with the CSS Grid](custom-development/grid)
-- [Custom layouts](custom-development/layouts/) - Review Required
-- [Mobile and Progressive Web Apps](custom-development/mobile/) - Review Required
-- [Naming Conventions and Terminology](custom-development/naming/) - Review Required
-- [Security Checklist](custom-development/security/) - Review Required
+- [Working with Blocks](custom-dev/blocks)
+- [Working with the CSS Grid](custom-dev/grid)
+- [Custom layouts](custom-dev/layouts/) - Review Required
+- [Mobile and Progressive Web Apps](custom-dev/mobile/) - Review Required
+- [Naming Conventions and Terminology](custom-dev/naming/) - Review Required
+- [Security Checklist](understanding-rds/security/) - Review Required
 
 
 #### Others: Unlinked / Unknown
 
-- [Download](custom-development/#) - Not Linked
-- [Set up - tooling](custom-development/#) - Not Linked
-- [Directory Structure](custom-development/#) - Not Linked
-- [Theming - Custom starter themes](custom-development/#) - Not Linked
-- [Styling - SASS](custom-development/#) - Not Linked
-- [Creating Blocks](custom-development/#) - Not Linked
-- [Creating Components](custom-development/#) - Not Linked
-- [Grid System](custom-development/#) - Not Linked
-- [Iconography](custom-development/#) - Not Linked
-- [Utility classes](custom-development/#) - Not Linked
-- [Guides](custom-development/#) - Not Linked
+- [Download](custom-dev/#) - Not Linked
+- [Set up - tooling](custom-dev/#) - Not Linked
+- [Directory Structure](custom-dev/#) - Not Linked
+- [Theming - Custom starter themes](custom-dev/#) - Not Linked
+- [Styling - SASS](custom-dev/#) - Not Linked
+- [Creating Blocks](custom-dev/#) - Not Linked
+- [Creating Components](custom-dev/#) - Not Linked
+- [Grid System](custom-dev/#) - Not Linked
+- [Iconography](custom-dev/#) - Not Linked
+- [Utility classes](custom-dev/#) - Not Linked
+- [Guides](custom-dev/#) - Not Linked

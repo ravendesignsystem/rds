@@ -4,11 +4,28 @@ subsite: dev
 title: Understanding the RDS system
 content: true
 ---
-The RDS Design System is Carleton's system for creating digital harmony across platforms. One of the systematic ways to guide our collective efforts is to insure everyone is speaking the same language. This section documents the key concepts and terminology used within RDS' underlying design language to create consistency across the system. 
 
-While this section is a must read for RDS developers, we encourage content creators and site users to read on to get a better understanding and familiarity with the concepts that make up the RDS.
+# Introduction
 
-## The makeup of 
+The RDS design system was established to help Carleton deliver a unified experience across all of its web properties. In addition to creating a consistent user experience, another goal was to unite development teams across campus through a shared language.
+
+This section is intended to help developers better understand the core concepts behind the RDS system. 
+
+https://medium.com/@broccolini/design-systems-at-github-c8e5378d2542
+
+RDS makes it easier to prototype and implement designs without writing a ton of new CSS
+
+the source of truth for our design system thus far has been Sass.
+
+ single source of truth
+
+
+ *** do 5his
+ Communicate updates more widely through team posts:
+ Make the status of styles more obvious: with the refactor of many of our styles things were constantly changing, we needed to communicate that clearly so that people knew what was safe to use.
+
+This year we’ve been moving our UI Kits into Figma for designers to create mockups and prototypes with. Figma is built on web technology which means we can make use of tooling we use for other design systems workflows, and avoid having to work around software specific to macOS. Figma’s new Styles feature lets us map system primitives like colors and typography to components, similar to how we do in code. Figma’s API makes it easier for us to integrate with other parts of our workflow and automate tasks, such as checking components in Figma against our components in code.
+
 
 
 

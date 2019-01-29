@@ -43,15 +43,14 @@ body {
 	background-color: white;
 	margin: 0;
 	font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', -apple-system,
-		'blinkmacsystemfont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica',
-		'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+	'blinkmacsystemfont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica',
+	'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 	font-style: normal;
 	color: $black;
 }
 
 // for ie 11
-main,
-time {
+main {
 	display: block;
 }
 
@@ -294,13 +293,12 @@ th {
 // -----------
 
 pre {
-	margin-bottom: $margin-bottom;
+	margin-bottom: 25px;
 }
 
-pre,
 code {
 	font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', Courier,
-		monospace;
+	monospace;
 	font-size: 1em;
 	line-height: 1.4;
 	background-color: $grey;
