@@ -12,18 +12,17 @@ Since they account for pretty much every UI element on screen in RDS interfaces,
 
 In their simplest form, RDS Blocks are grouped snippets of HTML, CSS, and sometimes JavaScript (JS). The UI equivalent to Lego blocks, you can build each Block by itself and then easily attach them together.
 
-RDS Blocks are, however, guided by clear standards and a shared set of principles in order to:
+RDS Blocks are, however, guided by clear standards and a shared set of principles in order to create consistent UI and UX experiences. 
 
-- create consistent UI and UX experiences, 
-- dictate where and how Blocks can be used,
-- establish consistent spacing across the system,
-- meet Carleton's online branding standards.
+To further the Lego analogy... unlike a tub of randomly sized/coloured Lego blocks, RDS Blocks are the equivalent to Lego blocks found in [themed Lego sets](https://lego.fandom.com/wiki/Theme). Except, instead of, pirates or Star-Wars, our theme is Carleton.
 
-To further the Lego analogy... unlike a tub of randomly sized/coloured Lego blocks, our Blocks are the equivalent to blocks found in [themed Lego sets](https://en.wikipedia.org/wiki/Lego#Lego_set_themes). Except, instead of pirates or Star-Wars, our theme is Carleton.
+Some critics suggest in recent decades Lego has become [less creative](specialised pieces and instruction manuals) because of the increase of specialised pieces and instruction manuals found mostly in themed sets. While we have imposed guidelines and restrictions, we don't specific instructions for what can build. One goal of our design system is not be to completely stifle [creativity](https://artegence.com/blog/does-the-design-system-era-mean-the-death-of-creativity-in-ui-design/). 
 
-Some critics suggest in recent decades Lego has become [less creative](specialised pieces and instruction manuals) because of the increase of specialised pieces and instruction manuals found mostly in themed sets. While we have imposed restrictions, one goal of our design system is not be to completely stifle [creativity](https://artegence.com/blog/does-the-design-system-era-mean-the-death-of-creativity-in-ui-design/). 
+Continuing the Lego analogy... if RDS interfaces are akin to Lego Star-Wars spaceships, we don't expect you to follow step-by-step instructions to build an exact replica of an [X-Wing](https://shop.lego.com/en-CA/product/X-Wing-Starfighter-75218). Instead, we have general guidelines and some rules for how certain blocks can be used. 
 
-Continuing the Lego analogy... if RDS interfaces are akin to Lego Star-Wars spaceships, we don't demand that you follow step-by-step instructions to build an exact replica of an [X-Wing](https://shop.lego.com/en-CA/product/X-Wing-Starfighter-75218). Instead, we have general guidelines and some rules for how certain blocks can be used. For example, when you are building your ships (interfaces) your cockpit blocks (header blocks) need to go on top and your landing gear (footer blocks) must go on the bottom. Feel free, when you build the rest of the ship, to add in the Millennium Falcon's secret compartment (RDS Block) or a Star Destroyers proton beam (another Block). Make the best interfaces (ships) you can to match your content requirements. But please follow the Block guidelines so your pilot can eject properly and land the ship on its wheels. Okay, we are done with this analogy.
+For example, when you are building your ships (interfaces), your cockpit blocks (header blocks) need to go on top and your landing gear (footer blocks) must go on the bottom. When building the rest of the ship, feel free to add in the Millennium Falcon's secret compartment (RDS Block) or a Star Destroyers proton beam (another Block). Make the best interfaces (coolest ships) you can to match your content requirements. But please follow the Block guidelines outlined this section so your pilot can eject properly and land their ship on its wheels. Okay, we are done with this analogy.
+
+TODO add some images
 
 **Note**: to further creativity we have instructions for [building your own Blocks](#).
 
