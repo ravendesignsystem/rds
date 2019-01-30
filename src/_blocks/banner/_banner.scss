@@ -31,11 +31,11 @@
 .banner__title {
 	margin: 0;
 	padding: 0;
-	font-size: $type28;
+	font-size: $pixel28;
 
 	@include media('>s') {
 		max-width: 768px;
-		font-size: $type36;
+		font-size: $pixel36;
 		line-height: 1.2;
 	}
 }

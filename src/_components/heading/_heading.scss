@@ -3,19 +3,19 @@
 }
 
 .c-heading--center {
-	font-size: $type30;
+	font-size: $pixel30;
 	text-align: center;
 	border-bottom: none;
 
 	@include media('>=s') {
-		font-size: $type36;
+		font-size: $pixel36;
 		max-width: 600px;
 	}
 }
 
 .c-heading--center + p {
 	text-align: center;
-	font-size: $type18;
+	font-size: $pixel18;
 	font-weight: 300;
 	position: relative;
 	padding-bottom: 25px;
@@ -35,7 +35,7 @@
 	}
 
 	@include media('>=s') {
-		font-size: $type20;
+		font-size: $pixel20;
 		padding-bottom: 25px;
 	}
 }
