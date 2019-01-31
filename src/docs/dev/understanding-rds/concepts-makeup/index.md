@@ -4,9 +4,7 @@ subsite: dev
 content: true
 title: Key concepts that makeup RDS
 ---
-RDS is Carleton's system for creating digital harmony across our many web properties. One of the systematic ways to guide our collective efforts is to ensure everyone is speaking the same language. This section documents the fundamental concepts and terminology used within RDS' underlying design language, established to create consistency across the platform. 
-
-While this section is a must read for RDS developers, we encourage content creators and site users to read on to get a better understanding of the core concepts that make up RDS.
+RDS is Carleton's system for creating digital harmony across our many web properties. One of the systematic ways to guide our collective efforts is to ensure everyone is speaking the same language. This section documents the fundamental concepts and terminology used within RDS' underlying design language, established to create consistency across the platform.
 
 > Our design system isn’t our UI kit or our style guide. It’s the shared language we have when we talk about our work. https://ux.shopify.com/the-system-always-kicks-back-d94b945407f2
 
