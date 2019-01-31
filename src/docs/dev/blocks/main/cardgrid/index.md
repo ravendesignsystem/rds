@@ -3,78 +3,47 @@ layout: base
 subsite: dev
 title: Card Grid block
 banner:
-  breadcrumbs:
-    grandparent: Blocks
+ breadcrumbs:
+  grandparent: Blocks
 content: true
 meta:
-    version: 1.0.0
-    status: under review
-    handle: cardgrid
-    type: Fixed-width
-    section: Any
-    path: cardgrid/
-    theme: Core
-    heading: true
+ version: 1.0.0
+ status: under review
+ handle: cardgrid
+ type: Fixed-width
+ section: Any
+ path: cardgrid/
+ theme: Core
+ heading: true
 dependencies:
-    js: n/a
+ js: n/a
 examples:
 wild: n/a
 alternatives: grid-list
 data:
-- name: inc*
-  type: string
-  desc: Card component inc path.
+ - name: inc*
+   type: string
+   desc: Card component inc path.
 ---
+
 The Card Grid block uses RDS' [responsive grid](#) to list [Card components](#) in equal-width columns. **Note**: this block should not be used for general layout purposes.{%include "/docs/inc/close.twig"%}
+
 <div class="u-block u-block--white u-block--s u-no-padding-bottom">
-<h2>Base example</h2>
-<div class="b-main-grid u-grid u-grid--3">
-    <div><article class="c-card" itemscope="" itemtype="http://schema.org/VideoObject">
-             <a class="card__url" href="https://www.youtube.com/watch?v=lrYPm6DD44M" itemprop="url">
-                 <figure class="card__figure u-overlay u-overlay--light" itemscope="" itemtype="http://schema.org/ImageObject">
-                     <img class="card__img " src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Raven standing">
-                     <span class="card__icon c-icon-play-button--white u-icon-bg u-icon-bg--overlay" title="Video" aria-hidden="true"></span>
-                 </figure>
-                 <div class="card__body">
-                     <h4 class="card__title" itemprop="name">Amazing Raven intelligence</h4>
-                 </div>
-             </a>
-         </article>
-     </div>
-    <div><article class="c-card" itemscope="" itemtype="http://schema.org/VideoObject">
-             <a class="card__url" href="https://www.youtube.com/watch?v=lrYPm6DD44M" itemprop="url">
-                 <figure class="card__figure u-overlay u-overlay--light" itemscope="" itemtype="http://schema.org/ImageObject">
-                     <img class="card__img " src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Raven standing">
-                     <span class="card__icon c-icon-play-button--white u-icon-bg u-icon-bg--overlay" title="Video" aria-hidden="true"></span>
-                 </figure>
-                 <div class="card__body">
-                     <h4 class="card__title" itemprop="name">Amazing Raven intelligence</h4>
-                 </div>
-             </a>
-         </article>
-     </div>
-     <div><article class="c-card" itemscope="" itemtype="http://schema.org/VideoObject">
-              <a class="card__url" href="https://www.youtube.com/watch?v=lrYPm6DD44M" itemprop="url">
-                  <figure class="card__figure u-overlay u-overlay--light" itemscope="" itemtype="http://schema.org/ImageObject">
-                      <img class="card__img " src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Raven standing">
-                      <span class="card__icon c-icon-play-button--white u-icon-bg u-icon-bg--overlay" title="Video" aria-hidden="true"></span>
-                  </figure>
-                  <div class="card__body">
-                      <h4 class="card__title" itemprop="name">Amazing Raven intelligence</h4>
-                  </div>
-              </a>
-          </article>
-      </div>
+	<h2>Base example</h2>
+	<div class="b-cardgrid u-grid u-grid--3">
+		{%include "card/data/card--base"%}
+		{%include "card/data/card--base"%}
+		{%include "card/data/card--base"%}
+	</div>
 </div>
-</div>{%include "/docs/inc/open-b-content.twig"%}
+
+{%include "/docs/inc/open-b-content.twig"%}
 
 ```html
 <div class="u-block u-block--white u-block--s">
-    <div class="b-main-grid u-grid u-grid--3">
-        <div>{include card component}</div>
-        <div>{include card component}</div>
-        <div>{include card component}</div>
-    </div>
+	<div class="b-cardgrid u-grid u-grid--3">
+		{include card components}
+	</div>
 </div>
 ```
 
@@ -84,22 +53,24 @@ Four and three column grids are available. To control the number of columns, adj
 
 ### Four column grid example
 
-<div class="b-main-grid u-grid u-grid--4">
-    <div>{%include "card/data/card--base"%}</div>
-    <div>{%include "card/data/card--base"%}</div>
-    <div>{%include "card/data/card--base"%}</div>
-    <div>{%include "card/data/card--base"%}</div>
-</div><br>
+{%include '/docs/inc/close.twig'%}
 
+<div class="u-block u-block--white u-block--m">
+	<div class="b-cardgrid u-grid u-grid--4">
+		{%include "card/data/card--base"%}
+		{%include "card/data/card--base"%}
+		{%include "card/data/card--base"%}
+		{%include "card/data/card--base"%}
+	</div>
+</div>
+
+{%include "/docs/inc/open-b-content.twig"%}
 
 ```html
 <div class="u-block u-block--white u-block--s">
-    <div class="b-main-grid u-grid u-grid--4">
-        <div>{include card component}</div>
-        <div>{include card component}</div>
-        <div>{include card component}</div>
-        <div>{include card component}</div>
-    </div>
+	<div class="b-cardgrid u-grid u-grid--4">
+		{include card components}
+	</div>
 </div>
 ```
 
@@ -107,77 +78,32 @@ Four and three column grids are available. To control the number of columns, adj
 
 Control the block's width and background colour using the following [block settings](#)
 
-- **Block widths**: `u-block--s`*, `u-block--m`, `u-block--l`
-- **Block colours**: `u-block--white`*, `u-block--grey`
+- **Block widths**: `u-block--s`\*, `u-block--m`, `u-block--l`
+- **Block colours**: `u-block--white`\*, `u-block--grey`
 
-**Notes**: * = default
+**Notes**: \* = default
 
 **Important**: if you are using the [CMS theme](#), only the default settings can be used.
+
 {%include '/docs/inc/close.twig'%}
+
 <section class="u-block u-block--grey u-block--m">
-<h2>Grid block with medium width and white background settings</h2>
-<div class="b-main-grid u-grid u-grid--4">
-    <div><article class="c-card" itemscope="" itemtype="http://schema.org/VideoObject">
-             <a class="card__url" href="https://www.youtube.com/watch?v=lrYPm6DD44M" itemprop="url">
-                 <figure class="card__figure u-overlay u-overlay--light" itemscope="" itemtype="http://schema.org/ImageObject">
-                     <img class="card__img " src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Raven standing">
-                     <span class="card__icon c-icon-play-button--white u-icon-bg u-icon-bg--overlay" title="Video" aria-hidden="true"></span>
-                 </figure>
-                 <div class="card__body">
-                     <h4 class="card__title" itemprop="name">Amazing Raven intelligence</h4>
-                 </div>
-             </a>
-         </article>
-     </div>
-    <div><article class="c-card" itemscope="" itemtype="http://schema.org/VideoObject">
-             <a class="card__url" href="https://www.youtube.com/watch?v=lrYPm6DD44M" itemprop="url">
-                 <figure class="card__figure u-overlay u-overlay--light" itemscope="" itemtype="http://schema.org/ImageObject">
-                     <img class="card__img " src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Raven standing">
-                     <span class="card__icon c-icon-play-button--white u-icon-bg u-icon-bg--overlay" title="Video" aria-hidden="true"></span>
-                 </figure>
-                 <div class="card__body">
-                     <h4 class="card__title" itemprop="name">Amazing Raven intelligence</h4>
-                 </div>
-             </a>
-         </article>
-     </div>
-     <div><article class="c-card" itemscope="" itemtype="http://schema.org/VideoObject">
-              <a class="card__url" href="https://www.youtube.com/watch?v=lrYPm6DD44M" itemprop="url">
-                  <figure class="card__figure u-overlay u-overlay--light" itemscope="" itemtype="http://schema.org/ImageObject">
-                      <img class="card__img " src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Raven standing">
-                      <span class="card__icon c-icon-play-button--white u-icon-bg u-icon-bg--overlay" title="Video" aria-hidden="true"></span>
-                  </figure>
-                  <div class="card__body">
-                      <h4 class="card__title" itemprop="name">Amazing Raven intelligence</h4>
-                  </div>
-              </a>
-          </article>
-      </div>
-      <div>
-        <article class="c-card" itemscope="" itemtype="http://schema.org/VideoObject">
-            <a class="card__url" href="https://www.youtube.com/watch?v=lrYPm6DD44M" itemprop="url">
-                <figure class="card__figure u-overlay u-overlay--light" itemscope="" itemtype="http://schema.org/ImageObject">
-                    <img class="card__img " src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Raven standing">
-                    <span class="card__icon c-icon-play-button--white u-icon-bg u-icon-bg--overlay" title="Video" aria-hidden="true"></span>
-                </figure>
-                <div class="card__body">
-                    <h4 class="card__title" itemprop="name">Amazing Raven intelligence</h4>
-                </div>
-            </a>
-        </article>
-       </div>
-</div>
+	<h2>Grid block with medium width and white background settings</h2>
+	<div class="b-cardgrid u-grid u-grid--4">
+		{%include "card/data/card--base"%}
+			{%include "card/data/card--base"%}
+			{%include "card/data/card--base"%}
+			{%include "card/data/card--base"%}
+	</div>
 </section>
+
 {%include '/docs/inc/open-b-content'%}
 
 ```html
 <div class="u-block u-block--grey u-block--m">
-    <div class="b-main-grid u-grid u-grid--4">
-        <div>{include card component}</div>
-        <div>{include card component}</div>
-        <div>{include card component}</div>
-        <div>{include card component}</div>
-    </div>
+	<div class="b-cardgrid u-grid u-grid--4">
+		{include card components}
+	</div>
 </div>
 ```
 
@@ -190,10 +116,8 @@ Grid block cards should:
 
 ## Implementation Notes
 
--  If you are building pages with Grid blocks but without [Content blocks](#), use the four column grid and the medium-size width setting `u-block--m`.
+- If you are building pages with Grid blocks but without [Content blocks](#), use the four column grid and the medium-size width setting `u-block--m`.
 
 ## When To Avoid
 
 - Don't use this block inside of a content block. If you need a grid within a content block, use the `u-grid` modifier. Remember, blocks can never be nested.
-
-
