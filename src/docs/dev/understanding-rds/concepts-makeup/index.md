@@ -62,7 +62,7 @@ TBD: show image of banner blocks
 
 ![img of template sections ](http://cu-raven.s3.amazonaws.com/assets/img/docs/template.png)
 
-**Note**: While there may be multiple asised sections, there can be only one header, main and footer section per page.
+**Note**: While there may be multiple aside sections, there can be only one header, main and footer section per page.
 
 ## Blocks 
 
