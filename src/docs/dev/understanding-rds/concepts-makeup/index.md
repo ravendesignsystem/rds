@@ -3,16 +3,15 @@ layout: base
 subsite: dev
 content: true
 title: Key concepts that makeup RDS
+readingTime: 4:14
 ---
-RDS is Carleton's system for creating digital harmony across our many web properties. One of the systematic ways to guide our collective efforts is to insure everyone is speaking the same language. This section documents the key concepts and terminology used within RDS' underlying design language, established to create consistency across the platform. 
-
-While this section is a must read for RDS developers, we encourage content creators and site users to read on to get a better understanding of the core concepts that make up RDS.
+RDS is Carleton's system for creating digital harmony across our many web properties. One of the systematic ways to guide our collective efforts is to ensure everyone is speaking the same language. This section documents the fundamental concepts and terminology used within RDS' underlying design language, established to create consistency across the platform.
 
 > Our design system isn’t our UI kit or our style guide. It’s the shared language we have when we talk about our work. https://ux.shopify.com/the-system-always-kicks-back-d94b945407f2
 
 ## A shared vocabulary
 
-The following terms are used throughout RDS to articulate the systems’s underlying structure:
+The following terms are used throughout RDS to articulate the systems’ underlying structure:
 
 - [Pages](#pages)
 - [Sections](#sections)
@@ -37,7 +36,7 @@ RDS pages are divided into sections to define the structure of a page and isolat
 - Aside - `<aside>`
 - Footer - `<footer>`
 
-By defining the above page sections we provide a clear understanding of what role is played by the content within those sections. In addition, it lets us categorize and provide clear use cases for certain content types. For example, the [Banner block](#) is categorized as a *header block* since it can only reside within the Header section. 
+By defining the above page sections, we provide a clear understanding of what role is played by the content within those sections. Also, it lets us categorize and provide clear use cases for certain content types. For example, the [Banner block](#) is categorized as a *header block* since it can only reside within the Header section. 
 
 TBD: show image of banner blocks
 
@@ -63,17 +62,19 @@ TBD: show image of banner blocks
 
 ![img of template sections ](http://cu-raven.s3.amazonaws.com/assets/img/docs/template.png)
 
+**Note**: While there may be multiple asised sections, there can be only one header, main and footer section per page.
+
 ## Blocks 
 
-RDS Blocks are the equivalent to repeatable "components" in other [design systems](#). They are chunks of reusable code, guided by clear standards, that can be assembled together in different combinations to build any number of user interfaces. Blocks allow us to separate RDS UI into smaller, more manageable parts and provide consistent user experiences across all RDS platforms.
+RDS Blocks are the equivalent to repeatable "components" in other [design systems](#). They are chunks of reusable code, guided by clear standards, that can be assembled in different combinations to build any number of user interfaces. Blocks allow us to separate RDS UI into smaller, more manageable parts and provide consistent user experiences across all RDS platforms.
 
-To control and provide consistent spacing, all RDS Blockss must be wrapped with the `u-block` [utility class](#).  Anyone integrating or developing with RDS should read both the [Blocks deep dive](#) and [Creating Blocks](#) sections as they really are the key building **blocks** of our design system. 
+To control and provide consistent spacing, all RDS Blocks must be wrapped with the `u-block` [utility class](#).  Anyone integrating or developing with RDS should read both the [Blocks deep dive](#) and [Creating Blocks](#) sections as they are the key building **blocks** of our design system. 
 
-**Note**: most Blocks are restricted to particular page sections and themes. Before using any Block, review [its documentation](#) to view the rules on where it can be used.
+**Note**: most Blocks are restricted to particular page sections and themes. Before using any Block, review [its documentation](#) to view its usage guidelines.
 
 ## Components
 
-Similar to Blocks, RDS Components are UI elements built for reuse. Unlike Blocks, Components can be nested inside of blocks, and even other components. Relatively simpler than blocks, components tend to be smaller, inline interface elements such as buttons and icons. Components must be used within a Block and can not be used on their own.
+Similar to Blocks, RDS Components are UI elements built for reuse. Unlike Blocks, Components can be nested inside of blocks, and even other components. Relatively more straightforward than blocks, components tend to be smaller, inline interface elements such as buttons and icons. Components must be used within a Block and cannot be used on their own.
 
 
 Components are the equivalent to Atoms or Molecules in [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/#atoms) and allow us to keep the CSS code lean as repeated elements are represented by only one abstraction. 
@@ -84,11 +85,11 @@ Components are the equivalent to Atoms or Molecules in [Atomic Design](http://br
  
 ## Templates
  
- Templates allow you to create reusable base markup. Templates can be used to control the overall page design and establish predefined sections for your content blocks. Or, they can be used to build your Blocks and Components by breaking your HTML code into smaller pieces that are overridable on a per-instance basis.
+ Templates allow you to create reusable base markup. Templates can be used to control the overall page design and establish predefined sections for your content blocks. Alternatively, they can be used to build your Blocks and Components by breaking your HTML code into smaller pieces that are overridable on a per-instance basis.
  
- Since RDS is agnostic to what tech stack is being used, templates are not a part of RDS. You could build RDS sites with just straight up HTML but we recommend using a templating engine such as [Twig](#), [Mustache](#), [Blade](#) or [Liquid](#) to separate your HTML structure from the content contained within. 
+ Since RDS is agnostic to what tech stack is being used, templates are not a part of RDS. You could build RDS sites with just straight up HTML, but we recommend using a templating engine such as [Twig](#), [Mustache](#), [Blade](#) or [Liquid](#) to separate your HTML structure from the content contained within. 
  
- In order to better build a more maintainable codebase, RDS was developed with [separation of concerns](#) in mind, specifically being able to separate data and markup. In our Block and Component documentation we provide examples of how you might achieve this with template and JSON code snippet examples.
+To better build a more maintainable codebase, RDS was developed with [separation of concerns](#) in mind, specifically being able to separate data and markup. In our Block and Component documentation, we provide examples of how you might achieve this with template and JSON code snippet examples.
  
 ## Themes
 
@@ -110,9 +111,9 @@ Developers looking to build new tailored themes should read the [Custom Theming 
 2. Pages are divided into defined [sections](#sections).
 3. Sections contain combinations of UI elements called Blocks that make up the overall UI.
 4. For even DRYer coding, Blocks may contain reusable Components.
-5. Sometimes you will need to use Layouts to arrange the locations of Blocks.
-6. We encourage developer to build their Blocks with templating engine and consider separating your date from your markup.
-7. Themes package everything up in a consistent user experience.
+5. Layouts are sometimes required to arrange the locations of Blocks.
+6. We encourage developers to build their Blocks with templating engine and consider separating your date from your markup.
+7. Themes package everything up to provide a consistent user experience.
 
 ![img of the RDS makeup](http://cu-raven.s3.amazonaws.com/assets/img/docs/makeup.png)
 
@@ -121,7 +122,7 @@ Remember:
 - Blocks are often restricted to certain sections and themes.
 - Blocks can never be nested within other blocks.
 - Components can be nested in blocks or other components.
-- Components must be used within a Block and can not be used on their own.
+- Components must be used within a Block and cannot be used on their own.
 
 ## References
 

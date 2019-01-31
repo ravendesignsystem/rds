@@ -4,27 +4,51 @@ subsite: dev
 content: true
 title: Blocks in-depth
 ---
-RDS Blocks are the equivalent of "components" in other [design systems](#). They are chunks of reusable code that can be assembled together in different combinations to build any number of user interfaces. 
+RDS Blocks are the equivalent of "components" in other [design systems](#). They are chunks of reusable code that can be assembled in different combinations to build any number of user interfaces. 
 
-Since they account for pretty much every UI element on screen in RDS interfaces, this section provides a must-read, deep dive into Blocks.
+Since they account for pretty much every UI element on screen, this section provides a must-read, deep dive into RDS Blocks.
 
-## Block guidelines
+## Block guidelines and rules
 
-In their simplest form, RDS Blocks are grouped snippets of HTML, CSS, and sometimes JavaScript (JS). The UI equivalent to Lego blocks, you can build each Block by itself and then easily attach them together.
+In their simplest form, RDS Blocks are grouped snippets of HTML, CSS, and sometimes JavaScript (JS). The UI equivalent to Lego blocks, you can build each Block by itself and then easily attach them together. 
 
-RDS Blocks are, however, guided by clear standards and a shared set of principles in order to create consistent UI and UX experiences. 
+To further the Lego analogy, unlike a tub of randomly sized/coloured Lego blocks, RDS Blocks are more the equivalent to Lego blocks found in [themed Lego sets](https://lego.fandom.com/wiki/Theme). Except, instead of, pirates or Star-Wars, our theme is Carleton.
 
-To further the Lego analogy... unlike a tub of randomly sized/coloured Lego blocks, RDS Blocks are the equivalent to Lego blocks found in [themed Lego sets](https://lego.fandom.com/wiki/Theme). Except, instead of, pirates or Star-Wars, our theme is Carleton.
+Some critics suggest Lego has become [less creative](#) due to the increase of specialized pieces and instruction manuals. If RDS interfaces are akin to Lego Star-Wars spaceships, while RDS imposes rules, we don't expect you to follow step-by-step instructions to build a replica of an [X-Wing](https://shop.lego.com/en-CA/product/X-Wing-Starfighter-75218). 
 
-Some critics suggest in recent decades Lego has become [less creative](specialised pieces and instruction manuals) because of the increase of specialised pieces and instruction manuals found mostly in themed sets. While we have imposed guidelines and restrictions, we don't specific instructions for what can build. One goal of our design system is not be to completely stifle [creativity](https://artegence.com/blog/does-the-design-system-era-mean-the-death-of-creativity-in-ui-design/). 
-
-Continuing the Lego analogy... if RDS interfaces are akin to Lego Star-Wars spaceships, we don't expect you to follow step-by-step instructions to build an exact replica of an [X-Wing](https://shop.lego.com/en-CA/product/X-Wing-Starfighter-75218). Instead, we have general guidelines and some rules for how certain blocks can be used. 
-
-For example, when you are building your ships (interfaces), your cockpit blocks (header blocks) need to go on top and your landing gear (footer blocks) must go on the bottom. When building the rest of the ship, feel free to add in the Millennium Falcon's secret compartment (RDS Block) or a Star Destroyers proton beam (another Block). Make the best interfaces (coolest ships) you can to match your content requirements. But please follow the Block guidelines outlined this section so your pilot can eject properly and land their ship on its wheels. Okay, we are done with this analogy.
+For example, when you are building your ships (interfaces), your cockpit blocks (header blocks) need to go on top, and your landing gear (footer blocks) must go on the bottom. When building the rest of the ship, feel free to add in the Millennium Falcon's secret compartment (RDS Block) or a Star Destroyers proton beam (another Block). Make the best interfaces (coolest ships) you can to match your content requirements. However, you are expected to follow our Block guidelines so your pilot can eject properly and land their ship on its wheels. 
 
 TODO add some images
 
 **Note**: to further creativity we have instructions for [building your own Blocks](#).
+
+## Block handles
+
+A block's handle refers to it's unique short name for use in code. Block handles must: 
+
+- be lowercase. For example, the Content block's handle is `'content'`.
+- be one word without spaces or dashes. For example, the Card Grid block's handle is `'gridcard'`. Note: the order of words may change.
+- follow [RDS naming conventions](#). For example, the Text and Image block's handle is `'textimg'`.
+
+The main CSS class name for all blocks is the `b-` prefix + a block's handle. For example, the Banner block's class name is `b-banner`.
+
+## Block sections
+
+While Blocks can be stacked in any order, they are restricted to specific page [sections](#). Sections are denoted by semantic HTML 5 elements, including:
+
+- Header - `<header>`
+- Main - `<main>`
+- Aside - `<aside>`
+- Footer - `<footer>`
+
+For example, the [Content block](#) (`b-content`) can only be used within the `<main>` section.
+
+Some blocks can be used in multiple sections. For example, the [Search block](#) (`b-search`) can be used inside both the `<header>` and `<aside>` sections.
+
+Section restrictions are available in each block's respective [documentation](#).
+
+**Note**: While an HTML document can have multiple `<header>` and `<footer>` elements. In RDS, there can only be one header and footer section. The 'Header section' is always denoted by the first `<header>Header section</header>` on the page. The 'Footer section' by the last `<footer>Footer section</footer>` on the page. For example:
+
 
 ### Block terms and common attributes
 
