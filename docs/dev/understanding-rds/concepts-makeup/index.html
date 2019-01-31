@@ -166,9 +166,7 @@ RDS</a>
                         <main id="content">
                                 <div class="u-block u-block--white u-block--s">
                     <div class="b-content">
-                                                <p>RDS is Carleton's system for creating digital harmony across our many web properties. One of the systematic ways to guide our collective efforts is to insure everyone is speaking the same language. This section documents the key concepts and terminology used within RDS' underlying design language, established to create consistency across the platform.</p>
-
-<p>While this section is a must read for RDS developers, we encourage content creators and site users to read on to get a better understanding of the core concepts that make up RDS.</p>
+                                                <p>RDS is Carleton's system for creating digital harmony across our many web properties. One of the systematic ways to guide our collective efforts is to ensure everyone is speaking the same language. This section documents the fundamental concepts and terminology used within RDS' underlying design language, established to create consistency across the platform.</p>
 
 <blockquote>
   <p>Our design system isn’t our UI kit or our style guide. It’s the shared language we have when we talk about our work. https://ux.shopify.com/the-system-always-kicks-back-d94b945407f2</p>
@@ -176,7 +174,7 @@ RDS</a>
 
 <h2 id="a-shared-vocabulary">A shared vocabulary</h2>
 
-<p>The following terms are used throughout RDS to articulate the systems’s underlying structure:</p>
+<p>The following terms are used throughout RDS to articulate the systems’ underlying structure:</p>
 
 <ul>
 <li><a href="#pages">Pages</a></li>
@@ -205,7 +203,7 @@ RDS</a>
 <li>Footer - <code>&lt;footer&gt;</code></li>
 </ul>
 
-<p>By defining the above page sections we provide a clear understanding of what role is played by the content within those sections. In addition, it lets us categorize and provide clear use cases for certain content types. For example, the <a href="#">Banner block</a> is categorized as a <em>header block</em> since it can only reside within the Header section.</p>
+<p>By defining the above page sections, we provide a clear understanding of what role is played by the content within those sections. Also, it lets us categorize and provide clear use cases for certain content types. For example, the <a href="#">Banner block</a> is categorized as a <em>header block</em> since it can only reside within the Header section.</p>
 
 <p>TBD: show image of banner blocks</p>
 
@@ -230,17 +228,19 @@ RDS</a>
 
 <p><img src="http://cu-raven.s3.amazonaws.com/assets/img/docs/template.png" alt="img of template sections " /></p>
 
+<p><strong>Note</strong>: While there may be multiple aside sections, there can be only one header, main and footer section per page.</p>
+
 <h2 id="blocks">Blocks</h2>
 
-<p>RDS Blocks are the equivalent to repeatable "components" in other <a href="#">design systems</a>. They are chunks of reusable code, guided by clear standards, that can be assembled together in different combinations to build any number of user interfaces. Blocks allow us to separate RDS UI into smaller, more manageable parts and provide consistent user experiences across all RDS platforms.</p>
+<p>RDS Blocks are the equivalent to repeatable "components" in other <a href="#">design systems</a>. They are chunks of reusable code, guided by clear standards, that can be assembled in different combinations to build any number of user interfaces. Blocks allow us to separate RDS UI into smaller, more manageable parts and provide consistent user experiences across all RDS platforms.</p>
 
-<p>To control and provide consistent spacing, all RDS Blockss must be wrapped with the <code>u-block</code> <a href="#">utility class</a>.  Anyone integrating or developing with RDS should read both the <a href="#">Blocks deep dive</a> and <a href="#">Creating Blocks</a> sections as they really are the key building <strong>blocks</strong> of our design system.</p>
+<p>To control and provide consistent spacing, all RDS Blocks must be wrapped with the <code>u-block</code> <a href="#">utility class</a>.  Anyone integrating or developing with RDS should read both the <a href="#">Blocks deep dive</a> and <a href="#">Creating Blocks</a> sections as they are the key building <strong>blocks</strong> of our design system.</p>
 
-<p><strong>Note</strong>: most Blocks are restricted to particular page sections and themes. Before using any Block, review <a href="#">its documentation</a> to view the rules on where it can be used.</p>
+<p><strong>Note</strong>: most Blocks are restricted to particular page sections and themes. Before using any Block, review <a href="#">its documentation</a> to view its usage guidelines.</p>
 
 <h2 id="components">Components</h2>
 
-<p>Similar to Blocks, RDS Components are UI elements built for reuse. Unlike Blocks, Components can be nested inside of blocks, and even other components. Relatively simpler than blocks, components tend to be smaller, inline interface elements such as buttons and icons. Components must be used within a Block and can not be used on their own.</p>
+<p>Similar to Blocks, RDS Components are UI elements built for reuse. Unlike Blocks, Components can be nested inside of blocks, and even other components. Relatively more straightforward than blocks, components tend to be smaller, inline interface elements such as buttons and icons. Components must be used within a Block and cannot be used on their own.</p>
 
 <p>Components are the equivalent to Atoms or Molecules in <a href="http://bradfrost.com/blog/post/atomic-web-design/#atoms">Atomic Design</a> and allow us to keep the CSS code lean as repeated elements are represented by only one abstraction.</p>
 
@@ -250,11 +250,11 @@ RDS</a>
 
 <h2 id="templates">Templates</h2>
 
-<p>Templates allow you to create reusable base markup. Templates can be used to control the overall page design and establish predefined sections for your content blocks. Or, they can be used to build your Blocks and Components by breaking your HTML code into smaller pieces that are overridable on a per-instance basis.</p>
+<p>Templates allow you to create reusable base markup. Templates can be used to control the overall page design and establish predefined sections for your content blocks. Alternatively, they can be used to build your Blocks and Components by breaking your HTML code into smaller pieces that are overridable on a per-instance basis.</p>
 
-<p>Since RDS is agnostic to what tech stack is being used, templates are not a part of RDS. You could build RDS sites with just straight up HTML but we recommend using a templating engine such as <a href="#">Twig</a>, <a href="#">Mustache</a>, <a href="#">Blade</a> or <a href="#">Liquid</a> to separate your HTML structure from the content contained within.</p>
+<p>Since RDS is agnostic to what tech stack is being used, templates are not a part of RDS. You could build RDS sites with just straight up HTML, but we recommend using a templating engine such as <a href="#">Twig</a>, <a href="#">Mustache</a>, <a href="#">Blade</a> or <a href="#">Liquid</a> to separate your HTML structure from the content contained within.</p>
 
-<p>In order to better build a more maintainable codebase, RDS was developed with <a href="#">separation of concerns</a> in mind, specifically being able to separate data and markup. In our Block and Component documentation we provide examples of how you might achieve this with template and JSON code snippet examples.</p>
+<p>To better build a more maintainable codebase, RDS was developed with <a href="#">separation of concerns</a> in mind, specifically being able to separate data and markup. In our Block and Component documentation, we provide examples of how you might achieve this with template and JSON code snippet examples.</p>
 
 <h2 id="themes">Themes</h2>
 
@@ -279,9 +279,9 @@ Developers looking to build new tailored themes should read the <a href="#">Cust
 <li>Pages are divided into defined <a href="#sections">sections</a>.</li>
 <li>Sections contain combinations of UI elements called Blocks that make up the overall UI.</li>
 <li>For even DRYer coding, Blocks may contain reusable Components.</li>
-<li>Sometimes you will need to use Layouts to arrange the locations of Blocks.</li>
-<li>We encourage developer to build their Blocks with templating engine and consider separating your date from your markup.</li>
-<li>Themes package everything up in a consistent user experience.</li>
+<li>Layouts are sometimes required to arrange the locations of Blocks.</li>
+<li>We encourage developers to build their Blocks with templating engine and consider separating your date from your markup.</li>
+<li>Themes package everything up to provide a consistent user experience.</li>
 </ol>
 
 <p><img src="http://cu-raven.s3.amazonaws.com/assets/img/docs/makeup.png" alt="img of the RDS makeup" /></p>
@@ -292,7 +292,7 @@ Developers looking to build new tailored themes should read the <a href="#">Cust
 <li>Blocks are often restricted to certain sections and themes.</li>
 <li>Blocks can never be nested within other blocks.</li>
 <li>Components can be nested in blocks or other components.</li>
-<li>Components must be used within a Block and can not be used on their own.</li>
+<li>Components must be used within a Block and cannot be used on their own.</li>
 </ul>
 
 <h2 id="references">References</h2>
@@ -353,8 +353,8 @@ https://www.sitepoint.com/overview-javascript-templating-engines/</p>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu--1-177" type="checkbox" hidden/>
-                    <label for="menu--1-177">
+                                <input class="menu__checkbox" id="menu--1-13" type="checkbox" hidden/>
+                    <label for="menu--1-13">
                         <a class="menu__url " href="#">Level 1-1</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -362,8 +362,8 @@ https://www.sitepoint.com/overview-javascript-templating-engines/</p>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-94" type="checkbox" hidden/>
-                    <label for="menu-2-1-94">
+                                <input class="menu__checkbox" id="menu-2-1-17" type="checkbox" hidden/>
+                    <label for="menu-2-1-17">
                         <a class="menu__url " href="#">Level 2-1</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -383,8 +383,8 @@ https://www.sitepoint.com/overview-javascript-templating-engines/</p>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-96" type="checkbox" hidden/>
-                    <label for="menu-2-1-96">
+                                <input class="menu__checkbox" id="menu-2-1-80" type="checkbox" hidden/>
+                    <label for="menu-2-1-80">
                         <a class="menu__url " href="#">Second Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -401,8 +401,8 @@ https://www.sitepoint.com/overview-javascript-templating-engines/</p>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu--1-123" type="checkbox" hidden/>
-                    <label for="menu--1-123">
+                                <input class="menu__checkbox" id="menu--1-45" type="checkbox" hidden/>
+                    <label for="menu--1-45">
                         <a class="menu__url " href="#">First Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -410,8 +410,8 @@ https://www.sitepoint.com/overview-javascript-templating-engines/</p>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-191" type="checkbox" hidden/>
-                    <label for="menu-2-1-191">
+                                <input class="menu__checkbox" id="menu-2-1-172" type="checkbox" hidden/>
+                    <label for="menu-2-1-172">
                         <a class="menu__url " href="#">Second Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -431,8 +431,8 @@ https://www.sitepoint.com/overview-javascript-templating-engines/</p>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-150" type="checkbox" hidden/>
-                    <label for="menu-2-1-150">
+                                <input class="menu__checkbox" id="menu-2-1-81" type="checkbox" hidden/>
+                    <label for="menu-2-1-81">
                         <a class="menu__url " href="#">Second Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>

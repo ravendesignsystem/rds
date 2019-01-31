@@ -166,32 +166,69 @@ RDS</a>
                         <main id="content">
                                 <div class="u-block u-block--white u-block--s">
                     <div class="b-content">
-                                                <p>RDS Blocks are the equivalent of "components" in other <a href="#">design systems</a>. They are chunks of reusable code that can be assembled together in different combinations to build any number of user interfaces.</p>
+                                                <p>RDS Blocks are the equivalent of "components" in other <a href="#">design systems</a>. They are chunks of reusable code that can be assembled in different combinations to build any number of user interfaces.</p>
 
-<p>Pretty much every UI element on screen is a Block. Since they make up the bulk of user interfaces in RDS, this section in the documentation offers a deep dive into Blocks.</p>
+<p>Since they account for pretty much every UI element on screen, this section provides a must-read, deep dive into RDS Blocks.</p>
 
-<h2 id="block-usage-standards">Block usage standards</h2>
+<h2 id="block-guidelines-and-rules">Block guidelines and rules</h2>
 
-<p>In their simplest form, RDS Blocks are grouped snippets of HTML, CSS, and sometimes JS. The UI equivalent to Lego blocks, you can build each Block by itself and then easily attach them together.</p>
+<p>In their simplest form, RDS Blocks are grouped snippets of HTML, CSS, and sometimes JavaScript (JS). The UI equivalent to Lego blocks, you can build each Block by itself and then easily attach them together.</p>
 
-<p>However, RDS Blocks are guided by clear standards and a shared set of principles in order to:</p>
+<p>To further the Lego analogy, unlike a tub of randomly sized/coloured Lego blocks, RDS Blocks are more the equivalent to Lego blocks found in <a href="https://lego.fandom.com/wiki/Theme">themed Lego sets</a>. Except, instead of, pirates or Star-Wars, our theme is Carleton.</p>
+
+<p>Some critics suggest Lego has become <a href="#">less creative</a> due to the increase of specialized pieces and instruction manuals. If RDS interfaces are akin to Lego Star-Wars spaceships, while RDS imposes rules, we don't expect you to follow step-by-step instructions to build a replica of an <a href="https://shop.lego.com/en-CA/product/X-Wing-Starfighter-75218">X-Wing</a>.</p>
+
+<p>For example, when you are building your ships (interfaces), your cockpit blocks (header blocks) need to go on top, and your landing gear (footer blocks) must go on the bottom. When building the rest of the ship, feel free to add in the Millennium Falcon's secret compartment (RDS Block) or a Star Destroyers proton beam (another Block). Make the best interfaces (coolest ships) you can to match your content requirements. However, you are expected to follow our Block guidelines so your pilot can eject properly and land their ship on its wheels.</p>
+
+<p>TODO add some images</p>
+
+<p><strong>Note</strong>: to further creativity we have instructions for <a href="#">building your own Blocks</a>.</p>
+
+<h2 id="block-handles">Block handles</h2>
+
+<p>A block's handle refers to its unique short name for use in code. Block handles must:</p>
 
 <ul>
-<li>create consistent UI and UX experiences,</li>
-<li>dictate where and how Blocks can be used,</li>
-<li>establish consistent spacing across the system,</li>
-<li>meet Carleton's online branding standards.</li>
+<li>be lowercase. For example, the <a href="#">Content block's</a> handle is <code>'content'</code>.</li>
+<li>be one word without spaces or dashes. For example, the Card Grid block's handle is <code>'gridcard'</code>. Note: the order of words may change.</li>
+<li>follow <a href="#">RDS naming conventions</a>. For example, the Text and Image block's handle is <code>'textimg'</code> which uses the <a href="#">system's abbreviations</a>.</li>
 </ul>
 
-<p>To further the Lego analogy... unlike when you grab a tub of randomly sized and coloured Lego blocks and start building without any real forethought, we are trying to to build the equivalent of a themed <a href="https://en.wikipedia.org/wiki/Lego#Lego_set_themes">Lego set</a> While not quite as strict, our goal is comparable to using Star-Wars lego to build an (X-Wing)[https://shop.lego.com/en-CA/product/X-Wing-Starfighter-75218]. The theme provides standarized</p>
+<p>The formula for each block's main CSS class name is the <code>b-</code> prefix + a block's handle. For example, the Banner block's class name is <code>b-banner</code>.</p>
 
-<h3 id="creativity-within-a-box">Creativity within a box</h3>
+<p>A block's handle should mirror its full name as best as possible.</p>
 
-<p>Extending the Lego analogy... some critics suggest in recent decades Lego has become [less creative](specialised pieces and instruction manuals) because of the increase of specialised pieces and instruction manuals. The goal of any good design system should not be to stifle creative.</p>
+<p>For example, for a block named "Doe Ray Me":</p>
 
-<p>If RDS interfaces were to Star-Wars lego Starships, we don't provide step by step instructions to build an (X-Wing)[https://shop.lego.com/en-CA/product/X-Wing-Starfighter-75218]. But we do have guidelines and rules for how certain types of blocks can be used. So, when you are building your ships (interfaces) your cockpit blocks (header blocks) need to go on top and your landing gear (footer blocks) must go on the bottom. Some sane guidelines so your pilot can eject properly and land the ship on its wheels. But by all means, when building the rest, add on the Millennium Falcon's secret compartment or a Star Destroyers proton beam. Make the best interfaces that match your content requirements.</p>
+<ul>
+<li>Good handle name = <code>doerayme</code>.</li>
+<li>Bad handle name = <code>farsoela</code>.</li>
+</ul>
 
-<p>Note: to further creativity we have instructions for <a href="#">building your own Blocks</a>.</p>
+<p><strong>Note for custom themers</strong>: <a href="#">themes</a> also have <a href="#">handles</a>. For custom blocks the formula for a block's class name is "<code>b-</code> + {theme handle} + {block handle}". For example, the class name for a new block called "Foo" in a custom theme with the (theme) handle of "cu" would be <code>b-cu-foo</code>.</p>
+
+<p>By following these conventions, we can avoid conflicts and easily distinguish custom blocks from core RDS blocks. If a block's primary class name has one hyphen (b-content), we know it is a core block. Consequently, if a block's primary class name has two hyphens (b-cu-foo), we know it is a custom theme block.</p>
+
+<p>Also, the "Doe Ray Me" named block above is used to exaggerate a point. You should keep block names to two words max while trying to describe their use case as best as possible. We know, <a href="#">naming in programming is hard</a>.</p>
+
+<h2 id="block-sections">Block sections</h2>
+
+<p>While Blocks can be stacked in any order, they are restricted to specific page <a href="#">sections</a>. Sections are denoted by semantic HTML 5 elements, including:</p>
+
+<ul>
+<li>Header - <code>&lt;header&gt;</code></li>
+<li>Main - <code>&lt;main&gt;</code></li>
+<li>Aside - <code>&lt;aside&gt;</code></li>
+<li>Footer - <code>&lt;footer&gt;</code></li>
+</ul>
+
+<p>For example, the <a href="#">Content block</a> (<code>b-content</code>) can only be used within the <code>&lt;main&gt;</code> section.</p>
+
+<p>Some blocks can be used in multiple sections. For example, the <a href="#">Search block</a> (<code>b-search</code>) can be used inside both the <code>&lt;header&gt;</code> and <code>&lt;aside&gt;</code> sections.</p>
+
+<p>Section restrictions are available in each block's respective <a href="#">documentation</a>.</p>
+
+<p><strong>Note</strong>: While an HTML document can have multiple <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> elements. In RDS, there can only be one header and footer section. The 'Header section' is always denoted by the first <code>&lt;header&gt;Header section&lt;/header&gt;</code> on the page. The 'Footer section' by the last <code>&lt;footer&gt;Footer section&lt;/footer&gt;</code> on the page. For example:</p>
 
 <h3 id="block-terms-and-common-attributes">Block terms and common attributes</h3>
 
@@ -640,8 +677,8 @@ https://www.sitepoint.com/overview-javascript-templating-engines/</p>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu--1-178" type="checkbox" hidden/>
-                    <label for="menu--1-178">
+                                <input class="menu__checkbox" id="menu--1-159" type="checkbox" hidden/>
+                    <label for="menu--1-159">
                         <a class="menu__url " href="#">Level 1-1</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -649,8 +686,8 @@ https://www.sitepoint.com/overview-javascript-templating-engines/</p>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-156" type="checkbox" hidden/>
-                    <label for="menu-2-1-156">
+                                <input class="menu__checkbox" id="menu-2-1-43" type="checkbox" hidden/>
+                    <label for="menu-2-1-43">
                         <a class="menu__url " href="#">Level 2-1</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -670,8 +707,8 @@ https://www.sitepoint.com/overview-javascript-templating-engines/</p>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-84" type="checkbox" hidden/>
-                    <label for="menu-2-1-84">
+                                <input class="menu__checkbox" id="menu-2-1-193" type="checkbox" hidden/>
+                    <label for="menu-2-1-193">
                         <a class="menu__url " href="#">Second Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -688,8 +725,8 @@ https://www.sitepoint.com/overview-javascript-templating-engines/</p>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu--1-70" type="checkbox" hidden/>
-                    <label for="menu--1-70">
+                                <input class="menu__checkbox" id="menu--1-144" type="checkbox" hidden/>
+                    <label for="menu--1-144">
                         <a class="menu__url " href="#">First Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -697,8 +734,8 @@ https://www.sitepoint.com/overview-javascript-templating-engines/</p>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-97" type="checkbox" hidden/>
-                    <label for="menu-2-1-97">
+                                <input class="menu__checkbox" id="menu-2-1-136" type="checkbox" hidden/>
+                    <label for="menu-2-1-136">
                         <a class="menu__url " href="#">Second Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -718,8 +755,8 @@ https://www.sitepoint.com/overview-javascript-templating-engines/</p>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-88" type="checkbox" hidden/>
-                    <label for="menu-2-1-88">
+                                <input class="menu__checkbox" id="menu-2-1-148" type="checkbox" hidden/>
+                    <label for="menu-2-1-148">
                         <a class="menu__url " href="#">Second Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
