@@ -24,13 +24,26 @@ TODO add some images
 
 ## Block handles
 
-A block's handle refers to it's unique short name for use in code. Block handles must: 
+A block's handle refers to its unique short name for use in code. Block handles must: 
 
-- be lowercase. For example, the Content block's handle is `'content'`.
+- be lowercase. For example, the [Content block's](#) handle is `'content'`.
 - be one word without spaces or dashes. For example, the Card Grid block's handle is `'gridcard'`. Note: the order of words may change.
-- follow [RDS naming conventions](#). For example, the Text and Image block's handle is `'textimg'`.
+- follow [RDS naming conventions](#). For example, the Text and Image block's handle is `'textimg'` which uses the [system's abbreviations](#).
 
-The main CSS class name for all blocks is the `b-` prefix + a block's handle. For example, the Banner block's class name is `b-banner`.
+The formula for each block's main CSS class name is the `b-` prefix + a block's handle. For example, the Banner block's class name is `b-banner`.
+
+A block's handle should mirror its full name as best as possible. 
+
+For example, for a block named "Doe Ray Me":
+
+- Good handle name = `doerayme`.
+- Bad handle name = `farsoela`.
+
+**Note for custom themers**: [themes](#) also have [handles](#). For custom blocks the formula for a block's class name is "`b-` + {theme handle} + {block handle}". For example, the class name for a new block called "Foo" in a custom theme with the (theme) handle of "cu" would be `b-cu-foo`.
+
+By following these conventions, we can avoid conflicts and easily distinguish custom blocks from core RDS blocks. If a block's primary class name has one hyphen (b-content), we know it is a core block. Consequently, if a block's primary class name has two hyphens (b-cu-foo), we know it is a custom theme block.
+
+Also, the "Doe Ray Me" named block above is used to exaggerate a point. You should keep block names to two words max while trying to describe their use case as best as possible. We know, [naming in programming is hard](#).
 
 ## Block sections
 
