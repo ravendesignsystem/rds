@@ -100,20 +100,20 @@ h6 {
 }
 
 h1 {
-	font-size: $type28;
+	font-size: $pixel28;
 	padding-bottom: 0.3em;
 
 	@include media('>s') {
-		font-size: $type30;
+		font-size: $pixel30;
 	}
 }
 
 h2 {
-	font-size: $type24;
+	font-size: $pixel24;
 	padding-bottom: 0.3em;
 
 	@include media('>s') {
-		font-size: $type28;
+		font-size: $pixel28;
 	}
 }
 
@@ -124,10 +124,10 @@ h3 {
 h4,
 h5,
 h6 {
-	font-size: $type16;
+	font-size: $pixel16;
 
 	@include media('>s') {
-		font-size: $type18;
+		font-size: $pixel18;
 	}
 }
 
@@ -141,7 +141,7 @@ address {
 p,
 ul,
 ol {
-	font-size: $type16;
+	font-size: $pixel16;
 	line-height: 1.7;
 	margin-bottom: 25px;
 
@@ -211,7 +211,7 @@ video {
 // ---------------
 table {
 	width: 100%;
-	font-size: $type14;
+	font-size: $pixel14;
 	margin-bottom: 20px;
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -228,7 +228,7 @@ table {
 	p,
 	ul,
 	ol {
-		font-size: $type14;
+		font-size: $pixel14;
 		border: none !important;
 		margin-top: 0;
 
@@ -239,7 +239,7 @@ table {
 
 	ul,
 	ol {
-		margin-left: $type18;
+		margin-left: $pixel18;
 	}
 }
 
@@ -327,7 +327,7 @@ form {
 		min-height: 50px;
 		color: white;
 		padding: 10px 20px;
-		font-size: $type18;
+		font-size: $pixel18;
 		font-weight: 600;
 		text-align: center;
 		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
