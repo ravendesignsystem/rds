@@ -27,7 +27,7 @@ TODO add some images
 A block's handle refers to it's unique short name for use in code. Block handles must: 
 
 - be lowercase. For example, the Content block's handle is `'content'`.
-- be one word without spaces or dashes. For example, the Card Grid block's handle is `'cardgrid'`.
+- be one word without spaces or dashes. For example, the Card Grid block's handle is `'gridcard'`. Note: the order of words may change.
 - follow [RDS naming conventions](#). For example, the Text and Image block's handle is `'textimg'`.
 
 The main CSS class name for all blocks is the `b-` prefix + a block's handle. For example, the Banner block's class name is `b-banner`.
