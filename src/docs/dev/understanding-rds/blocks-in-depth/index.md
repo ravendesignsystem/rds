@@ -22,6 +22,34 @@ TODO add some images
 
 **Note**: to further creativity we have instructions for [building your own Blocks](#).
 
+## Block handles
+
+A block's handle refers to it's unique short name for use in code. Block handles must: 
+
+- be lowercase. For example, the Content block's handle is `'content'`.
+- be one word without spaces or dashes. For example, the Card Grid block's handle is `'cardgrid'`.
+- follow [RDS naming conventions](#). For example, the Text and Image block's handle is `'textimg'`.
+
+The main CSS class name for all blocks is the `b-` prefix + a block's handle. For example, the Banner block's class name is `b-banner`.
+
+## Block sections
+
+While Blocks can be stacked in any order, they are restricted to specific page [sections](#). Sections are denoted by semantic HTML 5 elements, including:
+
+- Header - `<header>`
+- Main - `<main>`
+- Aside - `<aside>`
+- Footer - `<footer>`
+
+For example, the [Content block](#) (`b-content`) can only be used within the `<main>` section.
+
+Some blocks can be used in multiple sections. For example, the [Search block](#) (`b-search`) can be used inside both the `<header>` and `<aside>` sections.
+
+Section restrictions are available in each block's respective [documentation](#).
+
+**Note**: While an HTML document can have multiple `<header>` and `<footer>` elements. In RDS, there can only be one header and footer section. The 'Header section' is always denoted by the first `<header>Header section</header>` on the page. The 'Footer section' by the last `<footer>Footer section</footer>` on the page. For example:
+
+
 ### Block terms and common attributes
 
 To provide consistency, all RDS Blocks must be wrapped with the `u-block` utility class.

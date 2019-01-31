@@ -3,6 +3,7 @@ layout: base
 subsite: dev
 content: true
 title: Key concepts that makeup RDS
+readingTime: 4:14
 ---
 RDS is Carleton's system for creating digital harmony across our many web properties. One of the systematic ways to guide our collective efforts is to ensure everyone is speaking the same language. This section documents the fundamental concepts and terminology used within RDS' underlying design language, established to create consistency across the platform.
 
@@ -60,6 +61,8 @@ TBD: show image of banner blocks
 ```
 
 ![img of template sections ](http://cu-raven.s3.amazonaws.com/assets/img/docs/template.png)
+
+**Note**: While there may be multiple asised sections, there can be only one header, main and footer section per page.
 
 ## Blocks 
 
