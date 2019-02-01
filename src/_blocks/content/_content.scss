@@ -42,7 +42,7 @@
 	p,
 	ul,
 	ol {
-		font-size: $pixel18;
+		font-size: $pixel18; // TODO: can we remove this and increase it to 18 in _reboot?
 		line-height: 1.8;
 
 		&:last-child {

@@ -9,7 +9,8 @@
 //  2. Grid vars
 //  3. Margins/spacing
 //  4. Colors
-//	5. Type scale
+//  5. Fonts
+//  6. Type scale
 
 // 1. Media query breakpoints
 // --------------------------
@@ -55,7 +56,14 @@ $grey-anakin: #939393;
 $grey-vader: #767676;
 $grey-emperor: #535353;
 
-// 5. Type Scale
+// 5. Fonts
+// -------------
+
+$font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', -apple-system,
+	'blinkmacsystemfont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica',
+	'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+// 6. Type Scale
 // -------------
 $pixel10: 10px;
 $pixel12: 12px;

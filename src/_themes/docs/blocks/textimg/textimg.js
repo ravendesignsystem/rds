@@ -1,3 +1,5 @@
+// TODO: note for Danny why is this here?
+
 if (document.getElementsByClassName('b-docs-textimg').length > 0) {
 	let hero = document.querySelector('.b-textimg__img');
 	let imgs = [

@@ -15,11 +15,11 @@ $b-height: 75px;
 		display: flex;
 	}
 
-	& h2 {
+	h2 {
 		margin: 0;
 		float: left;
 
-		& a {
+		a {
 			font-size: $pixel18;
 			padding-left: 7px;
 
@@ -30,21 +30,21 @@ $b-height: 75px;
 		}
 	}
 
-	& ul {
+	ul {
 		margin: 0;
 		padding: 0;
 		list-style-type: none;
 		display: table;
 	}
 
-	& li {
+	li {
 		&:hover > a {
 			color: $red;
 		}
 	}
 
-	& a,
-	& button {
+	a,
+	button {
 		display: flex;
 		height: 73px;
 		padding-left: 17px;
@@ -56,10 +56,6 @@ $b-height: 75px;
 		&:hover {
 			color: $red;
 		}
-	}
-
-	& .c-hamburger {
-		display: flex;
 	}
 }
 
@@ -92,7 +88,7 @@ div.b-masthead ul.submenu__menu {
 	border-bottom: none;
 	cursor: pointer;
 
-	& svg {
+	svg {
 		min-width: 40px;
 		width: 40px;
 		height: 40px;
@@ -104,7 +100,7 @@ div.b-masthead ul.submenu__menu {
 		left: 20px !important;
 	}
 
-	& a {
+	a {
 		cursor: pointer;
 
 		@include media('<=s') {
@@ -113,17 +109,17 @@ div.b-masthead ul.submenu__menu {
 			white-space: normal;
 			line-height: 1;
 		}
-	}
 
-	& a:after {
-		top: 43% !important;
+		&:after {
+			top: 43% !important;
+		}
 	}
 }
 
 .masthead__primarynav {
 	overflow: hidden;
 
-	& h2 {
+	h2 {
 		display: none;
 
 		@include media('>=s') {
@@ -131,7 +127,7 @@ div.b-masthead ul.submenu__menu {
 		}
 	}
 
-	& ul {
+	ul {
 		position: relative;
 		display: none;
 
@@ -141,21 +137,21 @@ div.b-masthead ul.submenu__menu {
 		}
 	}
 
-	& li {
+	li {
 		display: inline-flex;
 	}
 
-	& a {
+	a {
 		display: flex;
 		align-items: center;
 	}
 
-	& .submenu__menu {
+	.submenu__menu {
 		position: fixed !important;
 		margin-left: 5px !important;
 	}
 
-	& span svg {
+	span svg {
 		margin-right: 26px;
 	}
 }
@@ -170,7 +166,7 @@ nav + .masthead__primarynav > .masthead__site {
 		font-size: $pixel18;
 	}
 
-	& a {
+	a {
 		padding-left: 10px;
 	}
 }
@@ -184,11 +180,11 @@ nav + .masthead__primarynav > .masthead__site {
 }
 
 .masthead__controls {
-	& ul {
+	ul {
 		display: flex;
 	}
 
-	& li:not(.masthead__search):not(.masthead__hamburger) {
+	li:not(.masthead__search):not(.masthead__hamburger) {
 		display: none;
 
 		@include media('>=s') {
@@ -196,7 +192,7 @@ nav + .masthead__primarynav > .masthead__site {
 		}
 	}
 
-	& li:hover > a {
+	li:hover > a {
 		color: $black;
 		background-color: $grey-yoda;
 
@@ -208,8 +204,8 @@ nav + .masthead__primarynav > .masthead__site {
 		}
 	}
 
-	& a,
-	& button {
+	a,
+	button {
 		border-left: 1px solid $grey-yoda;
 
 		&:hover {
@@ -218,7 +214,7 @@ nav + .masthead__primarynav > .masthead__site {
 		}
 	}
 
-	& svg {
+	svg {
 		width: 20px;
 		height: 20px;
 	}
@@ -246,7 +242,7 @@ a.masthead__cta {
 		right: 15px !important;
 	}
 
-	& svg {
+	svg {
 		fill: white;
 	}
 }

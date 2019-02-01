@@ -59,7 +59,7 @@
 		background-color: transparent;
 	}
 
-	& a {
+	a {
 		padding: 8px 15px;
 		height: auto;
 		line-height: 1.05;
@@ -73,7 +73,7 @@
 			text-decoration: none;
 		}
 
-		& svg {
+		svg {
 			// position: relative;
 			margin-right: 5px;
 			width: 12px;
@@ -82,7 +82,7 @@
 		}
 	}
 
-	& a:hover {
+	a:hover {
 		background-color: $grey-yoda;
 		color: black;
 	}

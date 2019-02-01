@@ -21,8 +21,7 @@
 	appearance: none; // prevents browser from hijacking border, font sizes, and more
 	-webkit-appearance: none;
 	border: none;
-	font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', 'Helvetica Neue',
-		'Helvetica', 'Arial', sans-serif;
+	font-family: $font-family;
 	font-size: $pixel16; // Needs to be at least 16px to avoid mobile Safari zoom
 	padding-top: 10px;
 	padding-bottom: 10px;

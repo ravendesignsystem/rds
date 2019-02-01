@@ -42,9 +42,7 @@ html {
 body {
 	background-color: white;
 	margin: 0;
-	font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', -apple-system,
-		'blinkmacsystemfont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica',
-		'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+	font-family: $font-family;
 	font-style: normal;
 	color: $black;
 }
@@ -141,7 +139,7 @@ address {
 p,
 ul,
 ol {
-	font-size: $pixel16;
+	font-size: $pixel16; // TODO: can we add a media query for 18px above small, it's being done in _content now
 	line-height: 1.7;
 	margin-bottom: 25px;
 
