@@ -11,7 +11,7 @@
 		}
 	}
 
-	@include media("<=s") {
+	@include media('<=s') {
 		width: 100%;
 	}
 }
@@ -21,7 +21,7 @@
 	caption-side: bottom;
 	background-color: $grey;
 	padding: 20px !important; // important forces override of last-child on u-block:p
-	font-size: 14px;
+	font-size: $pixel14;
 	font-style: italic;
 	line-height: 1.4;
 }

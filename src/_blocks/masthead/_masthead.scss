@@ -20,12 +20,12 @@ $b-height: 75px;
 		float: left;
 
 		& a {
-			font-size: 17px;
+			font-size: $pixel18;
 			padding-left: 7px;
 
 			@include media('>=s') {
 				padding-left: 12px;
-				font-size: 19px;
+				font-size: $pixel20;
 			}
 		}
 	}
@@ -49,7 +49,7 @@ $b-height: 75px;
 		height: 73px;
 		padding-left: 17px;
 		padding-right: 17px;
-		font-size: 14px;
+		font-size: $pixel14;
 		white-space: nowrap;
 		align-items: center;
 
@@ -167,7 +167,7 @@ nav + .masthead__primarynav > .masthead__site {
 		content: '/';
 		color: $grey-kenobi;
 		margin-left: -8px;
-		font-size: 18px;
+		font-size: $pixel18;
 	}
 
 	& a {

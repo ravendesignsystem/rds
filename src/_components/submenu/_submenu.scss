@@ -63,7 +63,7 @@
 		padding: 8px 15px;
 		height: auto;
 		line-height: 1.05;
-		font-size: 14px;
+		font-size: $pixel14;
 		font-weight: 400;
 		display: flex;
 		align-items: center;
@@ -132,7 +132,7 @@
 	display: block;
 	text-transform: uppercase;
 	color: $grey-vader;
-	font-size: 10px;
+	font-size: $pixel10;
 	padding: 5px 15px 2px 15px !important;
 
 	&:hover {

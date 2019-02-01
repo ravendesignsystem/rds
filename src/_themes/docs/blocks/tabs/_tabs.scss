@@ -21,7 +21,7 @@
 		clear: both;
 	}
 
-	@include media (">=s") {
+	@include media('>=s') {
 		border: $tab-border;
 		border-radius: $base-border-radius;
 	}
@@ -30,7 +30,7 @@
 		padding: 0 6px;
 		list-style: none;
 
-		@include media (">=s") {
+		@include media('>=s') {
 			display: inline;
 		}
 
@@ -53,7 +53,7 @@
 			.b-tabs__button {
 				background-color: $tab-active-background;
 
-				@include media (">=s") {
+				@include media('>=s') {
 					background-color: $tab-active-background;
 					border: $tab-border;
 					border-bottom-color: $tab-active-background;
@@ -71,12 +71,12 @@
 		color: $grey-emperor;
 		display: block;
 		font-weight: 700;
-		font-size: 13px;
+		font-size: 13px; // TODO: where can I test?
 		padding: 5px 15px;
 		text-decoration: none;
 		line-height: 1.5;
 
-		@include media (">=s") {
+		@include media('>=s') {
 			border-top-left-radius: $base-border-radius;
 			border-top-right-radius: $base-border-radius;
 			border-top: 0;
@@ -96,7 +96,7 @@
 		display: none;
 		padding: 20px;
 		width: 100%;
-		@include media (">=s") {
+		@include media('>=s') {
 			border-top: 1px solid $base-border-color;
 			float: left;
 		}
@@ -106,7 +106,7 @@
 			flex-flow: row;
 			flex-wrap: wrap;
 			overflow: visible;
-			font-size: 13px;
+			font-size: 13px; // TODO: where can I test?
 			margin-bottom: 12px;
 		}
 
@@ -139,7 +139,7 @@
 		}
 
 		& h2 {
-			font-size: 11px;
+			font-size: 11px; // TODO: where can I test?
 			text-transform: uppercase;
 			color: $grey-kenobi;
 			margin-bottom: 2px;
@@ -152,5 +152,5 @@
 }
 
 .b-tabs code {
-	font-size: 12px;
+	font-size: $pixel12;
 }

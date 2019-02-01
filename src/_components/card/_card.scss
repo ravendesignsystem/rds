@@ -70,13 +70,13 @@
 }
 
 .card__title {
-	font-size: 16px;
+	font-size: $pixel16;
 	margin: 0 0 5px;
 	line-height: 1.25;
 	border-bottom: 0;
 
 	@include media('>s') {
-		font-size: 17px;
+		font-size: $pixel18;
 	}
 }
 
@@ -87,7 +87,7 @@
 	@include media('>s') {
 		display: block;
 		margin-bottom: 6px;
-		font-size: 14px;
+		font-size: $pixel14;
 		font-weight: 400;
 		line-height: 1.25;
 		color: $grey-vader;
@@ -95,12 +95,12 @@
 }
 
 .card__text {
-	font-size: 14px;
+	font-size: $pixel14;
 	font-weight: 300;
 	line-height: 1.4;
 
 	@include media('>s') {
-		font-size: 15px;
+		font-size: $pixel16;
 	}
 }
 

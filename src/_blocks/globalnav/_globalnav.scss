@@ -5,7 +5,7 @@
 	display: none;
 }
 
-@include media(">s") {
+@include media('>s') {
 	.b-globalnav {
 		display: block;
 		height: 35px;
@@ -43,9 +43,10 @@
 		border-right: 1px solid $grey-emperor;
 	}
 
-	.globalnav__item-link, .globalnav__item-expand {
+	.globalnav__item-link,
+	.globalnav__item-expand {
 		display: inline-block;
-		font-size: 11px;
+		font-size: $pixel12;
 		padding: 0 18px;
 		color: white;
 		line-height: 35px;
@@ -66,7 +67,7 @@
 		padding-right: 25px;
 
 		&:after {
-			content: "";
+			content: '';
 			position: absolute;
 			width: 0;
 			height: 0;
@@ -97,11 +98,12 @@
 			a {
 				display: block;
 				padding: 15px;
-				font-size: 11px;
+				font-size: $pixel12;
 				color: white;
 				line-height: normal;
 
-				&:hover, &:active {
+				&:hover,
+				&:active {
 					background-color: $grey-vader;
 				}
 			}
