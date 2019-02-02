@@ -6,3 +6,5 @@ content: true
 ---
 
 > “Writing isn't about using big words to impress. It's about using simple words in an impressive way.”
+
+Anytime use see > link and down carrot pop up menu
