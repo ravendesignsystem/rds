@@ -24,7 +24,9 @@ TODO add some images
 
 ## Block handles
 
-A block's handle refers to its unique short name for use in code. Block handles must: 
+A block's handle refers to its unique short name for use in code. 
+
+Block handles must: 
 
 - be lowercase. For example, the [Content block's](#) handle is `'content'`.
 - be one word without spaces or dashes. For example, the Card Grid block's handle is `'gridcard'`. Note: the order of words may change.

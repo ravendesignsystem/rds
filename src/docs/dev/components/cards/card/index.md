@@ -47,4 +47,6 @@ data:
 
 https://inclusive-components.design/cards/
 
+https://uxplanet.org/best-practices-for-cards-fa45e3ad94dd
+
 ## In the wild
