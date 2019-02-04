@@ -18,24 +18,25 @@ banner:
 
 {% include "docs/inc/content-components-list.twig" %}
 
+## Layouts
+
+{% include "docs/inc/content-layouts-list.twig" %}
+
 ## Understanding the RDS System
 
-- [Concepts that makeup of RDS](understanding-rds/concepts-makeup) - Review Required
-- [Block in-depth](understanding-rds/blocks-in-depth)
-- [About RDS](understanding-rds/about-rds) - Review Required
-- [Layouts](understanding-rds/layouts/) - Review Required
-- [Themes and Templates](understanding-rds/themes-templates/) - Review Required
+{% include "docs/inc/content-understanding-rds-list.twig" %}
 
 #### Others: Unlinked / Unknown
 
+- [About RDS](#) - Not Linked
 - [Blocks](#) - Not Linked
 - [Components](#) - Not Linked
-- [Principles](#) - Not Linked
+- [Themes and Templates](#) - Not Linked
 - [Contributing](#) - Not Linked
 
 ## Using RDS
 
-- [Getting Started](getting-started/getting-started/) - Review Required
+{% include "docs/inc/content-using-rds-list.twig" %}
 
 #### Others: Unlinked / Unknown
 
@@ -48,13 +49,7 @@ banner:
 
 ## Custom Development
 
-- [Working with Blocks](custom-dev/blocks)
-- [Working with the CSS Grid](custom-dev/grid)
-- [Custom layouts](custom-dev/layouts/) - Review Required
-- [Mobile and Progressive Web Apps](custom-dev/mobile/) - Review Required
-- [Naming Conventions and Terminology](custom-dev/naming/) - Review Required
-- [Security Checklist](understanding-rds/security/) - Review Required
-
+{% include "docs/inc/content-custom-dev-list.twig" %}
 
 #### Others: Unlinked / Unknown
 
