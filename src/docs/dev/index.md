@@ -64,3 +64,6 @@ banner:
 - [Iconography](custom-dev/#) - Not Linked
 - [Utility classes](custom-dev/#) - Not Linked
 - [Guides](custom-dev/#) - Not Linked
+
+
+https://developers.google.com/style/abbreviations
