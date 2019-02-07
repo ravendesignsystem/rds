@@ -1,0 +1,124 @@
+/**
+ * Layout: Body Wrapper
+ * =============
+ */
+
+.l-body {
+	display: flex;
+	max-width: calc(768px + #{$block-padding-m} * 2);
+	margin: 0 auto 40px; // 40px adds space between layout and footer
+}
+
+.body__nav {
+	display: none;
+
+	@include media('>s') {
+		display: block;
+		flex-grow: 0;
+		flex-shrink: 0;
+		flex-basis: calc(
+			200px + #{$block-padding-m} * 2
+		); // Set the width you want in px, the calc + var accommodates for the padding added by both sides of u-block
+		border-right: 1px solid $grey;
+	}
+}
+
+.body__container,
+.body__content {
+	overflow: hidden;
+	width: 100%;
+}
+
+.body__container {
+	display: flex;
+	flex-direction: column;
+
+	@include media('>1112px') {
+		flex-direction: row;
+	}
+}
+
+.body__sidebar {
+	flex-grow: 0;
+	flex-shrink: 0;
+	border-left: 1px solid $grey;
+}
+
+.body__nav,
+.body__content,
+.body__sidebar {
+	.u-block:first-child {
+		padding-top: 10px;
+	}
+}
+
+/**
+ * Layout Modifier: Aside + Main
+ * =============
+ */
+
+.l-body--am {
+	max-width: calc(1018px + #{$block-padding-m} * 2);
+}
+
+/**
+ * Layout Modifier: Main + Aside
+ * =============
+ */
+
+.l-body--ma {
+	max-width: calc(1108px + #{$block-padding-m} * 2);
+
+	@include media('>868px') {
+		.body__sidebar {
+			flex-basis: calc(
+				280px + #{$block-padding-m} * 2
+			); // Set the width you want in px, the calc + var accommodates for the padding added by both sides of u-block
+		}
+
+		&.l-body--sidebar-large {
+			.body__sidebar {
+				flex-basis: calc(
+					350px + #{$block-padding-m} * 2
+				); // Set the width you want in px, the calc + var accommodates for the padding added by both sides of u-block
+			}
+		}
+	}
+
+	@include media('<=868px') {
+		&.l-body--sidebar-top .body__content {
+			order: 2;
+		}
+	}
+}
+
+/**
+ * Layout Modifier: Aside + Main + Aside
+ * =============
+ */
+
+.l-body--ama {
+	max-width: calc(1368px + #{$block-padding-m} * 2);
+
+	@include media('>1112px') {
+		.body__sidebar {
+			flex-basis: calc(
+				280px + #{$block-padding-m} * 2
+			); // Set the width you want in px, the calc + var accommodates for the padding added by both sides of u-block
+		}
+
+		&.l-body--sidebar-large {
+			.body__sidebar {
+				flex-basis: calc(
+					350px + #{$block-padding-m} * 2
+				); // Set the width you want in px, the calc + var accommodates for the padding added by both sides of u-block
+			}
+		}
+	}
+
+	@include media('<=1112px') {
+		&.l-body--sidebar-top .body__content {
+			order: 2;
+		}
+	}
+}
