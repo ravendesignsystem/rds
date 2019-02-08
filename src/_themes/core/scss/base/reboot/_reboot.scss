@@ -116,7 +116,11 @@ h2 {
 }
 
 h3 {
-	font-size: $pixel20;
+	font-size: $pixel18;
+
+	@include media('>s') {
+		font-size: $pixel20;
+	}
 }
 
 h4,

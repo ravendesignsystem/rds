@@ -5,17 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
         <meta name="robots" content="noodp, noydir"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="canonical" href="https://ravendesignsystem.github.io/rds//docs/dev/components/form/form"/>
+        <link rel="canonical" href="https://ravendesignsystem.github.io/rds//docs/dev/layouts/aside-main"/>
         <link rel="stylesheet" href="https://cloud.typography.com/6307052/6144772/css/fonts.css" type="text/css"/>
                                     <link rel="stylesheet" href="https://ravendesignsystem.github.io/rds/css/app.css" media="none" onload="if(media!='all')media='all'">
                 <link rel="manifest" href="/manifest.json">
                                 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <title>Form | Raven Design System | RDS</title>
-                                                <meta property="og:url" content="https://ravendesignsystem.github.io/rds//docs/dev/components/form/form">
+        <title>Aside + Main Layout | Raven Design System | RDS</title>
+                                                <meta property="og:url" content="https://ravendesignsystem.github.io/rds//docs/dev/layouts/aside-main">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Form">
+        <meta property="og:title" content="Aside + Main Layout">
                                                 <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Form">
+        <meta name="twitter:title" content="Aside + Main Layout">
                                     </head>
 
 <body>
@@ -154,12 +154,10 @@ RDS</a>
             <ol class="banner__breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
                                 <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="https://ravendesignsystem.github.io/rds/">Home</a></li>
                                                 <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="https://ravendesignsystem.github.io/rds//dev/">Dev</a></li>
-                                <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../../">Components</a></li>
-                <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../">Form</a></li>
-                <li class="banner__breadcrumb-item active u-visually-hidden" itemprop="breadcrumb" aria-current="page"></li>
+                                <li class="banner__breadcrumb-item active u-visually-hidden" itemprop="breadcrumb" aria-current="page"></li>
             </ol>
         </nav>
-        <h1 class="banner__title">Form </h1>
+        <h1 class="banner__title">Aside + Main Layout </h1>
     </div>
 </div>
 </div>
@@ -168,7 +166,42 @@ RDS</a>
                         <main id="content">
                                 <div class="u-block u-block--white u-block--s">
                     <div class="b-content">
-                                                <p>Docs required...</p>
+                                                <p>The <code>Aside + Main</code> layout provides a two column template, with an aside on the left hand side, and a content area on the right.</p>
+
+<h2 id="left-hand-aside">Left Hand Aside</h2>
+
+<p>The primary usage for the left hand aside is to house site naviation or other relevant links and buttons pertaining to the site. The width of the aside is 200 pixels and is hidden below 720px.</p>
+
+<h2 id="main">Main</h2>
+
+<p>The main area would contain all of the primary content of the page. Inside tha main tag, a div with a class of <code>body__content</code> is required, and each content item inside this div should be a block.</p>
+
+<pre><code class="html">&lt;div class="l-body l-body--am"&gt;
+
+    &lt;aside class="body__nav"&gt;
+        &lt;div class="u-block"&gt;
+            &lt;p&gt;Navigation&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/aside&gt;
+
+    &lt;main class="body__container"&gt;
+        &lt;div class="body__content"&gt;
+
+            &lt;div class="u-block u-block--s u-block--white"&gt;
+                &lt;h2&gt;First Block&lt;/h2&gt;
+                &lt;p&gt;Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class="u-block u-block--s u-block--white"&gt;
+                &lt;h2&gt;Second Block&lt;/h2&gt;
+                &lt;p&gt;Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.&lt;/p&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/main&gt;
+
+&lt;/div&gt;
+</code></pre>
                                             </div>
                 </div>
                                             </main>
@@ -222,8 +255,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu--1-69" type="checkbox" hidden/>
-                    <label for="menu--1-69">
+                                <input class="menu__checkbox" id="menu--1-194" type="checkbox" hidden/>
+                    <label for="menu--1-194">
                         <a class="menu__url " href="#">Level 1-1</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -231,8 +264,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-83" type="checkbox" hidden/>
-                    <label for="menu-2-1-83">
+                                <input class="menu__checkbox" id="menu-2-1-81" type="checkbox" hidden/>
+                    <label for="menu-2-1-81">
                         <a class="menu__url " href="#">Level 2-1</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -252,8 +285,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-116" type="checkbox" hidden/>
-                    <label for="menu-2-1-116">
+                                <input class="menu__checkbox" id="menu-2-1-140" type="checkbox" hidden/>
+                    <label for="menu-2-1-140">
                         <a class="menu__url " href="#">Second Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -270,8 +303,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu--1-82" type="checkbox" hidden/>
-                    <label for="menu--1-82">
+                                <input class="menu__checkbox" id="menu--1-162" type="checkbox" hidden/>
+                    <label for="menu--1-162">
                         <a class="menu__url " href="#">First Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -279,8 +312,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-3" type="checkbox" hidden/>
-                    <label for="menu-2-1-3">
+                                <input class="menu__checkbox" id="menu-2-1-90" type="checkbox" hidden/>
+                    <label for="menu-2-1-90">
                         <a class="menu__url " href="#">Second Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -300,8 +333,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-88" type="checkbox" hidden/>
-                    <label for="menu-2-1-88">
+                                <input class="menu__checkbox" id="menu-2-1-2" type="checkbox" hidden/>
+                    <label for="menu-2-1-2">
                         <a class="menu__url " href="#">Second Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>

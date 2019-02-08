@@ -41,11 +41,174 @@ For example, for a block named "Doe Ray Me":
 - Good handle name = `doerayme`.
 - Bad handle name = `farsoela`.
 
+### Handles for folder and file names
+
+A block's handle is used to name all of its associated files and folders. 
+
+For example, if you're using a package manager like npm to include RDS in your project, the file structure for importing block SCSS and JS modules looks like this:
+
+```html
+your-project/
+└── node_modules/
+    └── rds
+        └── blocks
+            └── masthead
+                ├── masthead.js
+                └── masthead.scss
+```
+
+If you are creating a custom block for your theme, follow this naming convention. For example, if creating a block called "foo," your folder structure would be similar to this:
+
+```html
+your-project/
+├── blocks
+│   └── foo
+│       ├── foo.js
+│       └── foo.scss
+└── node_modules/
+    └── rds
+        └── blocks
+            └── ...
+```
+
 **Note for custom themers**: [themes](#) also have [handles](#). For custom blocks the formula for a block's class name is "`b-` + {theme handle} + {block handle}". For example, the class name for a new block called "Foo" in a custom theme with the (theme) handle of "cu" would be `b-cu-foo`.
 
 By following these conventions, we can avoid conflicts and easily distinguish custom blocks from core RDS blocks. If a block's primary class name has one hyphen (b-content), we know it is a core block. Consequently, if a block's primary class name has two hyphens (b-cu-foo), we know it is a custom theme block.
 
 Also, the "Doe Ray Me" named block above is used to exaggerate a point. You should keep block names to two words max while trying to describe their use case as best as possible. We know, [naming in programming is hard](#).
+
+## Block versions
+
+RDS uses [Semantic Versioning (SemVer)](https://semver.org). In addition to maintaining a [SemVer for the RDS core package](#), each block and component maintains it's own version. 
+
+MINOR or Patch version changes are always backwards compatible and safe to use within the same overall Major version of RDS.
+For example, it is okay to use a block with the version 1.5.6 while using RDS with a version of only 1.1.0. Furthermore, feel free to use the [content block](#) version 1.3.1 with [listing block](#) version 1.5.0. The HTML markup, style and script for each block is encapsulated so they won't conflict. 
+
+However, if the RDS package changes major versions, for example goes from version 1.0.0 to version 2.0.0, you can only use blocks with a major number of 2 (equivalent to the core version). It is possible that a block's markup will have changed between major versions.
+
+**Bad**: if using RDS 2.2.1, don't use a block with the version 1.5.6.<br>
+**Good**: if using RDS 1.3.2, you can use a block with the version 1.2.1.
+
+**Note**: the best way to remain current is to install RDS via a package manager like [npm](#) or [Composer](#). Otherwise, to remain current, try and integrate comments displaying a block's version into your templating code.
+
+## Separating data and markup
+
+Blocks are grouped HTML, CSS and sometimes JS partials working together to form a user interface element. 
+
+- The HTML controls their structure.
+- The CSS is responsible for their presentation.
+- JS can be used to control their behaviour.
+
+However, what ultimately controls their end structure and presentation is a block's data and its data requirements. RDS blocks are created with a preference to be able to control blocks from an external database or API. The concept is that blocks can accept data and output a unique version of itself with that data. The benefits of this approach are that the data could come from anywhere, including a headless CMS.
+
+We recommend building the logic for your templates by breaking block data into the following two categories:
+
+- block settings
+- block data 
+
+### Block settings
+
+Block settings are parameters used to control system-wide [block utility classes](#) for controlling options such as block size, background color and [variant](#) types. 
+
+### Block data
+
+This is the data that, unlike block settings, usually appears on the front-end of you block.
+
+### Datatype properties 
+
+Datatype properties relate individuals to literal data (e.g., strings, numbers, datetypes, etc.) and define the data types and areas to be able to render different data in the same component. 
+
+Example 
+
+#### Example
+
+If you had a simple block template set up in the following macro:
+
+```twig
+{% verbatim %}
+{% macro simple(settings, data) %}
+<div class="u-block u-block--{{ settings.bgcolor }}>
+    <h2>{{ data.title }}</h2>
+    <p>{{ data.excerpt }}</p>
+</div>
+{% endmacro %}
+{% endverbatim %}
+```
+
+And wanted to render the following HTML
+
+```HTML
+<div class="u-block u-block--grey">
+    <h2>Hello world</h2>
+    <p>Lorem ipsum</p>
+</div>
+```
+
+Which would look like this: 
+<div class="u-block u-block--grey">
+    <h2>Hello world</h2>
+    <p>Lorem ipsum</p>
+</div><br>
+
+...your JSON would like like this:
+
+```json
+{
+  "settings": [
+    {
+      "bgcolor": "grey"
+    }
+  ],
+  "data": [
+    {
+      "title": "Hello world"
+    },
+    {
+      "excerpt": "Lorem ipsum"
+    }
+  ]
+}
+```
+
+To change your output to:
+
+```HTML
+<div class="u-block u-block--black">
+    <h2>Darkness</h2>
+    <p>Lorem ipsum</p>
+</div>
+```
+<div class="u-block u-block--black">
+ <h2>Darkness</h2>
+ <p>Lorem ipsum</p>
+</div><br>
+
+Your JSON would look like this:
+
+```json
+{
+  "settings": [
+    {
+      "bgcolor": "black"
+    }
+  ],
+  "data": [
+    {
+      "title": "Darkness"
+    },
+    {
+      "excerpt": "Lorem ipsum"
+    }
+  ]
+}
+```
+This is our recommended approach. But how you template is ultimately up to you. We do provide [templating examples](#) that follow this pattern as we feel it is the best way to approach sending data to your blocks.
+
+img of acf setup
+
+image of the make up a block with settings and data
+
+
 
 ## Block sections
 
