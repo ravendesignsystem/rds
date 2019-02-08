@@ -166,21 +166,23 @@ RDS</a>
                         <main id="content">
                                 <div class="u-block u-block--white u-block--s">
                     <div class="b-content">
-                                                <p>The <code>Aside + Main + Aside</code> layout provides a three column template, with asides on the left and right hand sides, and a content area on the right.</p>
+                                                <p>The <code>Aside + Main + Aside</code> layout provides a three column template, with asides on the left and right hand sides, and a content area in the middle, and has a maximum width of 1368px.</p>
 
 <h2 id="left-hand-aside">Left Hand Aside</h2>
 
-<p>The primary usage for the left hand aside is to house site naviation or other relevant links and buttons pertaining to the site. The width of the aside is 200 pixels and is hidden below 720px.</p>
+<p>The primary usage for the left hand aside is to house site navigation or other relevant links and buttons pertaining to the site. The aside has a fixed width of 200px, roughly 15% of the full layout width, and disappears from view below 720px.</p>
 
 <h2 id="main">Main</h2>
 
-<p>The main area would contain all of the primary content of the page. Inside tha main tag, a div with a class of <code>body__content</code> is required, and each content item inside this div should be a block.</p>
+<p>The main area would contain all of the primary content of the page. Inside the main tag, a div with a class of <code>body__content</code> is required, and each content item inside this div should be a block.</p>
 
 <h2 id="ride-hand-aside">Ride Hand Aside</h2>
 
-<p>The primary usage for the right hand aside is to provide additional information that relates to the page. Items contained within thise aside are block level items.</p>
+<p>The primary usage for the right hand aside is to provide additional information that relates to the page. Items contained within thise aside are block level items. The aside has a fixed width of 280px, roughly 20% of the full layout width.</p>
 
-<p>The right hand aside is contained within the main container, but outside of the content div. By default, the aside would be placed below the content area below 720px, and has a default width of 280px.</p>
+<p>The right hand aside is contained within the main container, but outside of the content div. By default, the aside would be placed below the content area below 720px.</p>
+
+<p><strong>INSERT IMAGE</strong></p>
 
 <pre><code class="html">&lt;div class="l-body l-body--ama"&gt;
 
@@ -219,7 +221,7 @@ RDS</a>
 <p>There are 2 modifiers available. One will provide a slightly large right hand aisde, while the other will position the right hand aside above the main content area below 720px. To use one or both modifiers, add the following classes to the main layout div, modifying the <code>l-body</code> class.</p>
 
 <ul>
-<li><code>l-body--sidebar-large</code> -- increases max width of the right hand aside to 350px</li>
+<li><code>l-body--sidebar-large</code> -- increases max width of the right hand aside to 350px, roughly 25% of the full layout width.</li>
 <li><code>l-body--sidebar-top</code> -- positions the right hand aside above the content area below 720px</li>
 </ul>
 
@@ -227,6 +229,8 @@ RDS</a>
 
 <pre><code class="html">&lt;div class="l-body l-body--ama l-body--sidebar-large l-body--sidebar-top"&gt;
 </code></pre>
+
+<p><strong>INSERT IMAGE</strong></p>
                                             </div>
                 </div>
                                             </main>
@@ -280,8 +284,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu--1-148" type="checkbox" hidden/>
-                    <label for="menu--1-148">
+                                <input class="menu__checkbox" id="menu--1-75" type="checkbox" hidden/>
+                    <label for="menu--1-75">
                         <a class="menu__url " href="#">Level 1-1</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -289,8 +293,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-180" type="checkbox" hidden/>
-                    <label for="menu-2-1-180">
+                                <input class="menu__checkbox" id="menu-2-1-195" type="checkbox" hidden/>
+                    <label for="menu-2-1-195">
                         <a class="menu__url " href="#">Level 2-1</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -310,8 +314,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-41" type="checkbox" hidden/>
-                    <label for="menu-2-1-41">
+                                <input class="menu__checkbox" id="menu-2-1-7" type="checkbox" hidden/>
+                    <label for="menu-2-1-7">
                         <a class="menu__url " href="#">Second Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -328,8 +332,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu--1-44" type="checkbox" hidden/>
-                    <label for="menu--1-44">
+                                <input class="menu__checkbox" id="menu--1-116" type="checkbox" hidden/>
+                    <label for="menu--1-116">
                         <a class="menu__url " href="#">First Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -337,8 +341,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-166" type="checkbox" hidden/>
-                    <label for="menu-2-1-166">
+                                <input class="menu__checkbox" id="menu-2-1-77" type="checkbox" hidden/>
+                    <label for="menu-2-1-77">
                         <a class="menu__url " href="#">Second Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -358,8 +362,8 @@ RDS</a>
                                             
                         
             <li class="menu__list-item">
-                                <input class="menu__checkbox" id="menu-2-1-181" type="checkbox" hidden/>
-                    <label for="menu-2-1-181">
+                                <input class="menu__checkbox" id="menu-2-1-57" type="checkbox" hidden/>
+                    <label for="menu-2-1-57">
                         <a class="menu__url " href="#">Second Level</a>
                                                 <i class="menu__icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
