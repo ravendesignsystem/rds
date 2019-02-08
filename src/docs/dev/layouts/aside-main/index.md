@@ -13,7 +13,9 @@ The primary usage for the left hand aside is to house site navigation or other r
 
 ## Main
 
-The main area would contain all of the primary content of the page. Inside tha main tag, a div with a class of `body__content` is required, and each content item inside this div should be a block.
+The main area would contain all of the primary content of the page. Inside the main tag, a div with a class of `body__content` is required, and each content item inside this div should be a block.
+
+**INSERT IMAGE**
 
 ```html
 <div class="l-body l-body--am">
