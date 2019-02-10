@@ -4,8 +4,8 @@
 
 .textimg__section {
 	@include media('>=s') {
-		max-width: 45%;
-		//min-height: 355px;
+		//max-height: 390px;
+		min-height: 320px;
 	}
 
 	@include media('>=m') {
@@ -26,6 +26,7 @@
 .textimg__heading {
 	text-align: left;
 	border-bottom: none;
+	font-size: $pixel28;
 }
 
 .textimg__desc {

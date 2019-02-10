@@ -1,32 +1,32 @@
 @include media('>=s') {
 	.b-docs-textimg {
-		padding: 50px 0;
-	}
+		padding: 50px 0 20px;
 
-	.textimg__heading {
-		font-size: $pixel48;
-		padding-bottom: 0;
-	}
+		& .textimg__heading {
+			font-size: $pixel48;
+			padding-bottom: 0;
+		}
 
-	.textimg__desc p {
-		font-size: $pixel30;
-		color: $grey-luke;
-		line-height: 1.35;
+		& .textimg__desc p {
+			font-size: $pixel30;
+			color: $grey-luke;
+			line-height: 1.35;
 
-		& a {
-			color: white;
+			& a {
+				color: white;
 
-			&:hover {
-				color: $red;
+				&:hover {
+					color: $red;
+				}
 			}
 		}
-	}
 
-	.textimg__img {
-		max-height: 290px;
-		animation-name: u-ani-fadein;
-		animation-duration: 1000ms;
-		animation-fill-mode: forwards;
-		//transition: background-color 10000ms linear;
+		.textimg__img {
+
+			animation-name: u-ani-fadein;
+			animation-duration: 1000ms;
+			animation-fill-mode: forwards;
+			//transition: background-color 10000ms linear;
+		}
 	}
 }

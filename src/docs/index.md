@@ -3,12 +3,13 @@ layout: base
 title: Raven Design System (RDS)
 banner: none
 ---
-{# Page blocks #}
-{% import 'textimg/textimg.twig' as hero %}
+[//]: # (Page blocks)
 
-{# Block: Hero header.#}
+{% import 'textimg/textimg' as hero %}
+
+[//]: # (Block: Hero header)
 {% set settings = {color: 'black'} %}
-{% set data = {
+{% set fields = {
     title: 'Raven Design System',
     img: {
             alt: "",
@@ -19,40 +20,37 @@ banner: none
     } 
 %}
 {% set docs = {modifier: 'b-docs-textimg'} %}
-{{ hero.textimg(settings, data, docs) }}
+{{ hero.textimg(settings, fields, docs) }}
+
 <div class="u-block u-block--m u-block--black">
     <div class="b-docs-gridhome u-grid u-grid--2">
         <a href="dev/">
-            <div class="b-docs-gridhome__panel b-docs-gridhome__panel--dev">
+            <div class="docs-gridhome__panel docs-gridhome__panel--dev">
                 <h2>For developers</h2>
                 {% include "docs/assets/img/laptop.svg" %}
             </div>
         </a>
-        <div style="display: flex;flex-direction: column;min-height: 420px;">
+        <div class="docs-gridhome__colright">
             <a href="content/">
-                <div class="b-docs-gridhome__panel b-docs-gridhome__panel--content">
+                <div class="docs-gridhome__panel docs-gridhome__panel--content">
                     <h2>For content creators</h2>
                     {% include "docs/assets/img/keyboard.svg" %}
                 </div>
             </a>
-            <div style="flex: 1;display: flex" class="b-docs-">
-                <a style="display: flex" href="design/">
-                    <div class="b-docs-gridhome__panel b-docs-gridhome__panel--design" style="flex: 1;margin-right: 30px;" >
+            <div class="docs-gridhome__botrow">
+                <a href="design/">
+                    <div class="docs-gridhome__panel docs-gridhome__panel--design">
                         <h2>Design & brand</h2>
                         {% include "docs/assets/img/design.svg" %}
                     </div>
                 </a>
-                <a style="display: flex"  href="a11y/">
-                <div class="b-docs-gridhome__panel b-docs-gridhome__panel--a11y">
-                <h2>Accessibility</h2>
-                  {% include "icons/accessibility.svg" %}
-                  </div>
-                  </a>
+                <a href="a11y/">
+                    <div class="docs-gridhome__panel docs-gridhome__panel--a11y">
+                    <h2>Accessibility</h2>
+                    {% include "icons/accessibility.svg" %}
+                    </div>
+                </a>
             </div>
         </div>
     </div>
 </div>
-
-
-
-

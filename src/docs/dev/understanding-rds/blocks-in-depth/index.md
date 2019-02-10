@@ -10,17 +10,37 @@ Since they account for pretty much every UI element on screen, this section prov
 
 ## Block guidelines and rules
 
-In their simplest form, RDS Blocks are grouped snippets of HTML, CSS, and sometimes JavaScript (JS). The UI equivalent to Lego blocks, you can build each Block by itself and then easily attach them together. 
+In their simplest form, RDS blocks are grouped snippets of HTML, CSS, and sometimes JavaScript (JS). The UI equivalent to Lego blocks, you can build each block by itself and then easily attach them together. Blocks make up a distinct section of an interface. Functionally independent, a block can NOT be nested within another block. 
 
-To further the Lego analogy, unlike a tub of randomly sized/coloured Lego blocks, RDS Blocks are more the equivalent to Lego blocks found in [themed Lego sets](https://lego.fandom.com/wiki/Theme). Except, instead of, pirates or Star-Wars, our theme is Carleton.
+To further the Lego analogy, unlike a tub of randomly sized/coloured Lego blocks, RDS Blocks are more the equivalent to Lego blocks found in [themed Lego sets](https://lego.fandom.com/wiki/Theme). Except, instead of, pirates or Star-Wars, our theme is Carleton University.
 
-Some critics suggest Lego has become [less creative](#) due to the increase of specialized pieces and instruction manuals. If RDS interfaces are akin to Lego Star-Wars spaceships, while RDS imposes rules, we don't expect you to follow step-by-step instructions to build a replica of an [X-Wing](https://shop.lego.com/en-CA/product/X-Wing-Starfighter-75218). 
+Some critics suggest Lego has become [less creative](#) due to the increase of specialized pieces, instruction manuals and strict rules that govern how they are assembled by the end user. If RDS interfaces are akin to Lego Star-Wars spaceships, while RDS does impose rules, when building your interfaces we don't expect you to follow exact step-by-step instructions like you would in building a replica of an [X-Wing](https://shop.lego.com/en-CA/product/X-Wing-Starfighter-75218). However, there rules and guideline to follow. 
 
-For example, when you are building your ships (interfaces), your cockpit blocks (header blocks) need to go on top, and your landing gear (footer blocks) must go on the bottom. When building the rest of the ship, feel free to add in the Millennium Falcon's secret compartment (RDS Block) or a Star Destroyers proton beam (another Block). Make the best interfaces (coolest ships) you can to match your content requirements. However, you are expected to follow our Block guidelines so your pilot can eject properly and land their ship on its wheels. 
+For example, when you are building your spaceships (interfaces), your cockpit blocks (header blocks) need to go on top, and your landing gear (footer blocks) must go on the bottom. For the rest of the ship, feel free to add in the Millennium Falcon's secret compartment (RDS Block) or a Star Destroyers proton beam (another Block). Make the best interfaces (coolest ships) you can to match your content requirements. However, you are expected to follow our Block guidelines so your pilot can eject properly and land their ship on its wheels. 
 
 TODO add some images
 
 **Note**: to further creativity we have instructions for [building your own Blocks](#).
+ 
+## Block terms and attributes
+
+All blocks have the following attributes:
+
+- a type
+- a handle
+- a version
+- a status
+- properties
+- designated sections
+- associated CSS
+- an HTML template and data options
+
+**Some blocks** have:
+
+- headings
+- variants
+- designated themes
+- associated JavaScript
 
 ## Block handles
 
@@ -77,7 +97,7 @@ By following these conventions, we can avoid conflicts and easily distinguish cu
 
 Also, the "Doe Ray Me" named block above is used to exaggerate a point. You should keep block names to two words max while trying to describe their use case as best as possible. We know, [naming in programming is hard](#).
 
-## Block versions
+## Block versioning
 
 RDS uses [Semantic Versioning (SemVer)](https://semver.org). In addition to maintaining a [SemVer for the RDS core package](#), each block and component maintains it's own version. 
 
@@ -91,124 +111,45 @@ However, if the RDS package changes major versions, for example goes from versio
 
 **Note**: the best way to remain current is to install RDS via a package manager like [npm](#) or [Composer](#). Otherwise, to remain current, try and integrate comments displaying a block's version into your templating code.
 
-## Separating data and markup
+## Block Variants
 
-Blocks are grouped HTML, CSS and sometimes JS partials working together to form a user interface element. 
-
-- The HTML controls their structure.
-- The CSS is responsible for their presentation.
-- JS can be used to control their behaviour.
-
-However, what ultimately controls their end structure and presentation is a block's data and its data requirements. RDS blocks are created with a preference to be able to control blocks from an external database or API. The concept is that blocks can accept data and output a unique version of itself with that data. The benefits of this approach are that the data could come from anywhere, including a headless CMS.
-
-We recommend building the logic for your templates by breaking block data into the following two categories:
-
-- block settings
-- block data 
-
-### Block settings
-
-Block settings are parameters used to control system-wide [block utility classes](#) for controlling options such as block size, background color and [variant](#) types. 
-
-### Block data
-
-This is the data that, unlike block settings, usually appears on the front-end of you block.
-
-### Datatype properties 
-
-Datatype properties relate individuals to literal data (e.g., strings, numbers, datetypes, etc.) and define the data types and areas to be able to render different data in the same component. 
-
-Example 
-
-#### Example
-
-If you had a simple block template set up in the following macro:
-
-```twig
-{% verbatim %}
-{% macro simple(settings, data) %}
-<div class="u-block u-block--{{ settings.bgcolor }}>
-    <h2>{{ data.title }}</h2>
-    <p>{{ data.excerpt }}</p>
-</div>
-{% endmacro %}
-{% endverbatim %}
-```
-
-And wanted to render the following HTML
-
-```HTML
-<div class="u-block u-block--grey">
-    <h2>Hello world</h2>
-    <p>Lorem ipsum</p>
+Variants change the appearance of a block, usually with modifier classes. Variants are used to extend a base block when it has multiple different possible implementations.  Variants of a block are considered the same block type and generally share CSS and template code. The [Listing block](#) is an excellent example of a block with several variants.
+                                                                                               
+## Block headings
+ Some [max-width blocks](#) can have headings. Block headings make use of the [Heading component](#). The heading HTML resides outside block's code in between the `u-block` wrapper tag (which should be a `<section>` tag) and the block's opening tag (which always starts with `b-`). 
+ 
+For example, here is a simple block without a header:
+ 
+ ```HTML
+ <div class="u-block u-block--s u-block--white">
+     <div class="b-foo">
+        <p>A block without a heading</p>
+    </div>
 </div>
 ```
 
-Which would look like this: 
-<div class="u-block u-block--grey">
-    <h2>Hello world</h2>
-    <p>Lorem ipsum</p>
-</div><br>
-
-...your JSON would like like this:
-
-```json
-{
-  "settings": [
-    {
-      "bgcolor": "grey"
-    }
-  ],
-  "data": [
-    {
-      "title": "Hello world"
-    },
-    {
-      "excerpt": "Lorem ipsum"
-    }
-  ]
-}
+Here is the same block with a header:
+ 
+ ```HTML
+ <section class="u-block u-block--s u-block--white">
+    <h2>Foo block</h2>
+    <p>A block without a heading</p>
+</section>
 ```
+Notice how the utility block wrapper `<div>` was changed to a `section>` tag. Learn more about [setting up block headings](#).                                                               
 
-To change your output to:
+## Block status
+Blocks in RDS are labelled with status labels that reflect their state of completion and readiness to use. 
 
-```HTML
-<div class="u-block u-block--black">
-    <h2>Darkness</h2>
-    <p>Lorem ipsum</p>
-</div>
-```
-<div class="u-block u-block--black">
- <h2>Darkness</h2>
- <p>Lorem ipsum</p>
-</div><br>
+### Block status labels
 
-Your JSON would look like this:
+- **Prototype**: block is new and should not be used in production.
+- **Ready**: ready to be used in production.
+- **Under review**: the block is currently being reviewed for quality assurance.
+- **Deprecated**: the block is supported but not recommended. 
+- **Not available**: the block is no longer supported and should be removed.
 
-```json
-{
-  "settings": [
-    {
-      "bgcolor": "black"
-    }
-  ],
-  "data": [
-    {
-      "title": "Darkness"
-    },
-    {
-      "excerpt": "Lorem ipsum"
-    }
-  ]
-}
-```
-This is our recommended approach. But how you template is ultimately up to you. We do provide [templating examples](#) that follow this pattern as we feel it is the best way to approach sending data to your blocks.
-
-img of acf setup
-
-image of the make up a block with settings and data
-
-
+Note: remember even though a block is available they are restricted to page sections and some are not available in certain themes. TODO are we going with themes.
 
 ## Block sections
 
@@ -228,31 +169,6 @@ Section restrictions are available in each block's respective [documentation](#)
 **Note**: While an HTML document can have multiple `<header>` and `<footer>` elements. In RDS, there can only be one header and footer section. The 'Header section' is always denoted by the first `<header>Header section</header>` on the page. The 'Footer section' by the last `<footer>Footer section</footer>` on the page. For example:
 
 
-### Block terms and common attributes
-
-To provide consistency, all RDS Blocks must be wrapped with the `u-block` utility class.
-
-```html
-<div class="u-block">
-    <!-- all RDS Blocks must be wrapped with the u-block utility class -->
-</div>
-```
- 
-Other commonalities for RDS Blocks include that **they all have**:
-
-- a type
-- a handle
-- a version
-- designated sections
-- associated CSS
-- an HTML template and data options
-
-While **some Blocks** have:
-
-- headings
-- variants
-- designated themes
-- associated JavaScript
 
 ## Block types and spacing
 
@@ -399,23 +315,171 @@ while...
  - do not have padding applied to them.
  - can not used inside of [layouts](#).
 
+## Block properties
 
-## Block categories
+Blocks are grouped HTML, CSS and sometimes JS partials working together to form a user interface element. 
 
-## Block settings
+- The HTML controls their structure.
+- The CSS is responsible for their presentation.
+- JS can be used to control their behaviour.
 
-## Separation of data markup  
+Conceptually, blocks are made up of a set of properties as a way to accept data. Block properties are typed fields set on a specific instance of a block to be referenced from within its markup. The concept is that blocks can accept data and output a unique version of itself with that data.
+
+When setting up your template logic to access properties values, consider splitting those properties into the following two conceptual categories:
+
+- block settings
+- block fields 
+
+### Block settings
+
+Block settings are used to control global block meta and parameters, including:
+
+- block headings 
+- background colour  
+- block width (s,m,l)
+- block [variants](#)
+
+#### Block headings
+
+Since block headings  reside outside of a block's code, they can be considered a setting. 
+
+#### Background colour settings
+
+All blocks have a background colour setting of either white, grey or black. The default setting should be white which works in most use cases.
+
+#### Block width setting
+
+All [max-width block's](#) have a width setting of either small (s), medium (m) or large (l). The default should be small.
+
+#### Block variant setting
+
+Some blocks have [variants](#) that you may want to identify in your settings.
+
+### Block fields
+
+With the exception of [include blocks](#), all blocks have fields assigned to them. These are your content fields who's values, unlike block settings, appear on the rendered front-end display of the block.
+
+#### Field types 
+
+Field types indicate the type of content and their format needed. At the end of the day, they all return HTML strings. Existing field types include:
+
+- text: alphanumeric string of letters, numbers, and (in some cases) symbols.
+- numbers: must be numeric characters.
+- date/time: properly-formatted Date and/or Time allowed in your language used.
+- url: properly structured URL, referencing a web resource.
+
+#### Field restrictions
+
+Some fields have characters limits indicating that their strings will be cut off at a set length.
+
+#### Required fields
+
+Some block fields are require values, while other are optional.
+
+## Separating data and markup
+
+ RDS blocks were created with a preference to be able to control blocks from an external database or API. A benefit of this approach is that the data can come from anywhere, including a headless CMS.
+
+#### Example of feeding values to block properties
+
+If you had a simple block template set up in the following macro...
+
+```twig
+{% verbatim %}
+{% macro simple(settings, data) %}
+<div class="u-block u-block--{{ settings.bgcolor }}>
+    <h2>{{ data.title }}</h2>
+    <p>{{ data.excerpt }}</p>
+</div>
+{% endmacro %}
+{% endverbatim %}
+```
+
+...and wanted to render the following HTML.
+
+```HTML
+<div class="u-block u-block--grey">
+    <h2>Hello world</h2>
+    <p>Lorem ipsum</p>
+</div>
+```
+
+Which would look like this: 
+
+<div class="u-block u-block--grey">
+    <h2>Hello world</h2>
+    <p>Lorem ipsum</p>
+</div><br>
+
+...a JSON schema could look like this:
+
+```json
+{
+  "settings": [
+    {
+      "bgcolor": "grey"
+    }
+  ],
+  "fields": [
+    {
+      "title": "Hello world",
+      "excerpt": "Lorem ipsum"
+    }
+  ]
+}
+```
+
+To change your output to:
+
+```HTML
+<div class="u-block u-block--black">
+    <h2>Darkness</h2>
+    <p>Lorem ipsum</p>
+</div>
+```
+<div class="u-block u-block--black">
+ <h2>Darkness</h2>
+ <p>Lorem ipsum</p>
+</div><br>
+
+Your JSON would look like this:
+
+```json
+{
+  "settings": [
+    {
+      "bgcolor": "black"
+    }
+  ],
+  "fields": [
+    {
+      "title": "Darkness",
+      "excerpt": "Lorem ipsum"
+    }
+  ]
+}
+```
+
+**Recommendation only**: This is just one recommended approach. How you set up your templates is ultimately up to you. We do provide [templating examples](#) that follow this pattern.
+
+img of acf setup
+
+image of the make up a block with settings and data
+
+## Available components
+
+For DRYer code, many blocks contain components in their markup. Optional components are available for some blocks. For example, the [Content block] can contain the following components: c-blockquote, c-table, c-form, c-accordion.
+
+## Block documentation
+
+Each RDS block has it's own [documentation on this website](#) providing examples, uses cases, design and code references detailing most of the concepts above. Before integrating a block, we suggest you visit it's documentation page.
+
 
 ## Principles
 
  We should be writing as little CSS & JavaScript as possible
 
-- types
-- Component Status
-- handle
-0- theme
-- section
-- headings
+- theme?
 - qa
 
 
@@ -438,9 +502,7 @@ Data
 block types - banners - headers - footers etc
 
 
-## Blocks 
-  Blocks make up a distinct section of an interface. Functionally independent, __a block can NOT be nested within another block__. They can, however, consist of components. For the most part, they stack on top of each other as each block occupies its own row. RDS layouts are subdivided into blocks, some of them containing components.
-  
+
   ### building blocks
   
   Designing them - question - do i need a new block there are lots - what ux problem is it trying to solve
@@ -453,125 +515,7 @@ block types - banners - headers - footers etc
   
   -
   
-  use css that leverages utiltiy classes - lean and mean
 
-
-RDS is Carleton's system for creating digital harmony across our many web properties. One of the systematic ways to guide our collective efforts is to insure everyone is speaking the same language. This section documents the key concepts and terminology used within RDS' underlying design language, established to create consistency across the platform. 
-
-While this section is a must read for RDS developers, we encourage content creators and site users to read on to get a better understanding of the core concepts that make up RDS.
-
-## A shared vocabulary
-
-The following terms are used throughout RDS to articulate the systems’s underlying structure:
-
-- [Pages](#pages)
-- [Sections](#sections)
-- [Blocks](#blocks)
-- [Components](#components)
-- [Layouts](#layouts)
-- [Templates](#templates)
-- [Themes](#themes)
-
-## Pages 
-
-**A page** refers to the full user interface (UI) or screen rendered in a browser at a given time. Pages display data and handle user interactions. They can be scrollable and include content off screen, as long as it is accessible without reloading the page. Your app or site is a collection of pages that are linked together.
-
-![img of page](http://cu-raven.s3.amazonaws.com/assets/img/docs/page.png)
-
-## Sections
-
-RDS pages are divided into sections to define the structure of a page and isolate certain parts of the document with prescriptive rules. Sections are denoted by semantic HTML 5 elements, including:
-
-- Header - `<header>`
-- Main - `<main>`
-- Aside - `<aside>`
-- Footer - `<footer>`
-
-By defining the above page sections we provide a clear understanding of what role is played by the content within those sections. In addition, it lets us categorize and provide clear use cases for certain content types. For example, the [Banner block](#) is categorized as a *header block* since it can only reside within the Header section. 
-
-TBD: show image of banner blocks
-
-**Note**: A single HTML document can have multiple `<header>` and `<footer>` elements. In RDS, the 'Header section' is always denoted by the first `<header>Header section</header>` on the page. The 'Footer section' by the last `<footer>Footer section</footer>` on the page. For example:
-
-```html
-<html lang="en">
-<head>
-  <title>Example of the definitive RDS Headers and Footers</title>
-</head>
-<body>
-  <header><p>As the first header, THIS IS THE Header section in RDS.</p></header>
-  <section>
-    <header>
-        <h1>This header tag is just a standard HTML 5 semantic element.</h1>
-        <p>It has nothing todo with RDS sections.</p>
-        </header>
-  </section>
-  <footer><p>As the last footer, THIS IS THE Footer section in RDS</p></footer>
-</body>
-</html>
-```
-
-![img of template sections ](http://cu-raven.s3.amazonaws.com/assets/img/docs/template.png)
-
-## Blocks 
-
-RDS Blocks are the equivalent to repeatable "components" in other [design systems](#). They are chunks of reusable code, guided by clear standards, that can be assembled together in different combinations to build any number of user interfaces. Blocks allow us to separate RDS UI into smaller, more manageable parts and provide consistent user experiences across all RDS platforms.
-
-To control and provide consistent spacing, all RDS Blockss must be wrapped with the `u-block` [utility class](#).  Anyone integrating or developing with RDS should read both the [Blocks deep dive](#) and [Creating Blocks](#) sections as they really are the key building **blocks** of our design system. 
-
-**Note**: most Blocks are restricted to particular page sections and themes. Before using any Block, review [its documentation](#) to view the rules on where it can be used.
-
-## Components
-
-Similar to Blocks, RDS Components are UI elements built for reuse. Unlike Blocks, Components can be nested inside of blocks, and even other components. Relatively simpler than blocks, components tend to be smaller, inline interface elements such as buttons and icons. Components must be used within a Block and can not be used on their own.
-
-
-Components are the equivalent to Atoms or Molecules in [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/#atoms) and allow us to keep the CSS code lean as repeated elements are represented by only one abstraction. 
-
-## Layouts
- 
- Layouts are used to arrange [Blocks](#) and position them within page [sections](#). If you are working on a one column page design, chances are a layout is not necessary as RDS blocks are designed to stack directly on top of each other. If you need to lay your blocks out in multiple columns, layouts are the means to do so. Layouts also used to set content breakpoints and determine which blocks are visible on different screen sizes.
- 
-## Templates
- 
- Templates allow you to create reusable base markup. Templates can be used to control the overall page design and establish predefined sections for your content blocks. Or, they can be used to build your Blocks and Components by breaking your HTML code into smaller pieces that are overridable on a per-instance basis.
- 
- Since RDS is agnostic to what tech stack is being used, templates are not a part of RDS. You could build RDS sites with just straight up HTML but we recommend using a templating engine such as [Twig](#), [Mustache](#), [Blade](#) or [Liquid](#) to separate your HTML structure from the content contained within. 
- 
- In order to better build a more maintainable codebase, RDS was developed with [separation of concerns](#) in mind, specifically being able to separate data and markup. In our Block and Component documentation we provide examples of how you might achieve this with template and JSON code snippet examples.
- 
-## Themes
-
-Themes package up and contain everything needed to build and deploy your entire functional site, including your: 
-
-- assets (images, SVGs)
-- templates, 
-- layouts, 
-- blocks, and components.
-
-At this time, RDS ships with two themes: [CMS](#) and [Framework](#).
-
-All RDS themes depend on the [core](#) distribution package and need to include its required CSS and JavaScript files.
-Developers looking to build new tailored themes should read the [Custom Theming section](#).
-
-## In summary
-
-1. RDS sites are made up of a collection of [pages](#pages).
-2. Pages are divided into defined [sections](#sections).
-3. Sections contain combinations of UI elements called Blocks that make up the overall UI.
-4. For even DRYer coding, Blocks may contain reusable Components.
-5. Sometimes you will need to use Layouts to arrange the locations of Blocks.
-6. We encourage developer to build their Blocks with templating engine and consider separating your date from your markup.
-7. Themes package everything up in a consistent user experience.
-
-![img of the RDS makeup](http://cu-raven.s3.amazonaws.com/assets/img/docs/makeup.png)
-
-Remember:
-
-- Blocks are often restricted to certain sections and themes.
-- Blocks can never be nested within other blocks.
-- Components can be nested in blocks or other components.
-- Components must be used within a Block and can not be used on their own.
 
 ## References
 

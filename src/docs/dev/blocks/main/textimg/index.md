@@ -23,6 +23,7 @@ dependencies:
     maxwidth: u-block--m
 examples:
 - name: base
+- name: heading
 - name: imgtext
 - name: widths
 wild: n/a

@@ -6,6 +6,20 @@
 	font-size: $pixel30;
 	text-align: center;
 	border-bottom: none;
+	padding-bottom: 20px;
+	margin-bottom: 40px;
+	position: relative;
+
+	&:after {
+		position: absolute;
+		content: '';
+		width: 50px;
+		height: 1px;
+		border-bottom: 1px solid $red;
+		bottom: 0;
+		left: 50%;
+		margin-left: -25px;
+	}
 
 	@include media('>=s') {
 		font-size: $pixel36;
@@ -21,21 +35,34 @@
 	padding-bottom: 25px;
 	max-width: 620px;
 	margin-top: -5px;
-	margin-bottom: 40px;
-
-	&:after {
-		position: absolute;
-		content: '';
-		width: 60px;
-		height: 1px;
-		border-bottom: 1px solid $red;
-		bottom: 0;
-		left: 50%;
-		margin-left: -30px;
-	}
 
 	@include media('>=s') {
 		font-size: $pixel20;
 		padding-bottom: 25px;
+	}
+}
+
+.c-heading--subheading {
+	padding-bottom: 20px;
+	margin-bottom: 0;
+
+	&:after {
+		border-bottom: none;
+	}
+
+	& + p {
+		margin-bottom: 40px;
+		line-height: 1.45;
+
+		&:after {
+			position: absolute;
+			content: '';
+			width: 50px;
+			height: 1px;
+			border-bottom: 1px solid $red;
+			bottom: 0;
+			left: 50%;
+			margin-left: -25px;
+		}
 	}
 }
