@@ -2,15 +2,6 @@
 {% block main %}
 <main>
 {% for item in page.examples %}
-    {% if item.desc %}
-    <div class="u-block u-block--white u-block--s">
-        <div class="b-content">
-            <h2>{{ item.heading }}</h2>
-            <p>{{ item.desc|raw  }}</p>
-        </div>
-    </div>
-    {%  endif %}
-    {#Include#}
     {% include page.meta.path ~ 'data/'~ page.meta.handle ~ '--' ~ item.name ~ '.twig' ignore missing with {'docs': true} %}
     <section class="u-block u-block--s u-block--white">
         <div class="b-tabs" role="tablist">
@@ -47,15 +38,12 @@
                         <dd>{{ page.meta.theme }}</dd>
                         {# slug #}
                         <dt>Handle</dt>
-                        <dd>@{{ page.meta.handle }}</dd>
+                        <dd>{{ page.meta.handle }}</dd>
                         {# Block type #}
                         <dt>Type</dt>
                         <dd>{{ page.meta.type }}</dd>
                         <dt>Section</dt>
                         <dd>{{ page.meta.section }}</dd>
-                        {# Block path #}
-                        <dt>Path</dt>
-                        <dd>{{ page.meta.path }}</dd>
                         {# Available in what themes #}
                         {% if page.meta.widths %}
                             <dt>Available Widths</dt>
@@ -105,11 +93,9 @@
 
                 </div>
             </div>
-            {#Block properties#}
-            {#{% if page.inc != true %}#}
-            {#{% if page.data %}#}
+            {#Block fields#}
                 {#<div class="b-tabs__tab" role="tab">#}
-                    {#<a class="b-tabs__button u-icon--xxs" href="#">{% include "components/icons/database.svg" ignore missing %} Data Props</a>#}
+                    {#<a class="b-tabs__button u-icon--xxs" href="#">{% include "components/icons/database.svg" ignore missing %} Fields</a>#}
                     {#<div class="b-tabs__panel" role="tabpanel">#}
                         {#<table>#}
                             {#<thead>#}
@@ -132,7 +118,7 @@
 
                     {#</div>#}
                 {#</div>#}
-            {#{% endif %}#}
+
             <div class="b-tabs__tab" role="tab">
                 <a class="b-tabs__button" href="#">- YAML</a>
                 <div class="b-tabs__panel" role="tabpanel">
