@@ -14,52 +14,52 @@ blocks:
         section: header
         theme: core
     -
-        name: Card Grid (Review Required)
+        name: Card Grid
         handle: cardgrid
         section: main
         theme: core
     -
-        name: Content (Review Required)
+        name: Content
         handle: content
         section: main
         theme: core
     -
-        name: Global Nav (Review Required)
+        name: Global Nav
         handle: globalnav
         section: header
         theme: cms
     -
-        name: Footer Brand (Review Required)
+        name: Footer Brand
         handle: footerbrand
         section: footer
         theme: core
     -
-        name: Footer Sitemap (Review Required)
+        name: Footer Sitemap
         handle: footersitemap
         section: footer
         theme: fw
     -
-        name: Footer Simple (Review Required)
+        name: Footer Simple (Docs Unfinished)
         handle: footersimple
         section: footer
         theme: na
     -
-        name: Listing (Review Required)
+        name: Listing
         handle: listing
         section: main
         theme: na
     -
-        name: Masthead (Review Required)
+        name: Masthead (Docs Unfinished)
         handle: masthead
         section: header
         theme: core
     -
-        name: Search (Review Required)
+        name: Search (Docs Unfinished)
         handle: search
         section: header
         theme: core
     -
-        name: Text-Image (Review Required)
+        name: Text-Image (Docs Unfinished)
         handle: textimg
         section: main
         theme: fw

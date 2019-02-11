@@ -133,5 +133,5 @@ Avoid using this block if your site does not have many pages in it.
 
 ## Resources
 
-https://www.interaction-design.org/literature/article/how-to-implement-sitemap-footers-to-keep-users-going
+- [How to Implement Sitemap Footers to Keep Users Going](https://www.interaction-design.org/literature/article/how-to-implement-sitemap-footers-to-keep-users-going)
 

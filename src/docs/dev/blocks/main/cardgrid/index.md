@@ -26,7 +26,9 @@ data:
    desc: Card component inc path.
 ---
 
-The Card Grid block uses RDS' [responsive grid](#) to list [Card components](#) in equal-width columns. **Note**: this block should not be used for general layout purposes.{%include "/docs/inc/close.twig"%}
+The Card Grid block uses RDS' [responsive grid](#) to list [Card components](#) in equal-width columns.
+
+**Note**: this block should not be used for general layout purposes.{%include "/docs/inc/close.twig"%}
 
 <div class="u-block u-block--white u-block--s u-no-padding-bottom">
 	<h2>Base example</h2>
