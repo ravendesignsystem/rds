@@ -10,7 +10,7 @@ content: true
 - **Yes**: use `u-block-full` and you are done. Go build your amazing block!
 - **No**: use `u-block` and see the next question on this page.
 
-2. Does your block width need to be bigger then the default 768px size, also referred to as small?
+2. Does your block width need to be bigger then the default 768pxCHECK size, also referred to as small?
 
 - **Yes**: add either `u-block--m` or `u-block--l` to meet your need and see the next question on this page.
 - **No**: see the next question on this page

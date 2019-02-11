@@ -26,19 +26,20 @@ TODO add some images
 
 All blocks have the following attributes:
 
-- a type
-- a handle
-- a version
-- a status
-- properties
-- designated sections
+- a [type](#block-types-and-spacing)
+- a [handle](#block-handles)
+- a [version](#block-versioning)
+- a [status](#block-status)
+- [properties](#props)
+- designated [block-sections](#sections)
 - associated CSS
 - an HTML template and data options
+- their own [documentation](#block-documentation)
 
 **Some blocks** have:
 
-- headings
-- variants
+- [headings](#block-headings)
+- [variants](#block-variants)
 - designated themes
 - associated JavaScript
 

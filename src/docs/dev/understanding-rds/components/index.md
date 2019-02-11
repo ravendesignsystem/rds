@@ -1,36 +1,13 @@
 ---
 layout: base
-title: Blocks and Components
-banner:
-  settings:
-    variant:
-  data:
-    img:
-      url:
-      url_s:
-      opacity: light
-      position:
-    breadcrumbs: true
-    breadcrumb:
-      parent: Dev
-    buttons: true
-    button:
-    - title: Building blocks & components
-      url: news
+subsite: dev
+content: true
+title: Components
 ---
-The bulk of RDS interfaces are made up of two reusable component types:
-
-1. Blocks
-2. Components
-
-RDS "blocks" and "components" are the equivalent of traditional components found in modern design systems. They are repeatable UX patterns, guided by clear standards, that can be assembled together to build any number of user interfaces. The difference between blocks and components, in RDS, is how they can be used.
-
-## Blocks
-  Blocks make up a distinct section of an interface. Functionally independent, __a block can NOT be nested within another block__. They can, however, consist of components. For the most part, they stack on top of each other as each block occupies its own row. RDS layouts are subdivided into blocks, some of them containing components.
-
-## Components
 Components are relatively simple UI elements that, unlike blocks, __can be nested__ inside of blocks, and even other components. Components tend to be smaller, inline interface elements such as buttons and icons.
+Similar to Blocks, RDS Components are UI elements built for reuse. Unlike Blocks, Components can be nested inside of blocks, and even other components. Relatively more straightforward than blocks, components tend to be smaller, inline interface elements such as buttons and icons. Components must be used within a Block and cannot be used on their own.
 
+Components are the equivalent to Atoms or Molecules in Atomic Design and allow us to keep the CSS code lean as repeated elements are represented by only one abstraction.
 ## Examples
 If we look at the layout of <a href="#">this</a> very page you are reading...
 
@@ -62,10 +39,3 @@ The same button component found in the banner block...
 Blocks and components are the equivalent of reusable widgets. The biggest difference between the 2 is that a component can be nested inside of any block, or another component.
 
 Next: [Developing Blocks and Components](developing-blocks-components/)
-
-
-
-
-
-
-

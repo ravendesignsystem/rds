@@ -5,21 +5,20 @@ title: Banner Block
 banner:
   breadcrumbs:
     grandparent: Blocks
-desc: The banner block provides a variety of functions relating to being the first visual a visitor encounters on each page. At the minimum, the base banner provides the primary page heading. To take advantage of the its prime position, the banner block affords many options including: breadcrumb navigational aids, call to action buttons and hero images.
+desc: 
 meta:
   version: 1.0.1
   status: ready
   handle: banner
-  type: Full-width
+  type: Max-width
   section: Header
   path: banner/
   theme: Core
-  heading: na
+  heading: N/A
 context:
 - name: image
-- name: carousel
 dependencies:
-    js: n/a for core block. required for carousel addon
+    js: N/A
     selector: b-banners-banner
     restricted: div
     maxwidth: na

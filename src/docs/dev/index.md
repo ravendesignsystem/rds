@@ -67,3 +67,4 @@ banner:
 
 
 https://developers.google.com/style/abbreviations
+https://github.com/viljamis/vue-design-system/wiki
