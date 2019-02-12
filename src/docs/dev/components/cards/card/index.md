@@ -36,7 +36,7 @@ data:
 ---
 ## Implementation Notes
 
-1. Use the [grid block](#) or list markup to group multiple cards. 
+1. Use the [grid block](#) or list markup to group multiple cards.
 
 2. Cards components are best displayed on top of a non-white background colour, if possible. Presently, only white background are available for the [CMS theme](#).
 
@@ -45,8 +45,7 @@ data:
 
 ## References
 
-https://inclusive-components.design/cards/
-
-https://uxplanet.org/best-practices-for-cards-fa45e3ad94dd
+- [Inclusive Components: Cards](https://inclusive-components.design/cards/)
+- [Best Practices for Cards](https://uxplanet.org/best-practices-for-cards-fa45e3ad94dd)
 
 ## In the wild

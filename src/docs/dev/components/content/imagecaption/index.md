@@ -12,14 +12,14 @@ meta:
     status: under review
     handle: img-caption
     type: Content
-    path: imgcaption/
+    path: imagecaption/
     theme: Core
 ---
 Use this component to further explain,add commentary or provide context to your images contained in the `<figure>` element.
 
 ## Base example
 
-{%include 'imgcaption/imgcaption'%}
+{%include 'imagecaption/imagecaption'%}
 
 ```html
 <figure aria-labelledby="figcaption_id_1" class="c-imagecaption">
@@ -27,10 +27,10 @@ Use this component to further explain,add commentary or provide context to your 
 	<figcaption class="imagecaption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
 </figure>
 ```
-##Content guidelines
+## Content guidelines
 
 - Your captions should be different than your image's ALT text.
 
 ## References
 
-https://usabilitygeek.com/website-image-usability-and-seo-best-practices/
+- [Website Image Usability and SEO Best Practices](https://usabilitygeek.com/website-image-usability-and-seo-best-practices/)

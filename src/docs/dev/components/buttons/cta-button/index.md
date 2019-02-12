@@ -107,5 +107,5 @@ Examples of buttons with good calls to action:
 
 ## References
 
-- https://www.smashingmagazine.com/2016/10/icons-as-part-of-a-great-user-experience/
-- http://uxmovement.com/buttons/where-to-place-icons-next-to-button-labels/
+- [Icons As Part Of A Great User Experience](https://www.smashingmagazine.com/2016/10/icons-as-part-of-a-great-user-experience/)
+- [Where to Place Icons Next to Button Labels](http://uxmovement.com/buttons/where-to-place-icons-next-to-button-labels/)
