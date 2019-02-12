@@ -5,17 +5,17 @@ title: Main + Aside Layout
 content: true
 ---
 
-The `Main + Aside` layout provides a two column template, with a content area on the left and an aside on the right hand side, and has a maximum width of 1108px.
+The `Main + Aside` layout sets up two columns, with the primary content area on the left and an aside on the right-hand side, and has a maximum width of 1108px.
 
 ## Main
 
 The main area would contain all of the primary content of the page. Inside the main tag, a div with a class of `body__content` is required, and each content item inside this div should be a block.
 
-## Ride Hand Aside
+## Ride-hand aside
 
-The primary usage for the right hand aside is to provide additional information that relates to the page. Items contained within thise aside are block level items. The aside has a fixed width of 280px, roughly 25% of the full layout width.
+The primary usage for the right-hand aside is to provide space for blocks whose content is only indirectly related to the document's main content. The aside has a fixed width of 280px, roughly 25% of the full layout width.
 
-The right hand aside is contained within the main container, but outside of the content div. By default, the aside would be placed below the content area below 720px.
+The right-hand aside is contained within the main container, but outside of the content div. By default, the aside would be placed below the content area below 720px.
 
 **INSERT IMAGE**
 
@@ -47,7 +47,9 @@ The right hand aside is contained within the main container, but outside of the 
 ```
 
 ## Modifiers
-There are 2 modifiers available. One will provide a slightly large right hand aisde, while the other will position the right hand aside above the main content area below 720px. To use one or both modifiers, add the following classes to the main layout div, modifying the `l-body` class.
+There are two modifiers available for this layout. One will provide a slightly larger right-hand aside, while the other will position the right-hand aside above the main content area he screen is sized below 720px. 
+
+To use one or both modifiers, add the following classes to the main layout div, modifying the `l-body` class.
 
 - `l-body--sidebar-large` -- increases max width of the right hand aside to 350px, roughly 35% of the full layout width.
 - `l-body--sidebar-top` -- positions the right hand aside above the content area below 720px

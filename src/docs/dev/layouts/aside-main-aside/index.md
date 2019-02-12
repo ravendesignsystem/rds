@@ -5,19 +5,19 @@ title: Aside + Main + Aside Layout
 content: true
 ---
 
-The `Aside + Main + Aside` layout provides a three column template, with asides on the left and right hand sides, and a content area in the middle, and has a maximum width of 1368px.
+The `Aside + Main + Aside` layout sets up three columns, including asides on the left and right-hand sides, and a content area in the middle, and has a maximum width of 1368px.
 
 ## Left Hand Aside
 
-The primary usage for the left hand aside is to house site navigation or other relevant links and buttons pertaining to the site. The aside has a fixed width of 200px, roughly 15% of the full layout width, and disappears from view below 720px.
+Generally, the left-hand aside houses site navigation or other links. The aside has a fixed width of 200px, roughly 15% of the full layout width, and disappears from view below 720px.
 
 ## Main
 
 The main area would contain all of the primary content of the page. Inside the main tag, a div with a class of `body__content` is required, and each content item inside this div should be a block.
 
-## Ride Hand Aside
+## Ride-hand aside
 
-The primary usage for the right hand aside is to provide additional information that relates to the page. Items contained within thise aside are block level items. The aside has a fixed width of 280px, roughly 20% of the full layout width.
+The primary usage for the right-hand aside is to provide a space for additional blocks that relates to the page. The aside has a fixed width of 280px, roughly 20% of the full layout width.
 
 The right hand aside is contained within the main container, but outside of the content div. By default, the aside would be placed below the content area below 720px.
 
