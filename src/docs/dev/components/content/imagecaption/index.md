@@ -10,7 +10,7 @@ banner:
 meta:
     version: 1.0.0
     status: under review
-    handle: img-caption
+    handle: imagecaption
     type: Content
     path: imagecaption/
     theme: Core
