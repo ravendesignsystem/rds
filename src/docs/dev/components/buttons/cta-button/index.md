@@ -57,11 +57,11 @@ Ghost buttons should:
 
 - be used as secondary call-to-actions.
 
-<a class="c-button" href="http://www.imdb.com/title/tt0087332/" role="button">Main action</a> <a class="c-button c-button--ghost" href="http://www.imdb.com/title/tt0087332/" role="button">Secondary action</a>
+<a class="c-buttoncta" href="http://www.imdb.com/title/tt0087332/" role="button">Main action</a> <a class="c-buttoncta c-buttoncta--ghost" href="http://www.imdb.com/title/tt0087332/" role="button">Secondary action</a>
 
 - Should only be used on solid white backgrounds. If placed over a busy image without sufficient contrast, it can be difficult for users to read the button's text.
 
-<a class="c-button c-button--ghost" href="http://www.imdb.com/title/tt0087332/" role="button">Read Ghostbuster reviews</a>
+<a class="c-buttoncta c-buttoncta--ghost" href="http://www.imdb.com/title/tt0087332/" role="button">Read Ghostbuster reviews</a>
 
 ### Margins
 By default, buttons only have a 5px right-margin and no bottom margin. To add the proper spacing between buttons and following blocks, wrap the button in a `<p>` tag.
@@ -69,12 +69,12 @@ By default, buttons only have a 5px right-margin and no bottom margin. To add th
 If you are using a button component within a block and need to adjust margin spacing around the button, use the block element styles to do so.
 
 ### Centering
-To center a button, add the modifier class `c-button--center`.
+To center a button, add the modifier class `c-buttoncta--center`.
 
-<a class="c-button c-button--center" href="https://gist.github.com/dannybrown73/30bf8390d63dda2bce39dacb0c562e7d" role="button">View this Gist</a>
+<a class="c-buttoncta c-buttoncta--center" href="https://gist.github.com/dannybrown73/30bf8390d63dda2bce39dacb0c562e7d" role="button">View this Gist</a>
 
 ```html
-<a class="c-button c-button--center" href="https://gist.github.com/dannybrown73/30bf8390d63dda2bce39dacb0c562e7d" role="button">View this Gist</a>
+<a class="c-buttoncta c-buttoncta--center" href="https://gist.github.com/dannybrown73/30bf8390d63dda2bce39dacb0c562e7d" role="button">View this Gist</a>
 ```
 
 ##Content guidelines
@@ -90,15 +90,15 @@ Buttons should:
 
 Examples of buttons with good calls to action:
 
-<a class="c-button" href="https://central.wordcamp.org" role="button">{% include "icons/arrow-down.svg" ignore missing %}Download our free ebook now</a>
+<a class="c-buttoncta" href="https://central.wordcamp.org" role="button">{% include "icons/arrow-down.svg" ignore missing %}Download our free ebook now</a>
 
-<a class="c-button" href="https://central.wordcamp.org" role="button">Start a free trial</a>
+<a class="c-buttoncta" href="https://central.wordcamp.org" role="button">Start a free trial</a>
 
-<a class="c-button" href="https://central.wordcamp.org" role="button">{% include "icons/heart.svg" ignore missing %}Like this post</a>
+<a class="c-buttoncta" href="https://central.wordcamp.org" role="button">{% include "icons/heart.svg" ignore missing %}Like this post</a>
 
-<a class="c-button" href="https://central.wordcamp.org" role="button">{% include "icons/plus.svg" ignore missing %}Book an appointment</a>
+<a class="c-buttoncta" href="https://central.wordcamp.org" role="button">{% include "icons/plus.svg" ignore missing %}Book an appointment</a>
 
-<a class="c-button" href="https://central.wordcamp.org" role="button">Register for WordCamp Ottawa 2018</a>
+<a class="c-buttoncta" href="https://central.wordcamp.org" role="button">Register for WordCamp Ottawa 2018</a>
 
 ## Avoid
 

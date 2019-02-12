@@ -30,7 +30,7 @@ Taking a closer look at the Banner block...
 ### Component in components
 The same button component found in the banner block...
 
-<a class="c-button" href="https://central.wordcamp.org" role="button"><span class="u-icon u-icon-text" aria-hidden="true">{% include "icons/heart.svg" ignore missing %}</span>Like this post</a>
+<a class="c-buttoncta" href="https://central.wordcamp.org" role="button"><span class="u-icon u-icon-text" aria-hidden="true">{% include "icons/heart.svg" ignore missing %}</span>Like this post</a>
 
 ...can house an icon component.
 

@@ -229,7 +229,7 @@ Check out and play around with straight forward rendered examples on [Codepen](h
 {%include "/docs/templates/close.twig"%}<div class="u-block u-block--l"><p data-height="415" data-theme-id="light" data-slug-hash="odyjrg" data-default-tab="result" data-user="cuweb" data-embed-version="2" data-pen-title="Storybook - block sizing" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/cuweb/pen/odyjrg/">Storybook - block sizing</a> by Carleton (<a href="https://codepen.io/cuweb">@cuweb</a>) on <a href="https://codepen.io">CodePen</a>.</p><script async src="https://static.codepen.io/assets/embed/ei.js"></script></div>
 {%include "/docs/templates/open-content.twig"%}
 
-<a class="c-button" href="https://codepen.io/cuweb/pen/odyjrg?editors=1010">Test these Concepts on Codepen</a>
+<a class="c-buttoncta" href="https://codepen.io/cuweb/pen/odyjrg?editors=1010">Test these Concepts on Codepen</a>
 
  - explain variants
  -- setting - data options

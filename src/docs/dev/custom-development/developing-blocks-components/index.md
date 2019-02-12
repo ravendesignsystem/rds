@@ -85,7 +85,7 @@ Components follow the same namespacing rules as blocks but since components are 
 Below is the opening HTML markup for the [Button component](/docs/components/buttons/button/):
 
 ```html
-<a class="c-button" href="http://www.nooooooooooooooo.com">Base button</a>>
+<a class="c-buttoncta" href="http://www.nooooooooooooooo.com">Base button</a>>
 ```
 
 ## Organizing block partials in themes
