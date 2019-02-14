@@ -1,0 +1,259 @@
+// Notes
+// The arrow icon could be made darker
+
+// Main Nav Styles
+// =======================================
+
+.b-menu {
+	background-color: white;
+}
+
+.menu__list {
+	margin: 0;
+}
+
+.menu__list-item {
+	position: relative;
+	list-style-type: none;
+
+	label > i {
+		transition: transform 0.65s ease;
+	}
+}
+
+.menu__title {
+	position: relative;
+	background: $grey;
+	border-bottom: 1px solid white;
+	font-weight: 500;
+	height: 30px;
+	padding: 0 15px;
+	color: $grey-vader;
+	line-height: 30px;
+	margin: 0;
+	font-size: 11px; // TODO: where can I test?
+	text-transform: uppercase;
+}
+
+// hide the menu title
+.has-b-menu .menu__title {
+	display: none;
+}
+
+.menu__url {
+	display: block;
+	padding: 0 15px;
+	line-height: 50px;
+	border-bottom: 1px solid $grey;
+	transition: all 0.25s ease-in;
+}
+
+.menu__list-item label:hover a,
+.menu__url:hover {
+	text-decoration: none;
+	color: $red;
+}
+
+.menu__icon {
+	font-style: normal;
+	font-size: $pixel18;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: $grey-vader;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.menu__icon::after {
+	content: '+';
+	display: inline-block;
+	transition: all 0.25s ease-in;
+	left: 50%;
+	line-height: normal;
+}
+
+.menu__list input[type='checkbox']:checked + label > i::after {
+	transform: rotate(135deg);
+	transform-origin: center center;
+}
+
+// Hide nested lists
+// =======================================
+
+.menu__child {
+	height: 100%;
+	max-height: 0;
+	overflow: hidden;
+	margin: 0;
+	transition: max-height 0.5s ease-in-out;
+}
+
+.menu__list input[type='checkbox']:checked + label + ul {
+	max-height: 1000px; // reset the height when checkbox is checked
+}
+
+// Expand/show nested lists
+// =======================================
+
+.menu__child--open {
+	height: 100%;
+	max-height: 1000px;
+}
+
+.menu__expand-text {
+	font-style: normal;
+	font-size: 11px; // TODO: where can I test?
+	text-transform: uppercase;
+	padding: 0 15px;
+	line-height: normal;
+
+	&:hover {
+		color: $red;
+	}
+}
+
+.menu__expand-text::before {
+	content: '+';
+	display: inline-block;
+	transition: all 0.25s ease-in;
+	font-size: $pixel16;
+	vertical-align: middle;
+	line-height: normal;
+	margin-right: 6px;
+	color: $grey-emperor;
+}
+
+.menu__expand-text--is-selected::before {
+	transform: rotate(135deg);
+	transform-origin: center center;
+}
+
+// Child Level Nav Styles
+// =======================================
+.menu__child--2 {
+	background-color: $grey;
+	box-shadow: inset 0px 11px 8px -10px $grey-yoda,
+		inset 0px -11px 8px -10px $grey-yoda;
+
+	.menu__url {
+		padding-left: 45px;
+		border-bottom: 1px solid white;
+	}
+}
+
+.menu__child--3 {
+	//background-color: $grey-yoda;
+
+	.menu__url {
+		padding-left: 75px;
+	}
+}
+
+.menu__child--4 {
+	//background-color: $grey-kenobi;
+
+	.menu__url {
+		padding-left: 105px;
+	}
+}
+
+// > then small screen styles
+// =======================================
+
+.has-b-menu ul li {
+	border-bottom: 1px solid $grey;
+	margin-right: 20px;
+}
+
+.has-b-menu ul li li {
+	margin-right: 0;
+}
+
+.has-b-menu .menu__url {
+	line-height: 2.4;
+}
+
+.has-b-menu .menu__icon {
+	line-height: 2.15;
+	right: -15px;
+}
+
+.has-b-menu .menu__child {
+	background-color: white !important;
+}
+
+.has-b-menu .menu__child--2 {
+	box-shadow: none;
+}
+
+.has-b-menu .menu__child--2 a {
+	padding-left: 15px;
+	font-size: 15px; // TODO: where can I test?
+	color: $grey-vader;
+}
+
+.has-b-menu .menu__child--3 a {
+	padding-left: 25px;
+	color: $grey-vader;
+}
+
+.has-b-menu a,
+.has-b-menu li li {
+	border-bottom: none;
+}
+
+.has-b-menu .menu__child--2 .menu__url {
+	line-height: 2.3;
+}
+
+.has-b-menu .menu__child--2 .menu__icon {
+	line-height: 1.8;
+}
+
+// Dark Nav Modifier
+// =======================================
+//
+//.b-menu--dark {
+//	background-color: $black;
+//}
+//
+//.b-menu--dark .menu__url {
+//	border-bottom: 1px solid $grey-emperor;
+//	color: white;
+//}
+//
+//.b-menu--dark .menu__list-item label:hover a,
+//.b-menu--dark .menu__url:hover {
+//	background: darken($black, 3%);
+//}
+//
+//.b-menu--dark .menu__child--second {
+//	background-color: lighten($black, 3%);
+//
+//	.menu__url:focus, .menu__url:hover {
+//		background-color: darken($black, 6%);
+//	}
+//}
+//
+//.b-menu--dark .menu__child--third {
+//	background-color: lighten($black, 8%);
+//
+//	.menu__url:focus, .menu__url:hover {
+//		background-color: darken($black, 7%);
+//	}
+//}
+//
+//.b-menu--dark .menu__child--fourth {
+//	background-color: lighten($black, 11%);
+//
+//	.menu__url:focus, .menu__url:hover {
+//		background-color: darken($black, 7%);
+//	}
+//}
