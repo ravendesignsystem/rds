@@ -33,3 +33,25 @@
 		display: none;
 	}
 }
+
+// check mark and x icons to show good vs bad
+.u-docs-icon {
+	& svg {
+		border: 0.045em solid #50b83c;
+		background-color: white;
+	}
+
+	& path {
+		fill: #50b83c !important;
+	}
+}
+
+.u-docs-icon--red {
+	& svg {
+		border-color: $red;
+	}
+
+	& path {
+		fill: $red !important;
+	}
+}

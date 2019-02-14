@@ -161,15 +161,34 @@
 // 3. Icon utils
 // -------------
 
-.u-icon--txt svg {
-	margin-right: 5px;
-}
+//.u-icon--txt svg {
+//	margin-right: 5px;
+//}
 .u-icon {
-	fill: $black;
+	//fill: $black;
+	display: inline-flex;
+	align-items: center;
+	color: $black;
+	top: 0.15em;
+	position: relative;
 
-	& svg {
-		vertical-align: top; // removes the default inline space under svg
+	&:hover {
+		text-decoration: none !important;
+		cursor: default;
 	}
+
+	svg {
+		position: relative;
+		display: inline-block;
+		height: 1em;
+		width: 1em;
+		margin-right: 0.3em;
+		flex-shrink: 0;
+	}
+}
+
+a.u-icon svg:hover {
+	cursor: pointer;
 }
 
 .u-icon--red svg path {
@@ -184,82 +203,35 @@
 	fill: white;
 }
 
-// match svg size to accompanying text
-.u-icon--text {
-	display: inline-flex;
-	align-items: center;
-
-	// svg element
-	& svg {
-		display: inline-block;
-		height: 1em !important;
-		width: 1em !important;
-		margin-right: 0.175em; // you can change this
-		flex-shrink: 0;
-		top: 0.125em;
-		position: relative;
-	}
-}
-
-.u-icon--circle {
+.u-icon--circle svg {
 	border-radius: 50%;
 	background-color: $grey;
-	display: inline-block;
-	padding: 15px;
-	line-height: 1 !important;
+	//display: inline-block;
+	padding: 0.25em;
+	overflow: visible;
+	position: relative;
 }
 
-.u-icon--circle-white {
-	background-color: white;
 
-	&:hover {
-		background-color: $grey-vader;
+
+//TODO right in docs how modifiers can have modifers and the first must be there
+.u-icon--circle--white {
+	color: white;
+
+	& svg {
+		background-color: white;
 	}
-
-	&:hover svg path {
-		fill: white;
-	}
 }
 
-.u-icon--circle.u-icon--xxs {
-	padding: 2px;
-	height: 15px;
-}
-
-.u-icon--circle.u-icon--xs {
-	padding: 5px;
-	height: 25px;
-}
-
-.u-icon--circle.u-icon--s {
-	padding: 12px;
-}
-
-.u-icon--circle.u-icon--l {
-	padding: 18px;
-}
-
-.u-icon--circle.u-icon--xl {
-	padding: 22px;
-}
-
-.u-icon--circle.u-icon--xxl {
-	padding: 25px;
-}
-
-.u-icon-text--right svg {
-	margin-left: 0.175em; // you can change this
-}
-
-.u-icon--facebook:hover {
+.u-icon--circle--facebook svg:hover {
 	background-color: #3b5998;
 
-	svg path {
+	& path {
 		fill: white;
 	}
 }
 
-.u-icon--instagram:hover {
+.u-icon--circle--instagram svg:hover {
 	// background: #d6249f; // TODO: test that this is not needed for browser support
 	background: radial-gradient(
 		circle at 30% 107%,
@@ -270,7 +242,7 @@
 		#285aeb 90%
 	);
 
-	svg path {
+	& path {
 		fill: white;
 	}
 }
@@ -310,11 +282,7 @@
 	}
 }
 
-// TODO: NOT USED?
-//.u-icon--open {
-//    transition: all .4s ease-in-out;
-//}
-
+// TODO CLEAN UP
 .u-icon-bg,
 .u-img-bg {
 	display: block;
@@ -336,10 +304,6 @@
 	width: 30px;
 	height: 30px;
 	display: block;
-}
-
-.u-icon--left svg {
-	margin-right: 4px;
 }
 
 .u-icon--xxs svg {

@@ -18,7 +18,7 @@ meta:
 
 RDS iconography uses SVG symbols to represent a common action, idea or object visually. They should be seen as a form of “visual shorthand”, lowering cognitive load.
 
-RDS icons should communicate an informative message and look consistent, ensuring clarity. Despite this, never assume people understand what an icon should convey. Icons should be accompanied with short descriptive text (label) and be used sparingly throughout Carleton digital properties. They should only be used without labels when it's necessary to better utilize space or if the icons used are considered [universal icons](#).
+While RDS icons are simple and consistent to ensure clarity, we should never assume people understand what an icon conveys. Icons should be accompanied with short descriptive text (label) and be used sparingly throughout Carleton digital properties. They should only be used without labels when it's necessary to better utilize space or if the icons used are considered [universal icons](#).
 
 ## The Icons
 RDS ships with a [collection of 181 icons](library/). This page explains how to use these icons in your projects.
