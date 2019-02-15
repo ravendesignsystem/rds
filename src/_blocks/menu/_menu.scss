@@ -133,11 +133,11 @@
 // Expand/show nested lists
 // =======================================
 
-.menu__expand-text {
+.menu__toggle {
 	font-style: normal;
-	font-size: 11px; // TODO: where can I test?
+	font-size: 11px;
 	text-transform: uppercase;
-	padding: 0 15px;
+	// padding: 0 15px;
 	line-height: normal;
 
 	&:hover {
@@ -145,7 +145,7 @@
 	}
 }
 
-.menu__expand-text::before {
+.menu__toggle::before {
 	content: '+';
 	display: inline-block;
 	transition: all 0.25s ease-in;
@@ -156,7 +156,7 @@
 	color: $grey-emperor;
 }
 
-.menu__expand-text--is-selected::before {
+.menu__toggle--opened::before {
 	transform: rotate(135deg);
 	transform-origin: center center;
 }
