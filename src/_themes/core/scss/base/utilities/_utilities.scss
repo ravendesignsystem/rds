@@ -182,7 +182,7 @@
 		display: inline-block;
 		height: 1em;
 		width: 1em;
-		margin-right: 0.3em;
+		margin-right: 0.25em;
 		flex-shrink: 0;
 	}
 }
@@ -206,13 +206,10 @@ a.u-icon svg:hover {
 .u-icon--circle svg {
 	border-radius: 50%;
 	background-color: $grey;
-	//display: inline-block;
 	padding: 0.25em;
 	overflow: visible;
-	position: relative;
+
 }
-
-
 
 //TODO right in docs how modifiers can have modifers and the first must be there
 .u-icon--circle--white {

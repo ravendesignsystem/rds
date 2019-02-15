@@ -6,11 +6,15 @@ content: true
 ---
 RDS offers a simple icon system empowering the creation, maintenance and implementation of SVG icons project-wide.
 
-## Inline SVGs
+## Integrating icons
 
-Easily integrate icons in your projects by simply including the SVG icons inline. 
+Easily integrate icons in your projects by simply including the SVG icons inline and wrapping them in the `u-icon` utility class.. 
 
-When possible, use a templating language or server-side include:
+### Inline SVGs
+
+Inline SVG simply refers to SVG markup that gets included directly in your markup.
+
+When possible, use a templating language or server-side include to inline our SVG icons.
 
 ```twig
 {% verbatim %}{% include 'icons/heart.svg' %}{% endverbatim %}
@@ -19,13 +23,13 @@ When possible, use a templating language or server-side include:
 Or, you can embed all of the icon's SVG code inside your HTML:
 
 ```HTML
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><path fill="#222" d="M118.6 16.5C113.14 9.885 105.475 6.525 95.5 6c-10.185 0-17.745 4.41-23.1 10.5S64.21 26.16 64 27c-.21-.84-2.94-4.41-8.4-10.5C50.14 10.41 43.315 6 32.5 6c-9.975.525-17.745 3.99-23.1 10.5-5.46 6.405-8.19 13.44-8.4 21 0 5.46.945 15.96 7.035 28.035S32.605 96.405 64 121.5c31.29-25.095 50.085-43.785 56.07-55.965C126.055 53.355 127 42.75 127 37.5c-.21-7.56-2.94-14.595-8.4-21.21v.21z"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#222" d="M118.6 16.5C113.14 9.885 105.475 6.525 95.5 6c-10.185 0-17.745 4.41-23.1 10.5S64.21 26.16 64 27c-.21-.84-2.94-4.41-8.4-10.5C50.14 10.41 43.315 6 32.5 6c-9.975.525-17.745 3.99-23.1 10.5-5.46 6.405-8.19 13.44-8.4 21 0 5.46.945 15.96 7.035 28.035S32.605 96.405 64 121.5c31.29-25.095 50.085-43.785 56.07-55.965C126.055 53.355 127 42.75 127 37.5c-.21-7.56-2.94-14.595-8.4-21.21v.21z"></path></svg>
 ```
-The first approach of using a server-side include is much better because if an icon is updated, all use cases receive the changes, instead of having to update the SVG code in several files.
+The first approach above of using an include is much better because if an icon is updated, all use cases receive the changes, instead of having to update the SVG code in several files.
 
-### Icon paths
+#### SVG icon paths
 
-In the RDS project, all icons are located in the folder labelled **'icons'** under **/components**.
+In the RDS projects, all icons are located in the folder labelled **'icons'** under **/components**.
 
 ```html
 your-project/
@@ -47,71 +51,55 @@ your-project/
 ```TWIG
 {% verbatim %}{% include iconPath ~ '.alert.svg' %}{% endverbatim %} 
 ```
-## Icon accessibility
-
-Since a lot of what is outlined below on this page was guided by best practices for accessibility, lets start there. 
+## Icon types and usage
 
 There are two ways an icon might be used:
 
-1. **Standalone**: icon presented alone that needs to convey meaning all by itself. This includes icons without text next to them used as interactive controls — buttons, form elements, toggles, etc.
-2. **Decorative**: icon is used for visual or branding reinforcement - the words around it convey the meaning.
+1. **Standalone**: an icon presented alone that needs to convey meaning all by itself. This includes icons without text next to them used as interactive controls — buttons, form elements, toggles, etc.
+2. **Decorative**: an icon used for visual or branding reinforcement - the words around it convey the meaning.
 
-**Important**: with the [exception of a few](#), all icons in RDS are **intended to be used as decorative icons**. This means visible text labels must be present alongside an icon to communicate the meaning. As a rule, we should never assume people understand what an icon conveys.
+**Important**: with the [exception of a few](#) icons, the majority of icons in RDS are **intended to be used as decorative icons**. This means visible text labels must be present alongside an icon to better communicate the meaning. Icons isolated from supporting context are bad at conveying concepts. In most use cases the icon should be there to draw someones attention to a label, it is not a label itself.
 
 > “a word is worth a thousand pictures.” - Bruce Tognazzini
 
-If you scroll up a bit and look on the right-side of the masthead across the top of the page for this site, you will see a link to our Github projects. Even though the Github icon is used across the web and is well known, we still have the "Github" text accompanying the icon.
+If you scroll up a bit and look on the right-side of the masthead across the top of this page, you will see a link to our Github projects. Even though the Github icon is used across the web and is well known, we still have the "Github" text accompanying the icon.
 
-<span class="u-icon">{% include 'icons/mark-github.svg' %} Github</span> 
+<span class="u-icon">{% include 'icons/mark-github.svg' %}</span>Github
 
-### ALT text not required for decorative icons
-
-Since we always surround our decorative icons with a text label, the majority of icon use cases do not need additional alt text added to the SVG.
-
-## Styling icons with utility classes
+## Icon utility classes
 
 Apply base icon styling by wrapping all icons in a `<span>` **OR** `<a>` element using the `u-icon` utility class on it.
 
 ```twig
 {% verbatim %}<span class="u-icon">{% include 'icons/heart.svg' %}</span>{% endverbatim %}
 ```
-This sets an icon's default height and width equal to 1em to best fit beside varying font sizes. In addition, it sets the default icon color to RDS' near black.
+This sets an icon's default height and width equal to 1em to align with text of varying font sizes. In addition, it sets the default icon color to RDS' near black.
 
 **Remember**: we always need a text label. 
 
-To add a label, include the text within the `u-icon` element.
+Text labels should be included within the `u-icon` element.
 
 ```twig
 {% verbatim %}<span class="u-icon">{% include 'icons/heart.svg' %} Love</span>{% endverbatim %}
 ```
 <span class="u-icon">{% include 'icons/heart.svg' %} Love</span>
 
-### Linked icons with text
-
-When linking an icon, use an `<a>` element instead of a `<span>`.  For linked icons that are paired with text, use an aria-label on the `<a>` tag to provide descriptive, alternative text.
-
-```twig
-{% verbatim %}<a class="u-icon" aria-label="Love this post!">
-    {% include 'icons/heart.svg' %} Love
-</a>{% endverbatim %}
-```
-
 ### Icon colors
 
-Use the following utility class modifiers to change an icons color:
+Use the following utility class modifiers to change an icon's color:
 
 - `u-icon--red`,
 - `u-icon--grey`,
 - `u-icon--white`
 
 ```twig
-<p><span class="u-icon u-icon--red">{% verbatim %}{% include 'icons/heart.svg' %}{% endverbatim %} love</span></p>
+<span class="u-icon u-icon--red">{% verbatim %}{% include 'icons/heart.svg' %}{% endverbatim %} love</span>
 ```
 <span class="u-icon u-icon--red">{% include 'icons/heart.svg' %} love</span> 
 
 ### Aligning icons to text
 
-To align icons with their label, wrap the text in the element containing the `u-icon` class. 
+By wrapping the text label in the element with the `u-icon` class, the icon will align with the text size.
 
 ```twig
 <p>
@@ -131,11 +119,13 @@ Then even if the text size changes...
     </span>
 </p>
 ```
- <p style="font-size: 2.5em"><span class="u-icon u-icon--red">{% include 'icons/heart.svg' %} <span> love</span> </span></p>
+ <p style="font-size: 2.5em"><span class="u-icon u-icon--red">{% include 'icons/heart.svg' %} </span>love</p>
  
 ..the icon and text size remain proportional.
 
 ### Circular icons
+
+**TODO overflow: visible; broken in Safari :()**
 
 Add a circular background to any icon using the `u-icon--circle` modifier.
 
@@ -147,7 +137,7 @@ Add a circular background to any icon using the `u-icon--circle` modifier.
 </p>
 ```
 
-<p style="font-size: 2.5em"><span class="u-icon u-icon--circle">{% include 'icons/heart.svg' %}<span>love</span></span></p>
+<p style="font-size: 2.5em"><span class="u-icon u-icon--circle">{% include 'icons/grabber.svg' %}<span>love</span></span></p>
 
 Notice how the icon shrinks and the background height remains the sames as the label. For guidance on when to use circular background icons, view the [design guidelines for icons](#).
 
@@ -163,31 +153,31 @@ For circular icons on dark backgrounds use an additional modifier: <br> `.u-icon
 </p>
 ```
 
-<p style="font-size: 22px;background:#222;padding: 10px;"><span class="u-icon u-icon--circle u-icon--circle--white">{% include 'icons/heart.svg' %} love</span></p>
+<p style="color: #fff;font-size: 2em;background:#222;padding: 10px;"><span class="u-icon u-icon--circle u-icon--circle--white">{% include 'icons/heart.svg' %} love</span></p>
 
 **Note**: if using a circular icon, you can **not** change an icon's color.
 
 ### Icon sizes
 
-Since the methods above let us easily match icon size with text, RDS does not provide any utility classes for icon sizes. If you need a certain size icon, handle the sizing in the block's CSS. You should, however, try and align with RDS's [typographic scale](#) for sizing.
+Since the methods above let us easily match icon size with accompanying text, RDS does not provide any utility classes for icon sizes. If you need a certain size icon, handle the sizing in the block's CSS. You should, however, try and align with RDS's [typographic scale](#) for sizing.
 
 ## Standalone icons
 
-RDS only has a few icons that can be used as standalone icons. These icons are either common interface controls or are recognized globally as [universal icons](#). 
+RDS has just a few icons that can be used as standalone icons. These are either common interface controls or are recognized globally as [universal icons](#). 
 
-Very few icons are universally recognized among all users. As rare as these are, some icons are considered to be universal and are understandable when used alone. We believe the following icons are universal and therefore can be used without labels or accompanying text, if space is too tight.
+Very few icons are universally recognized among all users. As rare as these are, some icons are considered to be universal and are understandable when used alone. We believe the following icons are universal and therefore can be used without **visible** labels, if space is too tight.
 
 ### Universal icons
 
-- <span class="u-icon">{% include "icons/home.svg" %} home</span>
-- <span class="u-icon">{% include "icons/search.svg" %} search</span>
+- <span class="u-icon">{% include "icons/home.svg" %} home</span> 
+- <span class="u-icon">{% include "icons/search.svg" %} search</span> 
 - <span class="u-icon">{% include "icons/grabber.svg" %} hamburger menu</span> 
-- <span class="u-icon">{% include "icons/facebook.svg" %} Facebook</span> 
-- <span class="u-icon">{% include "icons/twitter.svg" %} Twitter</span>
-- <span class="u-icon">{% include "icons/instagram.svg" %} Instagram</span>
-- <span class="u-icon">{% include "icons/youtube.svg" %} YouTube</span>
-- <span class="u-icon">{% include "icons/linkedin.svg" %} LinkedIn</span>
-- <span class="u-icon">{% include "icons/pinterest.svg" %} Pinterest</span>
+- <span class="u-icon">{% include "icons/facebook.svg" %} Facebook</span>  
+- <span class="u-icon">{% include "icons/twitter.svg" %} Twitter</span> 
+- <span class="u-icon">{% include "icons/instagram.svg" %} Instagram</span> 
+- <span class="u-icon">{% include "icons/youtube.svg" %} YouTube</span> 
+- <span class="u-icon">{% include "icons/linkedin.svg" %} LinkedIn</span> 
+- <span class="u-icon">{% include "icons/pinterest.svg" %} Pinterest</span>  
 
 ### Interface control icons
 
@@ -208,40 +198,33 @@ Standalone icons should still have their textual equivalent next to them, but th
 ```
 
 <span class="u-icon">{% include 'icons/search.svg' %} <span class="u-visually-hidden">Search</span> </span> 
- 
- ## Review
- 
- ### Aligning icons and text review
- 
- <p style="font-size: 2.5em"><span class="u-icon u-icon--circle u-icon--red ">{% include 'icons/check.svg' %} Good!</span></p>
- 
- 
- <p><span class="u-icon u-docs-icon u-docs-icon--red u-icon--circle">{% include 'icons/check.svg' %} Good!</span></p>
- 
- <p><span class="u-icon u-docs-icon u-icon--circle">{% include 'icons/check.svg' %} Good!</span></p>
- 
- ```html
- <p style="font-size: 2.5em"><span class="u-icon u-icon--red">{% verbatim %}{% include 'icons/check.svg' %}{% endverbatim %} Good!</span> </p>
- ```
- 
- icon position - left except interfaxce icons
- presented alone that needs to convey meaning all by itself. This includes icons without text next to them used as interactive controls — buttons, form elements, toggles, etc.
 
-<a class="u-icon u-icon--circle u-icon--circle-white u-icon--facebook" href="{{ data.social.facebook }}">{% include "icons/facebook.svg" -%}{# #}<span class="u-visually-hidden">Like us on Facebook</span></a>
+Because the labels are hidden, feel free to be more descriptive with standalone icons as space is not a concern.
 
-<p style="font-size:3em"><a href="#" class="u-icon u-icon--circle u-icon--circle--facebook">{% include 'icons/facebook.svg' %} <span class="u-visually-hidden">Facebook</span></a></p>
+```HTML
+<span class="u-icon">{% verbatim %}
+    {% include 'icons/search.svg' %}{% endverbatim %} 
+    <span class="u-visually-hidden">
+        Search across all of the carleton.ca domain
+    </span>
+</span> 
+```
 
-<p style="font-size:3em;background:#222;padding: 10px;"><a href="#" class="u-icon u-icon--circle u-icon--circle--facebook">{% include 'icons/facebook.svg' %} <span class="u-visually-hidden">Facebook</span></a></p>
+## Icon accessibility
 
-<p style="font-size:6em"><a href="#" class="u-icon u-icon--circle u-icon--circle--instagram">{% include 'icons/instagram.svg' %} <span class="u-visually-hidden">Facebook</span></a></p>
+### ALT text and ARIA labels
 
-<p style="font-size:3em;background:#222;padding: 10px;"><a href="#" class="u-icon u-icon--circle u-icon--circle--instagram">{% include 'icons/instagram.svg' %} <span class="u-visually-hidden">Facebook</span></a></p>
+Since our decorative icons always have a text label, they **do not need additional alt text** added to the SVG. The label should speak for itself and **does not need an aria-label** attribute either.
 
-<p><a href="#" class="u-icon u-icon--red">{% include 'icons/heart.svg' %} love</a> </p>
+### Linked icons with text
 
-<span class="u-icon">{% include 'icons/instagram.svg' %} Insta</span>
+When linking an icon, use an `<a>` element instead of a `<span>`.  For linked icons that are paired with text, you can add aria-label on the `<a>` tag to provide even more descriptive, alternative text then the label.
 
-
+```twig
+{% verbatim %}<a class="u-icon" aria-label="Love this post!">
+    {% include 'icons/heart.svg' %} Love
+</a>{% endverbatim %}
+```
 
 ## Why inline SVG icons?
 
@@ -253,9 +236,14 @@ Presently, RDS has ## of icons. By including the SVGs inline our icon library ca
 
 Inlining the SVG provides more predictable results and control than if it is added with <use> or <img> because the SVG source is directly available in the DOM which is exposed to the accessibility API.
 
+**TODO ALL CONTENT BELOW IS STILL IN THE WORKS**
+
 ## Icon principles and guidelines
 
 RDS uses SVG icons to represent common actions, ideas and objects visually. They should be seen as a form of “visual shorthand”, lowering cognitive load.
+
+ icon position - left except interaxce icons
+ presented alone that needs to convey meaning all by itself. This includes icons without text next to them used as interactive controls — buttons, form elements, toggles, etc.
 
 >  Clarity is the most important characteristic of a great interface. To avoid the ambiguity that plague most icons, we can include a text label to clarify an icon’s meaning in a particular context.
 
@@ -263,6 +251,24 @@ Icons help dealing with narrow spaces, where text doesn’t fit,
 They can have a common meaning independent of language,
 They brand,
 They can help draw attention to important elements in a user interface.
+We should: 
+
+- never assume people understand what an icon conveys
+- use use icons sparingly across RDS interfaces
+
+Icons should have a fair amount of white space around them. Avoid crunching them into heavy text areas.
+
+### <span class="u-icon u-icon--circle u-docs-icon u-docs-icon--red">{% include 'icons/x.svg' %} Don't add an icon in the middle of a paragraph</span>
+
+<p>
+Lorem ipsum dolor sit amet, consectetur elit. Fusce blandit tellus  luctus. Nullam sodales imperdiet aliquam. Follow on <span class="u-icon">{% include 'icons/twitter.svg' %}Twitter</span> non lorem laoreet odio efficitur vulputate. Phasellus leo elit, fermentum vestibulum nisl a, congue tincidunt sapien. Nulla ac posuere velit, a pulvinar erat
+</p>
+
+### <span class="u-icon u-icon--circle u-docs-icon">{% include 'icons/check.svg' %} Add them to the begining of lists and titles</span>
+
+- <span class="u-icon">{% include "icons/facebook.svg" %} Facebook</span>  
+- <span class="u-icon">{% include "icons/twitter.svg" %} Twitter</span> 
+- <span class="u-icon">{% include "icons/instagram.svg" %} Instagram</span> 
 
 ## Icon accessibility
 
@@ -282,6 +288,8 @@ RDS icons are indented to symbolize common actions and objects in a simple manne
 ## Best practices / Examples
 
 Use them when there is natuarl space bnetween elements like a UL no in the middle of a <p>
+
+> If your target audience is a general population, you should not be using icons alone to convey anything meaningful. By doing so, you have made assumptions that are unlikely to be appropriate to a general audience.
 
 ### Don't
 - Don’t over-communicate. Limit concepts to one per icon. It should be instantly understandable.
@@ -320,3 +328,7 @@ https://www.nngroup.com/articles/icon-testing/
 https://vecta.io/blog/best-way-to-embed-svg/
 
 https://www.smashingmagazine.com/2016/10/icons-as-part-of-a-great-user-experience/
+
+https://mattwilcox.net/musing/the-ineffectiveness-of-icons
+
+https://ux.stackexchange.com/questions/1795/when-to-use-icons-vs-icons-with-text-vs-just-text-links
