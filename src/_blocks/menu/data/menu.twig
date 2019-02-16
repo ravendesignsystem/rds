@@ -1,6 +1,6 @@
 <div class="u-block u-block-full">
    <section class="b-menu">
-      <h2 class="menu__title">Site Navigation</h2>
+      <h2>Site Navigation</h2>
       {% from "menu/menu.twig" import menuMacro %}
       {{ menuMacro (
          [
@@ -13,7 +13,7 @@
                   url: "#",
                   submenu: [
                   {
-                     title: "Third Level",
+                     title: "Third Level, testing this one with an extremely long title that user might create",
                      url: "#"
                   }
                ]
