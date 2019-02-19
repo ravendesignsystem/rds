@@ -1,16 +1,16 @@
-{% macro simple(settings, data) %}
+{% macro footersimple(settings, fields) %}
 <div class="u-block u-block--black">
     <div class="b-footersimple">
         <div itemscope itemtype="http://schema.org/Organization">
             <address class="footersimple__contact h-card">
-{% if data.address|length %}
+{% if fields.address %}
                 <p class="p-adr">
-                    <a class="p-name u-url" href="{{ site.url }}">{{ data.address.name }}</a><br>
-{% if data.address.building|length %}
+                    <a class="p-name u-url" href="{{ site.url }}">{{ fields.address.name }}</a><br>
+{% if fields.address %}
                     <a class="p-name u-url" itemprop="name" href="https://carleton.ca">Carleton University</a><br>
 {% endif %}
-{% if data.address.building|length %}
-                    <span class="p-extended-address" itemprop="name">{% if data.address.number|length %}{{ data.address.number }} {% endif %}<a href="#">{{ data.address.building }}</a></span><br>
+{% if fields.address.building %}
+                    <span class="p-extended-address" itemprop="name">{% if fields.address.number|length %}{{ fields.address.number }} {% endif %}<a href="#">{{ fields.address.building }}</a></span><br>
                     <span class="p-street-address" itemprop="streetAddress">1125 Colonel By Drive</span><br>
                     <span class="p-locality" itemprop="addressLocality">Ottawa, </span>
                     <span class="p-region" itemprop="addressRegion">ON, </span>
@@ -18,69 +18,69 @@
                     <span class="p-country-name">Canada</span><br>
                     <span><a href="#">View Map</a></span>
 {% else %}
-{% if data.address.buildingOff|length %}
-                    <span class="p-extended-address" itemprop="name">{% if data.address.number|length %}{{ data.address.number }} {% endif %}<a href="#">{{ data.address.buildingOff }}</a></span><br>
+{% if fields.address.buildingOff %}
+                    <span class="p-extended-address" itemprop="name">{% if fields.address.number|length %}{{ fields.address.number }} {% endif %}<a href="#">{{ fields.address.buildingOff }}</a></span><br>
 {% endif %}
-{% if data.address.street|length %}
-                    <span class="p-street-address" itemprop="streetAddress">{{ data.address.street }}</span><br>
+{% if fields.address.street %}
+                    <span class="p-street-address" itemprop="streetAddress">{{ fields.address.street }}</span><br>
 {% endif %}
-{% if data.address.city|length %}
-                    <span class="p-locality" itemprop="addressLocality">{{ data.address.city }}, </span>
+{% if fields.address.city %}
+                    <span class="p-locality" itemprop="addressLocality">{{ fields.address.city }}, </span>
 {% endif %}
-{% if data.address.province|length %}
-                    <span class="p-region" itemprop="addressRegion">{{ data.address.province }}, </span>
+{% if fields.address.province %}
+                    <span class="p-region" itemprop="addressRegion">{{ fields.address.province }}, </span>
 {% endif %}
-{% if data.address.postal|length %}
-                    <span class="p-postal-code" itemprop="postalCode">{{ data.address.postal }}</span><br>
+{% if fields.address.postal %}
+                    <span class="p-postal-code" itemprop="postalCode">{{ fields.address.postal }}</span><br>
 {% endif %}
-{% if data.address.country|length %}
-                    <span class="p-country-name" itemprop="country">{{ data.address.country }}</span><br>
+{% if fields.address.country %}
+                    <span class="p-country-name" itemprop="country">{{ fields.address.country }}</span><br>
 {% endif %}
 {% endif %}
                 </p>
 {% endif %}
-{% if data.contact|length %}
+{% if fields.contact %}
                 <p>
-{% if data.contact.email|length %}
-                    <span class="u-email" itemprop="email"><a href="mailto:history@carleton.ca">{{ data.contact.email }}</a></span><br>
+{% if fields.contact.email %}
+                    <span class="u-email" itemprop="email"><a href="mailto:history@carleton.ca">{{ fields.contact.email }}</a></span><br>
 {% endif %}
-{% if data.contact.phone|length %}
-                    <span class="p-tel" itemprop="telephone">Phone: <a href="tel:+1-613-520-2600">{{ data.contact.phone }}</a></span><br>
+{% if fields.contact.phone %}
+                    <span class="p-tel" itemprop="telephone">Phone: <a href="tel:+1-613-520-2600">{{ fields.contact.phone }}</a></span><br>
 {% endif %}
-{% if data.contact.fax|length %}
-                    <span class="p-tel-fax" itemprop="faxNumber">Fax: {{ data.contact.fax }}</span><br>
+{% if fields.contact.fax %}
+                    <span class="p-tel-fax" itemprop="faxNumber">Fax: {{ fields.contact.fax }}</span><br>
 {% endif %}
-{% if data.contact.contactPage|length %}
-                    <span itemprop="url"><a href="{{ data.contact.contactPage }}">Contact page</a></span><br>
+{% if fields.contact.contactPage %}
+                    <span itemprop="url"><a href="{{ fields.contact.contactPage }}">Contact page</a></span><br>
 {% endif %}
                 </p>
 {% endif %}
-{% if data.hours|length %}
+{% if fields.hours %}
                 <p itemprop="hoursAvailable">
                 <strong>Hours</strong><br>
-                <span>{{ data.hours.dayFrom }}-{{ data.hours.dayUntil }},</span>
-                <time datetime="08:30">{{ data.hours.timeFrom }}</time>-<time datetime="16:30">{{ data.hours.timeUntil }}</time>
+                <span>{{ fields.hours.dayFrom }}-{{ fields.hours.dayUntil }},</span>
+                <time datetime="08:30">{{ fields.hours.timeFrom }}</time>-<time datetime="16:30">{{ fields.hours.timeUntil }}</time>
                 </p>
 {% endif %}
-{% if data.social|length %}
+{% if fields.social %}
                 <ul class="footersimple__social">
-{% if data.social.facebook|length %}
-                    <li><a class="u-icon u-icon--circle u-icon--circle-white u-icon--facebook u-icon--s" href="{{ data.social.facebook }}">{% include "icons/facebook.svg" -%}{# #}<span class="u-visually-hidden">Like us on Facebook</span></a></li>
+{% if fields.social.instagram %}
+                    <li><a class="c-buttonsocial c-buttonsocial--instagram u-icon u-icon--circle" href="https://www.instagram.com/carleton_u">{{ source('icons/instagram.svg') }}<span class="u-visually-hidden">Follow us on Instagram</span></a></li>
 {% endif %}
-{% if data.social.instagram|length %}
-                    <li><a class="u-icon u-icon--circle u-icon--circle-white u-icon--instagram u-icon--s" href="{{ data.social.instagram }}">{% include "icons/instagram.svg" -%}<span class="u-visually-hidden">Follow us on Instagram</span></a></li>
+{% if fields.social.facebook %}
+                    <li><a class="c-buttonsocial c-buttonsocial--facebook u-icon u-icon--circle" href="https://www.facebook.com/carletonuniversity">{{ source('icons/facebook.svg') }}<span class="u-visually-hidden">Like us on Facebook</span></a></li>
 {% endif %}
-{% if data.social.twitter|length %}
-                    <li><a class="u-icon u-icon--circle u-icon--circle-white u-icon--twitter u-icon--s" href="{{ data.social.twitter }}">{% include "icons/twitter.svg" -%}<span class="u-visually-hidden">Follow us on Twitter</span></a></li>
+{% if fields.social.twitter %}
+                    <li><a class="c-buttonsocial c-buttonsocial--twitter u-icon u-icon--circle" href="https://twitter.com/@Carleton_U">{{ source('icons/twitter.svg') }}<span class="u-visually-hidden">Follow us on Twitter</span></a></li>
 {% endif %}
-{% if data.social.youtube|length %}
-                    <li><a class="u-icon u-icon--circle u-icon--circle-white u-icon--youtube u-icon--s" href="{{ data.social.youtube }}">{{ source('icons/youtube.svg') }}<span class="u-visually-hidden">Subscribe to our Youtube channel</span></a></li>
+{% if fields.social.youtube %}
+                    <li><a class="c-buttonsocial c-buttonsocial--youtube u-icon u-icon--circle" href="https://www.youtube.com/user/carletonuvideos">{{ source('icons/youtube.svg') }}<span class="u-visually-hidden">Subscribe to our Youtube channel</span></a></li>
 {% endif %}
-{% if data.social.linkedin|length %}
-                    <li><a class="u-icon u-icon--circle u-icon--circle-white u-icon--linkedin u-icon--s" href="{{ data.social.linkedin }}">{% include "icons/linkedin.svg" -%}<span class="u-visually-hidden">View us on Linkedin</span></a></li>
+{% if fields.social.linkedin %}
+                    <li><a class="c-buttonsocial c-buttonsocial--linkedin u-icon u-icon--circle" href="https://www.linkedin.com/school/carleton-university">{{ source('icons/linkedin.svg') }}<span class="u-visually-hidden">View us on Linkedin</span></a></li>
 {% endif %}
-{% if data.social.pinterest|length %}
-                    <li><a class="u-icon u-icon--circle u-icon--circle-white u-icon--pinterest u-icon--s" href="{{ data.social.pinterest }}">{% include "icons/pinterest.svg" -%}<span class="u-visually-hidden">Check us out on Pinterest</span></a></li>
+{% if fields.social.pinterest %}
+                    <li><a class="c-buttonsocial c-buttonsocial--pinterest u-icon u-icon--circle" href="https://www.pinterest.ca/carletonu">{{ source('icons/pinterest.svg') }}<span class="u-visually-hidden">Check us out on Pinterest</span></a></li>
 {% endif %}
                 </ul>
 {% endif %}

@@ -90,15 +90,15 @@ Buttons should:
 
 Examples of buttons with good calls to action:
 
-<a class="c-buttoncta" href="https://central.wordcamp.org" role="button">{% include "icons/arrow-down.svg" ignore missing %}Download our free ebook now</a>
+<a class="c-buttoncta u-icon" href="https://central.wordcamp.org" role="button">{% include "icons/arrow-down.svg" ignore missing %}Download our free ebook now</a>
 
-<a class="c-buttoncta" href="https://central.wordcamp.org" role="button">Start a free trial</a>
+<a class="c-buttoncta u-icon" href="https://central.wordcamp.org" role="button">Start a free trial</a>
 
-<a class="c-buttoncta" href="https://central.wordcamp.org" role="button">{% include "icons/heart.svg" ignore missing %}Like this post</a>
+<a class="c-buttoncta u-icon" href="https://central.wordcamp.org" role="button">{% include "icons/heart.svg" ignore missing %}Like this post</a>
 
-<a class="c-buttoncta" href="https://central.wordcamp.org" role="button">{% include "icons/plus.svg" ignore missing %}Book an appointment</a>
+<a class="c-buttoncta u-icon" href="https://central.wordcamp.org" role="button">{% include "icons/plus.svg" ignore missing %}Book an appointment</a>
 
-<a class="c-buttoncta" href="https://central.wordcamp.org" role="button">Register for WordCamp Ottawa 2018</a>
+<a class="c-buttoncta u-icon" href="https://central.wordcamp.org" role="button">Register for WordCamp Ottawa 2018</a>
 
 ## Avoid
 

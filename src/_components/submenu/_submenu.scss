@@ -71,20 +71,9 @@
 
 		&:hover {
 			text-decoration: none;
+			background-color: $grey;
+			color: black;
 		}
-
-		svg {
-			// position: relative;
-			margin-right: 5px;
-			width: 12px;
-			height: 12px;
-			display: block;
-		}
-	}
-
-	a:hover {
-		background-color: $grey-yoda;
-		color: black;
 	}
 }
 

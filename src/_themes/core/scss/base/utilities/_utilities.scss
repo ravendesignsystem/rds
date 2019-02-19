@@ -161,11 +161,8 @@
 // 3. Icon utils
 // -------------
 
-//.u-icon--txt svg {
-//	margin-right: 5px;
-//}
 .u-icon {
-	//fill: $black;
+	fill: $black;
 	display: inline-flex;
 	align-items: center;
 	color: $black;
@@ -174,7 +171,6 @@
 
 	&:hover {
 		text-decoration: none !important;
-		cursor: default;
 	}
 
 	svg {
@@ -182,10 +178,15 @@
 		display: inline-block;
 		height: 1em;
 		width: 1em;
-		margin-right: 0.25em;
+		margin-right: 6px;
 		flex-shrink: 0;
 	}
 }
+
+//.u-icon--sa,
+//.u-icon--social svg {
+//	margin-right: 0;
+//}
 
 a.u-icon svg:hover {
 	cursor: pointer;
@@ -199,85 +200,32 @@ a.u-icon svg:hover {
 	fill: $grey-vader;
 }
 
-.u-icon--white svg path {
-	fill: white;
-}
 
-.u-icon--circle svg {
-	border-radius: 50%;
-	background-color: $grey;
-	padding: 0.25em;
-	overflow: visible;
+.u-icon--circle {
+	&:before {
+		width: 1em;
+		height: 1em;
+		content: '';
+		background-color: $grey;
+		position: absolute;
+		border-radius: 50%;
+	}
 
-}
-
-//TODO right in docs how modifiers can have modifers and the first must be there
-.u-icon--circle--white {
-	color: white;
-
-	& svg {
-		background-color: white;
+	svg {
+		padding: 0.3em;
 	}
 }
 
-.u-icon--circle--facebook svg:hover {
-	background-color: #3b5998;
+////TODO right in docs how modifiers can have modifiers and the first must be there
+//.u-icon--circle--white {
+//	color: white;
+//
+//	&:before {
+//		background-color: white;
+//	}
+//}
 
-	& path {
-		fill: white;
-	}
-}
 
-.u-icon--circle--instagram svg:hover {
-	// background: #d6249f; // TODO: test that this is not needed for browser support
-	background: radial-gradient(
-		circle at 30% 107%,
-		#fdf497 0%,
-		#fdf497 5%,
-		#fd5949 45%,
-		#d6249f 60%,
-		#285aeb 90%
-	);
-
-	& path {
-		fill: white;
-	}
-}
-
-.u-icon--twitter:hover {
-	background-color: #1da1f2;
-	svg path {
-		fill: white;
-	}
-}
-
-.u-icon--youtube:hover {
-	background-color: #ff0000;
-
-	svg path {
-		fill: white;
-	}
-
-	& svg path:last-child {
-		fill: #ff0000;
-	}
-}
-
-.u-icon--pinterest:hover {
-	background-color: #bd081c;
-
-	svg path {
-		fill: white;
-	}
-}
-
-.u-icon--linkedin:hover {
-	background-color: #007bb5;
-
-	svg path {
-		fill: white;
-	}
-}
 
 // TODO CLEAN UP
 .u-icon-bg,

@@ -138,17 +138,8 @@
 	li {
 		display: inline-block;
 
-		&:not(:last-child) {
-			margin-right: 8px;
-		}
-	}
-
-	.u-icon {
-		padding: 8px;
-
-		svg {
-			width: 20px;
-			height: 20px;
-		}
+		//&:not(:last-child) {
+		//	margin-right: 8px;
+		//}
 	}
 }

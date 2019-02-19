@@ -1,0 +1,18 @@
+{% if docs %}
+<div class="u-block u-block--s u-block--white">
+    <div class="b-content">
+        <h2>Base example</h2>
+        <p>Add text</p>
+{% endif %}
+{% from "buttonsocial/buttonsocial.twig" import buttonsocial %}
+{{ buttonsocial (
+    {
+        network: "pinterest",
+        url: "https://www.pinterest.ca/carletonu"
+    }
+) }}
+{% if docs %}
+    </div>
+</div>
+{% endif %}
+

@@ -199,9 +199,6 @@ nav + .masthead__primarynav > .masthead__site {
 		&:after {
 			color: black !important;
 		}
-		& svg {
-			fill: $black;
-		}
 	}
 
 	a,
@@ -212,11 +209,6 @@ nav + .masthead__primarynav > .masthead__site {
 			background-color: $grey-yoda;
 			color: $black;
 		}
-	}
-
-	svg {
-		width: 20px;
-		height: 20px;
 	}
 
 	.c-submenu a {

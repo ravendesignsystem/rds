@@ -1,7 +1,7 @@
 .c-buttoncta {
 	text-align: center;
 	white-space: nowrap;
-	vertical-align: middle;
+	//vertical-align: middle;
 	border: 1px solid transparent;
 	padding: 0.85rem 1.35rem;
 	font-size: $pixel12;
@@ -23,10 +23,8 @@
 	}
 
 	& svg {
-		width: 15px;
-		height: 15px;
-		margin-right: 7px;
-		top: 0;
+		width: 1.5em;
+		height: 1.5em;
 	}
 
 	& path {

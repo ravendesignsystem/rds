@@ -16,24 +16,15 @@
 	}
 }
 
+.b-footersimple time {
+	display: inline;
+}
+
 .footersimple__social {
 	list-style: none;
 	margin-left: 0;
 
 	li {
 		display: inline-block;
-
-		&:not(:last-child) {
-			margin-right: 8px;
-		}
-	}
-
-	.u-icon {
-		padding: 8px;
-
-		svg {
-			width: 20px;
-			height: 20px;
-		}
 	}
 }

@@ -1,0 +1,3 @@
+{% macro buttonsocial(field) %}
+<a class="c-buttonsocial c-buttonsocial--{{ field.network }} u-icon u-icon--circle" href="{{ field.url }}">{% include 'icons/' ~ field.network ~ '.svg' %}<span class="u-visually-hidden">{% if field.network == 'facebook' %}Like us on Facebook{% elseif field.network == 'instagram' %}Follow us on Instagram{% elseif field.network == 'pinterest' %}Check us out on Pinterest{% elseif field.network == 'youtube' %}Subscribe to our Youtube channel{% elseif field.network == 'linkedin' %}View us on Linkedin{% elseif field.network == 'twitter' %}Follow us on Twitter{% endif %}</span></a>
+{% endmacro %}
