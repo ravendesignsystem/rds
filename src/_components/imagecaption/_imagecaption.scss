@@ -14,14 +14,14 @@
 	@include media('<=s') {
 		width: 100%;
 	}
-}
 
-.imagecaption__text {
-	display: table-caption;
-	caption-side: bottom;
-	background-color: $grey;
-	padding: 20px !important; // important forces override of last-child on u-block:p
-	font-size: $pixel14;
-	font-style: italic;
-	line-height: 1.4;
+	figcaption {
+		display: table-caption;
+		caption-side: bottom;
+		background-color: $grey;
+		padding: 20px !important; // important forces override of last-child on u-block:p
+		font-size: $pixel14;
+		font-style: italic;
+		line-height: 1.4;
+	}
 }

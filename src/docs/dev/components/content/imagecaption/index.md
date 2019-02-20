@@ -24,7 +24,7 @@ Use this component to further explain,add commentary or provide context to your 
 ```html
 <figure aria-labelledby="figcaption_id_1" class="c-imagecaption">
 	<img src="https://www.fillmurray.com/640/360" alt="Photo of Bill Murray">
-	<figcaption class="imagecaption__text">In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
+	<figcaption>In risus eros, auctor vel cursus a, ultricies vulputate massa. Sed sollicitudin augue id risus lacinia, placerat euismod sapien blandit.</figcaption>
 </figure>
 ```
 ## Content guidelines
