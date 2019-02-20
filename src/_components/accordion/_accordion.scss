@@ -25,21 +25,21 @@
 	cursor: pointer;
 }
 
-.c-accordion__content {
+.accordion__content {
 	max-height: 0;
 	overflow: hidden;
 	background-color: white;
 	transition: max-height 0.75s;
 }
 
-.c-accordion__spacing {
+.accordion__spacing {
 	padding: 25px 30px;
 }
 
 // Add Height when Content is Revealed
 // ----------------------------------------------
 
-.c-accordion input:checked ~ .c-accordion__content {
+.c-accordion input:checked ~ .accordion__content {
 	max-height: 1000px;
 	transition: max-height 1.5s;
 }
@@ -62,13 +62,13 @@
 // Checkboxes: Multiple Open
 // ----------------------------------------------
 
-.c-accordion input[type="checkbox"] + label::after {
-	content: "+";
+.c-accordion input[type='checkbox'] + label::after {
+	content: '+';
 }
 
 // Checkboxes: Single Open
 // ----------------------------------------------
 
-.c-accordion input[type="checkbox"]:checked + label::after {
+.c-accordion input[type='checkbox']:checked + label::after {
 	transform: rotate(135deg);
 }
