@@ -184,39 +184,70 @@ RDS</a>
 
 <p><strong>INSERT IMAGE</strong></p>
 
-<pre><code class="html">&lt;div class="l-body l-body--ama"&gt;
+<pre><code class="html">&lt;div class="l-body l-body--ama l-body--white"&gt;
+    &lt;div class="body__container"&gt;
 
-    &lt;aside class="body__nav"&gt;
-        &lt;div class="u-block"&gt;
-            &lt;p&gt;Navigation&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/aside&gt;
-
-    &lt;main class="body__container"&gt;
-
-        &lt;div class="body__content"&gt;
-            &lt;div class="u-block u-block--s u-block--white"&gt;
-                &lt;h2&gt;First Block&lt;/h2&gt;
-                &lt;p&gt;Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.&lt;/p&gt;
+        &lt;aside class="body__nav"&gt;
+            &lt;div class="u-block u-block--m u-block--white"&gt;
+                &lt;p&gt;This is a white block&lt;/p&gt;
             &lt;/div&gt;
-            &lt;div class="u-block u-block--s u-block--white"&gt;
-                &lt;h2&gt;Second Block&lt;/h2&gt;
-                &lt;p&gt;Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.&lt;/p&gt;
+            &lt;div class="u-block u-block--m u-block--white"&gt;
+                &lt;p&gt;This is a white block&lt;/p&gt;
             &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;aside class="body__sidebar"&gt;
-            &lt;div class="u-block u-block--s u-block--white"&gt;
-                &lt;p&gt;This is a block in the right hand aside&lt;/p&gt;
+            &lt;div class="u-block u-block--m u-block--grey"&gt;
+                &lt;p&gt;This is a grey block&lt;/p&gt;
             &lt;/div&gt;
         &lt;/aside&gt;
 
-    &lt;/main&gt;
+        &lt;main class="body__main"&gt;
 
+            &lt;div class="body__content"&gt;
+                &lt;div class="u-block u-block--m u-block--white"&gt;
+                    &lt;h2&gt;White Block&lt;/h2&gt;
+                    &lt;p&gt;Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="u-block u-block--m u-block--white"&gt;
+                    &lt;h2&gt;White Block&lt;/h2&gt;
+                    &lt;p&gt;Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="u-block u-block--m u-block--grey"&gt;
+                    &lt;h2&gt;Grey Block&lt;/h2&gt;
+                    &lt;p&gt;Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="u-block u-block--m u-block--white"&gt;
+                    &lt;h2&gt;White Block&lt;/h2&gt;
+                    &lt;p&gt;Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;aside class="body__sidebar"&gt;
+                &lt;div class="u-block u-block--m u-block--grey"&gt;
+                    &lt;p&gt;This is a grey block&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="u-block u-block--m u-block--white"&gt;
+                    &lt;p&gt;This is a white block&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="u-block u-block--m u-block--white"&gt;
+                    &lt;p&gt;This is a white block&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/aside&gt;
+
+        &lt;/main&gt;
+
+    &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 
-<h2 id="modifiers">Modifiers</h2>
+<h2 id="required-modifier">Required Modifier</h2>
+
+<p>A background colour modifier is required at the <code>l-body</code> level. This not only set the layout background colour, but it also modifies the left and right padding of the same coloured blocks used within the asides, or main content area, prevening additional spacing inside each layout column.</p>
+
+<ul>
+<li><code>l-body--white</code> -- makes the full width of the layout background white, and removes the left and right padding on all white blocks used inside the layout</li>
+<li><code>l-body--grey</code> -- makes the full width of the layout background grey, and removes the left and right padding on all grey blocks used inside the layout</li>
+</ul>
+
+<h2 id="optional-modifiers">Optional Modifiers</h2>
 
 <p>There are 2 modifiers available. One will provide a slightly large right hand aisde, while the other will position the right hand aside above the main content area below 720px. To use one or both modifiers, add the following classes to the main layout div, modifying the <code>l-body</code> class.</p>
 
@@ -284,8 +315,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu--1-8" type="checkbox" hidden/>
-                    <label for="menu--1-8">
+                                <input id="menu--1-104" type="checkbox" hidden/>
+                    <label for="menu--1-104">
                         <a class="" href="#">Level 1-1</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -293,8 +324,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu-2-1-152" type="checkbox" hidden/>
-                    <label for="menu-2-1-152">
+                                <input id="menu-2-1-177" type="checkbox" hidden/>
+                    <label for="menu-2-1-177">
                         <a class="" href="#">Level 2-1</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -314,8 +345,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu-2-1-196" type="checkbox" hidden/>
-                    <label for="menu-2-1-196">
+                                <input id="menu-2-1-188" type="checkbox" hidden/>
+                    <label for="menu-2-1-188">
                         <a class="" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -332,8 +363,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu--1-149" type="checkbox" hidden/>
-                    <label for="menu--1-149">
+                                <input id="menu--1-79" type="checkbox" hidden/>
+                    <label for="menu--1-79">
                         <a class="" href="#">First Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -341,8 +372,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu-2-1-174" type="checkbox" hidden/>
-                    <label for="menu-2-1-174">
+                                <input id="menu-2-1-96" type="checkbox" hidden/>
+                    <label for="menu-2-1-96">
                         <a class="" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -362,8 +393,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu-2-1-127" type="checkbox" hidden/>
-                    <label for="menu-2-1-127">
+                                <input id="menu-2-1-187" type="checkbox" hidden/>
+                    <label for="menu-2-1-187">
                         <a class="" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>

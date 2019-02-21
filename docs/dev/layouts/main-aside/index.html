@@ -180,33 +180,58 @@ RDS</a>
 
 <p><strong>INSERT IMAGE</strong></p>
 
-<pre><code class="html">&lt;div class="l-body l-body--ma"&gt;
+<pre><code class="html">&lt;div class="l-body l-body--ma l-body--white"&gt;
+    &lt;div class="body__container"&gt;
 
-    &lt;main class="body__container"&gt;
+        &lt;main class="body__main"&gt;
 
-        &lt;div class="body__content"&gt;
-            &lt;div class="u-block u-block--s u-block--white"&gt;
-                &lt;h2&gt;First Block&lt;/h2&gt;
-                &lt;p&gt;Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.&lt;/p&gt;
+            &lt;div class="body__content"&gt;
+                &lt;div class="u-block u-block--m u-block--white"&gt;
+                    &lt;h2&gt;White Block&lt;/h2&gt;
+                    &lt;p&gt;Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="u-block u-block--m u-block--white"&gt;
+                    &lt;h2&gt;White Block&lt;/h2&gt;
+                    &lt;p&gt;Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="u-block u-block--m u-block--grey"&gt;
+                    &lt;h2&gt;Grey Block&lt;/h2&gt;
+                    &lt;p&gt;Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="u-block u-block--m u-block--white"&gt;
+                    &lt;h2&gt;White Block&lt;/h2&gt;
+                    &lt;p&gt;Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.&lt;/p&gt;
+                &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class="u-block u-block--s u-block--white"&gt;
-                &lt;h2&gt;Second Block&lt;/h2&gt;
-                &lt;p&gt;Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
 
-        &lt;aside class="body__sidebar"&gt;
-            &lt;div class="u-block u-block--s u-block--white"&gt;
-                &lt;p&gt;This is a block in the right hand aside&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/aside&gt;
+            &lt;aside class="body__sidebar"&gt;
+                &lt;div class="u-block u-block--m u-block--grey"&gt;
+                    &lt;p&gt;This is a grey block&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="u-block u-block--m u-block--white"&gt;
+                    &lt;p&gt;This is a white block&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="u-block u-block--m u-block--white"&gt;
+                    &lt;p&gt;This is a white block&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/aside&gt;
 
-    &lt;/main&gt;
+        &lt;/main&gt;
 
+    &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 
-<h2 id="modifiers">Modifiers</h2>
+<h2 id="required-modifier">Required Modifier</h2>
+
+<p>A background colour modifier is required at the <code>l-body</code> level. This not only set the layout background colour, but it also modifies the left and right padding of the same coloured blocks used within the asides, or main content area, prevening additional spacing inside each layout column.</p>
+
+<ul>
+<li><code>l-body--white</code> -- makes the full width of the layout background white, and removes the left and right padding on all white blocks used inside the layout</li>
+<li><code>l-body--grey</code> -- makes the full width of the layout background grey, and removes the left and right padding on all grey blocks used inside the layout</li>
+</ul>
+
+<h2 id="optional-modifiers">Optional Modifiers</h2>
 
 <p>There are two modifiers available for this layout. One will provide a slightly larger right-hand aside, while the other will position the right-hand aside above the main content area he screen is sized below 720px.</p>
 
@@ -276,8 +301,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu--1-133" type="checkbox" hidden/>
-                    <label for="menu--1-133">
+                                <input id="menu--1-166" type="checkbox" hidden/>
+                    <label for="menu--1-166">
                         <a class="" href="#">Level 1-1</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -285,8 +310,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu-2-1-109" type="checkbox" hidden/>
-                    <label for="menu-2-1-109">
+                                <input id="menu-2-1-178" type="checkbox" hidden/>
+                    <label for="menu-2-1-178">
                         <a class="" href="#">Level 2-1</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -306,8 +331,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu-2-1-58" type="checkbox" hidden/>
-                    <label for="menu-2-1-58">
+                                <input id="menu-2-1-48" type="checkbox" hidden/>
+                    <label for="menu-2-1-48">
                         <a class="" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -324,8 +349,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu--1-9" type="checkbox" hidden/>
-                    <label for="menu--1-9">
+                                <input id="menu--1-50" type="checkbox" hidden/>
+                    <label for="menu--1-50">
                         <a class="" href="#">First Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -333,8 +358,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu-2-1-68" type="checkbox" hidden/>
-                    <label for="menu-2-1-68">
+                                <input id="menu-2-1-173" type="checkbox" hidden/>
+                    <label for="menu-2-1-173">
                         <a class="" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -354,8 +379,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu-2-1-93" type="checkbox" hidden/>
-                    <label for="menu-2-1-93">
+                                <input id="menu-2-1-46" type="checkbox" hidden/>
+                    <label for="menu-2-1-46">
                         <a class="" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
