@@ -50,9 +50,7 @@
 		display: block;
 		flex-grow: 0;
 		flex-shrink: 0;
-		flex-basis: calc(
-			200px + #{$block-padding-m} * 3
-		); // block-padding-m * 3 is to accommodate for 30px padding on either side of u-block + 30px margin on right of body__nav
+		flex-basis: calc(240px + #{$grid-gutter});
 		margin-right: $grid-gutter;
 		padding-right: $grid-gutter;
 		border-right: 1px solid $grey;
@@ -88,10 +86,8 @@
  */
 
 .l-body--am {
-	// max-width: calc(1028px + #{$block-padding-m} * 2);
-
 	.body__container {
-		max-width: calc(1028px + #{$block-padding-m} * 2);
+		max-width: calc(1008px + #{$block-padding-m} * 2);
 	}
 }
 
@@ -101,24 +97,18 @@
  */
 
 .l-body--ma {
-	// max-width: calc(1108px + #{$block-padding-m} * 2);
-
 	.body__container {
-		max-width: calc(1108px + #{$block-padding-m} * 2);
+		max-width: calc(1068px + #{$block-padding-m} * 2);
 	}
 
 	@include media('>868px') {
 		.body__sidebar {
-			flex-basis: calc(
-				280px + #{$block-padding-m} * 3
-			); // block-padding-m * 3 is to accommodate for 30px padding on either side of u-block + 30px margin on left of body__nav
+			flex-basis: calc(300px + #{$grid-gutter});
 		}
 
 		&.l-body--sidebar-large {
 			.body__sidebar {
-				flex-basis: calc(
-					350px + #{$block-padding-m} * 3
-				); // block-padding-m * 3 is to accommodate for 30px padding on either side of u-block + 30px margin on left of body__nav
+				flex-basis: calc(400px + #{$grid-gutter});
 			}
 		}
 	}
@@ -136,24 +126,18 @@
  */
 
 .l-body--ama {
-	// max-width: calc(1368px + #{$block-padding-m} * 2);
-
 	.body__container {
 		max-width: calc(1368px + #{$block-padding-m} * 2);
 	}
 
 	@include media('>1112px') {
 		.body__sidebar {
-			flex-basis: calc(
-				280px + #{$block-padding-m} * 3
-			); // block-padding-m * 3 is to accommodate for 30px padding on either side of u-block + 30px margin on left of body__nav
+			flex-basis: calc(300px + #{$grid-gutter});
 		}
 
 		&.l-body--sidebar-large {
 			.body__sidebar {
-				flex-basis: calc(
-					350px + #{$block-padding-m} * 3
-				); // block-padding-m * 3 is to accommodate for 30px padding on either side of u-block + 30px margin on left of body__nav
+				flex-basis: calc(400px + #{$grid-gutter});
 			}
 		}
 	}
