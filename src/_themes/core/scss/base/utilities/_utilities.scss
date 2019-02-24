@@ -166,7 +166,7 @@
 	display: inline-flex;
 	align-items: center;
 	color: $black;
-	top: 0.15em;
+	//top: 0.15em;
 	position: relative;
 
 	&:hover {
@@ -183,10 +183,9 @@
 	}
 }
 
-//.u-icon--sa,
-//.u-icon--social svg {
-//	margin-right: 0;
-//}
+main .u-icon svg {
+	top: 0.15em;
+}
 
 a.u-icon svg:hover {
 	cursor: pointer;
@@ -199,7 +198,6 @@ a.u-icon svg:hover {
 .u-icon--grey svg path {
 	fill: $grey-vader;
 }
-
 
 .u-icon--circle {
 	&:before {
@@ -214,76 +212,6 @@ a.u-icon svg:hover {
 	svg {
 		padding: 0.3em;
 	}
-}
-
-////TODO right in docs how modifiers can have modifiers and the first must be there
-//.u-icon--circle--white {
-//	color: white;
-//
-//	&:before {
-//		background-color: white;
-//	}
-//}
-
-
-
-// TODO CLEAN UP
-.u-icon-bg,
-.u-img-bg {
-	display: block;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.u-icon-bg--overlay {
-	position: absolute; // note: containing element needs to be position: relative
-	top: 50%;
-	left: 50%;
-	transform: translateY(-50%) translateX(-50%);
-	width: 100%;
-	height: 100%;
-}
-
-.u-icon-bg--m {
-	background-size: 30px;
-	width: 30px;
-	height: 30px;
-	display: block;
-}
-
-.u-icon--xxs svg {
-	width: 10px;
-	height: 10px;
-}
-
-.u-icon--xs svg {
-	width: 20px;
-	height: 20px;
-}
-
-.u-icon--s svg {
-	width: 25px;
-	height: 25px;
-}
-
-.u-icon--m svg {
-	width: 30px;
-	height: 30px;
-}
-
-.u-icon--l svg {
-	width: 40px;
-	height: 40px;
-}
-
-.u-icon--xl svg {
-	width: 55px;
-	height: 55px;
-}
-
-.u-icon--xxl svg {
-	width: 75px;
-	height: 75px;
 }
 
 // 4. Property overrides

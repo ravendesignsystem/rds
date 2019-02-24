@@ -1,15 +1,15 @@
 {% macro card(settings, data) %}
-{% if settings.title|length -%}
+{% if settings.title -%}
 <section class="u-block u-block--s{% if settings.color|length %} u-block--{{ settings.color }}{% endif %}">
     <h2 class="u-no-borders">{{ settings.heading }}</h2>
 {% endif %}
 <article class="c-card{% if data.img == false %} c-card--no-img{% endif %}{% if data.name %} c-card--people{% endif %}" itemscope itemtype="{% if settings.variant == "news" %}http://schema.org/NewsArticle{% elseif settings.variant == "people" %}http://schema.org/Person{% elseif settings.variant == "video" %}http://schema.org/VideoObject{% else %}http://schema.org/Article{% endif %}">
     <a href="{{ data.url }}" itemprop="url">
-{% if data.img|length %}
+{% if data.img %}
         <figure class="card__figure{% if settings.variant == "video" %} u-overlay u-overlay--light{% endif %}" itemscope itemtype="http://schema.org/ImageObject">
             <img src="{{ data.img }}" alt="Raven standing">
 {% if settings.variant == "video" %}
-            <span class="card__icon c-icon-play-button--white u-icon-bg u-icon-bg--overlay" title="Video" aria-hidden="true"></span>
+            <span class="card__icon" title="Video" aria-hidden="true"></span>
 {% endif %}
         </figure>
 {% endif %}
@@ -18,7 +18,7 @@
             <time class="card__date" datetime="{{ data.date }}" itemprop="datePublished" content="{{ data.date }}">{{ data.date|date("l, F jS") }}</time>
 {% endif %}
             <h3 class="card__title" itemprop="{% if settings.variant == "news" %}headline{% else %}name{% endif %}">{% if data.name %}{{ data.name }}{% else %}{{ data.title }}{% endif %}</h3>
-{% if data.text|length %}
+{% if data.text %}
             <p class="card__text{% if item.action|length -%} card__text-action{% endif %}" itemprop="description">{{ item.text|length > 105 ? item.text|slice(0, 105) ~ '...' : data.text  }}</p>
 {% endif %}
         </div>

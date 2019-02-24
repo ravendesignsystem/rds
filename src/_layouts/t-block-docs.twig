@@ -6,7 +6,7 @@
     <section class="u-block u-block--s u-block--white">
         <div class="b-tabs" role="tablist">
             <div class="b-tabs__tab" role="tab">
-                <a class="b-tabs__button u-icon--xxs" href="#">{% include "icons/code.svg" ignore missing %} HTML</a>
+                <a class="b-tabs__button u-icon" href="#">{% include "icons/code.svg" ignore missing %} HTML</a>
                 <div class="b-tabs__panel" role="tabpanel">
                 <pre>
                     <code class="html">{% filter escape -%}
@@ -18,7 +18,7 @@
             </div>
             {#Block info#}
             <div class="b-tabs__tab" role="tab">
-                <a class="b-tabs__button u-icon--xxs" href="#">{% include "icons/info.svg" ignore missing %} Info</a>
+                <a class="b-tabs__button u-icon" href="#">{% include "icons/info.svg" ignore missing %} Info</a>
                 <div class="b-tabs__panel" role="tabpanel">
                     <h2>Metadata</h2>
                     <dl>
@@ -27,11 +27,11 @@
                         {# Status - Ready, Under Review, Deprecated, Unavailable #}
                         <dt>Status</dt>
                         <dd>{% if page.meta.status == "under review" %}
-                                <span class="u-icon--text u-icon--orange">{% include "icons/alert.svg" ignore missing %}Under review</span>
+                                <span class="u-icon--orange">{% include "icons/alert.svg" ignore missing %}Under review</span>
                             {% elseif page.meta.status == "ready" %}
-                                <span class="u-icon--text u-icon--left u-center-vert u-icon--green">{% include "icons/check-mark.svg" ignore missing %}Ready</span>
+                                <span class="u-icon--green">{% include "icons/check-mark.svg" ignore missing %}Ready</span>
                             {% else %}
-                                <span class="u-icon--text u-icon--left u-center-vert u-icon--active">{% include "icons/expired.svg" ignore missing %}Deprecated</span>
+                                <span class="">{% include "icons/expired.svg" ignore missing %}Deprecated</span>
                             {% endif %}
                         </dd>
                         <dt>Theme</dt>

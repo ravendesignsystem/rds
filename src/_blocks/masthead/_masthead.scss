@@ -211,12 +211,24 @@ nav + .masthead__primarynav > .masthead__site {
 		}
 	}
 
+	svg {
+		height: 20px;
+		width: 20px;
+	}
+
 	.c-submenu a {
 		padding-right: 25px;
 	}
 
 	.c-submenu a:after {
 		margin-right: 8px;
+	}
+
+	.submenu__menu {
+		svg {
+			height: 1em;
+			width: 1em;
+		}
 	}
 }
 
