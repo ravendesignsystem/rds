@@ -235,8 +235,8 @@
 
 	svg {
 		position: absolute;
-		top: calc(50% - 15px);
-		left: calc(50% - 15px);
+		top: calc(50% - 15px); // calc is used to determine center by subtracting half the height of the icon
+		left: calc(50% - 15px); // calc is used to determine center by subtracting half the width of the icon
 		width: 30px;
 		height: 30px;
 		fill: white;
