@@ -8,6 +8,8 @@ if (document.getElementsByClassName('b-docs-textimg').length > 0) {
 		'http://cu-rds.s3.amazonaws.com/docs/assets/home-hero-1.svg',
 		'http://cu-rds.s3.amazonaws.com/docs/assets/home-hero-2.svg',
 		'http://cu-rds.s3.amazonaws.com/docs/assets/home-hero-3.png',
+		'http://cu-rds.s3.amazonaws.com/docs/assets/home-hero-3.png',
+		'http://cu-rds.s3.amazonaws.com/docs/assets/home-hero-3.png'
 	];
 
 	let size = imgs.length;

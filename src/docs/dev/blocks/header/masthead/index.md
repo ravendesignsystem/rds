@@ -10,7 +10,7 @@ banner:
 
 TODO: Review and rewrite, ignore below
 
-As the first block located on top of the page, the masthead is a key toolbar used for primary actions, such as, navigation, search and displaying a site's title and brand. The masthead block is also used for secondary actions, such as user profile actions and other calls to action.
+As the first block located on top of the page, the masthead is an essential toolbar used for primary actions, such as navigation, search and displaying a site's title and brand. The masthead block can also be used for secondary actions, such as user profile actions and other calls to action.
 
 ## Block dependencies
 
@@ -24,11 +24,11 @@ The masthead block requires the use of JavaScript to function. Make sure the fol
 
 ### Mobile Menu
 
-The elements available within the masthead block differ depending on screen size. A key masthead element that is only visible on small screens is the mobile menu ("hamburger") button. The mobile menu button launches a modal containing the the block `b-menu`, which should contain your site-wide navigation. All of the code below assumes your application requires a mobile menu and includes the code for the button. The menu that gets called by the button is another block, 'b-menu', that needs to be on all pages. View the [b-menu](#) documentation for further implementation notes and reference.
+The elements visible within the masthead block differ depending on screen size. A key masthead element that is only visible on small screens is the mobile menu ("hamburger") button. The mobile menu button launches a modal containing the block  `b-menu`, which should contain your site-wide navigation. All of the code examples below assume your application requires a mobile menu and includes the code for the button. The menu that gets called by the button is another block, 'b-menu', that needs to be on all pages. View the [b-menu](#) documentation for further implementation notes and reference.
 
 ### Getting started with the masthead block
 
-The simplest way to get started with a setup that includes the masthead block and its dependencies, is to start your application using one of the RDS [theme templates](#) or the [getting started template](/docs/dev/getting-started). Both contain the masthead block and all of the required code.
+Because of these dependencies, the simplest way to get started with a setup that includes the masthead block and its dependencies, is to start your application using one of the RDS [theme templates](#) or the [getting started template](/docs/dev/getting-started). Both contain the masthead block and all of the required code.
 
 ## Base Masthead
 
