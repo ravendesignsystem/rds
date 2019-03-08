@@ -42,7 +42,9 @@ html {
 body {
 	background-color: white;
 	margin: 0;
-	font-family: $font-family;
+	font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', -apple-system,
+	'blinkmacsystemfont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica',
+	'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 	font-style: normal;
 	color: $black;
 }

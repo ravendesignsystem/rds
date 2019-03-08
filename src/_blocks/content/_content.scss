@@ -1,9 +1,10 @@
 .b-content {
 	a {
-		color: $red;
+		color: $link;
 
 		&:hover {
 			text-decoration: underline;
+			color: $red;
 		}
 	}
 
