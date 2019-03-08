@@ -81,6 +81,12 @@ input[type='submit']:hover {
 
 button {
 	cursor: pointer;
+	padding: 0;
+	border: none;
+	outline: none;
+	font: inherit;
+	color: inherit;
+	background: none;
 }
 
 // 3. Headings
