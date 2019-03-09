@@ -1,3 +1,59 @@
+// Core v 1.0.0
+
+// Base partials
+// -------------
+// "Maintainable media queries"
+@import 'base/vendor/include-media';
+// Project variables
+@import 'base/vars/vars';
+// Reset and baseline element styles
+@import 'base/reboot/reboot';
+// Although seemingly unremarkable in appearance,
+// the utility belt is one of Batman's most important tools in fighting crime.
+@import 'base/utilities/utilities';
+
+// Layouts
+// -------
+@import '../../../_layouts/body/layouts';
+@import '../../../_layouts/overlays/modal/modal';
+
+// Blocks
+// ------
+
+// header blocks
+@import '../../../_blocks/masthead/masthead';
+@import '../../../_blocks/banner/banner';
+// content blocks
+@import '../../../_blocks/content/content';
+// footer blocks
+@import '../../../_blocks/footerbrand/footerbrand';
+@import '../../../_blocks/footersimple/footersimple';
+@import '../../../_blocks/footersitemap/footersitemap';
+// nav blocks
+@import '../../../_blocks/login/login';
+@import '../../../_blocks/menu/menu';
+
+// Core Components
+// ---------------
+@import '../../../_components/badge/badge';
+@import '../../../_components/heading/heading';
+@import '../../../_components/form/form';
+@import '../../../_components/searchform/searchform';
+// Buttons
+@import '../../../_components/buttoncta/buttoncta';
+@import '../../../_components/buttonhamburger/buttonhamburger';
+@import '../../../_components/card/card';
+@import '../../../_components/icons/icons'; // TODO review this! why not use utility classes?
+// Content
+@import '../../../_components/accordion/accordion';
+@import '../../../_components/imagecaption/imagecaption'; // *** required ***
+@import '../../../_components/table/table'; // *** required ***
+@import '../../../_components/video/video'; // *** required ***
+// Icons
+@import '../../../_components/buttonsocial/buttonsocial';
+// Menu
+@import '../../../_components/menupopup/menupopup';
+
 /*
                           .'`  '-.
                          /     _  \
@@ -23,71 +79,4 @@
      /  / /     ,###"
     /.'/_/   ,###"
     |_/    ,##
-
-Important!
-partials marked
-*** required ***
-must be imported  */
-
-// Base partials
-// -------------
-// "Maintainable media queries"
-@import 'base/vendor/include-media'; // *** required ***
-// Project variables
-
-@import 'base/vars/vars'; // *** required ***
-
-// Reset and baseline element styles
-@import 'base/reboot/reboot'; // *** required ***
-
-// Although seemingly unremarkable in appearance,
-// the utility belt is one of Batman's most important tools in fighting crime.
-@import 'base/utilities/utilities'; // *** required ***
-
-// Layouts
-// -------
-@import '../../../_layouts/body/layouts'; // *** required ***
-@import '../../../_layouts/overlays/modal/modal'; // *** required ***
-
-// Blocks
-// ------
-// header blocks
-@import '../../../_blocks/masthead/masthead';
-@import '../../../_blocks/banner/banner';
-
-// content blocks
-@import '../../../_blocks/content/content';
-
-// footer blocks
-@import '../../../_blocks/footerbrand/footerbrand';
-@import '../../../_blocks/footersimple/footersimple';
-@import '../../../_blocks/footersitemap/footersitemap';
-
-// nav blocks
-@import '../../../_blocks/login/login';
-@import '../../../_blocks/menu/menu';
-
-// Core Components
-// ---------------
-@import '../../../_components/badge/badge';
-@import '../../../_components/heading/heading';
-@import '../../../_components/form/form';
-@import '../../../_components/searchform/searchform';
-
-// Buttons
-@import '../../../_components/buttoncta/buttoncta';
-@import '../../../_components/buttonhamburger/buttonhamburger';
-@import '../../../_components/card/card';
-@import '../../../_components/icons/icons'; // TODO review this! why not use utility classes?
-
-// Content
-@import '../../../_components/accordion/accordion';
-@import '../../../_components/imagecaption/imagecaption'; // *** required ***
-@import '../../../_components/table/table'; // *** required ***
-@import '../../../_components/video/video'; // *** required ***
-
-// Icons
-@import '../../../_components/buttonsocial/buttonsocial';
-
-// Menu
-@import '../../../_components/submenu/submenu';
+ */

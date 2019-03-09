@@ -4,17 +4,17 @@
 	<div>
 		<nav aria-label="Site title and subsite navigation" role="navigation">
 
-			<h2 class="masthead__site c-submenu">
+			<h2 class="masthead__site c-menupopup">
 				<a href="{{ site.url }}">{% include 'icons/mark-ravens.svg' %}RDS</a>
 			</h2>
 
-			<ul class="submenu__menu" aria-label="submenu">
+			<ul class="menupopup__menu" aria-label="menupopup">
 				<li>
 					<a href="{{ site.url }}">{{ source('icons/home.svg') }}
 						RDS home
 					</a>
 				</li>
-				<li class="submenu__title">Subsites:</li>
+				<li class="menupopup__title">Subsites:</li>
 				<li>
 					<a href="{{ site.url }}dev/">{{ source('icons/code.svg') }}
 						Dev
@@ -52,8 +52,8 @@
 			</h2>
 			<ul role="menu">
                 {% if page.subsite == 'dev' %}
-				<li class="c-submenu"><a href="#">Docs</a>
-					<ul class="submenu__menu" aria-label="submenu">
+				<li class="c-menupopup"><a href="#">Docs</a>
+					<ul class="menupopup__menu" aria-label="menupopup">
 						<li>
 							<a href="/dev/docs/start/">Getting started</a>
 						</li>
@@ -96,9 +96,9 @@
 	</div>
 	<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
 		<ul>
-			<li class="c-submenu c-submenu--right">
+			<li class="c-menupopup c-menupopup--right">
 				<a class="u-icon" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %} Github</a>
-				<ul class="submenu__menu" aria-label="submenu" aria-expanded="false">
+				<ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
 					<li>
 						<a href="https://github.com/ravendesignsystem/rds"><svg width="24" height="24" viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M16.286 3.5l-2.572 2.571 6 6-6 6 2.572 2.572L24 12.07 16.286 3.5zm-8.572 0L0 12.071l7.714 8.572 2.572-2.572-6-6 6-6L7.714 3.5z"  /></svg>
 							RDS

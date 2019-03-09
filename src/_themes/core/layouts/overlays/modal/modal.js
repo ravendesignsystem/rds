@@ -9,7 +9,7 @@
 		mastheadSearch = document.querySelector('.masthead__search'),
 		mastheadHamburger = document.querySelector('.masthead__hamburger'),
 		mastheadSite = document.querySelector('.masthead__site'),
-		mastheadSiteMenu = document.querySelector('.submenu__menu'),
+		mastheadSiteMenu = document.querySelector('.menupopup__menu'),
 		// masthead buttons
 		hamburger = document.querySelector('.c-hamburger'),
 		navMoreBtn = document.querySelector('.masthead__more'),
@@ -45,7 +45,7 @@
 			modal.classList.toggle('is-hidden');
 			hamburger.classList.toggle('is-active');
 			modal.classList.remove('u-bg-grey');
-			mastheadSite.classList.toggle('c-submenu');
+			mastheadSite.classList.toggle('c-menupopup');
 			window.setTimeout(function() {
 				mastheadSiteMenu.classList.toggle('is-hidden');
 			}, 350);

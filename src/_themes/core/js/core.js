@@ -7,3 +7,4 @@ import '../../../_blocks/menu/menu';
 
 // core component scripts
 import '../../../_components/accordion/accordion';
+import '../../../_components/menupopup/menupopup';

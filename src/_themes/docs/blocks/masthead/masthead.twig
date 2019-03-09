@@ -5,17 +5,17 @@
 		<div>
 			<nav aria-label="Site title and subsite navigation" role="navigation">
 
-				<h2 class="masthead__site c-submenu">
+				<h2 class="masthead__site c-menupopup">
 					<a href="#">{% include 'icons/mark-ravens.svg' %}RDS</a>
 				</h2>
 
-				<ul class="submenu__menu" aria-label="submenu">
+				<ul class="menupopup__menu" aria-label="menupopup">
 					<li>
 						<a class="u-icon" href="{{ site.url }}">{% include 'icons/home.svg' %}
 							RDS home
 						</a>
 					</li>
-					<li class="submenu__title">Subsites:</li>
+					<li class="menupopup__title">Subsites:</li>
 					<li>
 						<a class="u-icon" href="{{ site.url }}dev/">{% include 'icons/code.svg' %}
 							Dev
@@ -53,8 +53,8 @@
 				</h2>
 				<ul role="menu">
 					{% if page.subsite == 'dev' %}
-					<li class="c-submenu"><a href="#">RDS, the system</a>
-						<ul class="submenu__menu" aria-label="submenu">
+					<li class="c-menupopup"><a href="#">RDS, the system</a>
+						<ul class="menupopup__menu" aria-label="menupopup">
 							<li>
 								<a href="{{ site.url }}dev/docs/getting-started/">Getting started</a>
 							</li>
@@ -75,7 +75,16 @@
 							</li>
 						</ul>
 					</li>
-					<li class="c-submenu"><button aria-label="Open Menu">A button</button></li>
+					<li><button class="c-menupopup" aria-label="Open Menu">A button</button>
+						<ul class="menupopup__menu" aria-label="menupopup">
+							<li>
+								<a href="{{ site.url }}dev/docs/getting-started/">Getting started</a>
+							</li>
+							<li>
+								<a href="{{ site.url }}dev/docs/understanding-the-system/">Understanding the system</a>
+							</li>
+						</ul>
+					</li>
 					<li><a href="{{ site.url }}dev/blocks/">Blocks</a></li>
 					<li><a href="{{ site.url }}dev/components/">Components</a></li>
 					<li><a href="{{ site.url }}dev/themes/">Themes</a></li>
@@ -91,9 +100,9 @@
 		</div>
 		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
 			<ul>
-				<li class="masthead__cta c-submenu c-submenu--right">
+				<li class="masthead__cta c-menupopup c-menupopup--right">
 					<a class="u-icon" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %} Github</a>
-					<ul class="submenu__menu" aria-label="submenu" aria-expanded="false">
+					<ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
 						<li>
 							<a class="u-icon" href="https://github.com/ravendesignsystem/">{% include 'icons/code.svg' %}
 								Releases

@@ -1,10 +1,10 @@
-.c-submenu {
+.c-menupopup {
 	position: relative;
 	cursor: pointer;
 }
 
 // carrot
-.c-submenu > a::after {
+.c-menupopup > a::after, button.c-menupopup::after, a.c-menupopup::after {
 	position: absolute;
 	content: '';
 	width: 0;
@@ -18,8 +18,8 @@
 	//margin-left: 4px;
 }
 
-.c-submenu .submenu__menu,
-.c-submenu + .submenu__menu {
+.c-menupopup .menupopup__menu,
+.c-menupopup + .menupopup__menu {
 	background-color: white;
 	background-clip: padding-box;
 	visibility: hidden;
@@ -77,8 +77,8 @@
 	}
 }
 
-.c-submenu--right .submenu__menu,
-.c-submenu--right + .submenu__menu {
+.c-menupopup--right .menupopup__menu,
+.c-menupopup--right + .menupopup__menu {
 	right: 0;
 	left: auto;
 
@@ -96,17 +96,22 @@
 		left: auto;
 	}
 }
-.c-submenu:hover + .submenu__menu,
-.c-submenu + .submenu__menu:hover,
-.c-submenu:hover > .submenu__menu,
-.c-submenu:focus-within > .submenu__menu,
-.c-submenu .submenu__menu:hover,
-.c-submenu .submenu__menu:focus {
+.c-menupopup:hover + .menupopup__menu,
+.c-menupopup + .menupopup__menu:hover,
+.c-menupopup:hover > .menupopup__menu,
+.c-menupopup:focus-within > .menupopup__menu,
+.c-menupopup .menupopup__menu:hover,
+.c-menupopup .menupopup__menu:focus {
 	visibility: visible;
 	opacity: 1;
 }
 
-.c-submenu .submenu__menu li {
+button.c-menupopup:hover + .menupopup__menu {
+	visibility: hidden;
+	opacity: 0;
+}
+
+.c-menupopup .menupopup__menu li {
 	&:first-of-type {
 		margin: 5px 0 0 0;
 	}
@@ -116,7 +121,7 @@
 	}
 }
 
-.submenu__title {
+.menupopup__title {
 	border-top: 1px solid $grey-kenobi;
 	display: block;
 	text-transform: uppercase;
@@ -130,6 +135,6 @@
 	}
 }
 
-.submenu__menu li {
+.menupopup__menu li {
 	display: block;
 }

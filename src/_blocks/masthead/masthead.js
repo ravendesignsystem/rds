@@ -44,7 +44,7 @@ if (masthead.classList.contains('js-sticky-scroll')) {
 }
 
 const touchEventsExample = () => {
-	const el = documents.getElementsByTagName('.c-submenu');
+	const el = documents.getElementsByTagName('.c-menupopup');
 	el.addEventListener('touchstart', handleStart, false);
 	el.addEventListener('touchend', handleEnd, false);
 	el.addEventListener('touchcancel', handleCancel, false);

@@ -368,6 +368,12 @@ a.u-icon svg:hover {
 	display: none !important;
 }
 
+.is-visible {
+	display: inline-block !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
 .u-display-inline-b {
 	display: inline-block !important;
 }
