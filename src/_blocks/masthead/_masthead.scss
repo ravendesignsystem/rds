@@ -121,11 +121,7 @@ div.b-masthead ul.menupopup__menu {
 	overflow: hidden;
 
 	h2 {
-		display: none;
-
-		@include media('>=s') {
-			display: flex;
-		}
+		display: flex;
 	}
 
 	ul {
@@ -185,7 +181,7 @@ nav + .masthead__primarynav > .masthead__site {
 		display: flex;
 	}
 
-	li:not(.masthead__search):not(.masthead__hamburger) {
+	li:not(.masthead__search):not(.masthead__hamburger):not(.masthead__login) {
 		display: none;
 
 		@include media('>=s') {
