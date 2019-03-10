@@ -13,8 +13,8 @@
 		// masthead buttons
 		hamburger = document.querySelector('.c-hamburger'),
 		navMoreBtn = document.querySelector('.masthead__more'),
-		navSearch = document.querySelector('.masthead__search-btn'),
-		navLogin = document.querySelector('.masthead__login-btn'),
+		navSearch = document.querySelector('.masthead__search'),
+		navLogin = document.querySelector('.masthead__login'),
 		// for swapping menu from elsewhere into modal
 		navBody = document.querySelector('.has-b-menu'),
 		navMenu = document.querySelector('.b-menu');

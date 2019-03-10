@@ -116,7 +116,7 @@
 
     <div class="l-overlay-modal is-hidden">
         <div class="modal__search is-hidden">
-            {% include "search/search.twig" %}
+            {% include "search/search" %}
         </div>
         <div class="modal__menu is-hidden">
             <div class="is-hidden has-b-menu">
@@ -130,7 +130,7 @@
         <div class="modal__login is-hidden">
             <div class="b-login u-block">
                 <h1 class="login__heading">Login to Your App</h1>
-                <form class="c-form login__form" name="loginform" action="/" method="post" accept-charset="UTF-8">
+                <form class="c-form" name="loginform" action="/" method="post" accept-charset="UTF-8">
 
                     <label for="user_login">Username or Email</label>
                     <input type="text" id="user_login" name="log" class="login__field" value="" tabindex="1" autocapitalize="off" autocorrect="off" autofocus="autofocus" aria-required="true">

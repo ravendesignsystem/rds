@@ -6,7 +6,7 @@
 			<nav aria-label="Site title and subsite navigation" role="navigation">
 
 				<h2 class="masthead__site c-menupopup">
-					<a href="#">{% include 'icons/mark-ravens.svg' %}RDS</a>
+					<a href="#">{% include 'icons/mark-cushield.svg' %}RDS</a>
 				</h2>
 
 				<ul class="menupopup__menu" aria-label="menupopup">
@@ -39,7 +39,7 @@
 				</ul>
 			</nav>
 			{% if (page.subsite == 'dev') or (page.subsite == 'design') or (page.subsite == 'content') or (page.subsite == 'a11y') %}
-			<nav class="masthead__primarynav" aria-label="Subsite title and primary navigation" role="navigation">
+			<nav class="masthead__primarynav" aria-label="Subsite title and primary navigation">
 				<h2 class="masthead__site">
 					{% if page.subsite == 'dev' %}
 						<a href="{{ site.url }}dev/">Dev</a>
@@ -98,9 +98,9 @@
 				</ul>
 			</nav>{% endif %}
 		</div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
+		<nav class="masthead__controls" aria-label="Secondary navigation and controls">
 			<ul>
-				<li class="masthead__cta c-menupopup c-menupopup--right">
+				<li class="c-menupopup c-menupopup--right">
 					<a class="u-icon" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %} Github</a>
 					<ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
 						<li>

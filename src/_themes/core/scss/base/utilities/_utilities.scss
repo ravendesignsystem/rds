@@ -409,8 +409,7 @@ a.u-icon svg:hover {
 	margin-left: 30px;
 }
 
-// todo why is this here?
-// hide on small screens
+// hide above small screens
 @include media('<=s') {
 	.u-hide-s {
 		display: none;

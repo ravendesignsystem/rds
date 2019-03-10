@@ -55,14 +55,14 @@
 	display: inline;
 	line-height: 20px;
 
-	span {
-		display: none;
-	}
+	svg {
+		width: 18px;
+		height: 18px;
+		top: 5px;
 
-	@include media('<=s') {
-		svg {
-			width: 18px;
-			height: 18px;
+		@include media('>=s') {
+			width: 20px;
+			height: 20px;
 		}
 	}
 
