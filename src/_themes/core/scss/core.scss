@@ -4,10 +4,13 @@
 // -------------
 // "Maintainable media queries"
 @import 'base/vendor/include-media';
+
 // Project variables
 @import 'base/vars/vars';
+
 // Reset and baseline element styles
 @import 'base/reboot/reboot';
+
 // Although seemingly unremarkable in appearance,
 // the utility belt is one of Batman's most important tools in fighting crime.
 @import 'base/utilities/utilities';
@@ -23,12 +26,17 @@
 // header blocks
 @import '../../../_blocks/masthead/masthead';
 @import '../../../_blocks/banner/banner';
-// content blocks
+
+// main blocks
 @import '../../../_blocks/content/content';
+@import '../../../_blocks/textimg/textimg';
+@import '../../../_blocks/listing/listing';
+
 // footer blocks
 @import '../../../_blocks/footerbrand/footerbrand';
 @import '../../../_blocks/footersimple/footersimple';
 @import '../../../_blocks/footersitemap/footersitemap';
+
 // nav blocks
 @import '../../../_blocks/login/login';
 @import '../../../_blocks/menu/menu';
