@@ -58,9 +58,11 @@
 		}
 	}
 
-	.u-grid--s1 > * {
-		width: 100%;
-		margin-right: 0 !important;
+	@include media('<=s') {
+		.u-grid--s1 > * {
+			width: 100%;
+			margin-right: 0 !important;
+		}
 	}
 }
 
@@ -92,8 +94,10 @@
 	}
 }
 
-.u-grid--s1 {
-	grid-template-columns: repeat(1, 1fr);
+@include media('<=s') {
+	.u-grid--s1 {
+		grid-template-columns: repeat(1, 1fr);
+	}
 }
 
 // 2. Block utils
