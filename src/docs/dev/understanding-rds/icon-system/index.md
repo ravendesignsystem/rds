@@ -64,7 +64,7 @@ With the [exception of a few](#) icons, the majority of icons in RDS are **inten
 
 If you scroll up a bit and look on the right-side of the masthead across the top of this page, you will see a link to our Github projects. Even though the Github icon is used across the web and is well known, we still have the "Github" text accompanying the icon.
 
-<span class="u-icon">{% include 'icons/mark-github.svg' %}</span>Github
+<span class="u-icon">{% include 'icons/mark-github.svg' %} Github</span>
 
 ## Icon utility classes
 
@@ -119,7 +119,7 @@ Then even if the text size changes...
     </span>
 </p>
 ```
- <p style="font-size: 2.5em"><span class="u-icon u-icon--red">{% include 'icons/heart.svg' %} </span>love</p>
+ <p style="font-size: 2.5em"><span class="u-icon u-icon--red">{% include 'icons/heart.svg' %} love</span></p>
  
 ..the icon and text size remain proportional.
 
