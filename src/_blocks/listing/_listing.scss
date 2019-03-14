@@ -6,6 +6,10 @@
 // Main Selectors
 //================================
 
+.b-listing + .c-buttoncta {
+	margin-top: $block-margin;
+}
+
 .listing__list {
 	list-style-type: none;
 	margin: 0;
