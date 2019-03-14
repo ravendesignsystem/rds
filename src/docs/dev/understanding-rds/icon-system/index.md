@@ -75,7 +75,7 @@ Apply base icon styling by wrapping all icons in a `<span>` **OR** `<a>` element
 ```
 This sets an icon's default height and width equal to 1em to align with accompanying text of varying font sizes. In addition, it sets the default icon color to RDS' near black.
 
-**Remember**: we always need a text label. 
+**Remember**: with the exception of our universal [icons](#), they always need a text label. 
 
 Text labels should be included within the `u-icon` element.
 
@@ -125,26 +125,6 @@ Then even if the text size changes...
 
 ### Circular icons 
 
-<a class="c-iconsocial c-iconsocial--facebook u-icon" href="https://www.facebook.com/carletonuniversity/">{% include 'icons/facebook.svg' %}
-<span class="u-visually-hidden">Like us on Facebook</span></a> 
-
-<a class="c-iconsocial c-iconsocial--instagram u-icon" href="https://www.instagram.com/carleton_u/">{% include 'icons/instagram.svg' %}
-<span class="u-visually-hidden">Follow us on Instagram</span></a> <a class="u-icon u-icon--social u-icon--social--twitter " href="https://twitter.com/@Carleton_U">{% include 'icons/twitter.svg' %} <span class="u-visually-hidden">Follow us on Twitter</span></a>
-
-<a class="u-icon u-icon--social u-icon--social--youtube" href="https://www.facebook.com/carletonuniversity/">{% include 'icons/youtube.svg' %} <span class="u-visually-hidden">https://www.youtube.com/user/carletonuvideos</span></a>
-
-<a class="u-icon u-icon--social u-icon--social--linkedin" href="https://www.linkedin.com/school/carleton-university/">{% include 'icons/linkedin.svg' %} <span class="u-visually-hidden">View us on Linkedin</span></a>
-
-<a class="u-icon u-icon--social u-icon--social--youtube" href="https://www.facebook.com/carletonuniversity/">{% include 'icons/youtube.svg' %} <span class="u-visually-hidden">https://www.youtube.com/user/carletonuvideos</span></a>
-
-<a class="u-icon u-icon--social u-icon--social--s u-icon--social--linkedin" href="https://www.linkedin.com/school/carleton-university/">{% include 'icons/linkedin.svg' %} <span class="u-visually-hidden">View us on Linkedin</span></a>
-
-<a class="u-icon u-icon--social u-icon--social--pinterest" href="https://www.pinterest.ca/carletonu/">{% include 'icons/pinterest.svg' %} <span class="u-visually-hidden">Check us out on Pinterest</span></a>
-
-<p style="color: #fff;background:#222;padding: 10px;"><a class="u-icon u-icon--social u-icon--social--pinterest" href="https://www.facebook.com/carletonuniversity/">{% include 'icons/pinterest.svg' %} <span class="u-visually-hidden">Check us out on Pinterest</span></a></p>
-
-**TODO overflow: visible; broken in Safari :()**
-
 Add a circular background to any icon using the `u-icon--circle` modifier.
 
 ```html
@@ -157,11 +137,17 @@ Add a circular background to any icon using the `u-icon--circle` modifier.
 
 <p style="font-size: 2.5em"><span class="u-icon u-icon--circle">{% include 'icons/heart.svg' %}<span>love</span></span></p>
 
-Notice how the icon shrinks and the background height remains the sames as the label. For guidance on when to use circular background icons, view the [design guidelines for icons](#).
+Notice how the icon shrinks and the background height remains the same size as the label. For guidance on when to use circular background icons, view the [design guidelines for icons](#).
 
 **Note**: if using a circular icon, you can **not** change an icon's color.
 
-### Icon sizes
+#### Social Icons
+
+If you want to link up social media accounts, the [Social buton](/dev/components/buttons/social-button) components provide this with branded rollover colours.
+
+<a class="c-buttonsocial c-buttonsocial--facebook u-icon u-icon--circle" href="https://www.facebook.com/carletonuniversity/">{% include 'icons/facebook.svg' %} <span class="u-visually-hidden">Like us on Facebook</span></a> <a class="c-buttonsocial c-buttonsocial--instagram u-icon u-icon--circle" href="https://www.instagram.com/carleton_u/">{% include 'icons/instagram.svg' %} <span class="u-visually-hidden">Follow us on Instagram</span></a> <a class="c-buttonsocial c-buttonsocial--twitter u-icon u-icon--circle" href="https://twitter.com/@Carleton_U">{% include 'icons/twitter.svg' %} <span class="u-visually-hidden">Follow us on Twitter</span></a> <a class="c-buttonsocial c-buttonsocial--youtube u-icon u-icon--circle" href="https://www.facebook.com/carletonuniversity/">{% include 'icons/youtube.svg' %} <span class="u-visually-hidden">https://www.youtube.com/user/carletonuvideos</span></a> <a class="c-buttonsocial c-buttonsocial--linkedin u-icon u-icon--circle" href="https://www.linkedin.com/school/carleton-university/">{% include 'icons/linkedin.svg' %} <span class="u-visually-hidden">View us on Linkedin</span></a> <a class="c-buttonsocial c-buttonsocial--pinterest u-icon u-icon--circle" href="https://www.pinterest.ca/carletonu/">{% include 'icons/pinterest.svg' %} <span class="u-visually-hidden">Check us out on Pinterest</span></a>
+
+## Icon sizes
 
 Since the methods above let us easily match icon size with accompanying text, RDS does not provide any utility classes for icon sizes. If you need a certain size icon, handle the sizing in the block's CSS. You should, however, try and align with RDS's [typographic scale](#) for sizing.
 
