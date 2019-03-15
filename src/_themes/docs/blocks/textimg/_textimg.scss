@@ -31,14 +31,13 @@
 		}
 
 		.textimg__img {
-
 			animation-name: u-ani-fadein;
 			animation-duration: 1000ms;
 			animation-fill-mode: forwards;
 			//transition: background-color 10000ms linear;
 		}
 
-		@include media('>=720px','<=960px') {
+		@include media('>=720px', '<=960px') {
 			max-height: 350px;
 		}
 	}
