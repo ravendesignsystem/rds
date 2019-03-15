@@ -2,7 +2,7 @@
 	.b-docs-textimg {
 		padding: 50px 0 20px;
 
-		& .textimg__heading {
+		.textimg__heading {
 			font-size: $pixel48;
 			padding-bottom: 0;
 			margin-bottom: 10px;
@@ -12,7 +12,7 @@
 			}
 		}
 
-		& .textimg__desc p {
+		.textimg__desc p {
 			font-size: $pixel30;
 			color: $grey-luke;
 			line-height: 1.35;
@@ -21,7 +21,7 @@
 				font-size: $pixel24;
 			}
 
-			& a {
+			a {
 				color: white;
 
 				&:hover {
