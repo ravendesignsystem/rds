@@ -27,11 +27,31 @@
 	text-align: left;
 	border-bottom: none;
 	font-size: $pixel28;
+
+	@include media('>=820px','<=960px') {
+		max-width: 370px;
+		margin: 0;
+	}
+
+	@include media('>=720px','<=820px') {
+		max-width: 335px;
+		margin: 0;
+	}
 }
 
 .textimg__desc {
 	margin: 0 auto;
 	text-align: left;
+
+	@include media('>=820px','<=960px') {
+		max-width: 370px;
+		margin: 0;
+	}
+
+	@include media('>=720px','<=820px') {
+		max-width: 335px;
+		margin: 0;
+	}
 }
 
 .textimg__img {
