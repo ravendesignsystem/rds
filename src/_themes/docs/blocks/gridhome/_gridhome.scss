@@ -34,6 +34,7 @@
 }
 
 .docs-gridhome__colright {
+	display: block;
 
 	@include media('>=s') {
 		display: flex;
