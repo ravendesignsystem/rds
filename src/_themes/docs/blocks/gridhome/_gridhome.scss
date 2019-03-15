@@ -6,7 +6,7 @@
 	overflow: hidden;
 	position: relative;
 	background-color: $grey-kenobi;
-	padding: 30px;
+	padding: 15px;
 	color: $black;
 
 	&:hover {
@@ -24,22 +24,26 @@
 	& h2 {
 		border: none;
 	}
+
+	@include media('>=s') {
+		padding: 30px;
+	}
 }
 
 .docs-gridhome__panel--dev {
 	display: block;
 
 	& svg {
-		bottom: -65px;
-		right: 20px;
-		width: 200px;
+		bottom: -75px;
+		right: -20px;
+		width: 165px;
 	}
 
 	@include media('>=s') {
 		min-height: 420px;
 		display: flex;
 
-		& svg {
+		svg {
 			bottom: 30px;
 			left: 90px;
 			width: 450px;
@@ -74,12 +78,22 @@
 	min-height: 215px;
 
 	svg {
-		bottom: -32px;
+		bottom: -36px;
 		right: -30px;
+		width: 170px;
+	}
+	@include media('>=s') {
+		svg {
+			bottom: -32px;
+			right: -30px;
+			width: 280px;
+		}
 	}
 
-	h2 {
-		max-width: 160px;
+	@include media('>=s') {
+		h2 {
+			max-width: 160px;
+		}
 	}
 }
 
@@ -88,10 +102,9 @@
 	margin: 0 0 30px 0;
 
 	svg {
-		bottom: -25px;
-		right: 40px;
-		height: 185px;
-		width: 137px;
+		bottom: -5px;
+		right: 0;
+		width: 101px;
 	}
 
 	@include media('>=s') {
@@ -100,8 +113,6 @@
 		svg {
 			bottom: -10px;
 			left: 130px;
-			height: 106px;
-			width: 101px;
 		}
 	}
 }
@@ -109,16 +120,14 @@
 .docs-gridhome__panel--a11y {
 	svg {
 		bottom: -20px;
-		right: 40px;
-		width: 150px;
-		height: 150px;
+		right: 0;
+		width: 120px;
+		height: 120px;
 	}
 	@include media('>=s') {
 		& svg {
 			bottom: -20px;
 			left: 140px;
-			width: 110px;
-			height: 110px;
 		}
 	}
 }
