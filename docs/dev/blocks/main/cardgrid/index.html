@@ -226,7 +226,9 @@ RDS</a>
 
 <pre><code class="html">&lt;div class="u-block u-block--white u-block--s"&gt;
     &lt;div class="b-cardgrid u-grid u-grid--3"&gt;
-        {include card components}
+        {%include "card/data/card--base"%}
+        {%include "card/data/card--base"%}
+        {%include "card/data/card--base"%}
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -296,8 +298,154 @@ RDS</a>
 
 <pre><code class="html">&lt;div class="u-block u-block--white u-block--s"&gt;
     &lt;div class="b-cardgrid u-grid u-grid--4"&gt;
-        {include card components}
+        {%include "card/data/card--base"%}
+        {%include "card/data/card--base"%}
+        {%include "card/data/card--base"%}
+        {%include "card/data/card--base"%}
     &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3 id="card-grid-with-cta-link-or-button">Card grid with CTA link or button</h3>
+
+<p>If you need a 'Load more' button under the card grid add it within the <code>u-block</code> tag but outside of the <code>b-cardgrid</code> tag.
+    </div>
+</div>
+</p>
+
+<div class="u-block u-block--white u-block--m">
+    <div class="b-cardgrid u-grid u-grid--4">
+        <article class="c-card" itemscope itemtype="http://schema.org/Article">
+    <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+        <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
+            <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
+        </figure>
+        <div class="card__body">
+            <h3 class="card__title" itemprop="name">White-necked Raven</h3>
+        </div>
+    </a>
+</article>
+
+        <article class="c-card" itemscope itemtype="http://schema.org/Article">
+    <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+        <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
+            <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
+        </figure>
+        <div class="card__body">
+            <h3 class="card__title" itemprop="name">White-necked Raven</h3>
+        </div>
+    </a>
+</article>
+
+        <article class="c-card" itemscope itemtype="http://schema.org/Article">
+    <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+        <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
+            <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
+        </figure>
+        <div class="card__body">
+            <h3 class="card__title" itemprop="name">White-necked Raven</h3>
+        </div>
+    </a>
+</article>
+
+        <article class="c-card" itemscope itemtype="http://schema.org/Article">
+    <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+        <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
+            <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
+        </figure>
+        <div class="card__body">
+            <h3 class="card__title" itemprop="name">White-necked Raven</h3>
+        </div>
+    </a>
+</article>
+
+    </div>
+    <button class="c-buttoncta c-buttoncta--center" href="#">Load more</a>
+</div>
+
+<p><div class="u-block u-block--s">
+    <div class="b-content">
+</p>
+
+<pre><code>&lt;div class="u-block u-block--white u-block--m"&gt;
+    &lt;div class="b-cardgrid u-grid u-grid--4"&gt;
+        {%include "card/data/card--base"%}
+        {%include "card/data/card--base"%}
+        {%include "card/data/card--base"%}
+        {%include "card/data/card--base"%}
+    &lt;/div&gt;
+    &lt;button class="c-buttoncta c-buttoncta--center" href="#"&gt;Load more&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Or, if you want to use a CTA to link off to an archive or another page.</p>
+
+<p>    </div>
+</div>
+</p>
+
+<div class="u-block u-block--white u-block--m">
+    <div class="b-cardgrid u-grid u-grid--4">
+        <article class="c-card" itemscope itemtype="http://schema.org/Article">
+    <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+        <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
+            <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
+        </figure>
+        <div class="card__body">
+            <h3 class="card__title" itemprop="name">White-necked Raven</h3>
+        </div>
+    </a>
+</article>
+
+        <article class="c-card" itemscope itemtype="http://schema.org/Article">
+    <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+        <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
+            <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
+        </figure>
+        <div class="card__body">
+            <h3 class="card__title" itemprop="name">White-necked Raven</h3>
+        </div>
+    </a>
+</article>
+
+        <article class="c-card" itemscope itemtype="http://schema.org/Article">
+    <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+        <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
+            <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
+        </figure>
+        <div class="card__body">
+            <h3 class="card__title" itemprop="name">White-necked Raven</h3>
+        </div>
+    </a>
+</article>
+
+        <article class="c-card" itemscope itemtype="http://schema.org/Article">
+    <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+        <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
+            <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
+        </figure>
+        <div class="card__body">
+            <h3 class="card__title" itemprop="name">White-necked Raven</h3>
+        </div>
+    </a>
+</article>
+
+    </div>
+    <a class="c-buttoncta c-buttoncta--center" href="#">Visit archive page</a>
+</div>
+
+<p><div class="u-block u-block--s">
+    <div class="b-content">
+</p>
+
+<pre><code>&lt;div class="u-block u-block--white u-block--m"&gt;
+    &lt;div class="b-cardgrid u-grid u-grid--4"&gt;
+        {%include "card/data/card--base"%}
+        {%include "card/data/card--base"%}
+        {%include "card/data/card--base"%}
+        {%include "card/data/card--base"%}
+    &lt;/div&gt;
+    &lt;a class="c-buttoncta c-buttoncta--center" href="#"&gt;Visit archive page&lt;/a&gt;
 &lt;/div&gt;
 </code></pre>
 
@@ -374,7 +522,9 @@ RDS</a>
 
 <pre><code class="html">&lt;div class="u-block u-block--grey u-block--m"&gt;
     &lt;div class="b-cardgrid u-grid u-grid--4"&gt;
-        {include card components}
+        {%include "card/data/card--base"%}
+        {%include "card/data/card--base"%}
+        {%include "card/data/card--base"%}
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -452,8 +602,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu--1-161" type="checkbox" hidden/>
-                    <label for="menu--1-161">
+                                <input id="menu--1-46" type="checkbox" hidden/>
+                    <label for="menu--1-46">
                         <a class="" href="#">Level 1-1</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -461,8 +611,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu-2-1-190" type="checkbox" hidden/>
-                    <label for="menu-2-1-190">
+                                <input id="menu-2-1-52" type="checkbox" hidden/>
+                    <label for="menu-2-1-52">
                         <a class="" href="#">Level 2-1</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -482,8 +632,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu-2-1-85" type="checkbox" hidden/>
-                    <label for="menu-2-1-85">
+                                <input id="menu-2-1-140" type="checkbox" hidden/>
+                    <label for="menu-2-1-140">
                         <a class="" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -500,8 +650,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu--1-96" type="checkbox" hidden/>
-                    <label for="menu--1-96">
+                                <input id="menu--1-158" type="checkbox" hidden/>
+                    <label for="menu--1-158">
                         <a class="" href="#">First Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -509,8 +659,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu-2-1-9" type="checkbox" hidden/>
-                    <label for="menu-2-1-9">
+                                <input id="menu-2-1-92" type="checkbox" hidden/>
+                    <label for="menu-2-1-92">
                         <a class="" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -530,8 +680,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu-2-1-165" type="checkbox" hidden/>
-                    <label for="menu-2-1-165">
+                                <input id="menu-2-1-183" type="checkbox" hidden/>
+                    <label for="menu-2-1-183">
                         <a class="" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
