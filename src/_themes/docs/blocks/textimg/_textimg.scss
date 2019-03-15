@@ -5,12 +5,21 @@
 		& .textimg__heading {
 			font-size: $pixel48;
 			padding-bottom: 0;
+			margin-bottom: 10px;
+
+			@include media('<=960px') {
+				font-size: $pixel36;
+			}
 		}
 
 		& .textimg__desc p {
 			font-size: $pixel30;
 			color: $grey-luke;
 			line-height: 1.35;
+
+			@include media('<=960px') {
+				font-size: $pixel24;
+			}
 
 			& a {
 				color: white;
@@ -27,6 +36,10 @@
 			animation-duration: 1000ms;
 			animation-fill-mode: forwards;
 			//transition: background-color 10000ms linear;
+		}
+
+		@include media('>=720px','<=960px') {
+			max-height: 350px;
 		}
 	}
 }
