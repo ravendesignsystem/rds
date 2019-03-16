@@ -1,5 +1,6 @@
 ---
 layout: base
+subsite: dev
 title: Icon Library
 icons:
 - name: accessibility
@@ -10,7 +11,6 @@ icons:
 - name: arrow-left
 - name: arrow-right
 - name: arrow-up
-- name: artboard
 - name: backpack
 - name: beaker
 - name: bell
@@ -39,6 +39,11 @@ icons:
 - name: cloud-upload
 - name: code
 - name: code-snippet
+- name: cogs
+- name: comment
+- name: comment-discussion
+- name: compass
+- name: credit-card
 - name: dash
 - name: dashboard
 - name: database
@@ -98,7 +103,7 @@ icons:
 - name: law
 - name: light-bulb
 - name: line-graph
-- name: line-external
+- name: link-external
 - name: link
 - name: linkedin
 - name: list-ordered
@@ -108,6 +113,7 @@ icons:
 - name: mail-read
 - name: mail
 - name: map
+- name: mark-cushield
 - name: mark-github
 - name: mark-ravens
 - name: megaphone
@@ -184,3 +190,39 @@ icons:
 - name: youtube
 - name: zap
 ---
+<div class="u-block u-block--white u-block--s">
+<div class="b-content"><p>
+All of the icons available in RDS are displayed below. To copy an icon's SVG code, hover over the icon and click the 'View/Copy Code' button. To learn how to best work with and integrate these icons into your project, <a href="/docs/dev/understanding-rds/icon-system/">view our Icon system documentation</a>.
+ <p>We would like to give a big shout out to Gihtub as the majority of the icons used in RDS are from their <a href="https://octicons.github.com">Octoicons project</a>.
+</p></div>
+</div>
+<div class="u-block u-block--white u-block--m">
+    <div class="b-cardgrid u-grid u-grid--4">
+    {% for item in page.icons %}
+        <div class="c-cardlabel">
+              <div class="cardlabel__content">
+                <figure>
+                    {%include 'icons/' ~ item.name ~ '.svg' ignore missing%}
+                </figure>
+                <div class="cardlabel__label">
+                    <h2>{{item.name}}</h2>
+                    <button class="c-buttoncta" onclick="copySVG('{{loop.index}}')"> View/Copy code</button>
+                </div>
+              </div>
+        </div><input class="u-visually-hidden" id="svgcode{{loop.index}}"type="text" value='{%include 'icons/' ~ item.name ~ '.svg' ignore missing%}'>
+    {% endfor %}
+    </div>
+</div>
+
+<script>
+function copySVG(a) {
+	/* Get the text field */
+	let copyText = document.getElementById('svgcode'+ a);
+	/* Select the text field */
+	copyText.select();
+	/* Copy the text inside the text field */
+	document.execCommand('copy');
+	/* Alert the copied text */
+	alert('The SVG code below has been copied to your clipboard:\n\n' + copyText.value);
+}
+</script>
