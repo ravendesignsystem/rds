@@ -29,7 +29,7 @@ examples:
 wild: n/a
 alternatives: wrap images in content block.
 ---
-##Implementation Notes
+## Implementation Notes
 
 ### Repeated Text-Image blocks
 
@@ -47,17 +47,3 @@ When Text-Image blocks are repeated back to back, it is best to:
 {%include "textimg/data/textimg--base.twig" with {'content': 'close'}%}
 {%include "textimg/data/textimg--white.twig"%}
 {%include "textimg/data/textimg--base.twig" with {'content': 'open'}%}
-
-- Stub
-##Content guidelines
-
-Text-Image blocks should:
-
-- Stub
-
-##When To Avoid
-
-- Stub 
-
-
-https://www.shopify.ca

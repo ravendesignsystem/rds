@@ -49,12 +49,12 @@ blocks:
         section: main
         theme: na
     -
-        name: Masthead (Docs Unfinished)
+        name: Masthead
         handle: masthead
         section: header
         theme: core
     -
-        name: Search (Docs Unfinished)
+        name: Search
         handle: search
         section: header
         theme: core

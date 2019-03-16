@@ -11,6 +11,7 @@
 
 	&:hover {
 		background-color: $grey-luke;
+		//border-bottom: 6px solid $red;
 	}
 
 	@include media('<=s') {
