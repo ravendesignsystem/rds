@@ -90,7 +90,7 @@ Buttons should:
 
 Examples of buttons with good calls to action:
 
-<a class="c-buttoncta u-icon" href="https://central.wordcamp.org" role="button">{% include "icons/arrow-down.svg" ignore missing %}Download our free ebook now</a>
+<a class="c-buttoncta u-icon" href="https://central.wordcamp.org" role="button"> {% include "icons/arrow-down.svg" ignore missing %} Download our free e-book now</a>
 
 <a class="c-buttoncta u-icon" href="https://central.wordcamp.org" role="button">Start a free trial</a>
 
