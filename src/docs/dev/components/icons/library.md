@@ -3,7 +3,6 @@ layout: base
 subsite: dev
 title: Icon Library
 icons:
-- name: 360
 - name: accessibility
 - name: alert
 - name: apple
@@ -114,6 +113,7 @@ icons:
 - name: mail-read
 - name: mail
 - name: map
+- name: mark-360
 - name: mark-cushield
 - name: mark-github
 - name: mark-ravens
