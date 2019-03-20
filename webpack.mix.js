@@ -41,3 +41,13 @@ if ( env === 'production' ) {
 		// .sass('src/_themes/fw/scss/_fw.scss', 'dist/themes/fw/css/fw-min')
 }
 
+if ( env === 'package' ) {
+	mix
+		.sass('src/_themes/core/scss/core.scss', 'package/core/scss/_core.scss')
+		.copy('src/_themes/core/scss/base/vendor/_include-media.scss', 'package/core/scss/base/vendor/')
+		.copy('src/_themes/core/scss/base/vars/_vars.scss', 'package/core/scss/base/vars/')
+		// Blocks
+		.copy('src/_blocks/footersimple/_footersimple.scss', 'package/blocks/footersimple/')
+		.copy('src/_blocks/footersitemap/_footersitemap.scss', 'package/blocks/footersitemap/');
+}
+
