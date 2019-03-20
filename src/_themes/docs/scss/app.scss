@@ -1,10 +1,8 @@
 /*
- * RDS Docs v1.0.0
+ * RDS Docs v1.0.3
  * Copyright 2011-2019 Carleton University
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-
-// TODO: this needs to be reviewed, there's some duplication with core.scss, as well as repeats within itself
 
 // RDS Core - *** REQUIRED ***
 @import '../../core/scss/core';
@@ -22,23 +20,35 @@
 
 // Content Blocks:
 // ---------------
-@import '../../../_blocks/textimg/textimg';
+
+// Listing block
 @import '../../../_blocks/listing/listing';
+// text-image block
+@import '../../../_blocks/textimg/textimg';
+
+// Overlay blocks:
+// ---------------
+
+// login block
+@import '../../../_blocks/login/login';
 
 // Footer Blocks:
 // ---------------
 
+// Footer simple
+@import '../../../_blocks/footersimple/footersimple';
 // Footer sitemap
 @import '../../../_blocks/footersitemap/footersitemap';
 
 // -----------------------------
 // CUSTOM THEME - RDSDOCS BLOCKS
 // -----------------------------
-// RDS Docs theme styles
+// RDS Docs custom theme styles
+// Blocks
 @import 'base/utilities';
 @import '../blocks/gridhome/gridhome';
 @import '../blocks/textimg/textimg';
 @import '../blocks/tabs/tabs';
 @import 'vendor/highlight-js--github';
-
+// Components
 @import '../components/cardlabel/cardlabel';

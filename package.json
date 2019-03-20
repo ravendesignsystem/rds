@@ -1,6 +1,6 @@
 {
 	"name": "rds",
-	"version": "1.0.1",
+	"version": "1.0.3",
 	"description": "Never more",
 	"repository": {
 		"type": "git",
@@ -14,7 +14,8 @@
 		"sculpin": "vendor/bin/sculpin generate --watch --server",
 		"sculpin-prod": "vendor/bin/sculpin generate --clean --server --env=prod",
 		"dev": "concurrently --kill-others \"vendor/bin/sculpin generate --watch --server\" \"NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js\"",
-		"prod": "concurrently \"vendor/bin/sculpin generate --clean --server --env=prod\" \"NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js\"  "
+		"prod": "concurrently \"vendor/bin/sculpin generate --clean --server --env=prod\" \"NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js\"",
+		"package": "NODE_ENV=package node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
 	},
 	"prettier": {
 		"useTabs": true,
@@ -28,9 +29,9 @@
 	},
 	"main": "index.js",
 	"author": "",
-	"license": "ISC",
+	"license": "MIT",
 	"dependencies": {
-		"ajv": "^6.7.0",
+		"ajv": "^6.10.0",
 		"babel-plugin-syntax-dynamic-import": "^6.18.0",
 		"babel-preset-env": "^1.7.0",
 		"debug": "^4.1.1",
@@ -43,14 +44,13 @@
 		"clean-webpack-plugin": "^1.0.1",
 		"concurrently": "^4.1.0",
 		"css-mqpacker": "^7.0.0",
-		"cssnano": "^4.1.8",
-		"laravel-mix": "^4.0.14",
+		"cssnano": "^4.1.10",
+		"laravel-mix": "^4.0.15",
 		"node-sass": "^4.11.0",
 		"postcss-pxtorem": "^4.0.1",
-		"prettier": "^1.16.1",
-		"resolve-url-loader": "^3.0.0",
-		"sass": "^1.16.1",
-		"sass-loader": "^7.1.0",
-		"vue-template-compiler": "^2.5.22"
+		"prettier": "^1.16.4",
+		"resolve-url-loader": "^3.0.1",
+		"sass": "^1.17.3",
+		"sass-loader": "^7.1.0"
 	}
 }

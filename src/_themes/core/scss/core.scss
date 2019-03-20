@@ -1,4 +1,4 @@
-// Core v 1.0.0
+// Core v 1.0.3
 
 // Base partials
 // -------------
@@ -23,23 +23,18 @@
 // Blocks
 // ------
 
-// header blocks
+// Header blocks
 @import '../../../_blocks/masthead/masthead';
 @import '../../../_blocks/banner/banner';
 
-// main blocks
+// Main blocks
 @import '../../../_blocks/cardgrid/cardgrid';
 @import '../../../_blocks/content/content';
-@import '../../../_blocks/textimg/textimg';
-@import '../../../_blocks/listing/listing';
 
-// footer blocks
+// Footer blocks
 @import '../../../_blocks/footerbrand/footerbrand';
-@import '../../../_blocks/footersimple/footersimple';
-@import '../../../_blocks/footersitemap/footersitemap';
 
-// nav blocks
-@import '../../../_blocks/login/login';
+// Overlay blocks
 @import '../../../_blocks/menu/menu';
 
 // Core Components
@@ -48,18 +43,20 @@
 @import '../../../_components/heading/heading';
 @import '../../../_components/form/form';
 @import '../../../_components/searchform/searchform';
-// Buttons
+
+// Buttons and icons
 @import '../../../_components/buttoncta/buttoncta';
 @import '../../../_components/buttonhamburger/buttonhamburger';
-@import '../../../_components/card/card';
 @import '../../../_components/icons/icons'; // TODO review this! why not use utility classes?
+@import '../../../_components/buttonsocial/buttonsocial';
+
 // Content
 @import '../../../_components/accordion/accordion';
-@import '../../../_components/imagecaption/imagecaption'; // *** required ***
-@import '../../../_components/table/table'; // *** required ***
-@import '../../../_components/video/video'; // *** required ***
-// Icons
-@import '../../../_components/buttonsocial/buttonsocial';
+@import '../../../_components/card/card';
+@import '../../../_components/imagecaption/imagecaption';
+@import '../../../_components/table/table';
+@import '../../../_components/video/video';
+
 // Menu
 @import '../../../_components/menupopup/menupopup';
 
