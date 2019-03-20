@@ -3,6 +3,7 @@ layout: base
 subsite: dev
 title: Icon Library
 icons:
+- name: 360
 - name: accessibility
 - name: alert
 - name: apple
