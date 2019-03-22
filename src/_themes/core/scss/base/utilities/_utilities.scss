@@ -18,107 +18,107 @@
 // ----------------------
 
 // TODO: look into @support grid
-// @media screen and (-ms-high-contrast: active),
-// 	screen and (-ms-high-contrast: none) {
-.u-grid {
-	display: flex;
-	flex-wrap: wrap;
-	margin-bottom: -#{$grid-gutter} !important;
+@media screen and (-ms-high-contrast: active),
+	screen and (-ms-high-contrast: none) {
+	.u-grid {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: -#{$grid-gutter} !important;
 
-	& > * {
-		margin-bottom: $grid-gutter;
+		& > * {
+			margin-bottom: $grid-gutter;
 
-		&:not(:last-child) {
-			margin-right: $grid-gutter;
+			&:not(:last-child) {
+				margin-right: $grid-gutter;
+			}
 		}
 	}
-}
 
-.u-grid--2 > *,
-.u-grid--3 > *,
-.u-grid--4 > * {
-	width: calc(50% - #{$grid-gutter - 15});
-}
-
-.u-grid--2 > * {
-	&:nth-child(2n) {
-		margin-right: 0;
+	.u-grid--2 > *,
+	.u-grid--3 > *,
+	.u-grid--4 > * {
+		width: calc(50% - #{$grid-gutter - 15});
 	}
-}
 
-.u-grid--3 > * {
+	.u-grid--2 > * {
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+	}
+
+	.u-grid--3 > * {
+		@include media('<=s') {
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+
+		@include media('>s') {
+			width: calc(33.333333% - #{$grid-gutter - 10});
+
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.u-grid--4 > * {
+		@include media('<=m') {
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+
+		@include media('>m') {
+			width: calc(25% - #{$grid-gutter - 7.5});
+
+			&:nth-child(4n) {
+				margin-right: 0 !important;
+			}
+		}
+	}
+
 	@include media('<=s') {
-		&:nth-child(2n) {
-			margin-right: 0;
-		}
-	}
-
-	@include media('>s') {
-		width: calc(33.333333% - #{$grid-gutter - 6.5});
-
-		&:nth-child(3n) {
-			margin-right: 0;
-		}
-	}
-}
-
-.u-grid--4 > * {
-	@include media('<=m') {
-		&:nth-child(2n) {
-			margin-right: 0;
-		}
-	}
-
-	@include media('>m') {
-		width: calc(25% - #{$grid-gutter - 5});
-
-		&:nth-child(4n) {
+		.u-grid--s1 > * {
+			width: 100%;
 			margin-right: 0 !important;
 		}
 	}
 }
 
-@include media('<=s') {
-	.u-grid--s1 > * {
-		width: 100%;
-		margin-right: 0 !important;
-	}
-}
-// }
-
 // CSS Grid
 // -----------------
 
-// .u-grid {
-// 	display: grid;
-// 	grid-gap: $grid-gutter;
-// }
+.u-grid {
+	display: grid;
+	grid-gap: $grid-gutter;
+}
 
-// .u-grid--2 {
-// 	grid-template-columns: repeat(2, 1fr);
-// }
+.u-grid--2 {
+	grid-template-columns: repeat(2, 1fr);
+}
 
-// .u-grid--3 {
-// 	grid-template-columns: repeat(2, 1fr);
+.u-grid--3 {
+	grid-template-columns: repeat(2, 1fr);
 
-// 	@include media('>s') {
-// 		grid-template-columns: repeat(3, 1fr);
-// 	}
-// }
+	@include media('>s') {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
 
-// .u-grid--4 {
-// 	grid-template-columns: repeat(2, 1fr);
+.u-grid--4 {
+	grid-template-columns: repeat(2, 1fr);
 
-// 	@include media('>m') {
-// 		grid-template-columns: repeat(4, 1fr);
-// 	}
-// }
+	@include media('>m') {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
 
-// @include media('<=s') {
-// 	.u-grid--s1 {
-// 		grid-template-columns: repeat(1, 1fr);
-// 	}
-// }
+@include media('<=s') {
+	.u-grid--s1 {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
 
 // 2. Block utils
 // --------------
