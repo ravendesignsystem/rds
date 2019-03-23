@@ -33,7 +33,16 @@ The Card Grid block uses RDS' [responsive grid](#) to list [Card components](#) 
 <div class="u-block u-block--white u-block--s">
 	<h2>Base example</h2>
 	<div class="b-cardgrid b-cardgrid--stacks u-grid u-grid--3">
-		{%include "card/data/card--base"%}
+				<article class="c-card" itemscope="" itemtype="http://schema.org/Article">
+                    <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+                        <figure class="card__figure" itemscope="" itemtype="http://schema.org/ImageObject">
+                            <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
+                        </figure>
+                        <div class="card__body">
+                            <h3 class="card__title" itemprop="name">President Benoit-Antoine Bacon joins the Carleton community</h3>
+                        </div>
+                    </a>
+                </article>
 		{%include "card/data/card--base"%}
 		{%include "card/data/card--base"%}
 	</div>
@@ -42,7 +51,16 @@ The Card Grid block uses RDS' [responsive grid](#) to list [Card components](#) 
 <div class="u-block u-block--white u-block--s u-no-padding-bottom">
 	<h2>Base example</h2>
 	<div class="b-cardgrid u-grid u-grid--3">
-		{%include "card/data/card--base"%}
+		<article class="c-card" itemscope="" itemtype="http://schema.org/Article">
+            <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+                <figure class="card__figure" itemscope="" itemtype="http://schema.org/ImageObject">
+                    <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
+                </figure>
+                <div class="card__body">
+                    <h3 class="card__title" itemprop="name">President Benoit-Antoine Bacon joins the Carleton community</h3>
+                </div>
+            </a>
+        </article>
 		{%include "card/data/card--base"%}
 		{%include "card/data/card--base"%}
 	</div>
