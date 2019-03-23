@@ -165,6 +165,7 @@
 
 .c-card--people {
 	text-align: center;
+	border-top: 1px solid $grey;
 
 	&:after {
 		left: calc(50% - 12.5px) !important; // calc is used to determine center by subtracting half the width of the bottom red line

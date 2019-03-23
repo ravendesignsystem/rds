@@ -19,10 +19,9 @@
 			width: 40%;
 			float: left;
 
-			img {
+			img:not(.c-card--people .card__figure img) {
 				border-top-right-radius: 0;
 				border-bottom-left-radius: 5px;
-				//min-height: 130px;
 			}
 		}
 
@@ -30,27 +29,52 @@
 			float: left;
 			padding: 20px;
 			min-height: auto;
-			display: flex;
 			width: 60%;
 		}
 
 		@include media('<410px') {
 			.card__title {
-				font-size: 14px;
+				font-size: 15px;
+			}
+
+			.card__date {
+				font-size: 13px;
 			}
 
 			.card__body {
-				padding: 12px;
+				padding: 13px;
 			}
 		}
 
-		@include media('>550px') {
+		@include media('>500px') {
 			&:after {
-				left: 44.5%;
+				left: 44%;
 				bottom: 20px;
 				margin-top: 20px;
-				background: #bf112b;
 			}
+		}
+
+		.card__text:not(.c-card--people .card__text) {
+			display: none;
+		}
+	}
+}
+
+.b-cardgrid--stacks > .c-card--people {
+	@include media('<=s') {
+
+		text-align: left;
+
+		.card__figure {
+			padding: 15px 0;
+		}
+	}
+
+	@include media('<=s') {
+		&:after {
+			left: 44% !important;
+			bottom: 20px;
+			margin-top: 20px;
 		}
 	}
 }

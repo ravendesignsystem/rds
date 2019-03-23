@@ -43,7 +43,17 @@ The Card Grid block uses RDS' [responsive grid](#) to list [Card components](#) 
                         </div>
                     </a>
                 </article>
-		{%include "card/data/card--base"%}
+<article class="c-card c-card--people" itemscope itemtype="http://schema.org/Article">
+    <a href="https://en.wikipedia.org/wiki/Bill_Murray" itemprop="url">
+        <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
+            <img src="http://fillmurray.com/500/500" alt="Raven standing">
+        </figure>
+        <div class="card__body">
+            <h3 class="card__title" itemprop="name">Bill Murray</h3>
+            <p class="card__text" itemprop="description">Actor and Writer</p>
+        </div>
+    </a>
+</article>
 		{%include "card/data/card--base"%}
 	</div>
 </div>
