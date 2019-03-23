@@ -34,27 +34,47 @@
 		}
 	}
 
-	.u-grid--2 > * {
-		width: calc(50% - #{$grid-gutter - 10});
+	.u-grid--2 > *,
+	.u-grid--3 > *,
+	.u-grid--4 > * {
+		width: calc(50% - #{$grid-gutter - 15});
+	}
 
+	.u-grid--2 > * {
 		&:nth-child(2n) {
-			margin-right: 0 !important;
+			margin-right: 0;
 		}
 	}
 
 	.u-grid--3 > * {
-		width: calc(33.333333% - #{$grid-gutter - 6.5});
+		@include media('<=s') {
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
 
-		&:nth-child(3n) {
-			margin-right: 0 !important;
+		@include media('>s') {
+			width: calc(33.333333% - #{$grid-gutter - 10});
+
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
 		}
 	}
 
 	.u-grid--4 > * {
-		width: calc(25% - #{$grid-gutter - 5});
+		@include media('<=m') {
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
 
-		&:nth-child(4n) {
-			margin-right: 0 !important;
+		@include media('>m') {
+			width: calc(25% - #{$grid-gutter - 7.5});
+
+			&:nth-child(4n) {
+				margin-right: 0 !important;
+			}
 		}
 	}
 
@@ -89,7 +109,7 @@
 .u-grid--4 {
 	grid-template-columns: repeat(2, 1fr);
 
-	@include media('>s') {
+	@include media('>m') {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
