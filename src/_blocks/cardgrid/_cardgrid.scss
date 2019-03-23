@@ -1,3 +1,56 @@
 .b-cardgrid + .c-buttoncta {
 	margin-top: $block-margin;
 }
+
+.b-cardgrid--stacks.u-grid {
+	@include media('<=s') {
+		display: block;
+	}
+}
+
+.b-cardgrid--stacks > .c-card {
+	@include media('<=s') {
+		display: flex;
+		flex-direction: row;
+		border: 1px solid $grey;
+		margin-bottom: 20px;
+
+		.card__figure {
+			width: 40%;
+			float: left;
+
+			img {
+				border-top-right-radius: 0;
+				border-bottom-left-radius: 5px;
+				//min-height: 130px;
+			}
+		}
+
+		.card__body {
+			float: left;
+			padding: 20px;
+			min-height: auto;
+			display: flex;
+			width: 60%;
+		}
+
+		@include media('<410px') {
+			.card__title {
+				font-size: 14px;
+			}
+
+			.card__body {
+				padding: 12px;
+			}
+		}
+
+		@include media('>550px') {
+			&:after {
+				left: 44.5%;
+				bottom: 20px;
+				margin-top: 20px;
+				background: #bf112b;
+			}
+		}
+	}
+}

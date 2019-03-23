@@ -30,6 +30,15 @@ The Card Grid block uses RDS' [responsive grid](#) to list [Card components](#) 
 
 **Note**: this block should not be used for general layout purposes.{%include "/docs/inc/close.twig"%}
 
+<div class="u-block u-block--white u-block--s">
+	<h2>Base example</h2>
+	<div class="b-cardgrid b-cardgrid--stacks u-grid u-grid--3">
+		{%include "card/data/card--base"%}
+		{%include "card/data/card--base"%}
+		{%include "card/data/card--base"%}
+	</div>
+</div>
+
 <div class="u-block u-block--white u-block--s u-no-padding-bottom">
 	<h2>Base example</h2>
 	<div class="b-cardgrid u-grid u-grid--3">
