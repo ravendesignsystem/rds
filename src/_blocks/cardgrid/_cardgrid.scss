@@ -15,6 +15,10 @@
 		border: 1px solid $grey;
 		margin-bottom: 20px;
 
+		.card__text:not(.c-card--people .card__text) {
+			display: none;
+		}
+
 		.card__figure {
 			width: 40%;
 			float: left;
@@ -22,7 +26,8 @@
 			img {
 				border-top-right-radius: 0;
 				border-bottom-left-radius: 5px;
-				//min-height: 130px;
+				object-fit: cover;
+				min-height: 110px;
 			}
 		}
 
@@ -30,27 +35,69 @@
 			float: left;
 			padding: 20px;
 			min-height: auto;
-			display: flex;
 			width: 60%;
 		}
 
-		@include media('<410px') {
+		@include media('<550px') {
 			.card__title {
-				font-size: 14px;
+				font-size: 15px;
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				max-height: 55px;
+				overflow: hidden;
+				text-overflow:ellipsis;
+				line-height: 1.35;
+				// TODO fix this with proper css clamping when available
+			}
+
+			.card__date {
+				font-size: 13px;
 			}
 
 			.card__body {
-				padding: 12px;
+				padding: 15px;
 			}
 		}
 
-		@include media('>550px') {
+		@include media('>400px') {
 			&:after {
-				left: 44.5%;
+				left: 44%;
 				bottom: 20px;
 				margin-top: 20px;
-				background: #bf112b;
 			}
+		}
+
+		@include media('<400px') {
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
+.b-cardgrid--stacks > .c-card--people {
+	@include media('<=s') {
+		text-align: left;
+
+		.card__figure {
+			padding: 15px 0;
+
+			img {
+				border-radius: 50%;
+				border: 5px solid rgba($grey-yoda, 0.75);
+				min-height: 90px;
+				min-width: 90px;
+			}
+		}
+	}
+
+	@include media('<=s') {
+		&:after {
+			left: 44% !important;
+			bottom: 20px;
+			margin-top: 20px;
+			display: inline-block!important;
 		}
 	}
 }

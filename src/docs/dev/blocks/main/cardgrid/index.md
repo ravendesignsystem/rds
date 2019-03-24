@@ -26,43 +26,25 @@ data:
    desc: Card component inc path.
 ---
 
-The Card Grid block uses RDS' [responsive grid](#) to list [Card components](#) in equal-width columns.
+The Card Grid block uses RDS' [responsive grid](#) to list [Card components]({{site.url}}/dev/components/cards/card/) in equal-width columns.
 
 **Note**: this block should not be used for general layout purposes.{%include "/docs/inc/close.twig"%}
 
 <div class="u-block u-block--white u-block--s">
 	<h2>Base example</h2>
-	<div class="b-cardgrid b-cardgrid--stacks u-grid u-grid--3">
-				<article class="c-card" itemscope="" itemtype="http://schema.org/Article">
-                    <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
-                        <figure class="card__figure" itemscope="" itemtype="http://schema.org/ImageObject">
-                            <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
-                        </figure>
-                        <div class="card__body">
-                            <h3 class="card__title" itemprop="name">President Benoit-Antoine Bacon joins the Carleton community</h3>
-                        </div>
-                    </a>
-                </article>
-		{%include "card/data/card--base"%}
-		{%include "card/data/card--base"%}
-	</div>
-</div>
-
-<div class="u-block u-block--white u-block--s u-no-padding-bottom">
-	<h2>Base example</h2>
-	<div class="b-cardgrid u-grid u-grid--3">
-		<article class="c-card" itemscope="" itemtype="http://schema.org/Article">
-            <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
-                <figure class="card__figure" itemscope="" itemtype="http://schema.org/ImageObject">
-                    <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
-                </figure>
-                <div class="card__body">
-                    <h3 class="card__title" itemprop="name">President Benoit-Antoine Bacon joins the Carleton community</h3>
-                </div>
-            </a>
-        </article>
-		{%include "card/data/card--base"%}
-		{%include "card/data/card--base"%}
+	<div class="b-cardgrid b-cardgrid u-grid u-grid--3">
+        {%include "card/data/card--base"%}
+        <article class="c-card" itemscope itemtype="http://schema.org/Article">
+                  <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+                      <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
+                          <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
+                      </figure>
+                      <div class="card__body">
+                          <h2 class="card__title" itemprop="name">White-necked Raven</h2>
+                      </div>
+                  </a>
+              </article>
+        {%include "card/data/card--base"%}
 	</div>
 </div>
 
@@ -77,6 +59,60 @@ The Card Grid block uses RDS' [responsive grid](#) to list [Card components](#) 
 	</div>
 </div>
 ```
+
+## Small screen stack modifier 
+
+By default, card grids drop down to a 2 column grid at the small screen breakpoint. If you want to display a 3 column grid but don't want to leave a card hanging in the small screen view, or if you simply want a tighter presentation of your cards on mobile, apply the modifier `b-cardgrid--stacks` at the block class level.
+
+The modifier `b-cardgrid--stacks` implements a single column view on small screens. It also sets the cards appearance to flow horizontally instead of the default vertical view.
+{%include '/docs/inc/close.twig'%}<div class="u-block u-block--white u-block--s">
+	<div class="b-cardgrid b-cardgrid--stacks u-grid u-grid--3">
+        <article class="c-card" itemscope itemtype="http://schema.org/Article">
+              <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+                  <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
+                      <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
+                  </figure>
+                  <div class="card__body">
+                      <h2 class="card__title" itemprop="name">We Knew Ravens Are Smart. But Not This Smart</h2>
+                  </div>
+              </a>
+          </article>
+        <article class="c-card" itemscope itemtype="http://schema.org/Article">
+          <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+              <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
+                  <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
+              </figure>
+              <div class="card__body">
+                  <h2 class="card__title" itemprop="name">We Knew Ravens Are Smart. But Not This Smart</h2>
+              </div>
+          </a>
+        </article>
+        <article class="c-card" itemscope itemtype="http://schema.org/Article">
+          <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+              <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
+                  <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
+              </figure>
+              <div class="card__body">
+                  <h2 class="card__title" itemprop="name">We Knew Ravens Are Smart. But Not This Smart</h2>
+              </div>
+          </a>
+        </article>
+	</div>
+</div>
+{%include '/docs/inc/open-b-content.twig'%}
+<p class="u-hide-s"><strong>Note</strong>: your screen size is currently too large to view the difference applying this modifier makes in the example above. To see the difference, make your browser window smaller.</p>
+
+```html
+<div class="u-block u-block--white u-block--s">
+	<div class="b-cardgrid b-cardgrid--stacks u-grid u-grid--3">
+		{% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
+        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
+        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
+	</div>
+</div>
+```
+<br>
+
 
 ## Grid column settings
 
@@ -173,14 +209,14 @@ Control the block's width and background colour using the following [block setti
 - **Block widths**: `u-block--s`\*, `u-block--m`, `u-block--l`
 - **Block colours**: `u-block--white`\*, `u-block--grey`
 
-**Notes**: \* = default
+**\* = default**
 
 **Important**: if you are using the [CMS theme](#), only the default settings can be used.
 
 {%include '/docs/inc/close.twig'%}
 
 <section class="u-block u-block--grey u-block--m">
-	<h2>Grid block with medium width and white background settings</h2>
+	<h2>Grid block with medium width and grey background setting</h2>
 	<div class="b-cardgrid u-grid u-grid--4">
 		{%include "card/data/card--base"%}
 			{%include "card/data/card--base"%}
