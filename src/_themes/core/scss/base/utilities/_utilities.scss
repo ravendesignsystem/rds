@@ -429,7 +429,7 @@ a.u-icon svg:hover {
 	margin-left: 30px;
 }
 
-// hide above small screens
+// hide on small screens
 @include media('<=s') {
 	.u-hide-s {
 		display: none;
