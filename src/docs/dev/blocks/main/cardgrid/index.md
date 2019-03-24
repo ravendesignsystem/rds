@@ -59,7 +59,7 @@ The Card Grid block uses RDS' [responsive grid](#) to list [Card components]({{s
 	</div>
 </div>
 ```
-
+<br>
 ## Small screen stack modifier 
 
 By default, card grids drop down to a 2 column grid at the small screen breakpoint. If you want to display a 3 column grid but don't want to leave a card hanging in the small screen view, or if you simply want a tighter presentation of your cards on mobile, apply the modifier `b-cardgrid--stacks` at the block class level.
@@ -111,7 +111,8 @@ The modifier `b-cardgrid--stacks` implements a single column view on small scree
 	</div>
 </div>
 ```
-<br>
+
+**Note**: Using this modifier card descriptions get removed on small screens. Furthermore, when using this modifier the amount of space for your title content is limited. Verbose title will be trimmed by the CSS.
 
 
 ## Grid column settings
