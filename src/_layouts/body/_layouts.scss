@@ -4,7 +4,11 @@
  */
 
 .l-body {
-	padding: $block-margin 0;
+	padding: $block-padding-s;
+
+	@include media('>868px') {
+		padding: $block-margin;
+	}
 }
 
 .l-body--white {
@@ -66,10 +70,6 @@
 .body__main {
 	display: flex;
 	flex-direction: column;
-
-	@include media('>1112px') {
-		flex-direction: row;
-	}
 }
 
 .body__sidebar {
@@ -102,6 +102,12 @@
 	}
 
 	@include media('>868px') {
+		.body__main {
+			flex-direction: row;
+		}
+	}
+
+	@include media('>868px') {
 		.body__sidebar {
 			flex-basis: calc(300px + #{$grid-gutter});
 		}
@@ -128,6 +134,12 @@
 .l-body--ama {
 	.body__container {
 		max-width: calc(1368px + #{$block-padding-m} * 2);
+	}
+
+	@include media('>1112px') {
+		.body__main {
+			flex-direction: row;
+		}
 	}
 
 	@include media('>1112px') {
