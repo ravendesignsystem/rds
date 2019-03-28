@@ -94,6 +94,10 @@
 	grid-gap: $grid-gutter;
 }
 
+.u-grid--gap-l {
+	grid-gap: 60px;
+}
+
 .u-grid--2 {
 	grid-template-columns: repeat(2, 1fr);
 }
@@ -202,8 +206,10 @@
 		display: inline-block;
 		height: 1em;
 		width: 1em;
-		margin-right: 4px;
 		flex-shrink: 0;
+	}
+	span {
+		margin-left: 5px;
 	}
 }
 
@@ -275,6 +281,10 @@ a.u-icon svg:hover {
 
 .u-no-padding-top {
 	padding-top: 0 !important;
+}
+
+.u-no-padding {
+	padding: 0 !important;
 }
 
 .u-no-margin-right {
