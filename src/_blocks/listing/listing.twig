@@ -1,14 +1,17 @@
 {% macro listing(settings, data) %}
 {% set blockHeading, itemHeading = 'h2', 'h3' %}
 {% if settings.heading %}
-<section class="u-block u-block--s{% if settings.color %} u-block--{{ settings.color }}{% endif %}">
+<section class="u-block {% if settings.size %}u-block--{{ settings.size }}{% else %}u-block--s{% endif %}{% if settings.color %} u-block--{{ settings.color }}{% endif %}">
     <{{ blockHeading }}{% if settings.headingContent != 'none' %} class="c-heading"{% endif %}>{{ settings.heading }}</{{ blockHeading }}>
 {% if settings.headingContent != 'none' and settings.headingContent %}
     {{ settings.headingContent|raw }}
 {% endif %}
 {% else %}
 {#u-no-borders#}
-<div class="u-block u-block--s{% if settings.color %} u-block--{{ settings.color }}{% endif %}">
+<div class="u-block {% if settings.size %}u-block--{{ settings.size }}{% else %}u-block--s{% endif %}{% if settings.color %} u-block--{{ settings.color }}{% endif %}">
+{% endif %}
+{% if settings.grid %}
+<div class="u-grid u-grid--{{ settings.grid }}">
 {% endif %}
     <div class="b-listing">
         <ul class="listing__list{% if settings.variant == "news" %} listing__list--news{% elseif settings.variant == "event" %} listing__list--events{% endif %}{% for item in data %}{% if item.img %}{% if (settings.variant == "video") and (loop.first) %} listing__list--img-video{% elseif (settings.variant == "news") and (loop.first) %} listing__list--img-large{% elseif (settings.variant == "people") and (loop.first) %} listing__list--img-people{% elseif loop.first %} listing__list--img-small{% endif %}{% endif %}{% endfor %}" itemscope{% if settings.variant == 'people' %} itemtype="http://schema.org/Person"{% elseif settings.variant == "event" %} itemtype="http://schema.org/Event"{% else %} itemtype="http://schema.org/ItemList"{% endif %}>
@@ -71,6 +74,9 @@
 {% if settings.heading|length == 0 %}
     </div>
 </div>
+{% if settings.grid %}
+</div>
+{% endif %}
 {% else %}
     </div>
 </section>

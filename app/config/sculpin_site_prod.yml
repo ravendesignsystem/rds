@@ -2,5 +2,6 @@ imports:
     - sculpin_site.yml
 url: https://ravendesignsystem.github.io/rds/
 cssPath: https://ravendesignsystem.github.io/rds/css/app.css
+homecssPath: https://ravendesignsystem.github.io/rds/css/hp.css
 jsPath: https://ravendesignsystem.github.io/rds/js/app.js
 title: Raven Design System

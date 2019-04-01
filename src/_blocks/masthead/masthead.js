@@ -13,18 +13,17 @@ if (window.matchMedia('(max-width: 768px)').matches) {
 }
 if (masthead.classList.contains('js-sticky-scroll')) {
 	window.addEventListener('scroll', function() {
-		if (window.scrollY < 1.25 * header.scrollHeight) {
+		if (window.scrollY < 5) {
 			// has not scrolled past header yet
 			masthead_y = -header.scrollHeight;
+			masthead.classList.remove('b-masthead--sticky-scroll', 'b-masthead--shadow');
+			document.body.style.marginTop = '0';
 		} else {
 			// has scrolled past the header
-			masthead.classList.add(
-				'b-masthead--sticky-scroll',
-				'b-masthead--shadow'
-			);
+			masthead.classList.add('b-masthead--sticky-scroll', 'b-masthead--shadow');
 			masthead_y = masthead_y - (window.scrollY - last_scroll);
 			masthead_y = Math.min(masthead_y, 0);
-			masthead_y = Math.max(masthead_y, -masthead.scrollHeight + 150); // adjust for new masthead
+			masthead_y = Math.max(masthead_y, -masthead.scrollHeight);
 			masthead.style.top = masthead_y + 'px';
 			document.body.style.marginTop = '75px';
 		}
@@ -43,10 +42,14 @@ if (masthead.classList.contains('js-sticky-scroll')) {
 	});
 }
 
-const touchEventsExample = () => {
-	const el = documents.getElementsByTagName('.c-menupopup');
-	el.addEventListener('touchstart', handleStart, false);
-	el.addEventListener('touchend', handleEnd, false);
-	el.addEventListener('touchcancel', handleCancel, false);
-	el.addEventListener('touchmove', handleMove, false);
-}
+// TODO review the code below
+// let needTouch = document.getElementsByClassName('c-menupopup');
+// if (needTouch.length > 0) {
+// 	const touchEventsExample = () => {
+// 		const el = document.getElementsByTagName('.c-menupopup');
+// 		el.addEventListener('touchstart', handleStart, false);
+// 		el.addEventListener('touchend', handleEnd, false);
+// 		el.addEventListener('touchcancel', handleCancel, false);
+// 		el.addEventListener('touchmove', handleMove, false);
+// 	};
+// }

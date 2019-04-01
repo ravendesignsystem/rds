@@ -8,7 +8,7 @@
 		// masthead elements
 		mastheadSearch = document.querySelector('.masthead__search'),
 		mastheadHamburger = document.querySelector('.masthead__hamburger'),
-		mastheadSite = document.querySelector('.masthead__site'),
+		mastheadSite = document.querySelector('.masthead__site.c-menupopup'),
 		mastheadSiteMenu = document.querySelector('.menupopup__menu'),
 		// masthead buttons
 		hamburger = document.querySelector('.c-hamburger'),
@@ -45,7 +45,9 @@
 			modal.classList.toggle('is-hidden');
 			hamburger.classList.toggle('is-active');
 			modal.classList.remove('u-bg-grey');
-			mastheadSite.classList.toggle('c-menupopup');
+			if (mastheadSite) {
+				mastheadSite.classList.toggle('c-menupopup');
+			}
 			window.setTimeout(function() {
 				mastheadSiteMenu.classList.toggle('is-hidden');
 			}, 350);
@@ -59,11 +61,16 @@
 
 		if (btn === 'search' || btn === 'login') {
 			if (btn === 'search') {
-				modalSearch.classList.remove('is-hidden'),
-					modalLogin.classList.add('is-hidden'),
-					document.querySelector('.modal__search .searchform__input').focus();
+				modalSearch.classList.remove('is-hidden');
+				if (modalLogin) {
+					modalLogin.classList.add('is-hidden');
+				}
+				document.querySelector('.modal__search .searchform__input').focus();
 			} else {
-				modalLogin.classList.remove('is-hidden');
+				if (modalLogin) {
+					modalLogin.classList.remove('is-hidden');
+				}
+
 				modal.classList.add('u-bg-grey'),
 					document.querySelector('.login__field').focus();
 			}
@@ -74,7 +81,9 @@
 					x[i].classList.toggle('is-hidden');
 				}
 			}
-			mastheadSearch.classList.add('is-hidden');
+			if (mastheadSearch) {
+				mastheadSearch.classList.add('is-hidden');
+			}
 			if (menuShow === false) {
 				mastheadHamburger.classList.toggle('u-display-inline-b');
 			}
@@ -83,9 +92,10 @@
 			for (i = 0; i < x.length; i++) {
 				x[i].classList.toggle('is-hidden');
 			}
-
-			mastheadSearch.classList.remove('is-hidden'),
-				modalSearch.classList.add('is-hidden');
+			if (mastheadSearch) {
+				mastheadSearch.classList.remove('is-hidden'),
+					modalSearch.classList.add('is-hidden');
+			}
 			document.querySelector('.modal__menu').classList.toggle('is-hidden');
 
 			if (btn === 'more') {
@@ -167,8 +177,11 @@
 	// Keep ability to close modal if window is resized
 	const onResize = function() {
 		if (hamburger.classList.contains('is-active')) {
-			mastheadHamburger.classList.add('u-display-inline-b'),
+			mastheadHamburger.classList.add('u-display-inline-b');
+
+			if (mastheadSearch) {
 				mastheadSearch.classList.add('is-hidden');
+			}
 		}
 	};
 

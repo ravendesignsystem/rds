@@ -59,17 +59,13 @@
 // Change border & hover color when grey block is used
 .u-block--grey {
 	.listing__list {
-		border-top: 1px solid $grey-luke;
-		border-bottom: 1px solid $grey-luke;
+		border-top: 1px solid $grey-kenobi;
+		border-bottom: 1px solid $grey-kenobi;
 	}
 
 	.listing__list li {
 		&:not(:last-child):before {
-			border-bottom: 1px solid $grey-luke;
-		}
-
-		a:hover {
-			background-color: white;
+			border-bottom: 1px solid $grey-kenobi;
 		}
 	}
 }

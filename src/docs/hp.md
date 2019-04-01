@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: hp
 title: Raven Design System (RDS)
 banner: none
 ---
@@ -31,7 +31,7 @@ banner: none
             </div>
         </a>
         <div class="docs-gridhome__colright">
-            <a href="hp">
+            <a href="content/">
                 <div class="docs-gridhome__panel docs-gridhome__panel--content">
                     <h2>For content creators</h2>
                     {% include "docs/assets/img/keyboard.svg" %}

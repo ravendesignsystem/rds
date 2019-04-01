@@ -1,0 +1,272 @@
+<!doctype html>
+<html class="no-js" lang="en">
+{% block head %}
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+        <meta name="robots" content="noodp, noydir"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="canonical" href="https://carleton.ca"/>
+        <link rel="stylesheet" href="https://cloud.typography.com/6307052/6144772/css/fonts.css" type="text/css"/>
+        {% block critical %}
+            <style>{% include "hp/_css/critical.css" %}</style>
+        {% endblock %}
+        {#TODO look into https://keithclark.co.uk/articles/loading-css-without-blocking-render/#}
+        {#<link rel="stylesheet" href="{{ site.homecssPath }}">#}
+        {#<noscript><link rel="stylesheet" href="{{ site.url }}/css/app.css"></noscript>#}
+        <link rel="manifest" href="/manifest.json">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+        {# <link rel="apple-touch-icon-precomposed" href="http://mysite.com/images/apple-retina.png" sizes="114x114" /> #}
+        {# <link rel="apple-touch-icon-precomposed" href="http://mysite.com/images/apple-ipad.png" sizes="72x72" /> #}
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <title>Carleton University - Canada's Capital University</title>
+        <meta name="description" content="Canada's Capital University, Carleton University is a dynamic research and teaching institution dedicated to achieving the highest standards of scholarship.">
+        {#  If page has keywords #}
+        {% if page.keywords is defined %}
+            <meta name="keywords" content="{{ page.keywords }}" />
+        {% endif %}
+        {#  Facebook Meta Tags #}
+        <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{ page.title }}">
+        {#  If page has a description #}
+        <meta property="og:description" content="Canada's Capital University, Carleton University is a dynamic research and teaching institution dedicated to achieving the highest standards of scholarship.">
+        {#  If page has an img defined #}
+        {% if page.img is defined %}
+            <meta property="og:image" content="{{ page.img }}">
+        {% endif %}
+        {# Twitter Meta Tags #}
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ page.title }}">
+        {#  If page has a description #}
+        {% if page.desc is defined %}
+            <meta name="twitter:description" content="{{ page.desc }}">
+        {% endif %}
+        {#  If page has an img defined #}
+        {% if page.img is defined %}
+            <meta name="twitter:image" content="{{ page.img }}">
+        {% endif %}
+    </head>
+{% endblock %}
+
+<body>
+<a class="u-visually-hidden" href="#content">Skip to main content</a>
+<div id="app">
+    {% block header %}
+        <header role="banner">
+            {% include 'hp/blocks/masthead/masthead' %}
+
+            <div class="u-block u-block--grey u-no-padding">
+                <a href="#" class="b-bannerhero">
+                    {#<img src="http://cu-raven.s3.amazonaws.com/assets/img/photos/kid.jpg" />#}
+                    {#<img src="http://cu-raven.s3.amazonaws.com/assets/img/photos/highway.jpg" />#}
+                    {#<img src="http://cu-raven.s3.amazonaws.com/assets/img/photos/magic.jpg" />#}
+                    {#<img src="http://cu-raven.s3.amazonaws.com/assets/img/photos/reef.jpg" />#}
+                    {#<img src="http://cu-raven.s3.amazonaws.com/assets/img/photos/baloon.jpg" />#}
+                    {#<img src="http://cu-raven.s3.amazonaws.com/assets/img/photos/paka.jpg" />#}
+                    {#<img src="http://cu-raven.s3.amazonaws.com/assets/img/photos/cliff.jpg" />#}
+                    {#<img src="http://cu-raven.s3.amazonaws.com/assets/img/photos/apple.png" />#}
+                    {#<img src="http://cu-raven.s3.amazonaws.com/assets/img/photos/climb.jpg" />#}
+                    {#<img src="http://cu-raven.s3.amazonaws.com/assets/img/photos/house.jpg" />#}
+                   {# <img src="http://cu-raven.s3.amazonaws.com/assets/img/photos/kayak.jpg" />#}
+                    <img src="http://cu-raven.s3.amazonaws.com/assets/img/photos/mountain.png" />
+                    <div class="bannerhero_text">
+                        {#<div class="bannerhero_text bannerhero_text--right">#}
+                        <h2 class="bannerhero__title" data-text="View story"><span>Senator Kim Pate calls for reform of Canada’s criminal justice system</span></h2>
+                    </div>
+                </a>
+            </div>
+        </header>
+    {% endblock %}
+
+    {% block body %}
+        {% block main %}
+            {% import 'card/card' as card %}
+            {#Card values#}
+            {% set card1 = {
+                img: "http://cu-raven.s3.amazonaws.com/assets/img/photos/thumbs/research.jpg",
+                title: 'Carleton research leading in accessibility and inclusion',
+                url: "#"
+            }%}
+            {% set card2 = {
+                img: "http://cu-raven.s3.amazonaws.com/assets/img/photos/thumbs/indiginous.jpg",
+                title: 'Carmen Robertson explores Indigenous art and activism',
+                url: "#"
+            }%}
+            {% set card3 = {
+                img: "http://cu-raven.s3.amazonaws.com/assets/img/photos/thumbs/helmets.jpg",
+                title: 'New tools to evaluate helmet performance and design',
+                url: "#"
+            }%}
+            <main id="content">
+                <div class="u-block u-block--grey u-block--m">
+                    <h2>Spotlight on</h2>
+                    <div class="b-cardgrid b-cardgrid--stacks u-grid u-grid--3">
+                        {{ card.card(settings, card1) }}
+                        {{ card.card(settings, card2) }}
+                        {{ card.card(settings, card3) }}
+                    </div>
+                </div>
+
+                <section class="u-block u-block--m u-block--grey">
+                    <h2>Events</h2>
+                    <div class="u-grid u-grid--2 u-grid--gap-l u-grid--s1">
+                        <div class="b-listing">
+                            <ul class="listing__list listing__list--events" itemscope="" itemtype="http://schema.org/Event">
+                                <li itemprop="item">
+                                    <a href="#eventurl" itemprop="url">
+                                        <time class="listing__event-date" itemprop="startDate" datetime="2017-04-24T08:00:00" content="2017-04-24T08:00:00">
+                                            Apr<br>
+                                            <span class="listing__event-day">24</span>
+                                        </time>
+                                        <div class="listing__event-time">
+                                            <h3 class="listing__title">08:00 am</h3>
+                                            <p class="listing__excerpt">09:00 pm</p>
+                                        </div>
+                                        <div class="listing__body">
+                                            <h3 class="listing__title" itemprop="name">Event Title</h3>
+                                            <p class="listing__excerpt" itemprop="description">Event location</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li itemprop="item">
+                                    <a href="#eventurl" itemprop="url">
+                                        <time class="listing__event-date" itemprop="startDate" datetime="2017-04-24T08:00:00" content="2017-04-24T08:00:00">
+                                            Apr<br>
+                                            <span class="listing__event-day">24</span>
+                                        </time>
+                                        <div class="listing__event-time">
+                                            <h3 class="listing__title">08:00 am</h3>
+                                            <p class="listing__excerpt">09:00 pm</p>
+                                        </div>
+                                        <div class="listing__body">
+                                            <h3 class="listing__title" itemprop="name">Event Title</h3>
+                                            <p class="listing__excerpt" itemprop="description">Event location</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li itemprop="item">
+                                    <a href="#eventurl" itemprop="url">
+                                        <time class="listing__event-date" itemprop="startDate" datetime="2017-04-24T08:00:00" content="2017-04-24T08:00:00">
+                                            Apr<br>
+                                            <span class="listing__event-day">24</span>
+                                        </time>
+                                        <div class="listing__event-time">
+                                            <h3 class="listing__title">08:00 am</h3>
+                                            <p class="listing__excerpt">09:00 pm</p>
+                                        </div>
+                                        <div class="listing__body">
+                                            <h3 class="listing__title" itemprop="name">Event Title</h3>
+                                            <p class="listing__excerpt" itemprop="description">Event location</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li itemprop="item">
+                                    <a href="#eventurl" itemprop="url">
+                                        <time class="listing__event-date" itemprop="startDate" datetime="2017-04-24T08:00:00" content="2017-04-24T08:00:00">
+                                            Apr<br>
+                                            <span class="listing__event-day">24</span>
+                                        </time>
+                                        <div class="listing__event-time">
+                                            <h3 class="listing__title">08:00 am</h3>
+                                            <p class="listing__excerpt">09:00 pm</p>
+                                        </div>
+                                        <div class="listing__body">
+                                            <h3 class="listing__title" itemprop="name">Event Title</h3>
+                                            <p class="listing__excerpt" itemprop="description">Event location</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <article class="c-card" itemscope="" itemtype="http://schema.org/Article">
+                            <a href="#" itemprop="url">
+                                <figure class="card__figure" itemscope="" itemtype="http://schema.org/ImageObject">
+                                    <img src="https://dummyimage.com/718x250/eee/222.gif" alt="Raven standing">
+                                </figure>
+                                <div class="card__body">
+                                    <time class="card__date" datetime="2018-03-11" itemprop="datePublished" content="2018-03-11">Sunday, March 11th</time>
+                                    <h3 class="card__title" itemprop="name">Prospective students and their families are invited to campus for Parents’ Evening</h3>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </section>
+                {% set cardVideoSettings = {
+                    variant: "video"
+                }%}
+                {% set cardVideo = {
+                    img: "http://cu-raven.s3.amazonaws.com/assets/img/photos/thumbs/helmets.jpg",
+                    text: "Kajal discusses how Carleton University allows you the opportunity to study what you love.",
+                    title: 'Carleton Stories: Kajal',
+                    url: "https://admissions.carleton.ca/videos/carleton-stories-kajal/"
+                }%}
+                <section class="u-block u-block--m u-block--white">
+                    <h2>Attend Carleton University</h2>
+                    <div class="b-gridadm u-grid u-grid--2 u-grid--gap-l u-grid--s1">
+                        {{ card.card(cardVideoSettings, cardVideo) }}
+                        <div class="gridadm_cards">
+                            <div class="c-card c-card--iconlink">
+                                <a>
+                                    <div>
+                                        <h2>Undergraduate Admissions</h2>
+                                        <p>Explore our 200+ academic programs.</p>
+                                    </div>
+
+                                </a>
+                                <button class="c-menupopup c-menupopup--right" aria-label="Open Menu">
+                                    <span class="u-visually-hidden">Admission quick links</span>
+                                </button>
+                                <ul class="menupopup__menu" aria-label="menupopup">
+                                    <li><a href="#">Undergraduate Admissions</a></li>
+                                    <li><a href="#">Programs</a></li>
+                                    <li><a href="#">Tours and Events</a></li>
+                                    <li><a href="#">How to apply</a></li>
+                                </ul>
+                            </div>
+                            <div class="c-card c-card--iconlink">dffddf</div>
+                            <div class="c-card c-card--iconlink">dffddf</div>
+                        </div>
+
+                    </div>
+                </section>
+            </main>
+        {% endblock %}
+    {% endblock %} {# END body block #}
+
+    {% block footer %}
+        <footer>
+
+
+            {% include "footerbrand/footerbrand.twig" ignore missing %}
+        </footer>
+    {% endblock %} {# END footer block #}
+
+    <div class="l-overlay-modal is-hidden">
+        <div class="modal__search is-hidden">
+            {% include "search/search" %}
+        </div>
+        <div class="modal__menu is-hidden">
+            <div class="is-hidden has-b-menu">
+                {% block menu %}
+                    {% include "menu/data/menu.twig" %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div> {#END APP ID #}
+
+{% block scripts %}
+    <script type="text/javascript">
+        /* Load deferred CSS */
+        const def = document.createElement('link');
+        def.rel = 'stylesheet';
+        def.href = '{{ site.homecssPath }}';
+        def.type = 'text/css';
+        const godefer = document.getElementsByTagName('link')[0];
+        godefer.parentNode.insertBefore(def, godefer);
+    </script>
+    <script src="{{ site.jsPath }}"></script>
+{% endblock %}  {#END SCRIPTS #}
+</body>
+</html>

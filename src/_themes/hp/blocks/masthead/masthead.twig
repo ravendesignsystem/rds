@@ -1,0 +1,89 @@
+<div class="u-block u-block--full">
+    <div class="b-masthead js-sticky-scroll">
+        <div>
+            <nav aria-label="Site title">
+                <h2 class="masthead__site">
+                    <a href="#">{% include 'logos/cu-logo-light.svg' %}</a>
+                </h2>
+            </nav>
+            <nav class="masthead__primarynav">
+                <ul role="menu">
+                    <li><button class="c-menupopup" aria-label="Open Menu">About</button>
+                        <ul class="menupopup__menu" aria-label="menupopup">
+                            <li><a href="#">About Carleton</a></li>
+                            <li><a href="#">Our campus</a></li>
+                            <li><a href="#">Capital advantage</a></li>
+                            <li><a href="#">Our history</a></li>
+                            <li><a href="#">University facts</a></li>
+                            <li><a href="#">University executive</a></li>
+                        </ul>
+                    </li>
+                    <li><button class="c-menupopup" aria-label="Open Menu">Admissions</button>
+                        <ul class="menupopup__menu" aria-label="menupopup">
+                            <li><a href="#">Undergraduate Admissions</a></li>
+                            <li><a href="#">Undergraduate programs</a></li>
+                            <li class="menupopup__title"></li>
+                            <li><a href="#">Graduate Admissions</a></li>
+                            <li><a href="#">Graduate programs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Academics</a></li>
+                    <li><a href="#">Research</a></li>
+                    <li class="masthead__sep"><button class="c-menupopup" aria-label="Open Menu">Priorities</button>
+                        <ul class="menupopup__menu" aria-label="menupopup">
+                            <li><a href="#">Accessibility</a></li>
+                            <li><a href="#">Community Engagement</a></li>
+                            <li><a href="#">Eperiential Learning</a></li>
+                            <li><a href="#">Indigenous Affairs</a></li>
+                            <li><a href="#">International</a></li>
+                            <li><a href="#">Sustainability</a></li>
+                        </ul>
+                    </li>
+                    <li><button class="c-menupopup" aria-label="Open Menu">Future students</button>
+                        <ul class="menupopup__menu" aria-label="menupopup">
+                            <li><a href="#">Undergraduate Students</a></li>
+                            <li><a href="#">Graduate Students</a></li>
+                            <li><a href="#">Continuing Studies and <br>Professional Development</a></li>
+                        </ul>
+                    </li>
+                    <li><button class="c-menupopup" aria-label="Open Menu">Current students</button>
+                        <ul class="menupopup__menu" aria-label="menupopup">
+                            <li><a href="#">Undergraduate Students</a></li>
+                            <li><a href="#">Graduate Students</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Faculty/Staff</a></li>
+                    <li><a href="#">Alumni</a></li>
+                    <li><a href="#">Donors</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="masthead__controls" aria-label="Secondary navigation and controls">
+            <ul>
+                {#masthead__cta#}
+                <li class="c-menupopup c-menupopup--right"><a class="c-menupopup u-icon">{% include 'icons/link-external.svg' %} <span>Jump to</span></a>
+                    <ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
+                        <li><a href="https://github.com/ravendesignsystem/accessibility">{% include 'icons/home.svg' %}Current students home</a></li>
+                        <li><a class="u-icon" href="https://github.com/ravendesignsystem/design">{% include 'icons/diamond.svg' %} Carleton Central</a></li>
+                        <li><a href="https://github.com/ravendesignsystem/content">{% include 'icons/e-learning.svg' %} cuLearn</a></li>
+                        <li><a href="https://github.com/ravendesignsystem/accessibility">{% include 'icons/book.svg' %} Library</a></li>
+                        <li><a href="https://github.com/ravendesignsystem/rds">{% include 'icons/mark-360.svg' %} Carleton360</a></li>
+                        <li><a href="https://github.com/ravendesignsystem/">{% include 'icons/location.svg' %} Campus map</a></li>
+                    </ul>
+                </li>
+                <li class="masthead__search">
+                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
+                        {% include "icons/search.svg" %} <span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+                <li class="masthead__hamburger">
+                    <button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
+					<span class="c-hamburger__box">
+						<span class="c-hamburger__inner"></span>
+					 </span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

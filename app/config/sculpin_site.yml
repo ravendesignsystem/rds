@@ -5,6 +5,7 @@ version: 1.0.0
 coreSize: 26KB
 url: http://localhost:8000/docs/
 cssPath: http://localhost:8000/docs/css/app.css
+homecssPath: http://localhost:8000/docs/css/hp.css
 jsPath: http://localhost:8000/docs/js/app.js
 
 blocks:

@@ -27,7 +27,7 @@
 	min-width: 165px;
 	transition: all 0.25s ease;
 	margin: 0;
-	padding: 0;
+	padding: 3px 0;
 	position: absolute;
 	z-index: 100;
 	border: 1px solid $grey-luke;
@@ -62,7 +62,7 @@
 	a {
 		padding: 8px 15px;
 		height: auto;
-		line-height: 1.05;
+		line-height: 1.25;
 		font-size: $pixel14;
 		font-weight: 400;
 		display: flex;
@@ -136,5 +136,9 @@ button.c-menupopup:hover + .menupopup__menu {
 }
 
 .menupopup__menu li {
-	display: block;
+	display: block !important;
+
+	svg {
+		margin-right: 8px;
+	}
 }

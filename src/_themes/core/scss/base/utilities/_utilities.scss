@@ -152,7 +152,7 @@
 // -------------
 
 .u-block--white:not(.u-block--full) + .u-block--white,
-.u-block--grey:not(.u-block--full) + .u-block--grey,
+.u-block--grey:not(.u-block--full) + .u-block--grey:not(.u-block--padme),
 .u-block--black:not(.u-block--full) + .u-block--black {
 	padding-top: 0;
 }

@@ -1,18 +1,15 @@
-let subutton = document.querySelector('button.c-menupopup');
+const subutton = document.querySelectorAll('button.c-menupopup');
 
-// Detect all clicks on the document
-document.addEventListener('click', function(event) {
-	// If user clicks inside the element, show it!
-	if (event.target.closest('button.c-menupopup')) {
-		subutton.nextElementSibling.classList.add('is-visible');
-	} else {
-		// If user clicks outside the element, hide it!
-		subutton.nextElementSibling.classList.remove('is-visible');
-	}
-});
+subutton.forEach(function(el) {
+	el.addEventListener('click', function(e) {
+		//const content = el.innerHTML;
+		//console.log(content);
+		el.nextElementSibling.classList.add('is-visible');
+	});
 
-document.addEventListener('mouseout', function(event) {
-    if (event.target.closest('button.c-menupopup')) {
-        subutton.nextElementSibling.classList.remove('is-visible');
-    }
+	el.addEventListener('mouseout', function(event) {
+		if (event.target.closest('button.c-menupopup')) {
+			el.nextElementSibling.classList.remove('is-visible');
+		}
+	});
 });

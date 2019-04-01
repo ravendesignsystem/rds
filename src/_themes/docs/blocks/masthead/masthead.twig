@@ -3,12 +3,10 @@
 <div class="u-block u-block--full">
 	<div class="b-masthead js-sticky-scroll">
 		<div>
-			<nav aria-label="Site title and subsite navigation" role="navigation">
-
+			<nav aria-label="Site title and subsite navigation">
 				<h2 class="masthead__site c-menupopup">
 					<a href="#">{% include 'icons/mark-cushield.svg' %}RDS</a>
 				</h2>
-
 				<ul class="menupopup__menu" aria-label="menupopup">
 					<li>
 						<a class="u-icon" href="{{ site.url }}">{% include 'icons/home.svg' %}
@@ -101,7 +99,7 @@
 		<nav class="masthead__controls" aria-label="Secondary navigation and controls">
 			<ul>
 				<li class="c-menupopup c-menupopup--right">
-					<a class="u-icon" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %} Github</a>
+					<a class="u-icon" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %} <span>Github</span></a>
 					<ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
 						<li>
 							<a class="u-icon" href="https://github.com/ravendesignsystem/">{% include 'icons/code.svg' %}
@@ -131,15 +129,15 @@
 					</ul>
 				</li>
 				<li class="masthead__search">
-					<button aria-label="Open Search" class="masthead__search-btn u-btn-reset u-icon">
+					<button aria-label="Open Search" class="masthead__search-btn u-icon">
 						{% include "icons/search.svg" %} <span class="u-hide-s">Search</span>
 					</button>
 				</li>
 				<li class="masthead__hamburger">
 					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
+						<span class="c-hamburger__box">
+							<span class="c-hamburger__inner"></span>
+					 	</span>
 					</button>
 				</li>
 			</ul>
