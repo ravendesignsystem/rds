@@ -101,13 +101,13 @@
 		max-width: calc(1068px + #{$block-padding-m} * 2);
 	}
 
-	@include media('>868px') {
+	@include media('>1024px') {
 		.body__main {
 			flex-direction: row;
 		}
 	}
 
-	@include media('>868px') {
+	@include media('>1024px') {
 		.body__sidebar {
 			flex-basis: calc(300px + #{$grid-gutter});
 		}
@@ -119,7 +119,7 @@
 		}
 	}
 
-	@include media('<=868px') {
+	@include media('<=1024px') {
 		&.l-body--sidebar-top .body__content {
 			order: 2;
 		}
@@ -128,6 +128,7 @@
 
 /**
  * Layout Modifier: Aside + Main + Aside
+ // TODO: build example and test media queries, possibly bump to 1200 or 1368?
  * =============
  */
 
