@@ -15,6 +15,7 @@ icons:
 - name: beaker
 - name: bell
 - name: binoculars
+- name: blackboard
 - name: boardroom
 - name: book
 - name: bookmark
@@ -25,6 +26,7 @@ icons:
 - name: buildings
 - name: business-card
 - name: calendar
+- name: cert
 - name: check
 - name: checklist
 - name: chevron-down
@@ -134,6 +136,7 @@ icons:
 - name: person
 - name: pin
 - name: pinterest
+- name: play
 - name: play-button
 - name: plug
 - name: project
