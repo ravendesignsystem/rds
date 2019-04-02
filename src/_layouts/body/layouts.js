@@ -1,3 +1,5 @@
+// TODO: is this still needed? Not being compiled into any final script
+
 // remove the margin from the last u-block within .body__content
 let removeMargin = function() {
 	'use strict';
