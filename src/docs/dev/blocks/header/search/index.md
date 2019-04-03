@@ -10,9 +10,6 @@ banner:
 ---
 The Search block provides a field for users to search for particular relevant pieces of content. Search can be used as the primary means of discovering content, or as a filter to aid the user in finding content.
 
-![img of search](http://cu-raven.s3.amazonaws.com/assets/img/docs/block-search.jpg)
-Click here to <a href="http://cu-raven.s3.amazonaws.com/assets/img/docs/block-search.jpg" target="_blank">view a larger version</a> of this image
-
 The Search block can be used in the [header section](#) and the [overlay section](#). If you are using a search button in you [Masthead block](#), the Search block can be implemented in your overlay layout to handle search.
 
 There is no actual search functionality associated with this block. This simply provides the HTML and CSS. How you hook up your search is up to you.
