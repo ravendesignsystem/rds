@@ -10,8 +10,7 @@ content: true
 
 The login block can be used in one of two ways: as a stand alone block on a page, or [within an overlay]({{site.url}}dev/layouts/overlay/) that is triggered by an optional [login button in the masthead]({{site.url}}dev/blocks/header/masthead#masthead-with-login-button).
 
-![img of search](http://cu-raven.s3.amazonaws.com/assets/img/docs/block-login.jpg)
-Click here to <a href="http://cu-raven.s3.amazonaws.com/assets/img/docs/block-login.jpg" target="_blank">view a larger version</a> of this image
+{%include "login/login" with {'content': 'closeopen'}%}
 
 ```html
 <div class="u-block u-block--grey u-block--s">

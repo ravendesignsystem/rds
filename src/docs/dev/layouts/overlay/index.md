@@ -19,11 +19,13 @@ The main wrapper for the overlays should be placed immediately after the `footer
 	{Add one or more overlay types as noted below}
 </div>
 ```
-## Overlay Types
 
-### Search
+## Overlay Type: Search
 
 Linked up from the search button in the [masthead block]({{site.url}}dev/blocks/header/masthead/), this overlay put the entire focus on the search block and can be pair with auto suggestive searches, allowing users to find what they want with very little distraction.
+
+![img of search](http://cu-raven.s3.amazonaws.com/assets/img/docs/overlay-search.jpg)
+Click here to <a href="http://cu-raven.s3.amazonaws.com/assets/img/docs/overlay-search.jpg" target="_blank">view a larger version</a> of this image
 
 Be sure to grab the most up-to-date [search block markup]({{site.url}}dev/blocks/header/search/) to use in the example above.
 
@@ -33,7 +35,7 @@ Be sure to grab the most up-to-date [search block markup]({{site.url}}dev/blocks
 </div>
 ```
 
-### Mobile Menu
+## Overlay Type: Mobile Menu
 
 TODO: update when proper mobile nav doc page is done
 
@@ -45,9 +47,12 @@ Short desc
 </div>
 ```
 
-### Login
+## Overlay Type: Login
 
 The masthead makes a [login button]({{site.url}}dev/blocks/header/masthead#masthead-with-login-button) available that put the focus on a simple login form.
+
+![img of search](http://cu-raven.s3.amazonaws.com/assets/img/docs/overlay-login.jpg)
+Click here to <a href="http://cu-raven.s3.amazonaws.com/assets/img/docs/overlay-login.jpg" target="_blank">view a larger version</a> of this image
 
 Be sure to grab the most up-to-date [login block markup]({{site.url}}dev/blocks/header/login/) to use in the example above.
 
