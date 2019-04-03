@@ -30,6 +30,3 @@ There is no actual search functionality associated with this block. This simply 
     </div>
 </div>
 ```
-
-
-
