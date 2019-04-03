@@ -69,7 +69,7 @@
                     {#<img src="http://cu-raven.s3.amazonaws.com/assets/img/photos/climb.jpg" />#}
                     {#<img src="http://cu-raven.s3.amazonaws.com/assets/img/photos/house.jpg" />#}
                    {# <img src="http://cu-raven.s3.amazonaws.com/assets/img/photos/kayak.jpg" />#}
-                    <img src="http://cu-raven.s3.amazonaws.com/assets/img/photos/mountain.png" alt="Read more about need good alt text"/>
+                    <img src="https://res.cloudinary.com/cuweb/image/upload/f_auto/v1554305685/cu-homepage/mountain.webp" alt="Read more about need good alt text"/>
                     <div class="bannerhero_text">
                         {#<div class="bannerhero_text bannerhero_text--right">#}
                         <h2 class="bannerhero__title" data-text="View story"><span>Senator Kim Pate calls for reform of Canada’s criminal justice system</span></h2>
@@ -84,17 +84,17 @@
             {% import 'card/card' as card %}
             {#Card values#}
             {% set card1 = {
-                img: "http://cu-raven.s3.amazonaws.com/assets/img/photos/thumbs/research.jpg",
+                img: "https://res.cloudinary.com/cuweb/image/upload/f_auto/v1554307088/cu-homepage/research.webp",
                 title: 'Carleton research leading in accessibility and inclusion',
                 url: "#"
             }%}
             {% set card2 = {
-                img: "http://cu-raven.s3.amazonaws.com/assets/img/photos/thumbs/indiginous.jpg",
+                img: "https://res.cloudinary.com/cuweb/image/upload/f_auto/v1554307088/cu-homepage/indiginous.webp",
                 title: 'Carmen Robertson explores Indigenous art and activism',
                 url: "#"
             }%}
             {% set card3 = {
-                img: "http://cu-raven.s3.amazonaws.com/assets/img/photos/thumbs/helmets.jpg",
+                img: "https://res.cloudinary.com/cuweb/image/upload/f_auto/v1554307088/cu-homepage/helmet.webp",
                 title: 'New tools to evaluate helmet performance and design',
                 url: "#"
             }%}
@@ -193,7 +193,8 @@
                     </div>
                 </section>
                 {% set cardVideoSettings = {
-                    variant: "video"
+                    utility: 'u-hide-s',
+                    variant: 'video'
                 }%}
                 {% set cardVideo = {
                     img: "http://cu-raven.s3.amazonaws.com/assets/img/photos/thumbs/helmets.jpg",
@@ -271,7 +272,6 @@
             </main>
         {% endblock %}
     {% endblock %} {# END body block #}
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     {% block footer %}
         <footer>
 
