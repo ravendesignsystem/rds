@@ -15,6 +15,26 @@ blocks:
         section: header
         theme: core
     -
+        name: Global Nav
+        handle: globalnav
+        section: header
+        theme: cms
+    -
+        name: Masthead
+        handle: masthead
+        section: header
+        theme: core
+    -
+        name: Search
+        handle: search
+        section: header
+        theme: core
+    -
+        name: Login
+        handle: login
+        section: header
+        theme: core
+    -
         name: Card Grid
         handle: cardgrid
         section: main
@@ -25,10 +45,15 @@ blocks:
         section: main
         theme: core
     -
-        name: Global Nav
-        handle: globalnav
-        section: header
-        theme: cms
+        name: Listing
+        handle: listing
+        section: main
+        theme: na
+    -
+        name: Text-Image (Docs Unfinished)
+        handle: textimg
+        section: main
+        theme: fw
     -
         name: Footer Brand
         handle: footerbrand
@@ -44,30 +69,9 @@ blocks:
         handle: footersimple
         section: footer
         theme: na
-    -
-        name: Listing
-        handle: listing
-        section: main
-        theme: na
-    -
-        name: Masthead
-        handle: masthead
-        section: header
-        theme: core
-    -
-        name: Search
-        handle: search
-        section: header
-        theme: core
-    -
-        name: Text-Image (Docs Unfinished)
-        handle: textimg
-        section: main
-        theme: fw
-
-
 
 images: https://cu-raven.s3.amazonaws.com/assets/img/raven/
+
 some_global_images:
     -
         filename: img1.jpg
@@ -78,6 +82,7 @@ some_global_images:
     -
         filename: img3.jpg
         alt: /
+
 sitemenu:
     -
         title: first item
