@@ -15,4 +15,5 @@ meta:
     path: components/content/img-caption/
     theme: Core
 ---
+
 Docs required...
