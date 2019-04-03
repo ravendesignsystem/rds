@@ -1,7 +1,7 @@
 ---
 layout: base
 subsite: dev
-title: About Layouts
+title: Custom Layouts
 content: true
 banner:
  breadcrumbs:
