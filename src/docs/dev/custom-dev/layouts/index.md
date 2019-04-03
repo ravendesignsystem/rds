@@ -1,8 +1,13 @@
 ---
 layout: base
+subsite: dev
+title: About Layouts
 content: true
-title: Layouts
+banner:
+ breadcrumbs:
+  grandparent: Custom Development
 ---
+
 Layouts are used to arrange content [blocks](#) within sections of page templates. Layouts, generally, setup columns and act as containers to control blocks in a responsive manner across all screen sizes.
 
 Certain layouts can only be used in certain template sections. For example, a body layout must be used in the body section of a template and can not be used in a page header.
@@ -26,17 +31,17 @@ Layout names should use the following pattern:
 
 - section refers to the template section the layout belongs to. For example, `body`.
 
-- tagname refers to the HTML 5 tag name assigned to each layout column. 
+- tagname refers to the HTML 5 tag name assigned to each layout column.
 
 For example, if you had a two column layout with a sidebar on the left and the main content on the right, the wrapper class name would be:
- 
+
 ```css
 l-body l-body--aside-main
 ```
 and the HTML would be:
 
 ```html
-<div class="l-body l-body--aside-main">	
+<div class="l-body l-body--aside-main">
     <aside>Sidebar content</aside>
     <main>Main content</main>
 </div>
@@ -50,7 +55,7 @@ and the HTML would be:
 If you wanted three columns, with a left sidebar, middle content area and then right sidebar area, your code would look like
 
 ```html
-<div class="l-body l-body--aside-main-aside">	
+<div class="l-body l-body--aside-main-aside">
     <aside>Left sidebar content</aside>
     <main>Main content</main>
     <aside>Right sidebar content</aside>
