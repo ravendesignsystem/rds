@@ -25,6 +25,8 @@ The following terms are used throughout RDS to articulate the systems’ underly
 
 **A page** refers to the full user interface (UI) or screen rendered in a browser at a given time. Pages display data and handle user interactions. They can be scrollable and include content off screen, as long as it is accessible without reloading the page. Your app or site is a collection of pages that are linked together.
 
+[test]({{site.url}}foo)
+
 ![img of page](http://cu-raven.s3.amazonaws.com/assets/img/docs/page.png)
 
 ## Sections
