@@ -70,6 +70,83 @@ blocks:
         section: footer
         theme: na
 
+components:
+    -
+        name: Badge (No content)
+        handle: badge
+        section: alerts
+        theme: core
+    -
+        name: Call to Action
+        handle: cta-button
+        section: buttons
+        theme: core
+    -
+        name: Social Media (Review required)
+        handle: social-button
+        section: buttons
+        theme: core
+    -
+        name: Social Media
+        handle: social-button
+        section: buttons
+        theme: core
+    -
+        name: Cards (Missing end notes)
+        handle: cards
+        section: cards
+        theme: core
+    -
+        name: Accordion (Missing end notes)
+        handle: accordion
+        section: content
+        theme: core
+    -
+        name: Image Caption
+        handle: imagecaption
+        section: content
+        theme: core
+    -
+        name: Table (No content)
+        handle: table
+        section: content
+        theme: core
+    -
+        name: Video (No content)
+        handle: video
+        section: content
+        theme: core
+    -
+        name: Form (No content)
+        handle: form
+        section: forms
+        theme: core
+    -
+        name: Search (No content)
+        handle: search
+        section: forms
+        theme: core
+    -
+        name: Icon Library
+        handle: library
+        section: icons
+        theme: core
+    -
+        name: Carleton University Logo (No content)
+        handle: carleton
+        section: logos
+        theme: core
+    -
+        name: Carleton Ravens Logo (No content)
+        handle: ravens
+        section: logos
+        theme: core
+    -
+        name: Submenu (No content)
+        handle: submenu
+        section: nav
+        theme: core
+
 images: https://cu-raven.s3.amazonaws.com/assets/img/raven/
 
 some_global_images:
