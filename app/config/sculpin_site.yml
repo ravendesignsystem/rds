@@ -20,6 +20,11 @@ blocks:
         section: header
         theme: cms
     -
+        name: Login
+        handle: login
+        section: header
+        theme: core
+    -
         name: Masthead
         handle: masthead
         section: header
@@ -27,11 +32,6 @@ blocks:
     -
         name: Search
         handle: search
-        section: header
-        theme: core
-    -
-        name: Login
-        handle: login
         section: header
         theme: core
     -
@@ -50,7 +50,7 @@ blocks:
         section: main
         theme: na
     -
-        name: Text-Image (Docs Unfinished)
+        name: Text-Image (Docs incomplete)
         handle: textimg
         section: main
         theme: fw
@@ -60,15 +60,15 @@ blocks:
         section: footer
         theme: core
     -
+        name: Footer Simple (Missing end notes)
+        handle: footersimple
+        section: footer
+        theme: na
+    -
         name: Footer Sitemap
         handle: footersitemap
         section: footer
         theme: fw
-    -
-        name: Footer Simple (Docs Unfinished)
-        handle: footersimple
-        section: footer
-        theme: na
 
 components:
     -
@@ -83,11 +83,6 @@ components:
         theme: core
     -
         name: Social Media (Review required)
-        handle: social-button
-        section: buttons
-        theme: core
-    -
-        name: Social Media
         handle: social-button
         section: buttons
         theme: core
@@ -127,7 +122,7 @@ components:
         section: forms
         theme: core
     -
-        name: Icon Library
+        name: Icon Library (Review required)
         handle: library
         section: icons
         theme: core
@@ -137,7 +132,7 @@ components:
         section: logos
         theme: core
     -
-        name: Carleton Ravens Logo (No content)
+        name: Ravens Athletics Logo (No content)
         handle: ravens
         section: logos
         theme: core
