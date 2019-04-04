@@ -5,13 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
         <meta name="robots" content="noodp, noydir"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="canonical" href="https://ravendesignsystem.github.io/rds//docs/dev/custom-dev/developing-blocks-components"/>
+        <link rel="canonical" href="https://ravendesignsystem.github.io/rds//docs/dev/custom-dev/blocks-components"/>
         <link rel="stylesheet" href="https://cloud.typography.com/6307052/6144772/css/fonts.css" type="text/css"/>
                                             <link rel="stylesheet" href="https://ravendesignsystem.github.io/rds/css/app.css">
                 <link rel="manifest" href="/manifest.json">
                                 <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <title>Naming Blocks and Components | Raven Design System | RDS</title>
-                                                <meta property="og:url" content="https://ravendesignsystem.github.io/rds//docs/dev/custom-dev/developing-blocks-components">
+                                                <meta property="og:url" content="https://ravendesignsystem.github.io/rds//docs/dev/custom-dev/blocks-components">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Naming Blocks and Components">
                                                 <meta name="twitter:card" content="summary_large_image">
@@ -129,91 +129,86 @@ RDS</a>
                         <main id="content">
                                 <div class="u-block u-block--white u-block--s">
                     <div class="b-content">
-                                                <p>Blocks and components are built in a managed approach that follow a predictable pattern and the code used should be as transparent and self-documenting as possible.</p>
+                                                <!-- Blocks and components are built in a managed approach that follow a predictable pattern and the code used should be as transparent and self-documenting as possible.
 
-<h2 id="bem-naming-convention">BEM Naming Convention</h2>
+## BEM Naming Convention
 
-<p>To better understand the relationship between our HTML and CSS, RDS uses a declarative syntax based on the <a href="https://en.bem.info/methodology/">BEM methodology</a>.</p>
+To better understand the relationship between our HTML and CSS, RDS uses a declarative syntax based on the [BEM methodology](https://en.bem.info/methodology/).
 
-<pre><code class="css">.block {}
+```css
+.block {}
 .block__element {}
 .block--modifier {}
-</code></pre>
+```
 
-<ul>
-<li>.block is the highest level and represents the block/component name.</li>
-<li>.block__element represents a descendent that helps form .block as a whole.</li>
-<li>.block--modifier represents a different state or version of .block or a .block__element.</li>
-</ul>
+* .block is the highest level and represents the block/component name.
+* .block__element represents a descendent that helps form .block as a whole.
+* .block--modifier represents a different state or version of .block or a .block__element.
 
-<p>For more reading on BEM <a href="https://github.com/sturobson/BEM-resources">check the awesome resources</a>.</p>
+For more reading on BEM [check the awesome resources](https://github.com/sturobson/BEM-resources). -->
 
-<h2 id="core-block-class-namespacing">Core Block Class namespacing</h2>
+<!-- ## Core Block Class namespacing
 
-<p>To glean even more information from the HTML, the block name must use the following pattern:</p>
+To glean even more information from the HTML, the block name must use the following pattern:
 
-<pre><code class="html">&lt;div class="prefix-section/type-name"&gt;
-</code></pre>
+```html
+<div class="prefix-section/type-name">
+```
+Where the:
 
-<p>Where the:</p>
+* __prefix__ is either 'b-' or 'c-' indicating whether it is a block or a component.
 
-<ul>
-<li><p><strong>prefix</strong> is either 'b-' or 'c-' indicating whether it is a block or a component.</p></li>
-<li><p><strong>section</strong> refers to the section of the template where the block can be used. Available sections include: <code>header</code>, <code>main</code>, <code>footer</code> and <code>modal</code>. If a block can be used in multiple template sections, it is given a type. Examples of block types are: <code>nav</code> and <code>listing</code>.</p></li>
-<li><p><strong>name</strong> is its assigned unique name. The block name should describe its purpose as best as possible.</p></li>
-</ul>
+* __section__ refers to the section of the template where the block can be used. Available sections include: `header`, `main`, `footer` and `modal`. If a block can be used in multiple template sections, it is given a type. Examples of block types are: `nav` and `listing`.
 
-<h3 id="namespacing-example---the-banner-block">Namespacing example - the Banner block</h3>
+* __name__ is its assigned unique name. The block name should describe its purpose as best as possible. -->
 
-<p>Below is the opening HTML markup for the <a href="/docs/blocks/header/banner/">Banner block</a>:</p>
+<!-- ### Namespacing example - the Banner block
 
-<pre><code class="html">&lt;div class="b-banner u-block-full u-block-full--grey"&gt;
-</code></pre>
+Below is the opening HTML markup for the [Banner block](/docs/blocks/header/banner/):
 
-<p>Note:</p>
+```html
+<div class="b-banner u-block-full u-block-full--grey">
+```
+Note:
 
-<ul>
-<li><code>b-</code> signifies this as a block.</li>
-<li><code>header-</code> tells us this block can only be used in the semantic Header element.</li>
-<li><code>banner</code> tells us the block name.</li>
-</ul>
+- `b-` signifies this as a block.
+- `header-` tells us this block can only be used in the semantic Header element.
+- `banner` tells us the block name. -->
 
-<h3 id="namespacing-example---the-list-group-block">Namespacing Example - the List Group block</h3>
+<!-- ### Namespacing Example - the List Group block
 
-<p>Below is the opening HTML markup for the <a href="/docs/blocks/listing/list-group/">List Group block</a>:</p>
+Below is the opening HTML markup for the [List Group block](/docs/blocks/listing/list-group/):
 
-<pre><code class="html">&lt;ul class="b-listing"&gt;
-</code></pre>
+```html
+<ul class="b-listing">
+```
+Note:
 
-<p>Note:</p>
+-  `b-` signifies this as a block.
+- `listing-` tells us this can be used in multiple sections and belongs to the Listing block type.
+- `listgroup` tells us the block name.
 
-<ul>
-<li><code>b-</code> signifies this as a block.</li>
-<li><code>listing-</code> tells us this can be used in multiple sections and belongs to the Listing block type.</li>
-<li><code>listgroup</code> tells us the block name.</li>
-</ul>
+**Important note**:
 
-<p><strong>Important note</strong>:</p>
+- block names should not have spaces or hyphens. Even though the above block's proper name is List Group, the class name needs to be `listgroup` and should *not* be `list-group`.
 
-<ul>
-<li>block names should not have spaces or hyphens. Even though the above block's proper name is List Group, the class name needs to be <code>listgroup</code> and should <em>not</em> be <code>list-group</code>.</li>
-</ul>
+toDO add and link - View all of our CSS namespacing here - (u-, l-) -->
 
-<p>toDO add and link - View all of our CSS namespacing here - (u-, l-)</p>
+<!-- ## Core Component class namespacing
 
-<h2 id="core-component-class-namespacing">Core Component class namespacing</h2>
+Components follow the same namespacing rules as blocks but since components are never restricted to sections of a template their convention only use type and never section.
 
-<p>Components follow the same namespacing rules as blocks but since components are never restricted to sections of a template their convention only use type and never section.</p>
+```html
+<div class="prefix-type-name">
+```
 
-<pre><code class="html">&lt;div class="prefix-type-name"&gt;
-</code></pre>
+### Component namespacing example - the Button component
 
-<h3 id="component-namespacing-example---the-button-component">Component namespacing example - the Button component</h3>
+Below is the opening HTML markup for the [Button component](/docs/components/buttons/button/):
 
-<p>Below is the opening HTML markup for the <a href="/docs/components/buttons/button/">Button component</a>:</p>
-
-<pre><code class="html">&lt;a class="c-buttoncta" href="http://www.nooooooooooooooo.com"&gt;Base button&lt;/a&gt;&gt;
-</code></pre>
+```html
+<a class="c-buttoncta" href="http://www.nooooooooooooooo.com">Base button</a>>
+``` -->
 
 <h2 id="organizing-block-partials-in-themes">Organizing block partials in themes</h2>
 
@@ -430,8 +425,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu--1-9" type="checkbox" hidden/>
-                    <label for="menu--1-9">
+                                <input id="menu--1-87" type="checkbox" hidden/>
+                    <label for="menu--1-87">
                         <a class="" href="#">Level 1-1</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -439,8 +434,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu-2-1-100" type="checkbox" hidden/>
-                    <label for="menu-2-1-100">
+                                <input id="menu-2-1-78" type="checkbox" hidden/>
+                    <label for="menu-2-1-78">
                         <a class="" href="#">Level 2-1</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -460,8 +455,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu-2-1-118" type="checkbox" hidden/>
-                    <label for="menu-2-1-118">
+                                <input id="menu-2-1-115" type="checkbox" hidden/>
+                    <label for="menu-2-1-115">
                         <a class="" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -478,8 +473,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu--1-132" type="checkbox" hidden/>
-                    <label for="menu--1-132">
+                                <input id="menu--1-135" type="checkbox" hidden/>
+                    <label for="menu--1-135">
                         <a class="" href="#">First Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -487,8 +482,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu-2-1-43" type="checkbox" hidden/>
-                    <label for="menu-2-1-43">
+                                <input id="menu-2-1-97" type="checkbox" hidden/>
+                    <label for="menu-2-1-97">
                         <a class="" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -508,8 +503,8 @@ RDS</a>
                                             
                         
             <li>
-                                <input id="menu-2-1-155" type="checkbox" hidden/>
-                    <label for="menu-2-1-155">
+                                <input id="menu-2-1-99" type="checkbox" hidden/>
+                    <label for="menu-2-1-99">
                         <a class="" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
