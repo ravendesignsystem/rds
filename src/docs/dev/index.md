@@ -1,7 +1,7 @@
 ---
 layout: base
 subsite: dev
-title: RDS Subsite: Dev
+title: RDS Developer Docs
 content: true
 banner:
   img:
