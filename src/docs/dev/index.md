@@ -30,7 +30,7 @@ If you need a specific layout to handle left hand navigation, or right hand side
 
 {% include "docs/inc/content-layouts-list.twig" %}
 
-## Custom Development (In progress)
+## Custom Development
 If RDS  is not offering you exactly what you need, build it yourself. The following docs will help get you started on building custom blocks, components, and layouts.
 
 {% include "docs/inc/content-custom-dev-list.twig" %}
