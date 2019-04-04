@@ -1,7 +1,7 @@
 ---
 layout: base
 subsite: dev
-title: Understanding the RDS system
+title: An Introduction to RDS
 content: true
 ---
 
@@ -9,7 +9,7 @@ content: true
 
 The RDS design system was established to help Carleton deliver a unified experience across all of its web properties. In addition to creating a consistent user experience, another goal was to unite development teams across campus through a shared language.
 
-This section is intended to help developers better understand the core concepts behind the RDS system. 
+This section is intended to help developers better understand the core concepts behind the RDS system.
 
 https://medium.com/@broccolini/design-systems-at-github-c8e5378d2542
 
@@ -31,9 +31,9 @@ This year we’ve been moving our UI Kits into Figma for designers to create moc
 
 
 
- 
-  
- 
+
+
+
 A successful Design Language will:
 Focus: allow the designer to focus clearly on the project at hand rather then to be diverted by other distractions.
 Clarity: allow the designer to think clearly about our design beliefs as well as the design constraints in place across the platform.
@@ -54,12 +54,12 @@ Consistency is one of the essential topics of user experience. Maintaining consi
 
 
  Pattern library or style guide beyond to language
- 
+
  https://medium.freecodecamp.org/design-language-system-why-your-team-needs-one-and-how-to-built-it-d996ba8c3889
- 
- 
- 
- 
+
+
+
+
  Terminology
  Various concepts are used by teams to create their preferred design standards.
  Functional pattern, Component: Reusable tangible elements. Buttons, form fields, navigation, etc.
