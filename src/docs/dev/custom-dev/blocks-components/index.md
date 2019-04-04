@@ -7,7 +7,8 @@ banner:
     grandparent: Dev
     parent: Blocks
 ---
-Blocks and components are built in a managed approach that follow a predictable pattern and the code used should be as transparent and self-documenting as possible.
+
+<!-- Blocks and components are built in a managed approach that follow a predictable pattern and the code used should be as transparent and self-documenting as possible.
 
 ## BEM Naming Convention
 
@@ -23,9 +24,9 @@ To better understand the relationship between our HTML and CSS, RDS uses a decla
 * .block__element represents a descendent that helps form .block as a whole.
 * .block--modifier represents a different state or version of .block or a .block__element.
 
-For more reading on BEM [check the awesome resources](https://github.com/sturobson/BEM-resources).
+For more reading on BEM [check the awesome resources](https://github.com/sturobson/BEM-resources). -->
 
-## Core Block Class namespacing
+<!-- ## Core Block Class namespacing
 
 To glean even more information from the HTML, the block name must use the following pattern:
 
@@ -38,9 +39,9 @@ Where the:
 
 * __section__ refers to the section of the template where the block can be used. Available sections include: `header`, `main`, `footer` and `modal`. If a block can be used in multiple template sections, it is given a type. Examples of block types are: `nav` and `listing`.
 
-* __name__ is its assigned unique name. The block name should describe its purpose as best as possible.
+* __name__ is its assigned unique name. The block name should describe its purpose as best as possible. -->
 
-### Namespacing example - the Banner block
+<!-- ### Namespacing example - the Banner block
 
 Below is the opening HTML markup for the [Banner block](/docs/blocks/header/banner/):
 
@@ -51,9 +52,9 @@ Note:
 
 - `b-` signifies this as a block.
 - `header-` tells us this block can only be used in the semantic Header element.
-- `banner` tells us the block name.
+- `banner` tells us the block name. -->
 
-### Namespacing Example - the List Group block
+<!-- ### Namespacing Example - the List Group block
 
 Below is the opening HTML markup for the [List Group block](/docs/blocks/listing/list-group/):
 
@@ -70,9 +71,9 @@ Note:
 
 - block names should not have spaces or hyphens. Even though the above block's proper name is List Group, the class name needs to be `listgroup` and should *not* be `list-group`.
 
-toDO add and link - View all of our CSS namespacing here - (u-, l-)
+toDO add and link - View all of our CSS namespacing here - (u-, l-) -->
 
-## Core Component class namespacing
+<!-- ## Core Component class namespacing
 
 Components follow the same namespacing rules as blocks but since components are never restricted to sections of a template their convention only use type and never section.
 
@@ -86,7 +87,7 @@ Below is the opening HTML markup for the [Button component](/docs/components/but
 
 ```html
 <a class="c-buttoncta" href="http://www.nooooooooooooooo.com">Base button</a>>
-```
+``` -->
 
 ## Organizing block partials in themes
 
