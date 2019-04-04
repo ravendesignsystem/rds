@@ -9,7 +9,7 @@ banner:
     parent: Buttons
 ---
 
-TODO add text - STUB
+Linking to social media services can be an important part of building community and keeping in touch with users. All you need to do is add any of the following icons to your site, and update the URL to your social media service.
 
 ## Social buttons
 

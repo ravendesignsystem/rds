@@ -1,7 +1,7 @@
 ---
 layout: base
 subsite: dev
-title: Development guidelines and principles
+title: Design Principles and Coding Standards
 content: true
 ---
 While, development focused, the following principles and guidelines do rollup to RDS' overall [guiding principles](#). Anyone contributing to or developing with RDS should have a clear understanding of the principles and guidelines below.
@@ -40,7 +40,7 @@ TTS is committed to building a safe, welcoming, harassment-free culture for ever
 
 Browser support
 
-We’ve designed the Design System to support older and newer browsers through progressive enhancement. The current major version of the Design System (1.0) is designed to support the newest versions of Chrome, Firefox, Safari, and Internet Explorer 11 and up. 
+We’ve designed the Design System to support older and newer browsers through progressive enhancement. The current major version of the Design System (1.0) is designed to support the newest versions of Chrome, Firefox, Safari, and Internet Explorer 11 and up.
 
 The next major release (2.0) will follow the 2% rule: we will officially support any browser above 2% usage as observed by analytics.usa.gov. Currently, this means that the Design System version 2.0 will support the newest versions of Chrome, Firefox, Safari, and Internet Explorer 11 and up.
 

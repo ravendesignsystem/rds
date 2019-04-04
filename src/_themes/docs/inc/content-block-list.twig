@@ -1,6 +1,6 @@
 {#  this is controlled via /app/config/sculpin_site.yml #}
 
-<h3>Header blocks</h3>
+<p><strong>Header blocks</strong></p>
 <ul>
 	{% for item in site.blocks %}
 		{% if item.section == 'header' %}
@@ -9,7 +9,7 @@
 	{% endfor %}
 </ul>
 
-<h3>Main blocks</h3>
+<p><strong>Main blocks</strong></p>
 <ul>
 	{% for item in site.blocks %}
 		{% if item.section == 'main' %}{{ item[0] }}
@@ -18,7 +18,7 @@
 	{% endfor %}
 </ul>
 
-<h3>Footer blocks</h3>
+<p><strong>Footer blocks</strong></p>
 <ul>
 	{% for item in site.blocks %}
 		{% if item.section == 'footer' %}

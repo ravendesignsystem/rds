@@ -1,7 +1,7 @@
 ---
 layout: base
 subsite: dev
-title: RDS Subsite: Dev
+title: RDS Developer Docs
 content: true
 banner:
   img:
@@ -10,61 +10,40 @@ banner:
     img_opacity: light
 ---
 
+## About RDS
+Whether you're looking to get started with RDS, or want a follow up on the principals and guidelines, the about section has you covered.
+
+{% include "docs/inc/content-about-rds.twig" %}
+
 ## Blocks
+Blocks are the meat and potatoes of an RDS powered site. Check out the list of what is available below, and come back often to see what's new.
 
 {% include "docs/inc/content-block-list.twig" %}
 
 ## Components
+RDS offers a variety of easy to use and quick to implement components that can be used inside any of your blocks.
 
 {% include "docs/inc/content-components-list.twig" %}
 
 ## Layouts
+If you need a specific layout to handle left hand navigation, or right hand sidebar, or both, RDS makes this easy.
 
 {% include "docs/inc/content-layouts-list.twig" %}
 
-## Understanding the RDS System
+<!-- ## Understanding the RDS System
 
 {% include "docs/inc/content-understanding-rds-list.twig" %}
 
-#### Others: Unlinked / Unknown
-
-- [About RDS](#) - Not Linked
-- [Blocks](#) - Not Linked
-- [Components](#) - Not Linked
-- [Themes and Templates](#) - Not Linked
-- [Contributing](#) - Not Linked
-
 ## Using RDS
 
-{% include "docs/inc/content-using-rds-list.twig" %}
+{% include "docs/inc/content-using-rds-list.twig" %} -->
 
-#### Others: Unlinked / Unknown
-
-- [Starter Themes](getting-started/#) - Not Linked
-- [Starter Templates](getting-started/#) - Not Linked
-- [Bowser and Device Compatibility](getting-started/#) - Not Linked
-- [Accessibility](getting-started/accessibility/) - Not Linked
-- [Releases Notes](getting-started/#) - Not Linked
-- [Getting Help](getting-started/#) - Not Linked
-
-## Custom Development
+## Custom Development (In progress)
+If RDS  is not offering you exactly what you need, build it yourself. The following docs will help get you started on building custom blocks, components, and layouts.
 
 {% include "docs/inc/content-custom-dev-list.twig" %}
 
-#### Others: Unlinked / Unknown
+## Things to look at later
 
-- [Download](custom-dev/#) - Not Linked
-- [Set up - tooling](custom-dev/#) - Not Linked
-- [Directory Structure](custom-dev/#) - Not Linked
-- [Theming - Custom starter themes](custom-dev/#) - Not Linked
-- [Styling - SASS](custom-dev/#) - Not Linked
-- [Creating Blocks](custom-dev/#) - Not Linked
-- [Creating Components](custom-dev/#) - Not Linked
-- [Grid System](custom-dev/#) - Not Linked
-- [Iconography](custom-dev/#) - Not Linked
-- [Utility classes](custom-dev/#) - Not Linked
-- [Guides](custom-dev/#) - Not Linked
-
-
-https://developers.google.com/style/abbreviations
-https://github.com/viljamis/vue-design-system/wiki
+- [Google Dev Docs: Abberviations](https://developers.google.com/style/abbreviations)
+- [Vue Design System Docs](https://github.com/viljamis/vue-design-system/wiki)

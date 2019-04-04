@@ -2,7 +2,7 @@
 layout: base
 subsite: dev
 content: true
-title: Components
+title: About Components
 ---
 Components are relatively simple UI elements that, unlike blocks, __can be nested__ inside of blocks, and even other components. Components tend to be smaller, inline interface elements such as buttons and icons.
 Similar to Blocks, RDS Components are UI elements built for reuse. Unlike Blocks, Components can be nested inside of blocks, and even other components. Relatively more straightforward than blocks, components tend to be smaller, inline interface elements such as buttons and icons. Components must be used within a Block and cannot be used on their own.
