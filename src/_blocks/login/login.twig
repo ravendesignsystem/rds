@@ -1,8 +1,5 @@
-{% if 'close' in content %}
-    </div>
-    </div>
-{% endif %}
-
+{% extends "t-docs-block" %}
+{% block block %}
 <div class="u-block u-block--grey u-block--s">
     <div class="b-login">
 
@@ -20,8 +17,4 @@
         </form>
     </div>
 </div>
-
-{% if 'open' in content %}
-<div class="u-block u-block--s">
-    <div class="b-content">
-{% endif %}
+{% endblock %}

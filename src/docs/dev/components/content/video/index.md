@@ -1,8 +1,7 @@
 ---
-layout: base
+layout: t-docs
 subsite: dev
 title: Video
-content: true
 banner:
   breadcrumbs:
     grandparent: Components

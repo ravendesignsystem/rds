@@ -1,5 +1,5 @@
 ---
-layout: t-block-docs
+layout: t-docs
 subsite: dev
 title: Masthead block
 banner:

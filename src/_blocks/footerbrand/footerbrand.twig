@@ -1,7 +1,5 @@
-{% if 'close' in content %}
-    </div>
-    </div>
-{% endif %}
+{% extends "t-docs-block" %}
+{% block block %}
 <div class="u-block u-block--black u-block--border-top u-center u-center--center">
     <div class="b-footerbrand">
             <a class="footerbrand__logo" href="https://carleton.ca">{% include "logos/cu-logo-dark.svg" %}<span class="u-visually-hidden">Carleton University logo, links to homepage</span></a>
@@ -20,7 +18,4 @@
             </nav>
     </div>
 </div>
-{% if 'open' in content %}
-    <div class="u-block u-block--s">
-        <div class="b-content">
-{% endif %}
+{% endblock %}

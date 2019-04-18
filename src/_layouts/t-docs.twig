@@ -1,0 +1,14 @@
+{% extends "docs" %}
+
+{% block main %}
+
+ <main id="content">
+     <div class="u-block u-block--white u-block--s">
+         <div class="b-content">
+         {% set inContent = true %}
+         {% block content %}
+         {% endblock %}
+         </div>
+     </div>
+ </main>
+{% endblock %}

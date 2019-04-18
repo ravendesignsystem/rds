@@ -10,13 +10,32 @@ banner:
     img_opacity: light
 ---
 
-## About RDS
-Whether you're looking to get started with RDS, or want a follow up on the principals and guidelines, the about section has you covered.
+## Getting started
 
-{% include "docs/inc/content-about-rds.twig" %}
+- [Get started]({{site.url}}dev/getting-started/get-started/)
+- [Quick start - stub]({{site.url}}dev/getting-started/quick-start/)
+- [Started packages - stub]({{site.url}}dev/getting-started/starter-packages/)
+
+## Main concepts
+
+- [Main concepts of RDS]({{site.url}}dev/main-concepts/)
+- [Blocks in depth]({{site.url}}dev/main-concepts/blocks-in-depth/)
+- [Components]({{site.url}}dev/main-concepts/components)
+- [Layouts]({{site.url}}dev/main-concepts/layouts/)
+- [Themes]({{site.url}}dev/main-concepts/themes/)
+- [Spacing]({{site.url}}dev/main-concepts/spacing/)
+
+## Custom theming
+
+- [Introduction]({{site.url}}dev/custom-theming/)
+- [Installing RDS]({{site.url}}dev/custom-theming/installing-rds/)
+- [SASS]({{site.url}}dev/custom-theming/sass/)
+- [Creating custom blocks]({{site.url}}dev/custom-theming/installing-rds/)
+- [Layouts]({{site.url}}dev/custom-theming/layouts/)
+- [Icon system]({{site.url}}dev/custom-theming/icon-system/)
+- [Grid system]({{site.url}}dev/custom-theming/grid-system/)
 
 ## Blocks
-Blocks are the meat and potatoes of an RDS powered site. Check out the list of what is available below, and come back often to see what's new.
 
 {% include "docs/inc/content-block-list.twig" %}
 
@@ -30,10 +49,8 @@ If you need a specific layout to handle left hand navigation, or right hand side
 
 {% include "docs/inc/content-layouts-list.twig" %}
 
-## Custom Development
-If RDS  is not offering you exactly what you need, build it yourself. The following docs will help get you started on building custom blocks, components, and layouts.
+## Guidelines
 
-{% include "docs/inc/content-custom-dev-list.twig" %}
 
 ## Things to look at later
 

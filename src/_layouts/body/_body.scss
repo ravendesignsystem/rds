@@ -54,10 +54,13 @@
 		display: block;
 		flex-grow: 0;
 		flex-shrink: 0;
-		flex-basis: calc(240px + #{$grid-gutter});
+		flex-basis: calc(240px + #{$grid-gutter}); //TODO for Troy why is this not working without the max-width?
+		max-width: 270px;
 		margin-right: $grid-gutter;
 		padding-right: $grid-gutter;
 		border-right: 1px solid $grey;
+		position: sticky !important;
+		top: 0;
 	}
 }
 

@@ -1,0 +1,33 @@
+{% extends "docs" %}
+
+{% block body %}
+<div class="l-body l-body--ama l-body--white">
+    <div class="body__container">
+
+        <aside class="body__nav">
+            <div class="u-block u-block--m u-block--white">
+                Aside left
+            </div>
+        </aside>
+
+        {% block main %}
+         <main class="body__main" id="content">
+             <div class="body__content">
+                 <div class="b-content">
+                 {% set inContent = true %}
+                 {% block content %}
+                 {% endblock %}
+                 </div>
+             </div>
+
+             <aside class="body__sidebar">
+                 <div class="u-block u-block--m u-block--white">
+                     <p>Aside right</p>
+                 </div>
+             </aside>
+         </main>
+        {% endblock %}{# End main#}
+    </div>
+</div>
+{% endblock %}{# End body#}
+

@@ -3,6 +3,7 @@
 
 	// modal elements
 	const modal = document.querySelector('.l-overlay-modal'),
+		modalMenu = document.querySelector('.modal__menu'),
 		modalSearch = document.querySelector('.modal__search'),
 		modalLogin = document.querySelector('.modal__login'),
 		// masthead elements
@@ -10,7 +11,7 @@
 		mastheadHamburger = document.querySelector('.masthead__hamburger'),
 		// masthead buttons
 		hamburger = document.querySelector('.c-hamburger'),
-		navMoreBtn = document.querySelector('.masthead__nav-item--more'),
+		navMoreBtn = document.querySelector('.masthead__more'),
 		navSearch = document.querySelector('.masthead__search-btn'),
 		navLogin = document.querySelector('.masthead__login-btn'),
 		// for swapping menu from elsewhere into modal
@@ -59,7 +60,7 @@
 			} else {
 				modalLogin.classList.remove('is-hidden');
 				modal.classList.add('u-bg-grey'),
-				document.querySelector('.login__field').focus();
+					document.querySelector('.login__field').focus();
 			}
 
 			if (modalClosed === true) {
@@ -104,7 +105,7 @@
 				if (hamburger.classList.contains('is-active')) {
 					navBody.appendChild(navMenu);
 				} else {
-					modal.appendChild(navMenu);
+					modalMenu.appendChild(navMenu);
 				}
 			}
 		}

@@ -1,8 +1,7 @@
 ---
-layout: base
+layout: t-docs
 subsite: dev
 title: Accordion component
-content: true
 banner:
   breadcrumbs:
     grandparent: Components
@@ -19,7 +18,7 @@ The Accordion block is a vertically stacked list of items with content sections 
 
 ## Base example
 
-{%include "accordion/data/accordion.twig" ignore missing%}<br>
+{%include "accordion/data/accordion.twig"%}<br>
 
 ```html
 <div class="c-accordion">
@@ -115,7 +114,3 @@ Only one section is open at any given time.
 Accordions should:
 
 - ...
-
-##Avoid
-
-- Don't

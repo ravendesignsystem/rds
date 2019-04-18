@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: t-docs
 subsite: dev
 title: Content block
 banner:
@@ -45,6 +45,7 @@ Content within this block should follow the <a href="#">RDS HTML coding conventi
 - keep your code tidy, clean and well-formed.
 - use lowercase element and attribute names.
 - close all HTML elements.
+- in almost all cases the b-content block width should be set to `u-block--s`.
 
 ```html
 <div class="u-block u-block--s">

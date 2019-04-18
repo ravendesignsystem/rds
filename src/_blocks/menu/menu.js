@@ -23,7 +23,7 @@ if (navExpand) {
 		}
 	}
 
-	if (document.querySelector('.has-b-menu')) {
+	if (document.querySelector('.menu__toggle')) {
 		navExpand.addEventListener('click', expandMenu);
 	}
 }

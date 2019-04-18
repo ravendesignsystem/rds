@@ -69,26 +69,38 @@
     {% endblock %}
 
     {% block body %}
-        {% block main %}
-            <main id="content">
-                {% if page.content == true %}
-                <div class="u-block u-block--white u-block--s">
-                    <div class="b-content">
-                        {% endif %}
-                        {% block content %}
-                        {% endblock %}
-                        {% if page.content == true %}
-                    </div>
-                </div>
-                {% endif %}
-                {#<p class="b-content u-block" style="border-top: 1px solid #f3f3f3;padding-top: 20px;">Running RDS Core v. {{ site.core }}/{{ site.coreSize }} | <a href="https://github.com/dannybrown73/rds-docs/tree/master/docs/{{ page.url }}">Improve these docs.</a></p>#}
-            </main>
-        {% endblock %}
+        {% if page.menu %}
+        <div class="l-body l-body--am l-body--white">
+            <div class="body__container">
+
+                <aside class="body__nav">
+                    {%include 'docs/inc/menus/menu-' ~ page.menu %}
+                </aside>
+        {% endif %}
+                {% block main %}
+                    <main {% if page.menu %}class="body__main"{% endif %} id="content">
+                        <div class="body__content">
+                            <div class="u-block u-block--white u-block--s">
+                                <div class="b-content">
+                                    {% set inContent = true %}
+                                    {% block content %}
+                                    {% endblock %}
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                {% endblock %}{# End main#}
+        {% if page.menu %}
+            </div>
+        </div>
+        {% endif %}
+
     {% endblock %} {# END body block #}
 
     {% block footer %}
+        {% set inContent = false %}
         <footer>
-            {% include "footerbrand/footerbrand.twig" with {'content': false} %}
+            {% include "footerbrand/footerbrand.twig" %}
         </footer>
     {% endblock %} {# END footer block #}
 
@@ -98,13 +110,11 @@
             {% include "search/search" %}
         </div>
         <div class="modal__menu is-hidden">
-            <div class="is-hidden has-b-menu">
                 {% if page.menu != true %}
                 {% block menu %}
                     {% include "menu/data/menu.twig" %}
                 {% endblock %}
                 {% endif %}
-            </div>
         </div>
 
         {# Good to wrap in an is-logged-in conditional...#}

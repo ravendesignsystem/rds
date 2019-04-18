@@ -3,6 +3,9 @@ layout: base
 subsite: dev
 content: true
 title: Blocks In-Depth
+banner:
+  breadcrumbs:
+    parent: Main concepts
 ---
 RDS Blocks are the equivalent of "components" in other [design systems](#). They are chunks of reusable code that can be assembled in different combinations to build any number of user interfaces.
 

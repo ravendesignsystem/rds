@@ -2,10 +2,10 @@
 layout: base
 subsite: dev
 content: true
-title: Key concepts that makeup RDS
+title: Main concepts that makeup RDS
 readingTime: 4:14
 ---
-RDS is Carleton's system for creating digital harmony across our many web properties. One of the systematic ways to guide our collective efforts is to ensure everyone is speaking the same language. This section documents the fundamental concepts and terminology used within RDS' underlying design language, established to create consistency across the platform.
+RDS is Carleton's system for creating consistency and digital harmony across our many web properties. One of the systematic ways to guide our collective efforts is to ensure that everyone is speaking the same language. This section documents the fundamental concepts and terminology used within RDS' underlying design language.
 
 > Our design system isn’t our UI kit or our style guide. It’s the shared language we have when we talk about our work. Read: [The system always kicks back](https://ux.shopify.com/the-system-always-kicks-back-d94b945407f2)
 
@@ -25,8 +25,6 @@ The following terms are used throughout RDS to articulate the systems’ underly
 
 **A page** refers to the full user interface (UI) or screen rendered in a browser at a given time. Pages display data and handle user interactions. They can be scrollable and include content off screen, as long as it is accessible without reloading the page. Your app or site is a collection of pages that are linked together.
 
-[test]({{site.url}}foo)
-
 ![img of page](http://cu-raven.s3.amazonaws.com/assets/img/docs/page.png)
 
 ## Sections
@@ -38,7 +36,7 @@ RDS pages are divided into sections to define the structure of a page and isolat
 - Aside - `<aside>`
 - Footer - `<footer>`
 
-By defining the above page sections, we provide a clear understanding of what role is played by the content within those sections. Also, it lets us categorize and provide clear use cases for certain content types. For example, the [Banner block](#) is categorized as a *header block* since it can only reside within the Header section.
+By defining the above page sections, we provide a clear understanding of what role is played by the content within those sections. Also, it lets us categorize and provide clear use cases for specific content types. For example, the [Banner block](#) is categorized as a *header block* since it can only reside within the Header section.
 
 TBD: show image of banner blocks
 
@@ -74,10 +72,11 @@ To control and provide consistent spacing, all RDS Blocks must be wrapped with t
 
 **Note**: most Blocks are restricted to particular page sections and themes. Before using any Block, review [its documentation](#) to view its usage guidelines.
 
+Blocks are [covered in depth here](#).
+
 ## Components
 
 Similar to Blocks, RDS Components are UI elements built for reuse. Unlike Blocks, Components can be nested inside of blocks, and even other components. Relatively more straightforward than blocks, components tend to be smaller, inline interface elements such as buttons and icons. Components must be used within a Block and cannot be used on their own.
-
 
 Components are the equivalent to Atoms or Molecules in [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/#atoms) and allow us to keep the CSS code lean as repeated elements are represented by only one abstraction.
 
