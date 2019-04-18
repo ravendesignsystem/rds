@@ -1,0 +1,11 @@
+{% macro cardgrid(settings, data) %}
+<div class="u-block{% if settings.width %} u-block--{{ settings.width }}{% else %} u-block--s{% endif %}">
+    <div class="b-cardgrid">
+        <div class="u-grid{% if settings.columns %} u-grid--{{ settings.columns }}{% endif %}">
+            {% for item in data %}
+            {% include item.inc %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endmacro %}

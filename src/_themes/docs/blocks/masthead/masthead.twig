@@ -9,30 +9,20 @@
 				</h2>
 				<ul class="menupopup__menu" aria-label="menupopup">
 					<li>
-						<a class="u-icon" href="{{ site.url }}">{% include 'icons/home.svg' %}
-							RDS home
-						</a>
+						<a class="u-icon" href="{{ site.url }}">{% include 'icons/home.svg' %}RDS home</a>
 					</li>
 					<li class="menupopup__title">Subsites:</li>
 					<li>
-						<a class="u-icon" href="{{ site.url }}dev/">{% include 'icons/code.svg' %}
-							Dev
-						</a>
+						<a class="u-icon" href="{{ site.url }}dev/">{% include 'icons/code.svg' %}Dev</a>
 					</li>
 					<li>
-						<a class="u-icon" href="{{ site.url }}design/">{% include 'icons/eye.svg' %}
-							Design
-						</a>
+						<a class="u-icon" href="{{ site.url }}design/">{% include 'icons/eye.svg' %}Design</a>
 					</li>
 					<li>
-						<a class="u-icon" href="{{ site.url }}content/">{% include 'icons/pencil.svg' %}
-							Content
-						</a>
+						<a class="u-icon" href="{{ site.url }}content/">{% include 'icons/pencil.svg' %}Content</a>
 					</li>
 					<li>
-						<a class="u-icon" href="{{ site.url }}a11y/">{% include 'icons/accessibility.svg' %}
-							Accessibility
-						</a>
+						<a class="u-icon" href="{{ site.url }}a11y/">{% include 'icons/accessibility.svg' %}Accessibility</a>
 					</li>
 				</ul>
 			</nav>
@@ -51,42 +41,86 @@
 				</h2>
 				<ul role="menu">
 					{% if page.subsite == 'dev' %}
-					<li class="c-menupopup"><a href="#">RDS, the system</a>
+					<li class="c-menupopup">
+						<button class="c-menupopup" aria-label="Open Menu">Getting started</button>
 						<ul class="menupopup__menu" aria-label="menupopup">
-							<li>
-								<a href="{{ site.url }}dev/docs/getting-started/">Getting started</a>
-							</li>
-							<li>
-								<a href="{{ site.url }}dev/docs/understanding-the-system/">Understanding the system</a>
-							</li>
-							<li>
-								<a href="{{ site.url }}dev/docs/developing-with-rds/">Integrating RDS</a>
-							</li>
-							<li>
-								<a href="{{ site.url }}dev/docs/developing-with-rds/">Custom theme development</a>
-							</li>
-							<li>
-								<a href="{{ site.url }}dev/docs/guidelines-and-principles/">Guidelines and principles</a>
-							</li>
-							<li>
-								<a href="{{ site.url }}dev/docs/references/">References and tools</a>
-							</li>
+							<li><a href="{{ site.url }}dev/getting-started/get-started/">Get started</a></li>
+							<li><a href="{{ site.url }}dev/getting-started/quick-start/">Quick start</a></li>
+							<li><a href="{{ site.url }}dev/getting-started/quick-start/">Starter packages</a></li>
+							<li><a href="{{ site.url }}dev/getting-started/quick-start/">Recipes and patterns</a></li>
 						</ul>
 					</li>
-					<li><button class="c-menupopup" aria-label="Open Menu">A button</button>
+					<li class="c-menupopup">
+						<button class="c-menupopup" aria-label="Open Menu">Main concepts</button>
 						<ul class="menupopup__menu" aria-label="menupopup">
-							<li>
-								<a href="{{ site.url }}dev/docs/getting-started/">Getting started</a>
-							</li>
-							<li>
-								<a href="{{ site.url }}dev/docs/understanding-the-system/">Understanding the system</a>
-							</li>
+							<li><a href="{{ site.url }}dev/main-concepts/">Main Concepts - start here</a></li>
+							<li><a href="{{ site.url }}dev/main-concepts/blocks-in-depth/">Blocks in depth</a></li>
+							<li><a href="{{ site.url }}dev/main-concepts/blocks-in-depth/">Components</a></li>
+							<li><a href="{{ site.url }}dev/main-concepts/blocks-in-depth/">Layouts</a></li>
+							<li><a href="{{ site.url }}dev/main-concepts/blocks-in-depth/">Themes</a></li>
+							<li><a href="{{ site.url }}dev/main-concepts/blocks-in-depth/">Spacing</a></li>
 						</ul>
 					</li>
-					<li><a href="{{ site.url }}dev/blocks/">Blocks</a></li>
-					<li><a href="{{ site.url }}dev/components/">Components</a></li>
-					<li><a href="{{ site.url }}dev/themes/">Themes</a></li>
-
+					<li class="c-menupopup">
+						<button class="c-menupopup" aria-label="Open Menu">Custom theming</button>
+						<ul class="menupopup__menu" aria-label="menupopup">
+							<li><a href="{{ site.url }}dev/docs/custom-theming/overview/introduction">Introduction</a></li>
+							<li><a href="{{ site.url }}dev/docs/custom-theming/">Installing RDS</a></li>
+							<li><a href="{{ site.url }}dev/docs/custom-theming/">SASS & Breakpoints</a></li>
+							<li><a href="{{ site.url }}dev/docs/custom-theming/">Creating custom blocks</a></li>
+							<li><a href="{{ site.url }}dev/docs/custom-theming/">Icon system</a></li>
+							<li><a href="{{ site.url }}dev/docs/custom-theming/">Layouts</a></li>
+							<li><a href="{{ site.url }}dev/docs/custom-theming/">Grid system</a></li>
+						</ul>
+					</li>
+					<li>
+						<button class="c-menupopup" aria-label="Open Menu">Blocks</button>
+						<ul class="menupopup__menu" aria-label="menupopup">
+							<li><a href="{{ site.url }}dev/blocks/header/banner/">Header: Banner</a></li>
+							<li><a href="{{ site.url }}dev/blocks/header/globalnav/">Header: Global Nav</a></li>
+							<li><a href="{{ site.url }}dev/blocks/header/login/">Header: Login</a></li>
+							<li><a href="{{ site.url }}dev/blocks/header/masthead/">Header: Masthead</a></li>
+							<li><a href="{{ site.url }}dev/blocks/header/search/">Header: Search</a></li>
+							<li><a href="{{ site.url }}dev/blocks/main/cardgrid/">Main: Card Grid</a></li>
+							<li><a href="{{ site.url }}dev/blocks/main/content/">Main: Content</a></li>
+							<li><a href="{{ site.url }}dev/blocks/main/listing/">Main: Listing</a></li>
+							<li><a href="{{ site.url }}dev/blocks/main/textimg/">Main: Text-Image</a></li>
+							<li><a href="{{ site.url }}dev/blocks/footer/footerbrand">Footer: Brand</a></li>
+							<li><a href="{{ site.url }}dev/blocks/footer/footersimple">Footer: Simple</a></li>
+							<li><a href="{{ site.url }}dev/blocks/footer/footersitemap">Footer: Sitemap</a></li>
+						</ul>
+					</li>
+					<li>
+						<button class="c-menupopup" aria-label="Open Menu">Components</button>
+						<ul class="menupopup__menu" aria-label="menupopup">
+							<li><a href="{{ site.url }}dev/components/alert/badge/">Alert: Badge</a></li>
+							<li><a href="{{ site.url }}dev/components/buttons/cta-button/">Button: Call to Action</a></li>
+							<li><a href="{{ site.url }}dev/components/buttons/social-button/">Button: Social Buttons</a></li>
+							<li><a href="{{ site.url }}dev/components/cards/card/">Cards: Card with Varients</a></li>
+							<li><a href="{{ site.url }}dev/components/content/accordion/">Content: Accordion</a></li>
+							<li><a href="{{ site.url }}dev/components/content/imagecaption/">Content: Image Caption</a></li>
+							<li><a href="{{ site.url }}dev/components/content/table/">Content: Table</a></li>
+							<li><a href="{{ site.url }}dev/components/content/video/">Content: Video</a></li>
+							<li><a href="{{ site.url }}dev/components/forms/form/">Forms: Form</a></li>
+							<li><a href="{{ site.url }}dev/components/forms/search/">Forms: Search</a></li>
+							<li><a href="{{ site.url }}dev/components/icons/">Icons: Icon System</a></li>
+							<li><a href="{{ site.url }}dev/components/logos/carleton/">Logos: Carleton University</a></li>
+							<li><a href="{{ site.url }}dev/components/logos/ravens">Logos: Ravens Athletics</a></li>
+							<li><a href="{{ site.url }}dev/components/nav/submenu">Nav: Submenu</a></li>
+						</ul>
+					</li>
+					<li>
+						<button class="c-menupopup" aria-label="Open Menu">Guidelines</button>
+						<ul class="menupopup__menu" aria-label="menupopup">
+							<li><a href="{{ site.url }}dev/docs/guidelines/">Principles & standards</a></li>
+							<li><a href="{{ site.url }}dev/docs/guidelines/">Naming of things</a></li>
+							<li><a href="{{ site.url }}dev/docs/guidelines/">SASS</a></li>
+							<li><a href="{{ site.url }}dev/docs/guidelines/">Markup and style</a></li>
+							<li><a href="{{ site.url }}dev/docs/guidelines/">Accessibility</a></li>
+							<li><a href="{{ site.url }}dev/docs/guidelines/">Security</a></li>
+							<li><a href="{{ site.url }}dev/docs/guidelines/">Glossary</a></li>
+						</ul>
+					</li>
 					<li class="masthead__more"><a href="#">more...</a></li>
 					{% elseif (page.subsite == 'design') or (page.subsite == 'content') or (page.subsite == 'a11y') %}
 					<li>

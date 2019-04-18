@@ -88,41 +88,22 @@
 
     {% block footer %}
         <footer>
-            {#{% from "blocks/footersimple/footersimple.twig" import simple %}#}
-            {#{{ simple (#}
-                {#{#}
-                {#},#}
-                {#{#}
-                    {#contact:#}
-                    {#{#}
-                        {#email: "web@carleton.ca",#}
-                        {#phone: "613-520-2600",#}
-                        {#fax: "613-520-2600",#}
-                        {#contactPage: "https://carleton.ca/contact/"#}
-                    {#},#}
-                    {#social:#}
-                    {#{#}
-                        {#facebook: "https://www.facebook.com/carletonuniversity/",#}
-                        {#instagram: "https://www.instagram.com/carleton_u/",#}
-                        {#twitter: "https://twitter.com/@Carleton_U",#}
-                        {#youtube: "https://www.youtube.com/user/carletonuvideos"#}
-                    {#},#}
-                {#}#}
-            {#) }}#}
-
-            {% include "footerbrand/footerbrand.twig" ignore missing %}
+            {% include "footerbrand/footerbrand.twig" with {'content': false} %}
         </footer>
     {% endblock %} {# END footer block #}
 
     <div class="l-overlay-modal is-hidden">
+
         <div class="modal__search is-hidden">
             {% include "search/search" %}
         </div>
         <div class="modal__menu is-hidden">
             <div class="is-hidden has-b-menu">
+                {% if page.menu != true %}
                 {% block menu %}
                     {% include "menu/data/menu.twig" %}
                 {% endblock %}
+                {% endif %}
             </div>
         </div>
 
@@ -146,7 +127,8 @@
             </div>
         </div>
 
-    </div>
+    </div>{# END l-overlay #}
+
 </div> {#END APP ID #}
 {% block scripts %}
     <script src="{{ site.jsPath }}"></script>

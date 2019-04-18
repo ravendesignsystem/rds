@@ -104,22 +104,27 @@
 	max-height: 1000px; // reset the height when checkbox is checked
 }
 
+// only show menu heading in overlay
+.body__nav h2 {
+	display: none;
+}
 // Child Level Nav Styles
 // =======================================
 
 // 2nd level
-.b-menu ul ul {
+.b-menu ul ul:not(.body__nav .b-menu ul ul) { // no background color if not in  overlay
 	background-color: $grey;
 	box-shadow: inset 0px 11px 8px -10px $grey-yoda,
 		inset 0px -11px 8px -10px $grey-yoda; // TODO: DANNY -- i see what this is doing, but it's so subtle, do we really need this?
-
-	a {
-		padding-left: 35px;
-		border-bottom: 1px solid white;
-	}
 }
 
-// 3rd level
+.b-menu ul ul a {
+	padding-left: 35px;
+	border-bottom: 1px solid white;
+}
+
+
+	// 3rd level
 .b-menu ul ul ul {
 	a {
 		padding-left: 60px;
@@ -162,4 +167,9 @@
 		transform: rotate(135deg);
 		transform-origin: center center;
 	}
+}
+
+input#menu--1-129:checked + label {
+	color: #f00;
+	font-style: normal;
 }

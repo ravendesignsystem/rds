@@ -1,7 +1,6 @@
 ---
-layout: base
+layout: t-docs
 subsite: dev
-content: true
 title: Search Block
 banner:
   breadcrumbs:
@@ -14,7 +13,7 @@ The Search block can be used in the [header section](#) and the [overlay section
 
 There is no actual search functionality associated with this block. This simply provides the HTML and CSS. How you hook up your search is up to you.
 
-{%include "search/search" with {'content': 'closeopen'}%}
+{%include "search/search" %}
 
 ```html
 <div class="u-block u-block--s u-block--grey">
@@ -30,6 +29,3 @@ There is no actual search functionality associated with this block. This simply 
     </div>
 </div>
 ```
-
-
-

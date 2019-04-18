@@ -1,5 +1,5 @@
 // core layout scripts
-import '../layouts/overlays/modal/modal';
+import '../../../_layouts/overlay/overlay';
 
 // core block scripts
 import '../../../_blocks/masthead/masthead';

@@ -12,7 +12,7 @@
 
             <li>
                 {% if menu_item.submenu %}
-                <input id="menu-{{ level }}-{{ default_item +1 }}-{{ itemKey }}" type="checkbox" hidden/>
+                <input {% if menu_item.title == menu_item.section %}checked{% endif %} id="menu-{{ level }}-{{ default_item +1 }}-{{ itemKey }}" type="checkbox" hidden/>
                     <label for="menu-{{ level }}-{{ default_item +1 }}-{{ itemKey }}">
                         <a class="{{ active }}" href="{{ menu_item.url }}">{{ menu_item.title }}</a>
                         {#<i class="c-icon-plus u-icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>#}

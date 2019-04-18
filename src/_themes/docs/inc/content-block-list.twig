@@ -1,21 +1,28 @@
-<h3>Header blocks</h3><ul>
-    {% for item in site.blocks %}
-        {% if item.section == 'header' %}
-            <li><a href="{{ site.url }}dev/blocks/{{ item.section }}/{{ item.handle }}/">{{ item.name }}</a></li>
-        {% endif %}
-    {% endfor %}
+{#  this is controlled via /app/config/sculpin_site.yml #}
+
+<p><strong>Header blocks</strong></p>
+<ul>
+	{% for item in site.blocks %}
+		{% if item.section == 'header' %}
+			<li><a href="{{ site.url }}dev/blocks/{{ item.section }}/{{ item.handle }}/">{{ item.name }}</a></li>
+		{% endif %}
+	{% endfor %}
 </ul>
-<h3>Main blocks</h3><ul>
-    {% for item in site.blocks %}
-        {% if item.section == 'main' %}{{ item[0] }}
-            <li><a href="{{ site.url }}dev/blocks/{{ item.section }}/{{ item.handle }}/">{{ item.name }}</a></li>
-        {% endif %}
-    {% endfor %}
+
+<p><strong>Main blocks</strong></p>
+<ul>
+	{% for item in site.blocks %}
+		{% if item.section == 'main' %}{{ item[0] }}
+			<li><a href="{{ site.url }}dev/blocks/{{ item.section }}/{{ item.handle }}/">{{ item.name }}</a></li>
+		{% endif %}
+	{% endfor %}
 </ul>
-<h3>Footer blocks</h3><ul>
-    {% for item in site.blocks %}
-        {% if item.section == 'footer' %}
-            <li><a href="{{ site.url }}dev/blocks/{{ item.section }}/{{ item.handle }}/">{{ item.name }}</a></li>
-        {% endif %}
-    {% endfor %}
+
+<p><strong>Footer blocks</strong></p>
+<ul>
+	{% for item in site.blocks %}
+		{% if item.section == 'footer' %}
+			<li><a href="{{ site.url }}dev/blocks/{{ item.section }}/{{ item.handle }}/">{{ item.name }}</a></li>
+		{% endif %}
+	{% endfor %}
 </ul>

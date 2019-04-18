@@ -139,17 +139,21 @@
 
 	> span {
 		&::before {
-			background-color: rgb(191,17,43,0.65);
+			background-color: rgba(191, 17, 43, 0.65);
 			//background-color: rgb(black,0.45);
 		}
 
 		font-size: 65px;
-			position: absolute;
-			top: calc(50% - 32px); // calc is used to determine center by subtracting half the height of the icon
-			left: calc(50% - 32px); // calc is used to determine center by subtracting half the width of the icon
-			width: 50px;
-			height: 50px;
-			fill: white;
+		position: absolute;
+		top: calc(
+			50% - 32px
+		); // calc is used to determine center by subtracting half the height of the icon
+		left: calc(
+			50% - 32px
+		); // calc is used to determine center by subtracting half the width of the icon
+		width: 50px;
+		height: 50px;
+		fill: white;
 	}
 }
 
@@ -163,7 +167,9 @@
 	border-top: 1px solid $grey;
 
 	&:after {
-		left: calc(50% - 12.5px) !important; // calc is used to determine center by subtracting half the width of the bottom red line
+		left: calc(
+			50% - 12.5px
+		) !important; // calc is used to determine center by subtracting half the width of the bottom red line
 	}
 }
 .c-card--people .card__figure {

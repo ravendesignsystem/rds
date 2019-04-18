@@ -1,8 +1,7 @@
 ---
-layout: base
+layout: t-docs
 subsite: dev
 title: Table
-content: true
 banner:
   breadcrumbs:
     grandparent: Components

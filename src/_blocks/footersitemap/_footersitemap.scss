@@ -138,8 +138,8 @@
 	li {
 		display: inline-block;
 
-		//&:not(:last-child) {
-		//	margin-right: 8px;
-		//}
+		&:not(:last-child) {
+			margin-right: 6px;
+		}
 	}
 }

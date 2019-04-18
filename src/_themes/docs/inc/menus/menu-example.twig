@@ -1,0 +1,74 @@
+<section class="u-block u-block--full has-b-menu">
+    <div class="b-menu">
+        <h2>Site Navigation</h2>
+        {% from "menu/menu.twig" import menuMacro %}
+        {{ menuMacro (
+            [
+                {
+                    title: 'Getting started',
+                    url: '#',
+                    submenu: [
+                    {
+                        title: 'Get started',
+                        url: site.url ~ 'dev/getting-started/get-started/',
+                        submenu: [
+                        {
+                            title: "Third Level, testing this one with an extremely long title that user might create",
+                            url: "#"
+                        }
+                    ]
+                    },
+                    {
+                        title: "Second Level",
+                        url: "#"
+                    },
+                    {
+                        title: "Second Level",
+                        url: "#",
+                        submenu: [
+                        {
+                            title: "Third Level",
+                            url: "#"
+                        }
+                    ]
+                    },
+                ]
+                },
+                {
+                    title: "First Level",
+                    url: "#",
+                    submenu: [
+                    {
+                        title: "Second Level",
+                        url: "#",
+                        submenu: [
+                        {
+                            title: "Third Level",
+                            url: "#"
+                        }
+                    ]
+                    },
+                    {
+                        title: "Second Level",
+                        url: "#"
+                    },
+                    {
+                        title: "Second Level",
+                        url: "#",
+                        submenu: [
+                        {
+                            title: "Third Level",
+                            url: "#"
+                        }
+                    ]
+                    },
+                ]
+                },
+                {
+                    title: "First Level",
+                    url: "#"
+                }
+            ]
+        )}}
+    </div>
+</section>

@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: t-docs
 subsite: dev
 title: Badge
 content: true
@@ -15,4 +15,5 @@ meta:
     path: components/content/img-caption/
     theme: Core
 ---
+
 Docs required...

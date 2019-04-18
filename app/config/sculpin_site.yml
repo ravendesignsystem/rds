@@ -1,17 +1,37 @@
-# Site wide global vars - eg. {{ site.title }} can be used
+# Site wide global vars - eg. {{ site.title }} can be used in templates
 title: RDS Local
 subtitle: RDS
 version: 1.0.0
 coreSize: 26KB
-url: http://localhost:8000/docs/
-cssPath: http://localhost:8000/docs/css/app.css
-homecssPath: http://localhost:8000/docs/css/hp.css
-jsPath: http://localhost:8000/docs/js/app.js
+url: /docs/
+cssPath: /docs/css/app.css
+homecssPath: /docs/css/hp.css
+jsPath: /docs/js/app.js
 
 blocks:
     -
         name: Banner
         handle: banner
+        section: header
+        theme: core
+    -
+        name: Global Nav
+        handle: globalnav
+        section: header
+        theme: cms
+    -
+        name: Login
+        handle: login
+        section: header
+        theme: core
+    -
+        name: Masthead
+        handle: masthead
+        section: header
+        theme: core
+    -
+        name: Search
+        handle: search
         section: header
         theme: core
     -
@@ -25,49 +45,105 @@ blocks:
         section: main
         theme: core
     -
-        name: Global Nav
-        handle: globalnav
-        section: header
-        theme: cms
+        name: Listing
+        handle: listing
+        section: main
+        theme: na
+    -
+        name: Text-Image (Docs incomplete)
+        handle: textimg
+        section: main
+        theme: fw
     -
         name: Footer Brand
         handle: footerbrand
         section: footer
         theme: core
     -
-        name: Footer Sitemap
-        handle: footersitemap
-        section: footer
-        theme: fw
-    -
-        name: Footer Simple (Docs Unfinished)
+        name: Footer Simple (Missing end notes)
         handle: footersimple
         section: footer
         theme: na
     -
-        name: Listing
-        handle: listing
-        section: main
-        theme: na
-    -
-        name: Masthead
-        handle: masthead
-        section: header
-        theme: core
-    -
-        name: Search
-        handle: search
-        section: header
-        theme: core
-    -
-        name: Text-Image (Docs Unfinished)
-        handle: textimg
-        section: main
+        name: Footer Sitemap
+        handle: footersitemap
+        section: footer
         theme: fw
 
-
+components:
+    -
+        name: Badge (No content)
+        handle: badge
+        section: alerts
+        theme: core
+    -
+        name: Call to Action
+        handle: cta-button
+        section: buttons
+        theme: core
+    -
+        name: Social Media (Review required)
+        handle: social-button
+        section: buttons
+        theme: core
+    -
+        name: Cards (Missing end notes)
+        handle: cards
+        section: cards
+        theme: core
+    -
+        name: Accordion (Missing end notes)
+        handle: accordion
+        section: content
+        theme: core
+    -
+        name: Image Caption
+        handle: imagecaption
+        section: content
+        theme: core
+    -
+        name: Table (No content)
+        handle: table
+        section: content
+        theme: core
+    -
+        name: Video (No content)
+        handle: video
+        section: content
+        theme: core
+    -
+        name: Form (No content)
+        handle: form
+        section: forms
+        theme: core
+    -
+        name: Search (No content)
+        handle: search
+        section: forms
+        theme: core
+    -
+        name: Icon Library (Review required)
+        handle: library
+        section: icons
+        theme: core
+    -
+        name: Carleton University Logo (No content)
+        handle: carleton
+        section: logos
+        theme: core
+    -
+        name: Ravens Athletics Logo (No content)
+        handle: ravens
+        section: logos
+        theme: core
+    -
+        name: Submenu (No content)
+        handle: submenu
+        section: nav
+        theme: core
 
 images: https://cu-raven.s3.amazonaws.com/assets/img/raven/
+
 some_global_images:
     -
         filename: img1.jpg
@@ -78,6 +154,7 @@ some_global_images:
     -
         filename: img3.jpg
         alt: /
+
 sitemenu:
     -
         title: first item

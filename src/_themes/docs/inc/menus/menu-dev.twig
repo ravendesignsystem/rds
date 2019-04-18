@@ -1,0 +1,106 @@
+<section class="u-block u-block--full has-b-menu">
+    <div class="b-menu">
+        <h2>Site Navigation {{ meh }}</h2>
+        {% from "menu/menu.twig" import menuMacro %}
+        {{ menuMacro (
+            [
+                {
+                    title: 'Getting started',
+                    url: '#',
+                    section: page.section,
+                    submenu:
+                    [
+                        {
+                            title: 'Get started',
+                            url: site.url ~ 'dev/getting-started/get-started/'
+                        },
+                        {
+                            title: 'Quick start',
+                            url: site.url ~ 'dev/getting-started/quick-start/'
+                        },
+                        {
+                            title: 'Starter downloads',
+                            url: site.url ~ 'dev/getting-started/started-downloads/'
+                        },
+                        {
+                            title: 'Recipes and patterns',
+                            url: site.url ~ 'dev/getting-started/recipes-and-patterns/'
+                        }
+                    ]
+                },
+                {
+                    title: "Main concepts",
+                    url: site.url ~ 'dev/main-concepts/',
+                    section: page.section,
+                    submenu:
+                    [
+                        {
+                            title: 'Blocks in depth',
+                            url: site.url ~ 'dev/main-concepts/blocks-in-depth/'
+                        },
+                        {
+                            title: 'Components',
+                            url: site.url ~ 'dev/main-concepts/components/'
+                        },
+                        {
+                            title: 'Layouts',
+                            url: site.url ~ 'dev/main-concepts/layouts/'
+                        },
+                        {
+                            title: 'Themes',
+                            url: site.url ~ 'dev/main-concepts/themes/'
+                        },
+                        {
+                            title: 'Spacing',
+                            url: site.url ~ 'dev/main-concepts/spacing/'
+                        }
+                    ]
+                },
+                {
+                    title: "Custom theming",
+                    url: site.url ~ 'dev/custom-theming/',
+                    section: page.section,
+                    submenu:
+                    [
+                        {
+                            title: 'Instalation and tooling',
+                            url: site.url ~ 'dev/custom-theming/instalation-and-tooling/'
+                        },
+                        {
+                            title: 'SASS',
+                            url: site.url ~ 'dev/custom-theming/components/'
+                        },
+                        {
+                            title: 'Custom blocks',
+                            url: site.url ~ 'dev/custom-theming/custom-blocks/'
+                        },
+                        {
+                            title: 'Icon system',
+                            url: site.url ~ 'dev/custom-theming/icon-system/'
+                        },
+                        {
+                            title: 'Working with layouts',
+                            url: site.url ~ 'dev/custom-theming/working-with-layouts/'
+                        },
+                        {
+                            title: 'Grid system',
+                            url: site.url ~ 'dev/custom-theming/grid-system/'
+                        }
+                    ]
+                },
+                {
+                    title: "Blocks",
+                    url: "#"
+                },
+                {
+                    title: "Components",
+                    url: "#"
+                },
+                {
+                    title: "Guidelines",
+                    url: "#"
+                }
+            ]
+        )}}
+    </div>
+</section>

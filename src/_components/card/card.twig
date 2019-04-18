@@ -1,9 +1,9 @@
 {% macro card(settings, data) %}
 {% if settings.title -%}
-<section class="u-block u-block--s{% if settings.color|length %} u-block--{{ settings.color }}{% endif %}">
+<section class="u-block u-block--s{% if settings.color %} u-block--{{ settings.color }}{% endif %}{% if settings.utility %} {{ settings.utility }}{% endif %}">
     <h2 class="u-no-borders">{{ settings.heading }}</h2>
 {% endif %}
-<article class="c-card{% if data.img == false %} c-card--no-img{% endif %}{% if settings.variant == "video" %} c-card--video{% endif %}{% if data.name %} c-card--people{% endif %}" itemscope itemtype="{% if settings.variant == "news" %}http://schema.org/NewsArticle{% elseif settings.variant == "people" %}http://schema.org/Person{% elseif settings.variant == "video" %}http://schema.org/VideoObject{% else %}http://schema.org/Article{% endif %}">
+<article class="c-card{% if data.img == false %} c-card--no-img{% endif %}{% if settings.variant == "video" %} c-card--video{% endif %}{% if data.name %} c-card--people{% endif %}{% if settings.utility %} {{ settings.utility }}{% endif %}" itemscope itemtype="{% if settings.variant == "news" %}http://schema.org/NewsArticle{% elseif settings.variant == "people" %}http://schema.org/Person{% elseif settings.variant == "video" %}http://schema.org/VideoObject{% else %}http://schema.org/Article{% endif %}">
     <a href="{{ data.url }}" itemprop="url">
 {% if data.img %}
         <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">

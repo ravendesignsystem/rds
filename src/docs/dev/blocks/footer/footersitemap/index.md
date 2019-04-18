@@ -1,8 +1,7 @@
 ---
-layout: base
+layout: t-docs
 subsite: dev
 title: Sitemap Footer block
-content: true
 banner:
   breadcrumbs:
     grandparent: Blocks
@@ -24,9 +23,7 @@ alternatives: simple
 
 The Sitemap Footer helps users and search engines determine how the website is laid out and makes them aware of all your important pages. Having the sitemap in the footer as oppose to on an individual page will save visitors clicks.
 
-{%include 'docs/inc/close.twig'%}
 {%include 'footersitemap/footersitemap.twig'%}
-{%include 'docs/inc/open-b-content.twig'%}
 
 ```html
 <div class="u-block u-block--black">

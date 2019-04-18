@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: t-docs
 subsite: dev
 title: Card Grid block
 banner:
