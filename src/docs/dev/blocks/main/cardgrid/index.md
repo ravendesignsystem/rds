@@ -1,5 +1,5 @@
 ---
-layout: t-docs
+layout: docs
 subsite: dev
 title: Card Grid block
 banner:
@@ -28,92 +28,52 @@ data:
 
 The Card Grid block uses RDS' [responsive grid](#) to list [Card components]({{site.url}}/dev/components/cards/card/) in equal-width columns.
 
-**Note**: this block should not be used for general layout purposes.{%include "/docs/inc/close.twig"%}
+**Note**: this block should be only be used to list card and should not be used for general layout purposes.
 
-<div class="u-block u-block--white u-block--s">
-	<h2>Base example</h2>
-	<div class="b-cardgrid b-cardgrid u-grid u-grid--3">
-        {%include "card/data/card--base"%}
-        <article class="c-card" itemscope itemtype="http://schema.org/Article">
-                  <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
-                      <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
-                          <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
-                      </figure>
-                      <div class="card__body">
-                          <h2 class="card__title" itemprop="name">White-necked Raven</h2>
-                      </div>
-                  </a>
-              </article>
-        {%include "card/data/card--base"%}
-	</div>
-</div>
-
-{%include "/docs/inc/open-b-content.twig"%}
+{%include "inc" with {'block': 'cardgrid-base', 'heading': 'Base example'} %}
 
 ```html
 <div class="u-block u-block--white u-block--s">
 	<div class="b-cardgrid u-grid u-grid--3">
-		{% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
-        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
-        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
+		{% verbatim %}{%include 'components/card'%}{% endverbatim %}
+        {% verbatim %}{%include 'components/card'%}{% endverbatim %}
+        {% verbatim %}{%include 'components/card'%}{% endverbatim %}
 	</div>
 </div>
 ```
-<br>
+**Note**: the code above assumes you have the ability to use a server-side include. If not, replace each include with the appropriate [card component]({{site.url}}/dev/components/cards/card/).
+
 ## Small screen stack modifier 
 
 By default, card grids drop down to a 2 column grid at the small screen breakpoint. If you want to display a 3 column grid but don't want to leave a card hanging in the small screen view, or if you simply want a tighter presentation of your cards on mobile, apply the modifier `b-cardgrid--stacks` at the block class level.
 
 The modifier `b-cardgrid--stacks` implements a single column view on small screens. It also sets the cards appearance to flow horizontally instead of the default vertical view.
-{%include '/docs/inc/close.twig'%}<div class="u-block u-block--white u-block--s">
+
+{%include "inc" with {'close': 'true'} %}
+
+<div class="u-block u-block--white u-block--s">
 	<div class="b-cardgrid b-cardgrid--stacks u-grid u-grid--3">
-        <article class="c-card" itemscope itemtype="http://schema.org/Article">
-              <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
-                  <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
-                      <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
-                  </figure>
-                  <div class="card__body">
-                      <h2 class="card__title" itemprop="name">We Knew Ravens Are Smart. But Not This Smart</h2>
-                  </div>
-              </a>
-          </article>
-        <article class="c-card" itemscope itemtype="http://schema.org/Article">
-          <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
-              <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
-                  <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
-              </figure>
-              <div class="card__body">
-                  <h2 class="card__title" itemprop="name">We Knew Ravens Are Smart. But Not This Smart</h2>
-              </div>
-          </a>
-        </article>
-        <article class="c-card" itemscope itemtype="http://schema.org/Article">
-          <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
-              <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
-                  <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Raven standing">
-              </figure>
-              <div class="card__body">
-                  <h2 class="card__title" itemprop="name">We Knew Ravens Are Smart. But Not This Smart</h2>
-              </div>
-          </a>
-        </article>
+        {%include "card/data/card--base"%}
+        {%include "card/data/card--base"%}
+        {%include "card/data/card--base"%}
 	</div>
 </div>
-{%include '/docs/inc/open-b-content.twig'%}
+
+{%include "inc" with {'open': 'true'} %}
+
 <p class="u-hide-s"><strong>Note</strong>: your screen size is currently too large to view the difference applying this modifier makes in the example above. To see the difference, make your browser window smaller.</p>
 
 ```html
 <div class="u-block u-block--white u-block--s">
 	<div class="b-cardgrid b-cardgrid--stacks u-grid u-grid--3">
-		{% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
-        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
-        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
+		{% verbatim %}{%include 'components/card'%}{% endverbatim %}
+        {% verbatim %}{%include 'components/card'%}{% endverbatim %}
+        {% verbatim %}{%include 'components/card'%}{% endverbatim %}
 	</div>
 </div>
 ```
 
 **Note**: Using this modifier card descriptions get removed on small screens. Furthermore, when using this modifier the amount of space for your title content is limited. Verbose title will be trimmed by the CSS.
-
 
 ## Grid column settings
 
@@ -121,9 +81,9 @@ Four and three column grids are available. To control the number of columns, adj
 
 ### Four column grid example
 
-{%include '/docs/inc/close.twig'%}
+{%include "inc" with {'close': 'true'} %}
 
-<div class="u-block u-block--white u-block--m">
+<div class="u-block u-block--grey u-block--m">
 	<div class="b-cardgrid u-grid u-grid--4">
 		{%include "card/data/card--base"%}
 		{%include "card/data/card--base"%}
@@ -132,10 +92,10 @@ Four and three column grids are available. To control the number of columns, adj
 	</div>
 </div>
 
-{%include "/docs/inc/open-b-content.twig"%}
+{%include "inc" with {'open': 'true'} %}
 
 ```html
-<div class="u-block u-block--white u-block--s">
+<div class="u-block u-block--grey u-block--s">
 	<div class="b-cardgrid u-grid u-grid--4">
 		{% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
         {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
@@ -144,11 +104,13 @@ Four and three column grids are available. To control the number of columns, adj
 	</div>
 </div>
 ```
+**Note**: the above block uses `u-block--grey` which is the preferred option for this block.
 
 ### Card grid with CTA link or button
 
 If you need a 'Load more' button under the card grid add it within the `u-block` tag but outside of the `b-cardgrid` tag.
-{%include '/docs/inc/close.twig'%}
+
+{%include "inc" with {'close': 'true'} %}
 
 <div class="u-block u-block--white u-block--m">
 	<div class="b-cardgrid u-grid u-grid--4">
@@ -160,7 +122,7 @@ If you need a 'Load more' button under the card grid add it within the `u-block`
 	<button class="c-buttoncta c-buttoncta--center" href="#">Load more</a>
 </div>
 
-{%include "/docs/inc/open-b-content.twig"%}
+{%include "inc" with {'open': 'true'} %}
 
 ```
 <div class="u-block u-block--white u-block--m">
@@ -176,7 +138,7 @@ If you need a 'Load more' button under the card grid add it within the `u-block`
 
 Or, if you want to use a CTA to link off to an archive or another page.
 
-{%include '/docs/inc/close.twig'%}
+{%include "inc" with {'close': 'true'} %}
 
 <div class="u-block u-block--white u-block--m">
 	<div class="b-cardgrid u-grid u-grid--4">
@@ -188,7 +150,7 @@ Or, if you want to use a CTA to link off to an archive or another page.
 	<a class="c-buttoncta c-buttoncta--center" href="#">Visit archive page</a>
 </div>
 
-{%include "/docs/inc/open-b-content.twig"%}
+{%include "inc" with {'open': 'true'} %}
 
 ```
 <div class="u-block u-block--white u-block--m">
@@ -210,11 +172,11 @@ Control the block's width and background colour using the following [block setti
 - **Block widths**: `u-block--s`\*, `u-block--m`, `u-block--l`
 - **Block colours**: `u-block--white`\*, `u-block--grey`
 
-**\* = default**
+**Note: \*** = default
 
 **Important**: if you are using the [CMS theme](#), only the default settings can be used.
 
-{%include '/docs/inc/close.twig'%}
+{%include "inc" with {'close': 'true'} %}
 
 <section class="u-block u-block--grey u-block--m">
 	<h2>Grid block with medium width and grey background setting</h2>
@@ -226,7 +188,7 @@ Control the block's width and background colour using the following [block setti
 	</div>
 </section>
 
-{%include '/docs/inc/open-b-content'%}
+{%include "inc" with {'open': 'true'} %}
 
 ```html
 <div class="u-block u-block--grey u-block--m">
@@ -240,6 +202,8 @@ Control the block's width and background colour using the following [block setti
 
 ## Content guidelines
 
+When possible, use a grey background to allow the cards to stand out more visually.
+
 Grid block cards should:
 
 - Present objects of the same content and type.
@@ -247,7 +211,7 @@ Grid block cards should:
 
 ## Implementation Notes
 
-- If you are building pages with Grid blocks but without [Content blocks](#), use the four column grid and the medium-size width setting `u-block--m`.
+- If you are building pages with the Card Grid block that do not contain [Content blocks](#), use the four column grid and the medium-size width setting `u-block--m`.
 
 ## When To Avoid
 

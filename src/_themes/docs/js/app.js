@@ -5,4 +5,3 @@ import '../../../_themes/core/js/core';
 
 // Theme RDS DOCS scripts
 import '../js/rds';
-

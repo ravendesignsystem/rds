@@ -6,9 +6,10 @@ banner:
   breadcrumbs:
     parent: Docs
 ---
-{{ content }}
 The login block can be used in one of two ways: as a stand alone block on a page, or [within an overlay]({{site.url}}dev/layouts/overlay/) that is triggered by an optional [login button in the masthead]({{site.url}}dev/blocks/header/masthead#masthead-with-login-button).
-{% include "login/login" %}
+
+{% include 'inc' with {'block': 'login'} %}
+
 ```html
 <div class="u-block u-block--grey u-block--s">
 	<div class="b-login">

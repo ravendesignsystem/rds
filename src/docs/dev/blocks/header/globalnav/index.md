@@ -1,5 +1,5 @@
 ---
-layout: t-docs
+layout: docs
 subsite: dev
 title: Global Nav
 banner:
@@ -8,9 +8,7 @@ banner:
     parent: Header
 ---
 The Global Nav block is a required include block that appears at the top of all CMS theme templates. This block provides global navigation for carleton.ca.
-
-{%include 'globalnav/globalnav.twig'%}
-
+{% include 'inc' with {'block': 'globalnav'} %}
 ```html
 <div class="u-block u-block--full">
     <div class="b-globalnav">

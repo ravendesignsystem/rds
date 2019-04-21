@@ -1,11 +1,10 @@
 ---
-layout: base
+layout: docs
 subsite: dev
 title: Getting Started
 banner:
   breadcrumbs:
     parent: Docs
-content: true
 ---
 ## Starter Template
 

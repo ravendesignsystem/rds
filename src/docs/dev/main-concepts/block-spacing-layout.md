@@ -1,7 +1,6 @@
 ---
-layout: base
+layout: docs
 title: Block Spacing and Layout
-content: true
 banner:
   breadcrumbs:
     grandparent: Dev

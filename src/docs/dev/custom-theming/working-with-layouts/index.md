@@ -1,7 +1,6 @@
 ---
-layout: base
+layout: docs
 subsite: dev
-content: true
 title: Layouts
 ---
 

@@ -12,7 +12,21 @@
                     [
                         {
                             title: 'Get started',
-                            url: site.url ~ 'dev/getting-started/get-started/'
+                            url: site.url ~ 'dev/getting-started/get-started/',
+                            submenu: [
+                            {
+                                title: "Third Level, testing this one with an extremely long title that user might create",
+                                url: "#"
+                            },
+                            {
+                                title: "Foo fy",
+                                url: "#"
+                            },
+                            {
+                                title: "Fee fum  fy",
+                                url: "#"
+                            }
+                        ]
                         },
                         {
                             title: 'Quick start',
@@ -94,7 +108,35 @@
                 },
                 {
                     title: "Components",
-                    url: "#"
+                    url: site.url ~ 'dev/components/',
+                    section: page.section,
+                    submenu:
+                    [
+                        {
+                            title: 'Instalation and tooling',
+                            url: site.url ~ 'dev/custom-theming/instalation-and-tooling/'
+                        },
+                        {
+                            title: 'SASS',
+                            url: site.url ~ 'dev/custom-theming/components/'
+                        },
+                        {
+                            title: 'Custom blocks',
+                            url: site.url ~ 'dev/custom-theming/custom-blocks/'
+                        },
+                        {
+                            title: 'Icon system',
+                            url: site.url ~ 'dev/custom-theming/icon-system/'
+                        },
+                        {
+                            title: 'Working with layouts',
+                            url: site.url ~ 'dev/custom-theming/working-with-layouts/'
+                        },
+                        {
+                            title: 'Grid system',
+                            url: site.url ~ 'dev/custom-theming/grid-system/'
+                        }
+                    ]
                 },
                 {
                     title: "Guidelines",

@@ -1,7 +1,6 @@
 ---
-layout: base
+layout: docs
 title: Mobile and PWA
-content: true
 ---
 
 stub -

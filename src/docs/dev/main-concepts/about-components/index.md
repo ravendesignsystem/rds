@@ -1,7 +1,6 @@
 ---
-layout: base
+layout: docs
 subsite: dev
-content: true
 title: About Components
 ---
 Components are relatively simple UI elements that, unlike blocks, __can be nested__ inside of blocks, and even other components. Components tend to be smaller, inline interface elements such as buttons and icons.

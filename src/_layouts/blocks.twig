@@ -1,0 +1,149 @@
+{% extends "base" %}
+{% block main %}
+<main>
+{% for item in page.examples %}
+    {% include page.meta.path ~ 'data/'~ page.meta.handle ~ '--' ~ item.name ~ '.twig' ignore missing with {'docs': true} %}
+    <section class="u-block u-block--s u-block--white">
+        <div class="b-tabs" role="tablist">
+            <div class="b-tabs__tab" role="tab">
+                <a class="b-tabs__button u-icon" href="#">{% include "icons/code.svg" ignore missing %} HTML</a>
+                <div class="b-tabs__panel" role="tabpanel">
+                <pre>
+                    <code class="html">{% filter escape -%}
+        {% include page.meta.path ~ 'data/' ~ page.meta.handle ~ '--' ~ item.name ~ '.twig' ignore missing with { 'code': true } %}
+                    {% endfilter %}
+                    </code>
+                </pre>
+                </div>
+            </div>
+            {#Block info#}
+            <div class="b-tabs__tab" role="tab">
+                <a class="b-tabs__button u-icon" href="#">{% include "icons/info.svg" ignore missing %} Info</a>
+                <div class="b-tabs__panel" role="tabpanel">
+                    <h2>Metadata</h2>
+                    <dl>
+                        <dt>Version</dt>
+                        <dd>{{ page.meta.version }}</dd>
+                        {# Status - Ready, Under Review, Deprecated, Unavailable #}
+                        <dt>Status</dt>
+                        <dd>{% if page.meta.status == "under review" %}
+                                <span class="u-icon--orange">{% include "icons/alert.svg" ignore missing %}Under review</span>
+                            {% elseif page.meta.status == "ready" %}
+                                <span class="u-icon--green">{% include "icons/check-mark.svg" ignore missing %}Ready</span>
+                            {% else %}
+                                <span class="">{% include "icons/expired.svg" ignore missing %}Deprecated</span>
+                            {% endif %}
+                        </dd>
+                        <dt>Theme</dt>
+                        <dd>{{ page.meta.theme }}</dd>
+                        {# slug #}
+                        <dt>Handle</dt>
+                        <dd>{{ page.meta.handle }}</dd>
+                        {# Block type #}
+                        <dt>Type</dt>
+                        <dd>{{ page.meta.type }}</dd>
+                        <dt>Section</dt>
+                        <dd>{{ page.meta.section }}</dd>
+                        {# Available in what themes #}
+                        {% if page.meta.widths %}
+                            <dt>Available Widths</dt>
+                            <dd>{{ page.meta.widths }}</dd>
+                        {% endif %}
+                        <dt>Heading available</dt>
+                        <dd>{{ page.meta.heading }}</dd>
+                    </dl>
+                    <h2>Dependencies</h2>
+                    <dl>
+                        <dt>JavaScript</dt>
+                        <dd>{{ page.dependencies.js }}</dd>
+                    </dl>
+                    <h2>Contexts</h2>
+                    <dl>
+                        {# Context variants #}
+                        <dt>Variants {% if page.context %}({{ page.context }}){% endif %}</dt>
+                        <dd>{% if page.context %}
+                                {% for item in page.context -%}
+                                    {% if not loop.last %}
+                                        <a href="#{{ item.name }}">{{ item.name|capitalize }}</a>,
+                                    {% else %}
+                                        <a href="#{{ item.name }}">{{ item.name|capitalize }}</a>
+                                    {% endif %}
+                                {% endfor %}
+                            {% else %}
+                                N/A
+                            {% endif %}
+                        </dd>
+                        {# stylesheet modifiers #}
+                    </dl>
+                    <h2>Examples</h2>
+                    <dl>
+                        <dt>Examples with:</dt>
+                        <dd>{% for item in page.examples %}
+                                {% if not loop.last %}
+                                    <a href="#{{ item.name }}">{{ item.name }}</a>,
+                                {% else %}
+                                    <a href="#{{ item.name }}">{{ item.name }}</a>
+                                {% endif %}
+                            {%  endfor %}</dd>
+                        <dt>In the wild</dt>
+                        <dd>{{ page.wild }}</dd>
+                        <dt>Alternatives</dt>
+                        <dd><a href="/docs/{{ page.meta.path }}{{ page.alternatives }}/">{{ page.alternatives }}</a></dd>
+                    </dl>
+
+                </div>
+            </div>
+            {#Block fields#}
+                {#<div class="b-tabs__tab" role="tab">#}
+                    {#<a class="b-tabs__button u-icon--xxs" href="#">{% include "components/icons/database.svg" ignore missing %} Fields</a>#}
+                    {#<div class="b-tabs__panel" role="tabpanel">#}
+                        {#<table>#}
+                            {#<thead>#}
+                            {#<tr>#}
+                                {#<th>Name</th>#}
+                                {#<th>Type</th>#}
+                                {#<th>Description</th>#}
+                            {#</tr>#}
+                            {#</thead>#}
+                            {#<tbody>#}
+                            {#{% for item in page.data %}#}
+                                {#<tr>#}
+                                    {#<td>{{ item.name }}</td>#}
+                                    {#<td>{{ item.type }}</td>#}
+                                    {#<td>{{ item.desc }}</td>#}
+                                {#</tr>#}
+                            {#{% endfor %}#}
+                            {#</tbody>#}
+                        {#</table>#}
+
+                    {#</div>#}
+                {#</div>#}
+
+            <div class="b-tabs__tab" role="tab">
+                <a class="b-tabs__button" href="#">- YAML</a>
+                <div class="b-tabs__panel" role="tabpanel">
+                    <pre>
+                        <code class="yaml">{%- filter escape -%}{%- include page.meta.path ~ 'data/' ~ page.meta.handle ~ '--' ~ item.name ~ '.yml' ignore missing %}{% endfilter %}</code>
+                    </pre>
+                </div>
+            </div>
+            <div class="b-tabs__tab" role="tab">
+                <a class="b-tabs__button" href="#">{} JSON</a>
+                <div class="b-tabs__panel" role="tabpanel">
+                    <pre>
+                        <code class="json">{% filter escape -%}{%- include page.meta.path ~ 'data/' ~ page.meta.handle ~ '--' ~ item.name ~ '.json' ignore missing %}{% endfilter %}</code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endfor %}
+    <div class="u-block u-block--s u-block--white">
+        <div class="b-content">
+              {% block content %}
+              {% endblock %}
+        </div>
+    </div>
+</main>
+{% endblock %}

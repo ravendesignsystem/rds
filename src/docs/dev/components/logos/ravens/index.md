@@ -1,8 +1,7 @@
 ---
-layout: base
+layout: docs
 subsite: dev
 title: Carleton Ravens logo
-content: true
 banner:
   breadcrumbs:
     parent: Logos

@@ -1,5 +1,5 @@
 ---
-layout: t-docs
+layout: docs
 subsite: dev
 title: Search Block
 banner:
@@ -13,7 +13,7 @@ The Search block can be used in the [header section](#) and the [overlay section
 
 There is no actual search functionality associated with this block. This simply provides the HTML and CSS. How you hook up your search is up to you.
 
-{%include "search/search" %}
+{% include 'inc' with {'block': 'search'} %}
 
 ```html
 <div class="u-block u-block--s u-block--grey">

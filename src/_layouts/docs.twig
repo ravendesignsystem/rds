@@ -61,16 +61,18 @@
         {#<header class="l-header-banner-img">#}
         <header role="banner">
             {% include 'docs/blocks/masthead/masthead' %}
+            {% if page.banner != 'none' %}
             {% block banner %}
                 {% include 'docs/blocks/banner/banner' %}
             {% endblock %}
+            {% endif %}
             {#{% include "header/search/search.twig" %}#}
         </header>
     {% endblock %}
 
     {% block body %}
-        {% if page.menu %}
-        <div class="l-body l-body--am l-body--white">
+        {% if (page.menu) or (page.sidebar) %}
+        <div class="l-body{% if page.sidebar %} l-body--ama{% else %} l-body--am{% endif %} l-body--white{% if 'l' in page.sidebar %} l-body--sidebar-large{% endif %} {% if 'top' in page.sidebar %} l-body--sidebar-top{% endif %}">
             <div class="body__container">
 
                 <aside class="body__nav">
@@ -78,16 +80,30 @@
                 </aside>
         {% endif %}
                 {% block main %}
-                    <main {% if page.menu %}class="body__main"{% endif %} id="content">
+                    <main {% if (page.menu) or (page.sidebar) %}class="body__main"{% endif %} id="content">
+                        {% if page.content != 'none' %}
                         <div class="body__content">
                             <div class="u-block u-block--white u-block--s">
                                 <div class="b-content">
-                                    {% set inContent = true %}
+{#                                    {% set inContent = true %} TODO remove #}
+                            {% endif %}
+
+
                                     {% block content %}
                                     {% endblock %}
+
+                            {% if page.content != 'none' %}
                                 </div>
                             </div>
                         </div>
+                        {% endif %}
+                        {% if page.sidebar %}
+                        <aside class="body__sidebar">
+                            <div class="u-block u-block--m u-block--grey">
+                                <p>Aside right</p>
+                            </div>
+                        </aside>
+                        {% endif %}
                     </main>
                 {% endblock %}{# End main#}
         {% if page.menu %}

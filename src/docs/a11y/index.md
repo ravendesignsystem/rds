@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: docs
 title: RDS Accessiblity
 subsite: a11y
 content: true

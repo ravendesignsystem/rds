@@ -2,10 +2,14 @@
 	a {
 		color: $link;
 
-		&:hover {
-			text-decoration: underline;
+		&:hover:not(.u-icon) {
+			border-bottom: 1px solid $red;
 			color: $red;
 		}
+	}
+
+	a:not(ul a):not(.u-icon):not(.c-buttoncta--ghost) {
+		border-bottom: 1px solid #c8dae3;
 	}
 
 	h1,
@@ -27,5 +31,9 @@
 
 	img {
 		margin-bottom: 20px;
+	}
+
+	p:empty {
+		display: none;
 	}
 }

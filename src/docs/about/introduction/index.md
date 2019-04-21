@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: docs
 subsite: dev
 title: An Introduction to RDS
 content: true

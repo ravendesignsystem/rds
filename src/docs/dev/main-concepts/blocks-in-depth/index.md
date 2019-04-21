@@ -1,7 +1,8 @@
 ---
-layout: base
+layout: docs
 subsite: dev
-content: true
+menu: dev
+section: Main concepts
 title: Blocks In-Depth
 banner:
   breadcrumbs:

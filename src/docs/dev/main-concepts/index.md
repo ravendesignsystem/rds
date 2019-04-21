@@ -1,7 +1,8 @@
 ---
-layout: base
+layout: docs
 subsite: dev
-content: true
+menu: true
+section: Main concepts
 title: Main concepts that makeup RDS
 readingTime: 4:14
 ---

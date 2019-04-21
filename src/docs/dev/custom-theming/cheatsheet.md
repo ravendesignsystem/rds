@@ -1,7 +1,6 @@
 ---
-layout: base
+layout: docs
 title: Block utility class cheat sheet
-content: true
 ---
 ## Utility classes on blocks
 

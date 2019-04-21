@@ -1,5 +1,5 @@
 ---
-layout: t-docs
+layout: docs
 subsite: dev
 title: Social button
 content: true
@@ -18,10 +18,7 @@ Linking to social media services can be an important part of building community 
 {% include 'buttonsocial/data/buttonsocial--facebook' %}
 
 ```html
-<a class="c-buttonsocial c-buttonsocial--facebook u-icon u-icon--circle" href="https://www.facebook.com/carletonuniversity">
-    {% verbatim %}{% include iconPath ~ 'facebook.svg' %}{% endverbatim %}
-    <span class="u-visually-hidden">Like us on Facebook</span>
-</a>
+{% filter escape %}{% include 'buttonsocial/data/buttonsocial--facebook' %}{% endfilter %}
 ```
 
 ### Instagram
@@ -29,10 +26,7 @@ Linking to social media services can be an important part of building community 
 {% include 'buttonsocial/data/buttonsocial--instagram' %}
 
 ```html
-<a class="c-buttonsocial c-buttonsocial--instagram u-icon u-icon--circle" href="https://www.instagram.com/carleton_u">
-    {% verbatim %}{% include iconPath ~ 'instagram.svg' %}{% endverbatim %}
-    <span class="u-visually-hidden">Follow us on Instagram</span>
-</a>
+{% filter escape %}{% include 'buttonsocial/data/buttonsocial--instagram' %}{% endfilter %}
 ```
 
 ### Linkedin
@@ -40,10 +34,7 @@ Linking to social media services can be an important part of building community 
 {% include 'buttonsocial/data/buttonsocial--linkedin' %}
 
 ```html
-<a class="c-buttonsocial c-buttonsocial--linkedin u-icon u-icon--circle" href="https://www.linkedin.com/school/carleton-university">
-    {% verbatim %}{% include iconPath ~ 'linkedin.svg' %}{% endverbatim %}
-    <span class="u-visually-hidden">View us on Linkedin</span>
-</a>
+{% filter escape %}{% include 'buttonsocial/data/buttonsocial--linkedin' %}{% endfilter %}
 ```
 
 ### Pinterest
@@ -51,9 +42,7 @@ Linking to social media services can be an important part of building community 
 {% include 'buttonsocial/data/buttonsocial--pinterest' %}
 
 ```html
-<a class="c-buttonsocial c-buttonsocial--pinterest u-icon u-icon--circle" href="https://www.pinterest.ca/carletonu">
-    {% verbatim %}{% include iconPath ~ 'pinterest.svg' %}{% endverbatim %}
-    <span class="u-visually-hidden">Check us out on Pinterest</span>
+{% filter escape %}{% include 'buttonsocial/data/buttonsocial--pinterest' %}{% endfilter %}
 </a>
 ```
 
@@ -62,10 +51,7 @@ Linking to social media services can be an important part of building community 
 {% include 'buttonsocial/data/buttonsocial--twitter' %}
 
 ```html
-<a class="c-buttonsocial c-buttonsocial--twitter u-icon u-icon--circle" href="https://twitter.com/@Carleton_U">
-    {% verbatim %}{% include iconPath ~ 'twitter.svg' %}{% endverbatim %}
-    <span class="u-visually-hidden">Follow us on Twitter</span>
-</a>
+{% filter escape %}{% include 'buttonsocial/data/buttonsocial--twitter' %}{% endfilter %}
 ```
 
 ### Youtube
@@ -73,10 +59,7 @@ Linking to social media services can be an important part of building community 
 {% include 'buttonsocial/data/buttonsocial--youtube' %}
 
 ```html
-<a class="c-buttonsocial c-buttonsocial--youtube u-icon u-icon--circle" href="https://www.youtube.com/user/carletonuvideos">
-    {% verbatim %}{% include iconPath ~ 'youtube.svg' %}{% endverbatim %}
-    <span class="u-visually-hidden">Subscribe to our Youtube channel</span>
-</a>
+{% filter escape %}{% include 'buttonsocial/data/buttonsocial--youtube' %}{% endfilter %}
 ```
 ##Implementation Notes
 

@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: docs
 subsite: dev
 title: Icon system
 content: true

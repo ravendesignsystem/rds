@@ -1,7 +1,7 @@
 ---
-layout: base
+layout: docs
 subsite: dev
-title: Overlays
+title: Overlay
 banner:
   breadcrumbs:
     parent: Docs

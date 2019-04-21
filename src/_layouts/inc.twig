@@ -1,0 +1,44 @@
+{% if page.content != 'none' and open != true  %}
+    </div>
+</div>
+{% endif %}
+
+{#---- For including blocks ----#}
+{% if block %}
+    {% if '-' in block %}
+        {% set ex = block|split('-') %}
+        {% include ex.0 ~ '/data/' ~ ex.0 ~ '--' ~ ex.1  %}
+    {% else %}
+        {% if theme %}
+            {% include theme ~ '/blocks/' ~ block ~ '/' ~ block %}
+        {% else %}
+            {% include block ~ '/' ~ block %}
+        {% endif %}
+    {% endif %}
+{% endif %}
+
+{#---- For including macros ----#}
+{% if macro %}
+    {% from macro ~ '/' ~ macro import textimg %}
+    {{ textimg (
+        {
+            color: color,
+            modifier: 'b-docs-textimg'
+        },
+        {
+            title: title,
+            img: {
+            alt: "Provide good alt text.",
+            url: "https://via.placeholder.com/640x480"
+        },
+            content: content
+        },
+        {
+            content: content
+        }
+    ) }}
+{% endif %}
+{% if page.content != 'none' and close != true %}
+<div class="u-block u-block--white u-block--s">
+    <div class="b-content">
+{% endif %}

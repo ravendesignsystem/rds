@@ -1,5 +1,5 @@
 ---
-layout: t-docs
+layout: docs
 subsite: dev
 title: Footer Brand block
 banner:
@@ -27,7 +27,7 @@ alternatives: n/a
 
 The Footer Brand block is a mandatory core block that should be included in the footer section of all pages and views within your Carleton app. This block contains the Carleton logo, which acts as navigation to the university's homepage and is important to conveying trust and our brand. It also holds key legal links to our copyright, accessibility and privacy policies.
 
-{% include 'footerbrand/footerbrand' %}
+{% include 'inc' with {'block': 'footerbrand'} %}
 
 ```html
 <div class="u-block u-block--border-top u-block--black u-center u-center--center">
