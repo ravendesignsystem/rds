@@ -1,5 +1,5 @@
 ---
-layout: t-docs
+layout: docs
 subsite: dev
 title: Image caption
 banner:
