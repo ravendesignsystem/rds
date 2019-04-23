@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: docs
 subsite: dev
 title: Icon system
 content: true
@@ -135,7 +135,7 @@ Add a circular background to any icon using the `u-icon--circle` modifier.
 </p>
 ```
 
-<p style="font-size: 2.5em"><span class="u-icon u-icon--circle">{% include 'icons/heart.svg' %}<span>love</span></span></p>
+<p style="font-size: 2.5em"><span class="u-icon u-icon--circle">{% include 'icons/heart.svg' %} love</span></p>
 
 Notice how the icon shrinks and the background height remains the same size as the label. For guidance on when to use circular background icons, view the [design guidelines for icons](#).
 

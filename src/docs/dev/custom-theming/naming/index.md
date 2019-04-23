@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: docs
 title: BEM & the Naming of Things
 subsite: dev
 content: true

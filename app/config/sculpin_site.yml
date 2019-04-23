@@ -50,7 +50,7 @@ blocks:
         section: main
         theme: na
     -
-        name: Text-Image (Docs incomplete)
+        name: Text-Image
         handle: textimg
         section: main
         theme: fw
@@ -87,8 +87,8 @@ components:
         section: buttons
         theme: core
     -
-        name: Cards (Missing end notes)
-        handle: cards
+        name: Card
+        handle: card
         section: cards
         theme: core
     -

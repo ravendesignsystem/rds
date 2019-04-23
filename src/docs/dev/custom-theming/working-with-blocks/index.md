@@ -1,8 +1,7 @@
 ---
-layout: base
+layout: docs
 subsite: dev
 title: Working with Blocks
-content: true
 banner:
   breadcrumbs:
     grandparent: Custom Development

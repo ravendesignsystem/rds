@@ -1,8 +1,7 @@
 ---
-layout: t-docs
+layout: docs
 subsite: dev
 title: Submenu
-content: true
 banner:
   breadcrumbs:
     parent: Nav

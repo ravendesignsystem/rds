@@ -1,5 +1,5 @@
 ---
-layout: t-block-docs
+layout: blocks
 subsite: dev
 title: Text-Image block
 banner:
@@ -38,12 +38,12 @@ When Text-Image blocks are repeated back to back, it is best to:
 - alternate the column order and image location.
 - group sectioning blocks with related content together by using the same background color.
 
-{%include "textimg/data/textimg--base.twig" with {'content': 'close'}%}
-{%include "textimg/data/textimg--imgtext.twig"%}
-{%include "textimg/data/textimg--base.twig" with {'content': 'open'}%}
+{% include 'inc' with {'block': 'textimg-base', 'close': true} %}
+{% include 'inc' with {'block': 'textimg-imgtext', 'close': true} %}
+{% include 'inc' with {'block': 'textimg-base'} %}
 
 - Use different background colours to divide the non-sectioning blocks.
 
-{%include "textimg/data/textimg--base.twig" with {'content': 'close'}%}
-{%include "textimg/data/textimg--white.twig"%}
-{%include "textimg/data/textimg--base.twig" with {'content': 'open'}%}
+{% include 'inc' with {'block': 'textimg-base', 'close': true} %}
+{% include 'inc' with {'block': 'textimg-white', 'close': true} %}
+{% include 'inc' with {'block': 'textimg-base'} %}

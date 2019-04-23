@@ -1,21 +1,18 @@
-{% extends "t-docs-block" %}
-{% block block %}
 {% from "cardgrid/cardgrid.twig" import cardgrid %}
 {{ cardgrid (
     {
         columns: '3',
-        width: 's'
+        heading: heading
     },
     [
         {
             inc: "card/data/card--base.twig",
         },
         {
-            inc: "card/data/card--news.twig",
+            inc: "card/data/card--base.twig",
         },
         {
-            inc: "card/data/card--news.twig"
+            inc: "card/data/card--base.twig"
         }
     ]
 ) }}
-{% endblock %}

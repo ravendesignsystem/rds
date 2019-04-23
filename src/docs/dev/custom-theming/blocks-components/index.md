@@ -1,7 +1,6 @@
 ---
-layout: base
+layout: docs
 title: Naming Blocks and Components
-content: true
 banner:
   breadcrumbs:
     grandparent: Dev

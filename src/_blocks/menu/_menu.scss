@@ -43,9 +43,19 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		// line-height: 50px; // TODO: removed this in the case users have 2 line nav items, padding top/bottom accommodates for the spacing change
-		// transition: all 0.25s ease-in; // TODO: what was this doing? can't figure it out
+		transition: all 0.25s ease-in; // TODO: what was this doing? can't figure it out
 	}
+}
+
+.b-menu > ul li:last-of-type:not(.b-menu ul ul li:last-of-type) {
+	// tighten expand all line-height
+	line-height: 1;
+}
+
+// remove bottom border, if open
+.b-menu li input:checked + label a {
+	border-bottom: 1px solid rgba(255, 255, 255, 0);
+	padding-bottom: 5px;
 }
 
 .b-menu li:last-child a {
@@ -83,6 +93,14 @@
 	}
 }
 
+.b-menu ul ul i {
+	line-height: 40px;
+}
+
+.body__nav .b-menu ul ul li:last-child a {
+	padding-bottom: 14px;
+}
+
 .b-menu input[type='checkbox']:checked + label > i:after {
 	transform: rotate(135deg);
 	transform-origin: center center;
@@ -112,22 +130,38 @@
 // =======================================
 
 // 2nd level
+.b-menu ul ul:not(.b-menu ul ul ul) {
+	// no background color if not in  overlay
+	font-size: $pixel16;
+	box-shadow: inset 0px -11px 12px -12px $grey-yoda;
+}
+
 .b-menu ul ul:not(.body__nav .b-menu ul ul) { // no background color if not in  overlay
 	background-color: $grey;
-	box-shadow: inset 0px 11px 8px -10px $grey-yoda,
-		inset 0px -11px 8px -10px $grey-yoda; // TODO: DANNY -- i see what this is doing, but it's so subtle, do we really need this?
+}
+
+.b-menu ul ul ul:not(.body__nav .b-menu ul ul ul) { // no background color if not in  overlay
+	background-color: white;
+}
+
+.body__nav .b-menu ul ul ul li:last-child a {
+	padding-top: 0px;
+	padding-bottom: 2px;
 }
 
 .b-menu ul ul a {
 	padding-left: 35px;
 	border-bottom: 1px solid white;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: $grey-emperor;
 }
 
-
-	// 3rd level
+// 3rd level
 .b-menu ul ul ul {
 	a {
 		padding-left: 60px;
+		font-size: $pixel14;
 	}
 }
 
@@ -158,8 +192,9 @@
 		transition: all 0.25s ease-in;
 		font-size: $pixel14;
 		vertical-align: middle;
-		// line-height: normal;
+		line-height: normal;
 		margin-right: 5px;
+		margin-top: -1px;
 		color: $grey-emperor;
 	}
 

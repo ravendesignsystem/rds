@@ -1,6 +1,7 @@
 ---
-layout: base
+layout: docs
 subsite: dev
+menu: dev
 title: RDS Components
 banner:
   settings:

@@ -12,7 +12,21 @@
                     [
                         {
                             title: 'Get started',
-                            url: site.url ~ 'dev/getting-started/get-started/'
+                            url: site.url ~ 'dev/getting-started/get-started/',
+                            submenu: [
+                            {
+                                title: "Third Level, testing this one with an extremely long title that user might create",
+                                url: "#"
+                            },
+                            {
+                                title: "Foo fy",
+                                url: "#"
+                            },
+                            {
+                                title: "Fee fum  fy",
+                                url: "#"
+                            }
+                        ]
                         },
                         {
                             title: 'Quick start',
@@ -57,6 +71,14 @@
                     ]
                 },
                 {
+                    title: "Blocks",
+                    url: site.url ~ 'dev/blocks/'
+                },
+                {
+                    title: "Components",
+                    url: site.url ~ 'dev/components/'
+                },
+                {
                     title: "Custom theming",
                     url: site.url ~ 'dev/custom-theming/',
                     section: page.section,
@@ -89,16 +111,40 @@
                     ]
                 },
                 {
-                    title: "Blocks",
-                    url: "#"
-                },
-                {
-                    title: "Components",
-                    url: "#"
-                },
-                {
                     title: "Guidelines",
-                    url: "#"
+                    url: site.url ~ 'dev/guidelines/',
+                    section: page.section,
+                    submenu:
+                    [
+                        {
+                            title: 'Principles and guidelines',
+                            url: site.url ~ 'dev/#'
+                        },
+                        {
+                            title: 'SASS',
+                            url: site.url ~ 'dev/#/'
+                        },
+                        {
+                            title: 'Naming of things',
+                            url: site.url ~ '#'
+                        },
+                        {
+                            title: 'Markup and style',
+                            url: site.url ~ '#'
+                        },
+                        {
+                            title: 'A11y',
+                            url: site.url ~ 'dev/#'
+                        },
+                        {
+                            title: 'Security',
+                            url: site.url ~ 'dev/#'
+                        },
+                        {
+                            title: 'Glossary',
+                            url: site.url ~ 'dev/#'
+                        }
+                    ]
                 }
             ]
         )}}

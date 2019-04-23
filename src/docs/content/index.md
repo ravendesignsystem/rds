@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: docs
 title: RDS Content
 subsite: content
 content: true

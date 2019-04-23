@@ -1,8 +1,7 @@
 ---
-layout: base
+layout: docs
 subsite: dev
 title: Design Principles and Coding Standards
-content: true
 ---
 While, development focused, the following principles and guidelines do rollup to RDS' overall [guiding principles](#). Anyone contributing to or developing with RDS should have a clear understanding of the principles and guidelines below.
 

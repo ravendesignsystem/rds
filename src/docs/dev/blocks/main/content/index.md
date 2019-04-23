@@ -1,5 +1,5 @@
 ---
-layout: t-docs
+layout: docs
 subsite: dev
 title: Content block
 banner:
@@ -29,7 +29,7 @@ By setting table, link and multimedia styles, as well as global typography, the 
 ## Base block code
 
 ```html
-<div class="u-block u-block--s">
+<div class="u-block u-block--white u-block--s">
     <div class="b-content">
         <!-- Add your content here -->
     </div>
@@ -48,7 +48,7 @@ Content within this block should follow the <a href="#">RDS HTML coding conventi
 - in almost all cases the b-content block width should be set to `u-block--s`.
 
 ```html
-<div class="u-block u-block--s">
+<div class="u-block u-block--white u-block--s">
     <div class="b-content">
         <h3>Use proper HTML coding conventions</h3>
         <p>Content within this block should follow the <a href="#">RDS HTML coding conventions</a>, including:</p>
@@ -68,7 +68,7 @@ The following [block settings](#) are available for this block.
 - **Block widths**: `u-block--s`, `u-block--m`, `u-block--l`
 - **Block colours**: `u-block--grey`
 
-{%include "/docs/inc/close.twig"%}
+{%include "inc" with {'close': 'true'} %}
 
 <div class="u-block u-block--m u-block--grey">
     <div class="b-content">
@@ -76,10 +76,11 @@ The following [block settings](#) are available for this block.
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi varius augue vehicula tellus congue fringilla. Pellentesque vel purus id nunc suscipit suscipit. In dapibus est quis leo vestibulum convallis. Aenean vestibulum tristique elementum. Aliquam tincidunt luctus risus, ac malesuada felis egestas sit amet. Aliquam a aliquam leo. Maecenas sollicitudin arcu lectus, ac congue dolor venenatis at. Fusce tempus quam dui, at vulputate nunc mollis ac.</p>
     </div>
 </div>
-{%include "/docs/inc/open-b-content.twig"%}
+
+{%include "inc" with {'open': 'true'} %}
 
 ```html
-<div class="u-block u-block--m u-block--grey">
+<div class="u-block u-block--grey u-block--m">
     <div class="b-content">
         <h2>Example using grey background and medium width settings.</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi varius augue vehicula tellus congue fringilla. Pellentesque vel purus id nunc suscipit suscipit. In dapibus est quis leo vestibulum convallis. Aenean vestibulum tristique elementum. Aliquam tincidunt luctus risus, ac malesuada felis egestas sit amet. Aliquam a aliquam leo. Maecenas sollicitudin arcu lectus, ac congue dolor venenatis at. Fusce tempus quam dui, at vulputate nunc mollis ac.</p>

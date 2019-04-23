@@ -1,7 +1,9 @@
 ---
-layout: t-docs
-subsite: dev
+layout: docs
 title: Accordion component
+subsite: dev
+menu: dev
+section: Components
 banner:
   breadcrumbs:
     grandparent: Components

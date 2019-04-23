@@ -1,7 +1,6 @@
 ---
-layout: base
+layout: docs
 title: Block utility class cheat sheet
-content: true
 ---
 ## Utility classes on blocks
 
@@ -28,11 +27,13 @@ content: true
     <img src="https://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore.jpg"/>
 </div>
 ```
-{%include "/docs/inc/close.twig"%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block--full">
     <img src="https://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore.jpg"/>
 </div>
-{%include "/docs/inc/open-b-content.twig"%}
+
+{%include "inc" with {'open': 'true'} %}
 
 ## u-block
 ```HTML
@@ -40,44 +41,55 @@ content: true
      <p>A simple block</p>
 </div>
 ```
-{%include "/docs/inc/close.twig"%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block">
      <p>A simple block</p>
 </div>
-{%include "/docs/inc/open-b-content.twig"%}
+
+{%include "inc" with {'open': 'true'} %}
+
 ## u-block--m
 ```HTML
 <div class="u-block u-block--m">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel nunc a felis facilisis facilisis quis et sem. Proin libero nunc, pulvinar id scelerisque in, feugiat at quam.</p>
 </div>
 ```
-{%include "/docs/inc/close.twig"%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--m">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel nunc a felis facilisis facilisis quis et sem. Proin libero nunc, pulvinar id scelerisque in, feugiat at quam.</p>
       </div>
-{%include "/docs/inc/open-b-content.twig"%}
+
+{%include "inc" with {'open': 'true'} %}
+
 ## u-block--grey
 ```HTML
 <div class="u-block u-block--grey">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel nunc a felis facilisis facilisis quis et sem. Proin libero nunc, pulvinar id scelerisque in, feugiat at quam. </p>
 </div>
 ```
-{%include "/docs/inc/close.twig"%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--grey">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel nunc a felis facilisis facilisis quis et sem. Proin libero nunc, pulvinar id scelerisque in, feugiat at quam. </p>
 </div>
-{%include "/docs/inc/open-b-content.twig"%}
+
+{%include "inc" with {'close': 'open'} %}
+
 ## u-block-m & u-block--grey
 ```HTML
 <div class="u-block u-block--m u-block--grey">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel nunc a felis facilisis facilisis quis et sem. Proin libero nunc, pulvinar id scelerisque in, feugiat at quam. </p>
 </div>
 ```
-{%include "/docs/inc/close.twig"%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--m u-block--grey">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel nunc a felis facilisis facilisis quis et sem. Proin libero nunc, pulvinar id scelerisque in, feugiat at quam.</p>
 </div>
-{%include "/docs/inc/open-b-content.twig"%}
+
+{%include "inc" with {'close': 'open'} %}
 
 ## Important Note
 
@@ -91,9 +103,6 @@ For example, you can't use the following code with success:
 </div>
 ```
 
-
-
-{%include "/docs/inc/close.twig"%}
 
 
 

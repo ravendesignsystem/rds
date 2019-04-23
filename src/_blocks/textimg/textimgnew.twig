@@ -1,4 +1,8 @@
-{% macro textimg(settings, fields) %}
+{% macro textimg(settings, fields, docs) %}
+{% if 'close' in docs.content %}
+    </div>
+</div>
+{% endif %}
 {% if settings.heading %}
 <section class="u-block {% if settings.width %}u-block--{{ settings.width }}{% else %}u-block--m{% endif %} {% if settings.color %}u-block--{{ settings.color }}{% else %}u-block--white{% endif %}">
     <h2 class="c-heading--center{% if settings.subheading %} c-heading--subheading{% endif %}">{{ settings.heading }}</h2>
@@ -7,7 +11,7 @@
 {% else %}
 <div class="u-block {% if settings.width %}u-block--{{ settings.width }}{% else %}u-block--m{% endif %} {% if settings.color %}u-block--{{ settings.color }}{% else %}u-block--white{% endif %}">
 {% endif %}
-    <div class="b-textimg{% if settings.variant %} b-textimg--imgtext{% endif %}{% if settings.modifier %} {{ settings.modifier }}{% endif %}">
+    <div class="b-textimg{% if settings.variant %} b-textimg--imgtext{% endif %}{% if docs.modifier %} {{ docs.modifier }}{% endif %}">
         <div class="textimg__wrapper">
             <div class="textimg__section">
                 <{% if settings.heading %}h3{% else %}h2{% endif %} class="textimg__heading">{{ fields.title }}</{% if settings.heading %}h3{% else %}h2{% endif %}>
@@ -23,5 +27,9 @@
 </section>
 {% elseif setting.section == 'close' %}
 </section>
+{% endif %}
+{% if 'open' in docs.content %}
+<div class="u-block u-block--s">
+    <div class="b-content">
 {% endif %}
 {% endmacro textimg %}

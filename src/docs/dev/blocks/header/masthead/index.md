@@ -1,5 +1,5 @@
 ---
-layout: t-docs
+layout: docs
 subsite: dev
 title: Masthead block
 banner:
@@ -50,7 +50,8 @@ The masthead block has many options and configurations. At it's simplest, the ma
  
 **Note**: you won't see the mobile (hamburger) menu in the examples below unless your browser width is maller then 768 pixels.
 
-{%include "/docs/inc/close.twig"%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--full">
 	<div class="b-masthead b-masthead--shadow">
 		<div>
@@ -74,7 +75,8 @@ Site Name</a>
 		</nav>
 	</div>
 </div>
-{%include "/docs/inc/open-b-content.twig"%}
+
+{%include "inc" with {'open': 'true'} %}
 
 ```html
 <div class="u-block u-block--full">
@@ -106,7 +108,8 @@ Site Name</a>
 
 If your application requires search functionality, you can add a search button to the masthead. This button will display the same overlay as the mobile menu button does, but with focus on the search field.
 
-{%include "/docs/inc/close.twig"%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--full">
 	<div class="b-masthead b-masthead--shadow">
 		<div>
@@ -136,7 +139,8 @@ Site Name</a>
 		</nav>
 	</div>
 </div>
-{%include "/docs/inc/open-b-content.twig"%}
+
+{%include "inc" with {'open': 'true'} %}
 
 ```html
 <div class="u-block u-block--full">
@@ -188,7 +192,8 @@ The search "loop" icon is one of the few universally recognized icons that can b
 
 To promote key links or actions, add a call to action button to the right side of the masthead block 
 
-{%include "/docs/inc/close.twig"%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--full">
 	<div class="b-masthead b-masthead--shadow">
 		<div>
@@ -219,7 +224,8 @@ Site Name</a>
 		</nav>
 	</div>
 </div>
-{%include "/docs/inc/open-b-content.twig"%}
+
+{%include "inc" with {'open': 'true'} %}
 
 ```html
 <div class="u-block u-block--full">
@@ -256,7 +262,8 @@ Site Name</a>
 ### CTA icons
 To further communicate meaning to your CTA, add an icon. 
 
-{%include "/docs/inc/close.twig"%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--full">
 	<div class="b-masthead b-masthead--shadow">
 		<div>
@@ -288,7 +295,8 @@ Site Name</a>
 		</nav>
 	</div>
 </div>
-{%include "/docs/inc/open-b-content.twig"%}
+
+{%include "inc" with {'open': 'true'} %}
 
 ```html
 <div class="u-block u-block--full">
@@ -325,7 +333,8 @@ Site Name</a>
 ### Less emphasis on CTA
 The red background added to the CTA by default adds significant visual emphasis to the element. If you want to balance the focus between your CTA and other Masthead elements, remove the `class="masthead__cta"` and the background is white.
 
-{%include "/docs/inc/close.twig"%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--full">
 	<div class="b-masthead b-masthead--shadow">
 		<div>
@@ -357,7 +366,8 @@ Site Name</a>
 		</nav>
 	</div>
 </div>
-{%include "/docs/inc/open-b-content.twig"%}
+
+{%include "inc" with {'open': 'true'} %}
 
 ```html
 <div class="u-block u-block--full">
@@ -396,7 +406,8 @@ Site Name</a>
 
 Use the [Popup menu](#) component to add a submenu to your CTA.
 
-{%include "/docs/inc/close.twig"%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--full">
 	<div class="b-masthead b-masthead--shadow">
 		<div>
@@ -440,7 +451,8 @@ Site Name</a>
 		</nav>
 	</div>
 </div>
-{%include "/docs/inc/open-b-content.twig"%}
+
+{%include "inc" with {'open': 'true'} %}
 
 ```html
 <div class="u-block u-block--full">
@@ -495,7 +507,8 @@ Site Name</a>
 
 Use the [Popup menu](#) component to add a submenu to your CTA.
 
-{%include "/docs/inc/close.twig"%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--full">
 	<div class="b-masthead b-masthead--shadow">
 		<div>
@@ -539,7 +552,8 @@ Site Name</a>
 		</nav>
 	</div>
 </div>
-{%include "/docs/inc/open-b-content.twig"%}
+
+{%include "inc" with {'open': 'true'} %}
 
 ```html
 <div class="u-block u-block--full">
@@ -590,7 +604,8 @@ Site Name</a>
 
 You can use the masthead CTA button to promote and link your users to a login page. However, there is also a default login button and associated login block/form available in RDS. Similar to the search button and mobile menu, the login form resides in the [overlay layout](#). 
 
-{%include "/docs/inc/close.twig"%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--full">
 	<div class="b-masthead b-masthead--shadow">
 		<div>
@@ -638,7 +653,8 @@ Site Name</a>
 		</nav>
 	</div>
 </div>
-{%include "/docs/inc/open-b-content.twig"%}
+
+{%include "inc" with {'open': 'true'} %}
 
 ```html
 <div class="u-block u-block--full">
@@ -705,7 +721,8 @@ Masthead navigation links display right after the brand and will grow to occupy 
 
 The masthead has a priority nav feature built in. If a user's browser width becomes smaller then the width of your navigation, items will drop of and and extra link ellipsis (`...`) will appear. Clicking this will open the site-wide menu in the overlay. It is still best to avoid this happening by restricting the width of your navigation.
 
-{%include "/docs/inc/close.twig"%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--full">
 	<div class="b-masthead b-masthead--shadow">
 		<div>
@@ -760,7 +777,8 @@ Site Name</a>
 		</nav>
 	</div>
 </div>
-{%include "/docs/inc/open-b-content.twig"%}
+
+{%include "inc" with {'open': 'true'} %}
 
 ```html
 <div class="u-block u-block--full">

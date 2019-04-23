@@ -1,8 +1,7 @@
 ---
-layout: base
+layout: docs
 subsite: dev
 title: Main + Aside Layout
-content: true
 ---
 
 The `Main + Aside` layout sets up two columns, with the primary content area on the left and an aside on the right-hand side, and has a maximum width of 1108px.
