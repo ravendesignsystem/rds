@@ -9,7 +9,6 @@ banner:
     img_url_s: https://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore-s.jpg
     img_opacity: light
 ---
-
 ## Getting started
 
 - [Get started]({{site.url}}dev/getting-started/get-started/)
@@ -48,3 +47,5 @@ banner:
 
 - [Google Dev Docs: Abberviations](https://developers.google.com/style/abbreviations)
 - [Vue Design System Docs](https://github.com/viljamis/vue-design-system/wiki)
+
+

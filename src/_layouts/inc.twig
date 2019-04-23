@@ -1,4 +1,4 @@
-{% if page.content != 'none' and open != true  %}
+{% if (page.content != 'none' or close == true) and open == false %}
     </div>
 </div>
 {% endif %}
@@ -18,27 +18,53 @@
 {% endif %}
 
 {#---- For including macros ----#}
-{% if macro %}
+{% if macro == 'listing' %}
+    {% from macro ~ '/' ~ macro import listing %}
+    {{ listing (
+        {
+            color: 'white'
+        },
+        [
+            {
+                title: title1,
+                url: url1,
+            },
+            {
+                title: title2,
+                url: url2
+            },
+            {
+                title: title3,
+                url: url3
+            },
+            {
+                title: title4,
+                url: url4
+            },
+            {
+                title: title5,
+                url: url5
+            }
+        ]
+    ) }}
+{% endif %}
+
+{% if macro == 'textimg' %}
     {% from macro ~ '/' ~ macro import textimg %}
     {{ textimg (
         {
             color: color,
-            modifier: 'b-docs-textimg'
+            modifier: modifier
         },
         {
             title: title,
-            img: {
-            alt: "Provide good alt text.",
-            url: "https://via.placeholder.com/640x480"
-        },
-            content: content
-        },
-        {
+            img : { url: img.url, alt: img.alt},
             content: content
         }
     ) }}
 {% endif %}
-{% if page.content != 'none' and close != true %}
+
+{% if (page.content != 'none' or open == true) and close == false %}
 <div class="u-block u-block--white u-block--s">
     <div class="b-content">
 {% endif %}

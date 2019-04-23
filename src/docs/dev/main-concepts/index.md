@@ -1,10 +1,12 @@
 ---
 layout: docs
+title: Main concepts
 subsite: dev
-menu: true
+menu: dev
 section: Main concepts
-title: Main concepts that makeup RDS
-readingTime: 4:14
+banner:
+  breadcrumbs:
+    parent: Docs
 ---
 RDS is Carleton's system for creating consistency and digital harmony across our many web properties. One of the systematic ways to guide our collective efforts is to ensure that everyone is speaking the same language. This section documents the fundamental concepts and terminology used within RDS' underlying design language.
 

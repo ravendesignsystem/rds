@@ -41,57 +41,25 @@
 				</h2>
 				<ul role="menu">
 					{% if page.subsite == 'dev' %}
-					<li class="c-menupopup">
-						<button class="c-menupopup" aria-label="Open Menu">Getting started</button>
-						<ul class="menupopup__menu" aria-label="menupopup">
-							<li><a href="{{ site.url }}dev/getting-started/get-started/">Get started</a></li>
-							<li><a href="{{ site.url }}dev/getting-started/quick-start/">Quick start</a></li>
-							<li><a href="{{ site.url }}dev/getting-started/quick-start/">Starter packages</a></li>
-							<li><a href="{{ site.url }}dev/getting-started/quick-start/">Recipes and patterns</a></li>
-						</ul>
+					<li>
+						<a href="{{ site.url }}dev/getting-started/">Getting started</a>
 					</li>
-					<li class="c-menupopup">
-						<button class="c-menupopup" aria-label="Open Menu">Main concepts</button>
-						<ul class="menupopup__menu" aria-label="menupopup">
-							<li><a href="{{ site.url }}dev/main-concepts/">Main Concepts - start here</a></li>
-							<li><a href="{{ site.url }}dev/main-concepts/blocks-in-depth/">Blocks in depth</a></li>
-							<li><a href="{{ site.url }}dev/main-concepts/blocks-in-depth/">Components</a></li>
-							<li><a href="{{ site.url }}dev/main-concepts/blocks-in-depth/">Layouts</a></li>
-							<li><a href="{{ site.url }}dev/main-concepts/blocks-in-depth/">Themes</a></li>
-							<li><a href="{{ site.url }}dev/main-concepts/blocks-in-depth/">Spacing</a></li>
-						</ul>
+					<li>
+						<a href="{{ site.url }}dev/main-concepts/">Main concepts</a>
 					</li>
 					<li>
 						<button class="c-menupopup" aria-label="Open Menu">Blocks & Components</button>
 						<ul class="menupopup__menu" aria-label="menupopup">
 							<li><a href="{{ site.url }}dev/blocks/">Blocks</a></li>
-							<li><a href="{{ site.url }}dev/blocks/components/">Components</a></li>
+							<li><a href="{{ site.url }}dev/components/">Components</a></li>
 							<li><a href="{{ site.url }}dev/blocks/kitchen-sink/">Kitchen sink</a></li>
 						</ul>
 					</li>
-					<li class="c-menupopup">
-						<button class="c-menupopup" aria-label="Open Menu">Custom theming</button>
-						<ul class="menupopup__menu" aria-label="menupopup">
-							<li><a href="{{ site.url }}dev/docs/custom-theming/overview/introduction">Introduction</a></li>
-							<li><a href="{{ site.url }}dev/docs/custom-theming/">Installing RDS</a></li>
-							<li><a href="{{ site.url }}dev/docs/custom-theming/">SASS & Breakpoints</a></li>
-							<li><a href="{{ site.url }}dev/docs/custom-theming/">Creating custom blocks</a></li>
-							<li><a href="{{ site.url }}dev/docs/custom-theming/">Icon system</a></li>
-							<li><a href="{{ site.url }}dev/docs/custom-theming/">Layouts</a></li>
-							<li><a href="{{ site.url }}dev/docs/custom-theming/">Grid system</a></li>
-						</ul>
+					<li>
+						<a href="{{ site.url }}dev/custom-theming/">Custom theming</a>
 					</li>
 					<li>
-						<button class="c-menupopup" aria-label="Open Menu">Guidelines</button>
-						<ul class="menupopup__menu" aria-label="menupopup">
-							<li><a href="{{ site.url }}dev/docs/guidelines/">Principles & standards</a></li>
-							<li><a href="{{ site.url }}dev/docs/guidelines/">Naming of things</a></li>
-							<li><a href="{{ site.url }}dev/docs/guidelines/">SASS</a></li>
-							<li><a href="{{ site.url }}dev/docs/guidelines/">Markup and style</a></li>
-							<li><a href="{{ site.url }}dev/docs/guidelines/">Accessibility</a></li>
-							<li><a href="{{ site.url }}dev/docs/guidelines/">Security</a></li>
-							<li><a href="{{ site.url }}dev/docs/guidelines/">Glossary</a></li>
-						</ul>
+						<a href="{{ site.url }}dev/guidelines/">Guidelines</a>
 					</li>
 					<li class="masthead__more"><a href="#">more...</a></li>
 					{% elseif (page.subsite == 'design') or (page.subsite == 'content') or (page.subsite == 'a11y') %}

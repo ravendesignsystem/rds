@@ -4,54 +4,37 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+// -----------------------------
 // RDS Core - *** REQUIRED ***
+// -----------------------------
 @import '../../core/scss/core';
 
-// ----------
-// RDS BLOCKS
-// ----------
-// Chose your project blocks by uncommenting the imports below.
+// -----------------------------
+// CMS BLOCKS
+// -----------------------------
+@import '../../cms/scss/cms';
 
-// Header Blocks:
-// --------------
-
-// Nav-global
-@import '../../../_blocks/globalnav/globalnav';
-
-// Content Blocks:
-// ---------------
-
-// Listing block
-@import '../../../_blocks/listing/listing';
-// text-image block
-@import '../../../_blocks/textimg/textimg';
-
-// Overlay blocks:
-// ---------------
-
-// login block
-@import '../../../_blocks/login/login';
-
-// Footer Blocks:
-// ---------------
-
-// Footer simple
-@import '../../../_blocks/footersimple/footersimple';
-// Footer sitemap
-@import '../../../_blocks/footersitemap/footersitemap';
+// -----------------------------
+// FW BLOCKS
+// -----------------------------
+@import '../../fw/scss/fw';
 
 // -----------------------------
 // CUSTOM THEME - RDSDOCS BLOCKS
 // -----------------------------
-// RDS Docs custom theme styles
+
 // Blocks
+//-------
 @import 'base/utilities';
 @import '../blocks/gridhome/gridhome';
 @import '../blocks/textimg/textimg';
 @import '../blocks/tabs/tabs';
 @import 'vendor/highlight-js--github';
+
 // Components
+//-----------
 @import '../components/cardlabel/cardlabel';
 
 // Homepage
+//---------
 @import '../../hp/blocks/bannerhero/bannerhero';

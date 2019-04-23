@@ -81,8 +81,9 @@
         {% endif %}
                 {% block main %}
                     <main {% if (page.menu) or (page.sidebar) %}class="body__main"{% endif %} id="content">
-                        {% if page.content != 'none' %}
+
                         <div class="body__content">
+                            {% if page.content != 'none' %}
                             <div class="u-block u-block--white u-block--s">
                                 <div class="b-content">
 {#                                    {% set inContent = true %} TODO remove #}
@@ -95,8 +96,8 @@
                             {% if page.content != 'none' %}
                                 </div>
                             </div>
+                            {% endif %}
                         </div>
-                        {% endif %}
                         {% if page.sidebar %}
                         <aside class="body__sidebar">
                             <div class="u-block u-block--m u-block--grey">

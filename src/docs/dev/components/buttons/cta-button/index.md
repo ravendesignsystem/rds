@@ -1,5 +1,5 @@
 ---
-layout: t-block-docs
+layout: blocks
 subsite: dev
 title: CTA Button
 content: true

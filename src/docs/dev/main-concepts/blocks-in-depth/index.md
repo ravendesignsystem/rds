@@ -183,11 +183,14 @@ There are two types of Blocks:
 ### Max-width Blocks
 
 These Blocks use modifiers of the `u-block` utility class to set the content's max-width to either small (s), medium (m) or large (l) presets. For example:
-{%include 'docs/inc/close.twig'%}
+
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--s"><div style="background-color: lightgrey">
 <p>This is using the code below, which restricts the content to the smallest max-width.</p>
 </div></div>
-{%include 'docs/inc/open-b-content.twig'%}
+
+{%include "inc" with {'open': 'true'} %}
 
 ```html
 <div style="background-color: lightgrey" class="u-block u-block--s">
@@ -195,11 +198,13 @@ These Blocks use modifiers of the `u-block` utility class to set the content's m
 </div>
 ```
 
-{%include 'docs/inc/close.twig'%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--m"><div style="background-color: lightgrey">
 <p>This is using the code below, which restricts the content to the medium max-width.</p>
 </div></div>
-{%include 'docs/inc/open-b-content.twig'%}
+
+{%include "inc" with {'open': 'true'} %}
 
 ```html
 <div style="background-color: lightgrey" class="u-block u-block--m">
@@ -207,11 +212,13 @@ These Blocks use modifiers of the `u-block` utility class to set the content's m
 </div>
 ```
 
-{%include 'docs/inc/close.twig'%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--l"><div style="background-color: lightgrey">
 <p>This is using the code below, which restricts the content to the largest max-width.</p>
 </div></div>
-{%include 'docs/inc/open-b-content.twig'%}
+
+{%include "inc" with {'open': 'true'} %}
 
 ```html
 <div style="background-color: lightgrey" class="u-block u-block--l">
@@ -236,11 +243,14 @@ TODO: add some images
 While the content within Max-Width Blocks is restricted in width, the rest of the block extends the full length of the screen or it or to its layout container restrictions. This allows us to create blocks with differing background colours that appear as rows.
 
 For example:
-{%include 'docs/inc/close.twig'%}
+
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--s u-block--grey"><div class="b-example">
 <p>This is using the code below, which by adding both `u-block--s` and `u-block--grey`, we create a row with a grey background that stretches 100%, while restricting the content's width to the smallest size.</p>
 </div></div>
-{%include 'docs/inc/open-b-content.twig'%}
+
+{%include "inc" with {'open': 'true'} %}
 
 ```html
 <div class="u-block u-block--s u-block--grey">
@@ -258,7 +268,8 @@ TODO: add some images
 
 You can use different coloured background rows to separate different sections of content. For example:
 
-{%include 'docs/inc/close.twig'%}
+{%include "inc" with {'close': 'true'} %}
+
 <div class="u-block u-block--s u-block--grey"><div class="b-content">
 <p>This is a content section</p>
 </div></div>
@@ -268,7 +279,8 @@ You can use different coloured background rows to separate different sections of
 <div class="u-block u-block--s u-block--grey"><div class="b-content">
 <p>This is a new content section</p>
 </div></div>
-{%include 'docs/inc/open-b-content.twig'%}
+
+{%include "inc" with {'open': 'true'} %}
 
 ```html
 <div class="u-block u-block--s u-block--grey">
