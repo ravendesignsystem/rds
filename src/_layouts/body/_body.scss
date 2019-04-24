@@ -59,8 +59,9 @@
 		margin-right: $grid-gutter;
 		padding-right: $grid-gutter;
 		border-right: 1px solid $grey;
-		position: sticky !important;
+		position: sticky;
 		top: 0;
+		align-self: flex-start; /* <-- this is needed for position sticky to work inside a flex container*/
 	}
 }
 
