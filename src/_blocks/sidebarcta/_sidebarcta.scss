@@ -1,0 +1,79 @@
+.b-sidebarcta {
+	box-shadow: 0 1px 2px rgba($black, 0.1);
+	background-color: white;
+	max-width: 768px;
+	border-radius: 5px;
+	border: 1px solid $grey-yoda;
+	display: block;
+
+	> * {
+		padding-right: 20px;
+		padding-left: 20px;
+		font-size: $pixel16;
+	}
+
+	p {
+		margin-top: -5px;
+		margin-bottom: 20px;
+		font-weight: 400;
+
+		a {
+			color: $link;
+			border-bottom: 1px solid #c8dae3;
+
+			&:hover {
+				border-bottom: 1px solid $red;
+				color: $red;
+			}
+		}
+	}
+}
+
+a.b-sidebarcta {
+	&:hover .c-buttoncta {
+		background-color: #222;
+	}
+}
+
+.sidebarcta__heading {
+	background-color: $grey;
+	text-transform: uppercase;
+	margin-bottom: 0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	line-height: 1.25;
+
+	+ h3 {
+		font-size: $pixel18;
+	}
+}
+
+.sidebarcta__heading--title {
+	text-transform: none;
+}
+
+.sidebarcta__img {
+	object-fit: cover;
+	width: 100%;
+	margin-bottom: 20px;
+	max-height: 132px;
+
+	+ p {
+		padding-top: 0;
+	}
+
+	~ p {
+		font-size: $pixel14;
+	}
+
+	@include media('>=s', '<=l') {
+		max-height: 232px;
+	}
+}
+
+.b-sidebarcta > .c-buttoncta {
+	display: block;
+	font-size: $pixel14;
+	margin: 20px;
+}
