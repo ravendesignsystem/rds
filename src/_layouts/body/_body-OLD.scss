@@ -1,4 +1,3 @@
-// TODO: this is a backup of proposed changes to core rds, just in case i loose them
 /**
  * Layout: Body Background Colours
  * =============
@@ -53,16 +52,16 @@
 
 	@include media('>s') {
 		display: block;
-		position: sticky;
-		top: 0;
-		align-self: flex-start; // this is needed for position sticky to work inside a flex container
-		// flex-grow: 0;
-		// flex-shrink: 0;
-		// flex-basis: calc(240px + #{$grid-gutter});
-		width: calc(240px + #{$grid-gutter});
+		flex-grow: 0;
+		flex-shrink: 0;
+		flex-basis: calc(240px + #{$grid-gutter}); //TODO for Troy why is this not working without the max-width?
+		max-width: 270px;
 		margin-right: $grid-gutter;
 		padding-right: $grid-gutter;
 		border-right: 1px solid $grey;
+		position: sticky;
+		top: 0;
+		align-self: flex-start; /* <-- this is needed for position sticky to work inside a flex container*/
 	}
 }
 
@@ -80,9 +79,9 @@
 .body__sidebar {
 	flex-grow: 0;
 	flex-shrink: 0;
-	// margin-left: $grid-gutter;
-	// padding-left: $grid-gutter;
-	// border-left: 1px solid $grey;
+	margin-left: $grid-gutter;
+	padding-left: $grid-gutter;
+	border-left: 1px solid $grey;
 }
 
 /**
@@ -114,20 +113,12 @@
 
 	@include media('>1024px') {
 		.body__sidebar {
-			width: calc(300px + #{$grid-gutter * 2});
-			// flex-basis: calc(300px + #{$grid-gutter});
-			margin-left: $grid-gutter;
-			padding-left: $grid-gutter;
-			border-left: 1px solid $grey;
+			flex-basis: calc(300px + #{$grid-gutter});
 		}
 
 		&.l-body--sidebar-large {
 			.body__sidebar {
-				width: calc(400px + #{$grid-gutter * 2});
-				// flex-basis: calc(400px + #{$grid-gutter});
-				margin-left: $grid-gutter;
-				padding-left: $grid-gutter;
-				border-left: 1px solid $grey;
+				flex-basis: calc(400px + #{$grid-gutter});
 			}
 		}
 	}
@@ -141,6 +132,7 @@
 
 /**
  * Layout Modifier: Aside + Main + Aside
+ // TODO: build example and test media queries, possibly bump to 1200 or 1368?
  * =============
  */
 
@@ -157,20 +149,12 @@
 
 	@include media('>1112px') {
 		.body__sidebar {
-			width: calc(300px + #{$grid-gutter * 2});
-			// flex-basis: calc(300px + #{$grid-gutter});
-			margin-left: $grid-gutter;
-			padding-left: $grid-gutter;
-			border-left: 1px solid $grey;
+			flex-basis: calc(300px + #{$grid-gutter});
 		}
 
 		&.l-body--sidebar-large {
 			.body__sidebar {
-				width: calc(400px + #{$grid-gutter * 2});
-				// flex-basis: calc(400px + #{$grid-gutter});
-				margin-left: $grid-gutter;
-				padding-left: $grid-gutter;
-				border-left: 1px solid $grey;
+				flex-basis: calc(400px + #{$grid-gutter});
 			}
 		}
 	}
