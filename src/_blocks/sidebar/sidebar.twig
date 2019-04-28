@@ -1,0 +1,12 @@
+{% macro sidebar(settings, data) %}
+<div class="u-block u-block--white u-block--s">
+    <{% if (settings.variant == 'cta' and data.url) %}a{% else %}div{% endif %} class="b-sidebar" href="{{ data.url }}">
+        <h2 class="sidebar__heading{% if (data.title and data.heading == false) %} sidebar__heading--title{% endif %}">{% if data.heading.icon %}<span class="u-icon">{% include 'icons/'~ data.heading.icon ~'.svg' %} {% endif %}{% if (data.title and data.heading == false) %}{{ data.title }}{% else %}{{ data.heading }}{% endif %}{% if settings.heading.icon %}</span>{% endif %}</h2>
+{% if data.img %}<img class="sidebar__img" src="{{ data.img }}" alt="{{ data.img.alt }}" />{% endif %}
+{% if data.heading %}<h3 class="sidebar__title">{{ data.title }}</h3>{% endif %}
+        {{ data.content|raw }}
+{% if button %}<div class="c-buttoncta{% if settings.variant == 'cta-ghost' %} c-buttoncta--ghost{% endif %}"> {{ data.button }}</div>
+    </{% if settings.variant == 'cta' %}a{% else %}div{% endif %}>{% endif %}
+    </div>
+</div>
+{% endmacro %}

@@ -1,13 +1,17 @@
-{% if (page.content != 'none' or close == true) and open == false %}
+{% if (page.content != 'none' or close == true) and open == false and sidebar != true and code != true %}
     </div>
 </div>
 {% endif %}
-
 {#---- For including blocks ----#}
 {% if block %}
-    {% if '-' in block %}
-        {% set ex = block|split('-') %}
-        {% include ex.0 ~ '/data/' ~ ex.0 ~ '--' ~ ex.1  %}
+{% if '-' in block %}
+{% set ex = block|split('-') %}
+{% if code == true %}
+{% filter escape %}{% include ex.0 ~ '/data/' ~ ex.0 ~ '--' ~ ex.1  %}{% endfilter %}
+{% else %}
+{% include ex.0 ~ '/data/' ~ ex.0 ~ '--' ~ ex.1  %}
+{% endif %}
+
     {% else %}
         {% if theme %}
             {% include theme ~ '/blocks/' ~ block ~ '/' ~ block %}
@@ -16,7 +20,6 @@
         {% endif %}
     {% endif %}
 {% endif %}
-
 {#---- For including macros ----#}
 {% if macro == 'listing' %}
     {% from macro ~ '/' ~ macro import listing %}
@@ -48,7 +51,6 @@
         ]
     ) }}
 {% endif %}
-
 {% if macro == 'textimg' %}
     {% from macro ~ '/' ~ macro import textimg %}
     {{ textimg (
@@ -63,8 +65,7 @@
         }
     ) }}
 {% endif %}
-
-{% if (page.content != 'none' or open == true) and close == false %}
+{% if (page.content != 'none' or open == true) and close == false and sidebar != true and code != true %}
 <div class="u-block u-block--white u-block--s">
     <div class="b-content">
 {% endif %}

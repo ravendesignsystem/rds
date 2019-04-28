@@ -70,8 +70,8 @@ blocks:
         section: footer
         theme: fw
     -
-        name: Sidebar CTA
-        handle: sidebarcta
+        name: Sidebar
+        handle: sidebar
         section: aside
         theme: na
 

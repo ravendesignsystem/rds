@@ -303,6 +303,7 @@ th {
 
 pre {
 	margin-bottom: 25px;
+	height: auto;
 }
 
 code {
@@ -311,7 +312,8 @@ code {
 	font-size: 1em;
 	line-height: 1.4;
 	background-color: $grey;
-	padding: 0.2em 0.4em;
+	white-space: pre-wrap;
+	word-break: break-word;
 }
 
 // 7. Form elements

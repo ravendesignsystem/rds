@@ -100,7 +100,8 @@
                         </div>
                         {% if page.sidebar %}
                         <aside class="body__sidebar">
-                            {% include 'sidebarcta/sidebarcta' %}
+                            {% set sidebar = true %}
+                            {% include 'inc' with {'block': 'sidebar-base'} %}
                         </aside>
                         {% endif %}
                     </main>

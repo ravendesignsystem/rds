@@ -20,7 +20,7 @@
 		padding-right: 0;
 	}
 
-	.body__content > .u-block--white:first-child {
+	.body__content > .u-block--white:first-child, .body__sidebar > .u-block--white:first-child {
 		padding-top: 10px;
 	}
 }
