@@ -1,0 +1,10 @@
+<section class="u-block u-block--full has-b-menu">
+    <div class="b-menu">
+        <h2>Site Navigation {{ meh }}</h2>
+        {% for item in site.blocks %}
+            {% if item.section == 'header' %}
+                <li><a href="{{ site.url }}dev/blocks/{{ item.section }}/{{ item.handle }}/">{{ item.name }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>

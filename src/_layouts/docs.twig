@@ -75,7 +75,7 @@
         <div class="l-body{% if page.sidebar %} l-body--ama{% else %} l-body--am{% endif %} l-body--white{% if 'l' in page.sidebar %} l-body--sidebar-large{% endif %} {% if 'top' in page.sidebar %} l-body--sidebar-top{% endif %}">
             <div class="body__container">
 
-                <aside class="body__nav">
+                <aside class="body__nav u-sticky">
                     {%include 'docs/inc/menus/menu-' ~ page.menu %}
                 </aside>
         {% endif %}

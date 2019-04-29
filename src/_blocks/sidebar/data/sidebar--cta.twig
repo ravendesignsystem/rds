@@ -1,12 +1,13 @@
 {% from "sidebar/sidebar.twig" import sidebar %}
 {{ sidebar (
     {
+        variant: 'cta'
     },
     {
-        button: 'Text',
+        button: 'More about CTA buttons',
         content: '<p>Lorem ipsum sit amet, consectetur adipiscing elit. Cras convallis neque quis enim eleifend luctus. Aliquam erat volutpat. Praesent malesuada dapibus turpis, a aliquam lacus mollis vel.</p>',
-        heading: 'Ideas@Carleton',
+        img: 'https://via.placeholder.com/640x480',
         title: 'This is the title',
-        url: 'https://carleton.ca'
+        url: site.url ~ '/dev/components/buttons/cta-button/'
     }
 ) }}

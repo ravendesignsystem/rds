@@ -1,6 +1,6 @@
 <section class="u-block u-block--full has-b-menu">
     <div class="b-menu">
-        <h2>Site Navigation {{ meh }}</h2>
+        <h2>Site Navigation</h2>
         {% from "menu/menu.twig" import menuMacro %}
         {{ menuMacro (
             [
@@ -71,8 +71,48 @@
                     ]
                 },
                 {
-                    title: "Blocks",
-                    url: site.url ~ 'dev/blocks/'
+                    title: 'Blocks',
+                    url: '#',
+                    section: page.section,
+                    submenu:
+                    [
+                        {
+                            title: 'Header blocks',
+                            url: site.url ~ 'dev/getting-started/get-started/',
+                            submenu: [
+                            {
+                                title: "Third Level, testing this one with an extremely long title that user might create",
+                                url: "#"
+                            },
+                            {
+                                title: "Foo fy",
+                                url: "#"
+                            },
+                            {
+                                title: "Fee fum  fy",
+                                url: "#"
+                            }
+                        ]
+                        },
+                        {
+                            title: 'Main blocks',
+                            url: site.url ~ 'dev/getting-started/quick-start/'
+                        },
+                        {
+                            title: 'Aside blocks',
+                            url: site.url ~ 'dev/blocks/aside/',
+                            submenu: [
+                            {
+                                title: 'Sidebar',
+                                url: site.url ~ 'dev/blocks/aside/sidebar'
+                            }
+                        ]
+                        },
+                        {
+                            title: 'Footer blocks',
+                            url: site.url ~ 'dev/getting-started/recipes-and-patterns/'
+                        }
+                    ]
                 },
                 {
                     title: "Components",

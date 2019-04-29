@@ -77,7 +77,7 @@ List Group items should:
 ##Implementation Notes
 
 - It is important to note the markup changes when different context variants and data attributes are used.
-- If you are using the base H2 heading with a slight underline before this block, it looks best removed by adding the class 'u-no-borders' to the h2 tag.
+
 
 ## When To Avoid
 

@@ -53,8 +53,6 @@
 
 	@include media('>s') {
 		display: block;
-		position: sticky;
-		top: 0;
 		align-self: flex-start; // this is needed for position sticky to work inside a flex container
 		// flex-grow: 0;
 		// flex-shrink: 0;

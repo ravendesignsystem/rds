@@ -5,7 +5,7 @@
 	border: 1px solid $grey;
 	display: block;
 
-	> * {
+	> *:not(.b-sidebar > .c-buttoncta) {
 		padding-right: 20px;
 		padding-left: 20px;
 		font-size: $pixel16;
@@ -47,7 +47,7 @@ a.b-sidebar {
 	}
 }
 
-.sidebar__heading {
+.sidebar__heading, .sidebar__title {
 	background-color: $grey;
 	text-transform: uppercase;
 	margin-bottom: 0;
@@ -61,7 +61,7 @@ a.b-sidebar {
 	}
 }
 
-.sidebar__heading--title {
+.sidebar__title {
 	text-transform: none;
 }
 
@@ -86,6 +86,5 @@ a.b-sidebar {
 
 .b-sidebar > .c-buttoncta {
 	display: block;
-	font-size: $pixel14;
 	margin: 20px;
 }

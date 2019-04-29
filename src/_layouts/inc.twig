@@ -11,18 +11,17 @@
 {% else %}
 {% include ex.0 ~ '/data/' ~ ex.0 ~ '--' ~ ex.1  %}
 {% endif %}
-
-    {% else %}
-        {% if theme %}
-            {% include theme ~ '/blocks/' ~ block ~ '/' ~ block %}
-        {% else %}
-            {% include block ~ '/' ~ block %}
-        {% endif %}
-    {% endif %}
+{% else %}
+{% if theme %}
+{% include theme ~ '/blocks/' ~ block ~ '/' ~ block %}
+{% else %}
+{% include block ~ '/' ~ block %}
+{% endif %}
+{% endif %}
 {% endif %}
 {#---- For including macros ----#}
 {% if macro == 'listing' %}
-    {% from macro ~ '/' ~ macro import listing %}
+{% from macro ~ '/' ~ macro import listing %}
     {{ listing (
         {
             color: 'white'
@@ -52,7 +51,7 @@
     ) }}
 {% endif %}
 {% if macro == 'textimg' %}
-    {% from macro ~ '/' ~ macro import textimg %}
+{% from macro ~ '/' ~ macro import textimg %}
     {{ textimg (
         {
             color: color,
