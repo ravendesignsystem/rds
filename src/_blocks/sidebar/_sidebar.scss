@@ -1,12 +1,11 @@
-.b-sidebarcta {
-	box-shadow: 0 1px 2px rgba($black, 0.1);
+.b-sidebar {
 	background-color: white;
 	max-width: 768px;
 	border-radius: 5px;
-	border: 1px solid $grey-yoda;
+	border: 1px solid $grey;
 	display: block;
 
-	> * {
+	> *:not(.b-sidebar > .c-buttoncta) {
 		padding-right: 20px;
 		padding-left: 20px;
 		font-size: $pixel16;
@@ -29,13 +28,26 @@
 	}
 }
 
-a.b-sidebarcta {
-	&:hover .c-buttoncta {
-		background-color: #222;
+a.b-sidebar {
+	box-shadow: 0 1px 10px -2px rgba($grey-emperor, 0.1);
+
+	&:hover {
+		box-shadow: 0 1px 10px -4px rgba($grey-emperor, 0.7);;
+	}
+
+	&:hover .c-buttoncta:not(.c-buttoncta--ghost) {
+		background-color: $black;
 	}
 }
 
-.sidebarcta__heading {
+a.b-sidebar {
+	&:hover .c-buttoncta--ghost {
+		background-color: $red;
+		color: white;
+	}
+}
+
+.sidebar__heading, .sidebar__title {
 	background-color: $grey;
 	text-transform: uppercase;
 	margin-bottom: 0;
@@ -49,15 +61,15 @@ a.b-sidebarcta {
 	}
 }
 
-.sidebarcta__heading--title {
+.sidebar__title {
 	text-transform: none;
 }
 
-.sidebarcta__img {
+.sidebar__img {
 	object-fit: cover;
 	width: 100%;
 	margin-bottom: 20px;
-	max-height: 132px;
+	max-height: 232px;
 
 	+ p {
 		padding-top: 0;
@@ -67,13 +79,12 @@ a.b-sidebarcta {
 		font-size: $pixel14;
 	}
 
-	@include media('>=s', '<=l') {
-		max-height: 232px;
+	@include media('>=l') {
+		max-height: 160px;
 	}
 }
 
-.b-sidebarcta > .c-buttoncta {
+.b-sidebar > .c-buttoncta {
 	display: block;
-	font-size: $pixel14;
 	margin: 20px;
 }

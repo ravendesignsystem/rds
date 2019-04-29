@@ -38,3 +38,13 @@
 // Homepage
 //---------
 @import '../../hp/blocks/bannerhero/bannerhero';
+
+
+.body__content .b-sidebar {
+  max-width: 350px;
+}
+
+.hljs {
+  border-radius: 10px;
+  padding: 30px;
+}

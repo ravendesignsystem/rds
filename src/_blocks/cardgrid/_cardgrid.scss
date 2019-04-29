@@ -2,6 +2,20 @@
 	margin-top: $block-margin;
 }
 
+.b-cardgrid .c-card {
+	pointer-events: auto;
+	transition: 300ms opacity, 300ms transform;
+}
+
+.b-cardgrid.u-grid:hover .c-card, .b-cardgrid .u-grid:hover .c-card {
+	opacity: 0.5;
+}
+
+.b-cardgrid .u-grid:hover .c-card:hover, .b-cardgrid.u-grid:hover .c-card:hover {
+	transform: scale(1.05);
+	opacity: 1;
+}
+
 .b-cardgrid--stacks.u-grid {
 	@include media('<=s') {
 		display: block;
@@ -46,7 +60,7 @@
 				-webkit-box-orient: vertical;
 				max-height: 55px;
 				overflow: hidden;
-				text-overflow:ellipsis;
+				text-overflow: ellipsis;
 				line-height: 1.35;
 				// TODO fix this with proper css clamping when available
 			}
@@ -97,7 +111,7 @@
 			left: 44% !important;
 			bottom: 20px;
 			margin-top: 20px;
-			display: inline-block!important;
+			display: inline-block !important;
 		}
 	}
 }

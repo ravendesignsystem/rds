@@ -69,6 +69,11 @@ blocks:
         handle: footersitemap
         section: footer
         theme: fw
+    -
+        name: Sidebar
+        handle: sidebar
+        section: aside
+        theme: na
 
 components:
     -

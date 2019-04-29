@@ -197,8 +197,6 @@
 	fill: $black;
 	display: inline-flex;
 	align-items: center;
-	//color: $black;
-	//top: 0.15em;
 	position: relative;
 
 	&:hover {
@@ -245,157 +243,30 @@ a.u-icon svg:hover {
 // 4. Property overrides
 // ----------------------
 
-.u-link {
-	color: $red !important;
-
-	&:hover {
-		text-decoration: underline !important;
-	}
-}
-
-.u-bg-kenobi {
-	background-color: $grey-yoda !important;
-}
+//.u-link {
+//	color: $link !important;
+//	border-bottom: 1px solid #c8dae3;
+//
+//	&:hover {
+//		border-bottom: 1px solid $red;
+//	}
+//}
 
 .u-bg-grey {
 	background-color: $grey !important;
-}
-
-.u-color-red {
-	color: $red;
-}
-
-.u-no-borders {
-	border: none;
-}
-
-.u-no-margin {
-	margin: 0 !important;
-}
-
-.u-no-margin-bottom {
-	margin-bottom: 0 !important;
-}
-
-.u-no-padding-bottom {
-	padding-bottom: 0 !important;
-}
-
-.u-no-padding-top {
-	padding-top: 0 !important;
 }
 
 .u-no-padding {
 	padding: 0 !important;
 }
 
-.u-no-margin-right {
-	margin-right: 0 !important;
-}
-
-.u-margin-top-30 {
-	margin-top: 30px !important;
-}
-
-.u-margin-bottom-60 {
-	margin-top: 60px !important;
-}
-
-.u-width-full {
-	width: 100% !important;
-}
-
-// 5. Centering
-// ------------
-
-.u-v-center {
-	//todo review
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	vertical-align: middle;
-}
-
-// per https://codepen.io/cuweb/pen/XoWEaW
-.u-center {
-	display: flex;
-	margin-bottom: 20px; // remove
-
-	&--center > * {
-		margin: auto;
-		align-self: center;
-	}
-
-	&--left > * {
-		margin-right: auto !important;
-		align-self: center !important;
-	}
-
-	&--right > * {
-		margin-left: auto;
-		align-self: center;
-	}
-
-	&--x-center > * {
-		margin-right: auto;
-		margin-left: auto;
-	}
-
-	&--x-left > * {
-		margin-right: auto;
-	}
-
-	&--x-right > * {
-		margin-left: auto;
-	}
-
-	&--y-center > * {
-		align-self: center;
-	}
-
-	&--y-top > * {
-		align-self: flex-start;
-	}
-
-	&--y-bottom > * {
-		align-self: flex-end;
-	}
-}
-
-//TODO Replace two below with new utils above
-.u-center-vert {
-	display: flex;
-	align-items: center;
-}
-
-.u-center-hor {
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
-	//margin: 0 auto;
-}
-
-// add to block level parent
-.u-center-inline {
-	text-align: center;
-	vertical-align: middle; // Align children to middle of line
-}
-
-.u-center-absolute {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate (-50% -50%);
-}
-
 // 6. Misc utils
 // -------------
 .u-sticky {
 	position: sticky;
-	//top: 15px;
+	top: 0;
 }
 
-.u-display-none,
 .is-hidden {
 	display: none !important;
 }
@@ -408,10 +279,6 @@ a.u-icon svg:hover {
 
 .u-display-inline-b {
 	display: inline-block !important;
-}
-
-.u-whitespace-wrap {
-	white-space: normal !important;
 }
 
 .u-visually-hidden {
@@ -448,7 +315,7 @@ a.u-icon svg:hover {
 	}
 }
 
-//TODO Add more animations?
+//TODO Review below. Add more animations?
 
 .u-ani-fadein--1000 {
 	animation-name: u-ani-fadein;

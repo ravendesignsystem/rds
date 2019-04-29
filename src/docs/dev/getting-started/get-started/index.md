@@ -4,7 +4,7 @@ subsite: dev
 menu: dev
 section: Getting started
 title: Get started
-sidebar: true
+sidebar: top
 banner:
   breadcrumbs:
     parent: Docs

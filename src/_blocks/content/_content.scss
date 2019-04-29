@@ -2,13 +2,13 @@
 	a {
 		color: $link;
 
-		&:hover:not(.u-icon) {
+		&:hover:not(.u-icon):not(.c-buttoncta) {
 			border-bottom: 1px solid $red;
 			color: $red;
 		}
 	}
 
-	a:not(ul a):not(.u-icon):not(.c-buttoncta--ghost) {
+	a:not(ul a):not(.u-icon):not(.c-buttoncta) {
 		border-bottom: 1px solid #c8dae3;
 	}
 

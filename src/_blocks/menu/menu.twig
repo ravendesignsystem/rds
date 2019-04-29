@@ -1,7 +1,7 @@
 {% macro menuMacro(menu, level) %}
     {# Set our default level as an integer. #}
     {% set default_level = 1 %}
-    <ul role="navigation">
+    <ul>
         {% for menu_item in menu %}
             {% set itemKey = random(200) %}
             {# Check if this is the active item. #}
