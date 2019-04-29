@@ -12,14 +12,14 @@
 
             <li>
                 {% if menu_item.submenu %}
-                <input {% if menu_item.title == menu_item.section %}checked{% endif %} id="menu-{{ level }}-{{ default_item +1 }}-{{ itemKey }}" type="checkbox" hidden/>
+                <input {% if (menu_item.title == menu_item.section) or (menu_item.title == menu_item.subsection) %}checked{% endif %} id="menu-{{ level }}-{{ default_item +1 }}-{{ itemKey }}" type="checkbox" hidden/>
                     <label for="menu-{{ level }}-{{ default_item +1 }}-{{ itemKey }}">
-                        <a class="{{ active }}" href="{{ menu_item.url }}">{{ menu_item.title }}</a>
+                        <a {% if menu_item.active == menu_item.title %}class="active" {% endif %}href="{{ menu_item.url }}">{{ menu_item.title }}</a>
                         {#<i class="c-icon-plus u-icon menu__aria-toggle" aria-hidden="true" role="img" title="Expand menu"></i>#}
                         <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
                 {% else %}
-                    <a href="{{ menu_item.url }}">{{ menu_item.title }}</a>
+                    <a {% if menu_item.active == menu_item.title %}class="active" {% endif %}href="{{ menu_item.url }}">{{ menu_item.title }}</a>
                 {% endif %}
                 {% if menu_item.submenu %}
                     {# Since this menu item has a submenu, recall function and increment counter. #}

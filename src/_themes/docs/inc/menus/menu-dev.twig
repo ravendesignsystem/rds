@@ -5,6 +5,63 @@
         {{ menuMacro (
             [
                 {
+                    title: 'Blocks',
+                    url: '#',
+                    section: page.section,
+                    subsection: page.subsection,
+                    submenu:
+                    [
+                        {
+                            title: 'Header blocks',
+                            url: site.url ~ 'dev/blocks/header/',
+                            submenu: [
+                            {
+                                title: "Banner",
+                                url: site.url ~ 'dev/blocks/header/banner/'
+                            },
+                            {
+                                title: "Global Nav",
+                                url: site.url ~ 'dev/blocks/header/globalnav/'
+                            },
+                            {
+                                title: "Masthead",
+                                url: site.url ~ 'dev/blocks/header/masthead/'
+                            },
+                            {
+                                title: "Search",
+                                url: site.url ~ 'dev/blocks/header/search/'
+                            }
+                        ]
+                        },
+                        {
+                            title: 'Main blocks',
+                            url: site.url ~ 'dev/getting-started/quick-start/'
+                        },
+                        {
+                            title: 'Aside blocks',
+                            url: site.url ~ 'dev/blocks/aside/',
+                            active: page.title,
+                            section: page.section,
+                            subsection: page.subsection,
+                            submenu: [
+                            {
+                                active: page.title,
+                                title: 'Sidebar',
+                                url: site.url ~ 'dev/blocks/aside/sidebar/'
+                            }
+                        ]
+                        },
+                        {
+                            title: 'Footer blocks',
+                            url: site.url ~ 'dev/getting-started/recipes-and-patterns/'
+                        }
+                    ]
+                },
+                {
+                    title: "Components",
+                    url: site.url ~ 'dev/components/'
+                },
+                {
                     title: 'Getting started',
                     url: '#',
                     section: page.section,
@@ -69,54 +126,6 @@
                             url: site.url ~ 'dev/main-concepts/spacing/'
                         }
                     ]
-                },
-                {
-                    title: 'Blocks',
-                    url: '#',
-                    section: page.section,
-                    submenu:
-                    [
-                        {
-                            title: 'Header blocks',
-                            url: site.url ~ 'dev/getting-started/get-started/',
-                            submenu: [
-                            {
-                                title: "Third Level, testing this one with an extremely long title that user might create",
-                                url: "#"
-                            },
-                            {
-                                title: "Foo fy",
-                                url: "#"
-                            },
-                            {
-                                title: "Fee fum  fy",
-                                url: "#"
-                            }
-                        ]
-                        },
-                        {
-                            title: 'Main blocks',
-                            url: site.url ~ 'dev/getting-started/quick-start/'
-                        },
-                        {
-                            title: 'Aside blocks',
-                            url: site.url ~ 'dev/blocks/aside/',
-                            submenu: [
-                            {
-                                title: 'Sidebar',
-                                url: site.url ~ 'dev/blocks/aside/sidebar'
-                            }
-                        ]
-                        },
-                        {
-                            title: 'Footer blocks',
-                            url: site.url ~ 'dev/getting-started/recipes-and-patterns/'
-                        }
-                    ]
-                },
-                {
-                    title: "Components",
-                    url: site.url ~ 'dev/components/'
                 },
                 {
                     title: "Custom theming",
