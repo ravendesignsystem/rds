@@ -139,7 +139,7 @@
 	background-color: white;
 }
 
-.u-block--grey {
+.u-block--grey:not(.body__content .u-block--grey) {
 	background-color: $grey;
 }
 

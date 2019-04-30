@@ -1,11 +1,10 @@
 ---
 layout: docs
 subsite: dev
-title: Card Grid block
-banner:
- breadcrumbs:
-  grandparent: Blocks
-content: true
+menu: dev
+title: Card Grid
+section: Blocks
+subsection: Main blocks
 meta:
  version: 1.0.0
  status: under review
