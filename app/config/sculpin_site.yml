@@ -8,9 +8,9 @@ url: /docs/
 #cms: CU
 fw: Elective
 cms: Clear
-cssPath: /docs/css/app.css
+cssPath: /docs/css/docs.css
 homecssPath: /docs/css/hp.css
-jsPath: /docs/js/app.js
+jsPath: /docs/js/docs.js
 
 blocks:
     -

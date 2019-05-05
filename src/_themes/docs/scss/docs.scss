@@ -1,0 +1,40 @@
+/*
+ * RDS Docs v1.0.3
+ * Copyright 2011-2019 Carleton University
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// --------
+// CU THEME
+// --------
+@import '../../cu/scss/cu';
+
+// -------------------
+// CUSTOM THEME - DOCS
+// -------------------
+
+// Blocks
+//-------
+@import 'base/utilities';
+@import '../blocks/gridhome/gridhome';
+@import '../blocks/textimg/textimg';
+@import '../blocks/tabs/tabs';
+@import 'vendor/highlight-js--github';
+
+// Components
+//-----------
+@import '../components/cardlabel/cardlabel';
+
+// Homepage
+//---------
+@import '../../hp/blocks/bannerhero/bannerhero';
+
+
+.body__content .b-sidebar {
+  max-width: 350px;
+}
+
+.hljs {
+  border-radius: 10px;
+  padding: 30px;
+}

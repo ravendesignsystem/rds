@@ -12,7 +12,7 @@ RDS themes package up a unified set of HTML, CSS and JavaScript code to provide 
 
 ## CU theme
 
-Currently, there is one distributed RDS theme: the CU theme. 
+Currently, there is one default theme distributed with RDS: the CU theme. 
 
 Pre-built on top of RDS, the CU theme is Carleton's official theme developed and supported by the RDS creators. The theme extends off of the RDS base and contains all of the core blocks and functionality needed for you to build out full-featured, responsive, mobile-first Carleton web projects. 
 
