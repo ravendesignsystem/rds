@@ -33,11 +33,19 @@ mix
 if (env === 'production') {
 	mix
 		.sass('src/_themes/core/scss/core.scss', 'dist/core/css/rds-core-min')
+		.sass('src/_themes/cu/scss/cu.scss', 'dist/themes/cu/1.2.2/cu.min.css')
+		.js('src/_themes/cu/js/cu.js', 'dist/themes/cu/1.2.2/cu.min.js')
 		.js('src/_themes/core/js/core.js', 'dist/core/js/rds-core-min')
 		.copy('build/docs', 'docs');
 	// .sass('src/_themes/cms/scss/_cms.scss', 'dist/themes/cms/css/cms-min')
 	// .sass('src/_themes/ff/scss/_ff.scss', 'dist/themes/ff/css/ff-min')
 	// .sass('src/_themes/fw/scss/_fw.scss', 'dist/themes/fw/css/fw-min')
+}
+
+if (env === 'dist') {
+	mix.minify
+		.sass('src/_themes/cu/scss/cu.scss', 'dist/themes/cu/css')
+		.js('src/_themes/cu/js/cu.js', 'dist/themes/cu/js');
 }
 
 if (env === 'package') {

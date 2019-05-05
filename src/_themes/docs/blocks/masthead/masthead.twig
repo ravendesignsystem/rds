@@ -26,7 +26,7 @@
 					</li>
 				</ul>
 			</nav>
-			{% if (page.subsite == 'dev') or (page.subsite == 'design') or (page.subsite == 'content') or (page.subsite == 'a11y') %}
+			{% if page.subsite == 'dev' %}
 			<nav class="masthead__primarynav" aria-label="Subsite title and primary navigation">
 				<h2 class="masthead__site">
 					{% if page.subsite == 'dev' %}
@@ -39,6 +39,7 @@
 						<a href="{{ site.url }}a11y/">Accessibility</a>
 					{% endif %}
 				</h2>
+				{% if page.menu != 'dev' %}
 				<ul role="menu">
 					{% if page.subsite == 'dev' %}
 					<li>
@@ -67,7 +68,7 @@
 						<a href="#">Coming soon...</a>
 					</li>
 					{% endif %}
-				</ul>
+				</ul>{% endif %}
 			</nav>{% endif %}
 		</div>
 		<nav class="masthead__controls" aria-label="Secondary navigation and controls">

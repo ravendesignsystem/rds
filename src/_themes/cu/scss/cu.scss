@@ -1,0 +1,39 @@
+/*
+ * RDS Docs v1.0.3
+ * Copyright 2011-2019 Carleton University
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// --------
+// RDS Core
+// --------
+@import '../../core/scss/core';
+
+// Header blocks
+//--------------
+@import '../../../_blocks/banner/banner';
+@import '../../../_blocks/globalnav/globalnav';
+@import '../../../_blocks/masthead/masthead';
+
+
+// Main blocks
+//------------
+@import '../../../_blocks/cardgrid/cardgrid';
+@import '../../../_blocks/content/content';
+@import '../../../_blocks/imgfull/imgfull';
+@import '../../../_blocks/listing/listing';
+@import '../../../_blocks/textimg/textimg';
+
+// Aside blocks
+//------------
+@import '../../../_blocks/menu/menu';
+@import '../../../_blocks/sidebar/sidebar';
+
+// Footer Blocks:
+// ---------------
+@import '../../../_blocks/footersimple/footersimple';
+@import '../../../_blocks/footersitemap/footersitemap';
+
+// Overlay blocks:
+// ---------------
+@import '../../../_blocks/login/login';

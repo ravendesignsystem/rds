@@ -1,5 +1,3 @@
-// RDS Docs plugins
-
 // Highlight JS plugin
 import hljs from '../js//vendor/highlight-9-12-0';
 hljs.initHighlightingOnLoad();
@@ -29,6 +27,6 @@ for (let i = 0; i < emptyP.length; i++) {
 
 // remove empty tags
 document.querySelectorAll('p, strong')
-	.forEach(el => el.textContent.trim() === "" && el.parentNode.removeChild(el))
+	.forEach(el => el.innerHTML.trim() === "" && el.parentNode.removeChild(el))
 
 

@@ -4,24 +4,14 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-// -----------------------------
-// RDS Core - *** REQUIRED ***
-// -----------------------------
-@import '../../core/scss/core';
+// --------
+// CU THEME
+// --------
+@import '../../cu/scss/cu';
 
-// -----------------------------
-// CMS BLOCKS
-// -----------------------------
-@import '../../cms/scss/cms';
-
-// -----------------------------
-// FW BLOCKS
-// -----------------------------
-@import '../../fw/scss/fw';
-
-// -----------------------------
-// CUSTOM THEME - RDSDOCS BLOCKS
-// -----------------------------
+// -------------------
+// CUSTOM THEME - DOCS
+// -------------------
 
 // Blocks
 //-------

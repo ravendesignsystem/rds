@@ -1,6 +1,6 @@
 {
 	"name": "rds",
-	"version": "1.0.3",
+	"version": "1.0.5",
 	"description": "Never more",
 	"repository": {
 		"type": "git",
@@ -16,7 +16,8 @@
 		"dev": "concurrently --kill-others \"vendor/bin/sculpin generate --watch --server\" \"NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js\"",
 		"prod": "concurrently \"vendor/bin/sculpin generate --clean --server --env=prod\" \"NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js\"",
 		"package": "NODE_ENV=package node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js,",
-		"hp": "concurrently --kill-others \"vendor/bin/sculpin generate --watch --server\" \"NODE_ENV=hp node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js\""
+		"hp": "concurrently --kill-others \"vendor/bin/sculpin generate --watch --server\" \"NODE_ENV=hp node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js\"",
+		"dist": "NODE_ENV=dist node_modules/webpack/bin/webpack.js --clean --env=prod --config=node_modules/laravel-mix/setup/webpack.config.js"
 	},
 	"prettier": {
 		"useTabs": true,

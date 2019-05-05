@@ -4,6 +4,10 @@ subtitle: RDS
 version: 1.0.0
 coreSize: 26KB
 url: /docs/
+#fw: Carleton
+#cms: CU
+fw: Elective
+cms: Clear
 cssPath: /docs/css/app.css
 homecssPath: /docs/css/hp.css
 jsPath: /docs/js/app.js

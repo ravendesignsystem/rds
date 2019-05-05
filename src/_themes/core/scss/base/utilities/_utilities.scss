@@ -139,8 +139,14 @@
 	background-color: white;
 }
 
-.u-block--grey:not(.body__content .u-block--grey) {
+.u-block--grey {
 	background-color: $grey;
+}
+
+// cant use a :not on the style above because chrome doesnt accept multi level classes in :not
+// this disallows gry blocks when there are sidebars
+.body__container > .u-block--grey {
+	background-color: white;
 }
 
 .u-block--black {
