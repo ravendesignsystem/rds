@@ -55,8 +55,10 @@
 		if (btn === 'search' || btn === 'login') {
 			if (btn === 'search') {
 				modalSearch.classList.remove('is-hidden'),
-					modalLogin.classList.add('is-hidden'),
 					document.querySelector('.modal__search .searchform__input').focus();
+				if (navLogin) {
+					modalLogin.classList.add('is-hidden');
+				}
 			} else {
 				modalLogin.classList.remove('is-hidden');
 				modal.classList.add('u-bg-grey'),
@@ -92,7 +94,9 @@
 				window.matchMedia('(min-width: 768px)').matches
 			) {
 				mastheadHamburger.classList.remove('u-display-inline-b');
-				modalLogin.classList.add('is-hidden');
+				if (navLogin) {
+					modalLogin.classList.add('is-hidden');
+				}
 			}
 		}
 		preventScroll();

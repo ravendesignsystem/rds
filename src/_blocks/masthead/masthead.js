@@ -13,7 +13,7 @@ if (window.matchMedia('(max-width: 768px)').matches) {
 }
 if (masthead.classList.contains('js-sticky-scroll')) {
 	window.addEventListener('scroll', function() {
-		if (window.scrollY < 5) {
+		if (window.scrollY < 50) {
 			// has not scrolled past header yet
 			masthead_y = -header.scrollHeight;
 			masthead.classList.remove('b-masthead--sticky-scroll', 'b-masthead--shadow');

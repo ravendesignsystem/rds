@@ -10,6 +10,8 @@ $b-height: 75px;
 	background-color: white;
 	border-top: 2px solid $red;
 	height: $b-height;
+	z-index: $z-index-10000;
+	transition: 0.2s;
 
 	& > div {
 		display: flex;
@@ -44,8 +46,9 @@ $b-height: 75px;
 	}
 
 	.masthead__sep {
-		border-right: 1px solid $grey-kenobi;
-		padding-right: 12px;
+		border-left: 1px solid $grey-kenobi;
+		padding-left: 12px;
+		margin-left: 12px;
 	}
 
 	a,
@@ -74,7 +77,8 @@ $b-height: 75px;
 	z-index: 10;
 	border-bottom: 1px solid $grey;
 
-	& ~ .b-banner, & ~ .b-bannerhero,
+	& ~ .b-banner,
+	& ~ .b-bannerhero,
 	& ~ .tns-outer {
 		margin-top: 78px !important; // avoid the jumping from the loss of masthead height when made position fixed.
 	}
@@ -108,11 +112,16 @@ div.b-masthead ul.menupopup__menu {
 	}
 
 	.c-culogo {
-		width: 175px;
+		width: 150px;
+
+		@include media('>=s') {
+			width: 175px;
+		}
 	}
 
 	a {
 		cursor: pointer;
+		padding-left: 12px;
 
 		@include media('<=s') {
 			max-width: 300px;
@@ -138,7 +147,7 @@ div.b-masthead ul.menupopup__menu {
 		position: relative;
 		display: none;
 
-		@include media('>=s') {
+		@include media('>=1033px') {
 			display: table;
 			border-left: 1px solid $grey-kenobi;
 		}
@@ -191,7 +200,7 @@ nav + .masthead__primarynav > .masthead__site {
 		display: flex;
 	}
 
-	li:not(.masthead__search):not(.masthead__hamburger):not(.masthead__login) {
+	li:not(.masthead__search):not(.masthead__hamburger):not(.masthead__login):not(.masthead__jump) {
 		display: none;
 
 		@include media('>=s') {
@@ -275,7 +284,50 @@ nav + .masthead__primarynav > .masthead__site {
 .masthead__hamburger {
 	display: list-item;
 
-	@include media('>=s') {
+	@include media('>=1190px') {
 		display: none;
 	}
 }
+
+@include media('>=1472px') {
+	.b-masthead--cu {
+		height: 90px;
+
+		button,
+		a {
+			height: 90px;
+			font-size: $pixel16;
+		}
+	}
+	.b-masthead--cu .c-culogo {
+		width: 210px !important;
+	}
+}
+
+@include media('<=1474px') {
+
+	.masthead__search span{
+		display: none;
+	}
+}
+
+@include media('<=1130px') {
+	.b-masthead--cu .masthead__primarynav li:nth-child(4) {
+		display: none;
+	}
+}
+
+@include media('<=1334px') {
+	.b-masthead--cu .masthead__primarynav li:nth-child(5) {
+		display: none;
+	}
+}
+
+@include media('<=s') {
+
+	.masthead__jump span {
+		display: none;
+	}
+}
+
+

@@ -1,5 +1,5 @@
 ---
-layout: blocks
+layout: docs
 subsite: dev
 title: Text-Image block
 banner:

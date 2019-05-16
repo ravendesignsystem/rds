@@ -5,106 +5,73 @@
         {{ menuMacro (
             [
                 {
-                    title: 'Getting started',
-                    url: '#',
-                    section: page.section,
-                    submenu:
-                    [
-                        {
-                            title: 'Get started',
-                            url: site.url ~ 'dev/getting-started/get-started/',
-                            submenu: [
-                            {
-                                title: "Third Level, testing this one with an extremely long title that user might create",
-                                url: "#"
-                            },
-                            {
-                                title: "Foo fy",
-                                url: "#"
-                            },
-                            {
-                                title: "Fee fum  fy",
-                                url: "#"
-                            }
-                        ]
-                        },
-                        {
-                            title: 'Quick start',
-                            url: site.url ~ 'dev/getting-started/quick-start/'
-                        },
-                        {
-                            title: 'Starter downloads',
-                            url: site.url ~ 'dev/getting-started/started-downloads/'
-                        },
-                        {
-                            title: 'Recipes and patterns',
-                            url: site.url ~ 'dev/getting-started/recipes-and-patterns/'
-                        }
-                    ]
-                },
-                {
-                    title: "Main concepts",
-                    url: site.url ~ 'dev/main-concepts/',
-                    section: page.section,
-                    submenu:
-                    [
-                        {
-                            title: 'Blocks in depth',
-                            url: site.url ~ 'dev/main-concepts/blocks-in-depth/'
-                        },
-                        {
-                            title: 'Components',
-                            url: site.url ~ 'dev/main-concepts/components/'
-                        },
-                        {
-                            title: 'Layouts',
-                            url: site.url ~ 'dev/main-concepts/layouts/'
-                        },
-                        {
-                            title: 'Themes',
-                            url: site.url ~ 'dev/main-concepts/themes/'
-                        },
-                        {
-                            title: 'Spacing',
-                            url: site.url ~ 'dev/main-concepts/spacing/'
-                        }
-                    ]
-                },
-                {
                     title: 'Blocks',
                     url: '#',
                     section: page.section,
+                    subsection: page.subsection,
                     submenu:
                     [
                         {
                             title: 'Header blocks',
-                            url: site.url ~ 'dev/getting-started/get-started/',
+                            url: site.url ~ 'dev/blocks/header/',
                             submenu: [
                             {
-                                title: "Third Level, testing this one with an extremely long title that user might create",
-                                url: "#"
+                                title: "Banner",
+                                url: site.url ~ 'dev/blocks/header/banner/'
                             },
                             {
-                                title: "Foo fy",
-                                url: "#"
+                                title: "Global Nav",
+                                url: site.url ~ 'dev/blocks/header/globalnav/'
                             },
                             {
-                                title: "Fee fum  fy",
-                                url: "#"
+                                title: "Masthead",
+                                url: site.url ~ 'dev/blocks/header/masthead/'
+                            },
+                            {
+                                title: "Search",
+                                url: site.url ~ 'dev/blocks/header/search/'
                             }
                         ]
                         },
                         {
                             title: 'Main blocks',
-                            url: site.url ~ 'dev/getting-started/quick-start/'
+                            url: site.url ~ 'dev/getting-started/quick-start/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            submenu: [
+                            {
+                                active: page.title,
+                                title: "Card Grid",
+                                url: site.url ~ 'dev/blocks/main/cardgrid/'
+                            },
+                            {
+                                active: page.title,
+                                title: "Content",
+                                url: site.url ~ 'dev/blocks/main/content/'
+                            },
+                            {
+                                active: page.title,
+                                title: "Listing",
+                                url: site.url ~ 'dev/blocks/main/listing/'
+                            },
+                            {
+                                active: page.title,
+                                title: "Text Image",
+                                url: site.url ~ 'dev/blocks/header/textimg/'
+                            }
+                        ]
                         },
                         {
                             title: 'Aside blocks',
                             url: site.url ~ 'dev/blocks/aside/',
+                            active: page.title,
+                            section: page.section,
+                            subsection: page.subsection,
                             submenu: [
                             {
+                                active: page.title,
                                 title: 'Sidebar',
-                                url: site.url ~ 'dev/blocks/aside/sidebar'
+                                url: site.url ~ 'dev/blocks/aside/sidebar/'
                             }
                         ]
                         },
@@ -117,6 +84,63 @@
                 {
                     title: "Components",
                     url: site.url ~ 'dev/components/'
+                },
+                {
+                    title: 'Getting started',
+                    url: site.url ~ 'dev/getting-started/',
+                    section: page.section,
+                    submenu:
+                    [
+                        {
+                            active: page.title,
+                            title: 'Quick start',
+                            url: site.url ~ 'dev/getting-started/quick-start/'
+                        },
+                        {
+                            active: page.title,
+                            title: 'Starter downloads',
+                            url: site.url ~ 'dev/getting-started/started-downloads/'
+                        },
+                        {
+                            active: page.title,
+                            title: 'Recipes and patterns',
+                            url: site.url ~ 'dev/getting-started/recipes-and-patterns/'
+                        }
+                    ]
+                },
+                {
+                    active: page.title,
+                    title: "Main concepts",
+                    url: site.url ~ 'dev/main-concepts/',
+                    section: page.section,
+                    submenu:
+                    [
+                        {
+                            active: page.title,
+                            title: 'Blocks in depth',
+                            url: site.url ~ 'dev/main-concepts/blocks-in-depth/'
+                        },
+                        {
+                            active: page.title,
+                            title: 'Components',
+                            url: site.url ~ 'dev/main-concepts/components/'
+                        },
+                        {
+                            active: page.title,
+                            title: 'Layouts',
+                            url: site.url ~ 'dev/main-concepts/layouts/'
+                        },
+                        {
+                            active: page.title,
+                            title: 'Themes',
+                            url: site.url ~ 'dev/main-concepts/themes/'
+                        },
+                        {
+                            active: page.title,
+                            title: 'Spacing',
+                            url: site.url ~ 'dev/main-concepts/spacing/'
+                        }
+                    ]
                 },
                 {
                     title: "Custom theming",

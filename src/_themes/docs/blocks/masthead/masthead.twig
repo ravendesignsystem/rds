@@ -26,7 +26,7 @@
 					</li>
 				</ul>
 			</nav>
-			{% if (page.subsite == 'dev') or (page.subsite == 'design') or (page.subsite == 'content') or (page.subsite == 'a11y') %}
+			{% if page.subsite == 'dev' %}
 			<nav class="masthead__primarynav" aria-label="Subsite title and primary navigation">
 				<h2 class="masthead__site">
 					{% if page.subsite == 'dev' %}
@@ -39,14 +39,9 @@
 						<a href="{{ site.url }}a11y/">Accessibility</a>
 					{% endif %}
 				</h2>
+				{% if page.menu != 'dev' %}
 				<ul role="menu">
 					{% if page.subsite == 'dev' %}
-					<li>
-						<a href="{{ site.url }}dev/getting-started/">Getting started</a>
-					</li>
-					<li>
-						<a href="{{ site.url }}dev/main-concepts/">Main concepts</a>
-					</li>
 					<li>
 						<button class="c-menupopup" aria-label="Open Menu">Blocks & Components</button>
 						<ul class="menupopup__menu" aria-label="menupopup">
@@ -54,6 +49,12 @@
 							<li><a href="{{ site.url }}dev/components/">Components</a></li>
 							<li><a href="{{ site.url }}dev/blocks/kitchen-sink/">Kitchen sink</a></li>
 						</ul>
+					</li>
+					<li>
+						<a href="{{ site.url }}dev/getting-started/">Getting started</a>
+					</li>
+					<li>
+						<a href="{{ site.url }}dev/main-concepts/">Main concepts</a>
 					</li>
 					<li>
 						<a href="{{ site.url }}dev/custom-theming/">Custom theming</a>
@@ -67,7 +68,7 @@
 						<a href="#">Coming soon...</a>
 					</li>
 					{% endif %}
-				</ul>
+				</ul>{% endif %}
 			</nav>{% endif %}
 		</div>
 		<nav class="masthead__controls" aria-label="Secondary navigation and controls">
@@ -108,7 +109,7 @@
 					</button>
 				</li>
 				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
+					<button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
 						<span class="c-hamburger__box">
 							<span class="c-hamburger__inner"></span>
 					 	</span>
