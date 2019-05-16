@@ -11,12 +11,13 @@
 //  4. Colors
 //  5. Fonts
 //  6. Type scale
+//  7. z-index scale
 
 // 1. Media query breakpoints
 // --------------------------
 $breakpoints: (
 	s: 720px,
-	m: 960px,
+	m: 1024px,
 	l: 1200px,
 );
 
@@ -88,3 +89,8 @@ $pixel42: 42px;
 $pixel48: 48px;
 $pixel60: 60px;
 $pixel72: 72px;
+
+// 7. z-index scale
+// ----------------
+
+$z-index-10000: 10000;

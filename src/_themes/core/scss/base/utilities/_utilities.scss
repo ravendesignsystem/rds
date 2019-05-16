@@ -87,7 +87,7 @@
 }
 
 // CSS Grid
-// -----------------
+// --------
 
 .u-grid {
 	display: grid;
@@ -95,7 +95,11 @@
 }
 
 .u-grid--gap-l {
-	grid-gap: 60px;
+	grid-gap: 50px;
+
+	@include media(">=m") {
+		grid-gap: 80px;
+	}
 }
 
 .u-grid--2 {
@@ -163,7 +167,10 @@
 	padding-top: 0;
 }
 
-// Utility Widths
+
+
+
+	// Utility widths
 // --------------
 
 .u-block--s > *,
@@ -266,8 +273,24 @@ a.u-icon svg:hover {
 	padding: 0 !important;
 }
 
+.u-padding-top-s {
+	padding-top: 20px !important;
+}
+
+.u-margin-bottom-s {
+	margin-bottom: 20px !important;
+}
+
 // 6. Misc utils
 // -------------
+.u-link {
+	color: $link;
+
+	&:hover {
+		color: $red;
+	}
+}
+
 .u-sticky {
 	position: sticky;
 	top: 0;

@@ -121,6 +121,9 @@ button.c-menupopup:hover + .menupopup__menu {
 	}
 }
 
+.menupopup__sep {
+	border-bottom: 1px solid $grey-kenobi;
+}
 .menupopup__title {
 	border-top: 1px solid $grey-kenobi;
 	display: block;

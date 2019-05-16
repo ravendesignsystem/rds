@@ -7,7 +7,7 @@
         <meta name="robots" content="noodp, noydir"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <link rel="canonical" href="https://carleton.ca"/>
-        <link rel="stylesheet" href="https://cloud.typography.com/6307052/6144772/css/fonts.css" type="text/css"/>
+        <link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" type="text/css"/>
         {% block critical %}
             <style>{% include "hp/_css/critical.css" %}</style>
         {% endblock %}
@@ -72,7 +72,7 @@
                     <img src="https://res.cloudinary.com/cuweb/image/upload/f_auto/v1554305685/cu-homepage/mountain.webp" alt="Read more about need good alt text"/>
                     <div class="bannerhero_text">
                         {#<div class="bannerhero_text bannerhero_text--right">#}
-                        <h2 class="bannerhero__title" data-text="View story"><span>Senator Kim Pate calls for reform of Canada’s criminal justice system</span></h2>
+                        <h2 class="bannerhero__title" data-text="View story"><span>Vast hidden canyons and mountain ranges discovered in Antarctica</span></h2>
                     </div>
                 </a>
             </div>
@@ -98,6 +98,11 @@
                 title: 'New tools to evaluate helmet performance and design',
                 url: "#"
             }%}
+{#            {% set card4 = {#}
+{#                img: "https://res.cloudinary.com/cuweb/image/upload/f_auto/v1554307088/cu-homepage/helmet.webp",#}
+{#                title: 'New tools to evaluate helmet performance and design',#}
+{#                url: "#"#}
+{#            }%}#}
             <main id="content">
                 <div class="u-block u-block--grey u-block--m">
                     <h2>Spotlight on</h2>
@@ -105,6 +110,7 @@
                         {{ card.card(settings, card1) }}
                         {{ card.card(settings, card2) }}
                         {{ card.card(settings, card3) }}
+{#                        {{ card.card(settings, card4) }}#}
                     </div>
                 </div>
 
@@ -177,12 +183,28 @@
                                         </div>
                                     </a>
                                 </li>
+                                <li itemprop="item">
+                                    <a href="#eventurl" itemprop="url">
+                                        <time class="listing__event-date" itemprop="startDate" datetime="2017-04-24T08:00:00" content="2017-04-24T08:00:00">
+                                            Apr<br>
+                                            <span class="listing__event-day">24</span>
+                                        </time>
+                                        <div class="listing__event-time">
+                                            <h3 class="listing__title">08:00 am</h3>
+                                            <p class="listing__excerpt">09:00 pm</p>
+                                        </div>
+                                        <div class="listing__body">
+                                            <h3 class="listing__title" itemprop="name">Event Title</h3>
+                                            <p class="listing__excerpt" itemprop="description">Event location</p>
+                                        </div>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                         <article class="c-card" itemscope="" itemtype="http://schema.org/Article">
                             <a href="#" itemprop="url">
                                 <figure class="card__figure" itemscope="" itemtype="http://schema.org/ImageObject">
-                                    <img src="https://dummyimage.com/718x250/eee/222.gif" alt="Raven standing">
+                                    <img src="https://res.cloudinary.com/cuweb/image/upload/f_auto/v1557955266/cu-homepage/featured_event.webp" alt="Raven standing">
                                 </figure>
                                 <div class="card__body">
                                     <time class="card__date" datetime="2018-03-11" itemprop="datePublished" content="2018-03-11">Sunday, March 11th</time>
@@ -221,7 +243,7 @@
                                     <span class="u-visually-hidden">Graduate Admission quick links</span>
                                 </button>
                                 <ul class="menupopup__menu" aria-label="menupopup">
-                                    <li><a href="#">Undergraduate Admissions</a></li>
+                                    <li class="menupopup__sep"><a href="#">Undergraduate Admissions</a></li>
                                     <li><a href="#">Programs</a></li>
                                     <li><a href="#">Tours and Events</a></li>
                                     <li><a href="#">How to apply</a></li>
@@ -241,6 +263,7 @@
                                     <span class="u-visually-hidden">Undergraduate Admission quick links</span>
                                 </button>
                                 <ul class="menupopup__menu" aria-label="menupopup">
+                                    <li class="menupopup__sep"><a href="https://graduate.carleton.ca">Graduate Admissions</a></li>
                                     <li><a href="https://graduate.carleton.ca/programs/">Graduate Programs</a></li>
                                     <li><a href="https://graduate.carleton.ca/apply-online/">Apply Online</a></li>
                                     <li><a href="https://graduate.carleton.ca/international/">International</a></li>
@@ -269,18 +292,33 @@
                         </div>
                     </div>
                 </section>
+
+
+                <section class="u-block u-block--m u-block--white u-padding-top-s u-margin-bottom-s">
+                    <h2>Connect on Instagram: <a class="u-link" href="#">carleton_u</a></h2>
+                    <div class="b-imggrid">
+                        <div class="b-imggrid__row">
+                            <figure><a href="https://www.instagram.com/p/BwC2L5tnogS/"><img loading="lazy" src="https://res.cloudinary.com/cuweb/image/upload/f_auto/v1557398514/cu-homepage/insta4.webp" alt=""></a></figure>
+                            <figure><a href="https://www.instagram.com/p/BftCHG_n64o/"><img loading="lazy" src="https://res.cloudinary.com/cuweb/image/upload/f_auto/v1557956255/cu-homepage/food.webp" alt=""></a></figure>
+                        </div>
+                        <div class="b-imggrid__row b-imggrid__row--reverse">
+                            <figure><a href="#"><img loading="lazy" src="https://res.cloudinary.com/cuweb/image/upload/f_auto/v1557398514/cu-homepage/insta2.webp" alt=""></a></figure>
+                                <figure><a href="https://www.instagram.com/p/BtUh0WCFaSw/"><img loading="lazy" src="https://res.cloudinary.com/cuweb/image/upload/f_auto/v1557398513/cu-homepage/insta5.webp" alt=""></a></figure>
+                        </div>
+                    </div>
+                </section>
+
             </main>
         {% endblock %}
     {% endblock %} {# END body block #}
     {% block footer %}
         <footer>
-
-
-            {% include "footerbrand/footerbrand.twig" ignore missing %}
+            {% include "footersitemap/footersitemap" ignore missing %}
+            {% include "footerbrand/footerbrand" ignore missing %}
         </footer>
     {% endblock %} {# END footer block #}
 
-    <div class="l-overlay-modal is-hidden">
+    <div class="l-overlay-modal l-overlay-modal--cu is-hidden">
         <div class="modal__search is-hidden">
             {% include "search/search" %}
         </div>
@@ -291,6 +329,7 @@
                 {% endblock %}
             </div>
         </div>
+
     </div>
 </div> {#END APP ID #}
 

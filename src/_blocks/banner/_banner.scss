@@ -28,7 +28,7 @@
  * =======================================
  */
 
-.banner__title {
+.b-banner h1 {
 	margin: 0;
 	padding: 0;
 	// TODO: font-size $pixel28 removed, matches base H1 below small
@@ -164,7 +164,7 @@
 	}
 }
 
-.b-banner--img .banner__title,
+.b-banner--img h1,
 .b-banner--img .banner__breadcrumbs,
 .b-banner--img .banner__breadcrumb-item a {
 	color: white;

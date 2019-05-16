@@ -19,7 +19,7 @@
 // Layouts
 // -------
 //@import '../../../_layouts/body/layouts';
-@import '../../../_layouts/overlay/overlay';
+@import '../../core/layouts/overlay/overlay';
 
 // Core Blocks
 // -----------
@@ -57,3 +57,4 @@
 // CUSTOM THEME BLOCKS
 // -------------------
 @import '../blocks/gridadm/gridadm';
+@import '../blocks/imggrid/imggrid';
