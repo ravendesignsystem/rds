@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
         <meta name="robots" content="noodp, noydir"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="canonical" href="https://carleton.ca"/>
+        <link rel="canonical" href="https://carleton.ca/"/>
         <link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" type="text/css"/>
         {% block critical %}
             <style>{% include "hp/_css/critical.css" %}</style>
@@ -14,8 +14,8 @@
         {#TODO look into https://keithclark.co.uk/articles/loading-css-without-blocking-render/#}
         {#<link rel="stylesheet" href="{{ site.homecssPath }}">#}
         {#<noscript><link rel="stylesheet" href="{{ site.url }}/css/app.css"></noscript>#}
-        <link rel="manifest" href="/manifest.json">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+        <link rel="manifest" href="/rds/manifest.json">
+        <link rel="shortcut icon" href="/rds/favicon.ico" type="image/x-icon"/>
         {# <link rel="apple-touch-icon-precomposed" href="http://mysite.com/images/apple-retina.png" sizes="114x114" /> #}
         {# <link rel="apple-touch-icon-precomposed" href="http://mysite.com/images/apple-ipad.png" sizes="72x72" /> #}
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -219,7 +219,7 @@
                     variant: 'video'
                 }%}
                 {% set cardVideo = {
-                    img: "http://cu-raven.s3.amazonaws.com/assets/img/photos/thumbs/helmets.jpg",
+                    img: "https://res.cloudinary.com/cuweb/image/upload/f_auto/v1558013816/cu-homepage/vid2.webp",
                     text: "Kajal discusses how Carleton University allows you the opportunity to study what you love.",
                     title: 'Carleton Stories: Kajal',
                     url: "https://admissions.carleton.ca/videos/carleton-stories-kajal/"
@@ -295,15 +295,15 @@
 
 
                 <section class="u-block u-block--m u-block--white u-padding-top-s u-margin-bottom-s">
-                    <h2>Connect on Instagram: <a class="u-link" href="#">carleton_u</a></h2>
+                    <h2>Connect on Instagram: <a class="u-link" href="https://www.instagram.com/carleton_u/">carleton_u</a></h2>
                     <div class="b-imggrid">
                         <div class="b-imggrid__row">
-                            <figure><a href="https://www.instagram.com/p/BwC2L5tnogS/"><img loading="lazy" src="https://res.cloudinary.com/cuweb/image/upload/f_auto/v1557398514/cu-homepage/insta4.webp" alt=""></a></figure>
-                            <figure><a href="https://www.instagram.com/p/BftCHG_n64o/"><img loading="lazy" src="https://res.cloudinary.com/cuweb/image/upload/f_auto/v1557956255/cu-homepage/food.webp" alt=""></a></figure>
+                            <figure><a href="https://www.instagram.com/p/BwC2L5tnogS/" aria-label="Instagram photo"><img loading="lazy" src="https://res.cloudinary.com/cuweb/image/upload/f_auto/v1557398514/cu-homepage/insta4.webp" alt=""></a></figure>
+                            <figure><a href="https://www.instagram.com/p/BftCHG_n64o/" aria-label="Instagram photo"><img loading="lazy" src="https://res.cloudinary.com/cuweb/image/upload/f_auto/v1557956255/cu-homepage/food.webp" alt=""></a></figure>
                         </div>
                         <div class="b-imggrid__row b-imggrid__row--reverse">
-                            <figure><a href="#"><img loading="lazy" src="https://res.cloudinary.com/cuweb/image/upload/f_auto/v1557398514/cu-homepage/insta2.webp" alt=""></a></figure>
-                                <figure><a href="https://www.instagram.com/p/BtUh0WCFaSw/"><img loading="lazy" src="https://res.cloudinary.com/cuweb/image/upload/f_auto/v1557398513/cu-homepage/insta5.webp" alt=""></a></figure>
+                            <figure><a href="#" aria-label="Instagram photo"><img loading="lazy" src="https://res.cloudinary.com/cuweb/image/upload/f_auto/v1557398514/cu-homepage/insta2.webp" alt=""></a></figure>
+                                <figure><a href="https://www.instagram.com/p/BtUh0WCFaSw/" aria-label="Instagram photo"><img loading="lazy" src="https://res.cloudinary.com/cuweb/image/upload/f_auto/v1557398513/cu-homepage/insta5.webp" alt=""></a></figure>
                         </div>
                     </div>
                 </section>
