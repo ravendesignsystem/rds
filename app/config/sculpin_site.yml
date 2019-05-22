@@ -12,7 +12,7 @@ cssPath: /docs/css/docs.css
 homecssPath: /docs/css/hp.css
 jsPath: /docs/js/docs.js
 jsPathHome: /docs/js/hp.js
-jsSearchHome: /docs/js/foo.js
+jsSearchHome: /docs/js/search.js
 
 blocks:
     -
