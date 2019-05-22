@@ -97,7 +97,7 @@
 .u-grid--gap-l {
 	grid-gap: 50px;
 
-	@include media(">=m") {
+	@include media('>=m') {
 		grid-gap: 80px;
 	}
 }
@@ -167,10 +167,7 @@
 	padding-top: 0;
 }
 
-
-
-
-	// Utility widths
+// Utility widths
 // --------------
 
 .u-block--s > *,

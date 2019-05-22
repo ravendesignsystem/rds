@@ -1,0 +1,10 @@
+// Icon utils
+// see /src/_themes/core/scss/base/utilities/_utilities.scss
+// -------------
+
+@media screen and (-ms-high-contrast: active),
+	screen and (-ms-high-contrast: none) {
+	.u-icon {
+		align-items: flex-start;
+	}
+}

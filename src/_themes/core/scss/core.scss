@@ -35,7 +35,8 @@
 @import '../../../_components/table/table';
 @import '../../../_components/video/video';
 
-
+// I hate IE
+@import 'base/ie-fixes/ie-fixes';
 
 /*
                           .'`  '-.
