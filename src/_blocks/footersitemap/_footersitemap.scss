@@ -80,10 +80,12 @@
 
 .b-footer-cu-contact {
 	padding: 0 25px 40px;
+	margin-bottom: -25px;
 
 	@include media('>m') {
 		border-top: 1px solid $grey-vader;
 		padding: 40px 30px;
+		margin-bottom: -40px;
 	}
 }
 

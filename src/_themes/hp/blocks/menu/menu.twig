@@ -1,0 +1,96 @@
+<div class="u-block u-block--full">
+   <section class="b-menu">
+      <h2>Site Navigation</h2>
+      {% from "menu/menu.twig" import menuMacro %}
+      {{ menuMacro (
+         [
+            {
+               title: "About",
+               url: "#0",
+               submenu: [
+               {
+                  title: "About Carleton",
+                  url: "https://carleton.ca/about/"
+               },
+               {
+                  title: "Our Campus",
+                  url: "https://carleton.ca/about/campus/"
+               },
+               {
+                  title: "Capital Advantage",
+                  url: "https://carleton.ca/about/capital-advantage/"
+               },
+               {
+                  title: "Our History",
+                  url: "https://carleton.ca/about/history/"
+               },
+               {
+                  title: "University Facts",
+                  url: "https://carleton.ca/about/facts/"
+               },
+               {
+                  title: "Public Accountability",
+                  url: "https://carleton.ca/about/public-accoutability/"
+               },
+               {
+                  title: "Our Executive",
+                  url: "https://carleton.ca/about/university-executive/"
+               }
+            ]
+            },
+            {
+               title: "Admissions",
+               url: "#",
+               submenu: [
+               {
+                  title: "Undergraduate Admissions",
+                  url: "https://admissions.carleton.ca",
+               },
+               {
+                  title: "Undergraduate Programs",
+                  url: "https://admissions.carleton.ca/programs/"
+               },
+               {
+                  title: "Graduate Admissions",
+                  url: "https://graduate.carleton.ca",
+               },
+               {
+                  title: "Graduate Programs",
+                  url: "https://graduate.carleton.ca/programs/"
+               }
+            ]
+            },
+            {
+               title: "Academics",
+               url: "https://carleton.ca/academics/"
+            },
+            {
+               title: "Research",
+               url: "https://research.carleton.ca"
+            },
+            {
+               title: "Priorities",
+               url: "#",
+               submenu: [
+               {
+                  title: "Accessibility",
+                  url: "https://carleton.ca/accessibility/",
+               },
+               {
+                  title: "Undergraduate Programs",
+                  url: "https://admissions.carleton.ca/programs/"
+               },
+               {
+                  title: "Graduate Admissions",
+                  url: "https://graduate.carleton.ca",
+               },
+               {
+                  title: "Graduate Programs",
+                  url: "https://graduate.carleton.ca/programs/"
+               }
+            ]
+            },
+         ]
+      )}}
+   </section>
+</div>

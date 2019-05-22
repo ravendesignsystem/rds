@@ -4,4 +4,6 @@ url: https://ravendesignsystem.github.io/rds/
 cssPath: https://ravendesignsystem.github.io/rds/css/docs.css
 homecssPath: https://ravendesignsystem.github.io/rds/css/hp.css
 jsPath: https://ravendesignsystem.github.io/rds/js/docs.js
+jsPathHome: https://ravendesignsystem.github.io/rds/js/hp.js
+jsSearchHome: https://ravendesignsystem.github.io/rds/js/search.js
 title: Raven Design System

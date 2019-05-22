@@ -311,8 +311,8 @@ nav + .masthead__primarynav > .masthead__site {
 	}
 }
 
-@include media('<=1130px') {
-	.b-masthead--cu .masthead__primarynav li:nth-child(4) {
+@include media('<=1135px') {
+	.b-masthead--cu .masthead__primarynav li {
 		display: none;
 	}
 }

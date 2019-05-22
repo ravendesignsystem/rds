@@ -44,6 +44,7 @@
 			modal.classList.toggle('is-hidden');
 			hamburger.classList.toggle('is-active');
 			modal.classList.remove('u-bg-grey');
+			modalMenu.classList.add('is-hidden');
 		}
 
 		// target all lis items except hamburger
@@ -83,12 +84,12 @@
 
 			mastheadSearch.classList.remove('is-hidden'),
 				modalSearch.classList.add('is-hidden');
-			document.querySelector('.modal__menu').classList.toggle('is-hidden');
+			modalMenu.classList.toggle('is-hidden');
 
 			if (btn === 'more') {
 				mastheadHamburger.classList.add('u-display-inline-b'),
 					mastheadSearch.classList.add('is-hidden'),
-					document.querySelector('.modal__menu').classList.toggle('is-hidden');
+					modalMenu.classList.toggle('is-hidden');
 			} else if (
 				menuShow === false &&
 				window.matchMedia('(min-width: 768px)').matches
@@ -103,7 +104,7 @@
 	};
 
 	// Move menu relative to modal being open or closed
-	if (navMenu) {
+	if (navBody) {
 		function menuMove() {
 			if (navMenu) {
 				if (hamburger.classList.contains('is-active')) {

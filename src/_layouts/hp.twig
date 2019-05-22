@@ -72,7 +72,7 @@
                     <img src="https://res.cloudinary.com/cuweb/image/upload/f_auto/v1554305685/cu-homepage/mountain.webp" alt="Read more about need good alt text"/>
                     <div class="bannerhero_text">
                         {#<div class="bannerhero_text bannerhero_text--right">#}
-                        <h2 class="bannerhero__title" data-text="View story"><span>Vast hidden canyons and mountain ranges discovered in Antarctica</span></h2>
+                        <h2 class="bannerhero__title" data-text="View story"><span>Welcome to Carleton's New Homepage</span></h2>
                     </div>
                 </a>
             </div>
@@ -86,31 +86,31 @@
             {% set card1 = {
                 img: "https://res.cloudinary.com/cuweb/image/upload/f_auto/v1554307088/cu-homepage/research.webp",
                 title: 'Carleton research leading in accessibility and inclusion',
-                url: "#"
+                url: "https://newsroom.carleton.ca/story/carleton-leads-in-accessibility/"
             }%}
             {% set card2 = {
                 img: "https://res.cloudinary.com/cuweb/image/upload/f_auto/v1554307088/cu-homepage/indiginous.webp",
                 title: 'Carmen Robertson explores Indigenous art and activism',
-                url: "#"
+                url: "https://newsroom.carleton.ca/story/indigenous-art-identity/"
             }%}
             {% set card3 = {
-                img: "https://res.cloudinary.com/cuweb/image/upload/f_auto/v1554307088/cu-homepage/helmet.webp",
-                title: 'New tools to evaluate helmet performance and design',
-                url: "#"
+                img: "https://res.cloudinary.com/cuweb/image/upload/f_auto/v1558494103/cu-homepage/track.webp",
+                title: 'Carleton Helps Launch Unique Test Track',
+                url: "https://newsroom.carleton.ca/story/connected-autonomous-vehicle-test-track/?utm_source=HomepageBanner&utm_campaign=May2019"
             }%}
-{#            {% set card4 = {#}
-{#                img: "https://res.cloudinary.com/cuweb/image/upload/f_auto/v1554307088/cu-homepage/helmet.webp",#}
-{#                title: 'New tools to evaluate helmet performance and design',#}
-{#                url: "#"#}
-{#            }%}#}
+            {% set card4 = {
+                img: "https://res.cloudinary.com/cuweb/image/upload/f_auto/v1558493168/cu-homepage/energy.webp",
+                title: 'New course in energy efficiency policy',
+                url: "https://newsroom.carleton.ca/story/energy-efficiency-policy/"
+            }%}
             <main id="content">
                 <div class="u-block u-block--grey u-block--m">
                     <h2>Spotlight on</h2>
-                    <div class="b-cardgrid b-cardgrid--stacks u-grid u-grid--3">
+                    <div class="b-cardgrid b-cardgrid--stacks u-grid u-grid--4">
                         {{ card.card(settings, card1) }}
                         {{ card.card(settings, card2) }}
                         {{ card.card(settings, card3) }}
-{#                        {{ card.card(settings, card4) }}#}
+                        {{ card.card(settings, card4) }}
                     </div>
                 </div>
 
@@ -120,18 +120,34 @@
                         <div class="b-listing">
                             <ul class="listing__list listing__list--events" itemscope="" itemtype="http://schema.org/Event">
                                 <li itemprop="item">
-                                    <a href="#eventurl" itemprop="url">
+                                    <a href="https://carleton.ca/convocation/" itemprop="url">
                                         <time class="listing__event-date" itemprop="startDate" datetime="2017-04-24T08:00:00" content="2017-04-24T08:00:00">
-                                            Apr<br>
-                                            <span class="listing__event-day">24</span>
+                                            Jun<br>
+                                            <span class="listing__event-day">10</span>
                                         </time>
                                         <div class="listing__event-time">
-                                            <h3 class="listing__title">08:00 am</h3>
-                                            <p class="listing__excerpt">09:00 pm</p>
+                                            <h3 class="listing__title">June 10 - </h3>
+                                            <p class="listing__excerpt">June 14</p>
                                         </div>
                                         <div class="listing__body">
-                                            <h3 class="listing__title" itemprop="name">Event Title</h3>
-                                            <p class="listing__excerpt" itemprop="description">Event location</p>
+                                            <h3 class="listing__title" itemprop="name">Convocation</h3>
+                                            <p class="listing__excerpt" itemprop="description">Fieldhouse </p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li itemprop="item">
+                                    <a href="#eventurl" itemprop="url">
+                                        <time class="listing__event-date" itemprop="startDate" datetime="2017-04-24T08:00:00" content="2017-04-24T08:00:00">
+                                            jun<br>
+                                            <span class="listing__event-day">10</span>
+                                        </time>
+                                        <div class="listing__event-time">
+                                            <h3 class="listing__title">05:30 pm</h3>
+                                            <p class="listing__excerpt">07:00 pm</p>
+                                        </div>
+                                        <div class="listing__body">
+                                            <h3 class="listing__title" itemprop="name">Katherine Graham Lecture</h3>
+                                            <p class="listing__excerpt" itemprop="description">Richcraft Hall</p>
                                         </div>
                                     </a>
                                 </li>
@@ -146,23 +162,7 @@
                                             <p class="listing__excerpt">09:00 pm</p>
                                         </div>
                                         <div class="listing__body">
-                                            <h3 class="listing__title" itemprop="name">Event Title</h3>
-                                            <p class="listing__excerpt" itemprop="description">Event location</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li itemprop="item">
-                                    <a href="#eventurl" itemprop="url">
-                                        <time class="listing__event-date" itemprop="startDate" datetime="2017-04-24T08:00:00" content="2017-04-24T08:00:00">
-                                            Apr<br>
-                                            <span class="listing__event-day">24</span>
-                                        </time>
-                                        <div class="listing__event-time">
-                                            <h3 class="listing__title">08:00 am</h3>
-                                            <p class="listing__excerpt">09:00 pm</p>
-                                        </div>
-                                        <div class="listing__body">
-                                            <h3 class="listing__title" itemprop="name">Event Title</h3>
+                                            <h3 class="listing__title" itemprop="name">QES Research Talk</h3>
                                             <p class="listing__excerpt" itemprop="description">Event location</p>
                                         </div>
                                     </a>
@@ -320,14 +320,12 @@
 
     <div class="l-overlay-modal l-overlay-modal--cu is-hidden">
         <div class="modal__search is-hidden">
-            {% include "search/search" %}
+            {% include "hp/blocks/search/search" %}
         </div>
         <div class="modal__menu is-hidden">
-            <div class="is-hidden has-b-menu">
-                {% block menu %}
-                    {% include "menu/data/menu.twig" %}
-                {% endblock %}
-            </div>
+            {% block menu %}
+                {% include "hp/blocks/menu/menu" %}
+            {% endblock %}
         </div>
 
     </div>
@@ -338,12 +336,22 @@
         /* Load deferred CSS */
         const def = document.createElement('link');
         def.rel = 'stylesheet';
-        def.href = '{{ site.homecssPath }}';
+        def.href = '/docs/css/hp.css';
         def.type = 'text/css';
         const godefer = document.getElementsByTagName('link')[0];
         godefer.parentNode.insertBefore(def, godefer);
     </script>
-    <script src="{{ site.jsPath }}"></script>
+    <script src="/docs/js/hp.js"></script>
+    <script>
+        {# ONLY LOAD SEARCH AUTOCOMPLETE IF SEARCH BUTTON CLICKED #}
+        function loadScript(script_url) {
+            let head = document.getElementsByTagName('head')[0];
+            let script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = script_url;
+            head.appendChild(script);
+        }
+    </script>
 {% endblock %}  {#END SCRIPTS #}
 </body>
 </html>

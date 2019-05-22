@@ -26,7 +26,6 @@ for (let i = 0; i < emptyP.length; i++) {
 }
 
 // remove empty tags
-document.querySelectorAll('p, strong')
-	.forEach(el => el.innerHTML.trim() === "" && el.parentNode.removeChild(el))
-
-
+document
+	.querySelectorAll('p, strong')
+	.forEach(el => el.innerHTML.trim() === '' && el.parentNode.removeChild(el));
