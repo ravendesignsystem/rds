@@ -4,7 +4,6 @@
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 	.u-icon {
-		align-items: flex-start;
-		background: pinkalicious;
+		align-items: flex-start !important;
 	}
 }
