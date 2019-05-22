@@ -72,10 +72,3 @@ if (env === 'package') {
 			'package/blocks/footersitemap/'
 		);
 }
-
-// if (env === 'hp') {
-// 	mix
-// 		.sass('src/_themes/hp/scss/critical.scss', 'src/_themes/hp/_css')
-// 		.sass('src/_themes/hp/scss/hp.scss', 'build/docs/css')
-// 		.js('src/_themes/hp/js/hp.js', 'build/docs/js');
-// }
