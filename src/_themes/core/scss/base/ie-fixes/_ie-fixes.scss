@@ -3,7 +3,11 @@
 // -------------
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	.u-icon {
+	// .c-buttonsocial.u-icon {
+	// 	align-items: flex-start !important;
+	// }
+
+	.u-icon:not(.c-menupopup) {
 		align-items: flex-start !important;
 	}
 }
