@@ -3,7 +3,9 @@
 // -------------
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	.u-icon:not(.c-menupopup):not(.masthead__search-btn) {
+	.c-buttonsocial.u-icon,
+	.c-card--video .u-icon,
+	.c-card--iconlink .u-icon {
 		align-items: flex-start !important;
 	}
 }
