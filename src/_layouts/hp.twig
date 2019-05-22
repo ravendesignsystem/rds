@@ -336,12 +336,12 @@
         /* Load deferred CSS */
         const def = document.createElement('link');
         def.rel = 'stylesheet';
-        def.href = '/docs/css/hp.css';
+        def.href = '{{ site.homecssPath }}';
         def.type = 'text/css';
         const godefer = document.getElementsByTagName('link')[0];
         godefer.parentNode.insertBefore(def, godefer);
     </script>
-    <script src="/docs/js/hp.js"></script>
+    <script src="{{ site.jsPathHome }}"></script>
     <script>
         {# ONLY LOAD SEARCH AUTOCOMPLETE IF SEARCH BUTTON CLICKED #}
         function loadScript(script_url) {
