@@ -7,7 +7,7 @@
 	// 	align-items: flex-start !important;
 	// }
 
-	.u-icon:not(.c-menupopup) {
+	.u-icon:not(.c-menupopup):not(.masthead__search) {
 		align-items: flex-start !important;
 	}
 }
