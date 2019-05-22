@@ -3,11 +3,18 @@
 // -------------
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	// .c-buttonsocial.u-icon {
-	// 	align-items: flex-start !important;
-	// }
-
 	.u-icon:not(.c-menupopup):not(.masthead__search-btn) {
 		align-items: flex-start !important;
+	}
+}
+
+// Hero Banner
+// see /src/_themes/hp/blocks/bannerhero/_bannerhero.scss
+// -------------
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.b-bannerhero img {
+		max-height: initial !important;
+		height: initial !important;
 	}
 }
