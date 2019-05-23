@@ -1,3 +1,15 @@
+.b-docs-textimg a {
+	color: white;
+
+	&:hover {
+		color: $red;
+	}
+}
+
+.b-docs-textimg p {
+	color: $grey-luke;
+}
+
 @include media('>=s') {
 	.b-docs-textimg {
 		padding: 50px 0 20px;
@@ -14,19 +26,10 @@
 
 		.textimg__desc p {
 			font-size: $pixel30;
-			color: $grey-luke;
 			line-height: 1.35;
 
 			@include media('<=960px') {
 				font-size: $pixel24;
-			}
-
-			a {
-				color: white;
-
-				&:hover {
-					color: $red;
-				}
 			}
 		}
 
