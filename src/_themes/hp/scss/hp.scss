@@ -6,15 +6,18 @@
 
 // Base partials and required tooling
 // ----------------------------------
+
 @import '../../core/scss/base/vendor/include-media';
 @import '../../core/scss/base/vars/vars';
 
 // Layouts
 // -------
+
 @import '../../core/layouts/overlay/overlay';
 
 // Core Components
 // ---------------
+
 @import '../../../_components/buttonhamburger/buttonhamburger';
 @import '../../../_components/buttonsocial/buttonsocial';
 @import '../../../_components/menupopup/menupopup';
@@ -23,24 +26,29 @@
 
 // Core Blocks
 // -----------
+
 @import '../../../_blocks/cardgrid/cardgrid';
 @import '../../../_blocks/listing/listing';
 
 // Aside blocks
 // -----------
+
 @import '../../../_blocks/menu/menu';
 
 // Footer Blocks
 // -----------
+
 @import '../../../_blocks/footerbrand/footerbrand';
 @import '../../../_blocks/footersitemap/footersitemap';
 
 // Custom Blocks
 // -----------
+
 @import '../blocks/gridadm/gridadm';
 @import '../blocks/imggrid/imggrid';
 @import '../blocks/search/search';
 
 // IE Fixes
 // -----------
+
 @import '../../core/scss/base/ie-fixes/ie-fixes';
