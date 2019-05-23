@@ -12,54 +12,39 @@
 // ----------------------------------
 @import '../../core/scss/base/vendor/include-media';
 @import '../../core/scss/base/vars/vars';
-//@import '../../core/scss/base/reboot/reboot';
-//@import '../../core/scss/base/utilities/utilities';
 
 // Layouts
 // -------
-//@import '../../../_layouts/body/layouts';
 @import '../../core/layouts/overlay/overlay';
-
-// Core Blocks
-// -----------
-//@import '../../../_blocks/masthead/masthead';
-//@import '../../../_blocks/banner/banner';
-@import '../../../_blocks/cardgrid/cardgrid';
-//@import '../../../_blocks/content/content';
-@import '../../../_blocks/footerbrand/footerbrand';
-@import '../../../_blocks/menu/menu';
 
 // Core Components
 // ---------------
-//@import '../../../_components/badge/badge';
-//@import '../../../_components/heading/heading';
-//@import '../../../_components/form/form';
-@import '../../../_components/searchform/searchform';
-//@import '../../../_components/buttoncta/buttoncta';
 @import '../../../_components/buttonhamburger/buttonhamburger';
-//@import '../../../_components/icons/icons';
 @import '../../../_components/buttonsocial/buttonsocial';
-//@import '../../../_components/accordion/accordion';
-@import '../../../_components/card/card';
-//@import '../../../_components/imagecaption/imagecaption';
-//@import '../../../_components/table/table';
-//@import '../../../_components/video/video';
 @import '../../../_components/menupopup/menupopup';
+@import '../../../_components/searchform/searchform';
+@import '../../../_components/card/card';
 
-// ----------
-// RDS BLOCKS
-// ----------
+// Core Blocks
+// -----------
+@import '../../../_blocks/cardgrid/cardgrid';
 @import '../../../_blocks/listing/listing';
+
+// Aside blocks
+// -----------
+@import '../../../_blocks/menu/menu';
+
+// Footer Blocks
+// -----------
+@import '../../../_blocks/footerbrand/footerbrand';
 @import '../../../_blocks/footersitemap/footersitemap';
 
-// -------------------
-// CUSTOM THEME BLOCKS
-// -------------------
+// Custom Blocks
+// -----------
 @import '../blocks/gridadm/gridadm';
 @import '../blocks/imggrid/imggrid';
 @import '../blocks/search/search';
 
-// -------------------
-// IE FIXES
-// -------------------
+// IE Fixes
+// -----------
 @import '../../core/scss/base/ie-fixes/ie-fixes';
