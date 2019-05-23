@@ -41,15 +41,3 @@ if (masthead.classList.contains('js-sticky-scroll')) {
 		}
 	});
 }
-
-// TODO review the code below
-// let needTouch = document.getElementsByClassName('c-menupopup');
-// if (needTouch.length > 0) {
-// 	const touchEventsExample = () => {
-// 		const el = document.getElementsByTagName('.c-menupopup');
-// 		el.addEventListener('touchstart', handleStart, false);
-// 		el.addEventListener('touchend', handleEnd, false);
-// 		el.addEventListener('touchcancel', handleCancel, false);
-// 		el.addEventListener('touchmove', handleMove, false);
-// 	};
-// }
