@@ -35,6 +35,11 @@
 	box-shadow: 0 3px 12px rgba(27, 31, 35, 0.15);
 	display: block;
 
+	//IE Only styles
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		z-index: 1000;
+	}
+
 	// arrow
 	&::before {
 		top: -16px;
@@ -99,12 +104,12 @@
 .c-menupopup:hover + .menupopup__menu,
 .c-menupopup + .menupopup__menu:hover,
 .c-menupopup:hover > .menupopup__menu,
-.c-menupopup:focus-within > .menupopup__menu,
+//.c-menupopup:focus-within > .menupopup__menu, REMOVED FOR IE
 .c-menupopup .menupopup__menu:hover,
 .c-menupopup .menupopup__menu:focus {
 	visibility: visible;
 	opacity: 1;
-	z-index: 100;
+	z-index: 10000;
 }
 
 button.c-menupopup:hover + .menupopup__menu {

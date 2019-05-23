@@ -1,15 +1,16 @@
-const subutton = document.querySelectorAll('button.c-menupopup');
+let elements = document.querySelectorAll('button.c-menupopup');
+for (let i = 0; i < elements.length; i++) {
+	elements[i].addEventListener('click', showMenu);
+	elements[i].addEventListener('mouseout', hideMenu);
+}
 
-subutton.forEach(function(el) {
-	el.addEventListener('click', function(e) {
-		//const content = el.innerHTML;
-		//console.log(content);
-		el.nextElementSibling.classList.add('is-visible');
-	});
+function showMenu() {
+	this.nextElementSibling.classList.add('is-visible');
+}
 
-	el.addEventListener('mouseout', function(event) {
-		if (event.target.closest('button.c-menupopup')) {
-			el.nextElementSibling.classList.remove('is-visible');
-		}
-	});
-});
+// stop the menu from showing on hover after being clicked
+function hideMenu() {
+	if (event.target.closest('button.c-menupopup')) {
+		this.nextElementSibling.classList.remove('is-visible');
+	}
+}

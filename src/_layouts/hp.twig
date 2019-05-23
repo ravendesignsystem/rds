@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
         <meta name="robots" content="noodp, noydir"/>
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
+{#        <meta http-equiv="x-ua-compatible" content="ie=edge">#}
         <link rel="canonical" href="https://carleton.ca/"/>
         <link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" type="text/css"/>
         {% block critical %}
@@ -222,7 +222,11 @@
 
 {% block scripts %}
     <script type="text/javascript">
-        /* Load deferred CSS */
+        {# TODO remove the below IE11 polyfills when we ditch IE#}
+        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+            document.write('<script src="https://unpkg.com/element-closest/browser"><\/script>');
+
+        {# Load deferred CSS #}
         const def = document.createElement('link');
         def.rel = 'stylesheet';
         def.href = '{{ site.homecssPath }}';

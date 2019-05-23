@@ -90,7 +90,7 @@ $b-height: 75px;
 }
 
 div.b-masthead ul.menupopup__menu {
-	top: 60px !important;
+	top: 60px;
 }
 
 .masthead__site {
@@ -107,9 +107,10 @@ div.b-masthead ul.menupopup__menu {
 		margin-right: 3px;
 	}
 
-	& + .menupopup__menu {
-		left: 20px !important;
-	}
+	// TODO dont think this is needed?
+	//& + .menupopup__menu {
+	//	left: 200px !important;
+	//}
 
 	.c-culogo {
 		width: 150px;
@@ -163,14 +164,17 @@ div.b-masthead ul.menupopup__menu {
 	}
 
 	.menupopup__menu {
-		position: fixed !important;
-		margin-left: 5px !important;
-	}
+		position: fixed;
+		margin-left: 5px;
 
-	//span svg {
-	//	margin-right: 26px;
-	//}
+		//IE Only styles
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			margin-left: -95px;
+		}
+	}
 }
+
+.masthead__primarynav
 
 nav + .masthead__primarynav > .masthead__site {
 	padding-left: 10px;
