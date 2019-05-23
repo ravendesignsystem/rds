@@ -12,6 +12,7 @@
 // ----------------------------------
 @import '../../core/scss/base/vendor/include-media';
 @import '../../core/scss/base/vars/vars';
+@import '../../core/scss/base/utilities/utilities';
 
 // Layouts
 // -------
@@ -48,3 +49,7 @@
 // IE Fixes
 // -----------
 @import '../../core/scss/base/ie-fixes/ie-fixes';
+
+body {
+	background-color: blue;
+}
