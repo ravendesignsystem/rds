@@ -27,7 +27,6 @@
 // -----------
 
 @import '../../../_blocks/cardgrid/cardgrid';
-@import '../../../_blocks/listing/listing';
 
 // Aside blocks
 // -----------
@@ -45,7 +44,9 @@
 
 @import '../blocks/gridadm/gridadm';
 @import '../blocks/imggrid/imggrid';
+// custom core
 @import '../blocks/search/search';
+@import '../blocks/listing/listing';
 
 // IE Fixes
 // -----------

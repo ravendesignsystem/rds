@@ -1,0 +1,45 @@
+{% if docs %}
+    <div class="u-block u-block--white u-block--s">
+        <div class="b-content">
+            <h2>Listing block - event variant</h2>
+            <p>Display a list of events displaying their date, time, title and location.</p>
+        </div>
+    </div>
+{% endif %}
+{% from "listing/listing.twig" import listing %}
+{{ listing (
+    {
+        color: "white",
+        variant: "event"
+    },
+    [
+        {
+            startDate: "2017-04-24T08:00:00",
+            endDate: "2017-04-24T21:00:00",
+            location: "Event location",
+            title: "Event Title",
+            url: "#eventurl"
+        },
+        {
+            startDate: "2017-04-24T08:00:00",
+            endDate: "2017-04-24T21:00:00",
+            location: "Event location",
+            title: "Event Title",
+            url: "#eventurl"
+        },
+        {
+            startDate: "2017-04-24T08:00:00",
+            endDate: "2017-04-24T21:00:00",
+            location: "Event location",
+            title: "Event Title",
+            url: "#eventurl"
+        },
+        {
+            startDate: "2017-04-24T08:00:00",
+            endDate: "2017-04-24T21:00:00",
+            location: "Event location",
+            title: "Event Title",
+            url: "#eventurl"
+        }
+    ]
+) }}
