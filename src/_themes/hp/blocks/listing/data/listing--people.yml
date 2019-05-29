@@ -1,0 +1,24 @@
+---
+settings:
+  context: "people"
+data:
+  -
+    img: "http://fillmurray.com/480/480"
+    subtitle: "Actor/Writer"
+    title: "Bill Murray"
+    url: "http://www.imdb.com/name/nm0000195/"
+  -
+    img: "http://fillmurray.com/480/480"
+    subtitle: "Ghostbusters"
+    title: "Peter Venkman"
+    url: "http://www.imdb.com/name/nm0000195/"
+  -
+    img: "http://fillmurray.com/480/480"
+    subtitle: "Caddyshack"
+    title: "Carl Spackler"
+    url: "http://www.imdb.com/name/nm0000195/"
+  -
+    img: "http://fillmurray.com/480/480"
+    subtitle: "Groundhog Day"
+    title: "Phil Connors"
+    url: "http://www.imdb.com/name/nm0000195/"

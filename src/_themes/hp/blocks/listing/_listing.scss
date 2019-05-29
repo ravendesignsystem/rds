@@ -1,5 +1,5 @@
 /**
- * Listing Block
+ * HP Listing Block
  * =============
  */
 
@@ -91,11 +91,16 @@
 }
 
 // Truncating title and subtitle
+// TODO needed to change white-space to avoid hor scrollbars with long titles - need proper one line only solution
 .listing__title,
 .listing__excerpt {
-	white-space: nowrap;
+	white-space: pre-wrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+
+	@include media(">=450px") {
+		white-space: nowrap;
+	}
 }
 
 .listing__post-date {
@@ -108,12 +113,16 @@
 //================================
 
 .listing__event-date {
-	flex: 0 0 60px;
+	flex: 0 0 40px;
 	color: $red;
 	text-transform: uppercase;
 	font-size: $pixel12;
 	line-height: 1.25;
 	padding-top: 4px;
+
+	@include media(">=s") {
+		flex: 0 0 60px;
+	}
 }
 
 .listing__event-day {
@@ -148,116 +157,116 @@
 //================================
 
 // Set individual item underline
-.listing__list--img-small li:not(:last-child):before {
-	width: calc(100% - 95px);
-	left: 95px;
-}
-
-// Set the width of the figure element
-.listing__list--img-small .listing__figure {
-	flex: 0 0 80px;
-}
+//.listing__list--img-small li:not(:last-child):before {
+//	width: calc(100% - 95px);
+//	left: 95px;
+//}
+//
+//// Set the width of the figure element
+//.listing__list--img-small .listing__figure {
+//	flex: 0 0 80px;
+//}
 
 // Image Large Block Type Modifiers
 //================================
 
 // Set individual item underline
-.listing__list--img-large li:not(:last-child):before {
-	width: calc(100% - 155px);
-	left: 155px;
-
-	@include media('>s') {
-		width: calc(100% - 215px);
-		left: 215px;
-	}
-}
-
-.listing__list--img-large li a {
-	align-items: initial;
-}
-
-// Set the width of the figure element
-.listing__list--img-large .listing__figure {
-	flex: 0 0 140px;
-
-	@include media('>s') {
-		flex: 0 0 200px;
-	}
-}
+//.listing__list--img-large li:not(:last-child):before {
+//	width: calc(100% - 155px);
+//	left: 155px;
+//
+//	@include media('>s') {
+//		width: calc(100% - 215px);
+//		left: 215px;
+//	}
+//}
+//
+//.listing__list--img-large li a {
+//	align-items: initial;
+//}
+//
+//// Set the width of the figure element
+//.listing__list--img-large .listing__figure {
+//	flex: 0 0 140px;
+//
+//	@include media('>s') {
+//		flex: 0 0 200px;
+//	}
+//}
 
 // Image Rounded Block Type Modifiers
 //================================
 
 // Set individual item underline
-.listing__list--img-people li:not(:last-child):before {
-	width: calc(100% - 95px);
-	left: 95px;
-}
-
-// Set the width of the figure element
-.listing__list--img-people .listing__figure {
-	flex: 0 0 80px;
-
-	img {
-		border: 4px solid hsla(0, 0%, 93%, 0.75);
-		border-radius: 50%;
-	}
-}
+//.listing__list--img-people li:not(:last-child):before {
+//	width: calc(100% - 95px);
+//	left: 95px;
+//}
+//
+//// Set the width of the figure element
+//.listing__list--img-people .listing__figure {
+//	flex: 0 0 80px;
+//
+//	img {
+//		border: 4px solid hsla(0, 0%, 93%, 0.75);
+//		border-radius: 50%;
+//	}
+//}
 
 // Image Dark Block Type Modifiers
 //================================
 
 // Set individual item underline
-.listing__list--img-video li:not(:last-child):before {
-	width: calc(100% - 95px);
-	left: 95px;
-}
+//.listing__list--img-video li:not(:last-child):before {
+//	width: calc(100% - 95px);
+//	left: 95px;
+//}
 
 // Set the width of the figure element
-.listing__list--img-video .listing__figure {
-	flex: 0 0 80px;
-	position: relative;
-
-	&:before {
-		content: '';
-		display: block;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		background-color: rgba(black, 0.4);
-	}
-
-	img {
-		margin: 0;
-	}
-
-	svg {
-		position: absolute;
-		top: calc(50% - 15px); // calc is used to determine center by subtracting half the height of the icon
-		left: calc(50% - 15px); // calc is used to determine center by subtracting half the width of the icon
-		width: 30px;
-		height: 30px;
-		fill: white;
-	}
-}
+//.listing__list--img-video .listing__figure {
+//	flex: 0 0 80px;
+//	position: relative;
+//
+//	&:before {
+//		content: '';
+//		display: block;
+//		height: 100%;
+//		position: absolute;
+//		top: 0;
+//		left: 0;
+//		width: 100%;
+//		background-color: rgba(black, 0.4);
+//	}
+//
+//	img {
+//		margin: 0;
+//	}
+//
+//	svg {
+//		position: absolute;
+//		top: calc(50% - 15px); // calc is used to determine center by subtracting half the height of the icon
+//		left: calc(50% - 15px); // calc is used to determine center by subtracting half the width of the icon
+//		width: 30px;
+//		height: 30px;
+//		fill: white;
+//	}
+//}
 
 // Icon Block Type Modifiers
 //================================
 
 // Set individual item underline
-.listing__list--icon li:not(:last-child):before {
-	width: calc(100% - 60px);
-	left: 60px;
-}
-
-// Set the width of the figure element
-.listing__list--icon .listing__figure {
-	flex: 0 0 45px;
-	display: flex;
-	align-items: center;
-}
+//.listing__list--icon li:not(:last-child):before {
+//	width: calc(100% - 60px);
+//	left: 60px;
+//}
+//
+//// Set the width of the figure element
+//.listing__list--icon .listing__figure {
+//	flex: 0 0 45px;
+//	display: flex;
+//	align-items: center;
+//}
 
 // Event Block Type Modifiers
 //================================
@@ -271,18 +280,17 @@
 // News Block Type Modifiers
 //================================
 
-.listing__list--news {
+.listing__list--news, .listing__list--events {
 	.listing__excerpt {
 		display: none;
 
-		@include media('>s') {
+		@include media('>450px') {
 			display: block;
 		}
 	}
 
 	.listing__title,
 	.listing__excerpt {
-		white-space: initial;
 		overflow: initial;
 		text-overflow: initial;
 	}
