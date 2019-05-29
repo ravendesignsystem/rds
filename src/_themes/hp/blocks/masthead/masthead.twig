@@ -12,7 +12,7 @@
                         <ul class="menupopup__menu" aria-label="menupopup">
                             <li><a href="https://carleton.ca/about/">About Carleton</a></li>
                             <li><a href="https://carleton.ca/campus/">Our Campus</a></li>
-                            <li><a href="https://carleton.ca/about/capital-advantage/">Capital Advantage</a></li>
+                            <li><a href="https://carleton.ca/prospective/capital-advantage/">Capital Advantage</a></li>
                             <li><a href="https://carleton.ca/about/history/">Our History</a></li>
                             <li><a href="https://carleton.ca/about/facts/">University Facts</a></li>
                             <li><a href="https://carleton.ca/about/public-accountability/">Public Accountability</a></li>
@@ -40,24 +40,24 @@
                             <li><a href="https://carleton.ca/hr/cu-life/campus-sustainability/">Sustainability</a></li>
                         </ul>
                     </li>
-                    <li class="masthead__sep"><button class="c-menupopup" aria-label="Open Menu">Future students</button>
+                    <li class="masthead__sep"><button class="c-menupopup" aria-label="Open Menu">Future Students</button>
                         <ul class="menupopup__menu" aria-label="menupopup">
-                            <li><a href="#">Undergraduate Students</a></li>
-                            <li><a href="#">Graduate Students</a></li>
-                            <li><a href="#">Continuing Studies and <br>Professional Development</a></li>
+                            <li><a href="https://admissions.carleton.ca">Undergraduate Students</a></li>
+                            <li><a href="https://graduate.carleton.ca">Graduate Students</a></li>
+                            <li><a href="https://carleton.ca/continuing-professional/">Continuing Studies and <br>Professional Development</a></li>
                         </ul>
                     </li>
-                    <li><button class="c-menupopup" aria-label="Open Menu">Current students</button>
+                    <li><button class="c-menupopup" aria-label="Open Menu">Current Students</button>
                         <ul class="menupopup__menu" aria-label="menupopup">
-                            <li><a href="#">Undergraduate Students</a></li>
-                            <li><a href="#">Graduate Students</a></li>
+                            <li><a href="https://students.carleton.ca">Undergraduate Students</a></li>
+                            <li><a href="https://gradstudents.carleton.ca">Graduate Students</a></li>
                         </ul>
                     </li>
                     <li><button class="c-menupopup" aria-label="Open Menu">Faculty/Staff</button>
                         <ul class="menupopup__menu" aria-label="menupopup">
-                            <li><a href="https://i.carleton.ca/">Intranet dashboard</a></li>
-                            <li><a href="https://i.carleton.ca/hr/">Current Faculty/Staff</a></li>
-                            <li class="menupopup__sep"><a href="https://carleton.ca/hr/">Human Resources</a></li>
+                            <li><a href="https://i.carleton.ca/">Intranet Dashboard</a></li>
+                            <li class="menupopup__sep"><a href="https://i.carleton.ca/hr/">HR - Current Faculty/Staff</a></li>
+                            <li><a href="https://carleton.ca/hr/">Human Resources</a></li>
                             <li><a href="https://carleton.ca/hr/">Jobs at Carleton</a></li>
                             <li><a href="https://carleton.ca/hr/employment-opportunities/staff-opportunities/">Staff Opportunities</a></li>
                             <li><a href="https://carleton.ca/hr/employment-opportunities/faculty-opportunities/">Academic Opportunities</a></li>
@@ -70,18 +70,19 @@
         <nav class="masthead__controls" aria-label="Secondary navigation and controls">
             <ul>
                 {#masthead__cta#}
-                <li class="masthead__jump c-menupopup c-menupopup--right"><a class="c-menupopup u-icon">{% include 'icons/link-external.svg' %} <span>Jump to</span></a>
+                <li class="masthead__jump c-menupopup c-menupopup--right"><a class="c-menupopup u-icon">{% include 'icons/link-external.svg' %} <span>Jump To</span></a>
                     <ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
-                        <li><a href="https://students.carleton.ca">{% include 'icons/home.svg' %}Current students home</a></li>
+                        <li><a href="https://students.carleton.ca">{% include 'icons/home.svg' %}Current Students Home</a></li>
                         <li><a class="u-icon" href="https://central.carleton.ca">{% include 'icons/diamond.svg' %} Carleton Central</a></li>
                         <li><a href="https://carleton.ca/culearn/">{% include 'icons/e-learning.svg' %} cuLearn</a></li>
                         <li><a href="https://library.carleton.ca">{% include 'icons/book.svg' %} Library</a></li>
                         <li><a href="https://360.carleton.ca">{% include 'icons/mark-360.svg' %} Carleton360</a></li>
-                        <li><a href="https://carleton.ca/campus/map/">{% include 'icons/location.svg' %} Campus map</a></li>
+                        <li><a href="https://carleton.ca/campus/map/">{% include 'icons/location.svg' %} Campus Map</a></li>
                     </ul>
                 </li>
                 <li class="masthead__search">
-                    <button onclick="loadScript('https://cu-rds.s3.amazonaws.com/hp/js/hm-search.js');" value="Proceed" aria-label="Open Search" class="masthead__search-btn u-icon">
+{#                    onclick="loadScript('https://cu-rds.s3.amazonaws.com/hp/js/hm-search.js');" value="Proceed"#}
+                    <button  aria-label="Open Search" class="masthead__search-btn u-icon">
                         {% include "icons/search.svg" %} <span class="u-hide-s">Search</span>
                     </button>
                 </li>

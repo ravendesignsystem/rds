@@ -280,7 +280,7 @@ a.u-icon svg:hover {
 
 // 6. Misc utils
 // -------------
-.u-link {
+a.u-link, .u-link a {
 	color: $link;
 
 	&:hover {

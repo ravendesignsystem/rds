@@ -164,7 +164,7 @@ div.b-masthead ul.menupopup__menu {
 	}
 
 	.menupopup__menu {
-		position: fixed;
+		position: fixed !important;
 		margin-left: 5px;
 
 		//IE Only styles
