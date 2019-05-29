@@ -7,7 +7,14 @@
     <a href="{{ data.url }}" itemprop="url">
 {% if data.img %}
         <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
+{% if data.webp %}
+            <picture>
+                <source type="image/webp" srcset="{{ data.webp }}">
+                <img src="{{ data.img }}" alt="{% if data.alt %}{{ data.alt }}{% else %}Read more about {{ data.title }}{% endif  %}">
+            </picture>
+{% else %}
             <img src="{{ data.img }}" alt="{% if data.alt %}{{ data.alt }}{% else %}Read more about {{ data.title }}{% endif  %}">
+{% endif %}
 {% if settings.variant == "video" %}
             <span class="u-icon u-icon--circle" style="	position: absolute;
 		top: calc(50% - 25px); // calc is used to determine center by subtracting half the height of the icon

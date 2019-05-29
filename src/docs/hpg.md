@@ -1,6 +1,6 @@
 ---
-layout: hp
-title: Carleton University
+layout: hp-google
+title: Raven Design System (RDS)
 banner: none
 ---
 [//]: # (Page blocks)

@@ -1,3 +1,36 @@
+@include media("<=s") {
+	.b-gridadm > article {
+		order: 2;
+	}
+}
+
+
+.gridadm_cards__arrow {
+	border-left: 1px solid $grey-yoda;
+
+	&::after {
+		position: absolute;
+		content: "";
+		//width: 0;
+		//height: 0;
+		//border-top: 4px solid;
+		//border-right: 4px solid transparent;
+		//border-left: 4px solid transparent;
+		top: 48%;
+		left: 94.5%;
+		//color: #222;
+		width: 0;
+		height: 0;
+		border-top: 4px solid transparent;
+		border-bottom: 4px solid transparent;
+		border-left: 4px solid $black;
+	}
+
+	@include media(">=s") {
+		display: none !important;
+	}
+}
+
 .gridadm_cards {
 	display: flex;
 	flex-direction: column;
@@ -9,12 +42,20 @@
 	display: flex;
 	flex: 0 0 25%;
 	min-height: 100px;
-	border: 1px solid $grey-yoda;
 	overflow: hidden;
 	margin-bottom: 25px;
+	border-left: 5px solid $student-turquoise;
+	border-top: 1px solid $grey-yoda;
+	border-right: 1px solid $grey-yoda;
+	border-bottom: 1px solid $grey-yoda;
+
+	&:nth-child(2) {
+		border-left: 5px solid $student-coral;
+	}
 
 	&:last-child {
 		margin-bottom: 0;
+		border-left: 5px solid $student-slate-grey;
 	}
 
 	> a {
@@ -28,25 +69,29 @@
 		}
 
 		> div {
-			margin: 4px 0 0 4px;
-		}
 
-		> span {
-			left: -14px;
-			font-size: 65px;
+			margin: 4px 0 0 20px;
 
-			&::before {
-				background-color: $student-turquoise;
-			}
-
-			svg {
-				fill: white;
-				padding: 17px;
+			@include media(">=800px") {
+				margin: 4px 0 0 40px;
 			}
 		}
+
+		//> span {
+		//	//left: -13px;
+		//	left: 10px;
+		//	font-size: 65px;
+		//
+		//	&::before {
+		//		background-color: $student-turquoise;
+		//	}
+		//
+		//	svg {
+		//		fill: white;
+		//		padding: 17px;
+		//	}
+		//}
 	}
-
-
 
 	h2 {
 		margin: 0;
@@ -70,6 +115,7 @@
 		width: 100%;
 		height: 100%;
 		border-left: 1px solid $grey-yoda;
+		position: center;
 	}
 
 	button.c-menupopup:after {
@@ -81,13 +127,13 @@
 		right: 17px;
 	}
 
-	&:nth-child(2) > a span::before {
-		background-color: $student-coral;
-	}
-
-	&:nth-child(3) > a span::before {
-		background-color: $grey-anakin;
-	}
+	//&:nth-child(2) > a span::before {
+	//	background-color: $student-coral;
+	//}
+	//
+	//&:nth-child(3) > a span::before {
+	//	background-color: $grey-anakin;
+	//}
 }
 
 .c-card--iconlink:after {
