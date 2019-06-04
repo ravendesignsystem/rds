@@ -13,13 +13,17 @@ banner:
 
 If you are affiliated with Carleton, you can skip all of the technical overhead required to build your own RDS site, by using the [Carleton CMS service](https://carleton.ca/webservices/request-a-website/). RDS and all of its goodness is baked right into the free WordPress CMS service. Using the Carleton CMS service is by far the fastest and easiest way to get up and running with a new RDS website. By using this service, you can focus on your content and [Web Services](https://carleton.ca/webservices) will take care of hosting, security and all of the updates.
 
-## Carleton themes: Quick start
+## CU theme
 
-If you are looking to setup a website that uses either the [Carleton CMS theme](#) or the [Framework theme](#), you should follow this [Quick start guide](#) for integrating existing Carleton themes.
+The fastest
+
+The default [CU theme](#) ships with all RDS [core blocks](#) and in most cases should satisfy all requirements for building a Carleton web site.
+
+If you are looking to setup a website that uses the [CU theme](#), follow the [Quick start guide](#).
 
 ## Getting started with custom themes
 
-If you want to roll your own custom theme or extend one of the [two defaults themes](#), there are three main ways to get started with RDS:
+If you want to roll your own custom RDS theme or extend the [CU theme](#), there are three main ways to get started with RDS:
 
 
 
