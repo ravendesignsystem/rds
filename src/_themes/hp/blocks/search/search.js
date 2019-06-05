@@ -26,6 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			.catch(err => {
 				console.log(err);
 			});
+
+		// clear target on focusout
+		window.addEventListener('click', e => {
+			if (!target.contains(e.target) || !searchInput.contains(e.target)) {
+				target.innerHTML = dompurify.sanitize('');
+			}
+		});
 	});
 
 	searchInput.addEventListener('input', async e => {
@@ -46,10 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		});
 		results = results.unique();
-		// clear target on focusout
-		searchInput.addEventListener('focusout', () => {
-			target.innerHTML = dompurify.sanitize('');
-		});
 
 		// show no results for empty strings or array
 		// prevent form submition on empty search or enter key
