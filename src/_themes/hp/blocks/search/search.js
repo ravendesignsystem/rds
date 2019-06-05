@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			item.tokens.map(token => {
 				if (token.toLowerCase().includes(userInput.toLowerCase())) {
 					let res = `
-					<a href="${item.link}">
+					<a href="http:${item.link}">
 						<li data-cat="${item.category}">${item.name}</li>
 					</a>`;
 
