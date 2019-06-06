@@ -3,6 +3,6 @@ imports:
 url: https://ravendesignsystem.github.io/rds/
 cssPath: https://ravendesignsystem.github.io/rds/css/docs.css
 jsPath: https://ravendesignsystem.github.io/rds/js/docs.js
-homecssPath: https://cu-rds.s3.amazonaws.com/hp/1.0.4/hp.gz.css
-jsPathHome: https://cu-rds.s3.amazonaws.com/hp/1.0.4/hp.gz.js
+homecssPath: https://cu-rds.s3.amazonaws.com/hp/1.0.5/hp.gz.css
+jsPathHome: https://cu-rds.s3.amazonaws.com/hp/1.0.5/hp.gz.js
 title: Raven Design System
