@@ -1,5 +1,5 @@
 .b-content {
-	a {
+	a:not(.c-buttoncta) {
 		color: $link;
 
 		&:hover:not(.u-icon):not(.c-buttoncta) {
