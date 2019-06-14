@@ -3,25 +3,22 @@
 {% block head %}
     <head>
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139345696-9"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1141425-13"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'UA-139345696-9');
+            gtag('config', 'UA-1141425-13');
         </script>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
         <meta name="robots" content="noodp, noydir"/>
-{#        <meta http-equiv="x-ua-compatible" content="ie=edge">#}
-        <link rel="canonical" href="https://carleton.ca/2019"/>
+        <link rel="canonical" href="https://carleton.ca"/>
         <link rel="preload" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" as="style">
-{#        <link rel="preload" href="https://cu-rds.s3.amazonaws.com/hp/1.0.0/hp.gz.css" as="style">#}
-{#        <link rel="preload" href="https://cu-rds.s3.amazonaws.com/hp/1.0.0/hp.gz.js" as="style">#}
         {% block critical %}
-            <style>{% include "hp/_css/critical.css" %}</style>
+        <style>{% include "hp/_css/critical.css" %}</style>
         {% endblock %}
         <link rel="manifest" href="manifest.json">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
@@ -42,28 +39,18 @@
         <meta property="og:url" content="https://carleton.ca">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Carleton University">
-        {#  If page has a description #}
         <meta property="og:description" content="Canada's Capital University, Carleton University is a dynamic research and teaching institution dedicated to achieving the highest standards of scholarship.">
-        {#  If page has an img defined #}
-        {% if page.img is defined %}
-            <meta property="og:image" content="{{ page.img }}">
-        {% endif %}
+        <meta property="og:image" content="http://cu-rds.s3.amazonaws.com/assets/img/cu-og.jpg">
         {# Twitter Meta Tags #}
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Carleton University">
-        {#  If page has a description #}
-        {% if page.desc is defined %}
-            <meta name="twitter:description" content="{{ page.desc }}">
-        {% endif %}
-        {#  If page has an img defined #}
-        {% if page.img is defined %}
-            <meta name="twitter:image" content="{{ page.img }}">
-        {% endif %}
+        <meta name="twitter:description" content="Canada's Capital University, Carleton University is a dynamic research and teaching institution dedicated to achieving the highest standards of scholarship.">
+        <meta name="twitter:image" content="http://cu-rds.s3.amazonaws.com/assets/img/cu-og.jpg">
     </head>
 {% endblock %}
 
 <body>
-<a class="u-visually-hidden" href="#content">Skip to main content</a>
+<a class="u-visually-hidden" href="#content">Skip navigation</a>
 <div id="app">
     {% block header %}
         <header role="banner">
@@ -129,7 +116,6 @@
                 {% include 'hp/blocks/gridadm/gridadm' %}
                 {# Instagram section#}
                 {% include 'hp/blocks/imggrid/imggrid' %}
-
             </main>
         {% endblock %}
     {% endblock %} {# END body block #}
@@ -137,6 +123,7 @@
         <footer>
             {% include "footersitemap/footersitemap" %}
             {% include "footerbrand/footerbrand" %}
+
         </footer>
     {% endblock %} {# END footer block #}
 
