@@ -16,12 +16,7 @@
             <img src="{{ data.img }}" alt="{% if data.alt %}{{ data.alt }}{% else %}Read more about {{ data.title }}{% endif  %}">
 {% endif %}
 {% if settings.variant == "video" %}
-            <span class="u-icon u-icon--circle" style="	position: absolute;
-		top: calc(50% - 25px); // calc is used to determine center by subtracting half the height of the icon
-		left: calc(50% - 25px); // calc is used to determine center by subtracting half the width of the icon
-		width: 50px;
-		height: 50px;
-		fill: white;">
+            <span class="u-icon u-icon--circle">
                 {% include '/icons/play.svg' %}
             </span>
 {% endif %}
