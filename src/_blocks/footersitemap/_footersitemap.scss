@@ -2,7 +2,7 @@
 	display: none;
 }
 
-@include media('>m') {
+@include media('>l') {
 	.b-footersitemap {
 		padding-left: 0;
 		padding-right: 0;
@@ -82,14 +82,14 @@
 	padding: 0 25px 40px;
 	margin-bottom: -25px;
 
-	@include media('>m') {
+	@include media('>l') {
 		border-top: 1px solid $grey-vader;
 		padding: 40px 30px;
 		margin-bottom: -40px;
 	}
 }
 
-@include media('>m') {
+@include media('>l') {
 	.cu-contact__group {
 		display: flex;
 		align-items: center;
@@ -106,7 +106,7 @@
 	text-transform: uppercase;
 	text-align: center;
 
-	@include media('>m') {
+	@include media('>l') {
 		flex: 1 1 auto;
 		margin-bottom: 0;
 		text-align: left;
@@ -133,7 +133,7 @@
 	margin: 30px 0 0 0;
 	list-style: none;
 
-	@include media('>m') {
+	@include media('>l') {
 		margin: 0;
 	}
 

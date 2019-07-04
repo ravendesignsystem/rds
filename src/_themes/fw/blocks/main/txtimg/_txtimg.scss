@@ -13,7 +13,7 @@
 	& + & {
 		margin-top: 30px; // Give more white space when back to back
 
-		@include media('>=m') {
+		@include media('>=l') {
 			margin-top: 60px;
 		}
 	}
@@ -31,11 +31,11 @@
 	text-align: left;
 	border-bottom: none;
 
-	@include media('>=s', '<=m') {
+	@include media('>=s', '<=l') {
 		text-align: center;
 	}
 
-	@include media('>=m') {
+	@include media('>=l') {
 		max-width: 420px;
 	}
 }
@@ -46,13 +46,13 @@
 	@include media('>=s', '<=l') {
 		max-height: 320px;
 	}
-	@include media('>=m') {
+	@include media('>=l') {
 		text-align: center;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-	@include media('>=m') {
+	@include media('>=l') {
 		right: 30px;
 		position: absolute;
 		top: 0;
@@ -70,7 +70,7 @@
 		text-align: center;
 	}
 
-	@include media('>=m') {
+	@include media('>=l') {
 		max-width: 420px;
 		font-size: $pixel18;
 		margin-left: 0;
@@ -82,7 +82,7 @@
 		margin-top: 20px;
 		white-space: normal;
 
-		@include media('>=s', '<=m') {
+		@include media('>=s', '<=l') {
 			max-width: 420px;
 			margin-left: auto;
 			margin-right: auto;
@@ -90,7 +90,7 @@
 	}
 }
 
-@include media('>=m') {
+@include media('>=l') {
 	.fw-txtimg__item--txtimg {
 		min-height: 350px;
 

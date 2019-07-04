@@ -89,7 +89,7 @@
 .u-grid--gap-l {
 	grid-gap: 50px;
 
-	@include media('>=m') {
+	@include media('>=l') {
 		grid-gap: 80px;
 	}
 }
@@ -109,7 +109,7 @@
 .u-grid--4 {
 	grid-template-columns: repeat(2, 1fr);
 
-	@include media('>m') {
+	@include media('>l') {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
