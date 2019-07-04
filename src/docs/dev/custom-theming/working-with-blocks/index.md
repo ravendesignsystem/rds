@@ -50,7 +50,7 @@ By using `u-block--white` the system will remove the top padding from each white
 There are 3 modifiers that you can use to set the width of the contents inside each block. Each size corresponds with the default breakpoint map.
 
 * `u-block--s` &mdash; Set the max width at 768px wide
-* `u-block--m` &mdash; Set the max width at 1024px wide
+* `u-block--l` &mdash; Set the max width at 1024px wide
 * `u-block--l` &mdash; Set the max width at 1366px wide
 
 The max width is only applied to the direct children of the main `u-block` wrapper, allowing the background colours, if applied, to span the full window width.
@@ -61,7 +61,7 @@ The max width is only applied to the direct children of the main `u-block` wrapp
 </div>
 
 
-<div class="u-block u-block--m">
+<div class="u-block u-block--l">
     <p>The p tag is a direct child, and now has a max-width of 1024px</p>
 </div>
 ```
@@ -99,7 +99,7 @@ The following are examples of how blocks should be used.
 ## White blocks with various max-widths
 
 ```html
-<div class="u-block u-block--white u-block--m">
+<div class="u-block u-block--white u-block--l">
     <h1>Medium block</h1>
     <ul>
         <li>List Item 1</li>

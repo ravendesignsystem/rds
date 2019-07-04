@@ -55,10 +55,10 @@ Output:
 
 ### Medium fixed width block example
 
-To create a medium-sized fixed width block, apply the modifier class `u-block--m`.
+To create a medium-sized fixed width block, apply the modifier class `u-block--l`.
 
 ```HTML
-<div class="b-main-foo u-block u-block--m">
+<div class="b-main-foo u-block u-block--l">
     <p style="background: #eee">Hello world</p>
 </div>
 ```
@@ -67,7 +67,7 @@ Output:
 
 {%include "inc" with {'close': 'true'} %}
 
-<div class="b-main-foo u-block u-block--m">
+<div class="b-main-foo u-block u-block--l">
     <p style="background: #eee">Hello world</p>
 </div>
 
@@ -198,7 +198,7 @@ By setting a consistent `padding-left` and `padding-right` we prevent fixed bloc
 To review, the available block utility classes and modifiers are:
 
 - u-block
-    - u-block--m
+    - u-block--l
     - u-block--l
 - u-block-full
 
@@ -211,9 +211,9 @@ The  `u-block` utility class:
 - adds system-wide bottom margins to all blocks.
 - helps us identify where a block begins, when looking at the HTML.
 
-### u-block--m
+### u-block--l
 
-The `u-block--m` modifier:
+The `u-block--l` modifier:
 
 - sets a max-wdth of 1024px on the fixed width block.
 

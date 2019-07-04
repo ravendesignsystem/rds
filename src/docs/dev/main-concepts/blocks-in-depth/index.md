@@ -200,14 +200,14 @@ These Blocks use modifiers of the `u-block` utility class to set the content's m
 
 {%include "inc" with {'close': 'true'} %}
 
-<div class="u-block u-block--m"><div style="background-color: lightgrey">
+<div class="u-block u-block--l"><div style="background-color: lightgrey">
 <p>This is using the code below, which restricts the content to the medium max-width.</p>
 </div></div>
 
 {%include "inc" with {'open': 'true'} %}
 
 ```html
-<div style="background-color: lightgrey" class="u-block u-block--m">
+<div style="background-color: lightgrey" class="u-block u-block--l">
  <p>Restricts the content to the medium max-width.</p>
 </div>
 ```
@@ -226,7 +226,7 @@ These Blocks use modifiers of the `u-block` utility class to set the content's m
 </div>
 ```
 
-All Max-Width Blocks must use either a `u-block--s`, `u-block--m`, or `u-block--l` class in its opening tag.
+All Max-Width Blocks must use either a `u-block--s`, `u-block--l`, or `u-block--l` class in its opening tag.
 
 **Note**: for better readability, the recommended max-width for content blocks with type is `u-block--s`.
 

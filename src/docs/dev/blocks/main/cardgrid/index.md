@@ -82,7 +82,7 @@ Four and three column grids are available. To control the number of columns, adj
 
 {%include "inc" with {'close': 'true'} %}
 
-<div class="u-block u-block--grey u-block--m">
+<div class="u-block u-block--grey u-block--l">
 	<div class="b-cardgrid u-grid u-grid--4">
 		{%include "card/data/card--base"%}
 		{%include "card/data/card--base"%}
@@ -111,7 +111,7 @@ If you need a 'Load more' button under the card grid add it within the `u-block`
 
 {%include "inc" with {'close': 'true'} %}
 
-<div class="u-block u-block--white u-block--m">
+<div class="u-block u-block--white u-block--l">
 	<div class="b-cardgrid u-grid u-grid--4">
 		{%include "card/data/card--base"%}
         {%include "card/data/card--base"%}
@@ -124,7 +124,7 @@ If you need a 'Load more' button under the card grid add it within the `u-block`
 {%include "inc" with {'open': 'true'} %}
 
 ```
-<div class="u-block u-block--white u-block--m">
+<div class="u-block u-block--white u-block--l">
 	<div class="b-cardgrid u-grid u-grid--4">
 		{% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
         {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
@@ -139,7 +139,7 @@ Or, if you want to use a CTA to link off to an archive or another page.
 
 {%include "inc" with {'close': 'true'} %}
 
-<div class="u-block u-block--white u-block--m">
+<div class="u-block u-block--white u-block--l">
 	<div class="b-cardgrid u-grid u-grid--4">
 		{%include "card/data/card--base"%}
         {%include "card/data/card--base"%}
@@ -152,7 +152,7 @@ Or, if you want to use a CTA to link off to an archive or another page.
 {%include "inc" with {'open': 'true'} %}
 
 ```
-<div class="u-block u-block--white u-block--m">
+<div class="u-block u-block--white u-block--l">
 	<div class="b-cardgrid u-grid u-grid--4">
 		{% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
         {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
@@ -168,7 +168,7 @@ Or, if you want to use a CTA to link off to an archive or another page.
 
 Control the block's width and background colour using the following [block settings](#)
 
-- **Block widths**: `u-block--s`\*, `u-block--m`, `u-block--l`
+- **Block widths**: `u-block--s`\*, `u-block--l`, `u-block--l`
 - **Block colours**: `u-block--white`\*, `u-block--grey`
 
 **Note: \*** = default
@@ -177,7 +177,7 @@ Control the block's width and background colour using the following [block setti
 
 {%include "inc" with {'close': 'true'} %}
 
-<section class="u-block u-block--grey u-block--m">
+<section class="u-block u-block--grey u-block--l">
 	<h2>Grid block with medium width and grey background setting</h2>
 	<div class="b-cardgrid u-grid u-grid--4">
 		{%include "card/data/card--base"%}
@@ -190,7 +190,7 @@ Control the block's width and background colour using the following [block setti
 {%include "inc" with {'open': 'true'} %}
 
 ```html
-<div class="u-block u-block--grey u-block--m">
+<div class="u-block u-block--grey u-block--l">
 	<div class="b-cardgrid u-grid u-grid--4">
 		{% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
         {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
@@ -210,7 +210,7 @@ Grid block cards should:
 
 ## Implementation Notes
 
-- If you are building pages with the Card Grid block that do not contain [Content blocks](#), use the four column grid and the medium-size width setting `u-block--m`.
+- If you are building pages with the Card Grid block that do not contain [Content blocks](#), use the four column grid and the medium-size width setting `u-block--l`.
 
 ## When To Avoid
 

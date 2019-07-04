@@ -11,7 +11,7 @@ title: Block utility class cheat sheet
 
 2. Does your block width need to be bigger then the default 768pxCHECK size, also referred to as small?
 
-- **Yes**: add either `u-block--m` or `u-block--l` to meet your need and see the next question on this page.
+- **Yes**: add either `u-block--l` or `u-block--l` to meet your need and see the next question on this page.
 - **No**: see the next question on this page
 
 3. Do you want to delineate a clear section for your block by giving it a full-width background colour?
@@ -49,15 +49,15 @@ title: Block utility class cheat sheet
 
 {%include "inc" with {'open': 'true'} %}
 
-## u-block--m
+## u-block--l
 ```HTML
-<div class="u-block u-block--m">
+<div class="u-block u-block--l">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel nunc a felis facilisis facilisis quis et sem. Proin libero nunc, pulvinar id scelerisque in, feugiat at quam.</p>
 </div>
 ```
 {%include "inc" with {'close': 'true'} %}
 
-<div class="u-block u-block--m">
+<div class="u-block u-block--l">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel nunc a felis facilisis facilisis quis et sem. Proin libero nunc, pulvinar id scelerisque in, feugiat at quam.</p>
       </div>
 
