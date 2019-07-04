@@ -79,13 +79,13 @@ title: Block utility class cheat sheet
 
 ## u-block-m & u-block--grey
 ```HTML
-<div class="u-block u-block--m u-block--grey">
+<div class="u-block u-block--l u-block--grey">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel nunc a felis facilisis facilisis quis et sem. Proin libero nunc, pulvinar id scelerisque in, feugiat at quam. </p>
 </div>
 ```
 {%include "inc" with {'close': 'true'} %}
 
-<div class="u-block u-block--m u-block--grey">
+<div class="u-block u-block--l u-block--grey">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel nunc a felis facilisis facilisis quis et sem. Proin libero nunc, pulvinar id scelerisque in, feugiat at quam.</p>
 </div>
 
