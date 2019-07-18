@@ -33,70 +33,74 @@
 	};
 
 	const mastheadModal = function(btn) {
-		const modalClosed = modal.classList.contains('is-hidden'),
-			menuShow = mastheadHamburger.classList.contains('masthead__hamburger--show');
+		if (modal) {
+			const modalClosed = modal.classList.contains('is-hidden'),
+				menuShow = mastheadHamburger.classList.contains(
+					'masthead__hamburger--show'
+				);
 
-		// if menu is open and search is clicked
-		if (modalClosed === false && btn === 'search') {
-			modalSearch.classList.remove('is-hidden');
-			preventScroll();
-		} else {
-			modal.classList.toggle('is-hidden');
-			hamburger.classList.toggle('is-active');
-			modal.classList.remove('u-bg-grey');
-			modalMenu.classList.add('is-hidden');
-		}
-
-		// target all lis items except hamburger
-		const x = document.querySelectorAll(
-			'.b-masthead li:not(.masthead__hamburger)'
-		);
-		let i;
-
-		if (btn === 'search' || btn === 'login') {
-			if (btn === 'search') {
-				modalSearch.classList.remove('is-hidden'),
-					document.querySelector('.modal__search .searchform__input').focus();
-				if (navLogin) {
-					modalLogin.classList.add('is-hidden');
-				}
+			// if menu is open and search is clicked
+			if (modalClosed === false && btn === 'search') {
+				modalSearch.classList.remove('is-hidden');
+				preventScroll();
 			} else {
-				modalLogin.classList.remove('is-hidden');
-				modal.classList.add('u-bg-grey'),
-					document.querySelector('.login__field').focus();
+				modal.classList.toggle('is-hidden');
+				hamburger.classList.toggle('is-active');
+				modal.classList.remove('u-bg-grey');
+				modalMenu.classList.add('is-hidden');
 			}
 
-			if (modalClosed === true) {
+			// target all lis items except hamburger
+			const x = document.querySelectorAll(
+				'.b-masthead li:not(.masthead__hamburger)'
+			);
+			let i;
+
+			if (btn === 'search' || btn === 'login') {
+				if (btn === 'search') {
+					modalSearch.classList.remove('is-hidden'),
+						document.querySelector('.modal__search .searchform__input').focus();
+					if (navLogin) {
+						modalLogin.classList.add('is-hidden');
+					}
+				} else {
+					modalLogin.classList.remove('is-hidden');
+					modal.classList.add('u-bg-grey'),
+						document.querySelector('.login__field').focus();
+				}
+
+				if (modalClosed === true) {
+					// toggle all li items except hamburger
+					for (i = 0; i < x.length; i++) {
+						x[i].classList.toggle('is-hidden');
+					}
+				}
+				mastheadSearch.classList.add('is-hidden');
+				if (menuShow === false) {
+					mastheadHamburger.classList.toggle('u-display-inline-b');
+				}
+			} else {
 				// toggle all li items except hamburger
 				for (i = 0; i < x.length; i++) {
 					x[i].classList.toggle('is-hidden');
 				}
-			}
-			mastheadSearch.classList.add('is-hidden');
-			if (menuShow === false) {
-				mastheadHamburger.classList.toggle('u-display-inline-b');
-			}
-		} else {
-			// toggle all li items except hamburger
-			for (i = 0; i < x.length; i++) {
-				x[i].classList.toggle('is-hidden');
-			}
 
-			mastheadSearch.classList.remove('is-hidden'),
+				mastheadSearch.classList.remove('is-hidden');
 				modalSearch.classList.add('is-hidden');
-			modalMenu.classList.toggle('is-hidden');
+				modalMenu.classList.toggle('is-hidden');
 
-			if (btn === 'more') {
-				mastheadHamburger.classList.add('u-display-inline-b'),
-					mastheadSearch.classList.add('is-hidden'),
-					modalMenu.classList.toggle('is-hidden');
-			} else if (
-				menuShow === false &&
-				window.matchMedia('(min-width: 768px)').matches
-			) {
-				mastheadHamburger.classList.remove('u-display-inline-b');
-				if (navLogin) {
-					modalLogin.classList.add('is-hidden');
+				if (btn === 'more') {
+					mastheadHamburger.classList.add('u-display-inline-b'),
+						mastheadSearch.classList.add('is-hidden'),
+						modalMenu.classList.toggle('is-hidden');
+				} else if (
+					menuShow === false &&
+					window.matchMedia('(min-width: 768px)').matches
+				) {
+					mastheadHamburger.classList.remove('u-display-inline-b');
+					if (navLogin) {
+						modalLogin.classList.add('is-hidden');
+					}
 				}
 			}
 		}

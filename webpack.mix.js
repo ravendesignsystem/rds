@@ -35,20 +35,36 @@ mix
 
 if (env === 'production') {
 	mix
-		.sass('src/_themes/core/scss/core.scss', 'dist/core/css/rds-core-min')
-		.sass('src/_themes/cu/scss/cu.scss', 'dist/themes/cu/1.2.2/cu.min.css')
-		.js('src/_themes/cu/js/cu.js', 'dist/themes/cu/1.2.2/cu.min.js')
-		.js('src/_themes/core/js/core.js', 'dist/core/js/rds-core-min')
-		.copy('build/docs', 'docs');
-	// .sass('src/_themes/cms/scss/_cms.scss', 'dist/themes/cms/css/cms-min')
-	// .sass('src/_themes/ff/scss/_ff.scss', 'dist/themes/ff/css/ff-min')
-	// .sass('src/_themes/fw/scss/_fw.scss', 'dist/themes/fw/css/fw-min')
+		.sass('src/_themes/core/scss/core.scss', 'rds/core/scss/core.scss')
+		.js('src/_themes/core/js/core.js', 'rds/core/js/core.js')
+		.copy('build/docs', 'docs')
+		.copy('src/_themes/core/scss/base/vendor/*.scss', 'rds/core/scss/vendor/')
+		.copy('src/_themes/core/scss/base/vars/*.scss', 'rds/core/scss/vars/')
+		.copy('src/_blocks/banner/*.scss', 'rds/blocks/banner/')
+		.copy('src/_blocks/cardgrid/*.scss', 'rds/blocks/cardgrid')
+		.copy('src/_blocks/content/*.scss', 'rds/blocks/content')
+		.copy('src/_blocks/footersimple/*.scss', 'rds/blocks/footersimple')
+		.copy('src/_blocks/footersitemap/*.scss', 'rds/blocks/footersitemap')
+		.copy('src/_blocks/globalnav/*.scss', 'rds/blocks/globalnav')
+		.copy('src/_blocks/globalnav/*.scss', 'rds/blocks/globalnav')
+		.copy('src/_blocks/imgfull/*.scss', 'rds/blocks/imgfull')
+		.copy('src/_blocks/listing/*.scss', 'rds/blocks/listing')
+		.copy('src/_blocks/login/*.scss', 'rds/blocks/login')
+		.copy(
+			['src/_blocks/masthead/*.scss', 'src/_blocks/masthead/*.js'],
+			'rds/blocks/masthead'
+		)
+		.copy(['src/_blocks/menu/*.scss', 'src/_blocks/menu/*.js'], 'rds/blocks/menu')
+		.copy('src/_blocks/search/*.scss', 'rds/blocks/search')
+		.copy('src/_blocks/sidebar/*.scss', 'rds/blocks/sidebar')
+		.copy('src/_blocks/textimg/*.scss', 'rds/blocks/textimg');
 }
+//
 
 if (env === 'dist') {
 	mix.minify
-		.sass('src/_themes/cu/scss/cu.scss', 'dist/themes/cu/css')
-		.js('src/_themes/cu/js/cu.js', 'dist/themes/cu/js');
+		.sass('src/_themes/core/scss/core.scss', 'dist/core/core.scss')
+		.js('src/_themes/cu/js/cu.js', 'dist/core/core.js');
 }
 
 if (env === 'package') {

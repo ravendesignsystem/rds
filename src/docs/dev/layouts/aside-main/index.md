@@ -6,11 +6,11 @@ title: Aside + Main Layout
 
 The `Aside + Main` layout establishes two columns, with an aside on the left-hand side, and a content area on the right, and has a maximum width of 1028px.
 
-## Left-hand aside
+### Left-hand aside
 
 The left-hand aside is used in the [CMS theme](#) to house site navigation and other links. The aside has a fixed width of 200px, roughly 20% of the full layout width, and disappears from view below 720px.
 
-## Main
+### Main
 
 The main area would contain all of the primary content of the page. Inside the main tag, a div with a class of `body__content` is required, and each content item inside this div should be a block.
 

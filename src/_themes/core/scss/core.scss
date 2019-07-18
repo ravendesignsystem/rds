@@ -1,4 +1,4 @@
-// Core v 1.0.4
+// Core v 1.0.0
 
 // Base partials
 // -------------
@@ -27,7 +27,7 @@
 @import '../../../_components/menupopup/menupopup';
 @import '../../../_components/searchform/searchform';
 
-// Content/optional components
+// Content components
 @import '../../../_components/accordion/accordion';
 @import '../../../_components/card/card';
 @import '../../../_components/imagecaption/imagecaption';
@@ -35,7 +35,7 @@
 @import '../../../_components/table/table';
 @import '../../../_components/video/video';
 
-// I hate IE
+// We still hate IE
 @import 'base/ie-fixes/ie-fixes';
 
 /*

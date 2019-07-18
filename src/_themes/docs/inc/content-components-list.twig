@@ -45,6 +45,15 @@
 	{% endfor %}
 </ul>
 
+<p><strong>Heading components</strong></p>
+<ul>
+	{% for item in site.components %}
+		{% if item.section == 'headings' %}
+			<li><a href="{{ site.url }}dev/components/{{ item.section }}/{{ item.handle }}/">{{ item.name }}</a></li>
+		{% endif %}
+	{% endfor %}
+</ul>
+
 <p><strong>Icon components</strong></p>
 <ul>
 	{% for item in site.components %}

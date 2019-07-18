@@ -1,9 +1,7 @@
-/*
- * Base Banner Styles
- * =======================================
- */
+// Banner block
+// ------------
 
-// Pull grey rows up when directly after banner
+// Pulls grey rows up when directly after banner
 .has-banner + main > .u-block-row-grey:first-of-type {
 	padding-top: 0;
 }
@@ -23,10 +21,8 @@
 	margin-bottom: 0;
 }
 
-/*
- * Base Banner Content Styles
- * =======================================
- */
+// Banner content
+// --------------
 
 .b-banner h1 {
 	margin: 0;
@@ -50,19 +46,7 @@
 	text-align: center;
 }
 
-// need for Yoast plugin UGH
-// TODO maybe do custom BC in WP sometime and get rid of this
-.breadcrumb_last {
-	display: none;
-}
 
-.banner__breadcrumb-item + .banner__breadcrumb-item::before {
-	display: inline-block;
-	padding-right: 0.5rem;
-	padding-left: 0.5rem;
-	content: '/';
-	font-weight: 300;
-}
 
 .banner__breadcrumb-item {
 	font-size: $pixel14;
@@ -76,9 +60,20 @@
 	}
 }
 
-.banner__breadcrumb-item.active {
+.banner__breadcrumb-item + .banner__breadcrumb-item::before {
+	display: inline-block;
+	padding-right: 0.5rem;
+	padding-left: 0.5rem;
+	content: '/';
 	font-weight: 300;
 }
+
+// need for Yoast plugin UGH
+// TODO maybe do custom BC in WP sometime and get rid of this
+.breadcrumb_last {
+	display: none;
+}
+
 
 .banner__buttons {
 	margin-top: 10px;
