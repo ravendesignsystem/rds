@@ -26,7 +26,7 @@ For example, in the three column layout, the first column is an `<aside>`, the s
 +-------+-------+-------+
 ```
 
-The Layout above is referenced as the `Aside + Main + Aside` layout, or ` A-M-A`, for short. You will see these references in the markup and styles.
+The Layout above is referenced as the `Aside + Main + Aside` layout, or ` A-M-A`, for short. 
 
 ## Two column: A-M layout
 
