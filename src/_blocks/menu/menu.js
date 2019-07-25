@@ -2,8 +2,7 @@
 
 let navBody = document.querySelector('.body__nav'),
 	navExpand = document.querySelector('.menu__toggle'),
-	checks = document.querySelectorAll('.b-menu input'),
-	daLinks = document.querySelectorAll('.b-menu a');
+	checks = document.querySelectorAll('.b-menu input');
 
 if (navExpand) {
 	function expandMenu() {
