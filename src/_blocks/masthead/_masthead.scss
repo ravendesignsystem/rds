@@ -288,7 +288,7 @@ nav + .masthead__primarynav > .masthead__site {
 .masthead__hamburger {
 	display: list-item;
 
-	@include media('>=1190px') {
+	@include media('>=1200px') {
 		display: none;
 	}
 }

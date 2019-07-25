@@ -95,7 +95,7 @@
 				if (btn === 'more') {
 					mastheadHamburger.classList.add('u-display-inline-b'),
 						mastheadSearch.classList.add('is-hidden'),
-						modalMenu.classList.toggle('is-hidden');
+						modalMenu.classList.remove('is-hidden');
 				} else if (
 					menuShow === false &&
 					window.matchMedia('(min-width: 768px)').matches
