@@ -75,7 +75,9 @@
 						x[i].classList.toggle('is-hidden');
 					}
 				}
-				mastheadSearch.classList.add('is-hidden');
+				if (mastheadSearch) {
+					mastheadSearch.classList.add('is-hidden');
+				}
 				if (menuShow === false) {
 					mastheadHamburger.classList.toggle('u-display-inline-b');
 				}
@@ -84,9 +86,10 @@
 				for (i = 0; i < x.length; i++) {
 					x[i].classList.toggle('is-hidden');
 				}
-
-				mastheadSearch.classList.remove('is-hidden');
-				modalSearch.classList.add('is-hidden');
+				if (mastheadSearch) {
+					mastheadSearch.classList.remove('is-hidden');
+					modalSearch.classList.add('is-hidden');
+				}
 				modalMenu.classList.toggle('is-hidden');
 
 				if (btn === 'more') {
