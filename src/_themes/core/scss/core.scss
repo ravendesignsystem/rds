@@ -6,6 +6,8 @@
 @import 'base/vars/vars';
 @import 'base/reboot/reboot';
 @import 'base/utilities/utilities';
+// We still hate IE
+@import 'base/ie-fixes/ie-fixes';
 
 // Layouts
 // -------
@@ -35,8 +37,7 @@
 @import '../../../_components/table/table';
 @import '../../../_components/video/video';
 
-// We still hate IE
-@import 'base/ie-fixes/ie-fixes';
+
 
 /*
                           .'`  '-.

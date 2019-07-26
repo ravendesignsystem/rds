@@ -1,2 +1,2 @@
 // *** CORE JS ***
-import '../../../_themes/core/js/core';
+import '../../../_core/js/core';

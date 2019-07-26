@@ -35,56 +35,25 @@ mix
 
 if (env === 'production') {
 	mix
-		.sass('src/_themes/core/scss/core.scss', 'rds/core/scss/core.scss')
-		.js('src/_themes/core/js/core.js', 'rds/core/js/core.js')
+		.js('src/_core/js/core.js', 'rds/core/js/core.js')
+		.sass('src/_components/_components.scss', 'rds/_components/_components.scss')
+		.copyDirectory('src/_core/layouts', 'rds/core/layouts')
+		.copyDirectory('src/_core/scss', 'rds/core/scss')
 		.copy('build/docs', 'docs')
-		.copy('src/_themes/core/scss/base/vendor/*.scss', 'rds/core/scss/vendor/')
-		.copy('src/_themes/core/scss/base/vars/*.scss', 'rds/core/scss/vars/')
-		.copy('src/_blocks/banner/*.scss', 'rds/blocks/banner/')
-		.copy('src/_blocks/cardgrid/*.scss', 'rds/blocks/cardgrid')
-		.copy('src/_blocks/content/*.scss', 'rds/blocks/content')
-		.copy('src/_blocks/footersimple/*.scss', 'rds/blocks/footersimple')
-		.copy('src/_blocks/footersitemap/*.scss', 'rds/blocks/footersitemap')
-		.copy('src/_blocks/globalnav/*.scss', 'rds/blocks/globalnav')
-		.copy('src/_blocks/globalnav/*.scss', 'rds/blocks/globalnav')
-		.copy('src/_blocks/imgfull/*.scss', 'rds/blocks/imgfull')
-		.copy('src/_blocks/listing/*.scss', 'rds/blocks/listing')
-		.copy('src/_blocks/login/*.scss', 'rds/blocks/login')
-		.copy(
-			['src/_blocks/masthead/*.scss', 'src/_blocks/masthead/*.js'],
-			'rds/blocks/masthead'
-		)
-		.copy(['src/_blocks/menu/*.scss', 'src/_blocks/menu/*.js'], 'rds/blocks/menu')
-		.copy('src/_blocks/search/*.scss', 'rds/blocks/search')
-		.copy('src/_blocks/sidebar/*.scss', 'rds/blocks/sidebar')
-		.copy('src/_blocks/textimg/*.scss', 'rds/blocks/textimg');
-}
-//
-
-if (env === 'dist') {
-	mix.minify
-		.sass('src/_themes/core/scss/core.scss', 'dist/core/core.scss')
-		.js('src/_themes/cu/js/cu.js', 'dist/core/core.js');
-}
-
-if (env === 'package') {
-	mix
-		.sass('src/_themes/core/scss/core.scss', 'package/core/scss/_core.scss')
-		.copy(
-			'src/_themes/core/scss/base/vendor/_include-media.scss',
-			'package/core/scss/base/vendor/'
-		)
-		.copy(
-			'src/_themes/core/scss/base/vars/_vars.scss',
-			'package/core/scss/base/vars/'
-		)
-		// Blocks
-		.copy(
-			'src/_blocks/footersimple/_footersimple.scss',
-			'package/blocks/footersimple/'
-		)
-		.copy(
-			'src/_blocks/footersitemap/_footersitemap.scss',
-			'package/blocks/footersitemap/'
-		);
+		.copy('src/_blocks/banner/*.scss', 'rds/_blocks/banner/')
+		.copy('src/_blocks/cardgrid/*.scss', 'rds/_blocks/cardgrid')
+		.copy('src/_blocks/content/*.scss', 'rds/_blocks/content')
+		.copy('src/_blocks/footerbrand/*.scss', 'rds/_blocks/footerbrand')
+		.copy('src/_blocks/footersimple/*.scss', 'rds/_blocks/footersimple')
+		.copy('src/_blocks/footersitemap/*.scss', 'rds/_blocks/footersitemap')
+		.copy('src/_blocks/globalnav/*.scss', 'rds/_blocks/globalnav')
+		.copy('src/_blocks/globalnav/*.scss', 'rds/_blocks/globalnav')
+		.copy('src/_blocks/imgfull/*.scss', 'rds/_blocks/imgfull')
+		.copy('src/_blocks/listing/*.scss', 'rds/_blocks/listing')
+		.copy('src/_blocks/login/*.scss', 'rds/_blocks/login')
+		.copy('src/_blocks/masthead/*.scss', 'rds/_blocks/masthead/')
+		.copy('src/_blocks/menu/*.scss', 'rds/_blocks/menu/')
+		.copy('src/_blocks/search/*.scss', 'rds/_blocks/search')
+		.copy('src/_blocks/sidebar/*.scss', 'rds/_blocks/sidebar')
+		.copy('src/_blocks/textimg/*.scss', 'rds/_blocks/textimg');
 }
