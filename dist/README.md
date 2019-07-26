@@ -1,3 +1,5 @@
-# rds-npm
+# RDS npm release
 
-foo
+Docs: https://ravendesignsystem.github.io/rds/
+
+TODO: Obviously, this needs updating.
