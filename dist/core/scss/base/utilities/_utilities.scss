@@ -1,0 +1,355 @@
+//  RDS utility classes
+//  ---------------------
+//
+//  Table of Contents:
+//
+//   1. Grid
+//   2. Block utils
+//   3. Icon utils
+//   4. Property overrides
+//   5. Centering
+//   6. Misc utils
+//   7. Content
+
+// 1. Grid system
+// --------------
+
+// CSS Grid IE11 Fallback
+// ----------------------
+
+// TODO: look into @support grid
+@media screen and (-ms-high-contrast: active),
+	screen and (-ms-high-contrast: none) {
+	.u-grid {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: -#{$grid-gutter} !important;
+
+		& > * {
+			margin-bottom: $grid-gutter;
+
+			&:not(:last-child) {
+				margin-right: $grid-gutter;
+			}
+		}
+	}
+
+	@include media('<=s') {
+		.u-grid--2 > *,
+		.u-grid--3 > *,
+		.u-grid--4 > * {
+			width: calc(50% - #{$grid-gutter - 15});
+
+			&:nth-child(2n) {
+				margin-right: 0 !important;
+			}
+		}
+
+		.u-grid--s1 > * {
+			width: 100%;
+			margin-right: 0 !important;
+		}
+	}
+
+	@include media('>s') {
+		.u-grid--2 > * {
+			width: calc(50% - #{$grid-gutter - 15});
+
+			&:nth-child(2n) {
+				margin-right: 0 !important;
+			}
+		}
+
+		.u-grid--3 > * {
+			width: calc(33.333333% - #{$grid-gutter - 10});
+
+			&:nth-child(3n) {
+				margin-right: 0 !important;
+			}
+		}
+
+		.u-grid--4 > * {
+			width: calc(25% - #{$grid-gutter - 7.5});
+
+			&:nth-child(4n) {
+				margin-right: 0 !important;
+			}
+		}
+	}
+}
+
+// CSS Grid
+// --------
+
+.u-grid {
+	display: grid;
+	grid-gap: $grid-gutter;
+}
+
+.u-grid--gap-l {
+	grid-gap: 50px;
+
+	@include media('>=l') {
+		grid-gap: 80px;
+	}
+}
+
+.u-grid--2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.u-grid--3 {
+	grid-template-columns: repeat(2, 1fr);
+
+	@include media('>s') {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.u-grid--4 {
+	grid-template-columns: repeat(2, 1fr);
+
+	@include media('>l') {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@include media('<=s') {
+	.u-grid--s1 {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+// 2. Block utils
+// --------------
+
+.u-block {
+	padding: 25px;
+
+	@include media('>s') {
+		padding: 40px 30px;
+	}
+}
+
+.u-block--white {
+	background-color: white;
+}
+
+.u-block--grey {
+	background-color: $grey;
+}
+
+// cant use a :not on the style above because chrome doesnt accept multi level classes in :not
+// this disallows gry blocks when there are sidebars
+.body__container > .u-block--grey {
+	background-color: white;
+}
+
+.u-block--black {
+	background-color: $black;
+	color: white;
+}
+
+// Block Spacing
+// -------------
+
+.u-block--white:not(.u-block--full) + .u-block--white,
+.u-block--grey:not(.u-block--full) + .u-block--grey:not(.u-block--padme),
+.u-block--black:not(.u-block--full) + .u-block--black {
+	padding-top: 0;
+}
+
+// Utility widths
+// --------------
+
+.u-block--s > *,
+.u-width-s {
+	max-width: #{map-get($breakpoints, s)};
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.u-block--l > * {
+	max-width: #{map-get($breakpoints, l)};
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Width Modifiers
+// ---------------
+
+.u-block--full {
+	padding: 0 !important;
+}
+
+.u-block--border-top {
+	border-top: 1px solid $grey-vader;
+}
+
+// 3. Icon utils
+// -------------
+
+.u-icon {
+	fill: $black;
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+
+	&:hover {
+		text-decoration: none !important;
+	}
+
+	svg {
+		position: relative;
+		display: inline-block;
+		height: 1em;
+		width: 1em;
+		flex-shrink: 0;
+		margin-right: 0.3em;
+	}
+}
+
+a.u-icon svg:hover {
+	cursor: pointer;
+}
+
+.u-icon--red svg path {
+	fill: $red;
+}
+
+.u-icon--grey svg path {
+	fill: $grey-vader;
+}
+
+.u-icon--circle {
+	&:before {
+		width: 1em;
+		height: 1em;
+		content: '';
+		background-color: $grey;
+		position: absolute;
+		border-radius: 50%;
+	}
+
+	svg {
+		padding: 0.3em;
+	}
+}
+
+// 4. Property overrides
+// ----------------------
+
+//.u-link {
+//	color: $link !important;
+//	border-bottom: 1px solid #c8dae3;
+//
+//	&:hover {
+//		border-bottom: 1px solid $red;
+//	}
+//}
+
+.u-bg-grey {
+	background-color: $grey !important;
+}
+
+.u-no-padding {
+	padding: 0 !important;
+}
+
+.u-padding-top-s {
+	padding-top: 20px !important;
+}
+
+.u-margin-bottom-s {
+	margin-bottom: 20px !important;
+}
+
+// 6. Misc utils
+// -------------
+a.u-link,
+.u-link a {
+	color: $link;
+
+	&:hover {
+		color: $red;
+	}
+}
+
+.u-sticky {
+	position: sticky;
+	top: 0;
+}
+
+.is-hidden {
+	display: none !important;
+}
+
+.is-visible {
+	display: inline-block !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
+.u-display-inline-b {
+	display: inline-block !important;
+}
+
+.u-visually-hidden {
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
+	position: absolute;
+}
+
+// 7. Content
+// -----------
+
+// TODO look for function to replace wp"s alignleft
+.u-img-left,
+.alignleft {
+	float: left;
+	margin-right: 30px;
+}
+
+// TODO look for function to replace wp"s alignright
+.u-img-right,
+.alignright {
+	float: right;
+	margin-left: 30px;
+}
+
+// hide on small screens
+@include media('<=s') {
+	.u-hide-s {
+		display: none !important;
+	}
+}
+
+//TODO Review below. Add more animations?
+
+.u-ani-fadein--1000 {
+	animation-name: u-ani-fadein;
+	animation-duration: 1000ms;
+	animation-fill-mode: forwards;
+}
+
+@keyframes u-ani-fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes u-ani-fadeout {
+	100% {
+		opacity: 0;
+	}
+	0% {
+		opacity: 1;
+	}
+}

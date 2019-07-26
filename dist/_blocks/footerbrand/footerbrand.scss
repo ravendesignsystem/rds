@@ -1,0 +1,40 @@
+.u-block--black + .u-block--black > .b-footerbrand {
+	padding-top: 40px;
+}
+
+.b-footerbrand {
+	max-width: 280px;
+	margin: auto;
+
+	@include media('>s') {
+		max-width: 330px;
+	}
+}
+
+.footerbrand__logo {
+	svg {
+		width: 100%;
+	}
+}
+
+.footerbrand__legal {
+	display: flex;
+	justify-content: space-between;
+	margin: 20px auto 0 auto;
+	list-style: none;
+
+	li {
+		font-size: $pixel12;
+
+		a {
+			color: $grey-kenobi;
+			border-bottom: 1px solid $grey-vader;
+			padding-bottom: 4px;
+
+			&:hover {
+				color: white;
+				border-bottom: 1px solid white;
+			}
+		}
+	}
+}

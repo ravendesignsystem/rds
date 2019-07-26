@@ -1,0 +1,335 @@
+// Banner block
+// ------------
+
+// Pulls grey rows up when directly after banner
+.has-banner + main > .u-block-row-grey:first-of-type {
+	padding-top: 0;
+}
+
+.b-banner {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+
+	@include media('>s') {
+		padding: 40px;
+	}
+}
+
+.b-banner .banner__buttons {
+	margin-bottom: 0;
+}
+
+// Banner content
+// --------------
+
+.b-banner h1 {
+	margin: 0;
+	padding: 0;
+	// TODO: font-size $pixel28 removed, matches base H1 below small
+
+	@include media('>s') {
+		max-width: 768px;
+		font-size: $pixel36;
+		line-height: 1.2;
+	}
+}
+
+.banner__breadcrumbs {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 0 5px 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+
+
+
+.banner__breadcrumb-item {
+	font-size: $pixel14;
+
+	a {
+		font-weight: 300;
+
+		&:hover {
+			color: $red;
+		}
+	}
+}
+
+.banner__breadcrumb-item + .banner__breadcrumb-item::before {
+	display: inline-block;
+	padding-right: 0.5rem;
+	padding-left: 0.5rem;
+	content: '/';
+	font-weight: 300;
+}
+
+// need for Yoast plugin UGH
+// TODO maybe do custom BC in WP sometime and get rid of this
+.breadcrumb_last {
+	display: none;
+}
+
+
+.banner__buttons {
+	margin-top: 10px;
+}
+
+.banner__buttons .c-buttoncta {
+	margin-top: 10px;
+}
+
+/*
+ * Banner Image Modifier
+ * =======================================
+ */
+// TODO can we get rid of that commented out line
+.b-banner--img {
+	position: relative;
+	background-size: cover;
+	background-position: center center;
+	padding: 40px;
+
+	&:after {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		content: '';
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+
+	@include media('>s') {
+		padding-top: 150px;
+		padding-bottom: 150px;
+	}
+}
+
+.b-banner--img .banner__container {
+	z-index: 1;
+	width: 100%;
+	max-width: 1426px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include media('>s') {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	// Restrict content inside to a set width
+	& > *:not(nav) {
+		max-width: 768px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.b-banner--img .banner__breadcrumbs {
+	padding-bottom: 10px;
+	margin: 0;
+}
+
+.b-banner--img .banner__container--left {
+	text-align: left;
+
+	.banner__breadcrumbs {
+		justify-content: flex-start;
+	}
+
+	& > *:not(nav) {
+		margin-left: 0;
+	}
+}
+
+.b-banner--img .banner__container--right {
+	text-align: right;
+
+	.banner__breadcrumbs {
+		justify-content: flex-end;
+	}
+
+	& > *:not(nav) {
+		margin-right: 0;
+	}
+}
+
+.b-banner--img h1,
+.b-banner--img .banner__breadcrumbs,
+.b-banner--img .banner__breadcrumb-item a {
+	color: white;
+}
+
+.b-banner--img .banner__breadcrumb-item a:hover {
+	color: $red;
+}
+
+/*
+ * Banner Image Position Modifier
+ * =======================================
+ */
+
+.b-banner--img-top {
+	background-position: center top;
+}
+
+.b-banner--img-bottom {
+	background-position: center bottom;
+}
+
+/*
+ * Banner Image Opacity Modifier
+ * =======================================
+ */
+
+//.b-banner-img-fade:after {
+//	background-color: rgba(0, 0, 0, 1);
+//	animation-name: u-ani-fadeout;
+//	animation-duration: 1000ms;
+//	animation-fill-mode: forwards;
+//}
+.b-banner--img-faint:after {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.b-banner--img-light:after {
+	background-color: rgba(0, 0, 0, 0.35);
+	//animation-name: u-ani-fadein;
+	//animation-duration: 3000ms;
+	//animation-fill-mode: forwards;
+}
+
+.b-banner--img-dark:after {
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+// Main Carousel Styles
+//-------------------------
+// TODO remove from core? Commenting out for now
+//.b-banner--carousel {
+//	height: 300px;
+//	padding-top: $block-padding-s;
+//	padding-bottom: $block-padding-s;
+//
+//	@include media(">s") {
+//		height: 500px;
+//		padding-top: $block-padding-m;
+//		padding-bottom: $block-padding-m;
+//	}
+//
+//	.banner__container {
+//		width: 100%;
+//		height: 100%;
+//		display: flex;
+//		flex-direction: column;
+//		justify-content: center;
+//		align-items: center;
+//	}
+//}
+
+// Main Wrapper Position
+//-------------------------
+
+//.tns-outer {
+//	position: relative;
+//
+//	& + .u-block-full--grey {
+//		margin-top: -$block-margin;
+//	}
+//}
+
+// Arrow Navigation
+// Only used above small
+//-------------------------
+//
+//.tns-controls {
+//	display: none;
+//
+//	&:focus {
+//		outline: none;
+//	}
+//
+//	@include media(">=s") {
+//		position: absolute;
+//		width: 100%;
+//		display: flex;
+//		justify-content: space-between;
+//		align-items: center;
+//		height: 100%;
+//		padding: 0 15px;
+//
+//		button {
+//			z-index: 2; // used 2 because it sits on top of banner_container, which has a value of 1 already
+//			width: 45px;
+//			height: 45px;
+//			border: none;
+//			border-radius: 100%;
+//			background-color: rgba(white, 0.7);
+//
+//			&:focus {
+//				outline: none;
+//			}
+//		}
+//
+//		button:after {
+//			content: "";
+//			display: inline-block;
+//			margin-top: 2px;
+//			width: 18px;
+//			height: 18px;
+//			border-top: 4px solid $black;
+//			border-right: 4px solid $black;
+//		}
+//
+//		button:first-child:after {
+//			transform: rotate(-135deg);
+//			margin-left: 5px;
+//		}
+//
+//		button:last-child:after {
+//			transform: rotate(45deg);
+//			margin-right: 5px;
+//		}
+//	}
+//}
+//
+//// Dotted Navigation
+//// Only used below small
+////-------------------------
+//
+//.tns-nav {
+//	display: none;
+//}
+//
+//@include media("<s") {
+//	.tns-nav {
+//		position: absolute;
+//		left: 0;
+//		right: 0;
+//		bottom: 50px;
+//		z-index: 2; // used 2 because it sits on top of banner_container, which has a value of 1 already
+//		display: block;
+//		max-width: 110px;
+//		margin: 0 auto;
+//		text-align: center;
+//	}
+//
+//	.tns-nav button {
+//		width: 10px;
+//		height: 10px;
+//		padding: 0;
+//		margin: 0 5px;
+//		border-radius: 50%;
+//		border: 1px solid white;
+//
+//		&.tns-nav-active {
+//			background-color: $red;
+//			border: 1px solid $red;
+//		}
+//	}
+//}

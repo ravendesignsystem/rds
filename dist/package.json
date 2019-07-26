@@ -1,0 +1,19 @@
+{
+  "name": "@carleton/rds",
+  "version": "0.9.15",
+  "description": "RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language.",
+  "main": "core/js/core",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravendesignsystem/rds.git"
+  },
+  "author": "Carleton University",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ravendesignsystem/rds/issues"
+  },
+  "homepage": "https://github.com/ravendesignsystem/rds#readme"
+}
