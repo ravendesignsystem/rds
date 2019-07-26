@@ -4,7 +4,7 @@ RDS, Carleton University’s design system, is a living digital organism uniting
 
 Let my heart be still a moment and this mystery explore...
 
-## Getting Started
+## Getting started
 
 ### Clone repo
 

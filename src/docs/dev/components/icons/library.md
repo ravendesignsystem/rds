@@ -200,7 +200,7 @@ We would like to give a big shout out to Gihtub as the majority of the icons use
 
 {% include 'inc' with {'close': 'true'} %}
 
-<div class="u-block u-block--white u-block--m">
+<div class="u-block u-block--white u-block--l">
     <div class="b-cardgrid u-grid u-grid--4">
     {% for item in page.icons %}
         <div class="c-cardlabel">

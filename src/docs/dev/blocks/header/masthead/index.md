@@ -7,7 +7,7 @@ banner:
   grandparent: Blocks
   parent: Header
 ---
-As a [core block](#) and the first block located on top of the page, the masthead is an essential toolbar used for primary actions, such as navigation, search and displaying a site's title and brand. The masthead block can also be used for secondary actions, such as user login and other calls to action.
+As the first block located on top of the page, the masthead is an essential toolbar used for primary actions, such as navigation, search and displaying a site's title and brand. The masthead block can also be used for secondary actions, such as user login and other calls to action.
 
 ## Block dependencies
 
@@ -15,11 +15,23 @@ As a [core block](#) and the first block located on top of the page, the masthea
 
 The masthead block requires the use of RDS' core JavaScript file to function. Make sure you are incorporating the [core RDS JS](#).
 
+#### Sticky Masthead - JS
+
+By default, when a user scrolls down the page, the Masthead scrolls out of view, as expected. However, for easy access, as soon as a users scrolls back up, the Masthead reappears stuck to the top of the page until the user scrolls down again. All of the code examples on this page make use of this sticky Masthead functionality.
+
+**If you do not want the sticky Masthead functionality **, remove `js-sticky-scroll` from thisd line of codeL:
+ 
+```html
+<div class="b-masthead js-sticky-scroll">
+```
+
 ### Mobile Menu
 
-The visibility of certain elements within the masthead block changes depending on screen size. The mobile menu ("hamburger") button is only visible on small screen sizes. The mobile menu button launches an overlay containing the `b-menu` block, which contains your site-wide navigation. All of the code examples below assume your application requires a mobile menu and includes the code for the mobile menu button. View the [b-menu](#) documentation for further implementation notes and reference. 
+The visibility of certain elements within the masthead block changes depending on screen size. The mobile menu ("hamburger") button is only visible on smaller screen sizes. 
 
-**If you want do not want a mobile menu**, simply remove the below snippet from your Masthead code.
+The mobile menu button launches an overlay containing the `b-menu` block, which contains your site-wide navigation. All of the code examples below assume your application requires the mobile menu button, which in turn requires you to include the code for [dialogue layout](#) in your page template. View the [b-menu](#) documentation for further implementation notes and reference. 
+
+**If do not want a mobile menu**, simply remove the below snippet from your Masthead code in the examples below.
 
 ```html
 <li class="masthead__hamburger">
@@ -30,12 +42,6 @@ The visibility of certain elements within the masthead block changes depending o
     </button>
 </li>
 ```
-
-### Sticky Masthead... on scroll up
-
-By default, when a user scrolls down the page, the Masthead scrolls out of view, as expected. However, for easy access, as soon as a users scrolls back up, the Masthead reappears stuck to the top of the page until the user scrolls down again. All of the code examples on this page make use of this sticky Masthead functionality.
-
-**If you do not want the Masthead to stick to the top of the page when a users scrolls back up**, remove the block modifier `b-masthead--sticky-scroll` 
 
 ### Getting started with the masthead block
 
@@ -80,7 +86,7 @@ Site Name</a>
 
 ```html
 <div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--sticky-scroll">
+	<div class="b-masthead js-sticky-scroll">
 		<div>
 			<nav aria-label="Site title and primary navigation">
 				<h2 class="masthead__site">
@@ -125,7 +131,7 @@ Site Name</a>
 				<li class="masthead__search">
                     <button aria-label="Open Search" class="masthead__search-btn u-icon">
                         <svg style="top:0" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
-                        <span class="u-hide-s">Search</span>
+                        <span>Search</span>
                     </button>
                 </li>
 				<li class="masthead__hamburger">
@@ -144,7 +150,7 @@ Site Name</a>
 
 ```html
 <div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--sticky-scroll">
+	<div class="b-masthead js-sticky-scroll">
 		<div>
 			<nav aria-label="Site title and subsite navigation">
 				<h2 class="masthead__site">
@@ -158,7 +164,7 @@ Site Name</a>
 				<li class="masthead__search">
                     <button aria-label="Open Search" class="masthead__search-btn u-icon">
                         <svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
- <span class="u-hide-s">Search</span>
+ <span>Search</span>
                     </button>
                 </li>
 				<li class="masthead__hamburger">
@@ -174,15 +180,23 @@ Site Name</a>
 </div>
 ```
 
-**Note**: in the code example above the search label is wrapped in a span with the class `u-hide-s`. This will hide the label on small screens to provide more space. To have the text label visible on all screen sizes, remove the `u-hide-s` utility class.
+### Search label text 
 
-The search "loop" icon is one of the few universally recognized icons that can be used by itself. While it is always better to have a label beside your icons, to save space you can use just the search icon on all screen sizes with the code below:
+**Notice** how the search label beside the <span class="u-icon">{% include "icons/search.svg" %}</span> icon is wrapped in a `<span>`.
 
 ```html
-<button aria-label="Open Search" class="masthead__search-btn u-icon">
-    <svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
-</button>
+<li class="masthead__search">
+    <button aria-label="Open Search" class="masthead__search-btn u-icon">
+       <svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">...</svg>
+       <span>Search</span>
+    </button>
+</li>
 ```
+
+This hides the search label on screens smaller then 1474px, to provide more space. To have the text label visible on all screen sizes, remove the `<span>`. Just make sure your have enough space on small screens for this extra text.
+
+While it is always better to have a label beside your icons, we feel the search ( <span class="u-icon">{% include "icons/search.svg" %}</span>) icon is one of the few universally recognized icons that can be used by itself. 
+
 
 ### Search button dependencies
 
@@ -229,7 +243,7 @@ Site Name</a>
 
 ```html
 <div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--sticky-scroll">
+	<div class="b-masthead js-sticky-scroll">
 		<div>
 			<nav aria-label="Site title and subsite navigation">
 				<h2 class="masthead__site">
@@ -300,7 +314,7 @@ Site Name</a>
 
 ```html
 <div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--sticky-scroll">
+	<div class="b-masthead js-sticky-scroll">
 		<div>
 			<nav aria-label="Site title and subsite navigation">
 				<h2 class="masthead__site">
@@ -371,7 +385,7 @@ Site Name</a>
 
 ```html
 <div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--sticky-scroll">
+	<div class="b-masthead js-sticky-scroll">
 		<div>
 			<nav aria-label="Site title and subsite navigation">
 				<h2 class="masthead__site">
@@ -456,7 +470,7 @@ Site Name</a>
 
 ```html
 <div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--sticky-scroll">
+	<div class="b-masthead js-sticky-scroll">
 		<div>
 			<nav aria-label="Site title and subsite navigation">
 				<h2 class="masthead__site">
@@ -557,7 +571,7 @@ Site Name</a>
 
 ```html
 <div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--sticky-scroll">
+	<div class="b-masthead js-sticky-scroll">
 		<div>
 			<nav aria-label="Site title and subsite navigation">
 				<h2 class="masthead__site">
@@ -658,7 +672,7 @@ Site Name</a>
 
 ```html
 <div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--sticky-scroll">
+	<div class="b-masthead js-sticky-scroll">
 		<div>
 			<nav aria-label="Site title and subsite navigation">
 				<h2 class="masthead__site">
@@ -782,7 +796,7 @@ Site Name</a>
 
 ```html
 <div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--sticky-scroll">
+	<div class="b-masthead js-sticky-scroll">
 		<div>
 			<nav aria-label="Site title and subsite navigation">
 				<h2 class="masthead__site">
@@ -840,11 +854,11 @@ Site Name</a>
 
 Masthead nav items can have submenus providing one extra level of navigation. Submenus are displayed using the [Menu Popup component](#).
 
-TODO add images of Masthead with submenus.
+**TODO add images of Masthead with submenus.**
 
 ```html
 <div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--shadow">
+	<div class="b-masthead js-sticky-scroll">
 		<div>
 			<nav aria-label="Site title and subsite navigation">
 				<h2 class="masthead__site">
@@ -885,6 +899,28 @@ Site Name</a>
 	</div>
 </div>
 ```
+
+## Masthead with sub navigation without parent links
+
+If you have sub navigation in your Masthead and you only want the parent link to open the submenu and not link off to another page, replace the parent's `<a>` tag with `<button>`. This will also change the action displaying the submenu from a hover to a click.
+
+The following will only open the submenu onclick and not link off:
+
+```html
+<button class="c-menupopup">Nav item with submenu</button>
+    <ul class="menupopup__menu" aria-label="menupopup">
+        <li>
+            <a href="#">Submenu link a</a>
+        </li>
+        <li>
+            <a href="#">Submenu link b</a>
+        </li>
+         <li>
+             <a href="#">Submenu link c</a>
+         </li>                   
+    </ul>
+```
+
 ##Implementation Notes
 
 - The masthead can only be used once on a page.

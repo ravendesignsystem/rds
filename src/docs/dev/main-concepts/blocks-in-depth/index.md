@@ -1,76 +1,330 @@
 ---
 layout: docs
 subsite: dev
-menu: dev
 section: Main concepts
-title: Blocks In-Depth
+title: Blocks
 banner:
   breadcrumbs:
     parent: Main concepts
 ---
 RDS Blocks are the equivalent of "components" in other [design systems](#). They are chunks of reusable code that can be assembled in different combinations to build any number of user interfaces.
 
-Since they account for pretty much every UI element on screen, this section provides a must-read, deep dive into RDS Blocks.
+Since they account for pretty much every UI element on screen, this page provides a must-read, deep dive into RDS Blocks.
 
-## Block guidelines and rules
+# Block guidelines and rules
 
-In their simplest form, RDS blocks are grouped snippets of HTML, CSS, and sometimes JavaScript (JS). The UI equivalent to Lego blocks, you can build each block by itself and then easily attach them together. Blocks make up a distinct section of an interface. Functionally independent, a block can NOT be nested within another block.
+In their simplest form, RDS blocks are grouped snippets of well formed HTML, styled by CSS, and sometimes controlled JavaScript (JS). The user interface (UI) equivalent to Lego blocks, RDS blocks make up a distinct UI section that you can easily attach together to build interfaces. Unlike a tub of randomly sized/coloured Lego blocks, RDS blocks are more the equivalent to Lego blocks found in [themed Lego sets](https://lego.fandom.com/wiki/Theme) as there are rules and guidelines to follow. 
 
-To further the Lego analogy, unlike a tub of randomly sized/coloured Lego blocks, RDS Blocks are more the equivalent to Lego blocks found in [themed Lego sets](https://lego.fandom.com/wiki/Theme). Except, instead of, pirates or Star-Wars, our theme is Carleton University.
+This page covers the following block rules and guidelines:
 
-Some critics suggest Lego has become [less creative](#) due to the increase of specialized pieces, instruction manuals and strict rules that govern how they are assembled by the end user. If RDS interfaces are akin to Lego Star-Wars spaceships, while RDS does impose rules, when building your interfaces we don't expect you to follow exact step-by-step instructions like you would in building a replica of an [X-Wing](https://shop.lego.com/en-CA/product/X-Wing-Starfighter-75218). However, there rules and guideline to follow.
+- block utility classes and types
+- block handles and naming
+- block section restrictions
+- block headings
+- block versioning
+- block properties and data
+- block variants
 
-For example, when you are building your spaceships (interfaces), your cockpit blocks (header blocks) need to go on top, and your landing gear (footer blocks) must go on the bottom. For the rest of the ship, feel free to add in the Millennium Falcon's secret compartment (RDS Block) or a Star Destroyers proton beam (another Block). Make the best interfaces (coolest ships) you can to match your content requirements. However, you are expected to follow our Block guidelines so your pilot can eject properly and land their ship on its wheels.
+## Simple block example
 
-TODO: add some images
+To use as an example throughout this page, lets create a basic block with just a paragraph of <span style="color: green">green</span> text and a horizontal rule. We will give it the name <em>Simple block</em>.
 
-**Note**: to further creativity we have instructions for [building your own Blocks](#).
+Here is what our **Simple block looks like**:
 
-## Block terms and attributes
+{%include 'inc' with {'close': true}%}
 
-All blocks have the following attributes:
+<div class="u-block u-block--s u-block--white">
+    <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes..</p>
+    <hr>
+</div>
 
-- a [type](#block-types-and-spacing)
-- a [handle](#block-handles)
-- a [version](#block-versioning)
-- a [status](#block-status)
-- [properties](#props)
-- designated [block-sections](#sections)
-- associated CSS
-- an HTML template and data options
-- their own [documentation](#block-documentation)
+{%include 'inc' with {'open': true}%}
 
-**Some blocks** have:
+Here is its **HTML markup** that will be explained further below:
 
-- [headings](#block-headings)
-- [variants](#block-variants)
-- designated themes
-- associated JavaScript
+```html
+<div class="u-block u-block--s u-block--white">
+    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
+    <hr>
+</div>
+```
 
-## Block handles
+## Block utility classes
 
-A block's handle refers to its unique short name for use in code.
+Block utility classes are used to bring a rhythm and familiar flow from page to page by standardizing layout and controlling a block's width, spacing and colour. **All blocks** must be wrapped with the utility class `u-block`. Since all blocks are wrapped in `u-block`, the class name will help you locate where blocks exist in your source code.
 
-Block handles must:
+```html
+<div class="u-block">
+</div>
+```
 
-- be lowercase. For example, the [Content block's](#) handle is `'content'`.
-- be one word without spaces or dashes. For example, the Card Grid block's handle is `'gridcard'`. Note: the order of words may change.
+In addition, **all blocks** need to be wrapped with **u-block width** and  **u-block colour** modifier classes:
+
+### `u-block` width modifiers
+
+The `u-block` width modifier controls the maximum width of a block. Available values are:
+ 
+- `u-block--s`
+- `u-block--l`
+- `u-block--full`
+
+### Block width types
+
+There are two block types, each set by the `u-block` width modifier class:
+
+1. Fixed-width blocks
+2. Full-width blocks
+
+#### Fixed-width blocks
+
+Fixed-width blocks have a maximum width and standardized side padding. They either use the `u-block--s` (small) or `u-block--l` (large) block width modifiers.
+
+TODO add img.
+
+Our <em>Simple block</em> example above was set up as a fixed-width block using the modifier `u-block--s`. Lets look what happens to the block if we change the width modifier to `u-block--l`.
+
+```html
+<div class="u-block u-block--l u-block--white">
+    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
+    <hr>
+</div>
+```
+{%include 'inc' with {'close': true}%}
+
+<div class="u-block u-block--l u-block--white">
+    <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes..</p>
+    <hr>
+</div>
+
+{%include 'inc' with {'open': true}%}
+
+Notice how the block is wider as it is now using the larger fixed width modifier: <br> `u-block--l`. 
+
+#### Full-width blocks
+
+Full-width blocks, such as the [Banner block](#), span the entire width of the screen.
+
+TODO add img.
+
+Lets look what happens to the Simple block if we change the width modifier to `u-block--full`.
+
+```html
+<div class="u-block u-block--full u-block--white">
+    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
+    <hr>
+</div>
+```
+{%include 'inc' with {'close': true}%}
+
+<div class="u-block u-block--full u-block--white">
+    <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes</p>
+    <hr>
+</div>
+
+{%include 'inc' with {'open': true}%}
+
+The Simple block now spans the full-width of the window and no longer has padding surrounding the block.
+
+**Note**: block widths are ultimately controlled by their [layout](#) containers. Full-width blocks are primarily used in single column layouts.
+
+**Note**: for better readability, the recommended width for content blocks with paragraphs of type is `u-block--s`.
+
+### `u-block` color modifiers
+
+The `u-block` colour modifier controls the block's background colour. Available values are:
+ 
+- `u-block--white`
+- `u-block--grey`
+- `u-block--black`
+
+Returning to the original implementation of our <em>Simple block</em>, notice it uses the `u-block--white` modifier.
+
+{%include 'inc' with {'close': true}%}
+
+<div class="u-block u-block--s u-block--white">
+    <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes</p>
+    <hr>
+</div>
+
+{%include 'inc' with {'open': true}%}
+
+```html
+<div class="u-block u-block--s u-block--white">
+    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
+    <hr>
+</div>
+```
+To change the background color to grey, lets replace `u-block--white` with `u-block--grey`.
+
+```html
+<div class="u-block u-block--s u-block--grey">
+    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
+    <hr>
+</div>
+```
+
+{%include 'inc' with {'close': true}%}
+
+<div class="u-block u-block--s u-block--grey">
+    <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes..</p>
+    <hr>
+</div>
+
+{%include 'inc' with {'open': true}%}
+
+Notice that while the content remains fixed in width, the block's grey background extends the full length of the window. This allows us to create blocks with differing background colours that appear as rows. Spacing between same or changing background colour rows is auto-configured by the `u-block` colour modifier. 
+
+Use different coloured background rows to separate different sections of content.
+
+{%include 'inc' with {'close': true}%}
+
+<div class="u-block u-block--s u-block--grey">
+    <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes</p>
+    <hr>
+</div>
+
+<div class="u-block u-block--s u-block--white">
+    <p style="color: green" class="b-simple">This is the Simple block being used for a section with different content. So we have changed the background colour to better seperate it from the block above and below.</p>
+    <hr>
+</div>
+
+<div class="u-block u-block--s u-block--grey">
+    <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes</p>
+    <hr>
+</div>
+
+{%include 'inc' with {'open': true}%}
+
+```html
+<div class="u-block u-block--s u-block--grey">
+    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes</p>
+    <hr>
+</div>
+
+<div class="u-block u-block--s u-block--white">
+    <p class="b-simple">This is the Simple block being used for a section with different content. So we have changed the background colour to better seperate it from the block above and below.</p>
+    <hr>
+</div>
+
+<div class="u-block u-block--s u-block--grey">
+    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes</p>
+    <hr>
+</div>
+```
+
+## Block nesting is prohibited
+
+Functionally independent, a **block can NOT be nested** within another block.
+
+**Cool**:
+
+```html
+<div class="u-block u-block--s u-block--grey">
+    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
+    <hr>
+</div>
+<div class="u-block u-block--s u-block--grey">
+    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
+    <hr>
+</div>
+```
+**Not cool**:
+
+```html
+<div class="u-block u-block--s u-block--grey">
+    <div class="u-block u-block--s u-block--white">
+        <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
+        <hr>
+    </div>
+    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
+    <hr>
+</div>
+```
+
+## Block section restrictions
+
+While blocks can be stacked in any order to build interfaces, they are restricted to specific page [sections](#). Sections are denoted by semantic HTML 5 elements on your page, including:
+
+- Header - `<header>`
+- Main - `<main>`
+- Aside - `<aside>`
+- Footer - `<footer>`
+- Dialogue -  `<dialogue>` - this the default off-screen overlay.
+
+For example, the [Content block](#) (`b-content`) can only be used within the `<main>` section.
+
+Some blocks can be used in multiple sections. For example, the [Search block](#) (`b-search`) can be used inside both the `<header>`, `<aside>` and `<dialogue>` sections.
+
+Sections restrictions are noted in each block's documentation.
+
+**Note**: While an HTML document can have multiple `<header>` and `<footer>` elements. In RDS, the 'Header section' is always denoted by the first `<header>Header section</header>` on the page and the 'Footer section' by the last `<footer>Footer section</footer>` on the page. 
+
+### Example of section restrictions using Simple block
+
+Lets say our Simple block is restricted only to the `<main>` section.
+
+**Cool**: 
+
+```html
+<main>
+    <div class="u-block u-block--s u-block--white">
+        <p class="b-simple">This is the Simple block being used for a section with different content. So we have changed the background colour to better separate it from the block above and below.</p>
+        <hr>
+    </div>
+</main>
+```
+**Not cool**:
+
+```html
+<header>
+    <div class="u-block u-block--s u-block--white">
+        <p class="b-simple">This is the Simple block being used for a section with different content. So we have changed the background colour to better seperate it from the block above and below.</p>
+        <hr>
+    </div>
+</header>
+```
+
+## Block naming and handles
+
+Each RDS block requires a unique name and corresponding handle. A **block's name** refers to its proper name written in title case. A **block's handle** refers to its unique computer-friendly name for use in code and file naming.
+
+**Block handles** must:
+
+- be lowercase. 
+- be one word without spaces or dashes.
 - follow [RDS naming conventions](#). For example, the Text and Image block's handle is `'textimg'` which uses the [system's abbreviations](#).
+- mirror its full name as best as possible.
 
-The formula for each block's main CSS class name is the `b-` prefix + a block's handle. For example, the Banner block's class name is `b-banner`.
+### Simple block handle example
 
-A block's handle should mirror its full name as best as possible.
+While our example block's name is Simple block, its handle is `'simple'`.
 
-For example, for a block named "Doe Ray Me":
+After the `u-block` utility class wrapper, the first HTML element's class name must follow this pattern:
 
-- Good handle name = `doerayme`.
-- Bad handle name = `farsoela`.
+`b-[handle]`
+
+The `b-` prefix further identifies where the block begins as seen in the Simple block's markup:
+
+```html
+<div class="u-block u-block--s u-block--white">
+     <p class="b-simple">This is the Simple block being used for a section with different content. So we have changed the background colour to better seperate it from the block above and below.</p>
+    <hr>
+</div>
+```
+
+The CSS for our Simple block would be:
+
+```css
+.b-simple {
+    color: green;
+}
+```
 
 ### Handles for folder and file names
 
-A block's handle is used to name all of its associated files and folders.
+A block's handle is used to identify all of its associated files and folders.
 
-For example, if you're using a package manager like npm to include RDS in your project, the file structure for importing block SCSS and JS modules looks like this:
+If you're using a package manager like npm, to include RDS in your project, the file structure for importing a block's SCSS and JS modules looks like this:
 
 ```html
 your-project/
@@ -81,330 +335,206 @@ your-project/
                 ├── masthead.js
                 └── masthead.scss
 ```
-
-If you are creating a custom block for your theme, follow this naming convention. For example, if creating a block called "foo," your folder structure would be similar to this:
+Notice how the Masthead's handle comes into play in the file and folder naming above.
+If we added our Simple block as a custom block, our folder structure would be similar to this:
 
 ```html
 your-project/
 ├── blocks
-│   └── foo
-│       ├── foo.js
-│       └── foo.scss
+│   └── simple
+│       └── simple.scss
 └── node_modules/
     └── rds
         └── blocks
             └── ...
 ```
 
-**Note for custom themers**: [themes](#) also have [handles](#). For custom blocks the formula for a block's class name is "`b-` + {theme handle} + {block handle}". For example, the class name for a new block called "Foo" in a custom theme with the (theme) handle of "cu" would be `b-cu-foo`.
-
-By following these conventions, we can avoid conflicts and easily distinguish custom blocks from core RDS blocks. If a block's primary class name has one hyphen (b-content), we know it is a core block. Consequently, if a block's primary class name has two hyphens (b-cu-foo), we know it is a custom theme block.
-
-Also, the "Doe Ray Me" named block above is used to exaggerate a point. You should keep block names to two words max while trying to describe their use case as best as possible. We know, [naming in programming is hard](#).
-
-## Block versioning
-
-RDS uses [Semantic Versioning (SemVer)](https://semver.org). In addition to maintaining a [SemVer for the RDS core package](#), each block and component maintains it's own version.
-
-MINOR or Patch version changes are always backwards compatible and safe to use within the same overall Major version of RDS.
-For example, it is okay to use a block with the version 1.5.6 while using RDS with a version of only 1.1.0. Furthermore, feel free to use the [content block](#) version 1.3.1 with [listing block](#) version 1.5.0. The HTML markup, style and script for each block is encapsulated so they won't conflict.
-
-However, if the RDS package changes major versions, for example goes from version 1.0.0 to version 2.0.0, you can only use blocks with a major number of 2 (equivalent to the core version). It is possible that a block's markup will have changed between major versions.
-
-**Bad**: if using RDS 2.2.1, don't use a block with the version 1.5.6.<br>
-**Good**: if using RDS 1.3.2, you can use a block with the version 1.2.1.
-
-**Note**: the best way to remain current is to install RDS via a package manager like [npm](#) or [Composer](#). Otherwise, to remain current, try and integrate comments displaying a block's version into your templating code.
-
-## Block Variants
-
-Variants change the appearance of a block, usually with modifier classes. Variants are used to extend a base block when it has multiple different possible implementations.  Variants of a block are considered the same block type and generally share CSS and template code. The [Listing block](#) is an excellent example of a block with several variants.
+**Note**: if you are building **custom blocks**, read the [custom theming documentation](#). Custom blocks not included in the RDS package have a different naming convention:<br> `b-[theme short name]-[block handle]`.
 
 ## Block headings
- Some [max-width blocks](#) can have headings. Block headings make use of the [Heading component](#). The heading HTML resides outside block's code in between the `u-block` wrapper tag (which should be a `<section>` tag) and the block's opening tag (which always starts with `b-`).
 
-For example, here is a simple block without a header:
+Some fixed-width blocks (blocks using either `u-block--s` or `u-block--l`) can have headings.
+
+The heading HTML resides between the `u-block` utility class and the block's first class name starting with `b-`.
+
+Our Simple example block above does not have a heading:
 
 ```html
- <div class="u-block u-block--s u-block--white">
-     <div class="b-foo">
-        <p>A block without a heading</p>
-    </div>
+<div class="u-block u-block--s u-block--grey">
+    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
+    <hr>
 </div>
 ```
+But it can. Lets add a Header to Simple block:
 
-Here is the same block with a header:
+{%include 'inc' with {'close': true}%}
+
+<section class="u-block u-block--s u-block--white">
+    <header>
+        <h2 class="c-heading">Simple Block</h2>
+    </header>
+    <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes..</p>
+    <hr>
+</section>
+
+{%include 'inc' with {'open': true}%}
 
 ```html
  <section class="u-block u-block--s u-block--white">
-    <h2>Foo block</h2>
-    <p>A block without a heading</p>
+    <header>
+        <h2 class="c-heading">Simple Block</h2>
+    </header>
+    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
+    <hr>
 </section>
 ```
-Notice how the utility block wrapper `<div>` was changed to a `section>` tag. Learn more about [setting up block headings](#).
+Notice how the utility block wrapper `<div>` was changed to a `<section>` tag and a `<header>` tag wrapping an `h2` was added above the `b-simple` tag. Switching the div to a section is encouraged when using a block heading to help associate the heading and block as a standalone section.
 
-## Block status
-Blocks in RDS are labelled with status labels that reflect their state of completion and readiness to use.
-
-### Block status labels
-
-- **Prototype**: block is new and should not be used in production.
-- **Ready**: ready to be used in production.
-- **Under review**: the block is currently being reviewed for quality assurance.
-- **Deprecated**: the block is supported but not recommended.
-- **Not available**: the block is no longer supported and should be removed.
-
-Note: remember even though a block is available they are restricted to page sections and some are not available in certain themes. TODO are we going with themes.
-
-## Block sections
-
-While Blocks can be stacked in any order, they are restricted to specific page [sections](#). Sections are denoted by semantic HTML 5 elements, including:
-
-- Header - `<header>`
-- Main - `<main>`
-- Aside - `<aside>`
-- Footer - `<footer>`
-
-For example, the [Content block](#) (`b-content`) can only be used within the `<main>` section.
-
-Some blocks can be used in multiple sections. For example, the [Search block](#) (`b-search`) can be used inside both the `<header>` and `<aside>` sections.
-
-Section restrictions are available in each block's respective [documentation](#).
-
-**Note**: While an HTML document can have multiple `<header>` and `<footer>` elements. In RDS, there can only be one header and footer section. The 'Header section' is always denoted by the first `<header>Header section</header>` on the page. The 'Footer section' by the last `<footer>Footer section</footer>` on the page. For example:
-
-## Block types and spacing
-
-There are two types of Blocks:
-
-1. Max-width Blocks
-2. Full-width Blocks.
-
-### Max-width Blocks
-
-These Blocks use modifiers of the `u-block` utility class to set the content's max-width to either small (s), medium (m) or large (l) presets. For example:
-
-{%include "inc" with {'close': 'true'} %}
-
-<div class="u-block u-block--s"><div style="background-color: lightgrey">
-<p>This is using the code below, which restricts the content to the smallest max-width.</p>
-</div></div>
-
-{%include "inc" with {'open': 'true'} %}
+Block headings make use of the [Heading component](#) which has a couple of options for styling headers. One option for single column layouts is centered headings by using the `--center` modifier..
 
 ```html
-<div style="background-color: lightgrey" class="u-block u-block--s">
- <p>Restricts the content to the smallest max-width.</p>
+ <section class="u-block u-block--s u-block--white">
+    <header>
+        <h2 class="c-heading c-heading--center">Simple Block</h2>
+    </header>
+    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
+    <hr>
+</section>
+```
+
+{%include 'inc' with {'close': true}%}
+
+<section class="u-block u-block--s u-block--white">
+    <header>
+        <h2 class="c-heading c-heading--center">Simple Block</h2>
+    </header>
+    <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes..</p>
+    <hr>
+</section>
+
+{%include 'inc' with {'open': true}%}
+
+For all heading options, view the [Heading component](#) documentation.
+
+## Block Variants
+
+Variants change the appearance and/or context of a block, with modifier classes. Variants are used to extend a block when it has different possible implementations, but has the same functionality and/or similar appearance. This allows for DRYer code by sharing existing CSS and template HTML. The [Listing block](#) is an excellent example of a block with several variants.
+
+### Block variant example using <em>Simple block</em>
+
+If we needed the exact same block as <em>Simple block</em>, but with <span style="color: red">red</span> text instead of green, it does not make sense to create a new block. Instead, lets add a variant using a modifier class.
+
+```html
+<div class="u-block u-block--s u-block--white">
+    <p class="b-simple b-simple--red">This is a variant of Simple block, using red text instead of green.</p>
+    <hr>
 </div>
 ```
 
-{%include "inc" with {'close': 'true'} %}
+{%include 'inc' with {'close': true}%}
 
-<div class="u-block u-block--m"><div style="background-color: lightgrey">
-<p>This is using the code below, which restricts the content to the medium max-width.</p>
-</div></div>
-
-{%include "inc" with {'open': 'true'} %}
-
-```html
-<div style="background-color: lightgrey" class="u-block u-block--m">
- <p>Restricts the content to the medium max-width.</p>
+<div class="u-block u-block--s u-block--white">
+    <p style="color: red" class="b-simple">This is a variant of Simple block, using red text instead of green.</p>
+    <hr>
 </div>
+
+{%include 'inc' with {'open': true}%}
+
+The CSS for our Simple block Red Text variant would be:
+
+```css
+.b-simple {
+    color: green;
+}
+
+.b-simple--red {
+    color: red;
+}
+
 ```
 
-{%include "inc" with {'close': 'true'} %}
+# Blocks In-Depth
 
-<div class="u-block u-block--l"><div style="background-color: lightgrey">
-<p>This is using the code below, which restricts the content to the largest max-width.</p>
-</div></div>
+At this point you should have the required information for integrating RDS blocks into your templates. The section below dives a little deeper into concepts intended for RDS and theme developers.
 
-{%include "inc" with {'open': 'true'} %}
+## Block props
+
+**Preface**: this section is very conceptual. Without knowing whether you are using a backend language such as PHP, or a front-end language like React to setup your templates and integrate your data, it is impossible to give specific details. The concepts here are to get you thinking about separating your data from your template code and should apply across varying frameworks.
+
+Blocks are grouped HTML, CSS and sometimes JS partials working together to form reusable user interface elements.
+While they are reusable, they need to be rendered in many different ways with different data.
+
+Props, short for properties are a way to accept data to control the block's settings or output. Block props are variables with data, often coming from typed fields set on a specific instance of a block to be referenced from within its markup. Blocks accept data to output a unique version of itself with that data.
+
+As we have seen, the Simple Block might use a different colour background and would definitely use different paragraph text with each implementation. So the Simple blocks template code might be:
 
 ```html
-<div style="background-color: lightgrey" class="u-block u-block--l">
- <p>Restricts the content to the largest max-width.</p>
+<div class="u-block u-block--s u-block--{%verbatim%}{{settings.color}}{%endverbatim%}">
+    <p class="b-simple">{%verbatim%}{{prop.text}}{%endverbatim%}</p>
+    <hr>
 </div>
 ```
+In the code above, the block props are denoted by the vars in the  `{%verbatim%}{{}}{%endverbatim%}` mustache braces: `{%verbatim%}{{settings.color}}{%endverbatim%}` and `{%verbatim%}{{prop.text}}{%endverbatim%}`.
 
-All Max-Width Blocks must use either a `u-block--s`, `u-block--m`, or `u-block--l` class in its opening tag.
+If we wanted to display the above template as:
 
-**Note**: for better readability, the recommended max-width for content blocks with type is `u-block--s`.
+{%include 'inc' with {'close': true}%}
 
-TODO: add some images
+<div class="u-block u-block--s u-block--grey">
+    <p style="color: green" class="b-simple">This is the Simple block with a grey background.</p>
+    <hr>
+</div>
 
-#### Max-width Block padding
+{%include 'inc' with {'open': true}%}
 
-To bring a rhythm and familiar flow from page to page, all Max-width Blocks have consistent padding applied to them.
+...we would make sure to pass the block's props the following data: 
 
-TODO: add some images
+- {%verbatim%}'settings.color' = 'grey'{%endverbatim%}
+- {%verbatim%}'prop.text' = 'This is the Simple block with a grey background.'{%endverbatim%}
 
-#### Max-width background colors - creating rows
-
-While the content within Max-Width Blocks is restricted in width, the rest of the block extends the full length of the screen or it or to its layout container restrictions. This allows us to create blocks with differing background colours that appear as rows.
-
-For example:
-
-{%include "inc" with {'close': 'true'} %}
-
-<div class="u-block u-block--s u-block--grey"><div class="b-example">
-<p>This is using the code below, which by adding both `u-block--s` and `u-block--grey`, we create a row with a grey background that stretches 100%, while restricting the content's width to the smallest size.</p>
-</div></div>
-
-{%include "inc" with {'open': 'true'} %}
+...so our DOM rendered HTML ended up as:
 
 ```html
 <div class="u-block u-block--s u-block--grey">
-    <div class="b-example">
-         <p>Create a row with a grey background that stretches 100%, while restricting the content width to the small size.</p>
-    </div>
+    <p class="b-simple">This is the Simple block with a grey background.</p>
+    <hr>
 </div>
 ```
+Notice how the block's background prop was named {%verbatim%}{{settings.color}}{%endverbatim%}, while the other one is `prop.text`.
 
-A color variable of either `u-block--white`, `u-block--grey`, or `u-block--black` must be applied to all Max-Width Blocks. Even if the body background colour is white, you still need to put `u-block--white` on your block.
+When setting up your template logic to access prop values, consider separating props that control block settings, including:
+ 
+ - **block width** -  (`u-block--s` and `u-block--l`)
+ - **background colour** - (`u-block--white` and `u-block--grey`)
+ - **block [variants](#)**
+ 
+ ### Prop types
 
-These block utilities (`u-block`) are important as they adjust spacing between blocks. For example, if you put two blocks with the class `u-block--grey` back to back the spacing between them needs to be less then when a block with `u-block--grey` is followed by `u-block--white`.
-
-TODO: add some images
-
-You can use different coloured background rows to separate different sections of content. For example:
-
-{%include "inc" with {'close': 'true'} %}
-
-<div class="u-block u-block--s u-block--grey"><div class="b-content">
-<p>This is a content section</p>
-</div></div>
-<div class="u-block u-block--s u-block--white"><div class="b-content">
-<p>This is a new content section</p>
-</div></div>
-<div class="u-block u-block--s u-block--grey"><div class="b-content">
-<p>This is a new content section</p>
-</div></div>
-
-{%include "inc" with {'open': 'true'} %}
-
-```html
-<div class="u-block u-block--s u-block--grey">
-    <div class="b-content">
-        <p>This is a content section</p>
-    </div>
-</div>
-<div class="u-block u-block--s u-block--grey">
-    <div class="b-content">
-        <p>This is a new content section</p>
-    </div>
-</div>
-<div class="u-block u-block--s u-block--grey">
-    <div class="b-content">
-        <p>This is a new content section</p>
-    </div>
-</div>
-```
-[View all of the Max-Width Blocks](#) available in RDS.
-
-**Note**: coloured block rows can not be used in the [CMS theme](#).
-
-## Full-width Blocks
-
-Full-width Blocks fill the entire width of the browser window's size and cannot be used inside of layouts. Because of this they should not use any of the u-block width modifiers, such as `u-block--s`.
-
-Instead they must use always use the block utility class `u-block--full`.
-
-[View all of the Full-Width Blocks](#) available in RDS.
-
-### For review
-
-The main difference between the two different types of Blocks are...
-
-**Max-width Blocks** have:
-
- - their content is restricted to a maximum width, on large screens.
- - consistent padding applied to them.
- - a background-color that fills the width of the screen.
- - the ability to be used inside of [layouts](#).
-
-while...
-
- **Full-width Blocks**:
-
- - have their content fill the entire width of the browser window's size.
- - do not have padding applied to them.
- - can not used inside of [layouts](#).
-
-## Block properties
-
-Blocks are grouped HTML, CSS and sometimes JS partials working together to form a user interface element.
-
-- The HTML controls their structure.
-- The CSS is responsible for their presentation.
-- JS can be used to control their behaviour.
-
-Conceptually, blocks are made up of a set of properties as a way to accept data. Block properties are typed fields set on a specific instance of a block to be referenced from within its markup. The concept is that blocks can accept data and output a unique version of itself with that data.
-
-When setting up your template logic to access properties values, consider splitting those properties into the following two conceptual categories:
-
-- block settings
-- block fields
-
-### Block settings
-
-Block settings are used to control global block meta and parameters, including:
-
-- block headings
-- background colour
-- block width (s,m,l)
-- block [variants](#)
-
-#### Block headings
-
-Since block headings  reside outside of a block's code, they can be considered a setting.
-
-#### Background colour settings
-
-All blocks have a background colour setting of either white, grey or black. The default setting should be white which works in most use cases.
-
-#### Block width setting
-
-All [max-width block's](#) have a width setting of either small (s), medium (m) or large (l). The default should be small.
-
-#### Block variant setting
-
-Some blocks have [variants](#) that you may want to identify in your settings.
-
-### Block fields
-
-With the exception of [include blocks](#), all blocks have fields assigned to them. These are your content fields who's values, unlike block settings, appear on the rendered front-end display of the block.
-
-#### Field types
-
-Field types indicate the type of content and their format needed. At the end of the day, they all return HTML strings. Existing field types include:
+With the exception of [include blocks](#), all blocks require props to capture specific value types:
 
 - text: alphanumeric string of letters, numbers, and (in some cases) symbols.
 - numbers: must be numeric characters.
 - date/time: properly-formatted Date and/or Time allowed in your language used.
-- url: properly structured URL, referencing a web resource.
+- boolean
 
-#### Field restrictions
+### Prop data restrictions
 
-Some fields have characters limits indicating that their strings will be cut off at a set length.
+Some props have character limits, indicating that the strings will be cut off at a set length.
 
-#### Required fields
+### Required props
 
-Some block fields are require values, while other are optional.
+Some props must receive values, while other are optional.
 
-## Separating data and markup
-
- RDS blocks were created with a preference to be able to control blocks from an external database or API. A benefit of this approach is that the data can come from anywhere, including a headless CMS.
-
-#### Example of feeding values to block properties
+### Example of feeding values to block props
 
 If you had a simple block template set up in the following macro...
 
 ```twig
 {% verbatim %}
-{% macro simple(settings, data) %}
-<div class="u-block u-block--{{ settings.bgcolor }}>
-    <h2>{{ data.title }}</h2>
-    <p>{{ data.excerpt }}</p>
+{% macro simple(settings, ) %}
+<div class="u-block u-block--{{ settings.color }}>
+    <h2>{{ b.title }}</h2>
+    <p>{{ b.excerpt }}</p>
 </div>
 {% endmacro %}
 {% endverbatim %}
@@ -477,9 +607,8 @@ Your JSON would look like this:
 
 **Recommendation only**: This is just one recommended approach. How you set up your templates is ultimately up to you. We do provide [templating examples](#) that follow this pattern.
 
-TODO: add some images of acf setup
 
-TODO: add some images of the make up a block with settings and data
+
 
 ## Available components
 
@@ -506,21 +635,7 @@ It means:
 - All blocks need to go through a Release Management process where they are well-tested on all browsers and platforms. Multi-step code reviews and quality assurance are required before any block can be released in the wild.
 - All blocks need to be documented and commented enough to be easily integrated and expandable in future.
 
-Setting and options and variant
 
-Data
-
-block types - banners - headers - footers etc
-
-### building blocks
-
-Designing them - question - do i need a new block there are lots - what ux problem is it trying to solve
-
-use semantic html
-
-HTML - schema - h cards - semantic - accessible
-
-Sent from my iPhone
 
 -
 
@@ -529,3 +644,52 @@ Sent from my iPhone
 - [Building A Static Site With Components Using Nunjucks](https://www.smashingmagazine.com/2018/03/static-site-with-nunjucks/)
 - [How to Modularize HTML Using Template Engines and Gulp](https://zellwk.com/blog/nunjucks-with-gulp/)
 - [An Overview of JavaScript Templating Engines](https://www.sitepoint.com/overview-javascript-templating-engines/)
+
+
+
+
+
+[themes](#) also have [handles](#). For custom blocks the formula for a block's class name is "`b-` + {theme handle} + {block handle}". For example, the class name for a new block called "Foo" in a custom theme with the (theme) handle of "cu" would be `b-cu-foo`.
+
+By following these conventions, we can avoid conflicts and easily distinguish custom blocks from core RDS blocks. If a block's primary class name has one hyphen (b-content), we know it is a core block. Consequently, if a block's primary class name has two hyphens (b-cu-foo), we know it is a custom theme block.
+
+Also, the "Doe Ray Me" named block above is used to exaggerate a point. You should keep block names to two words max while trying to describe their use case as best as possible. We know, [naming in programming is hard](#).
+
+## Block versioning
+
+RDS uses [Semantic Versioning (SemVer)](https://semver.org). In addition to maintaining a [SemVer for the RDS core package](#), each block and component maintains it's own version.
+
+MINOR or Patch version changes are always backwards compatible and safe to use within the same overall Major version of RDS.
+
+It is safe to use a block with the version 1.5.6 while using RDS version 1.1.0. Furthermore, feel free to use the [content block](#) version 1.3.1 with [listing block](#) version 1.5.0. The HTML markup, style and script for each block is encapsulated so they won't conflict.
+
+However, if the RDS package changes major versions, for example goes from version 1.0.0 to version 2.0.0, you can only use blocks with a major number of 2 (equivalent to the core version). It is possible that a block's markup will have changed between major versions.
+
+**Bad**: if using RDS 2.2.1, don't use a block with the version 1.5.6.<br>
+**Good**: if using RDS 1.3.2, you can use a block with the version 1.2.1.
+
+**Note**: the best way to remain current is to install RDS via a package manager like [npm](#) or [Composer](#). Otherwise, to remain current, try and integrate comments displaying a block's version into your templating code.
+
+
+
+
+
+## Block status
+Blocks in RDS are labelled with status labels that reflect their state of completion and readiness to use.
+
+### Block status labels
+
+- **Prototype**: block is new and should not be used in production.
+- **Ready**: ready to be used in production.
+- **Under review**: the block is currently being reviewed for quality assurance.
+- **Deprecated**: the block is supported but not recommended.
+- **Not available**: the block is no longer supported and should be removed.
+
+Note: remember even though a block is available they are restricted to page sections and some are not available in certain themes. TODO are we going with themes.
+
+
+
+
+
+
+TODO: add some images

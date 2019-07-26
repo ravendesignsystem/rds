@@ -8,8 +8,7 @@
         <link rel="canonical" href="https://ravendesignsystem.github.io/rds//docs/dev/blocks/header/masthead"/>
         <link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" type="text/css"/>
                                             <link rel="stylesheet" href="https://ravendesignsystem.github.io/rds/css/docs.css">
-                <link rel="manifest" href="/manifest.json">
-                                <link rel="apple-touch-icon" href="apple-touch-icon.png">
+                                        <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <title>Masthead block | Raven Design System | RDS</title>
                                                 <meta property="og:url" content="https://ravendesignsystem.github.io/rds//docs/dev/blocks/header/masthead">
         <meta property="og:type" content="website">
@@ -117,7 +116,7 @@ Accessibility</a>
 				<li class="masthead__search">
 					<button aria-label="Open Search" class="masthead__search-btn u-icon">
 						<svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"  /></svg>
- <span class="u-hide-s">Search</span>
+						<span>Search</span>
 					</button>
 				</li>
 				<li class="masthead__hamburger">
@@ -154,7 +153,7 @@ Accessibility</a>
                                 <div class="b-content">
                             
 
-                                    <p>As a <a href="#">core block</a> and the first block located on top of the page, the masthead is an essential toolbar used for primary actions, such as navigation, search and displaying a site's title and brand. The masthead block can also be used for secondary actions, such as user login and other calls to action.</p>
+                                    <p>As the first block located on top of the page, the masthead is an essential toolbar used for primary actions, such as navigation, search and displaying a site's title and brand. The masthead block can also be used for secondary actions, such as user login and other calls to action.</p>
 
 <h2 id="block-dependencies">Block dependencies</h2>
 
@@ -162,11 +161,22 @@ Accessibility</a>
 
 <p>The masthead block requires the use of RDS' core JavaScript file to function. Make sure you are incorporating the <a href="#">core RDS JS</a>.</p>
 
+<h4 id="sticky-masthead---js">Sticky Masthead - JS</h4>
+
+<p>By default, when a user scrolls down the page, the Masthead scrolls out of view, as expected. However, for easy access, as soon as a users scrolls back up, the Masthead reappears stuck to the top of the page until the user scrolls down again. All of the code examples on this page make use of this sticky Masthead functionality.</p>
+
+<p>**If you do not want the sticky Masthead functionality **, remove <code>js-sticky-scroll</code> from thisd line of codeL:</p>
+
+<pre><code class="html">&lt;div class="b-masthead js-sticky-scroll"&gt;
+</code></pre>
+
 <h3 id="mobile-menu">Mobile Menu</h3>
 
-<p>The visibility of certain elements within the masthead block changes depending on screen size. The mobile menu ("hamburger") button is only visible on small screen sizes. The mobile menu button launches an overlay containing the <code>b-menu</code> block, which contains your site-wide navigation. All of the code examples below assume your application requires a mobile menu and includes the code for the mobile menu button. View the <a href="#">b-menu</a> documentation for further implementation notes and reference.</p>
+<p>The visibility of certain elements within the masthead block changes depending on screen size. The mobile menu ("hamburger") button is only visible on smaller screen sizes.</p>
 
-<p><strong>If you want do not want a mobile menu</strong>, simply remove the below snippet from your Masthead code.</p>
+<p>The mobile menu button launches an overlay containing the <code>b-menu</code> block, which contains your site-wide navigation. All of the code examples below assume your application requires the mobile menu button, which in turn requires you to include the code for <a href="#">dialogue layout</a> in your page template. View the <a href="#">b-menu</a> documentation for further implementation notes and reference.</p>
+
+<p><strong>If do not want a mobile menu</strong>, simply remove the below snippet from your Masthead code in the examples below.</p>
 
 <pre><code class="html">&lt;li class="masthead__hamburger"&gt;
     &lt;button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button"&gt;
@@ -176,12 +186,6 @@ Accessibility</a>
     &lt;/button&gt;
 &lt;/li&gt;
 </code></pre>
-
-<h3 id="sticky-masthead...-on-scroll-up">Sticky Masthead... on scroll up</h3>
-
-<p>By default, when a user scrolls down the page, the Masthead scrolls out of view, as expected. However, for easy access, as soon as a users scrolls back up, the Masthead reappears stuck to the top of the page until the user scrolls down again. All of the code examples on this page make use of this sticky Masthead functionality.</p>
-
-<p><strong>If you do not want the Masthead to stick to the top of the page when a users scrolls back up</strong>, remove the block modifier <code>b-masthead--sticky-scroll</code></p>
 
 <h3 id="getting-started-with-the-masthead-block">Getting started with the masthead block</h3>
 
@@ -231,7 +235,7 @@ Site Name</a>
 </p>
 
 <pre><code class="html">&lt;div class="u-block u-block--full"&gt;
-    &lt;div class="b-masthead b-masthead--sticky-scroll"&gt;
+    &lt;div class="b-masthead js-sticky-scroll"&gt;
         &lt;div&gt;
             &lt;nav aria-label="Site title and primary navigation"&gt;
                 &lt;h2 class="masthead__site"&gt;
@@ -278,7 +282,7 @@ Site Name</a>
                 <li class="masthead__search">
                     <button aria-label="Open Search" class="masthead__search-btn u-icon">
                         <svg style="top:0" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
-                        <span class="u-hide-s">Search</span>
+                        <span>Search</span>
                     </button>
                 </li>
                 <li class="masthead__hamburger">
@@ -298,7 +302,7 @@ Site Name</a>
 </p>
 
 <pre><code class="html">&lt;div class="u-block u-block--full"&gt;
-    &lt;div class="b-masthead b-masthead--sticky-scroll"&gt;
+    &lt;div class="b-masthead js-sticky-scroll"&gt;
         &lt;div&gt;
             &lt;nav aria-label="Site title and subsite navigation"&gt;
                 &lt;h2 class="masthead__site"&gt;
@@ -312,7 +316,7 @@ Site Name&lt;/a&gt;
                 &lt;li class="masthead__search"&gt;
                     &lt;button aria-label="Open Search" class="masthead__search-btn u-icon"&gt;
                         &lt;svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"&gt;&lt;/path&gt;&lt;/svg&gt;
- &lt;span class="u-hide-s"&gt;Search&lt;/span&gt;
+ &lt;span&gt;Search&lt;/span&gt;
                     &lt;/button&gt;
                 &lt;/li&gt;
                 &lt;li class="masthead__hamburger"&gt;
@@ -328,14 +332,23 @@ Site Name&lt;/a&gt;
 &lt;/div&gt;
 </code></pre>
 
-<p><strong>Note</strong>: in the code example above the search label is wrapped in a span with the class <code>u-hide-s</code>. This will hide the label on small screens to provide more space. To have the text label visible on all screen sizes, remove the <code>u-hide-s</code> utility class.</p>
+<h3 id="search-label-text">Search label text</h3>
 
-<p>The search "loop" icon is one of the few universally recognized icons that can be used by itself. While it is always better to have a label beside your icons, to save space you can use just the search icon on all screen sizes with the code below:</p>
+<p><strong>Notice</strong> how the search label beside the <span class="u-icon"><svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"  /></svg>
+</span> icon is wrapped in a <code>&lt;span&gt;</code>.</p>
 
-<pre><code class="html">&lt;button aria-label="Open Search" class="masthead__search-btn u-icon"&gt;
-    &lt;svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"&gt;&lt;/path&gt;&lt;/svg&gt;
-&lt;/button&gt;
+<pre><code class="html">&lt;li class="masthead__search"&gt;
+    &lt;button aria-label="Open Search" class="masthead__search-btn u-icon"&gt;
+       &lt;svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;...&lt;/svg&gt;
+       &lt;span&gt;Search&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/li&gt;
 </code></pre>
+
+<p>This hides the search label on screens smaller then 1474px, to provide more space. To have the text label visible on all screen sizes, remove the <code>&lt;span&gt;</code>. Just make sure your have enough space on small screens for this extra text.</p>
+
+<p>While it is always better to have a label beside your icons, we feel the search ( <span class="u-icon"><svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"  /></svg>
+</span>) icon is one of the few universally recognized icons that can be used by itself.</p>
 
 <h3 id="search-button-dependencies">Search button dependencies</h3>
 
@@ -385,7 +398,7 @@ Site Name</a>
 </p>
 
 <pre><code class="html">&lt;div class="u-block u-block--full"&gt;
-    &lt;div class="b-masthead b-masthead--sticky-scroll"&gt;
+    &lt;div class="b-masthead js-sticky-scroll"&gt;
         &lt;div&gt;
             &lt;nav aria-label="Site title and subsite navigation"&gt;
                 &lt;h2 class="masthead__site"&gt;
@@ -461,7 +474,7 @@ Site Name</a>
 </p>
 
 <pre><code class="html">&lt;div class="u-block u-block--full"&gt;
-    &lt;div class="b-masthead b-masthead--sticky-scroll"&gt;
+    &lt;div class="b-masthead js-sticky-scroll"&gt;
         &lt;div&gt;
             &lt;nav aria-label="Site title and subsite navigation"&gt;
                 &lt;h2 class="masthead__site"&gt;
@@ -537,7 +550,7 @@ Site Name</a>
 </p>
 
 <pre><code class="html">&lt;div class="u-block u-block--full"&gt;
-    &lt;div class="b-masthead b-masthead--sticky-scroll"&gt;
+    &lt;div class="b-masthead js-sticky-scroll"&gt;
         &lt;div&gt;
             &lt;nav aria-label="Site title and subsite navigation"&gt;
                 &lt;h2 class="masthead__site"&gt;
@@ -625,7 +638,7 @@ Site Name</a>
 </p>
 
 <pre><code class="html">&lt;div class="u-block u-block--full"&gt;
-    &lt;div class="b-masthead b-masthead--sticky-scroll"&gt;
+    &lt;div class="b-masthead js-sticky-scroll"&gt;
         &lt;div&gt;
             &lt;nav aria-label="Site title and subsite navigation"&gt;
                 &lt;h2 class="masthead__site"&gt;
@@ -729,7 +742,7 @@ Site Name</a>
 </p>
 
 <pre><code class="html">&lt;div class="u-block u-block--full"&gt;
-    &lt;div class="b-masthead b-masthead--sticky-scroll"&gt;
+    &lt;div class="b-masthead js-sticky-scroll"&gt;
         &lt;div&gt;
             &lt;nav aria-label="Site title and subsite navigation"&gt;
                 &lt;h2 class="masthead__site"&gt;
@@ -833,7 +846,7 @@ Site Name</a>
 </p>
 
 <pre><code class="html">&lt;div class="u-block u-block--full"&gt;
-    &lt;div class="b-masthead b-masthead--sticky-scroll"&gt;
+    &lt;div class="b-masthead js-sticky-scroll"&gt;
         &lt;div&gt;
             &lt;nav aria-label="Site title and subsite navigation"&gt;
                 &lt;h2 class="masthead__site"&gt;
@@ -962,7 +975,7 @@ Site Name</a>
 </p>
 
 <pre><code class="html">&lt;div class="u-block u-block--full"&gt;
-    &lt;div class="b-masthead b-masthead--sticky-scroll"&gt;
+    &lt;div class="b-masthead js-sticky-scroll"&gt;
         &lt;div&gt;
             &lt;nav aria-label="Site title and subsite navigation"&gt;
                 &lt;h2 class="masthead__site"&gt;
@@ -1021,10 +1034,10 @@ Site Name&lt;/a&gt;
 
 <p>Masthead nav items can have submenus providing one extra level of navigation. Submenus are displayed using the <a href="#">Menu Popup component</a>.</p>
 
-<p>TODO add images of Masthead with submenus.</p>
+<p><strong>TODO add images of Masthead with submenus.</strong></p>
 
 <pre><code class="html">&lt;div class="u-block u-block--full"&gt;
-    &lt;div class="b-masthead b-masthead--shadow"&gt;
+    &lt;div class="b-masthead js-sticky-scroll"&gt;
         &lt;div&gt;
             &lt;nav aria-label="Site title and subsite navigation"&gt;
                 &lt;h2 class="masthead__site"&gt;
@@ -1064,6 +1077,26 @@ Site Name&lt;/a&gt;
         &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/div&gt;
+</code></pre>
+
+<h2 id="masthead-with-sub-navigation-without-parent-links">Masthead with sub navigation without parent links</h2>
+
+<p>If you have sub navigation in your Masthead and you only want the parent link to open the submenu and not link off to another page, replace the parent's <code>&lt;a&gt;</code> tag with <code>&lt;button&gt;</code>. This will also change the action displaying the submenu from a hover to a click.</p>
+
+<p>The following will only open the submenu onclick and not link off:</p>
+
+<pre><code class="html">&lt;button class="c-menupopup"&gt;Nav item with submenu&lt;/button&gt;
+    &lt;ul class="menupopup__menu" aria-label="menupopup"&gt;
+        &lt;li&gt;
+            &lt;a href="#"&gt;Submenu link a&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="#"&gt;Submenu link b&lt;/a&gt;
+        &lt;/li&gt;
+         &lt;li&gt;
+             &lt;a href="#"&gt;Submenu link c&lt;/a&gt;
+         &lt;/li&gt;                   
+    &lt;/ul&gt;
 </code></pre>
 
 <h2 id="implementation-notes">Implementation Notes</h2>
@@ -1144,8 +1177,8 @@ Site Name&lt;/a&gt;
                                             
                         
             <li>
-                                <input  id="menu--1-67" type="checkbox" hidden/>
-                    <label for="menu--1-67">
+                                <input  id="menu--1-35" type="checkbox" hidden/>
+                    <label for="menu--1-35">
                         <a class="menu__link" href="#">Level 1-1</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1153,8 +1186,8 @@ Site Name&lt;/a&gt;
                                             
                         
             <li>
-                                <input  id="menu-2-1-45" type="checkbox" hidden/>
-                    <label for="menu-2-1-45">
+                                <input  id="menu-2-1-121" type="checkbox" hidden/>
+                    <label for="menu-2-1-121">
                         <a class="menu__link" href="#">Level 2-1</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1174,8 +1207,8 @@ Site Name&lt;/a&gt;
                                             
                         
             <li>
-                                <input  id="menu-2-1-127" type="checkbox" hidden/>
-                    <label for="menu-2-1-127">
+                                <input  id="menu-2-1-91" type="checkbox" hidden/>
+                    <label for="menu-2-1-91">
                         <a class="menu__link" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1192,8 +1225,8 @@ Site Name&lt;/a&gt;
                                             
                         
             <li>
-                                <input  id="menu--1-105" type="checkbox" hidden/>
-                    <label for="menu--1-105">
+                                <input  id="menu--1-146" type="checkbox" hidden/>
+                    <label for="menu--1-146">
                         <a class="menu__link" href="#">First Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1201,8 +1234,8 @@ Site Name&lt;/a&gt;
                                             
                         
             <li>
-                                <input  id="menu-2-1-28" type="checkbox" hidden/>
-                    <label for="menu-2-1-28">
+                                <input  id="menu-2-1-56" type="checkbox" hidden/>
+                    <label for="menu-2-1-56">
                         <a class="menu__link" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1222,8 +1255,8 @@ Site Name&lt;/a&gt;
                                             
                         
             <li>
-                                <input  id="menu-2-1-100" type="checkbox" hidden/>
-                    <label for="menu-2-1-100">
+                                <input  id="menu-2-1-102" type="checkbox" hidden/>
+                    <label for="menu-2-1-102">
                         <a class="menu__link" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1270,7 +1303,11 @@ Site Name&lt;/a&gt;
         </div>
 
     </div>
-</div>     <script src="https://ravendesignsystem.github.io/rds/js/docs.js"></script>
+</div>     <script type="text/javascript">
+                if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+            document.write('<script src="https://unpkg.com/element-closest/browser"><\/script>');
+    </script>
+    <script src="https://ravendesignsystem.github.io/rds/js/docs.js"></script>
   
 </body>
 </html>

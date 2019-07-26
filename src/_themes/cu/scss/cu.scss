@@ -1,13 +1,13 @@
 /*
- * RDS Docs v1.0.3
- * Copyright 2011-2019 Carleton University
+ * RDS CU THEME v1.0.0
+ * Copyright 1973-2073 Carleton University
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
 // --------
 // RDS Core
 // --------
-@import '../../core/scss/core';
+@import '../../../_core/scss/core';
 
 // Header blocks
 //--------------
@@ -25,15 +25,15 @@
 @import '../../../_blocks/textimg/textimg';
 
 // Aside blocks
-//------------
+//-------------
 @import '../../../_blocks/menu/menu';
 @import '../../../_blocks/sidebar/sidebar';
 
-// Footer Blocks:
-// ---------------
+// Footer blocks
+// --------------
 @import '../../../_blocks/footersimple/footersimple';
 @import '../../../_blocks/footersitemap/footersitemap';
 
-// Overlay blocks:
-// ---------------
+// Overlay blocks
+// --------------
 @import '../../../_blocks/login/login';

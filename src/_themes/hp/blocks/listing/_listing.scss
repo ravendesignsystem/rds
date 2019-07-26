@@ -98,8 +98,8 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 
-	@include media(">=450px") {
-		white-space: nowrap;
+	@include media(">=710px") {
+		max-width: 360px;
 	}
 }
 

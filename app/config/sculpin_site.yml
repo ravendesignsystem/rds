@@ -87,6 +87,11 @@ components:
         section: alerts
         theme: core
     -
+        name: Heading (No content)
+        handle: heading
+        section: headings
+        theme: core
+    -
         name: Call to Action
         handle: cta-button
         section: buttons

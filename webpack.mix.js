@@ -35,40 +35,25 @@ mix
 
 if (env === 'production') {
 	mix
-		.sass('src/_themes/core/scss/core.scss', 'dist/core/css/rds-core-min')
-		.sass('src/_themes/cu/scss/cu.scss', 'dist/themes/cu/1.2.2/cu.min.css')
-		.js('src/_themes/cu/js/cu.js', 'dist/themes/cu/1.2.2/cu.min.js')
-		.js('src/_themes/core/js/core.js', 'dist/core/js/rds-core-min')
-		.copy('build/docs', 'docs');
-	// .sass('src/_themes/cms/scss/_cms.scss', 'dist/themes/cms/css/cms-min')
-	// .sass('src/_themes/ff/scss/_ff.scss', 'dist/themes/ff/css/ff-min')
-	// .sass('src/_themes/fw/scss/_fw.scss', 'dist/themes/fw/css/fw-min')
-}
-
-if (env === 'dist') {
-	mix.minify
-		.sass('src/_themes/cu/scss/cu.scss', 'dist/themes/cu/css')
-		.js('src/_themes/cu/js/cu.js', 'dist/themes/cu/js');
-}
-
-if (env === 'package') {
-	mix
-		.sass('src/_themes/core/scss/core.scss', 'package/core/scss/_core.scss')
-		.copy(
-			'src/_themes/core/scss/base/vendor/_include-media.scss',
-			'package/core/scss/base/vendor/'
-		)
-		.copy(
-			'src/_themes/core/scss/base/vars/_vars.scss',
-			'package/core/scss/base/vars/'
-		)
-		// Blocks
-		.copy(
-			'src/_blocks/footersimple/_footersimple.scss',
-			'package/blocks/footersimple/'
-		)
-		.copy(
-			'src/_blocks/footersitemap/_footersitemap.scss',
-			'package/blocks/footersitemap/'
-		);
+		.copy('build/docs', 'docs')
+		.js('src/_core/js/core.js', 'rds/core/js/core.js')
+		.sass('src/_components/_components.scss', 'dist/_components/_components.scss')
+		.copyDirectory('src/_core/layouts', 'dist/core/layouts')
+		.copyDirectory('src/_core/scss', 'dist/core/scss')
+		.copy('src/_blocks/banner/*.scss', 'dist/_blocks/banner/')
+		.copy('src/_blocks/cardgrid/*.scss', 'dist/_blocks/cardgrid')
+		.copy('src/_blocks/content/*.scss', 'dist/_blocks/content')
+		.copy('src/_blocks/footerbrand/*.scss', 'dist/_blocks/footerbrand')
+		.copy('src/_blocks/footersimple/*.scss', 'dist/_blocks/footersimple')
+		.copy('src/_blocks/footersitemap/*.scss', 'dist/_blocks/footersitemap')
+		.copy('src/_blocks/globalnav/*.scss', 'dist/_blocks/globalnav')
+		.copy('src/_blocks/globalnav/*.scss', 'dist/_blocks/globalnav')
+		.copy('src/_blocks/imgfull/*.scss', 'dist/_blocks/imgfull')
+		.copy('src/_blocks/listing/*.scss', 'dist/_blocks/listing')
+		.copy('src/_blocks/login/*.scss', 'dist/_blocks/login')
+		.copy('src/_blocks/masthead/*.scss', 'dist/_blocks/masthead/')
+		.copy('src/_blocks/menu/*.scss', 'dist/_blocks/menu/')
+		.copy('src/_blocks/search/*.scss', 'dist/_blocks/search')
+		.copy('src/_blocks/sidebar/*.scss', 'dist/_blocks/sidebar')
+		.copy('src/_blocks/textimg/*.scss', 'dist/_blocks/textimg');
 }

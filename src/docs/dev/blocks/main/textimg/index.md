@@ -20,7 +20,7 @@ dependencies:
     js: n/a
     selector: b-textimg
     restricted: div or section
-    maxwidth: u-block--m
+    maxwidth: u-block--l
 examples:
 - name: base
 - name: heading

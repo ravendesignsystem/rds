@@ -10,13 +10,29 @@ sidebar: top
 
 If you are affiliated with Carleton, you can skip all of the technical overhead required to build your own RDS site, by using the [Carleton CMS service](https://carleton.ca/webservices/request-a-website/). RDS and all of its goodness is baked right into the free WordPress CMS service. Using the Carleton CMS service is by far the fastest and easiest way to get up and running with a new RDS website. By using this service, you can focus on your content and [Web Services](https://carleton.ca/webservices) will take care of hosting, security and all of the updates.
 
-## Carleton themes: Quick start
+## Quick start
 
-If you are looking to setup a website that uses either the [Carleton CMS theme](#) or the [Framework theme](#), you should follow this [Quick start guide](#) for integrating existing Carleton themes.
+To quickly get up and running, add the RDS CSS and JS from Carleton's CDN.
+
+### CSS
+
+Copy-paste the stylesheet <link> below into your `<head>` before any other stylesheets.
+
+```html
+<link rel="stylesheet" href="http://cu-rds.s3.amazonaws.com/rds/1.0.0/rds.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+```
+
+### JS
+
+Copy-paste the `<script>` above your closing `</body>`.
+
+```html
+<script src="http://cu-rds.s3.amazonaws.com/rds/1.0.0/rds.js" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+```
 
 ## Getting started with custom themes
 
-If you want to roll your own custom theme or extend one of the [two defaults themes](#), there are three main ways to get started with RDS:
+If you want to roll your own custom RDS theme or extend one of the default [CU Theme](#), there are three main ways to get started with RDS:
 
 
 

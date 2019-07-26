@@ -16,7 +16,7 @@ meta:
     path: accordion/
     theme: Core
 ---
-The Accordion block is a vertically stacked list of items with content sections collapsed by default. Each item's content can be expanded and then collapsed by clicking the title allowing users to expose content in a progressive manner. Accordions minimize scrolling on long pages and display critical information first.
+The Accordion component is a vertically stacked list of items with content sections collapsed by default. Each item's content can be expanded and then collapsed by clicking the title allowing users to expose content in a progressive manner. Accordions minimize scrolling on long pages and display critical information first.
 
 ## Base example
 
