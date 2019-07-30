@@ -25,7 +25,7 @@ To quickly get up and running, add RDS' CSS and JS from Carleton's CDN.
 Copy-paste the stylesheet <link> below into your `<head>` before any other stylesheets.
 
 ```html
-<link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.css" media="print" onload="this.media='all'">
 ```
 
 #### Gzipped CSS
@@ -33,7 +33,7 @@ Copy-paste the stylesheet <link> below into your `<head>` before any other style
 If your server supports gzip, use the gzip version for an even smaller file size.
 
 ```html
-<link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds.gzip.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.gzip.css" media="print" onload="this.media='all'">
 ```
 
 TODO add integrity and cross origin hashes.
@@ -43,14 +43,14 @@ TODO add integrity and cross origin hashes.
 Copy-paste the below `<script>` directly above your closing `</body>`.
 
 ```html
-<script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds.js" crossorigin="anonymous">
+<script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.js" crossorigin="anonymous">
 ```
 #### Gzipped JS
 
 If your server supports gzip, use the gzip version for an even smaller file size.
 
 ```html
-<script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds.gzip.js" crossorigin="anonymous">
+<script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.gzip.js" crossorigin="anonymous">
 ```
 
 ### What is included
