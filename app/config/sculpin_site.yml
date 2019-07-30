@@ -1,7 +1,7 @@
 # Site wide global vars - eg. {{ site.title }} can be used in templates
 title: RDS Local
 subtitle: RDS
-version: 0.0.20
+version: 0.0.19
 coreSize: 26KB
 url: /docs/
 #fw: Carleton

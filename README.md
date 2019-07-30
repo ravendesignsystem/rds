@@ -6,6 +6,8 @@ Let my heart be still a moment and this mystery explore...
 
 ## Getting started
 
+**Note**: instructions below are for working with the RDS Docs package. RDS design systems documentation can be found at https://ravendesignsystem.github.io/rds/
+
 ### Clone repo
 
 Clone this repo https://github.com/ravendesignsystem/rds.git into your project directory.
@@ -49,12 +51,12 @@ RDS and its documentation are built with:
 - [Love](https://i.redd.it/qh713wbo4r8y.jpg) - <3
 - [Laravel Mix](https://laravel-mix.com)
 - [SCSS](https://sass-lang.com) - CSS superpower provider used
-- [read more](https://sculpin.io)
+- [Sculpin](https://sculpin.io)
 - [webpack](https://webpack.js.org)
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+- TODO
 
 ## Versioning
 
