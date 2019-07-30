@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 const env = process.env.NODE_ENV;
+const ver = "0.0.19";
 
 mix
 	// .sass('src/_scss/docs/critical.scss', 'src/_css')
@@ -35,6 +36,8 @@ mix
 
 if (env === 'production') {
 	mix
+	 .js('src/_core/js/core.js', 'dist/' + ver + '/rds.js')
+		.sass('src/_core/scss/core.scss', 'dist/' + ver + '/rds.css')
 		.copy('build/docs', 'docs')
 		.js('src/_core/js/core.js', 'dist/core/js/core.js')
 		.sass('src/_components/_components.scss', 'dist/_components/_components.scss')
