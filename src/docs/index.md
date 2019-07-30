@@ -8,7 +8,7 @@ title: Raven Design System (RDS)
     'color': 'black', 
     'modifier': 'b-docs-textimg',
     'title': 'Raven Design System',
-    'content': '<p>RDS, Carleton University\’s design system, is a living digital organism uniting campus wide teams around a common visual language. <a href="hp/">Learn more…</a></p>'
+    'content': '<p>RDS, Carleton University\’s design system, is a living digital organism uniting campus wide teams around a common visual language. <a href="dev/">Learn more…</a></p>'
     } %}
 
 {% include 'inc' with {'theme': 'docs', 'block': 'gridhome'} %}
