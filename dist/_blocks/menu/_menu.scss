@@ -102,9 +102,6 @@
 	line-height: 40px;
 }
 
-.body__nav .b-menu ul ul li:last-child a {
-	padding-bottom: 14px;
-}
 
 .b-menu input[type='checkbox']:checked + label > i:after {
 	transform: rotate(135deg);
@@ -127,10 +124,7 @@
 	max-height: 1000px; // reset the height when checkbox is checked
 }
 
-// only show menu heading in overlay
-.body__nav h2 {
-	display: none;
-}
+
 // Child Level Nav Styles
 // =======================================
 // 1st level
@@ -143,18 +137,15 @@
 	box-shadow: inset 0px -11px 12px -12px $grey-yoda;
 }
 
-.b-menu ul ul:not(.body__nav .b-menu ul ul) { // no background color if not in  overlay
+.b-menu ul ul:not(.multicol__nav .b-menu ul ul) { // no background color if not in  overlay
 	background-color: $grey;
 }
 
-.b-menu ul ul ul:not(.body__nav .b-menu ul ul ul) { // no background color if not in  overlay
+.b-menu ul ul ul:not(.multicol__nav .b-menu ul ul ul) { // no background color if not in  overlay
 	background-color: white;
 }
 
-.body__nav .b-menu ul ul ul li:last-child a {
-	padding-top: 0px;
-	padding-bottom: 2px;
-}
+
 
 .b-menu ul ul a {
 	padding-left: 35px;

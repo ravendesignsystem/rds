@@ -3,6 +3,7 @@
 //
 //  Table of Contents:
 //
+//   0. RDS version
 //   1. Grid
 //   2. Block utils
 //   3. Icon utils
@@ -11,12 +12,18 @@
 //   6. Misc utils
 //   7. Content
 
+// 0. RDS version
+// --------------
+.u-v::after {
+	content: "#{ ($version)}";
+}
+
+
+
 // 1. Grid system
 // --------------
 
 // CSS Grid IE11 Fallback
-// ----------------------
-
 // TODO: look into @support grid
 @media screen and (-ms-high-contrast: active),
 	screen and (-ms-high-contrast: none) {

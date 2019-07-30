@@ -1,7 +1,9 @@
 ---
 layout: docs
 subsite: dev
-title: Icon system
+menu: dev
+section: Custom theming
+title: Icon System
 content: true
 ---
 RDS offers a simple icon system empowering the creation, maintenance and implementation of SVG icons project-wide.

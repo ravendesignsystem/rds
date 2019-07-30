@@ -83,6 +83,8 @@ Similar to Blocks, RDS Components are UI elements built for reuse. Unlike Blocks
 
 Components are the equivalent to Atoms or Molecules in [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/#atoms) and allow us to keep the CSS code lean as repeated elements are represented by only one abstraction.
 
+Blocks and components help keep the CSS code lean as repeated elements are represented by only one abstraction.
+
 ## Layouts
 
  Layouts are used to arrange [Blocks](#) and position them within page [sections](#). If you are working on a one column page design, chances are a layout is not necessary as RDS blocks are designed to stack directly on top of each other. If you need to lay your blocks out in multiple columns, layouts are the means to do so. Layouts also used to set content breakpoints and determine which blocks are visible on different screen sizes.

@@ -1,0 +1,28 @@
+{% if docs %}
+    <div class="u-block u-block--white u-block--s">
+        <div class="b-content">
+            <h2 id="button">Banner with CTA Button</h2>
+            <p>Urge your visitors to take an immediate action by adding a <a href='#'>Call to Action button</a>.
+            </p>
+        </div>
+    </div>
+{% endif %}
+{% from "banner/banner.twig" import banner %}
+{{ banner (
+    {
+    },
+    {
+        breadcrumbs: {
+            grandparent: "Blocks",
+            parent: "Banners"
+        },
+        button:
+         [
+             {
+                 title: "Learn about Calls to Action",
+                 url: "https://writtent.com/blog/15-call-action-samples-rocking-blog-posts-convert/"
+             }
+         ],
+        title: "Banner with a CTA Button"
+    }
+) }}

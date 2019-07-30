@@ -1,0 +1,28 @@
+{% if docs %}
+    <div class="u-block u-block--white u-block--s">
+        <div class="b-content">
+            <h2 id="buttons">Multiple CTA buttons</h2>
+            <p>You can add up to two CTA buttons.</p>
+        </div>
+    </div>
+{% endif %}
+{% from "banner/banner.twig" import banner %}
+{{ banner (
+    {
+    },
+    {
+        button:
+         [
+             {
+                 title: "Learn about Ravens",
+                 url: "https://www.youtube.com/watch?v=lrYPm6DD44M"
+             },
+             {
+                 title: "Join the Dark Side",
+                 url: "http://www.nooooooooooooooo.com"
+             }
+         ],
+        title: "Banner with multiple CTA buttons"
+    }
+) }}
+

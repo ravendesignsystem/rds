@@ -1,0 +1,28 @@
+{% from "banner/banner.twig" import banner %}
+{{ banner (
+    {
+        breadcrumbs: {
+            breadcrumbs: true,
+            breadcrumb_grandparent: "gp",
+            breadcrumb_parent: "p"
+        },
+        button:
+        [
+            {
+                title: "Button One",
+                url: "http://www.nooooooooooooooo.com"
+            },
+            {
+                title: "Button Two",
+                url: "http://www.nooooooooooooooo.com"
+            }
+        ],
+        img: {
+            img_url: "http://cu-media.s3.amazonaws.com/images/students-campus.jpg",
+            img_url_s: "http://cu-media.s3.amazonaws.com/images/students-campus-768x336.jpg",
+            img_opacity: "light",
+            img_position: "top"
+        },
+        title: "Base Banner"
+    }
+) }}

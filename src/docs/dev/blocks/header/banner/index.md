@@ -12,7 +12,7 @@ meta:
   handle: banner
   type: Max-width
   section: Header
-  path: banner/
+  path: docs/blocks/banner/
   theme: Core
   heading: N/A
 context:
@@ -36,6 +36,9 @@ examples:
   nicename: Hero Image Lightened and Aligned to the Top
 - name: img-dark
   nicename: Hero Image Darkened and Aligned to the Bottom
+- name: ks
+  nicename: Banner with All Props
+  
 wild: n/a
 alternatives: n/a
 data:
