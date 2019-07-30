@@ -36,8 +36,26 @@ mix
 
 if (env === 'production') {
 	mix
-	 .js('src/_core/js/core.js', 'dist/' + ver + '/rds.js')
-		.sass('src/_core/scss/core.scss', 'dist/' + ver + '/rds.css')
+	 .js('src/_core/js/core.js', 'dist/' + ver + '/rds-cu.js')
+		.sass('src/_themes/cu/scss/cu.scss', 'dist/' + ver + '/rds-cu.css')
+		.options({
+			postCss: [
+				require('cssnano')({
+					preset: [
+						'default',
+						{
+							discardComments: {
+								removeAll: true,
+							},
+						},
+					],
+				}),
+				require('postcss-pxtorem')({
+					replace: true,
+				}),
+				require('css-mqpacker'),
+			],
+		})
 		.copy('build/docs', 'docs')
 		.js('src/_core/js/core.js', 'dist/core/js/core.js')
 		.sass('src/_components/_components.scss', 'dist/_components/_components.scss')
