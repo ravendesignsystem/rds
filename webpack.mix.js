@@ -36,7 +36,7 @@ mix
 if (env === 'production') {
 	mix
 		.copy('build/docs', 'docs')
-		.js('src/_core/js/core.js', 'rds/core/js/core.js')
+		.js('src/_core/js/core.js', 'dist/core/js/core.js')
 		.sass('src/_components/_components.scss', 'dist/_components/_components.scss')
 		.copyDirectory('src/_core/layouts', 'dist/core/layouts')
 		.copyDirectory('src/_core/scss', 'dist/core/scss')

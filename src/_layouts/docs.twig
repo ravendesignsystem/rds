@@ -7,14 +7,14 @@
         <meta name="robots" content="noodp, noydir"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <link rel="canonical" href="{{ site.url }}{{ page.url }}"/>
-        <link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" type="text/css"/>
+
+        <link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" />
         {% block critical %}
             {#Considering load Masthead and Banner CSS here#}
         {% endblock %}
-        {#TODO look into https://keithclark.co.uk/articles/loading-css-without-blocking-render/#}
-        <link rel="stylesheet" href="{{ site.cssPath }}">
-        {#<noscript><link rel="stylesheet" href="{{ site.url }}/css/app.css"></noscript>#}
-{#        <link rel="manifest" href="/manifest.json">#}
+        {# **NOICE! https://www.filamentgroup.com/lab/load-css-simpler/#}
+        <link rel="stylesheet" href="{{ site.cssPath }}" media="print" onload="this.media='all'">
+        {#<link rel="manifest" href="/manifest.json">#}
         {#<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>#}
         {# <link rel="apple-touch-icon-precomposed" href="http://mysite.com/images/apple-retina.png" sizes="114x114" /> #}
         {# <link rel="apple-touch-icon-precomposed" href="http://mysite.com/images/apple-ipad.png" sizes="72x72" /> #}
@@ -72,17 +72,17 @@
 
     {% block body %}
         {% if (page.menu) or (page.sidebar) %}
-        <div class="l-body{% if page.sidebar %} l-body--ama{% else %} l-body--am{% endif %} l-body--white{% if 'l' in page.sidebar %} l-body--sidebar-large{% endif %} {% if 'top' in page.sidebar %} l-body--sidebar-top{% endif %}">
-            <div class="body__container">
+        <div class="l-multicol{% if page.sidebar %} l-multicol--ama{% else %} l-multicol--am{% endif %} l-multicol--white{% if 'l' in page.sidebar %} l-multicol--sidebar-large{% endif %} {% if 'top' in page.sidebar %} l-multicol--sidebar-top{% endif %}">
+            <div class="multicol__container">
 
-                <aside class="body__nav u-sticky">
+                <aside class="multicol__nav u-sticky">
                     {%include 'docs/inc/menus/menu-' ~ page.menu %}
                 </aside>
         {% endif %}
                 {% block main %}
-                    <main {% if (page.menu) or (page.sidebar) %}class="body__main"{% endif %} id="content">
+                    <main {% if (page.menu) or (page.sidebar) %}class="multicol__main"{% endif %} id="content">
 
-                        <div class="body__content">
+                        <div class="multicol__content">
                             {% if page.content != 'none' %}
                             <div class="u-block u-block--white u-block--s">
                                 <div class="b-content">
@@ -97,9 +97,16 @@
                                 </div>
                             </div>
                             {% endif %}
+                            {% if page.title != 'Raven Design System (RDS)' %}
+                                <div class="u-block u-block--s u-block--white">
+                                    <div class="b-docs-footnote">
+                                        <p class="u-v">Using <a href="https://ravendesignsystem.github.io/rds/">Raven Design System</a> (RDS) v</p>
+                                    </div>
+                                </div>
+                            {% endif %}
                         </div>
                         {% if page.sidebar %}
-                        <aside class="body__sidebar">
+                        <aside class="multicol__sidebar">
                             {% set sidebar = true %}
                             {% include 'inc' with {'block': 'sidebar-base'} %}
                         </aside>
@@ -120,7 +127,7 @@
         </footer>
     {% endblock %} {# END footer block #}
 
-    <div class="l-overlay-modal is-hidden">
+    <dialog class="l-overlay-modal is-hidden">
 
         <div class="modal__search is-hidden">
             {% include "search/search" %}
@@ -153,7 +160,7 @@
             </div>
         </div>
 
-    </div>{# END l-overlay #}
+    </dialog>{# END l-overlay #}
 
 </div> {#END APP ID #}
 {% block scripts %}

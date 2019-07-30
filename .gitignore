@@ -1,6 +1,6 @@
 /.idea/
 /build/
-/dist/
+/dist/.idea/
 /node_modules/
 /rds/.idea/
 /vendor/

@@ -2,14 +2,14 @@
 layout: docs
 subsite: dev
 section: Main concepts
-title: Blocks
+title: Blocks Overview
 banner:
   breadcrumbs:
     parent: Main concepts
 ---
-RDS Blocks are the equivalent of "components" in other [design systems](#). They are chunks of reusable code that can be assembled in different combinations to build any number of user interfaces.
+RDS Blocks are the equivalent of "components" in other [design systems](https://designsystemsrepo.com/design-systems/). They are chunks of reusable code that can be assembled in different combinations to build any number of user interfaces.
 
-Since they account for pretty much every UI element on screen, this page provides a must-read, deep dive into RDS Blocks.
+Since they account for pretty much every stand-alone UI element on screen, this page provides a must-read, deep dive into RDS Blocks.
 
 # Block guidelines and rules
 
@@ -40,7 +40,7 @@ Here is what our **Simple block looks like**:
 
 {%include 'inc' with {'open': true}%}
 
-Here is its **HTML markup** that will be explained further below:
+Here is its HTML markup that will be explained further below:
 
 ```html
 <div class="u-block u-block--s u-block--white">
@@ -102,7 +102,7 @@ Notice how the block is wider as it is now using the larger fixed width modifier
 
 #### Full-width blocks
 
-Full-width blocks, such as the [Banner block](#), span the entire width of the screen.
+Full-width blocks, such as the [Masthead block]({{site.url}}dev/blocks/header/masthead/), span the entire width of the screen.
 
 TODO add img.
 

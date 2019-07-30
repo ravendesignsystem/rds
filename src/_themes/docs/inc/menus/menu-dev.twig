@@ -12,11 +12,6 @@
                     [
                         {
                             active: page.title,
-                            title: 'Quick start',
-                            url: site.url ~ 'dev/getting-started/quick-start/'
-                        },
-                        {
-                            active: page.title,
                             title: 'Starter downloads',
                             url: site.url ~ 'dev/getting-started/started-downloads/'
                         },
@@ -36,13 +31,13 @@
                     [
                         {
                             active: page.title,
-                            title: 'Blocks',
-                            url: site.url ~ 'dev/main-concepts/blocks-in-depth/'
+                            title: 'Blocks Overview',
+                            url: site.url ~ 'dev/main-concepts/blocks-overview/'
                         },
                         {
                             active: page.title,
-                            title: 'Components',
-                            url: site.url ~ 'dev/main-concepts/components/'
+                            title: 'Components Overview',
+                            url: site.url ~ 'dev/main-concepts/components-overview/'
                         },
                         {
                             active: page.title,
@@ -63,7 +58,7 @@
                 },
                 {
                     title: 'Blocks',
-                    url: '#',
+                    url: site.url ~ 'dev/blocks/',
                     section: page.section,
                     subsection: page.subsection,
                     submenu:
@@ -209,8 +204,9 @@
                     submenu:
                     [
                         {
-                            title: 'Principles and guidelines',
-                            url: site.url ~ 'dev/#'
+                            active: page.title,
+                            title: 'HTML & CSS Guide',
+                            url: site.url ~ 'dev/guidelines/html-css-guide/'
                         },
                         {
                             title: 'SASS',

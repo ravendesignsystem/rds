@@ -11,15 +11,16 @@ banner:
 ---
 ## Getting started
 
-- [Get started]({{site.url}}dev/getting-started/get-started/)
-- [Quick start - stub]({{site.url}}dev/getting-started/quick-start/)
-- [Started packages - stub]({{site.url}}dev/getting-started/starter-packages/)
+- [Get started]({{site.url}}dev/getting-started/)
+- [Starter Packages - stub]({{site.url}}dev/getting-started/starter-packages/)
+- [Recipes and Patterns - stub]({{site.url}}dev/getting-started/recipes-patterns/)
+
 
 ## Main concepts
 
 - [Main concepts of RDS]({{site.url}}dev/main-concepts/)
-- [Blocks in depth]({{site.url}}dev/main-concepts/blocks-in-depth/)
-- [Components]({{site.url}}dev/main-concepts/components)
+- [Blocks overview]({{site.url}}dev/main-concepts/blocks-overview/)
+- [Components overview]({{site.url}}dev/main-concepts/components)
 - [Layouts]({{site.url}}dev/main-concepts/layouts/)
 - [Themes]({{site.url}}dev/main-concepts/themes/)
 - [Spacing]({{site.url}}dev/main-concepts/spacing/)
