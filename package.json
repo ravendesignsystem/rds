@@ -1,23 +1,14 @@
 {
 	"name": "rds",
-	"version": "0.9.17",
+	"version": "0.9.19",
 	"description": "Never more",
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/ravendesignsystem/rds.git"
 	},
 	"scripts": {
-		"mixdev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-		"watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-		"hot": "NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-		"mixprod": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-		"sculpin": "vendor/bin/sculpin generate --watch --server",
-		"sculpin-prod": "vendor/bin/sculpin generate --clean --server --env=prod",
-		"dev": "concurrently --kill-others \"vendor/bin/sculpin generate --watch --server\" \"NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js\"",
-		"prod": "concurrently \"vendor/bin/sculpin generate --clean --server --env=prod\" \"NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js\"",
-		"package": "NODE_ENV=package node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js,",
-		"hp": "concurrently --kill-others \"vendor/bin/sculpin generate --watch --server\" \"NODE_ENV=hp node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js\"",
-		"dist": "NODE_ENV=dist concurrently \"vendor/bin/sculpin generate --clean --server --env=prod\" \"NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js\""
+		"dev": "vendor/bin/sculpin generate --watch --server & NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"prod": "vendor/bin/sculpin generate --clean --server --env=prod & NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
 	},
 	"prettier": {
 		"useTabs": true,
@@ -45,7 +36,6 @@
 		"browser-sync": "^2.26.7",
 		"browser-sync-webpack-plugin": "^2.0.1",
 		"clean-webpack-plugin": "^1.0.1",
-		"concurrently": "^4.1.1",
 		"css-mqpacker": "^7.0.0",
 		"cssnano": "^4.1.10",
 		"laravel-mix": "^4.1.2",
@@ -54,7 +44,6 @@
 		"prettier": "^1.18.2",
 		"resolve-url-loader": "^3.1.0",
 		"sass": "^1.22.7",
-		"sass-loader": "^7.1.0",
-		"vue-template-compiler": "^2.6.10"
+		"sass-loader": "^7.1.0"
 	}
 }
