@@ -66,7 +66,14 @@
                         {
                             title: 'Header blocks',
                             url: site.url ~ 'dev/blocks/header/',
+                            section: page.section,
+                            subsection: page.subsection,
                             submenu: [
+                            {
+                                active: page.title,
+                                title: "Alert, Page",
+                                url: site.url ~ 'dev/blocks/header/alert/'
+                            },
                             {
                                 title: "Banner",
                                 url: site.url ~ 'dev/blocks/header/banner/'

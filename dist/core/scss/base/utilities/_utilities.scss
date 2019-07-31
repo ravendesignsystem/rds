@@ -146,6 +146,14 @@
 	background-color: $grey;
 }
 
+.u-block--alert {
+	z-index: 1000;
+	background-color: #f9e6e9;
+	border-bottom: 5px solid $red;
+	//border-top: 1px solid $red;
+	position: relative;
+}
+
 // cant use a :not on the style above because chrome doesnt accept multi level classes in :not
 // this disallows gry blocks when there are sidebars
 .body__container > .u-block--grey {

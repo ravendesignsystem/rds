@@ -1,7 +1,7 @@
 ---
 layout: docs
 subsite: dev
-title: Login Blocks
+title: Login Block
 banner:
   breadcrumbs:
     parent: Docs
