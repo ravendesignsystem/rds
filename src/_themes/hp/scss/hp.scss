@@ -7,13 +7,13 @@
 // Required Base
 // ----------------------------------
 
-@import '../../core/scss/base/vendor/include-media';
-@import '../../core/scss/base/vars/vars';
+@import '../../coreDELME/scss/base/vendor/include-media';
+@import '../../coreDELME/scss/base/vars/vars';
 
 // Layouts
 // -------
 
-@import '../../core/layouts/overlay/overlay';
+@import '../../coreDELME/layouts/overlay/overlay';
 
 // Core Components
 // ---------------
@@ -51,4 +51,4 @@
 // IE Fixes
 // -----------
 
-@import '../../core/scss/base/ie-fixes/ie-fixes';
+@import '../../coreDELME/scss/base/ie-fixes/ie-fixes';

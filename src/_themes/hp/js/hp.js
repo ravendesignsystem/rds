@@ -1,3 +1,3 @@
 // hp scripts
-import '../../../_themes/core/js/core';
+import '../../coreDELME/js/core';
 import '../../../_themes/hp/blocks/search/search';

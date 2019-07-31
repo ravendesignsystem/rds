@@ -1,0 +1,12 @@
+{% macro alertpage(block, data) %}
+<div class="u-block {% if block.size %}u-block--{{ block.size }}{% else %}u-block--s{% endif %} u-block--alert">
+    <div class="b-alertpage">{% include 'icons/alert.svg' %}
+        <p>{{ data.message }}{% if data.link.href %} <a href="{{ data.link.href }}">{% if data.link.text %}{{ data.link.text }}{% else %}Learn more{% endif %}</a>{% endif %}</p>
+{% if data.dismissible != false %}
+        <button class="alert__dismiss" aria-label="Close alert" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+        </button>
+{% endif %}
+    </div>
+</div>
+{% endmacro %}

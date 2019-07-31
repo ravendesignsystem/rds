@@ -7,7 +7,11 @@
 {% if '-' in block %}
 {% set ex = block|split('-') %}
 {% if code == true %}
+<pre>
+  <code class="html">
 {% filter escape %}{% include ex.0 ~ '/data/' ~ ex.0 ~ '--' ~ ex.1  %}{% endfilter %}
+      </pre>
+  </code>
 {% else %}
 {% include ex.0 ~ '/data/' ~ ex.0 ~ '--' ~ ex.1  %}
 {% endif %}

@@ -1,0 +1,32 @@
+.b-alertpage svg {
+  height: 60px;
+  float: left;
+  padding-right: 15px;
+}
+
+.b-alertpage p { margin-bottom: 0;}
+
+.b-alertpage a {
+  border-bottom: 1px solid $red;
+  color: $red;
+
+  &:hover {
+    color: $link;
+    border-bottom: 1px solid $link;
+  }
+
+  &::after {
+    content: "→";
+    // &#8594
+  }
+}
+
+.b-alertpage button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  span {
+    font-size: $pixel20;
+  }
+}

@@ -61,6 +61,9 @@
         {#<header class="l-header-banner-img">#}
         <header>
             {% include 'docs/blocks/masthead/masthead' %}
+            {% if page.alertpage.message %}
+            {% include 'docs/blocks/alertpage/alertpage' %}
+            {% endif %}
             {% if page.banner != 'none' %}
             {% block banner %}
                 {% include 'docs/blocks/banner/banner' %}
