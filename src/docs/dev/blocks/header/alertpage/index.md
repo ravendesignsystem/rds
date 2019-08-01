@@ -1,7 +1,7 @@
 ---
 layout: docs
 subsite: dev
-title: Alert, Page
+title: Alert Header
 menu: dev
 section: Blocks
 subsection: Header blocks
@@ -24,16 +24,28 @@ Check out the Page Alert block in use directly above the Banner on this page.
 {% include 'inc' with {'block': 'alertpage-base', 'code': true} %}
 ```
 
+## Block details
+
+| {{ page.title }}  block meta   |  values
+| --------------| :-------------------------------------:
+| handle              | `alertheader` 
+| `u-block` options   | `<header>`      
+| section use         | `<header>`                  
+| width type          | row (fixed)                           
+| has heading         | n/a
+| theme               | CU
+| variants            | n/a
+| Codepen             | coming soon...
+
 ## Properties
 
-
 | Props        | Desc              | Type  | Default 
-| --------------| :-----------------------------------:| ------:| -:|
-| blockSize     | Block width, options: `s`, `l`       | string | s |
-| message *     | Content of Page Alert                | string | - | 
-| linkHref      | Redirect url                         | string | -
-| linkText      | Link text to display                 | string | Learn more
-| dismissible * | Whether Page Alert can be dismissed  | boolean | true
+| --------------| :-------------------------------------:| -------:| -:|
+| blockSize     | u-lock width class, options: `s`, `l`  | string  | s |
+| message *     | Content of Page Alert                  | string  | - | 
+| linkHref      | Redirect url                           | string  | -
+| linkText      | Link text to display                   | string  | Learn more
+| dismissible * | Whether Page Alert can be dismissed    | boolean | true
 
 ```twig
 {% verbatim %}<div class="u-block u-block--{{ blockSize }} u-block--alert">
@@ -56,7 +68,7 @@ For user contextual user interface feedback, check out [Alert components](#)
 
 ## Cookies
 
-For dismissible Page Alert blocks, if you display the block site-wide until dismissed, you will likely want to set a cookie to avoid users from continually seeing dismissed messages.
+For dismissible Page Alert blocks displayed site-wide, you will likely want to set a cookie to avoid users from continually seeing dismissed messages.
 We do not cover that here at this time.
 
 ![cookie!](https://i2.wp.com/hypebeast.com/image/2017/03/cookie-monster-100-years-of-cookie-history-video-0.gif?w=960)
