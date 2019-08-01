@@ -9,7 +9,7 @@ banner:
   breadcrumbs:
     parent: Docs
 alertpage:
-  size: l
+  blockSize: l
   message: Page Alerts should be used for important messages only. For example: Exams have been rescheduled due to expected inclement weather. Make sure to confirm your new exam times.
   link:
     href: https://carleton.ca/ses/exam-schedule/
