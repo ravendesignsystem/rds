@@ -18,7 +18,7 @@ The Page Alert block is used to convey important information to the user through
 
 ## Example
 
-Above, the Page Alert is being used  on this page as an example. The code for this example:
+Check out the Page Alert block in use directly above the Banner on this page.
 
 ```html
 {% include 'inc' with {'block': 'alertpage-base', 'code': true} %}
@@ -26,22 +26,19 @@ Above, the Page Alert is being used  on this page as an example. The code for th
 
 ## Properties
 
-| Props        | Desc                   | Type  | Default
-| -------------| :---------------------:| -----:| -------:|
-| blockSize     | Block width, options: `s`, `l`  | string | s
-| message *     | Content of Page Alert         | string | -
-| link.href     | Redirect url             | string | -
-| link.text     | Link text to display     | string | Learn more
-| dismissible *    | Whether Page Alert can be dismissed  | boolean | true
 
-## Template
-
-Example of a possible twig or nunjuck template:
+| Props        | Desc              | Type  | Default 
+| --------------| :-----------------------------------:| ------:| -:|
+| blockSize     | Block width, options: `s`, `l`       | string | s |
+| message *     | Content of Page Alert                | string | - | 
+| linkHref      | Redirect url                         | string | -
+| linkText      | Link text to display                 | string | Learn more
+| dismissible * | Whether Page Alert can be dismissed  | boolean | true
 
 ```twig
-{% verbatim %}<div class="u-block {% if blockSize %}u-block--{{ blockSize }}{% else %}u-block--s{% endif %} u-block--alert">
+{% verbatim %}<div class="u-block u-block--{{ blockSize }} u-block--alert">
     <div class="b-alertpage">{% include 'icons/alert.svg' %}
-        <p>{{ message }}{% if data.link.href %} <a href="{{ link.href }}">{% if link.text %}{{ link.text }}{% else %}Learn more{% endif %}</a>{% endif %}</p>
+        <p>{{ message }} <a href="{{ linkHref }}">{{ linkText }}</a></p>
 {% if dismissible != false %}
         <button class="alert__dismiss" aria-label="Close alert" type="button" data-close>
             <span aria-hidden="true">&times;</span>
@@ -51,15 +48,15 @@ Example of a possible twig or nunjuck template:
 </div>{% endverbatim %}
 ```
 
+## Usage
+
+Page Alerts are intended for important errors, warnings or messaging. Usually, these would would run site-wide until a user dismiss them.
+
+For user contextual user interface feedback, check out [Alert components](#)
+
 ## Cookies
 
-For dismissible Page Alert blocks, you will likely want to set a cookie to avoid users from continually seeing dismissed messages.
+For dismissible Page Alert blocks, if you display the block site-wide until dismissed, you will likely want to set a cookie to avoid users from continually seeing dismissed messages.
 We do not cover that here at this time.
 
 ![cookie!](https://i2.wp.com/hypebeast.com/image/2017/03/cookie-monster-100-years-of-cookie-history-video-0.gif?w=960)
-
-## Usage
-
-Page Alerts are intended for important errors, warnings or messaging. Usually, these would would run site-wide.
-
-For user contextual user interface feedback, check out [Alert components](#)
