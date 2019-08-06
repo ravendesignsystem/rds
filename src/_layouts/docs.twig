@@ -61,8 +61,8 @@
         {#<header class="l-header-banner-img">#}
         <header>
             {% include 'docs/blocks/masthead/masthead' %}
-            {% if page.alertpage.message %}
-            {% include 'docs/blocks/alertpage/alertpage' %}
+            {% if page.alertheader.message %}
+            {% include 'docs/blocks/alertheader/alertheader' %}
             {% endif %}
             {% if page.banner != 'none' %}
             {% block banner %}
@@ -84,8 +84,9 @@
         {% endif %}
                 {% block main %}
                     <main {% if (page.menu) or (page.sidebar) %}class="multicol__main"{% endif %} id="content">
-
+                        {% if (page.menu) or (page.sidebar) %}
                         <div class="multicol__content">
+                            {% endif %}
                             {% if page.content != 'none' %}
                             <div class="u-block u-block--white u-block--s">
                                 <div class="b-content">
@@ -107,7 +108,9 @@
                                     </div>
                                 </div>
                             {% endif %}
+                        {% if (page.menu) or (page.sidebar) %}
                         </div>
+                        {% endif %}
                         {% if page.sidebar %}
                         <aside class="multicol__sidebar">
                             {% set sidebar = true %}

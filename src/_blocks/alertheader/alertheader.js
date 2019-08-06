@@ -1,5 +1,5 @@
 const alert = document.querySelector('.u-block--alert');
-const alertClose = document.querySelector('.alert__dismiss');
+const alertClose = document.querySelector('.alertheader__dismiss');
 
 if (alert) {
 	const sticky = alert.offsetTop;

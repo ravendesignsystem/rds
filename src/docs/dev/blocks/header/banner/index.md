@@ -1,5 +1,5 @@
 ---
-layout: blocks
+layout: docs
 subsite: dev
 title: Banner Block
 banner:
@@ -25,7 +25,7 @@ dependencies:
 examples:
 - name: base
 - name: breadcrumbs
-  nicename: Banner with breadcrumbs
+  nicename: _Banner with breadcrumbs_
 - name: button
   nicename: Banner with Call to Action Button
 - name: buttons
@@ -59,21 +59,106 @@ data:
   desc: Background image path.
   options: null / na
 ---
-##Implementation Notes
+The banner block provides a variety of functions relating to being a prominent visual a visitor encounters on each page. At the minimum, the base banner provides the primary page heading. To take advantage of the its prime position, the banner block affords many options including: breadcrumb navigational aids, call to action buttons and hero images.
+
+## Base Banner
+
+At its bare minimum, the Banner block displays the page's  `<h1>` title.
+
+{% include 'inc' with {'block': 'banner-base'} %}
+
+{% include 'inc' with {'block': 'banner-base', 'code': true} %}
+
+## Block details
+
+| {{ page.title }}  block meta   |  values
+| --------------| :-------------------------------------:
+| handle              | `banner` 
+| options examples    | <a href="#banner-with-breadcrumbs">breadcrumbs</a>, <a href="#banner-with-cta-button">CTA button</a>, <a href="#multiple-buttons">CTA buttons</a>
+| width options       | `u-block--s`    
+| colour options      | `u-block--grey`  
+| section use         | `<header>`                  
+| width type          | fixed-row                           
+| has heading         | n/a
+| theme(s)            | CU
+| variants            | <a href="#hero-image-banner">Hero image</a>
+| Codepen             | [https://codepen.io/cuweb/pen/jgLVzB](https://codepen.io/cuweb/pen/jgLVzB)
+
+## Banner with breadcrumbs
+
+For websites that have a lot of pages, enhance the way users find their way around by adding breadcrumb navigation.
+
+{% include 'inc' with {'block': 'banner-breadcrumbs'} %}
+
+{% include 'inc' with {'block': 'banner-breadcrumbs', 'code': true} %}
+
+## Banner with CTA button
+
+{% include 'inc' with {'block': 'banner-button'} %}
+
+{% include 'inc' with {'block': 'banner-button', 'code': true} %}
+
+## Multiple buttons
+
+You can add up to two CTA buttons.
+
+{% include 'inc' with {'block': 'banner-buttons'} %}
+
+{% include 'inc' with {'block': 'banner-buttons', 'code': true} %}
+
+## Hero image banner
+
+Because people are highly visual, having high quality imagery at the top of your page can help create a positive first impression.
+
+{% include 'inc' with {'block': 'banner-img'} %}
+
+{% include 'inc' with {'block': 'banner-img', 'code': true} %}
+
+### Image size
+
+Banner images are 1600px in width by 700px in height.
+
+## Banner image position and brightness
+
+### Banner brightness
+
+By default, banner images have a dark transparent overlay covering them to make reading the title text easier. Depending on the original brightness of the image, you may want to darken or lighten the overlay.
+
+- To lighten an banner image, add the modifier: `b-banner--img-light`.
+- To darken a banner image, add the modifier: `b-banner--img-dark`.
+
+### Banner image position
+
+By default banner images are centered to the container. Depending on the image and the required text, you might want to art-direct the images position.
+
+- To align an image to the bottom, add the modifier: `b-banner--img-bottom`.
+- To align an image to the top, add the modifier: `b-banner--img-top`.
+
+### Hero image darkened and aligned to the bottom
+
+{% include 'inc' with {'block': 'banner-imgdark'} %}
+
+{% include 'inc' with {'block': 'banner-imgdark', 'code': true} %}
+
+### Hero image lightened and aligned to the top
+
+{% include 'inc' with {'block': 'banner-imglight'} %}
+
+{% include 'inc' with {'block': 'banner-imglight', 'code': true} %}
+
+## Implementation Notes
 
 - Use only one banner per page. This page obviously breaks this rule but it is an anomaly in order document all the available banners and their options.
-- Banners are not content area blocks and reside in the page header in RDS.
-- The theme's templates and layout will dictate if banners are available.
+- Banners must reside in the `<header` section.
+- Banner images are 1600px in width by 700px in height.
 
-##Content guidelines
+## Content guidelines
 
-Banner blocks should:
+- For hero image banners, ask yourself whether or not the image you’ve selected actually adds value. If your image is unoriginal or doesn't compliment your content, consider not using one.
+- Make sure the title text is readable. Banner images should not have text on them and they should be darkened enough so that it is easy to read the page title. The page title is the most important element in the banner. Photos are used as secondary background images and are not crucial to the banner content.
+- Avoid using banner images with any text on them. All text should be in the HTML itself.
 
--
-
-##When To Avoid
-
-- Don't use this block.
+## References
 
 https://www.optimizely.com/optimization-glossary/hero-image/
 

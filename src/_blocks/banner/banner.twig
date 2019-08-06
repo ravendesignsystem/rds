@@ -1,13 +1,13 @@
 {% macro banner(settings, data) %}
-{% if data.img.imgUrl %}
+{% if data.img %}
 <style>
     .b-banner--img {
-        background-image: url({{ data.img.imgUrl }});
+        background-image: url({{ data.img }});
     }
 </style>
 {% endif %}
-<div class="u-block {% if data.img.imgUrl %}u-block--black u-block--full {% else %}u-block--s u-block--grey{% endif %}">
-    <div class="b-banner{% if data.img.imgUrl %} b-banner--img{% endif %}{% if data.img.imgOpacity == "dark" %} b-banner--img-dark{% elseif data.img.imgOpacity == "light" %} b-banner--img-light{% endif %}{% if data.img.imgPosition == "top" %} b-banner--img-top{% elseif data.img.imgPosition == "bottom" %} b-banner--img-bottom{% endif %}">
+<div class="u-block {% if data.img %}u-block--black u-block--full {% else %}u-block--s u-block--grey{% endif %}">
+    <div class="b-banner{% if data.img %} b-banner--img{% endif %}{% if data.imgOpacity == "dark" %} b-banner--img-dark{% elseif data.imgOpacity == "light" %} b-banner--img-light{% endif %}{% if data.imgPosition == "top" %} b-banner--img-top{% elseif data.imgPosition == "bottom" %} b-banner--img-bottom{% endif %}">
         <div class="banner__container">
 {% if data.breadcrumbs.parent %}
             <nav aria-label="breadcrumb">
