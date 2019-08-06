@@ -15,8 +15,8 @@ jsPathHome: /docs/js/hp.js
 
 blocks:
     -
-        name: Alert Page
-        handle: alertpage
+        name: Alert Header
+        handle: alertheader
         section: header
         theme: core
     -

@@ -8,7 +8,7 @@ subsection: Header blocks
 banner:
   breadcrumbs:
     parent: Docs
-alertpage:
+alertheader:
   blockSize: l
   message: Page Alerts should be used for important messages only. For example: Exams have been rescheduled due to expected inclement weather. Make sure to confirm your new exam times.
   link:
@@ -20,36 +20,39 @@ The Page Alert block is used to convey important information to the user through
 
 Check out the Page Alert block in use directly above the Banner on this page.
 
-```html
-{% include 'inc' with {'block': 'alertpage-base', 'code': true} %}
-```
+{% include 'inc' with {'block': 'alertheader-base', 'code': true} %}
+
 
 ## Block details
 
 | {{ page.title }}  block meta   |  values
 | --------------| :-------------------------------------:
 | handle              | `alertheader` 
-| `u-block` options   | `<header>`      
+| width options       | `u-block--s`, `u-block--l`     
+| colour options      | n/a  
 | section use         | `<header>`                  
-| width type          | row (fixed)                           
+| width type          | fixed-row                           
 | has heading         | n/a
-| theme               | CU
+| theme(s)            | CU
 | variants            | n/a
-| Codepen             | coming soon...
+| Codepen             | [https://codepen.io/cuweb/pen/jgLVzB](https://codepen.io/cuweb/pen/jgLVzB)
 
 ## Properties
 
+`*` = required.
+
 | Props        | Desc              | Type  | Default 
 | --------------| :-------------------------------------:| -------:| -:|
-| blockSize     | u-lock width class, options: `s`, `l`  | string  | s |
+| blockSize *     | u-block modifier class, options: `s`, `l`  | string  | s |
 | message *     | Content of Page Alert                  | string  | - | 
 | linkHref      | Redirect url                           | string  | -
 | linkText      | Link text to display                   | string  | Learn more
-| dismissible * | Whether Page Alert can be dismissed    | boolean | true
+| dismissible * | Whether Alert Header can be dismissed    | boolean | true
+
 
 ```twig
 {% verbatim %}<div class="u-block u-block--{{ blockSize }} u-block--alert">
-    <div class="b-alertpage">{% include 'icons/alert.svg' %}
+    <div class="b-alertheader">{% include 'icons/alert.svg' %}
         <p>{{ message }} <a href="{{ linkHref }}">{{ linkText }}</a></p>
 {% if dismissible != false %}
         <button class="alert__dismiss" aria-label="Close alert" type="button" data-close>

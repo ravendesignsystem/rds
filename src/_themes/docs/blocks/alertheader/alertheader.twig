@@ -1,0 +1,8 @@
+<div class="u-block {% if page.alertheader.blockSize %}u-block--{{ page.alertheader.blockSize }}{% else %}u-block--s{% endif %} u-block--alert">
+    <div class="b-alertheader">{% include 'icons/alert.svg' %}
+        <p>{{ page.alertheader.message }}{% if page.alertheader.link.href %} <a href="{{ page.alertheader.link.href }}">{% if page.alertheader.link.text %}{{ page.alertheader.link.text }}{% else %}Learn more{% endif %}</a>{% endif %}</p>
+            <button class="alertheader__dismiss" aria-label="Close alert" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+            </button>
+    </div>
+</div>

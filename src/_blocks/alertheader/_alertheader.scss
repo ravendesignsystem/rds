@@ -1,12 +1,12 @@
-.b-alertpage svg {
+.b-alertheader svg {
   height: 60px;
   float: left;
   padding-right: 15px;
 }
 
-.b-alertpage p { margin-bottom: 0;}
+.b-alertheader p { margin-bottom: 0;}
 
-.b-alertpage a {
+.b-alertheader a {
   border-bottom: 1px solid $red;
   color: $red;
 
@@ -21,7 +21,7 @@
   }
 }
 
-.b-alertpage button {
+.b-alertheader button {
   position: absolute;
   top: 20px;
   right: 20px;

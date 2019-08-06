@@ -6,16 +6,16 @@
         </div>
     </div>
 {% endif %}
-{% from "alertpage/alertpage.twig" import alertpage %}
-{{ alertpage (
+{% from "alertheader/alertheader.twig" import alertheader %}
+{{ alertheader (
     {
         size: "s"
     },
     {
-        text: "Page Alerts should be used for important messages only. For example: Due expected inclement weather, confirm your exam schedule has not changed.",
+        message: "Page Alerts should be used for important messages only. For example: Due expected inclement weather, confirm your exam schedule has not changed.",
         link: {
             text: "Learn more",
-            url: "https://carleton.ca/ses/exam-schedule/"
+            href: "https://carleton.ca/ses/exam-schedule/"
         }
     }
 ) }}
