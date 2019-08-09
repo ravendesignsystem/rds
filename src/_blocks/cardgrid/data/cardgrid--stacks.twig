@@ -1,0 +1,19 @@
+{% from "cardgrid/cardgrid.twig" import cardgrid %}
+{{ cardgrid (
+    {
+        columns: '3',
+        heading: heading,
+        stack: true
+    },
+    [
+        {
+            inc: "card/data/card--base.twig",
+        },
+        {
+            inc: "card/data/card--base.twig",
+        },
+        {
+            inc: "card/data/card--base.twig"
+        }
+    ]
+) }}

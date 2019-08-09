@@ -15,10 +15,15 @@
         {# **NOICE! https://www.filamentgroup.com/lab/load-css-simpler/#}
         <link rel="stylesheet" href="{{ site.cssPath }}" media="print" onload="this.media='all'">
         {#<link rel="manifest" href="/manifest.json">#}
-        {#<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>#}
-        {# <link rel="apple-touch-icon-precomposed" href="http://mysite.com/images/apple-retina.png" sizes="114x114" /> #}
-        {# <link rel="apple-touch-icon-precomposed" href="http://mysite.com/images/apple-ipad.png" sizes="72x72" /> #}
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://cu-rds.s3.amazonaws.com/assets/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://cu-rds.s3.amazonaws.com/assets/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://cu-rds.s3.amazonaws.com/assets/favicons/favicon-16x16.png">
+        <link rel="manifest" href="https://cu-rds.s3.amazonaws.com/assets/favicons/site.webmanifest">
+        <link rel="mask-icon" href="https://cu-rds.s3.amazonaws.com/assets/favicons/safari-pinned-tab.svg" color="#767676">
+        <link rel="shortcut icon" href="https://cu-rds.s3.amazonaws.com/assets/favicons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#bf112b">
+        <meta name="msapplication-config" content="https://cu-rds.s3.amazonaws.com/assets/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
         <title>{% block title %}{{ page.title }}{% endblock %} | {{ site.title }} | {{ site.subtitle }}</title>
         {#  If page has a description #}
         {% if page.desc is defined %}
@@ -100,13 +105,6 @@
                             {% if page.content != 'none' %}
                                 </div>
                             </div>
-                            {% endif %}
-                            {% if page.title != 'Raven Design System (RDS)' %}
-                                <div class="u-block u-block--s u-block--white">
-                                    <div class="b-docs-footnote">
-                                        <p class="u-v">Using <a href="https://ravendesignsystem.github.io/rds/">Raven Design System</a> (RDS) v</p>
-                                    </div>
-                                </div>
                             {% endif %}
                         {% if (page.menu) or (page.sidebar) %}
                         </div>

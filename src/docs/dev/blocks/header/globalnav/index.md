@@ -7,7 +7,7 @@ banner:
     grandparent: Blocks
     parent: Header
 ---
-The Global Nav block is a required include block that appears at the top of all CMS theme templates. This block provides global navigation for carleton.ca.
+The Global Nav block provides global navigation for carleton.ca.
 {% include 'inc' with {'block': 'globalnav'} %}
 ```html
 <div class="u-block u-block--full">
@@ -48,10 +48,6 @@ The Global Nav block is a required include block that appears at the top of all 
 
 ## Implementation Notes
 
-This block is included with the Carleton CMS skeleton template. To avoid broken links, make sure you are using the most recent version of this block - {{page.meta.version}}.
+This block does not have data props and should be implemented as a global include.
 
-## When To Avoid
-
-Never. Always use this block in Carleton CMS theme templates.
-
-
+This block should be used when the primary navigation used for your site is the left aside vertical nav.

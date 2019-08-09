@@ -35,7 +35,7 @@ Check out the Page Alert block in use directly above the Banner on this page.
 | has heading         | n/a
 | theme(s)            | CU
 | variants            | n/a
-| Codepen             | [https://codepen.io/cuweb/pen/jgLVzB](https://codepen.io/cuweb/pen/jgLVzB)
+| Codepen             | [https://codepen.io/cuweb/pen/jgLVzB](https://codepen.io/cuweb/pen/jgLVzB?editors=1000)
 
 ## Properties
 

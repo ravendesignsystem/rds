@@ -14,13 +14,13 @@
                 <ol class="banner__breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
                     <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="{{ site.url }}">Home</a></li>
 {% if data.breadcrumbs.greatgrandparent %}
-                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../../_coreDELLL/blocks/header">{{ data.breadcrumbs.greatgrandparent }}</a></li>
+                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../../../">{{ data.breadcrumbs.greatgrandparent }}</a></li>
 {%  endif %}
 {% if data.breadcrumbs.grandparent %}
-                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../{{ data.breadcrumbs.grandparent }}">{{ data.breadcrumbs.grandparent }}</a></li>
+                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../../">{{ data.breadcrumbs.grandparent }}</a></li>
 {%  endif %}
 {% if data.breadcrumbs.parent %}
-                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../../_coreDELLL/blocks/header">{{ data.breadcrumbs.parent }}</a></li>
+                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../">{{ data.breadcrumbs.parent }}</a></li>
 {%  endif %}
                     <li class="banner__breadcrumb-item active u-visually-hidden" itemprop="breadcrumb" aria-current="page">{{ data.title }}</li>
                 </ol>

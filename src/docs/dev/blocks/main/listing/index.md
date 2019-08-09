@@ -1,10 +1,13 @@
 ---
 layout: blocks
 subsite: dev
-title: Listing block
+title: Listing
 banner:
   breadcrumbs:
     grandparent: Blocks
+menu: dev
+section: Blocks
+subsection: Main blocks
 meta:
   version: 1.0.1
   status: ready

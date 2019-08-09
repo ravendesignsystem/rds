@@ -142,7 +142,104 @@
                 },
                 {
                     title: "Components",
-                    url: site.url ~ 'dev/components/'
+                    url: site.url ~ 'dev/components/',
+                    active: page.title,
+                    section: page.section,
+                    submenu:
+                    [
+                        {
+                            title: 'Content Components',
+                            url: site.url ~ 'dev/components/content/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            submenu: [
+                            {
+                                title: 'Accordion',
+                                url: site.url ~ 'dev/components/content/accordion/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            },
+                            {
+                                title: 'Form',
+                                url: site.url ~ 'dev/components/content/form/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            },
+                            {
+                                title: 'Image Caption',
+                                url: site.url ~ 'dev/components/content/imgcaption/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            },
+                            {
+                                title: 'Table',
+                                url: site.url ~ 'dev/components/content/table/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            },
+                            {
+                                title: 'Video',
+                                url: site.url ~ 'dev/components/content/video/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            }
+                        ]
+                        },
+                        {
+                            title: 'Badge',
+                            url: site.url ~ 'dev/components/badge/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            active: page.title
+                        },
+                        {
+                            title: 'Button CTA',
+                            url: site.url ~ 'dev/components/buttoncta/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            active: page.title
+                        },
+                        {
+                            title: 'Button Social',
+                            url: site.url ~ 'dev/components/buttonsocial/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            active: page.title
+                        },
+                        {
+                            title: 'Card',
+                            url: site.url ~ 'dev/components/card/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            active: page.title
+                        },
+                        {
+                            title: 'Icons',
+                            url: site.url ~ 'dev/components/icons/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            active: page.title
+                        },
+                        {
+                            title: 'Menu Popup',
+                            url: site.url ~ 'dev/components/menupopup/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            active: page.title
+                        },
+                        {
+                            title: 'Search Form',
+                            url: site.url ~ 'dev/components/searchform/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            active: page.title
+                        }
+                    ]
                 },
                 {
                     title: "Layouts",
