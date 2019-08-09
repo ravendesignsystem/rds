@@ -31,7 +31,27 @@ banner:
 
 ## Components
 
-{% include "docs/inc/content-components-list.twig" %}
+**Content components**
+
+Add content within the [Content block](#) using the components below:
+
+- [Accordion]({{site.url}}dev/components/accordion)
+- [Form]({{site.url}}dev/components/form)
+- [Image Caption]({{site.url}}dev/components/imgcaption)
+- [Table]({{site.url}}dev/components/table)
+- [Video]({{site.url}}dev/components/video)
+
+**Block dev components**
+
+Create DRY blocks with the components below:
+
+- {%include "link" with {'component': 'Badge'} %}
+- [Button CTA]({{site.url}}dev/components/buttoncta/)
+- [Button Social]({{site.url}}dev/components/buttonsocial/)
+- [Card]({{site.url}}dev/components/card/)
+- [Icons]({{site.url}}dev/components/icons/)
+- [Search Field]({{site.url}}dev/components/searchfield/)
+- [Submenu]({{site.url}}dev/components/submenu/)
 
 ## Custom theming
 

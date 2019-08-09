@@ -6,6 +6,7 @@
 	background-color: white;
 	border-radius: 50px;
 	vertical-align: middle;
+	border: 1px solid $grey;
 
 	@include media('>=s') {
 		padding: 15px;

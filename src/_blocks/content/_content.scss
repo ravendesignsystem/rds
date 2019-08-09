@@ -1,10 +1,12 @@
 .b-content {
 	a:not(.c-buttoncta) {
 		color: $link;
+		background-color: #fbfdfd;
 
 		&:hover:not(.u-icon):not(.c-buttoncta) {
 			border-bottom: 1px solid $red;
 			color: $red;
+			background-color: #FEFBFB;
 		}
 	}
 

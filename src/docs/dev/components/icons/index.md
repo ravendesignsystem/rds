@@ -1,7 +1,10 @@
 ---
 layout: docs
 subsite: dev
-title: Icon Library
+title: Icons
+menu: dev
+section: Components
+
 icons:
 - name: accessibility
 - name: alert
@@ -194,13 +197,13 @@ icons:
 - name: youtube
 - name: zap
 ---
-All of the icons available in RDS are displayed below. To copy an icon's SVG code, hover over the icon and click the 'View/Copy Code' button. To learn how to best work with and integrate these icons into your project, <a href="/docs/dev/understanding-rds/icon-system/">view our Icon system documentation</a>.
+All of the icons available in RDS are displayed below. To copy an icon's SVG code, hover over the icon and click the 'View/Copy Code' button. To learn how to best work with and integrate these icons into your project, <a href="{{site.url}}dev/custom-theming/icon-system/">view our Icon system documentation</a>.
 
-We would like to give a big shout out to Gihtub as the majority of the icons used in RDS are from their <a href="https://octicons.github.com">Octoicons project</a>.
+We would like to give a big shout out to [Gihtub](https://github.com) as the majority of the icons used in RDS are from their [MIT licenced](https://github.com/primer/octicons/blob/master/LICENSE) <a href="https://octicons.github.com">Octoicons project</a>.
 
 {% include 'inc' with {'close': 'true'} %}
 
-<div class="u-block u-block--white u-block--l">
+<div class="u-block u-block--white u-block--s">
     <div class="b-cardgrid u-grid u-grid--4">
     {% for item in page.icons %}
         <div class="c-cardlabel">

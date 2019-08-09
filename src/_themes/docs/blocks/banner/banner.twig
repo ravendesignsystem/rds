@@ -28,7 +28,7 @@
             </ol>
         </nav>
 {#{%  endif %}#}
-        <h1 class="banner__title{% if data.img.img_url %} u-ani-fadein{% endif %}">{{ page.title }} {{ page.meh }}</h1>
+        <h1 class="banner__title{% if data.img.img_url %} u-ani-fadein{% endif %}">{{ page.title }} {% if page.section == 'Components' %}Component{% endif %}</h1>
 {% if page.banner.button %}
         <p class="banner__buttons">
 {% for item in page.banner.button %}

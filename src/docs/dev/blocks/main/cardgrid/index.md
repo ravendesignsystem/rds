@@ -5,31 +5,15 @@ menu: dev
 title: Card Grid
 section: Blocks
 subsection: Main blocks
-meta:
- version: 1.0.0
- status: under review
- handle: cardgrid
- type: Fixed-width
- section: Any
- path: cardgrid/
- theme: Core
- heading: true
-dependencies:
- js: n/a
-examples:
-wild: n/a
-alternatives: grid-list
-data:
- - name: inc*
-   type: string
-   desc: Card component inc path.
 ---
 
 The Card Grid block uses RDS' [responsive grid](#) to list [Card components]({{site.url}}/dev/components/cards/card/) in equal-width columns.
 
-**Note**: this block should be only be used to list card and should not be used for general layout purposes.
+**Note**: this block should be only be used to list cards and should not be used for general layout purposes.
 
-{%include "inc" with {'block': 'cardgrid-base', 'heading': 'Base example'} %}
+## Base example
+
+{%include "inc" with {'block': 'cardgrid-base', 'close': false} %}
 
 ```html
 <div class="u-block u-block--white u-block--s">
@@ -40,7 +24,23 @@ The Card Grid block uses RDS' [responsive grid](#) to list [Card components]({{s
 	</div>
 </div>
 ```
-**Note**: the code above assumes you have the ability to use a server-side include. If not, replace each include with the appropriate [card component]({{site.url}}/dev/components/cards/card/).
+**Note**: the code above assumes you have the ability to use a server-side include. If not, replace each include with the appropriate [card component]({{site.url}}/dev/components/cards/card/) code.
+
+## Block details
+
+| {{ page.title }}  block meta   |  values
+| --------------| :-------------------------------------:
+| handle              | `cardgrid` 
+| options examples    | <a href="#small-screen-stack-modifier">stack mod</a>, <a href="#card-grid-with-cta-link-or-button">CTA button</a>
+| block width options       | `u-block--s`, `u-block--l`    
+| block colour options      | `u-block--white`, `u-block--grey`  
+| section use         | `<main>`                  
+| width type          | fixed                           
+| has heading         | [true](#with-heading)
+| theme(s)            | CU
+| variants            | [3 column](#grid-column-settings), [4 column](#grid-column-settings)
+| Codepen             | coming soon...
+
 
 ## Small screen stack modifier 
 
@@ -48,17 +48,7 @@ By default, card grids drop down to a 2 column grid at the small screen breakpoi
 
 The modifier `b-cardgrid--stacks` implements a single column view on small screens. It also sets the cards appearance to flow horizontally instead of the default vertical view.
 
-{%include "inc" with {'close': 'true'} %}
-
-<div class="u-block u-block--white u-block--s">
-	<div class="b-cardgrid b-cardgrid--stacks u-grid u-grid--3">
-        {%include "card/data/card--base"%}
-        {%include "card/data/card--base"%}
-        {%include "card/data/card--base"%}
-	</div>
-</div>
-
-{%include "inc" with {'open': 'true'} %}
+{%include "inc" with {'block': 'cardgrid-stacks', 'close': false} %}
 
 <p class="u-hide-s"><strong>Note</strong>: your screen size is currently too large to view the difference applying this modifier makes in the example above. To see the difference, make your browser window smaller.</p>
 
@@ -72,15 +62,27 @@ The modifier `b-cardgrid--stacks` implements a single column view on small scree
 </div>
 ```
 
-**Note**: Using this modifier card descriptions get removed on small screens. Furthermore, when using this modifier the amount of space for your title content is limited. Verbose title will be trimmed by the CSS.
+**Note**: Using this modifier card descriptions get removed on small screens. Furthermore, when using this modifier the amount of space for your title content is limited. Verbose titles will be trimmed by the CSS.
 
+## With heading
+
+```html
+<section class="u-block u-block--white u-block--s"
+    <h2>Heading</h2>
+    <div class="b-cardgrid u-grid u-grid--3">
+        {% verbatim %}{%include 'components/card'%}
+        {%include 'components/card'%}
+        {%include 'components/card'%}{% endverbatim %}
+    </div>
+</section>
+```
 ## Grid column settings
 
 Four and three column grids are available. To control the number of columns, adjust the `u-grid` modifier to either `u-grid--3` or `u-grid--4`.
 
 ### Four column grid example
 
-{%include "inc" with {'close': 'true'} %}
+{%include "inc" with {'close': true} %}
 
 <div class="u-block u-block--grey u-block--l">
 	<div class="b-cardgrid u-grid u-grid--4">
@@ -103,7 +105,7 @@ Four and three column grids are available. To control the number of columns, adj
 	</div>
 </div>
 ```
-**Note**: the above block uses `u-block--grey` which is the preferred option for this block.
+**Note**: the above block uses `u-block--grey` which is not allowed in this [mulit-column layout](#) but is the preferred option for this block when used in a [single-column layout](#).
 
 ### Card grid with CTA link or button
 
@@ -210,7 +212,7 @@ Grid block cards should:
 
 ## Implementation Notes
 
-- If you are building pages with the Card Grid block that do not contain [Content blocks](#), use the four column grid and the medium-size width setting `u-block--l`.
+- If you are building pages with the Card Grid block that do not contain [Content blocks](#), for more space consider using the four column grid and the large-size width setting `u-block--l`.
 
 ## When To Avoid
 

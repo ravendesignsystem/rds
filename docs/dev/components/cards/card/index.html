@@ -9,7 +9,15 @@
 
         <link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" />
                                             <link rel="stylesheet" href="https://ravendesignsystem.github.io/rds/css/docs.css" media="print" onload="this.media='all'">
-                                        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+                <link rel="apple-touch-icon" sizes="180x180" href="https://cu-rds.s3.amazonaws.com/assets/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://cu-rds.s3.amazonaws.com/assets/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://cu-rds.s3.amazonaws.com/assets/favicons/favicon-16x16.png">
+        <link rel="manifest" href="https://cu-rds.s3.amazonaws.com/assets/favicons/site.webmanifest">
+        <link rel="mask-icon" href="https://cu-rds.s3.amazonaws.com/assets/favicons/safari-pinned-tab.svg" color="#767676">
+        <link rel="shortcut icon" href="https://cu-rds.s3.amazonaws.com/assets/favicons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#bf112b">
+        <meta name="msapplication-config" content="https://cu-rds.s3.amazonaws.com/assets/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
         <title>Card component | Raven Design System | RDS</title>
                                                 <meta property="og:url" content="https://ravendesignsystem.github.io/rds//docs/dev/components/cards/card">
         <meta property="og:type" content="website">
@@ -88,7 +96,7 @@ Accessibility</a>
  Github</a>
 					<ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
 						<li>
-							<a class="u-icon" href="https://github.com/ravendesignsystem/"><svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M16.286 3.5l-2.572 2.571 6 6-6 6 2.572 2.572L24 12.07 16.286 3.5zm-8.572 0L0 12.071l7.714 8.572 2.572-2.572-6-6 6-6L7.714 3.5z"  /></svg>
+							<a class="u-icon" href="https://github.com/ravendesignsystem/rds/releases"><svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M16.286 3.5l-2.572 2.571 6 6-6 6 2.572 2.572L24 12.07 16.286 3.5zm-8.572 0L0 12.071l7.714 8.572 2.572-2.572-6-6 6-6L7.714 3.5z"  /></svg>
 								Releases
 							</a>
 						</li>
@@ -148,18 +156,10 @@ Accessibility</a>
                                             </header>
     
                             <main>
-    <div class="u-block u-block--s u-block--white">
-    <div class="b-content">
-        <h2>Base card exampled</h2>
-        <p>RDS cards group related pieces of information together. Cards serve as a linked entry point to more detailed information, while providing a quick preview of the content they link to.</p>
-    </div>
-</div>
-<div class="u-block u-block--s u-block--grey">
-    <div class="b-cardgrid u-grid u-grid--3">
-<article class="c-card" itemscope itemtype="http://schema.org/Article">
+    <article class="c-card" itemscope itemtype="http://schema.org/Article">
     <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
         <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
-            <img src="https://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="White-necked Raven">
+            <img src="https://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="White-necked Raven" loading="lazy">
         </figure>
         <div class="card__body">
             <h3 class="card__title" itemprop="name">White-necked Raven</h3>
@@ -167,8 +167,6 @@ Accessibility</a>
     </a>
 </article>
 
-    </div>
-</div>
     <section class="u-block u-block--s u-block--white">
         <div class="b-tabs" role="tablist">
             <div class="b-tabs__tab" role="tab">
@@ -179,7 +177,7 @@ Accessibility</a>
                     <code class="html">&lt;article class=&quot;c-card&quot; itemscope itemtype=&quot;http://schema.org/Article&quot;&gt;
     &lt;a href=&quot;https://en.wikipedia.org/wiki/White-necked_raven&quot; itemprop=&quot;url&quot;&gt;
         &lt;figure class=&quot;card__figure&quot; itemscope itemtype=&quot;http://schema.org/ImageObject&quot;&gt;
-            &lt;img src=&quot;https://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg&quot; alt=&quot;White-necked Raven&quot;&gt;
+            &lt;img src=&quot;https://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg&quot; alt=&quot;White-necked Raven&quot; loading=&quot;lazy&quot;&gt;
         &lt;/figure&gt;
         &lt;div class=&quot;card__body&quot;&gt;
             &lt;h3 class=&quot;card__title&quot; itemprop=&quot;name&quot;&gt;White-necked Raven&lt;/h3&gt;
@@ -278,7 +276,7 @@ Under review</span>
 <article class="c-card" itemscope itemtype="http://schema.org/Article">
     <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
         <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
-            <img src="https://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Read more about White-necked Raven">
+            <img src="https://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg" alt="Read more about White-necked Raven" loading="lazy">
         </figure>
         <div class="card__body">
             <h3 class="card__title" itemprop="name">White-necked Raven</h3>
@@ -299,7 +297,7 @@ Under review</span>
                     <code class="html">&lt;article class=&quot;c-card&quot; itemscope itemtype=&quot;http://schema.org/Article&quot;&gt;
     &lt;a href=&quot;https://en.wikipedia.org/wiki/White-necked_raven&quot; itemprop=&quot;url&quot;&gt;
         &lt;figure class=&quot;card__figure&quot; itemscope itemtype=&quot;http://schema.org/ImageObject&quot;&gt;
-            &lt;img src=&quot;https://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg&quot; alt=&quot;Read more about White-necked Raven&quot;&gt;
+            &lt;img src=&quot;https://cu-raven.s3.amazonaws.com/assets/img/raven/img-1.jpg&quot; alt=&quot;Read more about White-necked Raven&quot; loading=&quot;lazy&quot;&gt;
         &lt;/figure&gt;
         &lt;div class=&quot;card__body&quot;&gt;
             &lt;h3 class=&quot;card__title&quot; itemprop=&quot;name&quot;&gt;White-necked Raven&lt;/h3&gt;
@@ -399,7 +397,7 @@ Under review</span>
 <article class="c-card" itemscope itemtype="http://schema.org/NewsArticle">
     <a href="https://news.nationalgeographic.com/2017/07/ravens-problem-solving-smart-birds/" itemprop="url">
         <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
-            <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-2.jpg" alt="Read more about We knew ravens are smart. But not this smart">
+            <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-2.jpg" alt="Read more about We knew ravens are smart. But not this smart" loading="lazy">
         </figure>
         <div class="card__body">
             <time class="card__date" datetime="2018-03-11" itemprop="datePublished" content="2018-03-11">Sunday, March 11th</time>
@@ -423,7 +421,7 @@ Under review</span>
                     <code class="html">&lt;article class=&quot;c-card&quot; itemscope itemtype=&quot;http://schema.org/NewsArticle&quot;&gt;
     &lt;a href=&quot;https://news.nationalgeographic.com/2017/07/ravens-problem-solving-smart-birds/&quot; itemprop=&quot;url&quot;&gt;
         &lt;figure class=&quot;card__figure&quot; itemscope itemtype=&quot;http://schema.org/ImageObject&quot;&gt;
-            &lt;img src=&quot;http://cu-raven.s3.amazonaws.com/assets/img/raven/img-2.jpg&quot; alt=&quot;Read more about We knew ravens are smart. But not this smart&quot;&gt;
+            &lt;img src=&quot;http://cu-raven.s3.amazonaws.com/assets/img/raven/img-2.jpg&quot; alt=&quot;Read more about We knew ravens are smart. But not this smart&quot; loading=&quot;lazy&quot;&gt;
         &lt;/figure&gt;
         &lt;div class=&quot;card__body&quot;&gt;
             &lt;time class=&quot;card__date&quot; datetime=&quot;2018-03-11&quot; itemprop=&quot;datePublished&quot; content=&quot;2018-03-11&quot;&gt;Sunday, March 11th&lt;/time&gt;
@@ -515,54 +513,14 @@ Under review</span>
         </div>
     </section>
 
-        <div class="u-block u-block--s u-block--white">
-        <div class="b-content">
-            <h2>News card variant with text</h2>
-            <p>Provide more information about the linked news item by adding text to the card.</p>
-        </div>
-    </div>
-<div class="u-block u-block--s u-block--grey">
-    <div class="b-cardgrid u-grid u-grid--3">
-<article class="c-card" itemscope itemtype="http://schema.org/NewsArticle">
-    <a href="https://news.nationalgeographic.com/2017/07/ravens-problem-solving-smart-birds/" itemprop="url">
-        <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
-            <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-2.jpg" alt="Read more about We knew ravens are smart. But not this smart">
-        </figure>
-        <div class="card__body">
-            <time class="card__date" datetime="2018-03-11" itemprop="datePublished" content="2018-03-11">Sunday, March 11th</time>
-            <h3 class="card__title" itemprop="headline">We knew ravens are smart. But not this smart</h3>
-            <p class="card__text" itemprop="description">The birds are surprisingly skilled at planning how to get food in the future, and will even trade for it.</p>
-        </div>
-    </a>
-</article>
-
-    </div>
-</div>
-
-
-    <section class="u-block u-block--s u-block--white">
+        <section class="u-block u-block--s u-block--white">
         <div class="b-tabs" role="tablist">
             <div class="b-tabs__tab" role="tab">
                 <a class="b-tabs__button u-icon" href="#"><svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M16.286 3.5l-2.572 2.571 6 6-6 6 2.572 2.572L24 12.07 16.286 3.5zm-8.572 0L0 12.071l7.714 8.572 2.572-2.572-6-6 6-6L7.714 3.5z"  /></svg>
  HTML</a>
                 <div class="b-tabs__panel" role="tabpanel">
                 <pre>
-                    <code class="html">&lt;article class=&quot;c-card&quot; itemscope itemtype=&quot;http://schema.org/NewsArticle&quot;&gt;
-    &lt;a href=&quot;https://news.nationalgeographic.com/2017/07/ravens-problem-solving-smart-birds/&quot; itemprop=&quot;url&quot;&gt;
-        &lt;figure class=&quot;card__figure&quot; itemscope itemtype=&quot;http://schema.org/ImageObject&quot;&gt;
-            &lt;img src=&quot;http://cu-raven.s3.amazonaws.com/assets/img/raven/img-2.jpg&quot; alt=&quot;Read more about We knew ravens are smart. But not this smart&quot;&gt;
-        &lt;/figure&gt;
-        &lt;div class=&quot;card__body&quot;&gt;
-            &lt;time class=&quot;card__date&quot; datetime=&quot;2018-03-11&quot; itemprop=&quot;datePublished&quot; content=&quot;2018-03-11&quot;&gt;Sunday, March 11th&lt;/time&gt;
-            &lt;h3 class=&quot;card__title&quot; itemprop=&quot;headline&quot;&gt;We knew ravens are smart. But not this smart&lt;/h3&gt;
-            &lt;p class=&quot;card__text&quot; itemprop=&quot;description&quot;&gt;The birds are surprisingly skilled at planning how to get food in the future, and will even trade for it.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/a&gt;
-&lt;/article&gt;
-
-
-
-                                        </code>
+                    <code class="html">                                        </code>
                 </pre>
                 </div>
             </div>
@@ -653,7 +611,7 @@ Under review</span>
 <article class="c-card c-card--video" itemscope itemtype="http://schema.org/VideoObject">
     <a href="https://www.youtube.com/watch?v=lrYPm6DD44M" itemprop="url">
         <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
-            <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Read more about Amazing Raven intelligence">
+            <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Read more about Amazing Raven intelligence" loading="lazy">
             <span class="u-icon u-icon--circle">
                 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.61 22.994h.001c-1.178.752-2.611.08-2.611-1.4v-1.197h.013V4.66H3V1.729C3 .251 4.433-.447 5.611.306l14.964 9.867c1.18.752 1.154 1.975-.011 2.714L5.61 22.996z"/></svg>
             </span>
@@ -677,7 +635,7 @@ Under review</span>
                     <code class="html">&lt;article class=&quot;c-card c-card--video&quot; itemscope itemtype=&quot;http://schema.org/VideoObject&quot;&gt;
     &lt;a href=&quot;https://www.youtube.com/watch?v=lrYPm6DD44M&quot; itemprop=&quot;url&quot;&gt;
         &lt;figure class=&quot;card__figure&quot; itemscope itemtype=&quot;http://schema.org/ImageObject&quot;&gt;
-            &lt;img src=&quot;http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg&quot; alt=&quot;Read more about Amazing Raven intelligence&quot;&gt;
+            &lt;img src=&quot;http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg&quot; alt=&quot;Read more about Amazing Raven intelligence&quot; loading=&quot;lazy&quot;&gt;
             &lt;span class=&quot;u-icon u-icon--circle&quot;&gt;
                 &lt;svg viewbox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path d=&quot;M5.61 22.994h.001c-1.178.752-2.611.08-2.611-1.4v-1.197h.013V4.66H3V1.729C3 .251 4.433-.447 5.611.306l14.964 9.867c1.18.752 1.154 1.975-.011 2.714L5.61 22.996z&quot;/&gt;&lt;/svg&gt;
             &lt;/span&gt;
@@ -769,56 +727,14 @@ Under review</span>
         </div>
     </section>
 
-        <div class="u-block u-block--s u-block--white">
-        <div class="b-content">
-            <h2>Video card variant</h2>
-            <p>Use the video card variant to highlight that the linked item's content contains a video.</p>
-        </div>
-    </div>
-<div class="u-block u-block--s u-block--grey">
-    <div class="b-cardgrid u-grid u-grid--3">
-<article class="c-card c-card--video" itemscope itemtype="http://schema.org/VideoObject">
-    <a href="https://www.youtube.com/watch?v=lrYPm6DD44M" itemprop="url">
-        <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
-            <img src="http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg" alt="Read more about Amazing Raven intelligence">
-            <span class="u-icon u-icon--circle">
-                <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.61 22.994h.001c-1.178.752-2.611.08-2.611-1.4v-1.197h.013V4.66H3V1.729C3 .251 4.433-.447 5.611.306l14.964 9.867c1.18.752 1.154 1.975-.011 2.714L5.61 22.996z"/></svg>
-            </span>
-        </figure>
-        <div class="card__body">
-            <h3 class="card__title" itemprop="name">Amazing Raven intelligence</h3>
-            <p class="card__text" itemprop="description">Watch this amazing and complicated test of their intelligence.</p>
-        </div>
-    </a>
-</article>
-
-    </div>
-</div>
-
-    <section class="u-block u-block--s u-block--white">
+        <section class="u-block u-block--s u-block--white">
         <div class="b-tabs" role="tablist">
             <div class="b-tabs__tab" role="tab">
                 <a class="b-tabs__button u-icon" href="#"><svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M16.286 3.5l-2.572 2.571 6 6-6 6 2.572 2.572L24 12.07 16.286 3.5zm-8.572 0L0 12.071l7.714 8.572 2.572-2.572-6-6 6-6L7.714 3.5z"  /></svg>
  HTML</a>
                 <div class="b-tabs__panel" role="tabpanel">
                 <pre>
-                    <code class="html">&lt;article class=&quot;c-card c-card--video&quot; itemscope itemtype=&quot;http://schema.org/VideoObject&quot;&gt;
-    &lt;a href=&quot;https://www.youtube.com/watch?v=lrYPm6DD44M&quot; itemprop=&quot;url&quot;&gt;
-        &lt;figure class=&quot;card__figure&quot; itemscope itemtype=&quot;http://schema.org/ImageObject&quot;&gt;
-            &lt;img src=&quot;http://cu-raven.s3.amazonaws.com/assets/img/raven/img-4.jpg&quot; alt=&quot;Read more about Amazing Raven intelligence&quot;&gt;
-            &lt;span class=&quot;u-icon u-icon--circle&quot;&gt;
-                &lt;svg viewbox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path d=&quot;M5.61 22.994h.001c-1.178.752-2.611.08-2.611-1.4v-1.197h.013V4.66H3V1.729C3 .251 4.433-.447 5.611.306l14.964 9.867c1.18.752 1.154 1.975-.011 2.714L5.61 22.996z&quot;/&gt;&lt;/svg&gt;
-            &lt;/span&gt;
-        &lt;/figure&gt;
-        &lt;div class=&quot;card__body&quot;&gt;
-            &lt;h3 class=&quot;card__title&quot; itemprop=&quot;name&quot;&gt;Amazing Raven intelligence&lt;/h3&gt;
-            &lt;p class=&quot;card__text&quot; itemprop=&quot;description&quot;&gt;Watch this amazing and complicated test of their intelligence.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/a&gt;
-&lt;/article&gt;
-
-
-                                        </code>
+                    <code class="html">                                        </code>
                 </pre>
                 </div>
             </div>
@@ -909,7 +825,7 @@ Under review</span>
 <article class="c-card c-card--people" itemscope itemtype="http://schema.org/Article">
     <a href="https://en.wikipedia.org/wiki/Bill_Murray" itemprop="url">
         <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
-            <img src="http://fillmurray.com/500/500" alt="Read more about ">
+            <img src="https://www.fillmurray.com/500/500" alt="Actor and Writer, Bill Murray" loading="lazy">
         </figure>
         <div class="card__body">
             <h3 class="card__title" itemprop="name">Bill Murray</h3>
@@ -930,7 +846,7 @@ Under review</span>
                     <code class="html">&lt;article class=&quot;c-card c-card--people&quot; itemscope itemtype=&quot;http://schema.org/Article&quot;&gt;
     &lt;a href=&quot;https://en.wikipedia.org/wiki/Bill_Murray&quot; itemprop=&quot;url&quot;&gt;
         &lt;figure class=&quot;card__figure&quot; itemscope itemtype=&quot;http://schema.org/ImageObject&quot;&gt;
-            &lt;img src=&quot;http://fillmurray.com/500/500&quot; alt=&quot;Read more about &quot;&gt;
+            &lt;img src=&quot;https://www.fillmurray.com/500/500&quot; alt=&quot;Actor and Writer, Bill Murray&quot; loading=&quot;lazy&quot;&gt;
         &lt;/figure&gt;
         &lt;div class=&quot;card__body&quot;&gt;
             &lt;h3 class=&quot;card__title&quot; itemprop=&quot;name&quot;&gt;Bill Murray&lt;/h3&gt;
@@ -1106,48 +1022,14 @@ Under review</span>
         </div>
     </section>
 
-        <div class="u-block u-block--s u-block--white">
-        <div class="b-content">
-            <h2>Max-width card variant</h2>
-            <p>Usually, cards are listed in 3 and 4 column grid blocks. Max-width cards can be used outside of a grid in a sing column. Note: for max-width cards, the image dimensions need to be 768x300px.</p>
-<article class="c-card" itemscope itemtype="http://schema.org/Article">
-    <a href="https://news.nationalgeographic.com/2017/07/ravens-problem-solving-smart-birds/" itemprop="url">
-        <figure class="card__figure" itemscope itemtype="http://schema.org/ImageObject">
-            <img src="https://dummyimage.com/768x300/eee/222.gif" alt="Read more about Max-width card">
-        </figure>
-        <div class="card__body">
-            <h3 class="card__title" itemprop="name">Max-width card</h3>
-            <p class="card__text" itemprop="description">Usually, cards are used in 3 and 4 column grid blocks to control their size. You can use them outside a grid, but the image dimensions need to be 768x300px.</p>
-        </div>
-    </a>
-</article>
-
-    </div>
-</div>
-
-
-    <section class="u-block u-block--s u-block--white">
+        <section class="u-block u-block--s u-block--white">
         <div class="b-tabs" role="tablist">
             <div class="b-tabs__tab" role="tab">
                 <a class="b-tabs__button u-icon" href="#"><svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M16.286 3.5l-2.572 2.571 6 6-6 6 2.572 2.572L24 12.07 16.286 3.5zm-8.572 0L0 12.071l7.714 8.572 2.572-2.572-6-6 6-6L7.714 3.5z"  /></svg>
  HTML</a>
                 <div class="b-tabs__panel" role="tabpanel">
                 <pre>
-                    <code class="html">&lt;article class=&quot;c-card&quot; itemscope itemtype=&quot;http://schema.org/Article&quot;&gt;
-    &lt;a href=&quot;https://news.nationalgeographic.com/2017/07/ravens-problem-solving-smart-birds/&quot; itemprop=&quot;url&quot;&gt;
-        &lt;figure class=&quot;card__figure&quot; itemscope itemtype=&quot;http://schema.org/ImageObject&quot;&gt;
-            &lt;img src=&quot;https://dummyimage.com/768x300/eee/222.gif&quot; alt=&quot;Read more about Max-width card&quot;&gt;
-        &lt;/figure&gt;
-        &lt;div class=&quot;card__body&quot;&gt;
-            &lt;h3 class=&quot;card__title&quot; itemprop=&quot;name&quot;&gt;Max-width card&lt;/h3&gt;
-            &lt;p class=&quot;card__text&quot; itemprop=&quot;description&quot;&gt;Usually, cards are used in 3 and 4 column grid blocks to control their size. You can use them outside a grid, but the image dimensions need to be 768x300px.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/a&gt;
-&lt;/article&gt;
-
-
-
-                                        </code>
+                    <code class="html">                                        </code>
                 </pre>
                 </div>
             </div>
@@ -1266,7 +1148,10 @@ Under review</span>
                         <a href="https://carleton.ca/accessibility/">Accessibility</a>
                     </li>
                     <li>
-                        <a href="https://library.carleton.ca/content/copyright-carleton">© Copyright 2019</a>
+                        <a href="https://library.carleton.ca/content/copyright-carleton">© Copyright</a>
+                    </li>
+                    <li>
+                        <a class="u-v" href="https://ravendesignsystem.github.io/rds/">RDSv</a>
                     </li>
                 </ul>
             </nav>
@@ -1301,8 +1186,8 @@ Under review</span>
                                             
                         
             <li>
-                                <input  id="menu--1-32" type="checkbox" hidden/>
-                    <label for="menu--1-32">
+                                <input  id="menu--1-157" type="checkbox" hidden/>
+                    <label for="menu--1-157">
                         <a class="menu__link" href="#">Level 1-1</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1310,8 +1195,8 @@ Under review</span>
                                             
                         
             <li>
-                                <input  id="menu-2-1-197" type="checkbox" hidden/>
-                    <label for="menu-2-1-197">
+                                <input  id="menu-2-1-178" type="checkbox" hidden/>
+                    <label for="menu-2-1-178">
                         <a class="menu__link" href="#">Level 2-1</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1331,8 +1216,8 @@ Under review</span>
                                             
                         
             <li>
-                                <input  id="menu-2-1-83" type="checkbox" hidden/>
-                    <label for="menu-2-1-83">
+                                <input  id="menu-2-1-22" type="checkbox" hidden/>
+                    <label for="menu-2-1-22">
                         <a class="menu__link" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1349,8 +1234,8 @@ Under review</span>
                                             
                         
             <li>
-                                <input  id="menu--1-77" type="checkbox" hidden/>
-                    <label for="menu--1-77">
+                                <input  id="menu--1-96" type="checkbox" hidden/>
+                    <label for="menu--1-96">
                         <a class="menu__link" href="#">First Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1358,8 +1243,8 @@ Under review</span>
                                             
                         
             <li>
-                                <input  id="menu-2-1-123" type="checkbox" hidden/>
-                    <label for="menu-2-1-123">
+                                <input  id="menu-2-1-150" type="checkbox" hidden/>
+                    <label for="menu-2-1-150">
                         <a class="menu__link" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1379,8 +1264,8 @@ Under review</span>
                                             
                         
             <li>
-                                <input  id="menu-2-1-192" type="checkbox" hidden/>
-                    <label for="menu-2-1-192">
+                                <input  id="menu-2-1-101" type="checkbox" hidden/>
+                    <label for="menu-2-1-101">
                         <a class="menu__link" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>

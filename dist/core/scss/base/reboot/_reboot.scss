@@ -344,6 +344,7 @@ form {
 		font-weight: 600;
 		text-align: center;
 		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+		display: block;
 
 		&:hover {
 			background-image: linear-gradient(-180deg, #50b2ff 3%, #0268b0 100%);

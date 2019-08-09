@@ -8,7 +8,7 @@
 {% else %}
 <div class="u-block{% if settings.color %} u-block--{{ settings.color }}{% else %} u-block--white{% endif %}{% if settings.width %} u-block--{{ settings.width }}{% else %} u-block--s{% endif %}">
 {% endif %}
-    <div class="b-cardgrid">
+    <div class="b-cardgrid{% if settings.stacks %} b-cardgrid--stacks{% endif %}">
         <div class="u-grid{% if settings.columns %} u-grid--{{ settings.columns }}{% endif %}">
 {% for item in data %}
             {% include item.inc %}

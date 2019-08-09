@@ -1,3 +1,16 @@
+{% if component %}
+{% if '-' in component %}
+{% set ex = component|split('-') %}
+{% if code == true %}
+<pre><code class="html">{% spaceless %}{% filter escape %}{% include ex.0 ~ '/data/' ~ ex.0 ~ '--' ~ ex.1  %}{% endfilter %}{% endspaceless %}</code>
+</pre>
+{% else %}
+{% include ex.0 ~ '/data/' ~ ex.0 ~ '--' ~ ex.1  %}
+{% endif %}
+{% else %}
+{% include component ~ '/' ~ component %}
+{% endif %}
+{% endif %}
 {% if (page.content != 'none' or close == true) and open == false and sidebar != true and code != true %}
     </div>
 </div>
@@ -7,10 +20,7 @@
 {% if '-' in block %}
 {% set ex = block|split('-') %}
 {% if code == true %}
-<pre>
-  <code class="html">
-{% filter escape %}{% include ex.0 ~ '/data/' ~ ex.0 ~ '--' ~ ex.1  %}{% endfilter %}
-  </code>
+<pre><code class="html">{% spaceless %}{% filter escape %}{% include ex.0 ~ '/data/' ~ ex.0 ~ '--' ~ ex.1  %}{% endfilter %}{% endspaceless %}</code>
 </pre>
 {% else %}
 {% include ex.0 ~ '/data/' ~ ex.0 ~ '--' ~ ex.1  %}
@@ -23,7 +33,6 @@
 {% endif %}
 {% endif %}
 {% endif %}
-{#---- For including macros ----#}
 {% if macro == 'listing' %}
 {% from macro ~ '/' ~ macro import listing %}
     {{ listing (

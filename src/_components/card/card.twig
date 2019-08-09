@@ -10,10 +10,10 @@
 {% if data.webp %}
             <picture>
                 <source type="image/webp" srcset="{{ data.webp }}">
-                <img src="{{ data.img }}" alt="{% if data.alt %}{{ data.alt }}{% else %}Read more about {{ data.title }}{% endif  %}">
+                <img src="{{ data.img }}" alt="{% if data.alt %}{{ data.alt }}{% else %}Read more about {{ data.title }}{% endif  %}" loading="lazy">
             </picture>
 {% else %}
-            <img src="{{ data.img }}" alt="{% if data.alt %}{{ data.alt }}{% else %}Read more about {{ data.title }}{% endif  %}">
+            <img src="{{ data.img }}" alt="{% if data.alt %}{{ data.alt }}{% else %}Read more about {{ data.title }}{% endif  %}" loading="lazy">
 {% endif %}
 {% if settings.variant == "video" %}
             <span class="u-icon u-icon--circle">

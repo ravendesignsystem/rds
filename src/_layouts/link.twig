@@ -1,0 +1,30 @@
+{% if component %}
+    <a href="{{site.url}}dev/components/{{ component|lower }}/">{{ component }}</a>
+{% endif %}
+
+{% if block %}
+    {% if block == "Banner"%}
+        <a href="{{site.url}}dev/blocks/header/{{ block|lower }}/">{{ block }} block</a>
+    {% endif %}
+    {% if block == "Card Grid"%}
+        <a href="{{site.url}}dev/blocks/main/cardgrid/">{{ block }} block</a>
+    {% endif %}
+    {% if block == "Content"%}
+        <a href="{{site.url}}dev/blocks/main/content/">{{ block }} block</a>
+    {% endif %}
+    {% if block == "Footer Simple"%}
+        <a href="{{site.url}}dev/blocks/footer/footersimple/">{{ block }} block</a>
+    {% endif %}
+    {% if block == "Footer Sitemap"%}
+        <a href="{{site.url}}dev/blocks/footer/footersitemap/">{{ block }} block</a>
+    {% endif %}
+    {% if block == "Listing"%}
+    <a href="{{site.url}}dev/blocks/main/{{ block|lower }}/">{{ block }} block</a>
+    {% endif %}
+    {% if block == "Masthead"%}
+        <a href="{{site.url}}dev/blocks/header/{{ block|lower }}/">{{ block }} block</a>
+    {% endif %}
+    {% if block == "Search"%}
+        <a href="{{site.url}}dev/blocks/header/{{ block|lower }}/">{{ block }} block</a>
+    {% endif %}
+{% endif %}
