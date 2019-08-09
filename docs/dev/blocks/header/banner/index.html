@@ -9,17 +9,22 @@
 
         <link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" />
                                             <link rel="stylesheet" href="https://ravendesignsystem.github.io/rds/css/docs.css" media="print" onload="this.media='all'">
-                                        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+                <link rel="apple-touch-icon" sizes="180x180" href="https://cu-rds.s3.amazonaws.com/assets/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://cu-rds.s3.amazonaws.com/assets/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://cu-rds.s3.amazonaws.com/assets/favicons/favicon-16x16.png">
+        <link rel="manifest" href="https://cu-rds.s3.amazonaws.com/assets/favicons/site.webmanifest">
+        <link rel="mask-icon" href="https://cu-rds.s3.amazonaws.com/assets/favicons/safari-pinned-tab.svg" color="#767676">
+        <link rel="shortcut icon" href="https://cu-rds.s3.amazonaws.com/assets/favicons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#bf112b">
+        <meta name="msapplication-config" content="https://cu-rds.s3.amazonaws.com/assets/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
         <title>Banner Block | Raven Design System | RDS</title>
-                            <meta name="description" content="">
-                                        <meta property="og:url" content="https://ravendesignsystem.github.io/rds//docs/dev/blocks/header/banner">
+                                                <meta property="og:url" content="https://ravendesignsystem.github.io/rds//docs/dev/blocks/header/banner">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Banner Block">
-                            <meta property="og:description" content="">
-                                        <meta name="twitter:card" content="summary_large_image">
+                                                <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Banner Block">
-                            <meta name="twitter:description" content="">
-                            </head>
+                                    </head>
 
 <body>
 <a class="u-visually-hidden" href="#content">Skip to main content</a>
@@ -91,7 +96,7 @@ Accessibility</a>
  Github</a>
 					<ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
 						<li>
-							<a class="u-icon" href="https://github.com/ravendesignsystem/"><svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M16.286 3.5l-2.572 2.571 6 6-6 6 2.572 2.572L24 12.07 16.286 3.5zm-8.572 0L0 12.071l7.714 8.572 2.572-2.572-6-6 6-6L7.714 3.5z"  /></svg>
+							<a class="u-icon" href="https://github.com/ravendesignsystem/rds/releases"><svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M16.286 3.5l-2.572 2.571 6 6-6 6 2.572 2.572L24 12.07 16.286 3.5zm-8.572 0L0 12.071l7.714 8.572 2.572-2.572-6-6 6-6L7.714 3.5z"  /></svg>
 								Releases
 							</a>
 						</li>
@@ -178,20 +183,13 @@ Accessibility</a>
     <div class="b-content">
 </p>
 
-<p><pre>
-  <code class="html">
-&lt;div class=&quot;u-block u-block--s u-block--grey&quot;&gt;
+<p><pre><code class="html">&lt;div class=&quot;u-block u-block--s u-block--grey&quot;&gt;
     &lt;div class=&quot;b-banner&quot;&gt;
         &lt;div class=&quot;banner__container&quot;&gt;
             &lt;h1&gt;Base Banner&lt;/h1&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-
-
-
-
-  </code>
+&lt;/div&gt;</code>
 </pre>
 </p>
 
@@ -243,14 +241,62 @@ Accessibility</a>
 </tr>
 <tr>
   <td>Codepen</td>
-  <td align="center"><a href="https://codepen.io/cuweb/pen/jgLVzB">https://codepen.io/cuweb/pen/jgLVzB</a></td>
+  <td align="center"><a href="https://codepen.io/cuweb/pen/PMQEmz?editors=1000">https://codepen.io/cuweb/pen/PMQEmz?editors=1000</a></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="properties">Properties</h2>
+
+<p><code>*</code> = required.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Props</th>
+  <th align="center">Desc</th>
+  <th align="right">Type</th>
+  <th align="right">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>breadcrumbs</td>
+  <td align="center">breadcrumb array to loop over</td>
+  <td align="right">array</td>
+  <td align="right">-</td>
+</tr>
+<tr>
+  <td>img</td>
+  <td align="center">url for css background image</td>
+  <td align="right">string</td>
+  <td align="right">-</td>
+</tr>
+<tr>
+  <td>imgOpacity</td>
+  <td align="center">img overlay opacity, options: <code>dark</code>, <code>light</code></td>
+  <td align="right">string</td>
+  <td align="right">-</td>
+</tr>
+<tr>
+  <td>imgPosition</td>
+  <td align="center">img position, options: <code>top</code>, <code>bottom</code></td>
+  <td align="right">string</td>
+  <td align="right">-</td>
+</tr>
+<tr>
+  <td>title *</td>
+  <td align="center">Main page title <code>&lt;h1&gt;</code></td>
+  <td align="right">string</td>
+  <td align="right">-</td>
 </tr>
 </tbody>
 </table>
 
 <h2 id="banner-with-breadcrumbs">Banner with breadcrumbs</h2>
 
-<p>For websites that have a lot of pages, enhance the way users find their way around by adding breadcrumb navigation.</p>
+<p>For websites that have a lot of pages, enhance the way users find their way around by adding breadcrumb navigation.
+Breadcrumbs indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS.</p>
 
 <p>    </div>
 </div>
@@ -260,8 +306,8 @@ Accessibility</a>
             <nav aria-label="breadcrumb">
                 <ol class="banner__breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
                     <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="">Home</a></li>
-                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../Blocks">Blocks</a></li>
-                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../../_coreDELLL/blocks/header">Banners</a></li>
+                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../../">Blocks</a></li>
+                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../">Banners</a></li>
                     <li class="banner__breadcrumb-item active u-visually-hidden" itemprop="breadcrumb" aria-current="page">Banner with Breadcrumbs</li>
                 </ol>
             </nav>
@@ -274,27 +320,25 @@ Accessibility</a>
     <div class="b-content">
 </p>
 
-<p><pre>
-  <code class="html">
-&lt;div class=&quot;u-block u-block--s u-block--grey&quot;&gt;
+<p><pre><code class="html">&lt;div class=&quot;u-block u-block--s u-block--grey&quot;&gt;
     &lt;div class=&quot;b-banner&quot;&gt;
         &lt;div class=&quot;banner__container&quot;&gt;
             &lt;nav aria-label=&quot;breadcrumb&quot;&gt;
                 &lt;ol class=&quot;banner__breadcrumbs&quot; itemscope itemtype=&quot;http://schema.org/BreadcrumbList&quot;&gt;
                     &lt;li class=&quot;banner__breadcrumb-item&quot; itemprop=&quot;breadcrumb&quot;&gt;&lt;a href=&quot;&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
-                    &lt;li class=&quot;banner__breadcrumb-item&quot; itemprop=&quot;breadcrumb&quot;&gt;&lt;a href=&quot;../Blocks&quot;&gt;Blocks&lt;/a&gt;&lt;/li&gt;
-                    &lt;li class=&quot;banner__breadcrumb-item&quot; itemprop=&quot;breadcrumb&quot;&gt;&lt;a href=&quot;../../_coreDELLL/blocks/header&quot;&gt;Banners&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;banner__breadcrumb-item&quot; itemprop=&quot;breadcrumb&quot;&gt;&lt;a href=&quot;../../&quot;&gt;Blocks&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;banner__breadcrumb-item&quot; itemprop=&quot;breadcrumb&quot;&gt;&lt;a href=&quot;../&quot;&gt;Banners&lt;/a&gt;&lt;/li&gt;
                     &lt;li class=&quot;banner__breadcrumb-item active u-visually-hidden&quot; itemprop=&quot;breadcrumb&quot; aria-current=&quot;page&quot;&gt;Banner with Breadcrumbs&lt;/li&gt;
                 &lt;/ol&gt;
             &lt;/nav&gt;
             &lt;h1&gt;Banner with Breadcrumbs&lt;/h1&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-
-  </code>
+&lt;/div&gt;</code>
 </pre>
 </p>
+
+<p><strong>Note</strong>: that the current page (<code>aria-current="page"</code>) is included in the breadcrumb trail but is visually hidden.</p>
 
 <h2 id="banner-with-cta-button">Banner with CTA button</h2>
 
@@ -306,8 +350,8 @@ Accessibility</a>
             <nav aria-label="breadcrumb">
                 <ol class="banner__breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
                     <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="">Home</a></li>
-                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../Blocks">Blocks</a></li>
-                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../../_coreDELLL/blocks/header">Banners</a></li>
+                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../../">Blocks</a></li>
+                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../">Banners</a></li>
                     <li class="banner__breadcrumb-item active u-visually-hidden" itemprop="breadcrumb" aria-current="page">Banner with a CTA Button</li>
                 </ol>
             </nav>
@@ -323,16 +367,14 @@ Accessibility</a>
     <div class="b-content">
 </p>
 
-<p><pre>
-  <code class="html">
-&lt;div class=&quot;u-block u-block--s u-block--grey&quot;&gt;
+<p><pre><code class="html">&lt;div class=&quot;u-block u-block--s u-block--grey&quot;&gt;
     &lt;div class=&quot;b-banner&quot;&gt;
         &lt;div class=&quot;banner__container&quot;&gt;
             &lt;nav aria-label=&quot;breadcrumb&quot;&gt;
                 &lt;ol class=&quot;banner__breadcrumbs&quot; itemscope itemtype=&quot;http://schema.org/BreadcrumbList&quot;&gt;
                     &lt;li class=&quot;banner__breadcrumb-item&quot; itemprop=&quot;breadcrumb&quot;&gt;&lt;a href=&quot;&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
-                    &lt;li class=&quot;banner__breadcrumb-item&quot; itemprop=&quot;breadcrumb&quot;&gt;&lt;a href=&quot;../Blocks&quot;&gt;Blocks&lt;/a&gt;&lt;/li&gt;
-                    &lt;li class=&quot;banner__breadcrumb-item&quot; itemprop=&quot;breadcrumb&quot;&gt;&lt;a href=&quot;../../_coreDELLL/blocks/header&quot;&gt;Banners&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;banner__breadcrumb-item&quot; itemprop=&quot;breadcrumb&quot;&gt;&lt;a href=&quot;../../&quot;&gt;Blocks&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;banner__breadcrumb-item&quot; itemprop=&quot;breadcrumb&quot;&gt;&lt;a href=&quot;../&quot;&gt;Banners&lt;/a&gt;&lt;/li&gt;
                     &lt;li class=&quot;banner__breadcrumb-item active u-visually-hidden&quot; itemprop=&quot;breadcrumb&quot; aria-current=&quot;page&quot;&gt;Banner with a CTA Button&lt;/li&gt;
                 &lt;/ol&gt;
             &lt;/nav&gt;
@@ -342,9 +384,7 @@ Accessibility</a>
             &lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-
-  </code>
+&lt;/div&gt;</code>
 </pre>
 </p>
 
@@ -371,9 +411,7 @@ Accessibility</a>
     <div class="b-content">
 </p>
 
-<p><pre>
-  <code class="html">
-&lt;div class=&quot;u-block u-block--s u-block--grey&quot;&gt;
+<p><pre><code class="html">&lt;div class=&quot;u-block u-block--s u-block--grey&quot;&gt;
     &lt;div class=&quot;b-banner&quot;&gt;
         &lt;div class=&quot;banner__container&quot;&gt;
             &lt;h1&gt;Banner with multiple CTA buttons&lt;/h1&gt;
@@ -383,10 +421,7 @@ Accessibility</a>
             &lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-
-
-  </code>
+&lt;/div&gt;</code>
 </pre>
 </p>
 
@@ -416,9 +451,7 @@ Accessibility</a>
     <div class="b-content">
 </p>
 
-<p><pre>
-  <code class="html">
-&lt;style&gt;
+<p><pre><code class="html">&lt;style&gt;
     .b-banner--img {
         background-image: url(https://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore.jpg);
     }
@@ -432,9 +465,7 @@ Accessibility</a>
             &lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-
-  </code>
+&lt;/div&gt;</code>
 </pre>
 </p>
 
@@ -483,9 +514,7 @@ Accessibility</a>
     <div class="b-content">
 </p>
 
-<p><pre>
-  <code class="html">
-&lt;style&gt;
+<p><pre><code class="html">&lt;style&gt;
     .b-banner--img {
         background-image: url(https://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore.jpg);
     }
@@ -496,9 +525,7 @@ Accessibility</a>
             &lt;h1&gt;Hero image darkened and aligned to the bottom&lt;/h1&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-
-  </code>
+&lt;/div&gt;</code>
 </pre>
 </p>
 
@@ -523,9 +550,7 @@ Accessibility</a>
     <div class="b-content">
 </p>
 
-<p><pre>
-  <code class="html">
-&lt;style&gt;
+<p><pre><code class="html">&lt;style&gt;
     .b-banner--img {
         background-image: url(https://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore.jpg);
     }
@@ -536,9 +561,7 @@ Accessibility</a>
             &lt;h1&gt;Hero Image lightened and aligned to the top&lt;/h1&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-
-  </code>
+&lt;/div&gt;</code>
 </pre>
 </p>
 
@@ -564,11 +587,6 @@ Accessibility</a>
 
                                                             </div>
                             </div>
-                                                                                        <div class="u-block u-block--s u-block--white">
-                                    <div class="b-docs-footnote">
-                                        <p class="u-v">Using <a href="https://ravendesignsystem.github.io/rds/">Raven Design System</a> (RDS) v</p>
-                                    </div>
-                                </div>
                                                                                                 </main>
                         
      
@@ -585,7 +603,10 @@ Accessibility</a>
                         <a href="https://carleton.ca/accessibility/">Accessibility</a>
                     </li>
                     <li>
-                        <a href="https://library.carleton.ca/content/copyright-carleton">© Copyright 2019</a>
+                        <a href="https://library.carleton.ca/content/copyright-carleton">© Copyright</a>
+                    </li>
+                    <li>
+                        <a class="u-v" href="https://ravendesignsystem.github.io/rds/">RDSv</a>
                     </li>
                 </ul>
             </nav>
@@ -620,8 +641,8 @@ Accessibility</a>
                                             
                         
             <li>
-                                <input  id="menu--1-173" type="checkbox" hidden/>
-                    <label for="menu--1-173">
+                                <input  id="menu--1-131" type="checkbox" hidden/>
+                    <label for="menu--1-131">
                         <a class="menu__link" href="#">Level 1-1</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -629,8 +650,8 @@ Accessibility</a>
                                             
                         
             <li>
-                                <input  id="menu-2-1-66" type="checkbox" hidden/>
-                    <label for="menu-2-1-66">
+                                <input  id="menu-2-1-100" type="checkbox" hidden/>
+                    <label for="menu-2-1-100">
                         <a class="menu__link" href="#">Level 2-1</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -650,8 +671,8 @@ Accessibility</a>
                                             
                         
             <li>
-                                <input  id="menu-2-1-117" type="checkbox" hidden/>
-                    <label for="menu-2-1-117">
+                                <input  id="menu-2-1-51" type="checkbox" hidden/>
+                    <label for="menu-2-1-51">
                         <a class="menu__link" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -668,8 +689,8 @@ Accessibility</a>
                                             
                         
             <li>
-                                <input  id="menu--1-156" type="checkbox" hidden/>
-                    <label for="menu--1-156">
+                                <input  id="menu--1-69" type="checkbox" hidden/>
+                    <label for="menu--1-69">
                         <a class="menu__link" href="#">First Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -677,8 +698,8 @@ Accessibility</a>
                                             
                         
             <li>
-                                <input  id="menu-2-1-21" type="checkbox" hidden/>
-                    <label for="menu-2-1-21">
+                                <input  id="menu-2-1-197" type="checkbox" hidden/>
+                    <label for="menu-2-1-197">
                         <a class="menu__link" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -698,8 +719,8 @@ Accessibility</a>
                                             
                         
             <li>
-                                <input  id="menu-2-1-83" type="checkbox" hidden/>
-                    <label for="menu-2-1-83">
+                                <input  id="menu-2-1-101" type="checkbox" hidden/>
+                    <label for="menu-2-1-101">
                         <a class="menu__link" href="#">Second Level</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
