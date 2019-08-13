@@ -28,6 +28,7 @@
     {% block header %}
     <header>
         {% include "starter/blocks/masthead.twig" %}
+        {% include 'starter/blocks/banner' %}
         <!-- Header blocks goes here-->
     </header>
     {% endblock %}
@@ -36,6 +37,15 @@
         {% block main %}
         <main>
             <!-- Main blocks goes here-->
+{% if page.bcontent != false %}
+            <div class="u-block u-block--s u-block--white">
+                <div class="b-content">
+{% endif %}
+                    {% block content %}{% endblock %}
+{% if page.bcontent != false %}
+                </div>
+            </div>
+{% endif %}
         </main>
         {% endblock %}{# End main#}
     {% endblock %} {# END body block #}
@@ -43,7 +53,7 @@
     <footer>
     {% block footer %}
         <!-- Footer blocks goes here-->
-        {% include "footerbrand/footerbrand.twig" %}
+        {% include "footerbrand/footerbrand" %}
     </footer>
     {% endblock %} {# END footer block #}
 

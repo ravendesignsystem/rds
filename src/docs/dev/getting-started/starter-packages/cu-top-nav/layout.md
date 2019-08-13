@@ -1,6 +1,5 @@
 ---
 layout: starter
-title: Starter Packages
+title: Block examples
 nav: top
 ---
-## Stub

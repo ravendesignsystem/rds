@@ -8,4 +8,4 @@ banner:
   breadcrumbs:
     parent: Docs
 ---
-[Base](base/)
+[CU theme: top nav](cu-top-nav/)
