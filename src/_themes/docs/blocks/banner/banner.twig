@@ -14,11 +14,10 @@
 <div class="b-banner{% if page.banner.img.img_url %} b-banner--img{% endif %}{% if page.banner.img.img_opacity == "dark" %} b-banner--img-dark{% elseif page.banner.img.img_opacity == "light" %} b-banner--img-light{% endif %}{% if page.banner.img.img_position == "top" %} b-banner--img-top{% elseif data.img.img_position == "bottom" %} b-banner--img-bottom{% endif %}">
     <div class="banner__container">
 {#{% if page.banner.breadcrumbs.parent %}#}
+{% if page.subsite %}
         <nav aria-label="breadcrumb">
             <ol class="banner__breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
-                {% if page.subsite %}
                 <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="{{ site.url }}">Home</a></li>
-                {% endif %}
                 {% if (page.subsite == 'dev') and ('Subsite' not in page.title) %}
                 <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="{{ site.url }}/dev/">Dev</a></li>
                 {% endif %}
@@ -27,8 +26,9 @@
                 <li class="banner__breadcrumb-item active u-visually-hidden" itemprop="breadcrumb" aria-current="page">{{ data.title }}</li>
             </ol>
         </nav>
+{% endif %}
 {#{%  endif %}#}
-        <h1 class="banner__title{% if data.img.img_url %} u-ani-fadein{% endif %}">{{ page.title }} {% if page.section == 'Components' %}Component{% endif %}</h1>
+        <h1 class="banner__title{% if data.img.img_url %} u-ani-fadein{% endif %}">{% if page.v %}RDS v{{ site.version }}{% else %}{{ page.title }}{% endif %}{% if page.section == 'Components' %}Component{% endif %}</h1>
 {% if page.banner.button %}
         <p class="banner__buttons">
 {% for item in page.banner.button %}

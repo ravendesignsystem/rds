@@ -1,0 +1,30 @@
+<div class="u-block u-block--full">
+            <div class="b-masthead js-sticky-scroll">
+                <div>
+                    <nav aria-label="Site title and primary navigation">
+                        <h2 class="masthead__site">
+                            <a href="/">{% include 'icons/mark-cushield.svg' %}{% if page.site %}page.site{% else %}Site Title Here{% endif %}</a>
+                        </h2>
+                    </nav>
+{% if page.nav == 'top' %}
+                    <nav class="masthead__primarynav">
+                        <ul role="menu">
+                            <li><a href="/blocks/">Block examples</a></li>
+                            <li><a href="/pages/">Page layout</a></li>
+                        </ul>
+                    </nav>
+{% endif %}
+                </div>
+                <nav class="masthead__controls" aria-label="Secondary navigation and controls">
+                    <ul>
+                        <li class="masthead__hamburger">
+                            <button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
+                            <span class="c-hamburger__box">
+                                <span class="c-hamburger__inner"></span>
+                             </span>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
