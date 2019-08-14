@@ -18,8 +18,6 @@
 	content: "#{ ($version)}";
 }
 
-
-
 // 1. Grid system
 // --------------
 
@@ -131,7 +129,7 @@
 // --------------
 
 .u-block {
-	padding: 25px;
+	padding: 30px 25px;
 
 	@include media('>s') {
 		padding: 40px 30px;
@@ -290,6 +288,10 @@ a.u-link,
 	}
 }
 
+.u-active {
+	color: $red;
+}
+
 .u-sticky {
 	position: sticky;
 	top: 0;
@@ -368,3 +370,4 @@ a.u-link,
 		opacity: 1;
 	}
 }
+
