@@ -11,7 +11,6 @@
 		mastheadHamburger = document.querySelector('.masthead__hamburger'),
 		// masthead buttons
 		hamburger = document.querySelector('.c-hamburger'),
-		navMoreBtn = document.querySelector('.masthead__more'),
 		navSearch = document.querySelector('.masthead__search-btn'),
 		navLogin = document.querySelector('.masthead__login-btn'),
 		// for swapping menu from elsewhere into modal
@@ -71,9 +70,9 @@
 
 				if (modalClosed === true) {
 					// toggle all li items except hamburger
-					for (i = 0; i < x.length; i++) {
-						x[i].classList.toggle('is-hidden');
-					}
+					// for (i = 0; i < x.length; i++) {
+					// 	x[i].classList.toggle('is-hidden');
+					// }
 				}
 				if (mastheadSearch) {
 					mastheadSearch.classList.add('is-hidden');
@@ -83,20 +82,16 @@
 				}
 			} else {
 				// toggle all li items except hamburger
-				for (i = 0; i < x.length; i++) {
-					x[i].classList.toggle('is-hidden');
-				}
+				// for (i = 0; i < x.length; i++) {
+				// 	x[i].classList.toggle('is-hidden');
+				// }
 				if (mastheadSearch) {
 					mastheadSearch.classList.remove('is-hidden');
 					modalSearch.classList.add('is-hidden');
 				}
 				modalMenu.classList.toggle('is-hidden');
 
-				if (btn === 'more') {
-					mastheadHamburger.classList.add('u-display-inline-b'),
-						mastheadSearch.classList.add('is-hidden'),
-						modalMenu.classList.remove('is-hidden');
-				} else if (
+					if (
 					menuShow === false &&
 					window.matchMedia('(min-width: 768px)').matches
 				) {
@@ -125,9 +120,6 @@
 		// mouse-down needed to trigger move before menuToggle on same button
 		hamburger.addEventListener('mousedown', menuMove);
 
-		if (navMoreBtn) {
-			navMoreBtn.addEventListener('mousedown', menuMove);
-		}
 	}
 
 	// mouse-up needed to trigger toggle after menuMove function in CMS theme
@@ -141,15 +133,7 @@
 		);
 	}
 
-	if (navMoreBtn) {
-		navMoreBtn.addEventListener(
-			'mouseup',
-			function() {
-				mastheadModal('more');
-			},
-			false
-		);
-	}
+
 
 	if (navSearch) {
 		navSearch.addEventListener(

@@ -1,6 +1,11 @@
 // masthead height
 $b-height: 75px;
 
+// provide proper height, if the hor nav has dropped to a second row
+.js-masthead-dropped {
+	height: 150px !important;
+}
+
 .b-masthead {
 	display: flex;
 	justify-content: space-between;
@@ -30,6 +35,7 @@ $b-height: 75px;
 	display: inline-flex;
 	white-space: nowrap;
 	align-items: center;
+	height: 75px;
 }
 
 .masthead__brand svg:not(.c-culogo) {
@@ -79,13 +85,13 @@ $b-height: 75px;
 
 .masthead__nav--priority {
 	-webkit-overflow-scrolling: touch;
-	// -ms-overflow-style: -ms-autohiding-scrollbar;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
 	position: absolute;
 	top: 73px;
 	min-height: 65px;
 	overflow: auto;
 	background-color: white;
-	border-top: 1px solid $grey-yoda;
+	border-top: 1px solid $grey-kenobi;
 }
 
 .masthead__nav ul, .masthead__actions ul {
@@ -101,14 +107,6 @@ $b-height: 75px;
 
 	&:hover > a {
 		color: $red;
-	}
-}
-
-.masthead__actions 	li:not(.masthead__search):not(.masthead__hamburger):not(.masthead__login):not(.masthead__jump) {
-	display: none;
-
-	@include media('>=s') {
-		display: inline-flex;
 	}
 }
 
@@ -137,7 +135,34 @@ $b-height: 75px;
 	}
 }
 
+.masthead__cta > a {
+	background-color: $red;
+	color: white;
+	display: none;
+	display: flex;
 
+	&:after {
+		color: white !important;
+		//right: 15px !important;
+	}
+
+	svg {
+		fill: white;
+	}
+}
+
+.masthead__cta--white > a {
+	background-color: white;
+	color: $black;
+
+	svg {
+		fill: black;
+	}
+
+	&:after {
+		color: $black !important;
+	}
+}
 @include media('<=1474px') {
 	.masthead__search span{
 		display: none;
@@ -169,13 +194,13 @@ $b-height: 75px;
 	left: 0;
 	right: 0;
 	z-index: 10;
-	border-bottom: 1px solid $grey;
+	border-bottom: 1px solid $grey-kenobi;
 
-	& ~ .b-banner,
-	& ~ .b-bannerhero,
-	& ~ .tns-outer {
-		margin-top: 78px !important; // avoid the jumping from the loss of masthead height when made position fixed.
-	}
+	//& ~ .b-banner,
+	//& ~ .b-bannerhero,
+	//& ~ .tns-outer {
+	//	margin-top: 78px !important; // avoid the jumping from the loss of masthead height when made position fixed.
+	//}
 }
 
 .b-masthead--shadow {
