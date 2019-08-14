@@ -2,9 +2,9 @@
 $b-height: 75px;
 
 // provide proper height, if the hor nav has dropped to a second row
-.js-masthead-dropped {
-	height: 150px !important;
-}
+//.js-masthead-dropped {
+//	height: 150px !important;
+//}
 
 .b-masthead {
 	display: flex;
@@ -17,10 +17,18 @@ $b-height: 75px;
 	transition: 0.2s;
 }
 
+.b-masthead--responsivenav {
+	height: 150px;
+
+	@include media('>=960px') {
+		height: 75px;
+	}
+}
+
 .b-masthead a, .b-masthead button {
 	display: inline-flex;
-	padding-left: 17px;
-	padding-right: 17px;
+	padding-left: 15px;
+	padding-right: 15px;
 	align-items: center;
 	font-size: 14px;
 	font-weight: 500;
@@ -65,7 +73,7 @@ $b-height: 75px;
 	}
 
 	@include media('>=s') {
-		padding-left: 17px;
+		padding-left: 15px;
 		font-size: 20px;
 	}
 }
@@ -78,21 +86,53 @@ $b-height: 75px;
 	overflow: hidden;
 	white-space: nowrap;
 
-	@media screen and (min-width: 720px) {
+	@include media('>=960px') {
 		border-left: 1px solid $grey-kenobi;
 	}
 }
 
-.masthead__nav--priority {
+.b-masthead--responsivenav .masthead__nav {
+	@include media('<=960px') {
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		position: absolute;
+		top: 73px;
+		overflow: auto;
+		border-top: 1px solid $grey-kenobi;
+		background-color: white;
+	}
+}
+
+.js-masthead-2packed {
+	height: 150px !important;
+}
+.js-masthead-2packed .masthead__nav {
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	position: absolute;
 	top: 73px;
-	min-height: 65px;
 	overflow: auto;
-	background-color: white;
 	border-top: 1px solid $grey-kenobi;
+	background-color: white;
 }
+.js-masthead-2biggie .masthead__nav {
+	background-color: $red !important;
+	width: 3000px;
+	color: white;
+	padding: 0 40px;
+
+	a {
+		color: $red
+	}
+}
+
+.js-masthead-2biggie .masthead__nav::before {
+	content: "YOUR MENU IS TOO WIDE! PLEASE SHORTEN IT OR USE A VERTICAL PRIMARY MENU. THANK YOU!";
+	color: white;
+	// position: absolute;
+}
+
+
 
 .masthead__nav ul, .masthead__actions ul {
 	margin: 0;
@@ -177,15 +217,6 @@ $b-height: 75px;
 	}
 }
 
-.masthead__nav--2packed {
-	background-color: black;
-}
-
-.masthead__nav--2packed::before {
-	content: "SORRY, YOUR MENU IS TOO WIDE! Consider shortening it or using a vertical primary menu.";
-	color: white;
-	// position: absolute;
-}
 
 // used in conjunction with js to stick the masthead on scroll up
 .b-masthead--sticky-scroll {
@@ -194,7 +225,7 @@ $b-height: 75px;
 	left: 0;
 	right: 0;
 	z-index: 10;
-	border-bottom: 1px solid $grey-kenobi;
+	//border-bottom: 1px solid $grey-kenobi;
 
 	//& ~ .b-banner,
 	//& ~ .b-bannerhero,
