@@ -5,23 +5,26 @@
 let header = document.querySelector('header'),
 	masthead = document.querySelector('.b-masthead'),
 	last_scroll = 0,
-	masthead_y = header.scrollHeight;
+	masthead_y = header.scrollHeight,
+	lastX = window.innerWidth,
+	mastheadNav = document.querySelector(".masthead__nav");
 
-let lastX = window.innerWidth,
-banner = document.querySelector('.b-banner'),
-mastheadNav = document.querySelector(".masthead__nav");
+// Stick Masthead to the top on scroll u
+// -------------------------------------
 
 // Always apply on small screens.
-if (window.matchMedia('(max-width: 768px)').matches) {
-	masthead.classList.add('js-sticky-scroll');
+if (window.innerWidth <= 960) {
+	masthead.classList.add('js-masthead-scrollupstick');
 }
-if (masthead.classList.contains('js-sticky-scroll')) {
+// Only fire if class .js-masthead-scrollupstick is on masthead block
+if (masthead.classList.contains('js-masthead-scrollupstick')) {
 	window.addEventListener('scroll', function() {
-		if (window.scrollY < 30) {
-			// has not scrolled past header yet
+		// detect if scrolling up or down
+		if (window.scrollY <= 15) {
+			// user has not scrolled past header yet
 			masthead_y = -header.scrollHeight;
 			masthead.classList.remove('b-masthead--sticky-scroll', 'b-masthead--shadow');
-			document.body.style.marginTop = '0';
+			document.body.style.marginTop = '0px';
 		} else {
 			// has scrolled past the header
 			masthead.classList.add('b-masthead--sticky-scroll', 'b-masthead--shadow');
@@ -29,7 +32,8 @@ if (masthead.classList.contains('js-sticky-scroll')) {
 			masthead_y = Math.min(masthead_y, 0);
 			masthead_y = Math.max(masthead_y, -masthead.scrollHeight);
 			masthead.style.top = masthead_y + 'px';
-			document.body.style.marginTop = '75px';
+			document.body.style.marginTop = '15px';
+
 		}
 		if (window.scrollY < 350) {
 			// remove the dropshadow before a banner buts against it
@@ -46,7 +50,6 @@ if (masthead.classList.contains('js-sticky-scroll')) {
 	});
 }
 
-
 //check to determine if an overflow is happening
 function isOverflowing(element) {
 	return element.scrollWidth > element.offsetWidth;
@@ -54,26 +57,23 @@ function isOverflowing(element) {
 
 function moveNav(element) {
 	if (isOverflowing(mastheadNav)) {
-		mastheadNav.classList.add('masthead__nav--priority');
-		masthead.classList.add('js-masthead-dropped');
+		masthead.classList.add('js-masthead-2packed');
 		let xwidth = window.innerWidth;
 		lastX = xwidth;
 	} else {
 		let xwidth = window.innerWidth;
 		// needed to reduce flickering on resize
 		if (lastX < xwidth) {
-			mastheadNav.classList.remove('masthead__nav--priority');
-			masthead.classList.remove('js-masthead-dropped');
+			masthead.classList.remove('js-masthead-2packed');
 		}
 	}
 }
 
 
-
 // Setup a timer to ease resizing
 let timeout;
 
-window.addEventListener('resize', function ( event ) {
+window.addEventListener('resize', function ()  {
 
 	// If timer is null, reset it to 66ms and run the functions.
 	// Otherwise, wait until timer is cleared
@@ -84,8 +84,8 @@ window.addEventListener('resize', function ( event ) {
 			timeout = null;
 
 			// Run our resize functions
-			if (window.innerWidth >= 800 && mastheadNav.classList.contains("masthead__nav--priority") && mastheadNav.scrollWidth > mastheadNav.clientWidth) {
-				mastheadNav.classList.add("masthead__nav--2packed");
+			if (window.innerWidth >= 960 && masthead.classList.contains('js-masthead-2packed') && mastheadNav.scrollWidth > mastheadNav.clientWidth) {
+				masthead.classList.add("js-masthead-2biggie");
 			}
 			else {
 				moveNav(mastheadNav);
@@ -95,5 +95,6 @@ window.addEventListener('resize', function ( event ) {
 	}
 }, false);
 
-
+if (window.innerWidth >= 960) {
 window.addEventListener("load", moveNav);
+} // end screen size check to fire
