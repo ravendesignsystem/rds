@@ -1,0 +1,33 @@
+.c-alert--icon  {
+	background-color: #e6f7ff;
+	border: 1px solid #91d5ff;
+	padding: 25px;
+	border-radius: 4px;
+	margin-bottom: $margin-bottom;
+	position: relative;
+}
+
+.c-alert--icon {
+	padding-left: 55px;
+}
+.c-alert--icon svg {
+	width: 25px;
+	float: left;
+	position: absolute;
+	top: 25px;
+	left: 15px;
+}
+
+.c-alert--info svg, .c-alert--info  {
+	fill: #1496DA;
+}
+
+.c-alert p {
+	font-size: $pixel14;
+}
+
+.c-alert h2 {
+	font-size: $pixel16;
+	padding-bottom: 2px;
+	margin-bottom: 2px !important;
+}

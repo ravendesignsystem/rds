@@ -8,9 +8,10 @@
 
 	<nav class="masthead__nav">
 		<ul role="menu">
+			<li><a {% if page.subsite == 'about' %}class="u-active"{% endif %} href="{{ site.url }}/about/">About</a></li>
 			<li><a {% if page.subsite == 'dev' %}class="u-active"{% endif %} href="{{ site.url }}/dev/">Dev</a></li>
-{#			<li><a {% if page.subsite == 'design' %}class="u-active"{% endif %} href="{{ site.url }}/design/">Design</a></li>#}
-{#			<li><a {% if page.subsite == 'content' %}class="u-active"{% endif %} href="{{ site.url }}/content/">Content</a></li>#}
+			<li><a {% if page.subsite == 'design' %}class="u-active"{% endif %} href="{{ site.url }}/design/">Design</a></li>
+			<li><a {% if page.subsite == 'content' %}class="u-active"{% endif %} href="{{ site.url }}/content/">Content</a></li>
 			<li><a {% if page.subsite == 'ay11' %}class="u-active"{% endif %} href="{{ site.url }}/ay11/">Accessibility</a></li>
 		</ul>
 	</nav>
@@ -21,12 +22,12 @@
 				<a class="u-icon" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %} Github</a>
 			</li>
 			<li class="masthead__search">
-				<button aria-label="Open Search" class="u-icon">
+				<button aria-label="Open Search" class="masthead__searchbtn u-icon">
 					{% include "icons/search.svg" %}
 					<span>Search</span>
 				</button>
 			</li>
-			<li class="masthead__hamburger">
+			<li class="masthead__hamburger {% if page.subsite == 'dev' and page.menu != 'dev' %}{% else %}u-show-s{% endif %}">
 				<button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
 						<span class="c-hamburger__box">
 							<span class="c-hamburger__inner"></span>

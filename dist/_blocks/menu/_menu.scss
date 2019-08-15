@@ -128,7 +128,6 @@ div.modal__menu .b-menu i {
 	max-height: 1000px; // reset the height when checkbox is checked
 }
 
-
 // Child Level Nav Styles
 // =======================================
 // 1st level
@@ -140,16 +139,14 @@ div.modal__menu .b-menu i {
 .b-menu ul ul:not(.b-menu ul ul ul) {
 	box-shadow: inset 0px -11px 12px -12px $grey-yoda;
 }
-
-.b-menu ul ul:not(.multicol__nav .b-menu ul ul) { // no background color if not in  overlay
-	background-color: $grey;
-}
-
-.b-menu ul ul ul:not(.multicol__nav .b-menu ul ul ul) { // no background color if not in  overlay
-	background-color: white;
-}
-
-
+//
+//.b-menu ul ul:not(.multicol__nav .b-menu ul ul) { // no background color if not in  overlay
+//	background-color: $grey;
+//}
+//
+//.b-menu ul ul ul:not(.multicol__nav .b-menu ul ul ul) { // no background color if not in  overlay
+//	background-color: white;
+//}
 
 .b-menu ul ul a {
 	padding-left: 35px;
@@ -181,8 +178,8 @@ div.modal__menu .b-menu i {
 	font-style: normal;
 	font-size: $pixel10;
 	text-transform: uppercase;
-	// padding: 0 15px;
-	// line-height: normal;
+	padding: 15px;
+	display: inline-block;
 
 	&:hover {
 		color: $red;

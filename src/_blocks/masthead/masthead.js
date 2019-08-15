@@ -7,21 +7,15 @@ let header = document.querySelector('header'),
 	last_scroll = 0,
 	masthead_y = header.scrollHeight,
 	lastX = window.innerWidth,
+	hamburger = document.querySelector('.c-hamburger'),
 	mastheadNav = document.querySelector(".masthead__nav");
 
-// Stick Masthead to the top on scroll u
-// -------------------------------------
+// Stick Masthead to the top on scroll up
+// --------------------------------------
 
-// Always apply on small screens.
-if (window.innerWidth <= 960) {
-	masthead.classList.add('js-masthead-scrollupstick');
-}
-// Only fire if class .js-masthead-scrollupstick is on masthead block
-if (masthead.classList.contains('js-masthead-scrollupstick')) {
-	window.addEventListener('scroll', function() {
-		// detect if scrolling up or down
+	function stickNav() {
 		if (window.scrollY <= 15) {
-			// user has not scrolled past header yet
+			// user has not scrolled past masthead yet
 			masthead_y = -header.scrollHeight;
 			masthead.classList.remove('b-masthead--sticky-scroll', 'b-masthead--shadow');
 			document.body.style.marginTop = '0px';
@@ -33,12 +27,13 @@ if (masthead.classList.contains('js-masthead-scrollupstick')) {
 			masthead_y = Math.max(masthead_y, -masthead.scrollHeight);
 			masthead.style.top = masthead_y + 'px';
 			document.body.style.marginTop = '15px';
-
 		}
-		if (window.scrollY < 350) {
+
+		if (window.scrollY < 300) {
 			// remove the dropshadow before a banner buts against it
 			masthead.classList.remove('b-masthead--shadow');
 		}
+
 		last_scroll = window.scrollY;
 		if (
 			window.scrollY == 0 &&
@@ -47,7 +42,31 @@ if (masthead.classList.contains('js-masthead-scrollupstick')) {
 			masthead.className = 'b-masthead js-modalmenu--is-active';
 			masthead.style.top = '0';
 		}
-	});
+	}
+
+// Always apply on small screens.
+if (window.innerWidth <= 960) {
+	masthead.classList.add('js-masthead-scrollupstick');
+}
+
+// Only fire sticky masthead, if class .js-masthead-scrollupstick is on masthead block
+if (masthead.classList.contains('js-masthead-scrollupstick')) {
+	window.addEventListener('scroll', stickNav);
+}
+// stop the sticky scroll if the menu modal is open
+// need to check on mousedown
+if (hamburger) {
+	hamburger.addEventListener(
+		'mousedown',
+		function() {
+			if (hamburger.classList.contains('is-active')) {
+				window.addEventListener('scroll', stickNav)
+			} else {
+				window.removeEventListener('scroll', stickNav)
+			};
+		},
+		false
+	);
 }
 
 //check to determine if an overflow is happening
@@ -96,7 +115,8 @@ window.addEventListener('resize', function ()  {
 	}
 }, false);
 
+
 if (window.innerWidth >= 960) {
 	masthead.classList.remove('b-masthead--responsivenav');
-window.addEventListener("load", moveNav);
 } // end screen size check to fire
+window.addEventListener("load", moveNav);
