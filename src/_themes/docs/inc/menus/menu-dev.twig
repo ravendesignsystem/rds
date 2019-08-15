@@ -1,6 +1,6 @@
-<section class="u-block u-block--full has-b-menu">
+<section class="u-block u-block--full js-overlay-movemenu">
     <div class="b-menu">
-        <h2>Site Navigation</h2>
+        <h2>{% if page.subsite == 'dev' %}Dev sub-navigation{% else %} Site navigation{% endif %}</h2>
         {% from "menu/menu.twig" import menuMacro %}
         {{ menuMacro (
             [

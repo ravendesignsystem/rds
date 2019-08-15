@@ -292,6 +292,10 @@ a.u-link,
 	color: $red;
 }
 
+.u-posfixed {
+	position: fixed !important;
+}
+
 .u-sticky {
 	position: sticky;
 	top: 0;
@@ -305,10 +309,6 @@ a.u-link,
 	display: inline-block !important;
 	visibility: visible !important;
 	opacity: 1 !important;
-}
-
-.u-display-inline-b {
-	display: inline-block !important;
 }
 
 .u-visually-hidden {
@@ -340,7 +340,22 @@ a.u-link,
 
 // hide on small screens
 @include media('<=s') {
-	.u-hide-s {
+	.u-hide-s:not(.u-show-s) {
+		display: none !important;
+	}
+}
+
+// only show on s screens
+@include media('>=s') {
+	.u-show-s {
+		display: none !important;
+	}
+}
+
+
+// hide on l screens
+@include media('>=l') {
+	.u-hide-l {
 		display: none !important;
 	}
 }

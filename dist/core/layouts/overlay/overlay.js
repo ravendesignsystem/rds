@@ -9,13 +9,15 @@
 		// masthead elements
 		mastheadSearch = document.querySelector('.masthead__search'),
 		mastheadHamburger = document.querySelector('.masthead__hamburger'),
-		// masthead buttons
 		hamburger = document.querySelector('.c-hamburger'),
-		navSearch = document.querySelector('.masthead__search-btn'),
+		navSearch = document.querySelector('.masthead__searchbtn'),
 		navLogin = document.querySelector('.masthead__login-btn'),
 		// for swapping menu from elsewhere into modal
-		navBody = document.querySelector('.has-b-menu'),
-		navMenu = document.querySelector('.b-menu');
+		moveMenu = document.querySelector('.js-overlay-movemenu'),
+		navMenu = document.querySelector('.b-menu'),
+		masthead = document.querySelector('.b-masthead');
+
+
 
 	// Prevent bg scrolling behind modal
 	const preventScroll = function() {
@@ -32,6 +34,11 @@
 	};
 
 	const mastheadModal = function(btn) {
+
+		if (window.innerWidth <= 960 && masthead.classList.contains('b-masthead--responsivenav')) {
+			document.querySelector('.l-overlay-modal').classList.add('l-overlay-modal--tall');
+		}
+
 		if (modal) {
 			const modalClosed = modal.classList.contains('is-hidden'),
 				menuShow = mastheadHamburger.classList.contains(
@@ -49,11 +56,7 @@
 				modalMenu.classList.add('is-hidden');
 			}
 
-			// target all lis items except hamburger
-			const x = document.querySelectorAll(
-				'.b-masthead li:not(.masthead__hamburger)'
-			);
-			let i;
+
 
 			if (btn === 'search' || btn === 'login') {
 				if (btn === 'search') {
@@ -67,35 +70,21 @@
 					modal.classList.add('u-bg-grey'),
 						document.querySelector('.login__field').focus();
 				}
-
-				if (modalClosed === true) {
-					// toggle all li items except hamburger
-					// for (i = 0; i < x.length; i++) {
-					// 	x[i].classList.toggle('is-hidden');
-					// }
-				}
 				if (mastheadSearch) {
 					mastheadSearch.classList.add('is-hidden');
 				}
-				if (menuShow === false) {
-					mastheadHamburger.classList.toggle('u-display-inline-b');
-				}
 			} else {
 				// toggle all li items except hamburger
-				// for (i = 0; i < x.length; i++) {
-				// 	x[i].classList.toggle('is-hidden');
-				// }
 				if (mastheadSearch) {
 					mastheadSearch.classList.remove('is-hidden');
 					modalSearch.classList.add('is-hidden');
 				}
 				modalMenu.classList.toggle('is-hidden');
 
-					if (
+	   if (
 					menuShow === false &&
 					window.matchMedia('(min-width: 768px)').matches
 				) {
-					mastheadHamburger.classList.remove('u-display-inline-b');
 					if (navLogin) {
 						modalLogin.classList.add('is-hidden');
 					}
@@ -106,11 +95,11 @@
 	};
 
 	// Move menu relative to modal being open or closed
-	if (navBody) {
+	if (moveMenu) {
 		function menuMove() {
 			if (navMenu) {
 				if (hamburger.classList.contains('is-active')) {
-					navBody.appendChild(navMenu);
+					moveMenu.appendChild(navMenu);
 				} else {
 					modalMenu.appendChild(navMenu);
 				}
@@ -119,6 +108,7 @@
 
 		// mouse-down needed to trigger move before menuToggle on same button
 		hamburger.addEventListener('mousedown', menuMove);
+
 
 	}
 
@@ -132,7 +122,6 @@
 			false
 		);
 	}
-
 
 
 	if (navSearch) {
@@ -158,7 +147,7 @@
 	// Keep ability to close modal if window is resized
 	const onResize = function() {
 		if (hamburger.classList.contains('is-active')) {
-			mastheadHamburger.classList.add('u-display-inline-b'),
+			// mastheadHamburger.classList.add('u-display-inline-b'),
 				mastheadSearch.classList.add('is-hidden');
 		}
 	};

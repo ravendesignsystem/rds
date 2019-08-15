@@ -59,7 +59,7 @@
 		width: calc(240px + #{$grid-gutter});
 		//margin-right: $grid-gutter;
 		padding-right: $grid-gutter;
-		border-right: 1px solid $grey;
+
 	}
 }
 
@@ -72,6 +72,11 @@
 .multicol__main {
 	display: flex;
 	flex-direction: column;
+	border-left: 1px solid $grey;
+
+	@include media('>=s') {
+		padding-left: 25px;
+	}
 }
 
 .multicol__sidebar {

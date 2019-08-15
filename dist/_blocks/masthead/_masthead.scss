@@ -11,6 +11,7 @@ $b-height: 75px;
 	justify-content: space-between;
 	background-color: white;
 	border-top: 2px solid $red;
+	border-bottom: 1px solid $grey-kenobi;
 	position: relative;
 	height: $b-height;
 	z-index: 10000;
@@ -130,8 +131,6 @@ $b-height: 75px;
 	// position: absolute;
 }
 
-
-
 .masthead__nav ul, .masthead__actions ul {
 	margin: 0;
 	padding: 0;
@@ -141,7 +140,7 @@ $b-height: 75px;
 
 .masthead__nav li, .masthead__actions li {
 	display: inline-flex;
-	height: 73px;
+	height: 72px;
 
 	&:hover > a {
 		color: $red;
