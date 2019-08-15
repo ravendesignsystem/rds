@@ -65,6 +65,7 @@ function moveNav(element) {
 		// needed to reduce flickering on resize
 		if (lastX < xwidth) {
 			masthead.classList.remove('js-masthead-2packed');
+			masthead.classList.remove('b-masthead--responsivenav');
 		}
 	}
 }
@@ -96,5 +97,6 @@ window.addEventListener('resize', function ()  {
 }, false);
 
 if (window.innerWidth >= 960) {
+	masthead.classList.remove('b-masthead--responsivenav');
 window.addEventListener("load", moveNav);
 } // end screen size check to fire
