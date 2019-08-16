@@ -22,17 +22,16 @@ let header = document.querySelector('header'),
 		modalMenu = document.querySelector('.modal__menu'),
 		modalSearch = document.querySelector('.modal__search'),
 		modalLogin = document.querySelector('.modal__login'),
-	 modalOpen = false,
 	// for swapping b-menu from elsewhere into modal
 		moveMenu = document.querySelector('.js-overlay-movemenu'),
 		navMenu = document.querySelector('.b-menu');
 
-if (mastheadHamburger.classList.contains('u-hide-l')) {
-	 var hideBurger = true;
-}
-
 // only run if there is a hamburger menu
-	if (hamburger) {
+	if (mastheadHamburger) {
+
+		if (mastheadHamburger.classList.contains('u-hide-l')) {
+			var hideBurger = true;
+		}
 
 	// Prevent scrolling other then menu when dialogue modal open
 	// ----------------------------------------------------------
@@ -231,7 +230,8 @@ if (window.innerWidth <= 960) {
 
 	window.addEventListener('scroll', stickMasthead);
 
-// stop the sticky scroll if the menu modal is open - need to check on mousedown
+// stop the sticky scroll if the menu modal is open by hamburger or search
+// - need to check on mousedown for hambuger
 	if (hamburger) {
 		hamburger.addEventListener(
 			'mousedown',
@@ -244,12 +244,23 @@ if (window.innerWidth <= 960) {
 			},
 			false
 		);
+
+		navSearch.addEventListener(
+			'click',
+			function() {
+					window.removeEventListener('scroll', stickMasthead);
+			},
+			false
+		);
+
 	}
+
 } // end sticky masthead shiznit
 
 // Check to determine if an overflow is happening
 // on masthead nav and drop it down
 // --------------------------------
+
 	if (navHor) {
 
 		function isOverflowing(element) {
@@ -261,12 +272,14 @@ if (window.innerWidth <= 960) {
 				masthead.classList.add('js-masthead-2packed');
 				let xwidth = window.innerWidth;
 				lastX = xwidth;
+				document.querySelector('.l-overlay-modal').classList.add('l-overlay-modal--tall');
 			} else {
 				let xwidth = window.innerWidth;
 				// needed to reduce flickering on resize
 				if (lastX < xwidth) {
 					masthead.classList.remove('js-masthead-2packed');
 					masthead.classList.remove('b-masthead--responsivenav');
+					document.querySelector('.l-overlay-modal').classList.remove('l-overlay-modal--tall');
 				}
 			}
 		}
@@ -291,9 +304,11 @@ if (window.innerWidth <= 960) {
 			}
 		}, false);
 
-		if (window.innerWidth >= 960) {
+		if (window.innerWidth >= 960 && masthead.classList.contains('js-masthead-2packed') != true) {
 			masthead.classList.remove('b-masthead--responsivenav');
 		} // end screen size check to fire
 		window.addEventListener("load", moveNav);
 	}
+
+
 })();
