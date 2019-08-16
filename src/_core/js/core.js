@@ -1,5 +1,5 @@
 // layout scripts
-import '../layouts/overlay/overlay';
+// import '../layouts/overlay/overlay';
 
 // component scripts
 import '../../_components/accordion/accordion';

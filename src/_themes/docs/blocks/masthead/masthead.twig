@@ -1,7 +1,7 @@
 {# Masthead block - v3.0.0
 {# =====================#}
 <div class="u-block u-block--full">
-	<div class="b-masthead js-sticky-scroll">
+	<div class="b-masthead{% if page.masthead != 'nostick' %} js-sticky-scroll{% endif %}">
 		<div>
 			<nav aria-label="Site title and subsite navigation">
 				<h2 class="masthead__site c-menupopup">

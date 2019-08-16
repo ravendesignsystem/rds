@@ -131,6 +131,15 @@ $b-height: 75px;
 	// position: absolute;
 }
 
+// used in conjunction with js to stick the masthead on scroll up
+.js-masthead--stickyscroll {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+
 .masthead__nav ul, .masthead__actions ul {
 	margin: 0;
 	padding: 0;
@@ -151,7 +160,7 @@ $b-height: 75px;
 	border-left: 1px solid $grey-kenobi;
 
 	&:hover {
-		background-color: $grey-yoda;
+		background-color: $grey;
 		color: $black;
 	}
 }
@@ -214,22 +223,6 @@ $b-height: 75px;
 	}
 }
 
-
-// used in conjunction with js to stick the masthead on scroll up
-.b-masthead--sticky-scroll {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 10;
-	//border-bottom: 1px solid $grey-kenobi;
-
-	//& ~ .b-banner,
-	//& ~ .b-bannerhero,
-	//& ~ .tns-outer {
-	//	margin-top: 78px !important; // avoid the jumping from the loss of masthead height when made position fixed.
-	//}
-}
 
 .b-masthead--shadow {
 	box-shadow: 0 10px 11px -7px $grey-yoda;

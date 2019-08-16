@@ -345,16 +345,9 @@ a.u-link,
 	}
 }
 
-// only show on s screens
-@include media('>=s') {
-	.u-show-s {
-		display: none !important;
-	}
-}
-
 
 // hide on l screens
-@include media('>=l') {
+@include media('>=s') {
 	.u-hide-l {
 		display: none !important;
 	}

@@ -1,8 +1,9 @@
 ---
 layout: docs
-content: none
-banner: none
 title: Raven Design System (RDS)
+content: none
+masthead: nostick
+banner: none
 ---
 {%include 'inc' with {'macro': 'textimg', 
     'color': 'black', 

@@ -56,8 +56,6 @@
 				modalMenu.classList.add('is-hidden');
 			}
 
-
-
 			if (btn === 'search' || btn === 'login') {
 				if (btn === 'search') {
 					modalSearch.classList.remove('is-hidden'),
@@ -108,8 +106,6 @@
 
 		// mouse-down needed to trigger move before menuToggle on same button
 		hamburger.addEventListener('mousedown', menuMove);
-
-
 	}
 
 	// mouse-up needed to trigger toggle after menuMove function in CMS theme
