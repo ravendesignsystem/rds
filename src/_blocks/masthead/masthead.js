@@ -5,310 +5,252 @@
 let header = document.querySelector('header'),
 	//masthead elements
 		masthead = document.querySelector('.b-masthead'),
-		mastheadNav = document.querySelector(".masthead__nav"),
-		mastheadSearch = document.querySelector('.masthead__search'),
-		navSearch = document.querySelector('.masthead__searchbtn'),
-		mastheadHamburger = document.querySelector('.masthead__hamburger'),
-		hamburger = document.querySelector('.c-hamburger'),
-	 hamburgerShow = false,
-		navLogin = document.querySelector('.masthead__login-btn'),
-	 navHor = document.querySelector('.b-masthead--responsivenav'),
-	// scroll vars
-		last_scroll = 0,
-		lastX = window.innerWidth,
-		masthead_y = header.scrollHeight,
-	// dialogue - modal elements
+	// mh = masthead
+		mhNav = document.querySelector(".masthead__nav"),
+	 mhSearch = document.querySelector('.masthead__search'),
+	 mhSearchButton = document.querySelector('.masthead__searchbtn'),
+		mhHamburger = document.querySelector('.masthead__hamburger'),
+		mhHamburgerButton = document.querySelector('.c-hamburger'),
+		mhLogin = document.querySelector('.masthead__login'),
+	 msNavHor = document.querySelector('.b-masthead--responsivenav'),
+		// dialogue/modal elements
 		modal = document.querySelector('.l-overlay-modal'),
 		modalMenu = document.querySelector('.modal__menu'),
 		modalSearch = document.querySelector('.modal__search'),
 		modalLogin = document.querySelector('.modal__login'),
-	// for swapping b-menu from elsewhere into modal
+		// for swapping b-menu from elsewhere into modal
 		moveMenu = document.querySelector('.js-overlay-movemenu'),
-		navMenu = document.querySelector('.b-menu');
+		leftMenu = document.querySelector('.b-menu'),
+	 // scroll vars
+		last_scroll = 0,
+		lastX = window.innerWidth,
+		masthead_y = header.scrollHeight;
 
-// only run if there is a hamburger menu
-	if (mastheadHamburger) {
+// state vars
+	let modalOpen = false,
+		nav2packed = null,
+		stickyMh = null,
+		hideBurger = null,
+		hamburgerShowL = null,
+		killScroll = null;
 
-		if (mastheadHamburger.classList.contains('u-hide-l')) {
-			var hideBurger = true;
+	// navHor = document.querySelector('.b-masthead--responsivenav'),
+	// hamburgerShow = false,
+
+	// if masthead contains .b-masthead--responsivenav
+	// check if the hor nav needs to drop
+	if (msNavHor) {
+
+			// if (window.innerWidth >= 960 && masthead.classList.contains('js-masthead-2packed') != true) {
+			// 	masthead.classList.remove('b-masthead--responsivenav');
+			// }
+
+			// check if an element has overflow
+			const isOverflowing = function(element) {
+				return element.scrollWidth > element.offsetWidth;
+			}
+
+			let dropNav = function() {
+				// if the mh nav is overflowing
+				if (isOverflowing(mhNav)) {
+					nav2packed = true;
+					masthead.classList.add('js-masthead-2packed');
+					// setup vars to test if resizing bigger or smalelr
+					let xwidth = window.innerWidth;
+					lastX = xwidth;
+				} else {
+					nav2packed = false
+					let xwidth = window.innerWidth;
+					// needed to reduce flickering on resize
+					if (lastX < xwidth) {
+						masthead.classList.remove('js-masthead-2packed');
+					}
+				}
+				if (window.innerWidth <= 960 || nav2packed === true ) {
+					document.body.classList.add('js-mh-2packed');
+				} else {
+					document.body.classList.remove('js-mh-2packed');
+				}
+			}
+
+			// Setup a timer to ease resizing
+			let timeout;
+			window.addEventListener('resize', function() {
+				// If timer is null, reset it to 66ms.
+				// Otherwise, wait until timer is cleared
+				if (!timeout) {
+					timeout = setTimeout(function() {
+						// Reset timeout
+						timeout = null;
+						// Run our resize functions
+						if (window.innerWidth >= 960 && nav2packed === true && mhNav.scrollWidth > mhNav.clientWidth)  {
+							masthead.classList.add("js-masthead-2biggie");
+						} else {
+							dropNav();
+						}
+					}, 66);
+				}
+			}, false);
+		window.addEventListener('load', function () {
+			dropNav();
+		});
+
+} // end msNavHor stacking shiz
+
+	// Stick Masthead to the top on scroll up
+ // --------------------------------------
+	// Only fire sticky masthead, if class .js-masthead-scrollupstick is on masthead block
+
+	if (masthead.classList.contains('js-masthead-stick')) {
+		stickyMh = true;
+
+		var stickMasthead = function () {
+			if (window.scrollY <= 15) {
+				// user has not scrolled past masthead yet
+				masthead_y = -header.scrollHeight;
+				masthead.classList.remove('js-masthead--stickyscroll', 'b-masthead--shadow');
+				document.body.style.marginTop = '0px';
+			} else {
+				// has scrolled past the masthead
+				masthead.classList.add('js-masthead--stickyscroll', 'b-masthead--shadow');
+				masthead_y = masthead_y - (window.scrollY - last_scroll);
+				masthead_y = Math.min(masthead_y, 0);
+				masthead_y = Math.max(masthead_y, -masthead.scrollHeight);
+				masthead.style.top = masthead_y + 'px';
+				document.body.style.marginTop = '15px';
+			}
+			// remove the drop shadow before a banner buts against it
+			if (window.scrollY < 300) {
+				masthead.classList.remove('b-masthead--shadow');
+			}
+			last_scroll = window.scrollY;
 		}
 
-	// Prevent scrolling other then menu when dialogue modal open
-	// ----------------------------------------------------------
-	const preventScroll = function() {
-		if (
-			document.body.style.overflowY === '' ||
-			document.body.style.overflowY === 'auto'
-		) {
-			(document.body.style.position = 'fixed'),
-				(document.body.style.overflowY = 'scroll');
-		} else {
-			(document.body.style.position = 'static'),
-				(document.body.style.overflowY = 'auto');
+		window.addEventListener('scroll', stickMasthead);
+	} // end sticky scroll
+
+	// Masthead button/modal functions
+	// oh man, a lot of state going on here
+	// not sure if this can be simplified, but hope so
+	// for a future review
+ // -----------------------------------------------
+
+	// Don't even bother if there isn't a hamburger button
+	if (mhHamburgerButton) {
+
+		// Prevent scrolling other then menu when dialogue modal open
+		// ----------------------------------------------------------
+		const preventScroll = function() {
+			if (
+				document.body.style.overflowY === '' ||
+				document.body.style.overflowY === 'auto'
+			) {
+				(document.body.style.position = 'fixed'),
+					(document.body.style.overflowY = 'scroll');
+			} else {
+				(document.body.style.position = 'static'),
+					(document.body.style.overflowY = 'auto');
+			}
+		};
+
+		const showModal = function(btn) {
+			modal.classList.remove('is-hidden');
+			mhHamburger.classList.remove('u-hide-l');
+			mhHamburgerButton.classList.add('is-active');
+			window.removeEventListener('scroll', stickMasthead)
+			preventScroll();
+			if (hideBurger !== null) {
+				mhHamburger.classList.remove(hideBurger);
+			}
+
+			if (btn === 'search') {
+				mhSearch.classList.add('is-hidden');
+				modalSearch.classList.remove('is-hidden');
+				document.querySelector('.searchform__input').focus();
+				if (mhLogin) {
+					modalLogin.classList.add('is-hidden');
+				}
+			}
+
+			if (btn === 'login') {
+				document.querySelector('.login__field').focus();
+				modalLogin.classList.remove('is-hidden');
+				modal.classList.remove('is-hidden');
+				mhLogin.classList.add('is-hidden');
+			}
 		}
-	};
 
-	const mastheadModal = function(btn) {
-
-		if (window.innerWidth <= 960 && masthead.classList.contains('b-masthead--responsivenav')) {
-			document.querySelector('.l-overlay-modal').classList.add('l-overlay-modal--tall');
+		if (mhSearch) {
+			mhSearch.addEventListener(
+				'click',
+				function() {
+					showModal('search');
+				},
+				false
+			);
 		}
 
-		if (modal) {
-			const modalClosed = modal.classList.contains('is-hidden'),
-				menuShow = mastheadHamburger.classList.contains(
-					'masthead__hamburger--show'
+
+				if (mhHamburger.classList.contains('u-hide-l')) {
+					hideBurger = 'u-hide-l';
+				} else if (mhHamburger.classList.contains('is-hidden')) {
+					hideBurger = 'is-hidden';
+				}
+
+				mhHamburgerButton.addEventListener(
+					'mousedown',
+					function() {
+						mhHamburgerButton.classList.toggle('is-active');
+						if (mhHamburgerButton.classList.contains('is-active')) {
+							if (moveMenu) {
+								modal.classList.remove('is-hidden');
+								modalMenu.classList.remove('is-hidden');
+								modalMenu.appendChild(leftMenu);
+							} else {
+								alert ('If you are going to have the hamburger button displayed, you need to add \'js-overlay-movemenu to your b-menu block. If you need the hamburger but don\'t have a vertical b-menu, add \'.is-hidden\' to the hamburger.' );
+							}
+							preventScroll();
+							window.removeEventListener('scroll', stickMasthead);
+							if (mhLogin) {
+								modalLogin.classList.add('is-hidden');
+									mhLogin.classList.add('is-hidden');
+							}
+						} else {
+							preventScroll();
+							window.addEventListener('scroll', stickMasthead);
+							modal.classList.add('is-hidden');
+							if (moveMenu) {
+								modalMenu.classList.add('is-hidden');
+								moveMenu.appendChild(leftMenu);
+							}
+							if (mhSearch) {
+							modalSearch.classList.add('is-hidden');
+							mhSearch.classList.remove('is-hidden');
+							}
+							if (mhLogin) {
+								mhLogin.classList.remove('is-hidden');
+								modalLogin.classList.remove('is-hidden');
+							}
+							if (hideBurger !== null) {
+									mhHamburger.classList.add(hideBurger);
+							}
+						}
+						;
+					},
+					false
 				);
 
-			// if menu is open and search is clicked
-			if (modalClosed === false && btn === 'search') {
-				modalSearch.classList.remove('is-hidden');
-				preventScroll();
-			} else {
-				modal.classList.toggle('is-hidden');
-				hamburger.classList.toggle('is-active');
-				modal.classList.remove('u-bg-grey');
-				modalMenu.classList.add('is-hidden');
-			}
 
-			if (btn === 'search' || btn === 'login') {
-				if (btn === 'search') {
-					if (hideBurger === true ) {
-					mastheadHamburger.classList.remove('u-hide-l');
-						hideBurger = "ushow";
-					}
-					hamburgerShow = true;
-					modalSearch.classList.remove('is-hidden'),
-						document.querySelector('.modal__search .searchform__input').focus();
-					if (navLogin) {
-						modalLogin.classList.add('is-hidden');
-					}
-				} else {
-					modalLogin.classList.remove('is-hidden');
-					modal.classList.add('u-bg-grey'),
-						document.querySelector('.login__field').focus();
-				}
-				if (mastheadSearch) {
-					mastheadSearch.classList.add('is-hidden');
-				}
-			} else {
-				// toggle all li items except hamburger
-				if (mastheadSearch) {
-					mastheadSearch.classList.remove('is-hidden');
-					modalSearch.classList.add('is-hidden');
-				}
-				modalMenu.classList.toggle('is-hidden');
-
-				if (
-					menuShow === false &&
-					window.matchMedia('(min-width: 768px)').matches
-				) {
-					if (navLogin) {
-						modalLogin.classList.add('is-hidden');
-					}
-				}
-			}
+		if (mhLogin) {
+			mhLogin.addEventListener(
+				'click',
+				function() {
+					showModal('login');
+				},
+				false
+			);
 		}
-		preventScroll();
-	};
-
-	// Move menu relative to modal being open or closed
-	if (moveMenu) {
-		function menuMove() {
-			if (navMenu) {
-				if (hamburger.classList.contains('is-active')) {
-					moveMenu.appendChild(navMenu);
-				} else {
-					modalMenu.appendChild(navMenu);
-				}
-			}
-		}
-
-		// mouse-down needed to trigger move before menuToggle on same button
-		hamburger.addEventListener('mousedown', menuMove);
 
 	}
-
-	// mouse-up needed to trigger toggle after menuMove function in CMS theme
-	if (hamburger) {
-		hamburger.addEventListener(
-			'mouseup',
-			function() {
-    // if the hamburger is hidden u-show-s but search is used on l screens
-				if (hideBurger = "ushow") {
-					mastheadHamburger.classList.add('u-hide-l');
-					hideBurger = true;
-				}
-				mastheadModal('hamburger');
-			},
-			false
-		);
-	}
-
-
-	if (navSearch) {
-		navSearch.addEventListener(
-			'click',
-			function() {
-				mastheadModal('search');
-			},
-			false
-		);
-	}
-
-	if (navLogin) {
-		navLogin.addEventListener(
-			'click',
-			function() {
-				mastheadModal('login');
-			},
-			false
-		);
-	}
-
-	// Keep ability to close modal if window is resized
-	const onResize = function() {
-		if (hamburger.classList.contains('is-active')) {
-			// mastheadHamburger.classList.add('u-display-inline-b'),
-			mastheadSearch.classList.add('is-hidden');
-		}
-	};
-
-	// Throttle events to only run at 15fps, for performance
-	let eventTimeout;
-	const eventThrottler = function() {
-		// ignore resize events as long as an actualResizeHandler execution is in the queue
-		if (!eventTimeout) {
-			eventTimeout = setTimeout(function() {
-				eventTimeout = null;
-				onResize();
-			}, 66);
-		}
-	};
-
-	window.addEventListener('resize', eventThrottler, false);
-}
-
-
-// Stick Masthead to the top on scroll up
-// --------------------------------------
-	// Only fire sticky masthead, if class .js-masthead-scrollupstick is on masthead block
-if (masthead.classList.contains('js-masthead-stick')) {
-	function stickMasthead() {
-		if (window.scrollY <= 15) {
-			// user has not scrolled past masthead yet
-			masthead_y = -header.scrollHeight;
-			masthead.classList.remove('js-masthead--stickyscroll', 'b-masthead--shadow');
-			document.body.style.marginTop = '0px';
-		} else {
-			// has scrolled past the masthead
-			masthead.classList.add('js-masthead--stickyscroll', 'b-masthead--shadow');
-			masthead_y = masthead_y - (window.scrollY - last_scroll);
-			masthead_y = Math.min(masthead_y, 0);
-			masthead_y = Math.max(masthead_y, -masthead.scrollHeight);
-			masthead.style.top = masthead_y + 'px';
-			document.body.style.marginTop = '15px';
-		}
-		// remove the drop shadow before a banner buts against it
-		if (window.scrollY < 300) {
-			masthead.classList.remove('b-masthead--shadow');
-		}
-		last_scroll = window.scrollY;
-		if (
-			window.scrollY == 0 &&
-			masthead.classList.contains('js-modalmenu--is-active')
-		) {
-			masthead.className = 'b-masthead js-modalmenu--is-active';
-			masthead.style.top = '0';
-		}
-	}
-
-// Always apply on small screens.
-if (window.innerWidth <= 960) {
-	masthead.classList.add('js-masthead-stick');
-}
-
-	window.addEventListener('scroll', stickMasthead);
-
-// stop the sticky scroll if the menu modal is open by hamburger or search
-// - need to check on mousedown for hambuger
-	if (hamburger) {
-		hamburger.addEventListener(
-			'mousedown',
-			function() {
-				if (hamburger.classList.contains('is-active')) {
-					window.addEventListener('scroll', stickMasthead)
-				} else {
-					window.removeEventListener('scroll', stickMasthead)
-				};
-			},
-			false
-		);
-
-		navSearch.addEventListener(
-			'click',
-			function() {
-					window.removeEventListener('scroll', stickMasthead);
-			},
-			false
-		);
-
-	}
-
-} // end sticky masthead shiznit
-
-// Check to determine if an overflow is happening
-// on masthead nav and drop it down
-// --------------------------------
-
-	if (navHor) {
-
-		function isOverflowing(element) {
-			return element.scrollWidth > element.offsetWidth;
-		}
-
-		function moveNav(element) {
-			if (isOverflowing(mastheadNav)) {
-				masthead.classList.add('js-masthead-2packed');
-				let xwidth = window.innerWidth;
-				lastX = xwidth;
-				document.querySelector('.l-overlay-modal').classList.add('l-overlay-modal--tall');
-			} else {
-				let xwidth = window.innerWidth;
-				// needed to reduce flickering on resize
-				if (lastX < xwidth) {
-					masthead.classList.remove('js-masthead-2packed');
-					masthead.classList.remove('b-masthead--responsivenav');
-					document.querySelector('.l-overlay-modal').classList.remove('l-overlay-modal--tall');
-				}
-			}
-		}
-
-// Setup a timer to ease resizing
-		let timeout;
-		window.addEventListener('resize', function() {
-			// If timer is null, reset it to 66ms.
-			// Otherwise, wait until timer is cleared
-			if (!timeout) {
-				timeout = setTimeout(function() {
-					// Reset timeout
-					timeout = null;
-					// Run our resize functions
-					if (window.innerWidth >= 960 && masthead.classList.contains('js-masthead-2packed') && mastheadNav.scrollWidth > mastheadNav.clientWidth) {
-						masthead.classList.add("js-masthead-2biggie");
-					}	else {
-						moveNav(mastheadNav);
-					}
-
-				}, 66);
-			}
-		}, false);
-
-		if (window.innerWidth >= 960 && masthead.classList.contains('js-masthead-2packed') != true) {
-			masthead.classList.remove('b-masthead--responsivenav');
-		} // end screen size check to fire
-		window.addEventListener("load", moveNav);
-	}
-
 
 })();

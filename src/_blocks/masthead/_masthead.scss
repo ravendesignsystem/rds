@@ -92,7 +92,9 @@ $b-height: 75px;
 	}
 }
 
-.b-masthead--responsivenav .masthead__nav {
+
+	.b-masthead--responsivenav .masthead__nav {
+		@include media('<=960px') {
 		-webkit-overflow-scrolling: touch;
 		-ms-overflow-style: -ms-autohiding-scrollbar;
 		position: absolute;
@@ -100,10 +102,16 @@ $b-height: 75px;
 		overflow: auto;
 		border-top: 1px solid $grey-kenobi;
 		background-color: white;
+	}
 }
+
 
 .js-masthead-2packed {
 	height: 150px !important;
+}
+
+.js-mh-2packed .l-overlay-modal {
+	top: 150px !important;
 }
 .js-masthead-2packed .masthead__nav {
 	-webkit-overflow-scrolling: touch;
