@@ -8,7 +8,6 @@ let header = document.querySelector('header'),
 	// mh = masthead
 		mhNav = document.querySelector(".masthead__nav"),
 	 mhSearch = document.querySelector('.masthead__search'),
-	 mhSearchButton = document.querySelector('.masthead__searchbtn'),
 		mhHamburger = document.querySelector('.masthead__hamburger'),
 		mhHamburgerButton = document.querySelector('.c-hamburger'),
 		mhLogin = document.querySelector('.masthead__login'),
@@ -27,23 +26,15 @@ let header = document.querySelector('header'),
 		masthead_y = header.scrollHeight;
 
 // state vars
-	let modalOpen = false,
-		nav2packed = null,
-		stickyMh = null,
-		hideBurger = null,
-		hamburgerShowL = null,
-		killScroll = null;
+// -----------
+	// is the mh nav overflowing?
+	let nav2packed = null,
+		// is the hamburger hidden?
+		hideBurger = null;
 
-	// navHor = document.querySelector('.b-masthead--responsivenav'),
-	// hamburgerShow = false,
 
-	// if masthead contains .b-masthead--responsivenav
-	// check if the hor nav needs to drop
+	// only if masthead contains .b-masthead--responsivenav,
 	if (msNavHor) {
-
-			// if (window.innerWidth >= 960 && masthead.classList.contains('js-masthead-2packed') != true) {
-			// 	masthead.classList.remove('b-masthead--responsivenav');
-			// }
 
 			// check if an element has overflow
 			const isOverflowing = function(element) {
@@ -102,7 +93,6 @@ let header = document.querySelector('header'),
 	// Only fire sticky masthead, if class .js-masthead-scrollupstick is on masthead block
 
 	if (masthead.classList.contains('js-masthead-stick')) {
-		stickyMh = true;
 
 		var stickMasthead = function () {
 			if (window.scrollY <= 15) {
