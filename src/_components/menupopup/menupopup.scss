@@ -4,7 +4,7 @@
 }
 
 .js-menupopup-clonetxt a::after{
-	content: ' Homepage';
+	content: ' Home';
 	white-space: pre;
 }
 
@@ -34,7 +34,7 @@
 	margin: 0;
 	padding: 3px 0;
 	position: absolute;
-	z-index: 10000000;
+	z-index: -1;
 	border: 1px solid $grey-luke;
 	border-radius: 4px;
 	box-shadow: 0 3px 12px rgba(27, 31, 35, 0.15);

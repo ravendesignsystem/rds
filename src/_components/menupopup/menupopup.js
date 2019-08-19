@@ -1,4 +1,6 @@
-let popups = document.querySelectorAll('button.c-menupopup');
+let popups = document.querySelectorAll('button.c-menupopup'),
+masthead = document.querySelector('.b-masthead'),
+	mastheadNav = document.querySelector('.masthead__nav');
 
 // let hoverLinks = document.querySelector('.c-menupopup > a');
 
@@ -7,22 +9,59 @@ for (let i = 0; i < popups.length; i++) {
 	popups[i].addEventListener('mouseout', hideMenu);
 }
 
-
-
 if ("ontouchstart" in document.documentElement)
 {
 
+	//
+	// let hoverLinks = document.querySelectorAll('.c-menupopup a');
+	// for (let i = 0; i < hoverLinks.length; i++) {
+	//
+	// 	hoverLinks[i].addEventListener('click', function tat() {
+	//
+	// 			// this.removeAttribute("href");
+	// 			let targetElement = this.target; // clicked element
+	//
+	//
+	// 			masthead.classList.add('b-masthead--responsivenav--hack');
+	// 		 this.href="#";
+	// 			let cln = this.parentNode.cloneNode(true);
+	// 			cln.classList.remove('c-menupopup');
+	// 			cln.classList.add('js-menupopup-clonetxt');
+	// 			this.nextElementSibling.prepend(cln);
+	//
+	// 			if (targetElement == hoverLinks[i]) {
+	// 				masthead.classList.remove('b-masthead--responsivenav--hack');
+	// 			}
+	// 			hoverLinks[i].removeEventListener('click', tat);
+	//
+	// 		},
+	// 		false
+	// 	);
+	// }
+	document.addEventListener('scroll', function test() {
+		masthead.classList.remove('b-masthead--responsivenav--hack');
+	});
 
-	let hoverLinks = document.querySelectorAll('.c-menupopup a');
+	var ted = function() {
+	mastheadNav.addEventListener('click', function yes() {
+		// masthead.classList.remove('b-masthead--responsivenav--hack');
+	});
+	}
+
+	let hoverLinks = document.querySelectorAll('li.c-menupopup');
 	for (let i = 0; i < hoverLinks.length; i++) {
 
 		hoverLinks[i].addEventListener('click', function fuck() {
-				alert (this);
-				this.removeAttribute("href");
-				let cln = this.parentNode.cloneNode(true);
+				mastheadNav.classList.add('js-foo');
+				// this.removeAttribute("href");
+				let cln = this.cloneNode(true);
 				cln.classList.remove('c-menupopup');
 				cln.classList.add('js-menupopup-clonetxt');
-				this.nextElementSibling.prepend(cln);
+				this.getElementsByTagName("A")[0].nextElementSibling.prepend(cln);
+				this.firstChild.href="#";
+				masthead.classList.add('b-masthead--responsivenav--hack');
+				// this.style.position = 'absolute';
+ted();
 				hoverLinks[i].removeEventListener('click', fuck);
 			},
 			false

@@ -111,8 +111,18 @@ $b-height: 75px;
 		top: 73px;
 		overflow: auto;
 		border-top: 1px solid $grey-kenobi;
-		background-color: white;
+		background-color: transparent;
+			//padding-bottom: 100vh;
+			//margin-bottom: -250px;
 	}
+}
+
+.b-masthead--responsivenav--hack .masthead__nav {
+
+		 //hack to get around not being able to show only overflow y for popup submenus
+	padding-bottom: 100vh;
+	background-color: red!important;
+
 }
 
 
