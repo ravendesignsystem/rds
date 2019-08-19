@@ -102,6 +102,11 @@ $b-height: 75px;
 	}
 }
 
+.masthead__nav.js-foo .menupopup__menu {
+	position: absolute !important;
+	top: 70px !important;
+}
+
 
 	.b-masthead--responsivenav .masthead__nav {
 		@include media('<=960px') {
@@ -135,7 +140,7 @@ $b-height: 75px;
 }
 
 .js-mh-2packed .masthead__nav .menupopup__menu {
-	top: 145px !important;
+	top: 145px;
 }
 
 .js-masthead-2packed .masthead__nav {

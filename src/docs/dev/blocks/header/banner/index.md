@@ -113,7 +113,7 @@ By default banner images are centered to the container. Depending on the image a
 ## Implementation Notes
 
 - Use only one banner per page. This page obviously breaks this rule but it is an anomaly in order document all the available banners and their options.
-- Banners must reside in the `<header` section.
+- Banners must reside in the `<header>` section.
 - Banner images are 1600px in width by 700px in height.
 
 ## Content guidelines

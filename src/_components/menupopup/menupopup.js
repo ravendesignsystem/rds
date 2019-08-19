@@ -42,33 +42,40 @@ if ("ontouchstart" in document.documentElement)
 		masthead.classList.remove('b-masthead--responsivenav--hack');
 	});
 
-	var ted = function() {
-	mastheadNav.addEventListener('click', function yes() {
-		// masthead.classList.remove('b-masthead--responsivenav--hack');
-	});
-	}
+
 
 	let hoverLinks = document.querySelectorAll('li.c-menupopup');
 	for (let i = 0; i < hoverLinks.length; i++) {
 
-		hoverLinks[i].addEventListener('click', function fuck() {
-				mastheadNav.classList.add('js-foo');
+		hoverLinks[i].addEventListener('touchend', function fuck() {
+				masthead.classList.add('b-masthead--responsivenav--hack');
+				ted();
+
 				// this.removeAttribute("href");
 				let cln = this.cloneNode(true);
 				cln.classList.remove('c-menupopup');
 				cln.classList.add('js-menupopup-clonetxt');
 				this.getElementsByTagName("A")[0].nextElementSibling.prepend(cln);
 				this.firstChild.href="#";
-				masthead.classList.add('b-masthead--responsivenav--hack');
+
 				// this.style.position = 'absolute';
-ted();
-				hoverLinks[i].removeEventListener('click', fuck);
+
+
+				hoverLinks[i].removeEventListener('touchend', fuck);
+				mastheadNav.classList.add('js-foo');
 			},
 			false
 		);
 	}
 
-
+	var ted = function() {
+		mastheadNav.addEventListener('touchstart', function yes() {
+			if (mastheadNav.classList.contains('js-foo')){
+				masthead.classList.remove('b-masthead--responsivenav--hack');
+				mastheadNav.classList.remove('js-foo');
+			}
+		});
+	}
 }
 // hoverLinks[i].setAttribute('href', '#url');
 
