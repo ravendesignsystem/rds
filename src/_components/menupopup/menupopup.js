@@ -16,7 +16,7 @@ if ("ontouchstart" in document.documentElement)
 	let hoverLinks = document.querySelectorAll('.c-menupopup a');
 	for (let i = 0; i < hoverLinks.length; i++) {
 
-		hoverLinks[i].addEventListener('ontouchstart', function fuck() {
+		hoverLinks[i].addEventListener('click', function fuck() {
 				alert (this);
 				this.removeAttribute("href");
 				let cln = this.parentNode.cloneNode(true);
