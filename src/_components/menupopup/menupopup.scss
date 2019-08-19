@@ -3,6 +3,11 @@
 	cursor: pointer;
 }
 
+.js-menupopup-clonetxt a::after{
+	content: ' Homepage';
+	white-space: pre;
+}
+
 // carrot
 .c-menupopup > a::after, button.c-menupopup::after, a.c-menupopup::after {
 	position: absolute;

@@ -1,5 +1,5 @@
 let popups = document.querySelectorAll('button.c-menupopup');
-let hoverLinks = document.querySelectorAll('.c-menupopup a');
+
 // let hoverLinks = document.querySelector('.c-menupopup > a');
 
 for (let i = 0; i < popups.length; i++) {
@@ -7,34 +7,60 @@ for (let i = 0; i < popups.length; i++) {
 	popups[i].addEventListener('mouseout', hideMenu);
 }
 
-for (let i = 0; i < hoverLinks.length; i++) {
-	hoverLinks[i].addEventListener('touchstart', moo);
-}
 
-window.addEventListener('load', function () {
-	function is_touch_device() {
-		return (('ontouchstart' in window)
-			|| (navigator.MaxTouchPoints > 0)
-			|| (navigator.msMaxTouchPoints > 0));
+
+if ("ontouchstart" in document.documentElement)
+{
+
+
+	let hoverLinks = document.querySelectorAll('.c-menupopup a');
+	for (let i = 0; i < hoverLinks.length; i++) {
+
+		hoverLinks[i].addEventListener('click', function fuck() {
+
+				this.removeAttribute("href");
+				let cln = this.parentNode.cloneNode(true);
+				cln.classList.remove('c-menupopup');
+				cln.classList.add('js-menupopup-clonetxt');
+				this.nextElementSibling.prepend(cln);
+				hoverLinks[i].removeEventListener('click', fuck);
+			},
+			false
+		);
 	}
 
 
-if ( is_touch_device()) {
-	// document.getElementById('touchOnly').style.display='none';
-	alert ('ttttttouch me');
 }
+// hoverLinks[i].setAttribute('href', '#url');
+
+	//
+	// document.getElementById("myAnchor").removeAttribute("href")
+	// // yourElement.setAttribute('href', '#url');
+
+
+// else
+// {
+// 	alert ('noooo ttttttouch me');
+// }
+
+
 
 // if (popups) {
 // hoverLinks.addEventListener('touchstart', moo);
 // }
 //
-function moo() {
-	alert (this);
-// this.link.href = '';
-	// document.this.querySelector('a').link.href = '';
-	// this.nextElementSibling.classList.add('is-visible');
-	// this.nextElementSibling.classList.add('is-visible');
-}
+// function moo() {
+//
+// 	document.this.link.href = 'poop';
+// 	alert (this);
+// 	// alert (this);
+// 	// red.link.href = 'fffff';
+// // this.getElementsByClassName('parent')[0];
+// // this.link.href = '';
+// 	// document.this.querySelector('a').link.href = '';
+// 	// this.nextElementSibling.classList.add('is-visible');
+// 	// this.nextElementSibling.classList.add('is-visible');
+// }
 
 function showMenu() {
 	this.nextElementSibling.classList.add('is-visible');
