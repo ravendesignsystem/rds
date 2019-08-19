@@ -12,12 +12,12 @@ for (let i = 0; i < popups.length; i++) {
 if ("ontouchstart" in document.documentElement)
 {
 
-alert ('fffghshdh');
+
 	let hoverLinks = document.querySelectorAll('.c-menupopup a');
 	for (let i = 0; i < hoverLinks.length; i++) {
 
-		hoverLinks[i].addEventListener('click', function fuck() {
-
+		hoverLinks[i].addEventListener('ontouchstart', function fuck() {
+				alert (this);
 				this.removeAttribute("href");
 				let cln = this.parentNode.cloneNode(true);
 				cln.classList.remove('c-menupopup');
