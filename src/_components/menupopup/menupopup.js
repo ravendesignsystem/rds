@@ -12,7 +12,7 @@ for (let i = 0; i < popups.length; i++) {
 if ("ontouchstart" in document.documentElement)
 {
 
-
+alert ('fffghshdh');
 	let hoverLinks = document.querySelectorAll('.c-menupopup a');
 	for (let i = 0; i < hoverLinks.length; i++) {
 
