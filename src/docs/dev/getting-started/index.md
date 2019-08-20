@@ -7,13 +7,13 @@ title: Getting started
 ---
 ## Important public service announcement
 
-If you are affiliated with Carleton, you can skip all of the technical overhead required to build your own RDS site, by using the [Carleton CMS service](https://carleton.ca/webservices/request-a-website/). RDS, and all of its goodness, is baked right into the free WordPress CMS service. Using the Carleton CMS service is the fastest and easiest way to get up and running with a new RDS website. This lets you focus on your content and [Web Services](https://carleton.ca/webservices) will take care of hosting, security and all of the updates. As a bonus, you are guaranteed the use of Carleton's branded font, which is [not always available](#) when you build your own sites.
+If you are affiliated with Carleton, you can skip all of the technical overhead required to build your own RDS site, by using the [Carleton CMS service](https://carleton.ca/webservices/request-a-website/). RDS, and all of its goodness, is baked right into the free WordPress CMS service. Using the Carleton CMS service is the fastest and easiest way to get up and running with a new RDS website. This lets you focus on your content and [Web Services](https://carleton.ca/webservices) will take care of hosting, security and all of the updates. As a bonus, you are guaranteed the use of Carleton's branded font, which is [not always available](#carleton%27s-branded-font---gotham) when you build your own sites.
 
 # Get started
 
 There are two ways to get started with RDS:
 
- - Use Carleton's CDN and follow the [Quick start guide](#quick-start) below.
+ - Use Carleton's CDN with the resources for CSS and JS noted below.
  - [Use npm](starter-packages/#install-rds-with-npm) to integrate RDS with a build system for your project.
 
 ## Using Carleton's CDN
