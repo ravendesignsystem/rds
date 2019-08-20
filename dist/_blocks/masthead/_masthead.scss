@@ -86,13 +86,11 @@ $b-height: 75px;
 	display: inline-flex;
 	overflow: hidden;
 	white-space: nowrap;
+	background-color: transparent;
 
-	@include media('>=960px') {
-		border-left: 1px solid $grey-kenobi;
-	}
 
 	.menupopup__menu {
-		position: fixed !important;
+		position: fixed;
 		margin-left: 5px;
 
 		//IE Only styles
@@ -102,10 +100,6 @@ $b-height: 75px;
 	}
 }
 
-.masthead__nav.js-foo .menupopup__menu {
-	position: absolute !important;
-	top: 70px !important;
-}
 
 
 	.b-masthead--responsivenav .masthead__nav {
@@ -116,19 +110,12 @@ $b-height: 75px;
 		top: 73px;
 		overflow: auto;
 		border-top: 1px solid $grey-kenobi;
-		background-color: transparent;
+
 			//padding-bottom: 100vh;
 			//margin-bottom: -250px;
 	}
 }
 
-.b-masthead--responsivenav--hack .masthead__nav {
-
-		 //hack to get around not being able to show only overflow y for popup submenus
-	padding-bottom: 100vh;
-	background-color: red!important;
-
-}
 
 
 .js-masthead-2packed {
@@ -150,7 +137,7 @@ $b-height: 75px;
 	top: 73px;
 	overflow: auto;
 	border-top: 1px solid $grey-kenobi;
-	background-color: white;
+
 }
 .js-masthead-2biggie .masthead__nav {
 	background-color: $red !important;

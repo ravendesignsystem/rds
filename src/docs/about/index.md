@@ -1,10 +1,10 @@
 ---
 layout: docs
-subsite: dev
-title: An Introduction to RDS
+subsite: about
+title: About RDS
 content: true
 ---
-## Introduction
+[STUB] TODO - update this page
 
 The RDS design system was established to help Carleton deliver a unified experience across all of its web properties. In addition to creating a consistent user experience, the project provides an opportunity to unite development teams across campus through a shared language. 
 RDS' underlying systems connect all the required pieces together to:
