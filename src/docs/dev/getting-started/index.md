@@ -14,7 +14,7 @@ If you are affiliated with Carleton, you can skip all of the technical overhead 
 There are two ways to get started with RDS:
 
  - Use Carleton's CDN and follow the [Quick start guide](#quick-start) below.
- - [Use npm](#) to integrate RDS with a build system for your project.
+ - [Use npm](starter-packages/#install-rds-with-npm) to integrate RDS with a build system for your project.
 
 ## Using Carleton's CDN
 
@@ -36,7 +36,7 @@ If your server supports gzip, use the gzip version for an even smaller file size
 <link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.gzip.css" media="print" onload="this.media='all'">
 ```
 
-TODO add integrity and cross origin hashes.
+TODO: add integrity and cross origin hashes.
 
 ### JS
 
@@ -59,7 +59,7 @@ The CDN hosted version ships with the RDS core, all components and all of the bl
 
 ### Minimum template requirements.
 
-Be sure to have your pages set up with RDS` template requirements, which at a minimum looks like this:
+Be sure to have your pages set up with RDS' template requirements, which at a minimum looks like this:
 
 ```html
 <!doctype html>
@@ -73,12 +73,16 @@ Be sure to have your pages set up with RDS` template requirements, which at a mi
     <title>Hello, world!</title>
   </head>
   <body>
+
     <!-- A starting <header> tag is required -->
     <header><!-- Add Header blocks here --></header>
+
     <!-- A <main> tag is required -->
     <main><!-- Add Main blocks here --></main>
+
     <!-- A bottom <footer> tag is required -->
     <footer><!-- Add Footer blocks here --></footer>
+
     <!-- The Overlay layout ios required -->
     <dialog class="l-overlay-modal is-hidden">
   
@@ -92,40 +96,20 @@ Be sure to have your pages set up with RDS` template requirements, which at a mi
             <!-- If using, Login block goes here-->
         </div>
     </dialog>
+
     <!-- Required JavaScript -->
     <script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds.js" crossorigin="anonymous">
+
   </body>
 </html>
 ```
-
-## Starter downloads
-
-To get going even faster with templates, check out and download our Starter projects that contain skeleton examples of RDS in use.
-
-## Install RDS with npm
-
-The docs below assume you are familiar with [using npm](http://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/) and have [Node/npm](https://nodejs.org/en/download/) installed.
-
-1. Install RDS in your project directory.
-
-```js
-npm install --save-dev @carleton/rds
-```
-RDS will require a Sass compiler and Autoprefixer for a setup that matches our official compiled versions.
-
-### npm starter projects
-
-You can download the following npm starter projects to get started with everything you need to use RDS with modern build tools:
-
-- RDS webpack starter (coming soon)
-- RDS webpack / elenventy starter
-
-### Custom theming
-
-If you are looking to extend RDS and build a custom theme leveraging the system, review the [RDS main concepts](#) and [custom theming](#) documentation.
 
 ## Carleton's branded font - Gotham
 
 Carleton's brand use the Gotham web font. This is a paid font and cannot be distributed freely. To use this font your site must be hosted on carleton.ca and you will need to have obtained permission.  To inquire about use, email [web@carleton.ca](mailto:web@carleton.ca).
 
 RDS was designed with a well thought out font stack that degrades gracefully to widely distributed system fonts that should work and look good on all devices.
+
+## Custom theming
+
+If you are looking to extend RDS and build a custom theme leveraging the system, review the [RDS main concepts]({{site.url}}dev/main-concepts/) and [custom theming]({{site.url}}dev/custom-theming/) documentation.
