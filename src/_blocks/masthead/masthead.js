@@ -1,17 +1,17 @@
 (function() {
 
-'use strict';
+	'use strict';
 
-let header = document.querySelector('header'),
-	//masthead elements
+	let header = document.querySelector('header'),
+		//masthead elements
 		masthead = document.querySelector('.b-masthead'),
-	// mh = masthead
+		// mh = masthead
 		mhNav = document.querySelector(".masthead__nav"),
-	 mhSearch = document.querySelector('.masthead__search'),
+		mhSearch = document.querySelector('.masthead__search'),
 		mhHamburger = document.querySelector('.masthead__hamburger'),
 		mhHamburgerButton = document.querySelector('.c-hamburger'),
 		mhLogin = document.querySelector('.masthead__login'),
-	 msNavHor = document.querySelector('.b-masthead--responsivenav'),
+		msNavHor = document.querySelector('.b-masthead--responsivenav'),
 		// dialogue/modal elements
 		modal = document.querySelector('.l-overlay-modal'),
 		modalMenu = document.querySelector('.modal__menu'),
@@ -20,7 +20,7 @@ let header = document.querySelector('header'),
 		// for swapping b-menu from elsewhere into modal
 		moveMenu = document.querySelector('.js-overlay-movemenu'),
 		leftMenu = document.querySelector('.b-menu'),
-	 // scroll vars
+		// scroll vars
 		last_scroll = 0,
 		lastX = window.innerWidth,
 		masthead_y = header.scrollHeight;
@@ -36,65 +36,65 @@ let header = document.querySelector('header'),
 	// only if masthead contains .b-masthead--responsivenav,
 	if (msNavHor) {
 
-			// check if an element has overflow
-			const isOverflowing = function(element) {
-				return element.scrollWidth > element.offsetWidth;
-			}
+		// check if an element has overflow
+		const isOverflowing = function(element) {
+			return element.scrollWidth > element.offsetWidth;
+		}
 
-			let dropNav = function() {
-				// if the mh nav is overflowing
-				if (isOverflowing(mhNav)) {
-					nav2packed = true;
-					masthead.classList.add('js-masthead-2packed');
-					// setup vars to test if resizing bigger or smalelr
-					let xwidth = window.innerWidth;
-					lastX = xwidth;
-				} else {
-					nav2packed = false
-					let xwidth = window.innerWidth;
-					// needed to reduce flickering on resize
-					if (lastX < xwidth) {
-						masthead.classList.remove('js-masthead-2packed');
+		let dropNav = function() {
+			// if the mh nav is overflowing
+			if (isOverflowing(mhNav)) {
+				nav2packed = true;
+				masthead.classList.add('js-masthead-2packed');
+				// setup vars to test if resizing bigger or smalelr
+				let xwidth = window.innerWidth;
+				lastX = xwidth;
+			} else {
+				nav2packed = false
+				let xwidth = window.innerWidth;
+				// needed to reduce flickering on resize
+				if (lastX < xwidth) {
+					masthead.classList.remove('js-masthead-2packed');
+				}
+			}
+			if (window.innerWidth <= 960 || nav2packed === true) {
+				document.body.classList.add('js-mh-2packed');
+			} else {
+				document.body.classList.remove('js-mh-2packed');
+			}
+		}
+
+		// Setup a timer to ease resizing
+		let timeout;
+		window.addEventListener('resize', function() {
+			// If timer is null, reset it to 66ms.
+			// Otherwise, wait until timer is cleared
+			if (!timeout) {
+				timeout = setTimeout(function() {
+					// Reset timeout
+					timeout = null;
+					// Run our resize functions
+					if (window.innerWidth >= 960 && nav2packed === true && mhNav.scrollWidth > mhNav.clientWidth) {
+						masthead.classList.add("js-masthead-2biggie");
+					} else {
+						dropNav();
 					}
-				}
-				if (window.innerWidth <= 960 || nav2packed === true ) {
-					document.body.classList.add('js-mh-2packed');
-				} else {
-					document.body.classList.remove('js-mh-2packed');
-				}
+				}, 66);
 			}
-
-			// Setup a timer to ease resizing
-			let timeout;
-			window.addEventListener('resize', function() {
-				// If timer is null, reset it to 66ms.
-				// Otherwise, wait until timer is cleared
-				if (!timeout) {
-					timeout = setTimeout(function() {
-						// Reset timeout
-						timeout = null;
-						// Run our resize functions
-						if (window.innerWidth >= 960 && nav2packed === true && mhNav.scrollWidth > mhNav.clientWidth)  {
-							masthead.classList.add("js-masthead-2biggie");
-						} else {
-							dropNav();
-						}
-					}, 66);
-				}
-			}, false);
-		window.addEventListener('load', function () {
+		}, false);
+		window.addEventListener('load', function() {
 			dropNav();
 		});
 
-} // end msNavHor stacking shiz
+	} // end msNavHor stacking shiz
 
 	// Stick Masthead to the top on scroll up
- // --------------------------------------
+	// --------------------------------------
 	// Only fire sticky masthead, if class .js-masthead-scrollupstick is on masthead block
 
 	if (masthead.classList.contains('js-masthead-stick')) {
 
-		var stickMasthead = function () {
+		var stickMasthead = function() {
 			if (window.scrollY <= 15) {
 				// user has not scrolled past masthead yet
 				masthead_y = -header.scrollHeight;
@@ -123,7 +123,7 @@ let header = document.querySelector('header'),
 	// oh man, a lot of state going on here
 	// not sure if this can be simplified, but hope so
 	// for a future review
- // -----------------------------------------------
+	// -----------------------------------------------
 
 	// Don't even bother if there isn't a hamburger button
 	if (mhHamburgerButton) {
@@ -181,54 +181,54 @@ let header = document.querySelector('header'),
 		}
 
 
-				if (mhHamburger.classList.contains('u-hide-l')) {
-					hideBurger = 'u-hide-l';
-				} else if (mhHamburger.classList.contains('is-hidden')) {
-					hideBurger = 'is-hidden';
-				}
+		if (mhHamburger.classList.contains('u-hide-l')) {
+			hideBurger = 'u-hide-l';
+		} else if (mhHamburger.classList.contains('is-hidden')) {
+			hideBurger = 'is-hidden';
+		}
 
-				mhHamburgerButton.addEventListener(
-					'mousedown',
-					function() {
-						mhHamburgerButton.classList.toggle('is-active');
-						if (mhHamburgerButton.classList.contains('is-active')) {
-							if (moveMenu) {
-								modal.classList.remove('is-hidden');
-								modalMenu.classList.remove('is-hidden');
-								modalMenu.appendChild(leftMenu);
-							} else {
-								alert ('If you are going to have the hamburger button displayed, you need to add \'js-overlay-movemenu to your b-menu block. If you need the hamburger but don\'t have a vertical b-menu, add \'.is-hidden\' to the hamburger.' );
-							}
-							preventScroll();
-							window.removeEventListener('scroll', stickMasthead);
-							if (mhLogin) {
-								modalLogin.classList.add('is-hidden');
-									mhLogin.classList.add('is-hidden');
-							}
-						} else {
-							preventScroll();
-							window.addEventListener('scroll', stickMasthead);
-							modal.classList.add('is-hidden');
-							if (moveMenu) {
-								modalMenu.classList.add('is-hidden');
-								moveMenu.appendChild(leftMenu);
-							}
-							if (mhSearch) {
-							modalSearch.classList.add('is-hidden');
-							mhSearch.classList.remove('is-hidden');
-							}
-							if (mhLogin) {
-								mhLogin.classList.remove('is-hidden');
-								modalLogin.classList.remove('is-hidden');
-							}
-							if (hideBurger !== null) {
-									mhHamburger.classList.add(hideBurger);
-							}
-						}
-						;
-					},
-					false
-				);
+		mhHamburgerButton.addEventListener(
+			'mousedown',
+			function() {
+				mhHamburgerButton.classList.toggle('is-active');
+				if (mhHamburgerButton.classList.contains('is-active')) {
+					if (moveMenu) {
+						modal.classList.remove('is-hidden');
+						modalMenu.classList.remove('is-hidden');
+						modalMenu.appendChild(leftMenu);
+					} else {
+						alert('If you are going to have the hamburger button displayed, you need to add \'js-overlay-movemenu to your b-menu block. If you need the hamburger but don\'t have a vertical b-menu, add \'.is-hidden\' to the hamburger.');
+					}
+					preventScroll();
+					window.removeEventListener('scroll', stickMasthead);
+					if (mhLogin) {
+						modalLogin.classList.add('is-hidden');
+						mhLogin.classList.add('is-hidden');
+					}
+				} else {
+					preventScroll();
+					window.addEventListener('scroll', stickMasthead);
+					modal.classList.add('is-hidden');
+					if (moveMenu) {
+						modalMenu.classList.add('is-hidden');
+						moveMenu.appendChild(leftMenu);
+					}
+					if (mhSearch) {
+						modalSearch.classList.add('is-hidden');
+						mhSearch.classList.remove('is-hidden');
+					}
+					if (mhLogin) {
+						mhLogin.classList.remove('is-hidden');
+						modalLogin.classList.remove('is-hidden');
+					}
+					if (hideBurger !== null) {
+						mhHamburger.classList.add(hideBurger);
+					}
+				}
+				;
+			},
+			false
+		);
 
 
 		if (mhLogin) {
@@ -242,5 +242,49 @@ let header = document.querySelector('header'),
 		}
 
 	}
+
+// are we dealing with a touch device?
+	if ("ontouchstart" in document.documentElement) {
+		// if so lets account for any hover popupmenu subnavs..okay?
+		// start by finding masthead nav links with hovers
+		let hoverLinks = document.querySelectorAll('.masthead__nav li.c-menupopup');
+		for (let i = 0; i < hoverLinks.length; i++) {
+			// lets listen to them, as they might have something to say
+			hoverLinks[i].addEventListener('touchend', function touchMenus(event) {
+					[].forEach.call(hoverLinks, function() {
+						// properly position the uls
+						hoverLinks[i].getElementsByTagName("UL")[0].setAttribute(
+							"style", "position: absolute; top: 70px;");
+					});
+					// clone the parent link since its no longer clickable
+					let cln = this.cloneNode(true);
+					cln.classList.remove('c-menupopup');
+					cln.classList.add('js-menupopup-clonetxt');
+					this.getElementsByTagName("A")[0].nextElementSibling.prepend(cln);
+					this.firstChild.href = "#";
+					// kill it so we dont keep cloning like the evil Empire
+						hoverLinks[i].removeEventListener('touchend', touchMenus);
+				},
+				false
+			);
+		}
+
+		// Detect all clicks on the document
+		document.addEventListener("touchend", function(event) {
+			// If the submenus are clicked
+			if (event.target.closest("li.c-menupopup a")) 	{
+				mhNav.style.paddingBottom = '100vh';
+				if (window.innerWidth >= 960 && !document.querySelector('.js-masthead-2packed')) {
+					mhNav.style.paddingTop = '35px';
+				}
+			} else {
+				// If user clicks outside the element, refocus and restyle
+				mhNav.setAttribute("style", "padding-bottom: 0; padding-top: 0");
+				masthead.focus();
+			}
+		});
+
+	} // end touch detection
+
 
 })();
