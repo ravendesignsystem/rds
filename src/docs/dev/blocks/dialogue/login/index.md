@@ -2,7 +2,9 @@
 layout: docs
 subsite: dev
 menu: dev
-title: Login Block
+section: Blocks
+subsection: Dialogue blocks
+title: Login
 banner:
   breadcrumbs:
     parent: Docs
@@ -30,6 +32,22 @@ The login block can be used in one of two ways: as a stand alone block on a page
 	</div>
 </div>
 ```
+
+## Block details
+
+| {{ page.title }}  block meta   |  values
+| --------------| :-------------------------------------:
+| handle              | `login` 
+| options examples    | n/a
+| width options       | `u-block--s`, `u-block--l`     
+| colour options      | `u-block--grey`  
+| section use         | `<dialogue>`, `<main>`                 
+| width type          | fixed                          
+| has heading         | true
+| theme(s)            | CU
+| variants            | n/a
+| Codepen             | [comingsoon](#)
+
 
 ## Important Notes
 

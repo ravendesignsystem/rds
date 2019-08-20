@@ -27,13 +27,40 @@ banner:
 
 ## Blocks
 
-{% include "docs/inc/content-block-list.twig" %}
+**Header Blocks**
+
+- {%include "link" with {'block': 'Alert Header'} %}
+- {%include "link" with {'block': 'Banner'} %}
+- {%include "link" with {'block': 'Global Nav'} %}
+- {%include "link" with {'block': 'Masthead'} %}
+
+**Main Blocks**
+
+- {%include "link" with {'block': 'Card Grid'} %}
+- {%include "link" with {'block': 'Content'} %}
+- {%include "link" with {'block': 'Listing'} %}
+- {%include "link" with {'block': 'Text Image'} %}
+
+**Aside Blocks**
+
+- {%include "link" with {'block': 'Sidebar'} %}
+
+**Dialogue Blocks**
+
+- {%include "link" with {'block': 'Login'} %}
+- {%include "link" with {'block': 'Search'} %}
+
+**Footer Blocks**
+
+- {%include "link" with {'block': 'Footer Brand'} %}
+- {%include "link" with {'block': 'Footer Simple'} %}
+- {%include "link" with {'block': 'Footer Sitemap'} %}
 
 ## Components
 
 **Content components**
 
-Add content within the [Content block](#) using the components below:
+Add content within the {%include "link" with {'block': 'Content', 'Block': true} %} block using the components below:
 
 - [Accordion]({{site.url}}dev/components/accordion)
 - [Form]({{site.url}}dev/components/form)
@@ -43,15 +70,15 @@ Add content within the [Content block](#) using the components below:
 
 **Block dev components**
 
-Create DRY blocks with the components below:
+Create DRY blocks using the components below:
 
-- {%include "link" with {'component': 'Badge'} %}
 - [Button CTA]({{site.url}}dev/components/buttoncta/)
 - [Button Social]({{site.url}}dev/components/buttonsocial/)
 - [Card]({{site.url}}dev/components/card/)
 - [Icons]({{site.url}}dev/components/icons/)
 - [Search Field]({{site.url}}dev/components/searchfield/)
-- [Submenu]({{site.url}}dev/components/submenu/)
+- {%include "link" with {'component': 'Menu Popup'} %}
+
 
 ## Custom theming
 

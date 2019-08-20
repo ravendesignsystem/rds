@@ -1,7 +1,9 @@
 ---
 layout: docs
 subsite: dev
-title: Search Block
+title: Search
+section: Blocks
+subsection: Dialogue blocks
 banner:
   breadcrumbs:
     grandparent: Blocks

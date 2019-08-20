@@ -28,7 +28,7 @@
         </nav>
 {% endif %}
 {#{%  endif %}#}
-        <h1 class="banner__title{% if data.img.img_url %} u-ani-fadein{% endif %}">{% if page.v %}RDS v{{ site.version }}{% else %}{{ page.title }}{% endif %}{% if page.section == 'Components' %}Component{% endif %}</h1>
+        <h1 class="banner__title">{% if page.v %}RDS v{{ site.version }}{% else %}{{ page.title }}{% endif %}{% if page.section == 'Components' %} Component{% elseif page.section == 'Blocks' %} Block{% endif %}</h1>
 {% if page.banner.button %}
         <p class="banner__buttons">
 {% for item in page.banner.button %}
