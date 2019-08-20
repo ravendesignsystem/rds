@@ -11,7 +11,7 @@ import '../blocks/textimg/textimg';
 
 // TODO lol I'm sure this can be improved
 // The below strips empty and <p> tags filled with whitespace caused by Markdown
-// thanks Gruber
+// thanks 4 nothing Gruber..j/k thanks for markdown
 
 // remove <p> tags with whitespace but no content
 let emptyP = document.getElementsByTagName('p');

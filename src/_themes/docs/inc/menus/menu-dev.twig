@@ -75,20 +75,19 @@
                                 url: site.url ~ 'dev/blocks/header/alertheader/'
                             },
                             {
+                                active: page.title,
                                 title: "Banner",
                                 url: site.url ~ 'dev/blocks/header/banner/'
                             },
                             {
+                                active: page.title,
                                 title: "Global Nav",
                                 url: site.url ~ 'dev/blocks/header/globalnav/'
                             },
                             {
+                                active: page.title,
                                 title: "Masthead",
                                 url: site.url ~ 'dev/blocks/header/masthead/'
-                            },
-                            {
-                                title: "Search",
-                                url: site.url ~ 'dev/blocks/header/search/'
                             }
                         ]
                         },
@@ -131,6 +130,25 @@
                                 active: page.title,
                                 title: 'Sidebar',
                                 url: site.url ~ 'dev/blocks/aside/sidebar/'
+                            }
+                        ]
+                        },
+                        {
+                            title: 'Dialogue blocks',
+                            url: site.url ~ 'dev/blocks/dialogue/',
+                            active: page.title,
+                            section: page.section,
+                            subsection: page.subsection,
+                            submenu: [
+                            {
+                                active: page.title,
+                                title: 'Login',
+                                url: site.url ~ 'dev/blocks/dialogue/login/'
+                            },
+                            {
+                                active: page.title,
+                                title: "Search",
+                                url: site.url ~ 'dev/blocks/header/search/'
                             }
                         ]
                         },

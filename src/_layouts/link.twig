@@ -1,30 +1,48 @@
 {% if component %}
-    <a href="{{site.url}}dev/components/{{ component|lower }}/">{{ component }}</a>
+    <a href="{{site.url}}dev/components/{{ component|lower|replace({' ': ''}) }}/">{{ component }}</a>
 {% endif %}
 
 {% if block %}
+    {% if block == "Alert Header"%}
+        <a href="{{site.url}}dev/blocks/header/alertheader/">{{ block }}</a>
+    {% endif %}
     {% if block == "Banner"%}
-        <a href="{{site.url}}dev/blocks/header/{{ block|lower }}/">{{ block }} block</a>
+        <a href="{{site.url}}dev/blocks/header/{{ block|lower }}/">{{ block }}</a>
     {% endif %}
     {% if block == "Card Grid"%}
-        <a href="{{site.url}}dev/blocks/main/cardgrid/">{{ block }} block</a>
+        <a href="{{site.url}}dev/blocks/main/cardgrid/">{{ block }}</a>
     {% endif %}
     {% if block == "Content"%}
-        <a href="{{site.url}}dev/blocks/main/content/">{{ block }} block</a>
+        <a href="{{site.url}}dev/blocks/main/content/">{{ block }}{% if Block == true %} Block{% endif %}</a>
+    {% endif %}
+    {% if block == "Footer Brand"%}
+        <a href="{{site.url}}dev/blocks/footer/footerbrand/">{{ block }}</a>
     {% endif %}
     {% if block == "Footer Simple"%}
-        <a href="{{site.url}}dev/blocks/footer/footersimple/">{{ block }} block</a>
+        <a href="{{site.url}}dev/blocks/footer/footersimple/">{{ block }}</a>
     {% endif %}
     {% if block == "Footer Sitemap"%}
-        <a href="{{site.url}}dev/blocks/footer/footersitemap/">{{ block }} block</a>
+        <a href="{{site.url}}dev/blocks/footer/footersitemap/">{{ block }}</a>
+    {% endif %}
+    {% if block == "Global Nav"%}
+        <a href="{{site.url}}dev/blocks/header/globalnav/">{{ block }}</a>
     {% endif %}
     {% if block == "Listing"%}
-    <a href="{{site.url}}dev/blocks/main/{{ block|lower }}/">{{ block }} block</a>
+    <a href="{{site.url}}dev/blocks/main/{{ block|lower }}/">{{ block }}</a>
+    {% endif %}
+    {% if block == "Login"%}
+        <a href="{{site.url}}dev/blocks/dialogue/{{ block|lower }}/">{{ block }}</a>
     {% endif %}
     {% if block == "Masthead"%}
-        <a href="{{site.url}}dev/blocks/header/{{ block|lower }}/">{{ block }} block</a>
+        <a href="{{site.url}}dev/blocks/header/{{ block|lower }}/">{{ block }}</a>
     {% endif %}
     {% if block == "Search"%}
-        <a href="{{site.url}}dev/blocks/header/{{ block|lower }}/">{{ block }} block</a>
+        <a href="{{site.url}}dev/blocks/dialogue/{{ block|lower }}/">{{ block }}</a>
+    {% endif %}
+    {% if block == "Sidebar"%}
+        <a href="{{site.url}}dev/blocks/aside/{{ block|lower }}/">{{ block }}</a>
+    {% endif %}
+    {% if block == "Text Image"%}
+        <a href="{{site.url}}dev/blocks/main/textimg/">{{ block }}</a>
     {% endif %}
 {% endif %}

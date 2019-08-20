@@ -39,7 +39,8 @@ The above command runs both the sculpin static site generator, [read more](https
 
 To deploy, terminate the above script and use `npm run prod`.
 
-
+## Full docs
+Further documentation on how to build the RDS docs is available in the [wiki](https://github.com/ravendesignsystem/rds/wiki/RDS-Docs).
 ### Break down into end to end tests
 
 TODO
