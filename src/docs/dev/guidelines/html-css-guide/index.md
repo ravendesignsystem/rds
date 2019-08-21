@@ -54,12 +54,12 @@ Classes make for great reusable components, so they come first. Ids are more spe
 Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML. Take the following example:
 
 ```html
-<!-- Not so great -->
+<!-- Not cool -->
 <span class="avatar">
   <img src="...">
 </span>
 
-<!-- Better -->
+<!-- 🏍 Cool like Fonzie -->
 <img class="avatar" src="...">
 ```
 
@@ -83,7 +83,7 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 - Avoid specifying units for zero values, e.g., margin: 0; instead of margin: 0px;.
 
 ```css
-/* Bad CSS */
+/* Not cool CSS */
 .selector, .selector-secondary, .selector[type=text] {
   padding:15px;
   margin:0px 0px 15px;
@@ -91,7 +91,7 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
   box-shadow:0px 1px 2px #CCC,inset 0 1px 0 #FFFFFF
 }
 
-/* Good CSS */
+/*  🏍 Cool CSS, like Fonzie */
 .selector,
 .selector-secondary,
 .selector[type="text"] {

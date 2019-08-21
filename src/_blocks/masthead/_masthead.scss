@@ -45,6 +45,7 @@ $b-height: 75px;
 	white-space: nowrap;
 	align-items: center;
 	height: 75px;
+	border-right: 1px solid $grey-yoda;
 }
 
 .masthead__brand svg:not(.c-culogo) {
@@ -191,7 +192,7 @@ $b-height: 75px;
 }
 
 .masthead__actions a, .masthead__actions button {
-	border-left: 1px solid $grey-kenobi;
+	border-left: 1px solid $grey-yoda;
 
 	&:hover {
 		background-color: $grey;
