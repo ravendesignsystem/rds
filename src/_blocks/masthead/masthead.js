@@ -271,7 +271,7 @@
 		// Detect all clicks on the document
 		document.addEventListener("touchend", function(event) {
 			// If the submenus are clicked
-			if (event.target.closest("li.c-menupopup a")) 	{
+			if (event.target.closest("li.c-menupopup a") || event.target.closest("button.c-menupopup")) 	{
 				mhNav.style.paddingBottom = '100vh';
 				if (window.innerWidth >= 960 && !document.querySelector('.js-masthead-2packed')) {
 					mhNav.style.paddingTop = '35px';
