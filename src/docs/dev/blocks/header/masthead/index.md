@@ -904,7 +904,8 @@ If you have sub-navigation in your Masthead nav and do not want the parent to li
 The following will only open the submenu onclick and not link off:
 
 ```html
-<button class="c-menupopup">Nav item with submenu</button>
+<li>
+    <button class="c-menupopup">Nav item with submenu</button>
     <ul class="menupopup__menu" aria-label="menupopup">
         <li>
             <a href="#">Submenu link a</a>
@@ -916,6 +917,7 @@ The following will only open the submenu onclick and not link off:
              <a href="#">Submenu link c</a>
          </li>                   
     </ul>
+</li>
 ```
 
 ## Implementation Notes

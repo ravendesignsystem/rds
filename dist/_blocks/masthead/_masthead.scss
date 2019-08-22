@@ -136,7 +136,8 @@ $b-height: 75px;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	position: absolute;
 	top: 73px;
-	overflow: auto;
+	overflow-y:hidden !important;
+	overflow-x:auto;
 	border-top: 1px solid $grey-kenobi;
 
 }
@@ -182,12 +183,16 @@ $b-height: 75px;
 	}
 }
 
+.masthead__nav li li {
+	height: auto;;
+}
+
 .c-menupopup  li {
 	height: auto;
 
 }
 
-.c-menupopup .menupopup__menu {
+.c-menupopup .menupopup__menu,.c-menupopup + .menupopup__menu {
 	top: 70px;
 }
 

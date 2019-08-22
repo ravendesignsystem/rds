@@ -41,20 +41,32 @@
 		<nav class="masthead__nav">
 			<ul role="menu">
 				<li><a  href="https://ravendesignsystem.github.io/rds/about/">About RDS</a></li>
-				<li><a class="u-active" href="https://ravendesignsystem.github.io/rds/dev/">Dev</a></li>
+				<li class="c-menupopup"><a class="u-active" href="https://ravendesignsystem.github.io/rds/dev/">Dev</a>
+					<ul class="menupopup__menu" aria-label="menupopup">
+						<li>
+							<a href="#">Submenu link a</a>
+						</li>
+						<li>
+							<a href="#">Submenu link b</a>
+						</li>
+						<li>
+							<a href="#">Submenu link c</a>
+						</li>
+					</ul></li>
 				<li><a  href="https://ravendesignsystem.github.io/rds/design/">Design</a></li>
-				<button class="c-menupopup">Nav item with submenu</button>
-				<ul class="menupopup__menu" aria-label="menupopup">
-					<li>
-						<a href="#">Submenu link a</a>
-					</li>
-					<li>
-						<a href="#">Submenu link b</a>
-					</li>
-					<li>
-						<a href="#">Submenu link c</a>
-					</li>
-				</ul>
+				<li><button class="c-menupopup">submenu</button>
+					<ul class="menupopup__menu" aria-label="menupopup">
+						<li>
+							<a href="#">Submenu link a</a>
+						</li>
+						<li>
+							<a href="#">Submenu link b</a>
+						</li>
+						<li>
+							<a href="#">Submenu link c</a>
+						</li>
+					</ul>
+				</li>
 				<li><a  href="https://ravendesignsystem.github.io/rds/content/">content</a></li>
 				<li><a  href="https://ravendesignsystem.github.io/rds/accessibility/">Accessibility</a></li>
 			</ul>
@@ -200,7 +212,7 @@
 </ul>
                                                                             <div class="c-alert c-alert--info c-alert--icon u-hide-s">
                                             <svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M10.8 8.074a1.615 1.615 0 0 1-.48-1.2c0-.48.154-.891.48-1.2.326-.308.72-.48 1.2-.48s.891.155 1.2.48c.309.326.48.72.48 1.2s-.154.892-.48 1.2a1.714 1.714 0 0 1-1.2.515c-.48 0-.891-.189-1.2-.515zm2.914 3.943a1.866 1.866 0 0 0-.531-1.183c-.343-.325-.72-.514-1.183-.531h-1.714c-.463.034-.823.223-1.183.531a1.748 1.748 0 0 0-.532 1.183h1.715v5.143c.034.463.188.857.531 1.183.343.343.72.531 1.183.531h1.714c.463 0 .823-.188 1.183-.531.343-.326.514-.72.532-1.183h-1.715V12v.017zM12 2.263c-5.383 0-9.771 4.354-9.771 9.737S6.617 21.771 12 21.771c5.383 0 9.771-4.371 9.771-9.771S17.383 2.246 12 2.246v.017zM12 0c6.617 0 12 5.383 12 12s-5.383 12-12 12S0 18.651 0 12 5.383 0 12 0z"  /></svg>
-                                            <h2>Dude, where's my nav?</h2>
+                                            <h2>Dude, where's my left-side nav?</h2>
                                             <p>To show full width elements on this page, we removed the <-- left-side secondary navigation. In lieu of this, we have added the mobile/hamburger menu (top-right) in the masthead ^ above . </p>
                                         </div>
                                                                                                 </div>
@@ -258,8 +270,8 @@
                                             
                         
             <li>
-                                <input  id="menu--1-151" type="checkbox" hidden/>
-                    <label for="menu--1-151">
+                                <input  id="menu--1-78" type="checkbox" hidden/>
+                    <label for="menu--1-78">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/getting-started/">Getting started</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -279,8 +291,8 @@
                                             
                         
             <li>
-                                <input  id="menu--1-115" type="checkbox" hidden/>
-                    <label for="menu--1-115">
+                                <input  id="menu--1-45" type="checkbox" hidden/>
+                    <label for="menu--1-45">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/main-concepts/">Main concepts</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -315,8 +327,8 @@
                                             
                         
             <li>
-                                <input  id="menu--1-142" type="checkbox" hidden/>
-                    <label for="menu--1-142">
+                                <input  id="menu--1-161" type="checkbox" hidden/>
+                    <label for="menu--1-161">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/">Blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -324,8 +336,8 @@
                                             
                         
             <li>
-                                <input  id="menu-2-1-121" type="checkbox" hidden/>
-                    <label for="menu-2-1-121">
+                                <input  id="menu-2-1-143" type="checkbox" hidden/>
+                    <label for="menu-2-1-143">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/header/">Header blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -355,8 +367,8 @@
                                             
                         
             <li>
-                                <input  id="menu-2-1-129" type="checkbox" hidden/>
-                    <label for="menu-2-1-129">
+                                <input  id="menu-2-1-97" type="checkbox" hidden/>
+                    <label for="menu-2-1-97">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/getting-started/quick-start/">Main blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -386,8 +398,8 @@
                                             
                         
             <li>
-                                <input  id="menu-2-1-190" type="checkbox" hidden/>
-                    <label for="menu-2-1-190">
+                                <input  id="menu-2-1-19" type="checkbox" hidden/>
+                    <label for="menu-2-1-19">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/aside/">Aside blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -402,8 +414,8 @@
                                             
                         
             <li>
-                                <input  id="menu-2-1-67" type="checkbox" hidden/>
-                    <label for="menu-2-1-67">
+                                <input  id="menu-2-1-171" type="checkbox" hidden/>
+                    <label for="menu-2-1-171">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/dialogue/">Dialogue blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -430,8 +442,8 @@
                                             
                         
             <li>
-                                <input  id="menu--1-18" type="checkbox" hidden/>
-                    <label for="menu--1-18">
+                                <input  id="menu--1-164" type="checkbox" hidden/>
+                    <label for="menu--1-164">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/components/">Components</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -439,8 +451,8 @@
                                             
                         
             <li>
-                                <input  id="menu-2-1-72" type="checkbox" hidden/>
-                    <label for="menu-2-1-72">
+                                <input  id="menu-2-1-169" type="checkbox" hidden/>
+                    <label for="menu-2-1-169">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/components/content/">Content Components</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -512,8 +524,8 @@
                                             
                         
             <li>
-                                <input  id="menu--1-137" type="checkbox" hidden/>
-                    <label for="menu--1-137">
+                                <input  id="menu--1-10" type="checkbox" hidden/>
+                    <label for="menu--1-10">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/layouts/">Layouts</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -543,8 +555,8 @@
                                             
                         
             <li>
-                                <input  id="menu--1-107" type="checkbox" hidden/>
-                    <label for="menu--1-107">
+                                <input  id="menu--1-87" type="checkbox" hidden/>
+                    <label for="menu--1-87">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/custom-theming/">Custom theming</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -584,8 +596,8 @@
                                             
                         
             <li>
-                                <input  id="menu--1-158" type="checkbox" hidden/>
-                    <label for="menu--1-158">
+                                <input  id="menu--1-38" type="checkbox" hidden/>
+                    <label for="menu--1-38">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/guidelines/">Guidelines</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
