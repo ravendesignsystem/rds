@@ -1,7 +1,8 @@
 ---
 layout: docs
 subsite: dev
-title: Masthead block
+section: Blocks
+title: Masthead
 banner:
  breadcrumbs:
   grandparent: Blocks
@@ -15,7 +16,7 @@ The masthead block contains three distinct sections.
 
 {% include 'close' %}
 
-![Masthead sections](https://cu-rds.s3.amazonaws.com/docs/assets/masthead-sections.png)
+<img src="https://cu-rds.s3.amazonaws.com/docs/assets/masthead-sections.png" style="margin: 0 auto;max-width:1200px" alt="Masthead sections">
 
 {% include 'open' %}
 
@@ -23,13 +24,37 @@ The masthead block contains three distinct sections.
 <br><br>
 2. **Horizontal site-wide navigation**:<br> optional, site-wide navigation area for primary/top level navigation.
 <br><br>
-3. **Call to action and UI buttons**:<br> optional, CTA and UI buttons for common application controls, such as search and mobile navigation.
+3. **Action buttons**:<br> optional, CTA and UI buttons for common application controls, such as search and mobile navigation.
+
+The Masthead block and its sections in code:
+
+```html
+<!-- standard u-block wrapper -->
+<div class="u-block u-block--full">
+    <!-- main block container -->
+    <div class="b-masthead">
+        <!-- 1. Branding and site title *req.-->
+        <div class="masthead__brand">
+            section code...
+        </div>
+        <!-- 2. Site-wide navigation -->
+        <nav class="masthead__nav">
+            section code...
+        </nav>
+        <!-- 3. Action buttons -->
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            section code...
+        </div>
+    </div>
+</div>
+```
 
 ## Masthead anatomy
 
 {% include 'close' %}
 
-![Masthead anatomy](https://cu-rds.s3.amazonaws.com/docs/assets/masthead-anatomy.png)
+<img src="https://cu-rds.s3.amazonaws.com/docs/assets/masthead-anatomy.png" style="margin: 0 auto;max-width:1200px" alt="Masthead anatomy">
+
 
 {% include 'open' %}
 
@@ -42,18 +67,12 @@ The masthead block contains three distinct sections.
 
 <small>* = required</small>
 
-### Space considerations
-
-Like all RDS blocks, the Masthead is responsive to best make us of horizontal space on all screen sizes. However, there is always a limit to how much horizontal space is available. As you add elements to your Masthead, make sure to test on all screen sizes to ensure everything fits.
-
 ## Masthead dependencies 
 
 1. **Javascript Required**: the masthead block requires the use of RDS' [core JavaScript file](#) to function. 
 2. **Overlay layout required**: when using the action and mobile menu buttons, the hidden [overlay layout](#) is required on your page.
 
-Make sure your page template accommodates these dependencies.
-
-Easily get started by using one of the RDS [getting started templates](/docs/dev/getting-started) or grabbing the Minimum template code from the same page. 
+Make sure your page template accommodates these dependencies. To easily get started with the masthead, use one of the RDS [getting started templates](/docs/dev/getting-started) or grabbing the minimum template code example from the same page. 
 
 ## Base Masthead
 
@@ -243,9 +262,467 @@ If your application requires search functionality, you can add a search button t
 </div>
 ```
 
-####  label text 
+### With a single CTA button
 
-**Note** how the search label beside the <span class="u-icon">{% include "icons/search.svg" %}</span> icon is wrapped in a `<span>`.
+To promote key links or actions, add a CTA button to the action buttons section.
+
+{% include 'close' %}
+
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {% include 'icons/mark-cushield.svg' %}Raven Design System
+                </a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta u-hide-s">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">Github</a>
+                </li>
+                <li class="masthead__login">
+                    <button class="u-icon u-btn-reset">
+                        {% include 'icons/lock.svg' %}
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li>
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {% include "icons/search.svg" %}<span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% include 'open' %} 
+
+```html
+<div class="u-block u-block--full">
+    <div class="b-masthead">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {%filter escape%}{% include 'icons/mark-cushield.svg' %}{%endfilter%}Raven Design System
+                </a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta u-hide-s">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">Github</a>
+                </li>
+                <li class="masthead__login">
+                    <button class="u-icon u-btn-reset">
+                        {%filter escape%}{% include 'icons/lock.svg' %}{%endfilter%}
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li>
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {%filter escape%}{% include "icons/search.svg" %}{%endfilter%}<span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+```
+
+### With a single CTA button and icon
+
+To further communicate meaning to your CTA button, add an icon.
+
+{% include 'close' %}
+
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {% include 'icons/mark-cushield.svg' %}Raven Design System
+                </a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta u-hide-s">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %} Github</a>
+                </li>
+                <li class="masthead__login">
+                    <button class="u-icon u-btn-reset">
+                        {% include 'icons/lock.svg' %}
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li>
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {% include "icons/search.svg" %}<span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% include 'open' %} 
+
+```html
+<div class="u-block u-block--full">
+    <div class="b-masthead">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {%filter escape%}{% include 'icons/mark-cushield.svg' %}{%endfilter%}Raven Design System
+                </a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta u-hide-s">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">{%filter escape%}{% include 'icons/mark-github.svg' %}{%endfilter%} Github</a>
+                </li>
+                <li class="masthead__login">
+                    <button class="u-icon u-btn-reset">
+                        {%filter escape%}{% include 'icons/lock.svg' %}{%endfilter%}
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li>
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {%filter escape%}{% include "icons/search.svg" %}{%endfilter%}<span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+```
+
+### Less emphasis on the CTA
+
+The red background added to the CTA by default adds significant visual emphasis to the element. If you want to balance the focus between your CTA and other Masthead elements, add the modifier class `masthead__cta--white` to the `masthead__cta` element for a white background.
+
+{% include 'close' %}
+
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {% include 'icons/mark-cushield.svg' %}Raven Design System
+                </a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta masthead__cta--white u-hide-s">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %} Github</a>
+                </li>
+                <li class="masthead__login">
+                    <button class="u-icon u-btn-reset">
+                        {% include 'icons/lock.svg' %}
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li>
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {% include "icons/search.svg" %}<span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% include 'open' %} 
+
+```html
+<div class="u-block u-block--full">
+    <div class="b-masthead">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {%filter escape%}{% include 'icons/mark-cushield.svg' %}{%endfilter%}Raven Design System
+                </a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta masthead__cta--white u-hide-s">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">
+                        {%filter escape%}{% include 'icons/mark-github.svg' %}{%endfilter%} Github
+                    </a>
+                </li>
+                <li class="masthead__login">
+                    <button class="u-icon u-btn-reset">
+                        {%filter escape%}{% include 'icons/lock.svg' %}{%endfilter%}
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li>
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {%filter escape%}{% include "icons/search.svg" %}{%endfilter%}<span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+```
+
+**Rule**: the masthead block should only contain one CTA element. This block has limited space. The goal of the CTA element is to focus on one item and its submenu, if used. The right-side of the masthead is not intended for primary navigation.
+
+### Add a submenu to the CTA
+
+Use the {% include 'link' with {'component': 'Menu Popup'} %} to setup a submenu for the CTA. While not required, submenus can have icons as well.
+
+{% include 'close' %}
+
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {% include 'icons/mark-cushield.svg' %}Raven Design System
+                </a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta masthead__cta--white u-hide-s c-menupopup c-menupopup--right">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %} Github</a>
+                    <ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/rds/releases">{% include 'icons/code.svg' %}
+                                Releases
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/rds">{% include 'icons/code.svg' %}
+                                RDS
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/design">{% include 'icons/eye.svg' %}
+                                Design
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/content">{% include 'icons/pencil.svg' %}
+                                Content
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/accessibility">{% include 'icons/accessibility.svg' %}
+                                Accessibility
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="masthead__login">
+                    <button class="u-icon u-btn-reset">
+                        {% include 'icons/lock.svg' %}
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li>
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {% include "icons/search.svg" %}<span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% include 'open' %} 
+
+```html
+<div class="u-block u-block--full">
+    <div class="b-masthead">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {%filter escape%}{% include 'icons/mark-cushield.svg' %}{%endfilter%}Raven Design System
+                </a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta masthead__cta--white u-hide-s c-menupopup c-menupopup--right">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">{%filter escape%}{% include 'icons/mark-github.svg' %} {%endfilter%}Github</a>
+                    <ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/rds/releases">{%filter escape%}{% include 'icons/code.svg' %}{%endfilter%}
+                                Releases
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/rds">{%filter escape%}{% include 'icons/code.svg' %}{%endfilter%}
+                                RDS
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/design">{%filter escape%}{% include 'icons/eye.svg' %}{%endfilter%}
+                                Design
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/content">{%filter escape%}{% include 'icons/pencil.svg' %}{%endfilter%}
+                                Content
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/accessibility">{%filter escape%}{% include 'icons/accessibility.svg' %}{%endfilter%}
+                                Accessibility
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="masthead__login">
+                    <button class="u-icon u-btn-reset">
+                        {%filter escape%}{% include 'icons/lock.svg' %}{%endfilter%}
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li>
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {%filter escape%}{% include "icons/search.svg" %}{%endfilter%}<span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+```
+
+**Note** how the `<li>` use the class `c-menupopup--right` to align the submenu on the right. View the {'component': 'Menu Popup'} %} docs for using this component.
+
+### Adding the overlay mobile menu
+
+The three horizontal line mobile (hamburger) menu  <button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
+<span class="c-hamburger__box">
+<span class="c-hamburger__inner"></span>
+</span>
+</button> is a common control to activate navigation that is hidden to start. The most common use case is on small/mobile screens where space is a premium. We call it the overlay mobile menu because when clicked it opens the [overlay layout](#).This control icon should be the last item (far right) of your masthead and can be added to the actions section with :
+
+```html
+<li class="masthead__hamburger {% if page.subsite == 'dev' and page.menu != 'dev' %}{% else %}u-hide-l{% endif %}">
+    <button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
+            <span class="c-hamburger__box">
+                <span class="c-hamburger__inner"></span>
+            </span>
+    </button>
+</li>
+```
+Below is a simple masthead with the overlay mobile menu button.
+
+{% include 'close' %}
+
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">{% include 'icons/mark-cushield.svg' %} Raven Design System</a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__hamburger {% if page.subsite == 'dev' and page.menu != 'dev' %}{% else %}u-hide-l{% endif %}">
+                    <button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
+                            <span class="c-hamburger__box">
+                                <span class="c-hamburger__inner"></span>
+                            </span>
+                    </button>
+            </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% include 'open' %}
+
+```html
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">{%filter escape%}{% include 'icons/mark-cushield.svg' %}{%endfilter%} Raven Design System</a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__hamburger">
+                    <button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
+                        <span class="c-hamburger__box">
+                            <span class="c-hamburger__inner"></span>
+                        </span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+```
+
+#### Hiding the overlay mobile menu on large screens
+
+Most of the time you only need the menu to appear on small screens. To hide the mobile menu on large screens add the utility class `u-hide-l`.
+
+```html
+<li class="masthead__hamburger u-hide-l">
+```
+
+{% include 'close' %}
+
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">{% include 'icons/mark-cushield.svg' %} Raven Design System</a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__hamburger u-hide-l">
+                    <button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
+                            <span class="c-hamburger__box">
+                                <span class="c-hamburger__inner"></span>
+                            </span>
+                    </button>
+            </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% include 'open' %}
+
+<div class="c-alert c-alert--info c-alert--icon u-hide-s">{% include 'icons/info.svg' %}
+<h2>Resize your screen</h2>
+<p>Your screen is to large to see the mobile menu in the Masthead above because the button is wrapped in `u-hide-l`. Resize your screen to be smaller to see the button.</p>
+</div>
+
+<div class="c-alert c-alert--info c-alert--icon u-hide-l">{% include 'icons/info.svg' %}
+<h2>Your on a small screen</h2>
+<p>Your screen is small enough to see the mobile menu in the masthead above. If it was larger, like a desktop screen the menu would not show.</p>
+</div>
+
+#### Space considerations and utility classes
+
+Like all RDS blocks, the Masthead is responsive to best make us of horizontal space on all screen sizes. However, there is always a limit to how much horizontal space is available. As you add elements to your Masthead, make sure to test on all screen sizes to ensure everything fits. 
+
+At times you are going to want to hide Masthead elements when on smaller screens and show certain elements only on large screens. You might have noticed in many of the examples above, the utility classes listed below are used to accomplish this:
+
+- `u-hide-s` - elements are hidden on small screens.
+- `u-hide-l` - elements are hidden on large screens.
+- `u-show-l` - elements are only shown on large screens.
+
+For example, both the search and login button labels are wrapped in <br>`<span class="u-hide-s">` this means the icons will display on small screen but the text labels will not, saving space.
 
 ```html
 <li class="masthead__search">
@@ -256,866 +733,173 @@ If your application requires search functionality, you can add a search button t
 </li>
 ```
 
+**Notice** how the CTA Github menu example uses `u-hide-s`, meaning this element won't show at all on small screens, as there is not enough room.
+
+```html
+<li class="masthead__cta masthead__cta--white u-hide-s c-menupopup c-menupopup--right">
+```
+
 To provide more space, this hides the search label on screens smaller then 1474px. To have the text label visible on all screen sizes, remove the `<span>`. Just make sure your have enough space on small screens for this extra text.
 
-#### Search button dependencies
+### Order for action buttons
 
-**Reminder**: because the search button is configured to open the [overlay layout](#) and focus on the [search block](#), you will need to make sure both are are a part of your site-wide template.
+When using multiple action buttons, they should always be presented in the following order from left to right:
 
+[ CTA link/submnenu | Login | Search | Mobile menu ]
+                                                   
+![Action button order](https://cu-rds.s3.amazonaws.com/docs/assets/masthead-but-order.png)
 
-### Responsive navigation option
-
-When using the masthead horizontal navigation, unless you have an extremely small-width nav, the modifier `responsivenav` 
-
-### Mobile Menu
-
-The visibility of certain elements within the masthead block changes depending on screen size. The mobile menu ("hamburger") button is only visible on smaller screen sizes. 
-
-The mobile menu button launches an overlay containing the `b-menu` block, which contains your site-wide navigation. All of the code examples below assume your application requires the mobile menu button, which in turn requires you to include the code for [dialogue layout](#) in your page template. View the [b-menu](#) documentation for further implementation notes and reference. 
-
-**If do not want a mobile menu**, simply remove the below snippet from your Masthead code in the examples below.
-
-```html
-<li class="masthead__hamburger">
-    <button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-        <span class="c-hamburger__box">
-            <span class="c-hamburger__inner"></span>
-        </span>
-    </button>
-</li>
-```
-
-
- 
-**Note**: you won't see the mobile (hamburger) menu in the examples below unless your browser width is maller then 768 pixels.
-
-{%include "close" %}
-
-<div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--shadow">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-        </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
+<div class="c-alert c-alert--info c-alert--icon u-hide-s">{% include 'icons/info.svg' %}
+<h2>Search button dependencies</h2>
+<p>Reminder: the search button and mobile menu button need to open the <a href="#">overlay layout</a>) and focus on the <a href="#">search component</a>, you will need to make sure both are are a part of your site-wide template.</p>
+<p>   If you are using mobile menu button, you likely also need to have a <a href="#">Menu block</a> on your page. Please review this block's docs.</p>
 </div>
 
-{%include "inc" with {'open': 'true'} %}
+## Adding navigation to the Masthead
+
+The examples below assume you are using the responsive site-wide horizontal navigation for your primary nav. RDS has several options for handling navigation. In addition to this section, please review the [RDS navigation docs] (#).
+
+Masthead navigation links display right after the title/brand section and will grow to occupy as much horizontal space as possible. 
+
+{% include 'close' %}
+
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--responsivenav b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">{% include 'icons/mark-cushield.svg' %} Raven Design System</a>
+            </h2>
+        </div>
+        <nav class="masthead__nav">
+            <ul role="menu">
+                <li><a href="{{ site.url }}about/">About RDS</a></li>
+                <li><a class="u-active" href="{{ site.url }}dev/">Dev</a></li>
+                <li><a  href="{{ site.url }}design/">Design</a></li>
+                <li><a href="{{ site.url }}content/">content</a></li>
+                <li><a href="{{ site.url }}accessibility/">Accessibility</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+{% include 'open' %}
 
 ```html
 <div class="u-block u-block--full">
-	<div class="b-masthead js-sticky-scroll">
-		<div>
-			<nav aria-label="Site title and primary navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
+    <div class="b-masthead b-masthead--responsivenav">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {%filter escape%}{% include 'icons/mark-cushield.svg' %}{%endfilter%}
+                    Raven Design System
+                </a>
+            </h2>
         </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls">
-			<ul>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
+        <nav class="masthead__nav">
+            <ul role="menu">
+                <li><a href="/about/">About RDS</a></li>
+                <li><a class="u-active" href="/dev/">Dev</a></li>
+                <li><a  href="/design/">Design</a></li>
+                <li><a href="/content/">content</a></li>
+                <li><a href="/accessibility/">Accessibility</a></li>
+            </ul>
+        </nav>
+    </div>
 </div>
 ```
 
-## Masthead with search button
+**Notice**:
 
-If your application requires search functionality, you can add a search button to the masthead. This button will display the same overlay as the mobile menu button does, but with focus on the search field.
-
-{%include "inc" with {'close': 'true'} %}
-
-<div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--shadow">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-        </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-				<li class="masthead__search">
-                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
-                        <svg style="top:0" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
-                        <span>Search</span>
-                    </button>
-                </li>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</div>
-
-{%include "inc" with {'open': 'true'} %}
+- how the `b-masthead--responsivenav` modifier was add to the `b-masthead` element.
+- how the utilitiy class `u-active` can be used to highlight the current site section.
 
 ```html
-<div class="u-block u-block--full">
-	<div class="b-masthead js-sticky-scroll">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-        </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-				<li class="masthead__search">
-                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
-                        <svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
- <span>Search</span>
-                    </button>
-                </li>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</div>
+<li><a class="u-active" href="/dev/">Dev</a></li>
 ```
 
+### Limited horizontal space
 
-
-## Masthead with CTA
-
-To promote key links or actions, add a call to action button to the right side of the masthead block 
-
-{%include "inc" with {'close': 'true'} %}
-
-<div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--shadow">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-        </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-			    <li class="masthead__cta"><a href="#">Settings</a></li>
-				<li class="masthead__search">
-                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
-                        <svg style="top:0" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
-                        <span class="u-hide-s">Search</span>
-                    </button>
-                </li>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</div>
-
-{%include "inc" with {'open': 'true'} %}
-
-```html
-<div class="u-block u-block--full">
-	<div class="b-masthead js-sticky-scroll">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-        </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-			    <li class="masthead__cta"><a href="#">Settings</a></li>
-				<li class="masthead__search">
-                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
-                        <svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
- <span class="u-hide-s">Search</span>
-                    </button>
-                </li>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</div>
-```
-### CTA icons
-To further communicate meaning to your CTA, add an icon. 
-
-{%include "inc" with {'close': 'true'} %}
-
-<div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--shadow">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-        </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-			    <li class="masthead__cta"><a class="u-icon" href="#"><svg style="top:0" width="24" height="24" viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M24 13.303V10.56l-3.326-1.097-.771-1.869L21.41 4.44l-1.937-1.937-3.103 1.56-1.868-.772L13.32 0h-2.743l-1.08 3.326-1.903.771L4.44 2.59 2.503 4.526l1.56 3.103-.772 1.868L0 10.663v2.726l3.326 1.097.771 1.868L2.59 19.51l1.937 1.937 3.103-1.56 1.868.771 1.183 3.292h2.726l1.08-3.326 1.903-.772 3.154 1.509 1.937-1.937-1.577-3.103.806-1.869L24 13.27v.034zm-12 3.823a5.136 5.136 0 0 1-5.143-5.143A5.136 5.136 0 0 1 12 6.84a5.136 5.136 0 0 1 5.143 5.143A5.136 5.136 0 0 1 12 17.126z"  /></svg>
- Settings</a></li>
-				<li class="masthead__search">
-                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
-                        <svg style="top:0" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
-                        <span class="u-hide-s">Search</span>
-                    </button>
-                </li>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</div>
-
-{%include "inc" with {'open': 'true'} %}
-
-```html
-<div class="u-block u-block--full">
-	<div class="b-masthead js-sticky-scroll">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-        </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-			    <li class="masthead__cta"><a class="u-icon" href="#">{% verbatim %}{% include 'icons/gear.svg' %}{% endverbatim %} Settings</a></li>
-				<li class="masthead__search">
-                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
-                        <svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
- <span class="u-hide-s">Search</span>
-                    </button>
-                </li>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</div>
-```
-### Less emphasis on CTA
-The red background added to the CTA by default adds significant visual emphasis to the element. If you want to balance the focus between your CTA and other Masthead elements, remove the `class="masthead__cta"` and the background is white.
-
-{%include "inc" with {'close': 'true'} %}
-
-<div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--shadow">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-        </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-			    <li><a class="u-icon" href="#"><svg style="top:0" width="24" height="24" viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M24 13.303V10.56l-3.326-1.097-.771-1.869L21.41 4.44l-1.937-1.937-3.103 1.56-1.868-.772L13.32 0h-2.743l-1.08 3.326-1.903.771L4.44 2.59 2.503 4.526l1.56 3.103-.772 1.868L0 10.663v2.726l3.326 1.097.771 1.868L2.59 19.51l1.937 1.937 3.103-1.56 1.868.771 1.183 3.292h2.726l1.08-3.326 1.903-.772 3.154 1.509 1.937-1.937-1.577-3.103.806-1.869L24 13.27v.034zm-12 3.823a5.136 5.136 0 0 1-5.143-5.143A5.136 5.136 0 0 1 12 6.84a5.136 5.136 0 0 1 5.143 5.143A5.136 5.136 0 0 1 12 17.126z"  /></svg>
- Settings</a></li>
-				<li class="masthead__search">
-                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
-                        <svg style="top:0" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
-                        <span class="u-hide-s">Search</span>
-                    </button>
-                </li>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</div>
-
-{%include "inc" with {'open': 'true'} %}
-
-```html
-<div class="u-block u-block--full">
-	<div class="b-masthead js-sticky-scroll">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-        </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-			    <li><a class="u-icon" href="#">{% verbatim %}{% include 'icons/gear.svg' %}{% endverbatim %} Settings</a></li>
-				<li class="masthead__search">
-                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
-                        <svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
- <span class="u-hide-s">Search</span>
-                    </button>
-                </li>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</div>
-```
-
-### Masthead CTA with submenu
-
-Use the [Popup menu](#) component to add a submenu to your CTA.
-
-{%include "inc" with {'close': 'true'} %}
-
-<div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--shadow">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-        </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-			    <li class="c-menupopup c-menupopup--right"><a class="u-icon" href="#"><svg style="top:0" width="24" height="24" viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M24 13.303V10.56l-3.326-1.097-.771-1.869L21.41 4.44l-1.937-1.937-3.103 1.56-1.868-.772L13.32 0h-2.743l-1.08 3.326-1.903.771L4.44 2.59 2.503 4.526l1.56 3.103-.772 1.868L0 10.663v2.726l3.326 1.097.771 1.868L2.59 19.51l1.937 1.937 3.103-1.56 1.868.771 1.183 3.292h2.726l1.08-3.326 1.903-.772 3.154 1.509 1.937-1.937-1.577-3.103.806-1.869L24 13.27v.034zm-12 3.823a5.136 5.136 0 0 1-5.143-5.143A5.136 5.136 0 0 1 12 6.84a5.136 5.136 0 0 1 5.143 5.143A5.136 5.136 0 0 1 12 17.126z"  /></svg>
- Settings</a>
- <ul class="menupopup__menu" aria-label="menupopup">
- 							<li>
- 								<a href="#">Your profile</a>
- 							</li>
- 							<li>
- 								<a href="#">Your settings</a>
- 							</li>
- 							<li>
- 								<a href="#">Logout</a>
- 							</li>
- 						</ul>
-    </li>
-				<li class="masthead__search">
-                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
-                        <svg style="top:0" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
-                        <span class="u-hide-s">Search</span>
-                    </button>
-                </li>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</div>
-
-{%include "inc" with {'open': 'true'} %}
-
-```html
-<div class="u-block u-block--full">
-	<div class="b-masthead js-sticky-scroll">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-        </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-			    <li class="c-menupopup c-menupopup--right"><a class="u-icon" href="#">{% verbatim %}{% include 'icons/gear.svg' %}{% endverbatim %} Settings</a>
-			        <ul class="menupopup__menu" aria-label="menupopup">
-                        <li>
-                            <a href="#">Your profile</a>
-                        </li>
-                        <li>
-                            <a href="#">Your settings</a>
-                        </li>
-                        <li>
-                            <a href="#">Logout</a>
-                        </li>
-                    </ul>
-			    </li>
-				<li class="masthead__search">
-                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
-                        <svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
- <span class="u-hide-s">Search</span>
-                    </button>
-                </li>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</div>
-``` 
-
-**Note**: because the CTA element resides on the right side of the screen. The popup menu code above uses the `c-menupopup--right` modifier.
-
-**Rule**: the masthead block should only contain one CTA element. This block has limited space. The goal of the CTA element is to focus on one item and its submenu, if used. The right-side of the masthead is not intended for primary navigation.
-
-### Masthead CTA with submenu
-
-Use the [Popup menu](#) component to add a submenu to your CTA.
-
-{%include "inc" with {'close': 'true'} %}
-
-<div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--shadow">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-        </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-			    <li class="c-menupopup c-menupopup--right"><a class="u-icon" href="#"><svg style="top:0" width="24" height="24" viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M24 13.303V10.56l-3.326-1.097-.771-1.869L21.41 4.44l-1.937-1.937-3.103 1.56-1.868-.772L13.32 0h-2.743l-1.08 3.326-1.903.771L4.44 2.59 2.503 4.526l1.56 3.103-.772 1.868L0 10.663v2.726l3.326 1.097.771 1.868L2.59 19.51l1.937 1.937 3.103-1.56 1.868.771 1.183 3.292h2.726l1.08-3.326 1.903-.772 3.154 1.509 1.937-1.937-1.577-3.103.806-1.869L24 13.27v.034zm-12 3.823a5.136 5.136 0 0 1-5.143-5.143A5.136 5.136 0 0 1 12 6.84a5.136 5.136 0 0 1 5.143 5.143A5.136 5.136 0 0 1 12 17.126z"  /></svg>
- Settings</a>
- <ul class="menupopup__menu" aria-label="menupopup">
- 							<li>
- 								<a href="#">Your profile</a>
- 							</li>
- 							<li>
- 								<a href="#">Your settings</a>
- 							</li>
- 							<li>
- 								<a href="#">Logout</a>
- 							</li>
- 						</ul>
-    </li>
-				<li class="masthead__search">
-                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
-                        <svg style="top:0" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
-                        <span class="u-hide-s">Search</span>
-                    </button>
-                </li>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</div>
-
-{%include "inc" with {'open': 'true'} %}
-
-```html
-<div class="u-block u-block--full">
-	<div class="b-masthead js-sticky-scroll">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-        </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-			    <li class="c-menupopup c-menupopup--right"><a class="u-icon" href="#">{% verbatim %}{% include 'icons/gear.svg' %}{% endverbatim %} Settings</a>
-			        <ul class="menupopup__menu" aria-label="menupopup">
-                        <li>
-                            <a href="#">Your profile</a>
-                        </li>
-                        <li>
-                            <a href="#">Your settings</a>
-                        </li>
-                        <li>
-                            <a href="#">Logout</a>
-                        </li>
-                    </ul>
-			    </li>
-				<li class="masthead__search">
-                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
-                        <svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
- <span class="u-hide-s">Search</span>
-                    </button>
-                </li>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</div>
-``` 
-
-## Masthead with login button
-
-You can use the masthead CTA button to promote and link your users to a login page. However, there is also a default login button and associated login block/form available in RDS. Similar to the search button and mobile menu, the login form resides in the [overlay layout](#). 
-
-{%include "inc" with {'close': 'true'} %}
-
-<div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--shadow">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-        </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-			    <li class="c-menupopup c-menupopup--right"><a class="u-icon" href="#"><svg style="top:0" width="24" height="24" viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M24 13.303V10.56l-3.326-1.097-.771-1.869L21.41 4.44l-1.937-1.937-3.103 1.56-1.868-.772L13.32 0h-2.743l-1.08 3.326-1.903.771L4.44 2.59 2.503 4.526l1.56 3.103-.772 1.868L0 10.663v2.726l3.326 1.097.771 1.868L2.59 19.51l1.937 1.937 3.103-1.56 1.868.771 1.183 3.292h2.726l1.08-3.326 1.903-.772 3.154 1.509 1.937-1.937-1.577-3.103.806-1.869L24 13.27v.034zm-12 3.823a5.136 5.136 0 0 1-5.143-5.143A5.136 5.136 0 0 1 12 6.84a5.136 5.136 0 0 1 5.143 5.143A5.136 5.136 0 0 1 12 17.126z"  /></svg>
- Settings</a>
- <ul class="menupopup__menu" aria-label="menupopup">
- 							<li>
- 								<a href="#">Your profile</a>
- 							</li>
- 							<li>
- 								<a href="#">Your settings</a>
- 							</li>
- 							<li>
- 								<a href="#">Logout</a>
- 							</li>
- 						</ul>
-    </li>
-				<li class="masthead__login">
-                					<button class="u-icon u-btn-reset"><svg style="top:0" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.4 20.8H6.8v-1.6h1.6v1.6zm12.8-9.6v11.2c0 .88-.72 1.6-1.6 1.6h-16c-.88 0-1.6-.72-1.6-1.6V11.2c0-.88.72-1.6 1.6-1.6h1.6V6.4C5.2 2.88 8.08 0 11.6 0 15.12 0 18 2.88 18 6.4v3.2h1.6c.88 0 1.6.72 1.6 1.6zM8.08 9.6h7.056V6.4a3.51 3.51 0 0 0-3.52-3.52 3.51 3.51 0 0 0-3.52 3.52v3.2H8.08zm11.52 1.6H5.2v11.2h14.4V11.2zM8.4 12.8H6.8v1.6h1.6v-1.6zm0 3.2H6.8v1.6h1.6V16z"></path></svg>
-                <span class="u-hide-s">Login</span></button>
-                				</li>
-                				<li class="masthead__search">
-                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
-                        <svg style="top:0" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
-                        <span class="u-hide-s">Search</span>
-                    </button>
-                </li>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</div>
-
-{%include "inc" with {'open': 'true'} %}
-
-```html
-<div class="u-block u-block--full">
-	<div class="b-masthead js-sticky-scroll">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-        </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-			    <li class="c-menupopup c-menupopup--right"><a class="u-icon" href="#">{% verbatim %}{% include 'icons/gear.svg' %}{% endverbatim %} Settings</a>
-			        <ul class="menupopup__menu" aria-label="menupopup">
-                        <li>
-                            <a href="#">Your profile</a>
-                        </li>
-                        <li>
-                            <a href="#">Your settings</a>
-                        </li>
-                        <li>
-                            <a href="#">Logout</a>
-                        </li>
-                    </ul>
-			    </li>
-			    <li class="masthead__login">
-                    <button class="u-icon u-btn-reset"><svg style="top:0" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.4 20.8H6.8v-1.6h1.6v1.6zm12.8-9.6v11.2c0 .88-.72 1.6-1.6 1.6h-16c-.88 0-1.6-.72-1.6-1.6V11.2c0-.88.72-1.6 1.6-1.6h1.6V6.4C5.2 2.88 8.08 0 11.6 0 15.12 0 18 2.88 18 6.4v3.2h1.6c.88 0 1.6.72 1.6 1.6zM8.08 9.6h7.056V6.4a3.51 3.51 0 0 0-3.52-3.52 3.51 3.51 0 0 0-3.52 3.52v3.2H8.08zm11.52 1.6H5.2v11.2h14.4V11.2zM8.4 12.8H6.8v1.6h1.6v-1.6zm0 3.2H6.8v1.6h1.6V16z"></path></svg>
-                    <span class="u-hide-s">Login</span></button>
-                </li>
-				<li class="masthead__search">
-                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
-                        <svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
- <span class="u-hide-s">Search</span>
-                    </button>
-                </li>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</div>
-``` 
-
-### Login button dependencies
-
-Reminder: because the login button is configured to open the overlay layout and display login block, you will need to make sure both are are a part of your site-wide template.
-
-## Masthead with navigation
-
-Masthead navigation links display right after the brand and will grow to occupy as much horizontal space as possible. If you are using this space for navigation, it should be your application's primary navigation. 
-
-**Note**: As with any horizontal navigation, the width available for nav items is limited to the user's screen size. To avoid links not showing you should:
+As with any horizontal navigation, the width available for nav items is limited to the user's screen size. To avoid your navigation items from being hidden or broken:
 
 - Limit the number of items in your primary navigation.
 - Use the shortest titles as possible for you links.
 - Prioritize your nav items, with the most important links coming first from left to right.
 
-The masthead has a priority nav feature built in. If a user's browser width becomes smaller then the width of your navigation, items will drop of and and extra link ellipsis (`...`) will appear. Clicking this will open the site-wide menu in the overlay. It is still best to avoid this happening by restricting the width of your navigation.
+### We check if your nav is too wide!
 
-{%include "inc" with {'close': 'true'} %}
+The Masthead navigation is responsive and will drop down to providing even more space when your navigation starts to wrap. However, if your navigation wraps again, after dropping, we provide an in your face warning. 
+
+{% include 'close' %}
 
 <div class="u-block u-block--full">
-	<div class="b-masthead b-masthead--shadow">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-            <nav class="masthead__primarynav">
-                <ul role="menu">
-                    <li><a href="#">Nav link a</a></li>
-                    <li><a href="#">Nav link b</a></li>
-                    <li><a href="#">Nav link c</a></li>
-                </ul>
-            </nav>
+    <div class="b-masthead b-masthead--responsivenav b-masthead--shadow js-masthead-2biggie">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">{% include 'icons/mark-cushield.svg' %} Raven Design System</a>
+            </h2>
         </div>
-<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-			    <li class="c-menupopup c-menupopup--right"><a class="u-icon" href="#"><svg style="top:0" width="24" height="24" viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M24 13.303V10.56l-3.326-1.097-.771-1.869L21.41 4.44l-1.937-1.937-3.103 1.56-1.868-.772L13.32 0h-2.743l-1.08 3.326-1.903.771L4.44 2.59 2.503 4.526l1.56 3.103-.772 1.868L0 10.663v2.726l3.326 1.097.771 1.868L2.59 19.51l1.937 1.937 3.103-1.56 1.868.771 1.183 3.292h2.726l1.08-3.326 1.903-.772 3.154 1.509 1.937-1.937-1.577-3.103.806-1.869L24 13.27v.034zm-12 3.823a5.136 5.136 0 0 1-5.143-5.143A5.136 5.136 0 0 1 12 6.84a5.136 5.136 0 0 1 5.143 5.143A5.136 5.136 0 0 1 12 17.126z"  /></svg>
- Settings</a>
- <ul class="menupopup__menu" aria-label="menupopup">
- 							<li>
- 								<a href="#">Your profile</a>
- 							</li>
- 							<li>
- 								<a href="#">Your settings</a>
- 							</li>
- 							<li>
- 								<a href="#">Logout</a>
- 							</li>
- 						</ul>
-    </li>
-				<li class="masthead__login">
-                					<button class="u-icon u-btn-reset"><svg style="top:0" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.4 20.8H6.8v-1.6h1.6v1.6zm12.8-9.6v11.2c0 .88-.72 1.6-1.6 1.6h-16c-.88 0-1.6-.72-1.6-1.6V11.2c0-.88.72-1.6 1.6-1.6h1.6V6.4C5.2 2.88 8.08 0 11.6 0 15.12 0 18 2.88 18 6.4v3.2h1.6c.88 0 1.6.72 1.6 1.6zM8.08 9.6h7.056V6.4a3.51 3.51 0 0 0-3.52-3.52 3.51 3.51 0 0 0-3.52 3.52v3.2H8.08zm11.52 1.6H5.2v11.2h14.4V11.2zM8.4 12.8H6.8v1.6h1.6v-1.6zm0 3.2H6.8v1.6h1.6V16z"></path></svg>
-                <span class="u-hide-s">Login</span></button>
-                				</li>
-                				<li class="masthead__search">
-                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
-                        <svg style="top:0" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
-                        <span class="u-hide-s">Search</span>
-                    </button>
-                </li>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
+        <nav class="masthead__nav">
+            <ul role="menu">
+                <li><a href="{{ site.url }}about/">About RDS</a></li>
+                <li><a class="u-active" href="{{ site.url }}dev/">Dev</a></li>
+                <li><a  href="{{ site.url }}design/">Design</a></li>
+                <li><a href="{{ site.url }}content/">content</a></li>
+                <li><a href="{{ site.url }}accessibility/">Accessibility</a></li>
+                 <li><a href="{{ site.url }}about/">About RDS</a></li>
+            </ul>
+        </nav>
+    </div>
 </div>
 
-{%include "inc" with {'open': 'true'} %}
+{% include 'open' %}
 
-```html
-<div class="u-block u-block--full">
-	<div class="b-masthead js-sticky-scroll">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-            <nav class="masthead__primarynav">
-                <ul role="menu">
-                    <li><a href="#">Nav link a</a></li>
-                    <li><a href="#">Nav link b</a></li>
-                    <li><a href="#">Nav link c</a></li>
-                </ul>
-            </nav>
-        </div>
-<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-			    <li class="c-menupopup c-menupopup--right"><a class="u-icon" href="#"><svg style="top:0" width="24" height="24" viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M24 13.303V10.56l-3.326-1.097-.771-1.869L21.41 4.44l-1.937-1.937-3.103 1.56-1.868-.772L13.32 0h-2.743l-1.08 3.326-1.903.771L4.44 2.59 2.503 4.526l1.56 3.103-.772 1.868L0 10.663v2.726l3.326 1.097.771 1.868L2.59 19.51l1.937 1.937 3.103-1.56 1.868.771 1.183 3.292h2.726l1.08-3.326 1.903-.772 3.154 1.509 1.937-1.937-1.577-3.103.806-1.869L24 13.27v.034zm-12 3.823a5.136 5.136 0 0 1-5.143-5.143A5.136 5.136 0 0 1 12 6.84a5.136 5.136 0 0 1 5.143 5.143A5.136 5.136 0 0 1 12 17.126z"  /></svg>
- Settings</a>
- <ul class="menupopup__menu" aria-label="menupopup">
- 							<li>
- 								<a href="#">Your profile</a>
- 							</li>
- 							<li>
- 								<a href="#">Your settings</a>
- 							</li>
- 							<li>
- 								<a href="#">Logout</a>
- 							</li>
- 						</ul>
-    </li>
-				<li class="masthead__login">
-                					<button class="u-icon u-btn-reset"><svg style="top:0" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.4 20.8H6.8v-1.6h1.6v1.6zm12.8-9.6v11.2c0 .88-.72 1.6-1.6 1.6h-16c-.88 0-1.6-.72-1.6-1.6V11.2c0-.88.72-1.6 1.6-1.6h1.6V6.4C5.2 2.88 8.08 0 11.6 0 15.12 0 18 2.88 18 6.4v3.2h1.6c.88 0 1.6.72 1.6 1.6zM8.08 9.6h7.056V6.4a3.51 3.51 0 0 0-3.52-3.52 3.51 3.51 0 0 0-3.52 3.52v3.2H8.08zm11.52 1.6H5.2v11.2h14.4V11.2zM8.4 12.8H6.8v1.6h1.6v-1.6zm0 3.2H6.8v1.6h1.6V16z"></path></svg>
-                <span class="u-hide-s">Login</span></button>
-                				</li>
-                				<li class="masthead__search">
-                    <button aria-label="Open Search" class="masthead__search-btn u-icon">
-                        <svg style="top:0" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"></path></svg>
-                        <span class="u-hide-s">Search</span>
-                    </button>
-                </li>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
+You need to resize your browser to see it. So make sure to test and resize your nav so you don't ship with a navigation displaying the error above.
+
+<div class="c-alert c-alert--info c-alert--icon">{% include 'icons/info.svg' %}
+<h2>Are you serious?</h2>
+<p>Yes. While this a bit heavy-handed 🙌 , it is just as important that you do not ship your RDS product with a navigation that breaks on some users screens. The responsive nav should provide more then enough room for your primary nav. If you still need more, use the b-menu vertical nav block.</p>
 </div>
-```
+
 ## Masthead with sub navigation
 
-Masthead nav items can have submenus providing one extra level of navigation. Submenus are displayed using the [Menu Popup component](#).
+Masthead nav items can have submenus providing one extra level of navigation. Submenus are displayed using the {% include 'link' with {'component': 'Menu Popup'} %}.
 
-**TODO add images of Masthead with submenus.**
-
+![Masthead nav with submenu](http://cu-rds.s3.amazonaws.com/docs/assets/masthead-submenu.png)
 ```html
 <div class="u-block u-block--full">
-	<div class="b-masthead js-sticky-scroll">
-		<div>
-			<nav aria-label="Site title and subsite navigation">
-				<h2 class="masthead__site">
-					<a href="#"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><g fill="#fff"><path d="M20.313 16.273a11.136 11.136 0 0 0 .718-4.081s-.008-7.822-.033-10.575c-.23-.066-.462-.128-.695-.186a12.856 12.856 0 0 0-.706-.168C17.354.767 14.752.5 12.56.434l.005.011a13.569 13.569 0 0 0-.686.006l.015-.03c-2.496-.01-5.525.41-7.95 1.058a4.433 4.433 0 0 0-.494.138c-.005.565-.01 1.343-.014 2.222-.018 3.836-.019 8.352-.019 8.352-.014 1.758.347 3.406 1.08 4.901.055.116.114.231.174.345.018.032.032.066.05.098l.001-.004c.083.154.17.306.264.458l.004.007a10.56 10.56 0 0 0 .82 1.142c.074.09.15.179.226.267l.07.083c1.41 1.607 3.107 2.787 4.983 3.624l.212.105.15.052c.17.071.38.133.57.193l.203.068c.226-.084.543-.165.776-.262l.151-.051c.145-.068.286-.137.426-.204a14.99 14.99 0 0 0 2.47-1.442l.042-.03c.066-.048.131-.095.196-.144a13.08 13.08 0 0 0 2.65-2.636 10.016 10.016 0 0 0 1.365-2.454z"></path><path d="M12.23 23.975l-.437-.144c-.164-.051-.335-.104-.487-.167a1.343 1.343 0 0 1-.189-.07l-.211-.103c-2.01-.897-3.733-2.152-5.111-3.724l-.073-.085a11.481 11.481 0 0 1-.825-1.063l-.017.07-.523-.95a1.375 1.375 0 0 1-.036-.07l-.016-.032a9.905 9.905 0 0 1-.184-.36c-.758-1.55-1.136-3.263-1.12-5.09 0-.041 0-4.557.019-8.35.003-.88.007-1.66.013-2.224l.002-.288.268-.102a4.57 4.57 0 0 1 .547-.153C6.313.41 9.362 0 11.794 0l.773.003-.005.01h.01c2.436.073 5.03.378 7.114.839.27.057.514.115.725.172.234.059.472.122.702.189l.299.087.003.313c.025 2.723.032 10.5.032 10.577a11.567 11.567 0 0 1-.744 4.233l-.017.041c-.34.895-.804 1.73-1.417 2.55a13.433 13.433 0 0 1-2.911 2.85l-.07.05a15.467 15.467 0 0 1-2.537 1.48c-.134.066-.277.135-.423.204l-.044.017-.138.047c-.15.062-.32.115-.482.166a6.39 6.39 0 0 0-.297.097l-.137.05zm-.766-1.146l.12.04.025.01c.122.05.279.1.43.147l.182.06.196-.063c.15-.047.306-.095.425-.145l.155-.053.398-.191c.846-.391 1.654-.862 2.41-1.406l.066-.047.164-.122a12.644 12.644 0 0 0 2.571-2.555 9.593 9.593 0 0 0 1.305-2.348l.398.129-.39-.15a10.755 10.755 0 0 0 .695-3.94c0-.079-.007-7.298-.03-10.257l-.382-.1c-.23-.06-.459-.115-.69-.163-1.95-.43-4.353-.723-6.645-.81h-.308a12.347 12.347 0 0 0-.247-.002h-.086a14.61 14.61 0 0 0-.333.008l-.698.021.021-.043a32.778 32.778 0 0 0-7.165 1.038c-.063.014-.125.03-.187.046a2064.763 2064.763 0 0 0-.03 10.258c-.014 1.697.334 3.282 1.036 4.715.06.125.122.248.187.37l.03.052c.089.164.172.307.253.438l.015.025a10.018 10.018 0 0 0 .986 1.326l.078.093c1.298 1.48 2.926 2.663 4.838 3.517z"></path><path d="M12.224 23.53l.927-.313c2.535-1.189 4.244-2.437 5.784-4.456 1.46-1.954 2.022-3.951 2.095-6.57 0 0-.035-8.457-.05-10.518-.899-.518-6.303-1.252-8.758-1.23"></path><path d="M12.355 23.93l-.264-.8.906-.305c2.558-1.202 4.183-2.455 5.608-4.32 1.333-1.785 1.934-3.677 2.009-6.326 0-.066-.033-7.795-.049-10.23-1.22-.435-5.936-1.113-8.34-1.085L12.22.022c2.463-.023 7.962.705 8.968 1.286l.208.12.002.242c.015 1.988.05 10.483.05 10.52-.08 2.85-.73 4.887-2.178 6.825-1.52 1.99-3.24 3.317-5.942 4.584l-.044.017z"></path><g><path d="M12.223.443C9.595.466 4.3 1.294 3.45 1.617c-.033 4.024-.033 10.574-.033 10.574.064 2.5.636 4.618 2.095 6.57 1.542 2.021 3.38 3.291 5.79 4.456.021.01.921.312.921.312"></path><path d="M12.092 23.93c-.925-.311-.94-.318-.97-.333-2.717-1.314-4.493-2.683-5.94-4.578-1.42-1.9-2.111-4.066-2.181-6.817 0-.077 0-6.61.032-10.588l.002-.29.268-.1C4.279.853 9.629.044 12.219.021l.007.842c-2.35.021-7.02.722-8.361 1.067-.03 3.995-.03 10.197-.03 10.26.065 2.591.685 4.543 2.01 6.317 1.374 1.8 3.004 3.054 5.618 4.32.098.035.589.2.892.302l-.262.8z"></path></g></g><path d="M18.05 12.265l-.221-.073-.048-.235-.382-.15c-1.036-.364-2.1-.657-3.198-.763-.706-.068-1.422-.015-1.965.338-.542-.353-1.257-.406-1.964-.338-1.099.106-2.163.4-3.202.763l-.38.15-.05.235-.222.073-1.242 5.24a49.072 49.072 0 0 1 2.943-.425 18.917 18.917 0 0 1 2.965-.116c-.005.045-.018.083.01.128.13.126.392.114.602.133.217.009.314.012.528.014.214.001.312-.005.53-.014.208-.019.47-.007.601-.133.028-.045.016-.083.01-.128.99-.04 1.982 0 2.965.116.8.084 2.241.295 2.941.426zm-5.964 3.945c-.579-.313-1.3-.36-2.003-.32-1.5.097-2.85.43-4.264.917l1.082-4.74c1.085-.418 2.225-.75 3.405-.85.773-.048 1.437.05 1.82.328zm2.285-.32c-.703-.04-1.424.007-2.004.32l-.021-4.664c.383-.278 1.049-.376 1.821-.329 1.18.101 2.318.432 3.403.85l1.061 4.74c-1.411-.486-2.76-.82-4.26-.917z" fill="#282828"></path><path d="M12.56.434l1.232 2.503.004.008c.005.011.021.045.066.123l.12-.05c.056-.03 2.065-1.185 2.065-1.185L15.07 6.68l1.993-2.118.838 1.611.218-.037-.108.018 2.45-.68-.779 2.778-.015.023.002.001-.01.032.007-.011-.092.284-.047.147 1.255.653-2.606 2.334.028.136.214.071 1.307 5.613c.887-1.61 1.32-3.412 1.305-5.345 0 0-.007-7.822-.033-10.574C18.502.892 15.227.513 12.56.434m-.337 23.096c.231-.085.559-.168.793-.269 2.287-.96 4.325-2.41 5.92-4.5.186-.249.361-.507.525-.772l-.269-.05a49.18 49.18 0 0 0-2.91-.421c-.177-.02-.353-.039-.53-.055h-.003a17.9 17.9 0 0 0-2.078-.067l-.015.015c-.221.214-.53.232-.755.245l-.126.01-.127.005-.428.009-.542-.014-.13-.01c-.226-.013-.535-.03-.756-.246l-.014-.014a18.57 18.57 0 0 0-1.648.033l-.005.002-.149.01h-.01l-.145.012a.48.48 0 0 0-.024.003l-.135.011-.043.004-.118.011-.076.008-.09.01-.171.018c-.974.112-1.943.252-2.909.42l-.269.05c.164.266.34.524.526.773 1.595 2.09 3.632 3.54 5.919 4.5.234.1.561.184.792.269M11.894.42C9.226.41 5.948.891 3.451 1.617c-.028 2.753-.034 10.574-.034 10.574-.017 1.933.417 3.734 1.303 5.344l1.33-5.612.216-.071.025-.119-2.626-2.35 1.254-.655-.052-.165-.07-.215a.23.23 0 0 0-.008-.01l-.803-2.863 2.45.68-.106-.018.217.037.838-1.611L9.378 6.68 8.4 1.833l2.065 1.186.12.05.066-.121.003-.01L11.75.713l.144-.292" fill="#282828"></path><path d="M5.467 8.816c-.01.131-.13.28-.201.333l-.672.35 2.18 1.953.146-.058.007-.003c1.255-.44 2.305-.69 3.304-.786.82-.079 1.48.012 2.005.275.527-.263 1.186-.354 2.007-.275.998.096 2.047.346 3.3.786l.008.004.13.05L19.853 9.5l-.672-.351c-.07-.052-.192-.202-.2-.333-.003-.04-.007-.035-.011-.023l.001-.011c.014-.078 0-.062.07-.272-.005.005.129-.4.132-.403l.523-1.866-1.544.43c-.085.005-.163.035-.246.047-.145.02-.262.04-.348-.056l-.62-1.191-1.763 1.874-.14.14c-.297.228-.717-.018-.534-.665l.795-3.942-1.082.622a4.946 4.946 0 0 1-.471.175c-.067.021-.133-.022-.178-.065a6.143 6.143 0 0 1-.25-.443L12.224.95l-1.091 2.216a5.942 5.942 0 0 1-.251.443c-.045.042-.111.086-.177.065a4.924 4.924 0 0 1-.472-.175l-1.082-.622.794 3.941c.183.648-.236.894-.533.666l-.14-.14L7.51 5.471l-.62 1.19c-.088.097-.204.077-.348.057-.084-.012-.161-.042-.246-.048l-1.545-.428.523 1.865c.004.003.138.409.131.403.07.21.058.194.07.271l.002.01c-.003-.01-.008-.011-.01.025z" fill="#bf112b"></path><path d="M11.491 12.704c-.616-.265-1.332-.184-1.984-.07-.77.135-1.128.233-1.975.52l.047-.213s1.068-.42 2.51-.59c0 0 .829-.107 1.402.15v.202zm0 .942c-.616-.264-1.332-.183-1.984-.069-.77.135-1.322.221-2.195.515l.048-.213s1.287-.416 2.729-.586c0 0 .829-.106 1.402.15zm0 .956c-.616-.264-1.332-.183-1.984-.069-.77.135-1.552.343-2.436.642l.048-.213s1.528-.543 2.97-.714c0 0 .829-.105 1.402.15zm1.443-1.898c.616-.265 1.333-.184 1.984-.07.77.135 1.128.233 1.975.52l-.047-.213s-1.068-.42-2.51-.59c0 0-.828-.107-1.402.15v.202zm0 .942c.616-.264 1.333-.183 1.984-.069.77.135 1.322.221 2.195.515l-.048-.213s-1.287-.416-2.729-.586c0 0-.829-.106-1.402.15v.203zm0 .956c.616-.264 1.333-.183 1.984-.069.77.135 1.552.343 2.436.642l-.047-.213s-1.53-.543-2.97-.714c0 0-.83-.105-1.403.15z" fill="#282828"></path></g></svg>
-Site Name</a>
-				</h2>
-			</nav>
-            <nav class="masthead__primarynav">
-                <ul role="menu">
-                    <li><a href="#">Nav link a</a></li>
-                    <li class="c-menupopup"><a href="#">Nav item with submenu</a></li>
-                        <ul class="menupopup__menu" aria-label="menupopup">
-                            <li>
-                                <a href="#">Submenu link a</a>
-                            </li>
-                            <li>
-                                <a href="#">Submenu link b</a>
-                            </li>
-                             <li>
-                                 <a href="#">Submenu link c</a>
-                             </li>                   
-                        </ul>
-                    <li><a href="#">Nav link c</a></li>
-                </ul>
-            </nav>
+    <div class="b-masthead b-masthead--responsivenav b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/"> {%filter escape%}{% include 'icons/mark-cushield.svg' %}{%endfilter%}</a>
+            </h2>
         </div>
-		<nav class="masthead__controls" aria-label="Secondary navigation and controls" role="navigation">
-			<ul>
-				<li class="masthead__hamburger">
-					<button aria-label="Open Menu" class="c-hamburger c-hamburger--spin" type="button">
-					<span class="c-hamburger__box">
-						<span class="c-hamburger__inner"></span>
-					 </span>
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
+        <nav class="masthead__nav">
+            <ul role="menu">
+                <li><a href="/about/">About RDS</a></li>
+                <li class="c-menupopup"><a href="/docs/about/">With a Submenu</a>
+                    <ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
+                        <li>
+                            <a href="/docs/about/">Submenu item a</a>
+                            <a href="/docs/about/">Submenu item b</a>
+                            <a href="/docs/about/">Submenu item c</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a  href="/design/">Design</a></li>
+                <li><a href="/content/">content</a></li>
+                <li><a href="/accessibility/">Accessibility</a></li>
+            </ul>
+        </nav>
+    </div>
 </div>
 ```
 
-## Masthead with sub navigation without parent links
 
-If you have sub navigation in your Masthead and you only want the parent link to open the submenu and not link off to another page, replace the parent's `<a>` tag with `<button>`. This will also change the action displaying the submenu from a hover to a click.
+
+
+## Masthead using buttons for sub-nav
+
+If you have sub-navigation in your Masthead nav and do not want the parent to link off to another page, burt instead only open the submenu, replace the parent's `<a>` tag with `<button>`. This also changes the action displaying the submenu from a hover to a click.
 
 The following will only open the submenu onclick and not link off:
 
@@ -1134,13 +918,9 @@ The following will only open the submenu onclick and not link off:
     </ul>
 ```
 
-##Implementation Notes
+## Implementation Notes
 
 - The masthead can only be used once on a page.
-
-## When To Avoid
-
-- Never.
 
 ## Resource links
 
