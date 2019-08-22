@@ -44,6 +44,7 @@ $b-height: 75px;
 	display: inline-flex;
 	white-space: nowrap;
 	align-items: center;
+	height: 73px;
 	border-right: 1px solid $grey-yoda;
 }
 
@@ -222,14 +223,24 @@ $b-height: 75px;
 	display: none;
 	display: flex;
 
+	svg {
+		fill: white;
+	}
+
 	&:after {
 		color: white !important;
 		//right: 15px !important;
 	}
 
-	svg {
-		fill: white;
+	&:hover  {
+		color: $black !important;
+
+		svg {
+			fill: $black;
+		}
 	}
+
+
 }
 
 .masthead__cta--white > a {

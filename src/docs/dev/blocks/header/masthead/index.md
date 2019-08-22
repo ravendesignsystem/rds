@@ -1,7 +1,8 @@
 ---
 layout: docs
 subsite: dev
-title: Masthead block
+section: Blocks
+title: Masthead
 banner:
  breadcrumbs:
   grandparent: Blocks
@@ -23,7 +24,30 @@ The masthead block contains three distinct sections.
 <br><br>
 2. **Horizontal site-wide navigation**:<br> optional, site-wide navigation area for primary/top level navigation.
 <br><br>
-3. **Call to action and UI buttons**:<br> optional, CTA and UI buttons for common application controls, such as search and mobile navigation.
+3. **Action buttons**:<br> optional, CTA and UI buttons for common application controls, such as search and mobile navigation.
+
+The Masthead block and its sections in code:
+
+```html
+<!-- standard u-block wrapper -->
+<div class="u-block u-block--full">
+    <!-- main block container -->
+    <div class="b-masthead">
+        <!-- 1. Branding and site title *req.-->
+        <div class="masthead__brand">
+            section code...
+        </div>
+        <!-- 2. Site-wide navigation -->
+        <nav class="masthead__nav">
+            section code...
+        </nav>
+        <!-- 3. Action buttons -->
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            section code...
+        </div>
+    </div>
+</div>
+```
 
 ## Masthead anatomy
 
@@ -42,18 +66,12 @@ The masthead block contains three distinct sections.
 
 <small>* = required</small>
 
-### Space considerations
-
-Like all RDS blocks, the Masthead is responsive to best make us of horizontal space on all screen sizes. However, there is always a limit to how much horizontal space is available. As you add elements to your Masthead, make sure to test on all screen sizes to ensure everything fits.
-
 ## Masthead dependencies 
 
 1. **Javascript Required**: the masthead block requires the use of RDS' [core JavaScript file](#) to function. 
 2. **Overlay layout required**: when using the action and mobile menu buttons, the hidden [overlay layout](#) is required on your page.
 
-Make sure your page template accommodates these dependencies.
-
-Easily get started by using one of the RDS [getting started templates](/docs/dev/getting-started) or grabbing the Minimum template code from the same page. 
+Make sure your page template accommodates these dependencies. To easily get started with the masthead, use one of the RDS [getting started templates](/docs/dev/getting-started) or grabbing the minimum template code example from the same page. 
 
 ## Base Masthead
 
@@ -243,9 +261,465 @@ If your application requires search functionality, you can add a search button t
 </div>
 ```
 
-####  label text 
+### With a single CTA button
 
-**Note** how the search label beside the <span class="u-icon">{% include "icons/search.svg" %}</span> icon is wrapped in a `<span>`.
+To promote key links or actions, add a CTA button to the action buttons section.
+
+{% include 'close' %}
+
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {% include 'icons/mark-cushield.svg' %}Raven Design System
+                </a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta u-hide-s">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">Github</a>
+                </li>
+                <li class="masthead__login">
+                    <button class="u-icon u-btn-reset">
+                        {% include 'icons/lock.svg' %}
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li>
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {% include "icons/search.svg" %}<span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% include 'open' %} 
+
+```html
+<div class="u-block u-block--full">
+    <div class="b-masthead">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {%filter escape%}{% include 'icons/mark-cushield.svg' %}{%endfilter%}Raven Design System
+                </a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta u-hide-s">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">Github</a>
+                </li>
+                <li class="masthead__login">
+                    <button class="u-icon u-btn-reset">
+                        {%filter escape%}{% include 'icons/lock.svg' %}{%endfilter%}
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li>
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {%filter escape%}{% include "icons/search.svg" %}{%endfilter%}<span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+```
+
+### With a single CTA button and icon
+
+To further communicate meaning to your CTA button, add an icon.
+
+{% include 'close' %}
+
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {% include 'icons/mark-cushield.svg' %}Raven Design System
+                </a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta u-hide-s">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %} Github</a>
+                </li>
+                <li class="masthead__login">
+                    <button class="u-icon u-btn-reset">
+                        {% include 'icons/lock.svg' %}
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li>
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {% include "icons/search.svg" %}<span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% include 'open' %} 
+
+```html
+<div class="u-block u-block--full">
+    <div class="b-masthead">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {%filter escape%}{% include 'icons/mark-cushield.svg' %}{%endfilter%}Raven Design System
+                </a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta u-hide-s">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">{%filter escape%}{% include 'icons/mark-github.svg' %}{%endfilter%} Github</a>
+                </li>
+                <li class="masthead__login">
+                    <button class="u-icon u-btn-reset">
+                        {%filter escape%}{% include 'icons/lock.svg' %}{%endfilter%}
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li>
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {%filter escape%}{% include "icons/search.svg" %}{%endfilter%}<span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+```
+
+### Less emphasis on the CTA
+
+The red background added to the CTA by default adds significant visual emphasis to the element. If you want to balance the focus between your CTA and other Masthead elements, add the modifier class `masthead__cta--white` to the `masthead__cta` element for a white background.
+
+{% include 'close' %}
+
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {% include 'icons/mark-cushield.svg' %}Raven Design System
+                </a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta masthead__cta--white u-hide-s">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %} Github</a>
+                </li>
+                <li class="masthead__login">
+                    <button class="u-icon u-btn-reset">
+                        {% include 'icons/lock.svg' %}
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li>
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {% include "icons/search.svg" %}<span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% include 'open' %} 
+
+```html
+<div class="u-block u-block--full">
+    <div class="b-masthead">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {%filter escape%}{% include 'icons/mark-cushield.svg' %}{%endfilter%}Raven Design System
+                </a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta masthead__cta--white u-hide-s">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">
+                        {%filter escape%}{% include 'icons/mark-github.svg' %}{%endfilter%} Github
+                    </a>
+                </li>
+                <li class="masthead__login">
+                    <button class="u-icon u-btn-reset">
+                        {%filter escape%}{% include 'icons/lock.svg' %}{%endfilter%}
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li>
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {%filter escape%}{% include "icons/search.svg" %}{%endfilter%}<span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+```
+
+### Add a submenu to the CTA
+
+Use the {% include 'link' with {'component': 'Menu Popup'} %} to setup a submenu for the CTA. While not required, submenus can have icons as well.
+
+{% include 'close' %}
+
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {% include 'icons/mark-cushield.svg' %}Raven Design System
+                </a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta masthead__cta--white u-hide-s c-menupopup c-menupopup--right">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %} Github</a>
+                    <ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/rds/releases">{% include 'icons/code.svg' %}
+                                Releases
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/rds">{% include 'icons/code.svg' %}
+                                RDS
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/design">{% include 'icons/eye.svg' %}
+                                Design
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/content">{% include 'icons/pencil.svg' %}
+                                Content
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/accessibility">{% include 'icons/accessibility.svg' %}
+                                Accessibility
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="masthead__login">
+                    <button class="u-icon u-btn-reset">
+                        {% include 'icons/lock.svg' %}
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li>
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {% include "icons/search.svg" %}<span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% include 'open' %} 
+
+```html
+<div class="u-block u-block--full">
+    <div class="b-masthead">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">
+                    {%filter escape%}{% include 'icons/mark-cushield.svg' %}{%endfilter%}Raven Design System
+                </a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta masthead__cta--white u-hide-s c-menupopup c-menupopup--right">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">{%filter escape%}{% include 'icons/mark-github.svg' %} {%endfilter%}Github</a>
+                    <ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/rds/releases">{%filter escape%}{% include 'icons/code.svg' %}{%endfilter%}
+                                Releases
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/rds">{%filter escape%}{% include 'icons/code.svg' %}{%endfilter%}
+                                RDS
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/design">{%filter escape%}{% include 'icons/eye.svg' %}{%endfilter%}
+                                Design
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/content">{%filter escape%}{% include 'icons/pencil.svg' %}{%endfilter%}
+                                Content
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/accessibility">{%filter escape%}{% include 'icons/accessibility.svg' %}{%endfilter%}
+                                Accessibility
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="masthead__login">
+                    <button class="u-icon u-btn-reset">
+                        {%filter escape%}{% include 'icons/lock.svg' %}{%endfilter%}
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li>
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {%filter escape%}{% include "icons/search.svg" %}{%endfilter%}<span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+```
+
+### Adding the overlay mobile menu
+
+The three horizontal line mobile (hamburger) menu  <button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
+<span class="c-hamburger__box">
+<span class="c-hamburger__inner"></span>
+</span>
+</button> is a common control to activate navigation that is hidden to start. The most common use case is on small/mobile screens where space is a premium. We call it the overlay mobile menu because when clicked it opens the [overlat layout](#).This control icon should be the last item (far right) of your masthead and can be added to the actions section with :
+
+```html
+<li class="masthead__hamburger {% if page.subsite == 'dev' and page.menu != 'dev' %}{% else %}u-hide-l{% endif %}">
+    <button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
+            <span class="c-hamburger__box">
+                <span class="c-hamburger__inner"></span>
+            </span>
+    </button>
+</li>
+```
+Below is a simple masthead with the overlay mobile menu button.
+
+{% include 'close' %}
+
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">{% include 'icons/mark-cushield.svg' %} Raven Design System</a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__hamburger {% if page.subsite == 'dev' and page.menu != 'dev' %}{% else %}u-hide-l{% endif %}">
+                    <button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
+                            <span class="c-hamburger__box">
+                                <span class="c-hamburger__inner"></span>
+                            </span>
+                    </button>
+            </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% include 'open' %}
+
+```html
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">{%filter escape%}{% include 'icons/mark-cushield.svg' %}{%endfilter%} Raven Design System</a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__hamburger">
+                    <button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
+                        <span class="c-hamburger__box">
+                            <span class="c-hamburger__inner"></span>
+                        </span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+```
+
+#### Hiding the overlay mobile menu on large screens
+
+Most of the time you only need the menu to appear on small screens. To hide the mobile menu on large screens add the utility class `u-hide-l`.
+
+```html
+<li class="masthead__hamburger u-hide-l">
+```
+
+{% include 'close' %}
+
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">{% include 'icons/mark-cushield.svg' %} Raven Design System</a>
+            </h2>
+        </div>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__hamburger u-hide-l">
+                    <button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
+                            <span class="c-hamburger__box">
+                                <span class="c-hamburger__inner"></span>
+                            </span>
+                    </button>
+            </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% include 'open' %}
+
+<div class="c-alert c-alert--info c-alert--icon u-hide-s">{% include 'icons/info.svg' %}
+<h2>Resize your screen</h2>
+<p>Your screen is to large to see the mobile menu in the Masthead above because the button is wrapped in `u-hide-l`. Resize your screen to be smaller to see the button.</p>
+</div>
+
+<div class="c-alert c-alert--info c-alert--icon u-hide-l">{% include 'icons/info.svg' %}
+<h2>Your on a small screen</h2>
+<p>Your screen is small enough to see the mobile menu in the masthead above. If it was larger, like a desktop screen the menu would not show.</p>
+</div>
+
+#### Space considerations and utility classes
+
+Like all RDS blocks, the Masthead is responsive to best make us of horizontal space on all screen sizes. However, there is always a limit to how much horizontal space is available. As you add elements to your Masthead, make sure to test on all screen sizes to ensure everything fits. 
+
+At times you are going to want to hide Masthead elements when on smaller screens and vice-versa,
+
+In most of the examples, the utility classes below are used to accomplish this:
+
+- `u-hide-s` - elements are hidden on small screens.
+- `u-hide-l` - elements are hidden on large screens.
+- `u-show-l` - elements are only shown on large screens.
+
+For example, both the search and login button labels are wrapped in <br>`<span class="u-hide-s">` this means the icons will display on small screen but the text labels will not, saving space.
 
 ```html
 <li class="masthead__search">
@@ -258,9 +732,13 @@ If your application requires search functionality, you can add a search button t
 
 To provide more space, this hides the search label on screens smaller then 1474px. To have the text label visible on all screen sizes, remove the `<span>`. Just make sure your have enough space on small screens for this extra text.
 
+### Action buttons section notes
+
 #### Search button dependencies
 
 **Reminder**: because the search button is configured to open the [overlay layout](#) and focus on the [search block](#), you will need to make sure both are are a part of your site-wide template.
+
+
 
 
 ### Responsive navigation option
@@ -287,7 +765,7 @@ The mobile menu button launches an overlay containing the `b-menu` block, which 
 
 
  
-**Note**: you won't see the mobile (hamburger) menu in the examples below unless your browser width is maller then 768 pixels.
+**Note**: you won't see the mobile (hamburger) menu in the examples below unless your browser width is smaller then 768 pixels.
 
 {%include "close" %}
 
