@@ -35,7 +35,6 @@
 
 	// only if masthead contains .b-masthead--responsivenav,
 	if (msNavHor) {
-
 		// check if an element has overflow
 		const isOverflowing = function(element) {
 			return element.scrollWidth > element.offsetWidth;
