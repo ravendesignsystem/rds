@@ -1,7 +1,7 @@
-# RDS v0.9.17
-**July 26, 2019**
+# RDS v0.9.22
+**August 26, 2019**
 
 We are getting there...
 
 ## New
-- Added this CHANGELOG.
+- Completely refactored the Masthead block. CSS and JS.

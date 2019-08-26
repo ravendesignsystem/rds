@@ -1,6 +1,6 @@
 const mix = require('laravel-mix');
 const env = process.env.NODE_ENV;
-const ver = "0.0.21";
+const ver = "0.9.22";
 
 mix
 	// .sass('src/_scss/docs/critical.scss', 'src/_css')
@@ -76,5 +76,6 @@ if (env === 'production') {
 		.copy('src/_blocks/menu/*.scss', 'dist/_blocks/menu/')
 		.copy('src/_blocks/search/*.scss', 'dist/_blocks/search')
 		.copy('src/_blocks/sidebar/*.scss', 'dist/_blocks/sidebar')
-		.copy('src/_blocks/textimg/*.scss', 'dist/_blocks/textimg');
+		.copy('src/_blocks/textimg/*.scss', 'dist/_blocks/textimg')
+		.copyDirectory('src/_components/icons/', 'dist/_components/icons/');
 }
