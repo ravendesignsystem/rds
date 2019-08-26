@@ -43,6 +43,11 @@
 
 		let dropNav = function() {
 			// if the mh nav is overflowing
+			if (window.innerWidth <= 960) {
+				body.classList.add('js-masthead-2packed');
+			} else {
+				body.classList.remove('js-masthead-2packed');
+			}
 
 			if (isOverflowing(mhNav)) {
 				isNav2packed = true;
