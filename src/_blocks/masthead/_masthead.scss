@@ -1,21 +1,120 @@
-// masthead height
-$b-height: 75px;
+.js-masthead-2packed .b-masthead {
+	height: 150px;
 
-// provide proper height, if the hor nav has dropped to a second row
-//.js-masthead-dropped {
-//	height: 150px !important;
-//}
+	& .masthead__nav {
+		position: absolute;
+		top: 75px;
+	}
+}
+
+.js-masthead-2biggie .masthead__nav {
+	background-color: $red !important;
+	width: 3000px;
+	color: white;
+	padding: 0 40px;
+
+	a {
+		color: $red;
+	}
+}
+
+.js-masthead-2biggie .masthead__nav::before {
+	content: 'YOUR MENU IS TOO WIDE! PLEASE SHORTEN IT OR USE A VERTICAL PRIMARY MENU. THANK YOU!';
+	color: white;
+	// position: absolute;
+}
+
+// used in conjunction with js to stick the masthead on scroll up
+.js-masthead--stickyscroll {
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+
+// used when nav is stacked and modal gets opened
+.js-masthead-2packed .l-overlay-modal {
+	top: 150px !important;
+}
 
 .b-masthead {
+	// Positioning
+	position: relative;
+	z-index: 10000;
+	// Box-model
 	display: flex;
 	justify-content: space-between;
-	background-color: white;
+	height: 75px;
+	// Visual
 	border-top: 2px solid $red;
 	border-bottom: 1px solid $grey-kenobi;
-	position: relative;
-	height: $b-height;
-	z-index: 10000;
+	background-color: white;
+	// Misc
 	transition: 0.2s;
+}
+
+.b-masthead a,
+.b-masthead button {
+	display: inline-flex;
+	padding-left: 15px;
+	padding-right: 15px;
+	align-items: center;
+	font-size: 14px;
+	//font-weight: 500;
+
+	svg {
+		height: 16px;
+		width: 16px;
+	}
+}
+
+.b-masthead--shadow {
+	box-shadow: 0 10px 11px -7px $grey-yoda;
+	margin-bottom: 6px;
+}
+
+.masthead__brand {
+	display: inline-flex;
+	white-space: nowrap;
+	align-items: center;
+	height: 73px;
+
+	@include media('>s') {
+		border-right: 1px solid $grey-yoda;
+	}
+}
+
+.masthead__brand svg:not(.c-culogo) {
+	min-width: 40px;
+	height: 40px;
+	vertical-align: middle;
+	margin-right: 3px;
+}
+
+.masthead__brand h2 {
+	margin: 5px 0 0;
+	padding-bottom: 0;
+	//float: left;
+}
+
+.masthead__brand a {
+	font-size: 18px;
+	display: inline-flex;
+	align-items: center;
+	//height: $b-height;
+	padding-left: 8px;
+	padding-right: 8px;
+
+	&:hover {
+		color: $red;
+	}
+
+	@include media('>=s') {
+		padding-left: 15px;
+		padding-right: 15px;
+		font-size: 20px;
+	}
 }
 
 .b-masthead--responsivenav {
@@ -26,203 +125,112 @@ $b-height: 75px;
 	}
 }
 
-.b-masthead a, .b-masthead button {
-	display: inline-flex;
-	padding-left: 15px;
-	padding-right: 15px;
-	align-items: center;
-	font-size: 14px;
-	font-weight: 500;
-
-	svg {
-		height: 16px;
-		width: 16px;
-	}
-}
-
-.masthead__brand  {
-	display: inline-flex;
-	white-space: nowrap;
-	align-items: center;
-	height: 73px;
-	border-right: 1px solid $grey-yoda;
-}
-
-.masthead__brand svg:not(.c-culogo) {
-	min-width: 40px;
-	width: 40px;
-	height: 40px;
-	vertical-align: middle;
-	margin-right: 3px;
-}
-
-.masthead__brand h2 {
-	margin: 0;
-	padding-bottom: 0;
-	float: left;
-
-}
-
-.masthead__brand a {
-	font-size: 18px;
-	display: inline-flex;
-	align-items: center;
-	height: $b-height;
-	padding-left: 8px;
-
-	&:hover{
-		color: $red;
-	}
-
-	@include media('>=s') {
-		padding-left: 15px;
-		font-size: 20px;
-	}
-}
-
 .masthead__nav {
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	position: relative;
+	//overflow: auto;
+	//overflow-y: hidden;
+	border-top: 1px solid $grey-kenobi;
+	// for smaller stacked on s
+	// above---------
 	align-items: center;
 	white-space: nowrap;
 	width: 100%;
-	display: inline-flex;
-	overflow: hidden;
+	overflow-x: scroll;
+	-ms-overflow-style: none; // IE 10+
+	scrollbar-width: none; // Firefox
+	overflow-y: hidden;
 	white-space: nowrap;
-	background-color: transparent;
 
-
-	.menupopup__menu {
-		position: fixed;
-		margin-left: 5px;
-
-		//IE Only styles
-		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-			margin-left: -95px;
-		}
+	&::-webkit-scrollbar {
+		width: 0px; /* Remove scrollbar space */
+		background: transparent; /* Optional: just make scrollbar invisible */
 	}
+
 }
 
-
-
-	.b-masthead--responsivenav .masthead__nav {
-		@include media('<=960px') {
-		-webkit-overflow-scrolling: touch;
-		-ms-overflow-style: -ms-autohiding-scrollbar;
-		position: absolute;
-		top: 73px;
-		overflow: auto;
-		border-top: 1px solid $grey-kenobi;
-
-			//padding-bottom: 100vh;
-			//margin-bottom: -250px;
-	}
-}
-
-
-
-.js-masthead-2packed {
-	height: 150px !important;
-}
-
-.js-mh-2packed .l-overlay-modal {
-	top: 150px !important;
-}
-
-.js-mh-2packed .masthead__nav .menupopup__menu {
-	top: 145px;
-}
-
-.js-masthead-2packed .masthead__nav {
-	-webkit-overflow-scrolling: touch;
-	-ms-overflow-style: -ms-autohiding-scrollbar;
+.b-masthead--responsivenav .masthead__nav {
 	position: absolute;
 	top: 73px;
-	overflow-y:hidden !important;
-	overflow-x:auto;
-	border-top: 1px solid $grey-kenobi;
+	display: inline-flex;
 
-}
-.js-masthead-2biggie .masthead__nav {
-	background-color: $red !important;
-	width: 3000px;
-	color: white;
-	padding: 0 40px;
-
-	a {
-		color: $red
+	@include media('>=960px') {
+		position: relative;
+		top: auto;
+		overflow-x: hidden;
+		overflow-y: hidden;
 	}
 }
 
-.js-masthead-2biggie .masthead__nav::before {
-	content: "YOUR MENU IS TOO WIDE! PLEASE SHORTEN IT OR USE A VERTICAL PRIMARY MENU. THANK YOU!";
-	color: white;
-	// position: absolute;
-}
-
-// used in conjunction with js to stick the masthead on scroll up
-.js-masthead--stickyscroll {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 10;
-}
-
-.masthead__nav ul, .masthead__actions ul {
+.masthead__nav ul,
+.masthead__actions ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	display: inline-flex;
 }
 
-.masthead__nav li, .masthead__actions li {
+.masthead__nav > ul > li,
+.masthead__actions > ul > li {
 	display: inline-flex;
+	position: relative;
 	height: 72px;
+	//line-height: 72px;
 
-	&:hover > a {
-		color: $red;
-	}
+	//&:hover > a {
+	//	color: $red;
+	//}
 }
 
-.masthead__nav li li {
-	height: auto;;
+.js-masthead-2packed
+	.b-masthead--responsivenav
+	.masthead__nav
+	.c-menupopup:hover
+	ul.menupopup__menu {
+	top: 150px;
 }
 
-.c-menupopup  li {
-	height: auto;
-
-}
-
-.c-menupopup .menupopup__menu,.c-menupopup + .menupopup__menu {
+.b-masthead .menupopup__menu {
+	//position: fixed;
+	position: absolute;
 	top: 70px;
-}
+	margin-left: 5px;
 
-.masthead__actions a, .masthead__actions button {
-	border-left: 1px solid $grey-yoda;
-
-	&:hover {
-		background-color: $grey;
-		color: $black;
+	//IE Only styles
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		margin-left: -95px;
 	}
 }
 
-.masthead__actions .c-menupopup a {
-	padding-right: 25px;
-}
+// used for displaying masthead nav submenus - js sets some of this
+.b-masthead--responsivenav
+	.masthead__nav
+	.c-menupopup:hover
+	ul.menupopup__menu {
+	position: fixed;
+	top: 146px;
 
-.masthead__actions .c-menupopup a:after {
-	margin-right: 8px;
-}
-
-.masthead__actions .menupopup__menu {
-	svg {
-		height: 1em;
-		width: 1em;
-		margin-top: -1px;
+	@include media('>=960px') {
+		top: 70px;
 	}
 }
 
+.js-masthead-2packed ul.menupopup__menu.u-fixed {
+	top: 146px !important;
+}
 
-.masthead__cta > a {
+.masthead__actions {
+	display: inline-flex;
+	align-items: center;
+	height: 73px;
+}
+
+.masthead__actions > ul > li {
+	border-left: 1px solid $grey-kenobi;
+}
+
+li.masthead__cta > a {
 	background-color: $red;
 	color: white;
 	display: none;
@@ -233,22 +241,12 @@ $b-height: 75px;
 	}
 
 	&:after {
-		color: white !important;
+		color: white;
 		//right: 15px !important;
 	}
-
-	&:hover  {
-		color: $black !important;
-
-		svg {
-			fill: $black;
-		}
-	}
-
-
 }
 
-.masthead__cta--white > a {
+li.masthead__cta--white > a {
 	background-color: white;
 	color: $black;
 
@@ -260,26 +258,25 @@ $b-height: 75px;
 		color: $black !important;
 	}
 }
-@include media('<=1474px') {
-	.masthead__search span{
-		display: none;
+
+.masthead__actions ul > li:hover > a,
+.masthead__actions > ul li:hover > button {
+	color: $black;
+	background-color: $grey-kenobi;
+
+	svg {
+		fill: $black;
+	}
+
+	&:after {
+		color: $black;
 	}
 }
 
+li.masthead__cta.c-menupopup > a {
+	padding-right: 25px;
 
-
-.masthead__hamburger {
-	display: inline-flex;
-
-	@include media('>=1200px') {
-		display: none;
+	&:after {
+		right: 15px !important;
 	}
 }
-
-.b-masthead--shadow {
-	box-shadow: 0 10px 11px -7px $grey-yoda;
-	margin-bottom: 6px;
-}
-
-
-
