@@ -216,9 +216,8 @@ Use different coloured background rows to separate different sections of content
 
 Functionally independent, a **block can NOT be nested** within another block.
 
-**Cool**:
-
 ```html
+<!-- 👍 Cool, like Fonzie -->
 <div class="u-block u-block--s u-block--grey">
     <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
     <hr>
@@ -228,9 +227,9 @@ Functionally independent, a **block can NOT be nested** within another block.
     <hr>
 </div>
 ```
-**Not cool**:
 
 ```html
+<!-- 🦈 Jumping the shark...not cool -->
 <div class="u-block u-block--s u-block--grey">
     <div class="u-block u-block--s u-block--white">
         <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>

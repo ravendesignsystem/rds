@@ -1,11 +1,10 @@
-<div class="u-block u-block--full js-overlay-movemenu">
+<section class="u-block u-block--full js-overlay-movemenu">
     <div class="b-menu">
-        <h2>
-            {% if page.subsite == 'dev' %}Dev sub-navigation
-            {% else %}
-                Site navigation
-            {% endif %}
-        </h2>
+        {% if page.subsite == 'dev' %}
+            <h2 class="menu__section">Dev</h2>
+        {% else %}
+            <h2>Site navigation</h2>
+        {% endif %}
         {% from "menu/menu.twig" import menuMacro %}
         {{ menuMacro (
             [
@@ -265,7 +264,7 @@
                     ]
                 },
                 {
-                    title: "Layouts",
+                    title: "Layouts & Navigation",
                     url: site.url ~ 'dev/layouts/',
                     section: page.section,
                     submenu:
@@ -364,4 +363,4 @@
             ]
         )}}
     </div>
-</div>
+</section>

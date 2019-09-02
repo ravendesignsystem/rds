@@ -73,32 +73,39 @@ Be sure to have your pages set up with RDS' template requirements, which at a mi
     <title>Hello, world!</title>
   </head>
   <body>
-
     <!-- A starting <header> tag is required -->
-    <header><!-- Add Header blocks here --></header>
+    <header>
+        <!-- Add Header blocks here -->
+    </header>
 
     <!-- A <main> tag is required -->
-    <main><!-- Add Main blocks here --></main>
+    <main>
+        <!-- Add Main blocks here -->
+    </main>
 
     <!-- A bottom <footer> tag is required -->
-    <footer><!-- Add Footer blocks here --></footer>
+    <footer>
+        <!-- Add Footer blocks here -->
+    </footer>
 
-    <!-- The Overlay layout ios required -->
-    <dialog class="l-overlay-modal is-hidden">
-  
+    <!-- The dialogue Overlay layout is required, if using any dialogue blocks or mobile menu. -->
+    <dialog class="l-overlay-modal">
+        <!-- Uncomment and add Search block, if using Masthead Search  
         <div class="modal__search is-hidden">
-            <!-- If using, Search block goes here-->
-        </div>
+           ADD SEARCH BLOCK HERE
+        </div> -->
+
         <div class="modal__menu is-hidden">
-            <!-- If using, Menu block goes here-->
+            <!-- Add the Menu block code here ONLY if you are NOT using a SideNav and want a menu-->
         </div>
+        <!-- Uncomment and add Login block, if using Masthead Login 
         <div class="modal__login is-hidden">
-            <!-- If using, Login block goes here-->
-        </div>
+            ADD LOGIN BLOCK HERE
+        </div> -->
     </dialog>
 
     <!-- Required JavaScript -->
-    <script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds.js" crossorigin="anonymous">
+    <script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.js" crossorigin="anonymous">
 
   </body>
 </html>
