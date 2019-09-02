@@ -139,8 +139,8 @@
             {% include "footerbrand/footerbrand.twig" %}
         </footer>
     {% endblock %} {# END footer block #}
-
-    <div class="dialogue l-overlay-modal is-hidden">
+{#    <dialog class="l-overlay-modal is-hidden">#}
+    <dialog class="l-overlay-modal">
         <div class="modal__search is-hidden">
             {% include "search/search" %}
         </div>
@@ -172,7 +172,7 @@
             </div>
         </div>
 
-    </div>{# END l-overlay #}
+    </dialog>{# END l-overlay #}
 
 </div> {#END APP ID #}
 {% block scripts %}
@@ -181,6 +181,13 @@
         if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
             document.write('<script src="https://unpkg.com/element-closest/browser"><\/script>');
     </script>
+{#    <script src="../node_modules/dialog-polyfill.js"></script>#}
+{#    <script>#}
+{#					var dialog = document.querySelector('dialog');#}
+{#					dialogPolyfill.registerDialog(dialog);#}
+{#					// Now dialog acts like a native <dialog>.#}
+{#					dialog.showModal();#}
+{#    </script>#}
     <script src="{{ site.jsPath }}"></script>
 {% endblock %}  {#END SCRIPTS #}
 

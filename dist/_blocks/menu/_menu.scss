@@ -1,16 +1,18 @@
-// Notes
-// The arrow icon could be made darker
+// if the sticky nav is present add top margin so top of menu is not hidden
+.has-stickyscroll  .b-menu {
+	margin-top: 90px;
+}
 
 // Main Nav Styles
 // =======================================
 
-// .b-menu {
-// 	background-color: white;
-// }
+ .b-menu {
+ 	min-width: 220px;
+ }
 
 .b-menu h2 {
 	// position: relative;
-	background: $grey;
+	background-color: $grey;
 	// border-bottom: 1px solid white;
 	// font-weight: 500;
 	// height: 30px;
@@ -21,6 +23,20 @@
 	margin: 0;
 	font-size: $pixel12;
 	text-transform: uppercase;
+}
+
+@include media('>s') {
+	// only show menu heading in overlay
+	.b-menu h2 {
+		display: none;
+	}
+
+	// when used as section nav show the title on all screen sizes
+	h2.menu__section {
+		background-color: white;
+		border-bottom: 1px solid $grey-yoda;
+		display: block;
+	}
 }
 
 .b-menu .active {
@@ -34,20 +50,18 @@
 
 .b-menu li {
 	position: relative;
-	// list-style-type: none;
 
-	// TODO: what was this doing? can't figure it out
-	 label > i {
-	 	transition: transform 0.65s ease;
-	 }
+	label > i {
+		transition: transform 0.65s ease;
+	}
 
 	a {
 		display: block;
 		padding: 10px 15px;
 		border-bottom: 1px solid $grey;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
+		//white-space: nowrap;
+		//overflow: hidden;
+		//text-overflow: ellipsis;
 		transition: all 0.25s ease-in; // TODO: what was this doing? can't figure it out
 	}
 }
@@ -91,7 +105,7 @@
 
 	&:after {
 		content: '+';
-		 display: inline-block;
+		display: inline-block;
 		transition: all 0.25s ease-in;
 		// left: 50%;
 		// line-height: normal;
@@ -105,7 +119,6 @@ div.modal__menu .b-menu i {
 .b-menu ul ul i {
 	line-height: 40px;
 }
-
 
 .b-menu input[type='checkbox']:checked + label > i:after {
 	transform: rotate(135deg);
@@ -154,12 +167,14 @@ div.modal__menu .b-menu i {
 	padding-top: 5px;
 	padding-bottom: 5px;
 	color: $grey-emperor;
+	line-height: 1.65;
+	font-size: 15px;
 }
 
 // 3rd level
 .b-menu ul ul ul {
 	a {
-		padding-left: 60px;
+		padding-left: 50px;
 		font-size: $pixel14;
 	}
 }
@@ -173,7 +188,6 @@ div.modal__menu .b-menu i {
 
 // Expand/show nested lists
 // =======================================
-
 .menu__toggle {
 	font-style: normal;
 	font-size: $pixel10;

@@ -1,3 +1,6 @@
+{% if cta %}
+    <a class="c-buttoncta" href="{{ url }}">{{ cta }}</a>
+{% endif %}
 {% if component %}
 {% if '-' in component %}
 {% set ex = component|split('-') %}

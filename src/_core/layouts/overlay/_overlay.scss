@@ -1,13 +1,3 @@
-//waiting for browsers to catch up
-//dialog {
-//	border: 0;
-//	top: 150px;
-//
-//	&::backdrop {
-//		background: transparent;
-//	}
-//}
-
 .l-overlay-modal {
 	width: 100%;
 	height: 100%;
@@ -17,6 +7,16 @@
 	overflow-y: auto;
 	top: 75px; //account for masthead
 	left: 0;
+	border: 0;
+	top: 150px;
+
+	&::backdrop {
+		background: transparent;
+	}
+
+	&:not([open]) { // HTML 5 <dialogue> polyfill
+		display: none;
+	}
 }
 
 .l-overlay-modal--tall {

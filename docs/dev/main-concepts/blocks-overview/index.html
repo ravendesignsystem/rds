@@ -358,9 +358,8 @@ Raven Design System</a>
 
 <p>Functionally independent, a <strong>block can NOT be nested</strong> within another block.</p>
 
-<p><strong>Cool</strong>:</p>
-
-<pre><code class="html">&lt;div class="u-block u-block--s u-block--grey"&gt;
+<pre><code class="html">&lt;!-- 👍 Cool, like Fonzie --&gt;
+&lt;div class="u-block u-block--s u-block--grey"&gt;
     &lt;p class="b-simple"&gt;This is Simple block, an example of a basic block for learning purposes.&lt;/p&gt;
     &lt;hr&gt;
 &lt;/div&gt;
@@ -370,9 +369,8 @@ Raven Design System</a>
 &lt;/div&gt;
 </code></pre>
 
-<p><strong>Not cool</strong>:</p>
-
-<pre><code class="html">&lt;div class="u-block u-block--s u-block--grey"&gt;
+<pre><code class="html">&lt;!-- 🦈 Jumping the shark...not cool --&gt;
+&lt;div class="u-block u-block--s u-block--grey"&gt;
     &lt;div class="u-block u-block--s u-block--white"&gt;
         &lt;p class="b-simple"&gt;This is Simple block, an example of a basic block for learning purposes.&lt;/p&gt;
         &lt;hr&gt;
@@ -877,8 +875,7 @@ While they are reusable, they need to be rendered in many different ways with di
     </div>
 </div>
         </footer>
-     
-    <div class="dialogue l-overlay-modal is-hidden">
+         <dialog class="l-overlay-modal">
         <div class="modal__search is-hidden">
             <div class="u-block u-block--s u-block--grey">
     <div class="b-search">
@@ -897,17 +894,15 @@ While they are reusable, they need to be rendered in many different ways with di
 </div>
         </div>
         <div class="modal__menu is-hidden">
-                                                        <div class="u-block u-block--full js-overlay-movemenu">
+                                                        <section class="u-block u-block--full js-overlay-movemenu">
     <div class="b-menu">
-        <h2>
-            Dev sub-navigation
-                    </h2>
-                            <ul>
+                    <h2 class="menu__section">Dev</h2>
+                                    <ul>
                                             
                         
             <li>
-                                <input  id="menu--1-166" type="checkbox" hidden/>
-                    <label for="menu--1-166">
+                                <input  id="menu--1-103" type="checkbox" hidden/>
+                    <label for="menu--1-103">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/getting-started/">Getting started</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -927,8 +922,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input checked id="menu--1-61" type="checkbox" hidden/>
-                    <label for="menu--1-61">
+                                <input checked id="menu--1-117" type="checkbox" hidden/>
+                    <label for="menu--1-117">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/main-concepts/">Main concepts</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -963,8 +958,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu--1-48" type="checkbox" hidden/>
-                    <label for="menu--1-48">
+                                <input  id="menu--1-169" type="checkbox" hidden/>
+                    <label for="menu--1-169">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/">Blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -972,8 +967,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu-2-1-25" type="checkbox" hidden/>
-                    <label for="menu-2-1-25">
+                                <input  id="menu-2-1-100" type="checkbox" hidden/>
+                    <label for="menu-2-1-100">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/header/">Header blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1003,8 +998,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu-2-1-144" type="checkbox" hidden/>
-                    <label for="menu-2-1-144">
+                                <input  id="menu-2-1-38" type="checkbox" hidden/>
+                    <label for="menu-2-1-38">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/getting-started/quick-start/">Main blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1034,8 +1029,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu-2-1-75" type="checkbox" hidden/>
-                    <label for="menu-2-1-75">
+                                <input  id="menu-2-1-102" type="checkbox" hidden/>
+                    <label for="menu-2-1-102">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/aside/">Aside blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1050,8 +1045,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu-2-1-37" type="checkbox" hidden/>
-                    <label for="menu-2-1-37">
+                                <input  id="menu-2-1-92" type="checkbox" hidden/>
+                    <label for="menu-2-1-92">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/dialogue/">Dialogue blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1087,8 +1082,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu-2-1-138" type="checkbox" hidden/>
-                    <label for="menu-2-1-138">
+                                <input  id="menu-2-1-55" type="checkbox" hidden/>
+                    <label for="menu-2-1-55">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/components/content/">Content Components</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1160,9 +1155,9 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu--1-116" type="checkbox" hidden/>
-                    <label for="menu--1-116">
-                        <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/layouts/">Layouts</a>
+                                <input  id="menu--1-164" type="checkbox" hidden/>
+                    <label for="menu--1-164">
+                        <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/layouts/">Layouts &amp; Navigation</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
                                                                                     <ul>
@@ -1191,8 +1186,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu--1-50" type="checkbox" hidden/>
-                    <label for="menu--1-50">
+                                <input  id="menu--1-151" type="checkbox" hidden/>
+                    <label for="menu--1-151">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/custom-theming/">Custom theming</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1232,8 +1227,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu--1-34" type="checkbox" hidden/>
-                    <label for="menu--1-34">
+                                <input  id="menu--1-2" type="checkbox" hidden/>
+                    <label for="menu--1-2">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/guidelines/">Guidelines</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1280,7 +1275,7 @@ While they are reusable, they need to be rendered in many different ways with di
             </li>
             </ul>
     </div>
-</div>
+</section>
                                             </div>
 
                 <div class="modal__login is-hidden">
@@ -1302,7 +1297,7 @@ While they are reusable, they need to be rendered in many different ways with di
             </div>
         </div>
 
-    </div>
+    </dialog>
 </div>     <script>
                 if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
             document.write('<script src="https://unpkg.com/element-closest/browser"><\/script>');
