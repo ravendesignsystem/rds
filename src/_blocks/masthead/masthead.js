@@ -28,7 +28,6 @@ import dialogPolyfill from 'dialog-polyfill';
 		mhSubmenu = document.querySelector('button.c-menupopup + .menupopup__menu');
 
 	// dialogue polyfill
-
 	dialogPolyfill.registerDialog(modal);
 
 	// state vars

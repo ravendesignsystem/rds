@@ -1,6 +1,6 @@
 {
 	"name": "rds",
-	"version": "0.10.0",
+	"version": "0.10.1",
 	"description": "Never more",
 	"repository": {
 		"type": "git",
@@ -45,6 +45,7 @@
 		"prettier": "^1.18.2",
 		"resolve-url-loader": "^3.1.0",
 		"sass": "^1.22.10",
-		"sass-loader": "^7.1.0"
+		"sass-loader": "^7.1.0",
+		"vue-template-compiler": "^2.6.10"
 	}
 }

@@ -1,7 +1,12 @@
-# RDS v0.9.22
-**August 26, 2019**
+# RDS CHANGELOG
 
-We are getting there...
+## v0.10.1 2019-09-02 Bug fix release, Update recommended
 
-## New
-- Completely refactored the Masthead block. CSS and JS.
+- **Fixed**: position issue with `<dialog>`.
+
+
+## v0.10.0 2019-09-02 Feature release, Update recommended
+
+**Initial release candidate**...going silver
+
+- **New**: Added HTML 5 `<dialog>` for mobile menu to improve a11y.
