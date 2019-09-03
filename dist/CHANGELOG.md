@@ -11,7 +11,7 @@ All notable changes to the project will be documented in this file.
 - **Docs**: updated Masthead docs to include how to wrap long titles.
 - **Docs**: Improved Overlay layout documentation.
 - **Fixed**: Fixed 4 column grid breaking too early.
-- **Fixed**: JS error from dialog polyfill firing when no dialog exists..
+- **Fixed**: JS error from dialog polyfill firing when no dialog exists.
 
 ## [v0.10.1](https://github.com/ravendesignsystem/rds/releases/tag/0.10.1) 2019-09-02 
 
