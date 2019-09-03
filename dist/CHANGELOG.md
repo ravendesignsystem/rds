@@ -1,12 +1,37 @@
-# RDS CHANGELOG
+# RDS Change Log
 
-## v0.10.1 2019-09-02 Bug fix release, Update recommended
+All notable changes to the project will be documented in this file.
+
+## [v0.10.2](https://github.com/ravendesignsystem/rds/releases/tag/0.10.2) 2019-09-03 
+
+**Added**, **Fixed**, **Docs**: update recommended
+
+- **Added**: improved a11y for the Overlay layout replacing `is-hidden` with `u-visullay-hidden`.
+- **Added**: feature for wrapping long site titles in the Masthead.
+- **Docs**: updated Masthead docs to include how to wrap long titles.
+- **Docs**: Improved Overlay layout documentation.
+- **Fixed**: Fixed 4 column grid breaking too early.
+- **Fixed**: JS error from dialog polyfill firing when no dialog exists..
+
+## [v0.10.1](https://github.com/ravendesignsystem/rds/releases/tag/0.10.1) 2019-09-02 
+
+**Fixed**, Update recommended
 
 - **Fixed**: position issue with `<dialog>`.
 
 
-## v0.10.0 2019-09-02 Feature release, Update recommended
+## [v0.10.0](https://github.com/ravendesignsystem/rds/releases/tag/0.10.0) 2019-09-02 
 
 **Initial release candidate**...going silver
 
-- **New**: Added HTML 5 `<dialog>` for mobile menu to improve a11y.
+- **Added**: Added HTML 5 `<dialog>` for mobile menu to improve a11y.
+
+
+## [Unreleased]
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+### Upgraded

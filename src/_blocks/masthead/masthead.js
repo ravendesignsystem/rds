@@ -28,7 +28,9 @@ import dialogPolyfill from 'dialog-polyfill';
 		mhSubmenu = document.querySelector('button.c-menupopup + .menupopup__menu');
 
 	// dialogue polyfill
+	if (modal) {
 	dialogPolyfill.registerDialog(modal);
+	}
 
 	// state vars
 	// -----------
@@ -228,7 +230,6 @@ import dialogPolyfill from 'dialog-polyfill';
 		};
 
 		const showModal = function(btn) {
-			// modal.classList.remove('is-hidden');
 			modal.show();
 			mhHamburger.classList.remove('u-hide-l');
 			mhHamburgerButton.classList.add('is-active');
@@ -239,20 +240,19 @@ import dialogPolyfill from 'dialog-polyfill';
 			}
 
 			if (btn === 'search') {
-				mhSearch.classList.add('is-hidden');
-				modalSearch.classList.remove('is-hidden');
+				mhSearch.classList.add('u-visually-hidden');
+				modalSearch.classList.remove('u-visually-hidden');
 				document.querySelector('.searchform__input').focus();
 				if (mhLogin) {
-					modalLogin.classList.add('is-hidden');
+					modalLogin.classList.add('u-visually-hidden');
 				}
 			}
 
 			if (btn === 'login') {
 				document.querySelector('.login__field').focus();
-				modalLogin.classList.remove('is-hidden');
-				// modal.classList.remove('is-hidden');
+				modalLogin.classList.remove('u-visually-hidden');
 				modal.show();
-				mhLogin.classList.add('is-hidden');
+				mhLogin.classList.add('u-visually-hidden');
 			}
 		};
 
@@ -278,9 +278,8 @@ import dialogPolyfill from 'dialog-polyfill';
 				mhHamburgerButton.classList.toggle('is-active');
 				if (mhHamburgerButton.classList.contains('is-active')) {
 					if (moveMenu) {
-						// modal.classList.remove('is-hidden');
 						modal.show();
-						modalMenu.classList.remove('is-hidden');
+						modalMenu.classList.remove('u-visually-hidden');
 						modalMenu.appendChild(leftMenu);
 					} else {
 						alert(
@@ -291,24 +290,24 @@ import dialogPolyfill from 'dialog-polyfill';
 					window.removeEventListener('scroll', stickMasthead);
 					if (mhLogin) {
 						modal.close();
-						mhLogin.classList.add('is-hidden');
+						mhLogin.classList.add('u-visually-hidden');
 					}
 				} else {
 					preventScroll();
 					window.addEventListener('scroll', stickMasthead);
 					modal.close();
 					if (moveMenu) {
-						modalMenu.classList.add('is-hidden');
+						modalMenu.classList.add('u-visually-hidden');
 					// modal.close();
 						moveMenu.appendChild(leftMenu);
 					}
 					if (mhSearch) {
-						modalSearch.classList.add('is-hidden');
-						mhSearch.classList.remove('is-hidden');
+						modalSearch.classList.add('u-visually-hidden');
+						mhSearch.classList.remove('u-visually-hidden');
 					}
 					if (mhLogin) {
-						mhLogin.classList.remove('is-hidden');
-						modalLogin.classList.remove('is-hidden');
+						mhLogin.classList.remove('u-visually-hidden');
+						modalLogin.classList.remove('u-visually-hidden');
 					}
 					if (isHamburgerHidden !== null) {
 						mhHamburger.classList.add(isHamburgerHidden);

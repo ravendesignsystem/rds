@@ -1,7 +1,6 @@
 ---
 layout: docs
 subsite: dev
-menu: dev
 title: Card Grid
 section: Blocks
 subsection: Main blocks
@@ -39,7 +38,7 @@ The Card Grid block uses RDS' [responsive grid](#) to list [Card components]({{s
 | has heading         | [true](#with-heading)
 | theme(s)            | CU
 | variants            | [3 column](#grid-column-settings), [4 column](#grid-column-settings)
-| Codepen             | coming soon...
+| Codepen             | [https://codepen.io/cuweb/live/mdbwyEd](https://codepen.io/cuweb/live/mdbwyEd)
 
 
 ## Small screen stack modifier 
