@@ -96,7 +96,11 @@
 .masthead__brand h2 {
 	margin: 5px 0 0;
 	padding-bottom: 0;
-	//float: left;
+
+	span {
+		display: table;
+	}
+
 }
 
 .masthead__brand a {

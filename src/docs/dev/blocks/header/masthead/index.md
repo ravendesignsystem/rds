@@ -140,6 +140,48 @@ By adding `js-masthead-stick` to the `b-masthead` element, scrolling upward reve
 - this behaviour is forced on small screens.
 - the remaining code examples on this page include this option. Simply remove `js-masthead-stick` from any snippets below to disable this feature for large screens.
 
+## Dealing with long site titles
+
+Long titles impact the amount of horizontal space available in the Masthead. To help with this, you can wrap long titles on to two lines.
+
+**To wrap a title**:
+
+1. Wrap all of your title text in a `<span>`.
+2. Wrap the text you want to drop in another `<span>`.
+
+{% include 'close' %}
+
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">{% include 'icons/mark-cushield.svg' %}
+                    <span>Raven Design System <span>Raven Design System</span></span>
+                </a>
+            </h2>
+        </div>
+    </div>
+</div>
+
+{% include 'open' %}
+
+```html
+<div class="u-block u-block--full">
+    <div class="b-masthead b-masthead--shadow">
+        <div class="masthead__brand">
+            <h2>
+                <a href="/docs/">{% include 'icons/mark-cushield.svg' %}
+                    <span>Raven Design System <span>Raven Design System</span></span>
+                </a>
+            </h2>
+        </div>
+    </div>
+</div>
+```
+
+**Important**: the maximum number of lines a title can wrap on to is two. If your title is still too long, consider shortening it with acronyms or removing nonessential text
+For examples, instead of using "The Department of History at Carleton University", go with "Department of History".
+
 ## Adding action buttons
 
 Action buttons get added to the right side of the Masthead blocks. 
