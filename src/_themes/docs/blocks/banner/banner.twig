@@ -1,12 +1,7 @@
 {% if page.banner.img.img_url %}
 <style>
     .b-banner--img {
-        background-image: url({{ page.banner.img.img_url_s }});
-    }
-    @media (min-width: 769px) {
-        .b-banner--img {
-            background-image: url({{ page.banner.img.img_url }});
-        }
+        background-image: url({{ page.banner.img.img_url }});
     }
 </style>
 {% endif %}

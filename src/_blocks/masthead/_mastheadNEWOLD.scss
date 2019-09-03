@@ -1,0 +1,292 @@
+// masthead height
+$b-height: 75px;
+
+// provide proper height, if the hor nav has dropped to a second row
+//.js-masthead-dropped {
+//	height: 150px !important;
+//}
+
+//.b-masthead {
+//	display: flex;
+//	justify-content: space-between;
+//	background-color: white;
+//	border-top: 2px solid $red;
+//	border-bottom: 1px solid $grey-kenobi;
+//	position: relative;
+//	height: $b-height;
+//	z-index: 10000;
+//	transition: 0.2s;
+//}
+
+//.b-masthead--responsivenav {
+//	height: 150px;
+//
+//	@include media('>=960px') {
+//		height: 75px;
+//	}
+//}
+
+//.b-masthead a, .b-masthead button {
+//	display: inline-flex;
+//	padding-left: 15px;
+//	padding-right: 15px;
+//	align-items: center;
+//	font-size: 14px;
+//	font-weight: 500;
+//
+//	svg {
+//		height: 16px;
+//		width: 16px;
+//	}
+//}
+
+//.masthead__brand  {
+//	display: inline-flex;
+//	white-space: nowrap;
+//	align-items: center;
+//	height: 73px;
+//	border-right: 1px solid $grey-yoda;
+//}
+
+//.masthead__brand svg:not(.c-culogo) {
+//	min-width: 40px;
+//	width: 40px;
+//	height: 40px;
+//	vertical-align: middle;
+//	margin-right: 3px;
+//}
+
+//.masthead__brand h2 {
+//	margin: 0;
+//	padding-bottom: 0;
+//	float: left;
+//
+//}
+
+//.masthead__brand a {
+//	font-size: 18px;
+//	display: inline-flex;
+//	align-items: center;
+//	height: $b-height;
+//	padding-left: 8px;
+//
+//	&:hover{
+//		color: $red;
+//	}
+//
+//	@include media('>=s') {
+//		padding-left: 15px;
+//		font-size: 20px;
+//	}
+//}
+
+//.masthead__nav {
+//	align-items: center;
+//	white-space: nowrap;
+//	width: 100%;
+//	display: inline-flex;
+//	//overflow: hidden;
+//	white-space: nowrap;
+//	background-color: transparent;
+
+
+	.menupopup__menu {
+		//position: fixed;
+		position: absolute;
+		top: -75px;
+		margin-left: 5px;
+
+		//IE Only styles
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			margin-left: -95px;
+		}
+	}
+}
+
+
+
+	//.b-masthead--responsivenav .masthead__nav {
+	//	@include media('<=960px') {
+	//	-webkit-overflow-scrolling: touch;
+	//	-ms-overflow-style: -ms-autohiding-scrollbar;
+	//	position: absolute;
+	//	top: 73px;
+	//	overflow: auto;
+	//	border-top: 1px solid $grey-kenobi;
+	//
+	//		//padding-bottom: 100vh;
+	//		//margin-bottom: -250px;
+	//}
+}
+
+
+
+.js-masthead-2packed {
+	height: 150px !important;
+}
+
+//.js-mh-2packed .l-overlay-modal {
+//	top: 150px !important;
+//}
+
+.js-mh-2packed .masthead__nav .menupopup__menu {
+	top: 145px;
+}
+
+.js-masthead-2packed .masthead__nav {
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	position: absolute;
+	top: 73px;
+	overflow-y:hidden !important;
+	overflow-x:auto;
+	border-top: 1px solid $grey-kenobi;
+
+}
+//.js-masthead-2biggie .masthead__nav {
+//	background-color: $red !important;
+//	width: 3000px;
+//	color: white;
+//	padding: 0 40px;
+//
+//	a {
+//		color: $red
+//	}
+//}
+//
+//.js-masthead-2biggie .masthead__nav::before {
+//	content: "YOUR MENU IS TOO WIDE! PLEASE SHORTEN IT OR USE A VERTICAL PRIMARY MENU. THANK YOU!";
+//	color: white;
+//	// position: absolute;
+//}
+
+//// used in conjunction with js to stick the masthead on scroll up
+//.js-masthead--stickyscroll {
+//	position: fixed;
+//	top: 0;
+//	left: 0;
+//	right: 0;
+//	z-index: 10;
+//}
+
+//.masthead__nav ul, .masthead__actions ul {
+//	margin: 0;
+//	padding: 0;
+//	list-style: none;
+//	display: inline-flex;
+//}
+
+//.masthead__nav li, .masthead__actions li {
+//	display: inline-flex;
+//	height: 72px;
+//
+//	&:hover > a {
+//		color: $red;
+//	}
+//}
+
+.masthead__nav li li {
+	height: auto;;
+}
+
+.c-menupopup {
+	position: relative;
+}
+
+.c-menupopup  li {
+	height: auto;
+
+}
+
+.c-menupopup .menupopup__menu,.c-menupopup + .menupopup__menu {
+	top: 70px;
+	position: absolute;
+}
+
+//.masthead__actions a, .masthead__actions button {
+//	border-left: 1px solid $grey-yoda;
+//
+//	&:hover {
+//		background-color: $grey;
+//		color: $black;
+//	}
+//}
+
+.masthead__actions .c-menupopup a {
+	padding-right: 25px;
+}
+
+.masthead__actions .c-menupopup a:after {
+	margin-right: 8px;
+}
+
+.masthead__actions .menupopup__menu {
+	svg {
+		height: 1em;
+		width: 1em;
+		margin-top: -1px;
+	}
+}
+
+
+//.masthead__cta > a {
+//	background-color: $red;
+//	color: white;
+//	display: none;
+//	display: flex;
+//
+//	svg {
+//		fill: white;
+//	}
+//
+//	&:after {
+//		color: white !important;
+//		//right: 15px !important;
+//	}
+//
+//	&:hover  {
+//		color: $black !important;
+//
+//		svg {
+//			fill: $black;
+//		}
+//	}
+//
+//
+//}
+
+//.masthead__cta--white > a {
+//	background-color: white;
+//	color: $black;
+//
+//	svg {
+//		fill: black;
+//	}
+//
+//	&:after {
+//		color: $black !important;
+//	}
+//}
+@include media('<=1474px') {
+	.masthead__search span{
+		display: none;
+	}
+}
+
+
+
+.masthead__hamburger {
+	display: inline-flex;
+
+	@include media('>=1200px') {
+		display: none;
+	}
+}
+
+//.b-masthead--shadow {
+//	box-shadow: 0 10px 11px -7px $grey-yoda;
+//	margin-bottom: 6px;
+//}
+
+
+

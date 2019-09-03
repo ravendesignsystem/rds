@@ -1,6 +1,6 @@
 const mix = require('laravel-mix');
 const env = process.env.NODE_ENV;
-const ver = "0.10.1";
+const ver = "0.10.2";
 
 mix
 	// .sass('src/_scss/docs/critical.scss', 'src/_css')

@@ -93,7 +93,7 @@ Create DRY blocks using the components below:
 
 ## Examples
 
-- [RDS examples on Codepen](https://codepen.io/cuweb/live/mdbwyEd)
+- [RDS examples on Codepen](https://codepen.io/cuweb/debug/mdbwyEd)
 
 ## Things to look at later
 
