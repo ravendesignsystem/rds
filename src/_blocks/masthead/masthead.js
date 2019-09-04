@@ -29,7 +29,7 @@ import dialogPolyfill from 'dialog-polyfill';
 
 	// dialogue polyfill
 	if (modal) {
-	dialogPolyfill.registerDialog(modal);
+		dialogPolyfill.registerDialog(modal);
 	}
 
 	// state vars
@@ -39,7 +39,8 @@ import dialogPolyfill from 'dialog-polyfill';
 		// is the hamburger hidden?
 		isHamburgerHidden = null;
 
-	// only if masthead contains .masthead__nav,
+	// get started here only if masthead contains .masthead__nav
+
 	if (mhNav && masthead.classList.contains('b-masthead--responsivenav')) {
 		// check if an element has x overflow
 		const isOverflowing = function(element) {
@@ -47,7 +48,19 @@ import dialogPolyfill from 'dialog-polyfill';
 		};
 
 		let dropNav = function() {
-			// if the mh nav is overflowing
+
+			// if the mh nav is overflowing and smaller then 640
+			// this slides out the top nav to remind users they can scroll horizontally
+			// This is only applied if the body tag has a class of 'homepage'.
+			if (
+				isOverflowing(mhNav) &&
+				window.innerWidth < 640 &&
+				body.classList.contains('homepage')
+			) {
+				mhNav.classList.add('js-masthead-slidenav');
+			}
+
+			// if the mh nav is overflowing and smaller then 960
 			if (isOverflowing(mhNav) || window.innerWidth <= 960) {
 				isNav2packed = true;
 				body.classList.add('js-masthead-2packed');
@@ -298,7 +311,7 @@ import dialogPolyfill from 'dialog-polyfill';
 					modal.close();
 					if (moveMenu) {
 						modalMenu.classList.add('u-visually-hidden');
-					// modal.close();
+						// modal.close();
 						moveMenu.appendChild(leftMenu);
 					}
 					if (mhSearch) {
