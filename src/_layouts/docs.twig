@@ -59,8 +59,7 @@
     </head>
 {% endblock %}
 
-{#<body class="js-mh-2packed">#}
-<body >
+<body {% if page.homepage == true %}class="homepage"{% endif %}>
 
 <a class="u-visually-hidden" href="#content">Skip to main content</a>
 <div id="app">
