@@ -22,9 +22,13 @@ The single column layout only requires a `<main>` tag in between your `<header`>
    <body>
       <header>...</header
       <main>
-        <!–– Add any Main section blocks here -->
+      <!–– Add any Main section blocks here -->
       </main>
       <footer>...</footer>
+      <!-- Overlay, uncomment, if needed 
+      <dialog class="l-overlay-modal">
+        <div class="modal__menu is-hidden"></div>
+      </dialog> -->
    </body>
 </html>
 ```
@@ -35,4 +39,4 @@ When using the single column layout, all [Main section blocks](#) can be used wi
 
 ## Navigation options
 
-When using the single column layout across your site, you will need to use the [horizontal site-wide navigation](#) available in the [Masthead block](#.) as the [left-side navigation](#) is not available].
+When using the single column layout across your site, you will need to use the [Top Nav]({{site.url}}/dev/layouts/navigation/#top-nav) available in the {% include 'link' with {'block':'Masthead', 'Block': true} %} as the [Side Nav]({{site.url}}/dev/layouts/navigation/#side-nav) is not available when using this layout.
