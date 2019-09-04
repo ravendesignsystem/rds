@@ -100,7 +100,6 @@
 	span {
 		display: table;
 	}
-
 }
 
 .masthead__brand a {
@@ -174,6 +173,25 @@
 	list-style: none;
 	display: inline-flex;
 }
+
+// this slides out the top nav on small devices
+// to remind users they can scroll horizontally
+// Note: it is only applied if the body tag has a class of 'homepage'.
+.masthead__nav.js-masthead-slidenav > ul {
+	animation-duration: 0.666s;
+	animation-name: masthead__nav--slidein;
+}
+
+@keyframes masthead__nav--slidein {
+	from {
+		margin-left: 900px;
+	}
+
+	to {
+		margin-left: 0;
+	}
+}
+
 
 .masthead__nav > ul > li,
 .masthead__actions > ul > li {
