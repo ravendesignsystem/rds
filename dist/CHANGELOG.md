@@ -2,6 +2,16 @@
 
 All notable changes to the project will be documented in this file.
 
+## [v0.10.3](https://github.com/ravendesignsystem/rds/releases/tag/0.10.3) 2019-09-04 
+
+**Added**, **Fixed**, **Docs**: update recommended
+
+- **Added**: Masthead Top Nav slideout feature.
+- **Docs**: updated Masthead docs to include Top Nav slideout feature.
+- **Docs**: Improved Navigation documentation.
+- **Fixed**: Re-added CSS require for two line Masthead titles
+- **Fixed**: Cleaned up old unnecessary files.
+
 ## [v0.10.2](https://github.com/ravendesignsystem/rds/releases/tag/0.10.2) 2019-09-03 
 
 **Added**, **Fixed**, **Docs**: update recommended
