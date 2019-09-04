@@ -170,7 +170,7 @@ Long titles impact the amount of horizontal space available in the Masthead. To 
     <div class="b-masthead b-masthead--shadow">
         <div class="masthead__brand">
             <h2>
-                <a href="/docs/">{% include 'icons/mark-cushield.svg' %}
+                <a href="/docs/">{%filter escape%}{% include 'icons/mark-cushield.svg' %}{%endfilter%}
                     <span>Raven Design System <span>Raven Design System</span></span>
                 </a>
             </h2>
@@ -799,9 +799,9 @@ When using multiple action buttons, they should always be presented in the follo
 
 ## Adding navigation to the Masthead
 
-The examples below assume you are using the responsive site-wide horizontal navigation for your primary nav. RDS has several options for handling navigation. In addition to this section, please review the [RDS navigation docs] (#).
+ RDS has several options for handling navigation. In addition to this section, please review the [RDS navigation docs]({{site.url}}/dev/layouts/navigation/). Lets look at adding the Top Nav navigation.
 
-Masthead navigation links display right after the title/brand section and will grow to occupy as much horizontal space as possible. 
+The Masthead Top Nav displays right after the title/brand section and will grow to occupy as much horizontal space as possible. 
 
 {% include 'close' %}
 
@@ -866,6 +866,21 @@ As with any horizontal navigation, the width available for nav items is limited 
 - Limit the number of items in your primary navigation.
 - Use the shortest titles as possible for you links.
 - Prioritize your nav items, with the most important links coming first from left to right.
+
+### 😎 Pro tip: Sliding Top Nav on Homepage
+
+As seen on smaller screens at [apple.com](https://www.apple.com/mac/), if your Responsive Top Nav overflows on small screens, consider sliding out the navigation to remind users this is a scrollable area. To avoid this feature becoming redundant for users, it should probably only be enabled on your home page. For an example, [check this site's home page]({{site.url}}) on a small screen.
+
+If you have an overflowing top nav below 640px, to use this feature:
+
+- add a class of `homepage` to the `<body>` tag of your homepage.
+
+```html
+<!-- this would likely be done dynamically in some way -->
+<body{% verbatim %}{% if page.homepage == true %} class="homepage"{% endif %}{% endverbatim %}>
+```
+
+![Example of sliding nav](http://cu-rds.s3.amazonaws.com/docs/assets/topnav-slide.gif)
 
 ### We check if your nav is too wide!
 

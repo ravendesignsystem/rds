@@ -161,9 +161,25 @@ Use the Responsive Top Nav if:
 
 {%include 'inc' with {'cta': 'View the code on Codepen', 'url': 'https://codepen.io/cuweb/pen/oNvwgBR'} %}
 
+#### 😎 Pro tip: Sliding Top Nav on Homepage
+
+As seen on smaller screens at [apple.com](https://www.apple.com/mac/), if your Top Nav overflows on small screens, consider sliding out the navigation to remind users this is a scrollable area. To avoid this feature becoming redundant for users, it should probably only be enabled on your home page. For an example, [check this site's home page]({{site.url}}) on a small screen.
+
+If you have an overflowing top nav below 640px, to use this feature:
+
+- add a class of `homepage` to the `<body>` tag of your homepage.
+
+![Example of sliding nav](http://cu-rds.s3.amazonaws.com/docs/assets/topnav-slide.gif)
+
+```html
+<!-- this would likely be done dynamically in some way -->
+<body{% verbatim %}{% if page.homepage == true %} class="homepage"{% endif %}{% endverbatim %}>
+```
+
+
 ### 3. Side Nav
 
-As vertical navigation, the Side Nav the number of items available has no restriction. The navigation makes sense for large sites or sites that  will likely grow causing you to have an undetermined amount of nav items. Below is a screenshot from the Side Nav used on this page (<-- to the left of this text). 
+As vertical navigation, the number of items available in the Side Nav has no limit. The navigation makes sense for large sites or sites that  will likely grow causing you to have an undetermined amount of nav items. Below is a screenshot from the Side Nav used on this page (<-- to the left of this text). 
 
 ![Basic Top Nav example](https://cu-rds.s3.amazonaws.com/docs/assets/sidenav.png)
 
