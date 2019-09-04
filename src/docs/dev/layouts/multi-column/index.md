@@ -103,6 +103,9 @@ The right aside provides a sidebar for additional [Aside blocks](#) relating to 
 	</div>
 </div>
 ```
+{%include 'inc' with {'cta': 'AMA Example on Codepen', 'url': 'https://codepen.io/cuweb/pen/QWLOdQJ?editors=1000'} %}
+
+
 ### Right aside modifiers
 
 The three column layout has two modifiers impacting the right aside. 
