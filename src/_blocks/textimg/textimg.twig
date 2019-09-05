@@ -1,27 +1,26 @@
-{% macro textimg(settings, fields) %}
-{% if settings.heading %}
-<section class="u-block {% if settings.width %}u-block--{{ settings.width }}{% else %}u-block--l{% endif %} {% if settings.color %}u-block--{{ settings.color }}{% else %}u-block--white{% endif %}">
-    <h2 class="c-heading--center{% if settings.subheading %} c-heading--subheading{% endif %}">{{ settings.heading }}</h2>
-    {% if settings.subheading %}<p>{{ settings.subheading }}</p>
-    {% endif %}
-{% else %}
-<div class="u-block {% if settings.width %}u-block--{{ settings.width }}{% else %}u-block--l{% endif %} {% if settings.color %}u-block--{{ settings.color }}{% else %}u-block--white{% endif %}">
+{% macro textimg(data) %}
+{% if data.blockHeading %}
+<section class="u-block {% if data.blockSize %}u-block--{{ data.blockSize }}{% else %}u-block--l{% endif %} {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
+    <h2 class="{% if data.blockHeadingCenter %} c-heading--center{% endif %}{% if data.subHeading %} c-heading--subheading{% endif %}">{{ data.blockHeading }}</h2>
+    {% if data.blockSubheading %}<p>{{ data.blockSubheading }}</p>
 {% endif %}
-    <div class="b-textimg{% if settings.variant %} b-textimg--imgtext{% endif %}{% if settings.modifier %} {{ settings.modifier }}{% endif %}">
+{% else %}
+<div class="u-block {% if data.blockSize %}u-block--{{ data.blockSize }}{% else %}u-block--l{% endif %} {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
+{% endif %}
+    <div class="b-textimg{% if data.variant %} b-textimg--imgtext{% endif %}{% if data.modifier %} {{ data.modifier }}{% endif %}">
         <div class="textimg__wrapper">
             <div class="textimg__section">
-                <{% if settings.heading %}h3{% else %}h2{% endif %} class="textimg__heading">{{ fields.title }}</{% if settings.heading %}h3{% else %}h2{% endif %}>
-                <img class="textimg__img" src="{{ fields.img.url }}" alt="{{ fields.img.alt }}" />
+                <{% if data.blockHeading %}h3{% else %}h2{% endif %} class="textimg__heading">{{ data.heading }}</{% if settings.Blockeading %}h3{% else %}h2{% endif %}>
+                <img class="textimg__img" src="{{ data.img }}" alt="{{ data.imgAlt }}" />
                 <div class="textimg__desc">
-                    {{ fields.content|raw }}
+                    {{ data.content|raw }}
                 </div>
             </div>
         </div>
     </div>
+{% if (data.blockHeading) %}
+</section>
+{% else %}
 </div>
-{% if (settings.header and setting.section !='open') %}
-</section>
-{% elseif setting.section == 'close' %}
-</section>
 {% endif %}
 {% endmacro textimg %}

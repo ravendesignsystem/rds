@@ -39,8 +39,6 @@ Check out the Page Alert block in use directly above the Banner on this page.
 
 ## Properties
 
-`*` = required.
-
 | Props        | Desc              | Type  | Default 
 | --------------| :-------------------------------------:| -------:| -:|
 | blockSize *     | u-block modifier class, options: `s`, `l`  | string  | s |
@@ -49,7 +47,9 @@ Check out the Page Alert block in use directly above the Banner on this page.
 | linkText      | Link text to display                   | string  | Learn more
 | dismissible * | Whether Alert Header can be dismissed    | boolean | true
 
+<small>`*` = required.</small>
 
+### Nunjucks/Twig macro example
 ```twig
 {% verbatim %}<div class="u-block u-block--{{ blockSize }} u-block--alert">
     <div class="b-alertheader">{% include 'icons/alert.svg' %}

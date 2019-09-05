@@ -6,11 +6,6 @@ masthead: nostick
 banner: none
 homepage: true
 ---
-{%include 'inc' with {'macro': 'textimg', 
-    'color': 'black', 
-    'modifier': 'b-docs-textimg',
-    'title': 'Raven Design System',
-    'content': '<p>RDS, Carleton University\’s design system, is a living digital organism uniting campus wide teams around a common visual language. <a href="dev/">Learn more…</a></p>'
-    } %}
+{% include 'index' %}
 
 {% include 'inc' with {'theme': 'docs', 'block': 'gridhome'} %}

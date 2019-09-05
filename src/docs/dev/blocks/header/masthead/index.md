@@ -16,13 +16,13 @@ The masthead block contains three distinct sections.
 
 {% include 'close' %}
 
-<img src="https://cu-rds.s3.amazonaws.com/docs/assets/masthead-sections.png" style="margin: 0 auto;max-width:1200px" alt="Masthead sections">
+<img src="https://cu-rds.s3.amazonaws.com/docs/assets/topnav-mh.png" style="margin: 0 auto;max-width:1200px" alt="Masthead sections">
 
 {% include 'open' %}
 
 1. **Branding and site title**:<br> a required section to display Carleton's shield mark and your site title.
 <br><br>
-2. **Horizontal site-wide navigation**:<br> optional, site-wide navigation area for primary/top level navigation.
+2. **Top Nav**:<br> optional, site-wide navigation area for primary/top level navigation.
 <br><br>
 3. **Action buttons**:<br> optional, CTA and UI buttons for common application controls, such as search and mobile navigation.
 
@@ -73,6 +73,21 @@ The Masthead block and its sections in code:
 2. **Overlay layout required**: when using the action and mobile menu buttons, the hidden [overlay layout](#) is required on your page.
 
 Make sure your page template accommodates these dependencies. To easily get started with the masthead, use one of the RDS [getting started templates](/docs/dev/getting-started) or grabbing the minimum template code example from the same page. 
+
+## Block details
+
+| {{ page.title }}  block meta   |  values
+| --------------| :-------------------------------------:
+| handle              | `masthead` 
+| width options       | `u-block--full`    
+| colour options      | n/a  
+| section use         | `<header>`                  
+| width type          | full-width                           
+| has heading         | n/a
+| theme(s)            | CU
+| variants            | n/a
+| Codepen             | [https://codepen.io/cuweb/pen/vYBWmWY?editors=1000](https://codepen.io/cuweb/pen/vYBWmWY?editors=1000)
+
 
 ## Base Masthead
 

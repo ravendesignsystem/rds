@@ -4,7 +4,6 @@
 
 .textimg__section {
 	@include media('>=s') {
-		//max-height: 390px;
 		min-height: 320px;
 	}
 
@@ -16,7 +15,7 @@
 
 .u-block--s {
 	& .textimg__section {
-		@include media('>=l') {
+		@include media('>=s') {
 			max-width: 45%;
 			min-width: 230px;
 		}

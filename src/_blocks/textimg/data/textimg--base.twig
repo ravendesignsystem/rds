@@ -1,26 +1,10 @@
-{% if docs %}
-    <div class="u-block u-block--white u-block--s">
-        <div class="b-content">
-            <h2>Base example</h2>
-            <p>The Text & Image block allows you to display text to the right or the left of an image with an appropriate amount of whitespace padding around the image.</p>
-        </div>
-    </div>
-{% endif %}
 {% from "textimg/textimg.twig" import textimg %}
 {{ textimg (
     {
-        color: "grey"
-    },
-    {
-        title: "Raven Design System",
-        img: {
-                alt: "Provide good alt text.",
-                url: "https://via.placeholder.com/640x480"
-        },
-        content: "<p>RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. more…</p>
-                    <p>RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. more…</p>"
-    },
-    {
-        content: content
+        blockSize: "s",
+        content: "<p>It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.</p>",
+        heading: "Image to the Right",
+        img: "https://via.placeholder.com/640x480",
+        imgAlt: ""
     }
 ) }}

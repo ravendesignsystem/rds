@@ -33,8 +33,6 @@ At its bare minimum, the Banner block displays the page's  `<h1>` title.
 
 ## Properties
 
-`*` = required.
-
 | Props        | Desc              | Type  | Default 
 | --------------| :-------------------------------------:| -------:| -:|
 | breadcrumbs   | breadcrumb array to loop over          | array  | - |
@@ -43,6 +41,7 @@ At its bare minimum, the Banner block displays the page's  `<h1>` title.
 | imgPosition   | img position, options: `top`, `bottom`                 | string  | -
 | title * | Main page title `<h1>`    | string | -
 
+<small>`*` = required.</small>
 
 ## Banner with breadcrumbs
 
