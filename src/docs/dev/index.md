@@ -95,9 +95,23 @@ Create DRY blocks using the components below:
 
 - [RDS examples on Codepen](https://codepen.io/cuweb/debug/mdbwyEd)
 
-## Things to look at later
+{% include 'close' %}
+{% from 'listing/listing.twig' import listing %}
+{{ listing (
+    {
+        color: 'white'
+    },
+    [
+        {
+            title: "Google Dev Docs: Abberviations",
+            url: "https://developers.google.com/style/abbreviations",
+        },
+        {
+            title: "Vue Design System Docs",
+            url: "https://github.com/viljamis/vue-design-system/wiki"
+        }
+    ]
+) }}
 
-- [Google Dev Docs: Abberviations](https://developers.google.com/style/abbreviations)
-- [Vue Design System Docs](https://github.com/viljamis/vue-design-system/wiki)
 
 
