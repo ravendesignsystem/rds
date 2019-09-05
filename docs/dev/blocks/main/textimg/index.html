@@ -17,12 +17,12 @@
         <meta name="msapplication-TileColor" content="#bf112b">
         <meta name="msapplication-config" content="https://cu-rds.s3.amazonaws.com/assets/favicons/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
-        <title>Text-Image block | Raven Design System | RDS</title>
+        <title>Text-Image | Raven Design System | RDS</title>
                                                 <meta property="og:url" content="https://ravendesignsystem.github.io/rds//docs/dev/blocks/main/textimg">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Text-Image block">
+        <meta property="og:title" content="Text-Image">
                                                 <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Text-Image block">
+        <meta name="twitter:title" content="Text-Image">
                                     </head>
 
 <body >
@@ -107,10 +107,10 @@ Raven Design System</a>
             <ol class="banner__breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
                 <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="https://ravendesignsystem.github.io/rds/">Home</a></li>
                                 <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="https://ravendesignsystem.github.io/rds//dev/">Dev</a></li>
-                                                                <li class="banner__breadcrumb-item active u-visually-hidden" itemprop="breadcrumb" aria-current="page"></li>
+                                <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../../">Blocks</a></li>                                <li class="banner__breadcrumb-item active u-visually-hidden" itemprop="breadcrumb" aria-current="page"></li>
             </ol>
         </nav>
-        <h1 class="banner__title">Text-Image block</h1>
+        <h1 class="banner__title">Text-Image Block</h1>
     </div>
 </div>
 </div>
@@ -121,62 +121,18 @@ Raven Design System</a>
                                 <div class="b-content">
                             
 
-                            <h2 id="implementation-notes">Implementation Notes</h2>
-
-<h3 id="repeated-text-image-blocks">Repeated Text-Image blocks</h3>
-
-<p>When Text-Image blocks are repeated back to back, it is best to:</p>
-
-<ul>
-<li>alternate the column order and image location.</li>
-<li>group sectioning blocks with related content together by using the same background color.</li>
-</ul>
+                            <p>The Text-Image block allows you to display text to the right or the left of an image with an appropriate amount of whitespace padding around the image.</p>
 
 <p>    </div>
 </div>
-<div class="u-block u-block--l u-block--grey">
+<div class="u-block u-block--s u-block--white">
     <div class="b-textimg">
         <div class="textimg__wrapper">
             <div class="textimg__section">
-                <h2 class="textimg__heading">Raven Design System</h2>
-                <img class="textimg__img" src="https://via.placeholder.com/640x480" alt="Provide good alt text." />
+                <h2 class="textimg__heading">Image to the Right</h2>
+                <img class="textimg__img" src="https://via.placeholder.com/640x480" alt="" />
                 <div class="textimg__desc">
-                    <p>RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. more…</p>
-                    <p>RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. more…</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-    </div>
-</div>
-<div class="u-block u-block--l u-block--grey">
-    <div class="b-textimg b-textimg--imgtext">
-        <div class="textimg__wrapper">
-            <div class="textimg__section">
-                <h2 class="textimg__heading">Raven Design System</h2>
-                <img class="textimg__img" src="https://via.placeholder.com/640x480" alt="Provide good alt text." />
-                <div class="textimg__desc">
-                    <p>RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. more…</p>
-                    <p>RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. more…</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-    </div>
-</div>
-<div class="u-block u-block--l u-block--grey">
-    <div class="b-textimg">
-        <div class="textimg__wrapper">
-            <div class="textimg__section">
-                <h2 class="textimg__heading">Raven Design System</h2>
-                <img class="textimg__img" src="https://via.placeholder.com/640x480" alt="Provide good alt text." />
-                <div class="textimg__desc">
-                    <p>RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. more…</p>
-                    <p>RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. more…</p>
+                    <p>It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.</p>
                 </div>
             </div>
         </div>
@@ -187,55 +143,249 @@ Raven Design System</a>
     <div class="b-content">
 </p>
 
-<ul>
-<li>Use different background colours to divide the non-sectioning blocks.</li>
-</ul>
+<p><pre><code class="html">&lt;div class=&quot;u-block u-block--s u-block--white&quot;&gt;
+    &lt;div class=&quot;b-textimg&quot;&gt;
+        &lt;div class=&quot;textimg__wrapper&quot;&gt;
+            &lt;div class=&quot;textimg__section&quot;&gt;
+                &lt;h2 class=&quot;textimg__heading&quot;&gt;Image to the Right&lt;/h2&gt;
+                &lt;img class=&quot;textimg__img&quot; src=&quot;https://via.placeholder.com/640x480&quot; alt=&quot;&quot; /&gt;
+                &lt;div class=&quot;textimg__desc&quot;&gt;
+                    &lt;p&gt;It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+</p>
+
+<h2 id="block-details">Block details</h2>
+
+<table>
+<thead>
+<tr>
+  <th>Text-Image  block meta</th>
+  <th align="center">values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>handle</td>
+  <td align="center"><code>textimg</code></td>
+</tr>
+<tr>
+  <td>width options</td>
+  <td align="center"><code>u-block--s</code>, <code>u-block--l</code></td>
+</tr>
+<tr>
+  <td>colour options</td>
+  <td align="center"><code>u-block--white</code>, <code>u-block--grey</code></td>
+</tr>
+<tr>
+  <td>section use</td>
+  <td align="center"><code>&lt;main&gt;</code></td>
+</tr>
+<tr>
+  <td>width type</td>
+  <td align="center">fixed-row</td>
+</tr>
+<tr>
+  <td>has heading</td>
+  <td align="center">true</td>
+</tr>
+<tr>
+  <td>theme(s)</td>
+  <td align="center">CU</td>
+</tr>
+<tr>
+  <td>variants</td>
+  <td align="center"><a href="#left-image">Left image</a></td>
+</tr>
+<tr>
+  <td>Codepen</td>
+  <td align="center"><a href="https://codepen.io/cuweb/pen/pozdQzK?editors=1000">https://codepen.io/cuweb/pen/pozdQzK</a></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="properties">Properties</h2>
+
+<table>
+<thead>
+<tr>
+  <th>Props</th>
+  <th align="center">Desc</th>
+  <th align="right">Type</th>
+  <th align="right">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>blockSize</td>
+  <td align="center">block width, options: <code>s</code>, <code>l</code></td>
+  <td align="right">string</td>
+  <td align="right">-</td>
+</tr>
+<tr>
+  <td>blockColor</td>
+  <td align="center">url for css background image</td>
+  <td align="right">string</td>
+  <td align="right">-</td>
+</tr>
+<tr>
+  <td>imgOpacity</td>
+  <td align="center">img overlay opacity, options: <code>dark</code>, <code>light</code></td>
+  <td align="right">string</td>
+  <td align="right">-</td>
+</tr>
+<tr>
+  <td>imgPosition</td>
+  <td align="center">img position, options: <code>top</code>, <code>bottom</code></td>
+  <td align="right">string</td>
+  <td align="right">-</td>
+</tr>
+<tr>
+  <td>title *</td>
+  <td align="center">Main page title <code>&lt;h1&gt;</code></td>
+  <td align="right">string</td>
+  <td align="right">-</td>
+</tr>
+</tbody>
+</table>
+
+<p><small><code>*</code> = required.</small></p>
+
+<h2 id="left-image">Left image</h2>
 
 <p>    </div>
 </div>
-<div class="u-block u-block--l u-block--grey">
-    <div class="b-textimg">
+<div class="u-block u-block--s u-block--white">
+    <div class="b-textimg b-textimg--imgtext">
         <div class="textimg__wrapper">
             <div class="textimg__section">
-                <h2 class="textimg__heading">Raven Design System</h2>
-                <img class="textimg__img" src="https://via.placeholder.com/640x480" alt="Provide good alt text." />
+                <h2 class="textimg__heading">Image to the Left</h2>
+                <img class="textimg__img" src="https://via.placeholder.com/640x480" alt="" />
                 <div class="textimg__desc">
-                    <p>RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. more…</p>
-                    <p>RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. more…</p>
+                    <p>It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<div class="u-block u-block--white u-block--s">
+    <div class="b-content">
+</p>
+
+<p><pre><code class="html">&lt;div class=&quot;u-block u-block--s u-block--white&quot;&gt;
+    &lt;div class=&quot;b-textimg b-textimg--imgtext&quot;&gt;
+        &lt;div class=&quot;textimg__wrapper&quot;&gt;
+            &lt;div class=&quot;textimg__section&quot;&gt;
+                &lt;h2 class=&quot;textimg__heading&quot;&gt;Image to the Left&lt;/h2&gt;
+                &lt;img class=&quot;textimg__img&quot; src=&quot;https://via.placeholder.com/640x480&quot; alt=&quot;&quot; /&gt;
+                &lt;div class=&quot;textimg__desc&quot;&gt;
+                    &lt;p&gt;It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+</p>
+
+<div class="c-alert c-alert--info c-alert--icon u-hide-s">
+    <svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M10.8 8.074a1.615 1.615 0 0 1-.48-1.2c0-.48.154-.891.48-1.2.326-.308.72-.48 1.2-.48s.891.155 1.2.48c.309.326.48.72.48 1.2s-.154.892-.48 1.2a1.714 1.714 0 0 1-1.2.515c-.48 0-.891-.189-1.2-.515zm2.914 3.943a1.866 1.866 0 0 0-.531-1.183c-.343-.325-.72-.514-1.183-.531h-1.714c-.463.034-.823.223-1.183.531a1.748 1.748 0 0 0-.532 1.183h1.715v5.143c.034.463.188.857.531 1.183.343.343.72.531 1.183.531h1.714c.463 0 .823-.188 1.183-.531.343-.326.514-.72.532-1.183h-1.715V12v.017zM12 2.263c-5.383 0-9.771 4.354-9.771 9.737S6.617 21.771 12 21.771c5.383 0 9.771-4.371 9.771-9.771S17.383 2.246 12 2.246v.017zM12 0c6.617 0 12 5.383 12 12s-5.383 12-12 12S0 18.651 0 12 5.383 0 12 0z"  /></svg>
+    <h2>HTML order remains the same</h2>
+    <p>Resize your browser window to a small screen and you will notice in the examples above that order of the HTML, `< h2 >< img >< p >` remains the same, wether the image is on the right or the left.</p>
+</div>
+
+<p>    </div>
+</div>
+<div class="u-block u-block--s u-block--grey">
+    <div class="b-textimg">
+        <div class="textimg__wrapper">
+            <div class="textimg__section">
+                <h2 class="textimg__heading">Supports grey background row</h2>
+                <img class="textimg__img" src="https://via.placeholder.com/640x480" alt="" />
+                <div class="textimg__desc">
+                    <p>It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.</p>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+
+<div class="u-block u-block--white u-block--s">
+    <div class="b-content">
+</p>
+
+<p><pre><code class="html">&lt;div class=&quot;u-block u-block--s u-block--grey&quot;&gt;
+    &lt;div class=&quot;b-textimg&quot;&gt;
+        &lt;div class=&quot;textimg__wrapper&quot;&gt;
+            &lt;div class=&quot;textimg__section&quot;&gt;
+                &lt;h2 class=&quot;textimg__heading&quot;&gt;Supports grey background row&lt;/h2&gt;
+                &lt;img class=&quot;textimg__img&quot; src=&quot;https://via.placeholder.com/640x480&quot; alt=&quot;&quot; /&gt;
+                &lt;div class=&quot;textimg__desc&quot;&gt;
+                    &lt;p&gt;It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+</p>
+
+<p>    </div>
+</div>
+<section class="u-block u-block--s u-block--grey">
+    <h2 class=" c-heading--center">Supports Centered and Default Block Headings</h2>
+    <p>In addition, it supports subheadings.</p>
+    <div class="b-textimg">
+        <div class="textimg__wrapper">
+            <div class="textimg__section">
+                <h3 class="textimg__heading"></h2>
+                <img class="textimg__img" src="https://via.placeholder.com/640x480" alt="" />
+                <div class="textimg__desc">
+                    <p>It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="u-block u-block--white u-block--s">
+    <div class="b-content">
+</p>
+
+<p><pre><code class="html">&lt;section class=&quot;u-block u-block--s u-block--grey&quot;&gt;
+    &lt;h2 class=&quot; c-heading--center&quot;&gt;Supports Centered and Default Block Headings&lt;/h2&gt;
+    &lt;p&gt;In addition, it supports subheadings.&lt;/p&gt;
+    &lt;div class=&quot;b-textimg&quot;&gt;
+        &lt;div class=&quot;textimg__wrapper&quot;&gt;
+            &lt;div class=&quot;textimg__section&quot;&gt;
+                &lt;h3 class=&quot;textimg__heading&quot;&gt;&lt;/h2&gt;
+                &lt;img class=&quot;textimg__img&quot; src=&quot;https://via.placeholder.com/640x480&quot; alt=&quot;&quot; /&gt;
+                &lt;div class=&quot;textimg__desc&quot;&gt;
+                    &lt;p&gt;It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code>
+</pre>
+</p>
+
+<p>    </div>
 </div>
 <div class="u-block u-block--l u-block--white">
     <div class="b-textimg">
         <div class="textimg__wrapper">
             <div class="textimg__section">
-                <h2 class="textimg__heading">Raven Design System</h2>
-                <img class="textimg__img" src="https://via.placeholder.com/640x480" alt="Provide good alt text." />
+                <h2 class="textimg__heading">Supports the large width block setting</h2>
+                <img class="textimg__img" src="https://via.placeholder.com/640x480" alt="" />
                 <div class="textimg__desc">
-                    <p>RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. more…</p>
-                    <p>RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. more…</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-    </div>
-</div>
-<div class="u-block u-block--l u-block--grey">
-    <div class="b-textimg">
-        <div class="textimg__wrapper">
-            <div class="textimg__section">
-                <h2 class="textimg__heading">Raven Design System</h2>
-                <img class="textimg__img" src="https://via.placeholder.com/640x480" alt="Provide good alt text." />
-                <div class="textimg__desc">
-                    <p>RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. more…</p>
-                    <p>RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. more…</p>
+                    <p>It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.</p>
+<p>Important do not mix and match large and small blocks on one page. Please keep them uniform.</p>
                 </div>
             </div>
         </div>
@@ -245,6 +395,120 @@ Raven Design System</a>
 <div class="u-block u-block--white u-block--s">
     <div class="b-content">
 </p>
+
+<p><pre><code class="html">&lt;div class=&quot;u-block u-block--l u-block--white&quot;&gt;
+    &lt;div class=&quot;b-textimg&quot;&gt;
+        &lt;div class=&quot;textimg__wrapper&quot;&gt;
+            &lt;div class=&quot;textimg__section&quot;&gt;
+                &lt;h2 class=&quot;textimg__heading&quot;&gt;Supports the large width block setting&lt;/h2&gt;
+                &lt;img class=&quot;textimg__img&quot; src=&quot;https://via.placeholder.com/640x480&quot; alt=&quot;&quot; /&gt;
+                &lt;div class=&quot;textimg__desc&quot;&gt;
+                    &lt;p&gt;It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.&lt;/p&gt;
+&lt;p&gt;Important do not mix and match large and small blocks on one page. Please keep them uniform.&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+</p>
+
+<h2 id="grouping-blocks">Grouping blocks</h2>
+
+<p>While separate blocks, a pattern is often to put several blocks in row with related content. These can be group by setting a Block Heading on the first block and wrapping all of them in another <code>&lt;section&gt;</code> tag.</p>
+
+<p>    </div>
+</div>
+</p>
+
+<section>
+    <section class="u-block u-block--s u-block--grey">
+        <h2 class=" c-heading--center">Supports Centered and Default Block Headings</h2>
+        <p>In addition, it supports subheadings.</p>
+        <div class="b-textimg">
+            <div class="textimg__wrapper">
+                <div class="textimg__section">
+                    <h3 class="textimg__heading"></h3>
+                    <img class="textimg__img" src="https://via.placeholder.com/640x480" alt="">
+                    <div class="textimg__desc">
+                        <p>It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="u-block u-block--s u-block--grey">
+        <div class="b-textimg b-textimg">
+            <div class="textimg__wrapper">
+                <div class="textimg__section">
+                    <img class="textimg__img" src="https://via.placeholder.com/640x480" alt="" />
+                    <div class="textimg__desc">
+                        <p>It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="u-block u-block--s u-block--grey">
+        <div class="b-textimg">
+            <div class="textimg__wrapper">
+                <div class="textimg__section">
+                    <img class="textimg__img" src="https://via.placeholder.com/640x480" alt="" />
+                    <div class="textimg__desc">
+                        <p>It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<p><div class="u-block u-block--white u-block--s">
+    <div class="b-content">
+</p>
+
+<pre><code class="html">&lt;section&gt;
+    &lt;section class="u-block u-block--s u-block--grey"&gt;
+        &lt;h2 class=" c-heading--center"&gt;Supports Centered and Default Block Headings&lt;/h2&gt;
+        &lt;p&gt;In addition, it supports subheadings.&lt;/p&gt;
+        &lt;div class="b-textimg"&gt;
+            &lt;div class="textimg__wrapper"&gt;
+                &lt;div class="textimg__section"&gt;
+                    &lt;h3 class="textimg__heading"&gt;&lt;/h3&gt;
+                    &lt;img class="textimg__img" src="https://via.placeholder.com/640x480" alt=""&gt;
+                    &lt;div class="textimg__desc"&gt;
+                        &lt;p&gt;It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;div class="u-block u-block--s u-block--grey"&gt;
+        &lt;div class="b-textimg b-textimg"&gt;
+            &lt;div class="textimg__wrapper"&gt;
+                &lt;div class="textimg__section"&gt;
+                    &lt;img class="textimg__img" src="https://via.placeholder.com/640x480" alt="" /&gt;
+                    &lt;div class="textimg__desc"&gt;
+                        &lt;p&gt;It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="u-block u-block--s u-block--grey"&gt;
+        &lt;div class="b-textimg"&gt;
+            &lt;div class="textimg__wrapper"&gt;
+                &lt;div class="textimg__section"&gt;
+                    &lt;img class="textimg__img" src="https://via.placeholder.com/640x480" alt="" /&gt;
+                    &lt;div class="textimg__desc"&gt;
+                        &lt;p&gt;It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
                                                                             <div class="c-alert c-alert--info c-alert--icon u-hide-s">
                                             <svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M10.8 8.074a1.615 1.615 0 0 1-.48-1.2c0-.48.154-.891.48-1.2.326-.308.72-.48 1.2-.48s.891.155 1.2.48c.309.326.48.72.48 1.2s-.154.892-.48 1.2a1.714 1.714 0 0 1-1.2.515c-.48 0-.891-.189-1.2-.515zm2.914 3.943a1.866 1.866 0 0 0-.531-1.183c-.343-.325-.72-.514-1.183-.531h-1.714c-.463.034-.823.223-1.183.531a1.748 1.748 0 0 0-.532 1.183h1.715v5.143c.034.463.188.857.531 1.183.343.343.72.531 1.183.531h1.714c.463 0 .823-.188 1.183-.531.343-.326.514-.72.532-1.183h-1.715V12v.017zM12 2.263c-5.383 0-9.771 4.354-9.771 9.737S6.617 21.771 12 21.771c5.383 0 9.771-4.371 9.771-9.771S17.383 2.246 12 2.246v.017zM12 0c6.617 0 12 5.383 12 12s-5.383 12-12 12S0 18.651 0 12 5.383 0 12 0z"  /></svg>
                                             <h2>Dude, where's my left-side nav?</h2>
@@ -304,8 +568,8 @@ Raven Design System</a>
                                             
                         
             <li>
-                                <input  id="menu--1-185" type="checkbox" hidden/>
-                    <label for="menu--1-185">
+                                <input  id="menu--1-15" type="checkbox" hidden/>
+                    <label for="menu--1-15">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/getting-started/">Getting started</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -325,8 +589,8 @@ Raven Design System</a>
                                             
                         
             <li>
-                                <input  id="menu--1-149" type="checkbox" hidden/>
-                    <label for="menu--1-149">
+                                <input  id="menu--1-86" type="checkbox" hidden/>
+                    <label for="menu--1-86">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/main-concepts/">Main concepts</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -361,8 +625,8 @@ Raven Design System</a>
                                             
                         
             <li>
-                                <input  id="menu--1-59" type="checkbox" hidden/>
-                    <label for="menu--1-59">
+                                <input checked id="menu--1-129" type="checkbox" hidden/>
+                    <label for="menu--1-129">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/">Blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -370,8 +634,8 @@ Raven Design System</a>
                                             
                         
             <li>
-                                <input  id="menu-2-1-112" type="checkbox" hidden/>
-                    <label for="menu-2-1-112">
+                                <input  id="menu-2-1-116" type="checkbox" hidden/>
+                    <label for="menu-2-1-116">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/header/">Header blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -401,8 +665,8 @@ Raven Design System</a>
                                             
                         
             <li>
-                                <input  id="menu-2-1-92" type="checkbox" hidden/>
-                    <label for="menu-2-1-92">
+                                <input  id="menu-2-1-53" type="checkbox" hidden/>
+                    <label for="menu-2-1-53">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/getting-started/quick-start/">Main blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -432,8 +696,8 @@ Raven Design System</a>
                                             
                         
             <li>
-                                <input  id="menu-2-1-185" type="checkbox" hidden/>
-                    <label for="menu-2-1-185">
+                                <input  id="menu-2-1-198" type="checkbox" hidden/>
+                    <label for="menu-2-1-198">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/aside/">Aside blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -448,8 +712,8 @@ Raven Design System</a>
                                             
                         
             <li>
-                                <input  id="menu-2-1-92" type="checkbox" hidden/>
-                    <label for="menu-2-1-92">
+                                <input  id="menu-2-1-163" type="checkbox" hidden/>
+                    <label for="menu-2-1-163">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/dialogue/">Dialogue blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -476,8 +740,8 @@ Raven Design System</a>
                                             
                         
             <li>
-                                <input  id="menu--1-21" type="checkbox" hidden/>
-                    <label for="menu--1-21">
+                                <input  id="menu--1-95" type="checkbox" hidden/>
+                    <label for="menu--1-95">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/components/">Components</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -485,8 +749,8 @@ Raven Design System</a>
                                             
                         
             <li>
-                                <input  id="menu-2-1-150" type="checkbox" hidden/>
-                    <label for="menu-2-1-150">
+                                <input  id="menu-2-1-174" type="checkbox" hidden/>
+                    <label for="menu-2-1-174">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/components/content/">Content Components</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -558,8 +822,8 @@ Raven Design System</a>
                                             
                         
             <li>
-                                <input  id="menu--1-70" type="checkbox" hidden/>
-                    <label for="menu--1-70">
+                                <input  id="menu--1-188" type="checkbox" hidden/>
+                    <label for="menu--1-188">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/layouts/">Layouts &amp; Navigation</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -589,8 +853,8 @@ Raven Design System</a>
                                             
                         
             <li>
-                                <input  id="menu--1-64" type="checkbox" hidden/>
-                    <label for="menu--1-64">
+                                <input  id="menu--1-131" type="checkbox" hidden/>
+                    <label for="menu--1-131">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/custom-theming/">Custom theming</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -630,8 +894,8 @@ Raven Design System</a>
                                             
                         
             <li>
-                                <input  id="menu--1-127" type="checkbox" hidden/>
-                    <label for="menu--1-127">
+                                <input  id="menu--1-79" type="checkbox" hidden/>
+                    <label for="menu--1-79">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/guidelines/">Guidelines</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
