@@ -46,6 +46,9 @@
 		"resolve-url-loader": "^3.1.0",
 		"sass": "^1.22.10",
 		"sass-loader": "^7.1.0",
+		"stylelint": "^10.1.0",
+		"stylelint-config-rational-order": "^0.1.2",
+		"stylelint-order": "^3.1.0",
 		"vue-template-compiler": "^2.6.10"
 	}
 }

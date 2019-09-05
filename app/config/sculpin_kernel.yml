@@ -3,7 +3,7 @@ sculpin:
   source_dir: src
   ignore: ['**/_scss/','**/_includes/','**/_js/']
 sculpin_twig:
-  source_view_paths: ['_app', '_blocks', '_components', '_core', '_includes', '_layouts', '_themes']
+  source_view_paths: ['_app', '_blocks', '_components', '_core', '_data', '_includes', '_layouts', '_themes']
 sculpin_content_types:
   posts:
     enabled: false
