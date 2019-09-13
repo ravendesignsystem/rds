@@ -1,7 +1,7 @@
 {% macro textimg(data) %}
 {% if data.blockHeading %}
 <section class="u-block {% if data.blockSize %}u-block--{{ data.blockSize }}{% else %}u-block--l{% endif %} {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
-    <h2 class="{% if data.blockHeadingCenter %} c-heading--center{% endif %}{% if data.subHeading %} c-heading--subheading{% endif %}">{{ data.blockHeading }}</h2>
+    <h2 class="c-heading-{% if data.blockHeadingCenter %} c-heading--center{% endif %}{% if data.subHeading %} c-heading--subheading{% endif %}">{{ data.blockHeading }}</h2>
     {% if data.blockSubheading %}<p>{{ data.blockSubheading }}</p>
 {% endif %}
 {% else %}
@@ -9,13 +9,17 @@
 {% endif %}
     <div class="b-textimg{% if data.variant %} b-textimg--imgtext{% endif %}{% if data.modifier %} {{ data.modifier }}{% endif %}">
         <div class="textimg__wrapper">
-            <div class="textimg__section">
-                <{% if data.blockHeading %}h3{% else %}h2{% endif %} class="textimg__heading">{{ data.heading }}</{% if settings.Blockeading %}h3{% else %}h2{% endif %}>
-                <img class="textimg__img" src="{{ data.img }}" alt="{{ data.imgAlt }}" />
-                <div class="textimg__desc">
-                    {{ data.content|raw }}
+            <section>
+{% if data.heading %}
+                <{% if data.blockHeading %}h3{% else %}h2{% endif %}>{{ data.heading }}</{% if data.blockHeading %}h3{% else %}h2{% endif %}>
+{% endif %}
+{% if data.img %}
+                <img src="{{ data.img }}" alt="{{ data.imgAlt }}" />
+{% endif %}
+                <div class="textimg__text">
+                    {{ data.text|raw }}
                 </div>
-            </div>
+            </section>
         </div>
     </div>
 {% if (data.blockHeading) %}
