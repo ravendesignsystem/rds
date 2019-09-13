@@ -1,24 +1,12 @@
-/*
- * Base Card Styles
- * =======================================
- */
-
 .c-card {
 	position: relative;
 	height: 100%; // helps with equal vert height in listings
-	box-shadow: 0 1px 2px rgba($black, 0.2);
 	background-color: white;
 	max-width: 768px;
-	border-radius: 5px;
+	border-radius: 10px;
 
-	&:hover {
-		box-shadow: 0 5px 8px 2px rgba($grey-emperor, 0.1);
-		overflow: visible;
-	}
-
-	&:hover .card__title {
+	&:hover h3 {
 		color: $red;
-		text-decoration: none;
 	}
 
 	&:after {
@@ -38,143 +26,114 @@
 	}
 
 	// to use if we ever use a card without an image
-	&--no-img {
-		max-width: 384px;
-	}
+	//&--no-img {
+	//	max-width: 384px;
+	//}
 
+	// link wrapped around entire card
 	a {
-		// 	height: 100%;
 		display: block;
 		color: $black;
+		box-shadow: $ds-y;
+		height: 100%;
+		border-radius: 5px;
 
 		&:hover {
 			text-decoration: none;
+			box-shadow: $ds-k;
 		}
 	}
-}
+
+	img {
+		width: 100%;
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
+		margin-bottom: 0 !important;
+	}
+
+	header {
+		min-height: 130px;
+		padding: 15px 15px 40px 15px;
+
+		@include media('>s') {
+			padding: 25px 25px 50px;
+		}
+	}
+
+	time {
+		display: block;
+		margin-bottom: 6px;
+		font-size: $pixel14;
+		font-weight: 400;
+		line-height: 1.25;
+		color: $grey-vader;
+	}
+
+	// Card heading
+	h3 {
+		font-size: $pixel16;
+		margin: 0 0 5px;
+		line-height: 1.25;
+		border-bottom: 0;
+	}
+
+	// Card description
+	p {
+		font-size: $pixel14;
+		font-weight: 300;
+		line-height: 1.4;
+	}
+} // End c-card component
 
 // increase drop shadow on white bgs
-.u-block--white .c-card {
-	box-shadow: 0 5px 8px 2px rgba($grey-emperor, 0.1);
+.u-block--white .c-card a {
+	box-shadow: $ds-k;
 
 	&:hover {
-		box-shadow: 0 5px 18px 2px rgba($grey-emperor, 0.2);
+		box-shadow: $ds-l;
 	}
 }
 
-.card__figure img {
-	width: 100%;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	margin-bottom: 0 !important;
-}
-
-/*
- * Card Content Elements
- * =======================================
- */
-
-.card__body {
-	min-height: 130px;
-	padding: 15px 15px 40px 15px;
-
-	@include media('>s') {
-		padding: 25px 25px 50px;
-	}
-}
-
-.card__title {
-	font-size: $pixel16;
-	margin: 0 0 5px;
-	line-height: 1.25;
-	border-bottom: 0;
-}
-
-.u-grid--3 .card__title {
+// Bigger title when in 3 col grid
+.u-grid--3 .c-card h3 {
 	@include media('>s') {
 		font-size: $pixel18;
 	}
 }
 
-.card__date,
-.card__category {
-	display: block;
-	margin-bottom: 6px;
-	font-size: $pixel14;
-	font-weight: 400;
-	line-height: 1.25;
-	color: $grey-vader;
-}
-
-@include media('<s') {
-	.card__category {
-		display: none;
-	}
-}
-
-.card__text {
-	font-size: $pixel14;
-	font-weight: 300;
-	line-height: 1.4;
-}
-
-.card__text--action {
-	color: $red;
-}
-
-/*
- * Card Icon Styles
- * =======================================
- */
-
-.card__icon {
-	background-size: 60px;
-}
-
-/*
- * Video Card Styles
- * ==================
- */
-
-.c-card--video .card__figure {
+// Video variant
+//==============
+.c-card--video figure {
 	position: relative;
 
 	> span {
-		&::before {
-			background-color: rgba(191, 17, 43, 0.65);
-			//background-color: rgb(black,0.45);
-		}
-
 		font-size: 65px;
 		position: absolute;
 		top: calc(
 			50% - 32px
-		); // calc is used to determine center by subtracting half the height of the icon
-		left: calc(
-			50% - 32px
-		); // calc is used to determine center by subtracting half the width of the icon
+		); // determine center by subtracting half the height of the icon
+		left: calc(50% - 32px); // and again
 		width: 50px;
 		height: 50px;
 		fill: white;
+
+		&::before {
+			background-color: rgba(191, 17, 43, 0.65);
+		}
 	}
 }
 
-/*
- * People Card Styles
- * ==================
- */
-
+// People variant
+//===============
 .c-card--people {
 	text-align: center;
 	border-top: 1px solid $grey;
 
 	&:after {
-		left: calc(
-			50% - 12.5px
-		) !important; // calc is used to determine center by subtracting half the width of the bottom red line
+		left: calc(50% - 12.5px) !important;
 	}
 }
-.c-card--people .card__figure {
+.c-card--people figure {
 	padding-top: 20px;
 
 	img {
@@ -182,5 +141,42 @@
 		border: 5px solid rgba($grey-yoda, 0.75);
 		margin: 0 auto;
 		max-width: 55%;
+	}
+}
+
+.c-card--figure {
+	text-align: center;
+
+	a {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		border: 1px solid $grey-yoda;
+		border-radius: 6px;
+	}
+
+	a > figure {
+		border: none;
+	}
+
+	figure {
+		padding: 40px;
+		border: 1px solid $grey-kenobi;
+		border-radius: 6px;
+	}
+
+	figcaption {
+		color: $grey-vader;
+		margin-bottom: 15px;
+	}
+
+	p {
+		font-size: $pixel54;
+		font-weight: 800;
+		line-height: 0.8;
+	}
+
+	&:after {
+		display: none;
 	}
 }

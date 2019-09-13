@@ -11,9 +11,9 @@ homepage: true
     {
         blockColor: 'black',
         blockSize: 'l',
-        content: '<p>RDS, Carleton University\’s design system, is a living digital organism uniting campus wide teams around a common visual language. <a href="dev/">Learn more…</a></p>',
+        text: '<p>RDS, Carleton University\’s design system, is a living digital organism uniting campus wide teams around a common visual language. <a href="dev/">Learn more…</a></p>',
         heading: 'Raven Design System',
-        img: 'https://via.placeholder.com/640x480',
+        img: null,
         imgAlt: '',
         modifier: 'b-docs-textimg'
     }

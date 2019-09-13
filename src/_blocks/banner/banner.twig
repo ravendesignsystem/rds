@@ -8,33 +8,33 @@
 {% endif %}
 <div class="u-block {% if data.img %}u-block--black u-block--full {% else %}u-block--s u-block--grey{% endif %}">
     <div class="b-banner{% if data.img %} b-banner--img{% endif %}{% if data.imgOpacity == "dark" %} b-banner--img-dark{% elseif data.imgOpacity == "light" %} b-banner--img-light{% endif %}{% if data.imgPosition == "top" %} b-banner--img-top{% elseif data.imgPosition == "bottom" %} b-banner--img-bottom{% endif %}">
-        <div class="banner__container">
+        <section>
 {% if data.breadcrumbs.parent %}
             <nav aria-label="breadcrumb">
-                <ol class="banner__breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
-                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="{{ site.url }}">Home</a></li>
+                <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+                    <li itemprop="breadcrumb"><a href="{{ site.url }}">Home</a></li>
 {% if data.breadcrumbs.greatgrandparent %}
-                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../../../">{{ data.breadcrumbs.greatgrandparent }}</a></li>
+                    <li itemprop="breadcrumb"><a href="../../../">{{ data.breadcrumbs.greatgrandparent }}</a></li>
 {%  endif %}
 {% if data.breadcrumbs.grandparent %}
-                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../../">{{ data.breadcrumbs.grandparent }}</a></li>
+                    <li itemprop="breadcrumb"><a href="../../">{{ data.breadcrumbs.grandparent }}</a></li>
 {%  endif %}
 {% if data.breadcrumbs.parent %}
-                    <li class="banner__breadcrumb-item" itemprop="breadcrumb"><a href="../">{{ data.breadcrumbs.parent }}</a></li>
+                    <li itemprop="breadcrumb"><a href="../">{{ data.breadcrumbs.parent }}</a></li>
 {%  endif %}
-                    <li class="banner__breadcrumb-item active u-visually-hidden" itemprop="breadcrumb" aria-current="page">{{ data.title }}</li>
+                    <li class="u-visually-hidden" itemprop="breadcrumb" aria-current="page">{{ data.title }}</li>
                 </ol>
             </nav>
 {%  endif %}
             <h1>{{ data.title }}</h1>
 {% if data.button %}
-            <p class="banner__buttons">
+            <p>
 {% for item in data.button %}
                 <a class="c-buttoncta" href="{{ item.url }}" role="button">{{ item.title }}</a>
 {% endfor %}
             </p>
 {% endif %}
-        </div>
+        </section>
     </div>
 </div>
 {% endmacro %}

@@ -14,7 +14,6 @@
 
 // Docs Blocks
 //------------------
-@import 'base/utilities';
 @import '../blocks/footnote/footnote';
 @import '../blocks/gridhome/gridhome';
 @import '../blocks/textimg/textimg';
@@ -29,17 +28,16 @@
 //---------
 @import '../../hp/blocks/bannerhero/bannerhero';
 
-
 .body__content .b-sidebar {
-  max-width: 350px;
+	max-width: 350px;
 }
 
 .hljs {
-  border-radius: 10px;
-  //padding: 30px;
+	border-radius: 10px;
+	//padding: 30px;
 }
 
 // codepen embed
 .cp_embed_wrapper {
-  margin-bottom: 30px;
+	margin-bottom: 30px;
 }

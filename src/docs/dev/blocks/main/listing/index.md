@@ -1,5 +1,5 @@
 ---
-layout: blocks
+layout: docs
 subsite: dev
 title: Listing
 banner:
@@ -8,79 +8,186 @@ banner:
 menu: dev
 section: Blocks
 subsection: Main blocks
-meta:
-  version: 1.0.1
-  status: ready
-  handle: listing
-  type: Fixed-width
-  section: Main
-  path: listing/
-  theme: na
-  heading: Yes
-context:
-- name: image
-- name: carousel
-dependencies:
-    js: n/a
-    selector: b-main-listing
-    restricted: div or section
-    maxwidth: u-block--s
-examples:
-- name: base
-- name: subtitle
-- name: img
-- name: badge
-- name: icon
-- name: event
-- name: news
-- name: news-img
-- name: people
-- name: video
-- name: 2col
-- name: heading
-- name: subheading
-wild: n/a
-alternatives: grid-list
-data:
-- name: title*
-  type: string
-  desc: List item title/name.
-  options: null / na
-- name: url*
-  type: string
-  desc: URL item links to.
-  options: null / na
-- name: subtitle
-  type: string
-  desc: A secondary title.
-  options: null / na
-- name: img
-  type: string
-  desc: Item's image path.
-  options: null / na
-- name: icon
-  type: string
-  desc: Item's icon file name.
-  options: null / na
-- name: date **
-  type: String format of YYYY-MM-DD.
-  desc: Required for News & Event contexts.
-  options: null / na
 ---
-##Content guidelines
+Listing blocks display a series of related content in vertical lists as a single continuous element. The Listing block has several options and variants for dealing with different content types.
+
+{% include 'inc' with {'block': 'listing-base'} %}
+
+{% include 'inc' with {'block': 'listing-base', 'code': true} %}
+
+<div class="c-alert c-alert--info c-alert--icon">{% include 'icons/info.svg' %}
+<h2>Listing block headings</h2>
+<p>For Listing blocks a heading is required. Therefore all the  code examples on this page include a block headings.</p>
+</div>
+
+{% include 'inc' with {'block': 'listing-subtitle'} %}
+{% include 'inc' with {'block': 'listing-subtitle', 'code': true} %}
+
+{% include 'inc' with {'block': 'listing-img'} %}
+{% include 'inc' with {'block': 'listing-img', 'code': true} %}
+
+{% include 'inc' with {'block': 'listing-badge'} %}
+{% include 'inc' with {'block': 'listing-badge', 'code': true} %}
+
+{% include 'inc' with {'block': 'listing-icon'} %}
+{% include 'inc' with {'block': 'listing-icon', 'code': true} %}
+
+{% include 'inc' with {'block': 'listing-file'} %}
+{% include 'inc' with {'block': 'listing-file', 'code': true} %}
+
+{% include 'inc' with {'block': 'listing-event'} %}
+{% include 'inc' with {'block': 'listing-event', 'code': true} %}
+
+{% include 'inc' with {'block': 'listing-news'} %}
+{% include 'inc' with {'block': 'listing-news', 'code': true} %}
+
+{% include 'inc' with {'block': 'listing-newsimg'} %}
+{% include 'inc' with {'block': 'listing-newsimg', 'code': true} %}
+
+{% include 'inc' with {'block': 'listing-people'} %}
+{% include 'inc' with {'block': 'listing-people', 'code': true} %}
+
+{% include 'inc' with {'block': 'listing-video'} %}
+{% include 'inc' with {'block': 'listing-video', 'code': true} %}
+
+## Listing blocks in two columns
+
+The Listing block is one of the few blocks that can be positioned side-by-side, on large screens, by wrapping two blocks in a single u-block class and a nested u-grid u-grid--2 class.
+
+{% include 'close' %}
+
+<div class="u-block u-block--s u-block--white">
+    <div class="u-grid u-grid--2 u-grid--s1">
+     <section>
+        <h3>Two column Listing blocks</h3>
+        <div class="b-listing">
+            <ul itemscope itemtype="http://schema.org/ItemList">
+                <li itemprop="item">
+                    <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+                        <header class="listing__body" itemprop="name">
+                            <h4 class="listing__title">White-necked Raven</h4>
+                        </header>
+                    </a>
+                </li>
+                <li itemprop="item">
+                    <a href="https://en.wikipedia.org/wiki/Australian_raven" itemprop="url">
+                        <header class="listing__body" itemprop="name">
+                            <h4 class="listing__title">Australian raven</h4>
+                        </header>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </section>
+        <section>
+            <h3>Two column Listing blocks</h3>
+            <div class="b-listing">
+                <ul itemscope itemtype="http://schema.org/ItemList">
+                    <li itemprop="item">
+                        <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+                            <header class="listing__body" itemprop="name">
+                                <h4 class="listing__title">White-necked Raven</h4>
+                            </header>
+                        </a>
+                    </li>
+                    <li itemprop="item">
+                        <a href="https://en.wikipedia.org/wiki/Australian_raven" itemprop="url">
+                            <header class="listing__body" itemprop="name">
+                                <h4 class="listing__title">Australian raven</h4>
+                            </header>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+
+{% include 'open' %}
+
+```html
+<div class="u-block u-block--s u-block--white">
+    <div class="u-grid u-grid--2 u-grid--s1">
+     <section>
+        <h3>Two column Listing blocks</h3>
+        <div class="b-listing">
+            <ul itemscope itemtype="http://schema.org/ItemList">
+                <li itemprop="item">
+                    <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+                        <header class="listing__body" itemprop="name">
+                            <h4 class="listing__title">White-necked Raven</h4>
+                        </header>
+                    </a>
+                </li>
+                <li itemprop="item">
+                    <a href="https://en.wikipedia.org/wiki/Australian_raven" itemprop="url">
+                        <header class="listing__body" itemprop="name">
+                            <h4 class="listing__title">Australian raven</h4>
+                        </header>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </section>
+        <section>
+            <h3>Two column Listing blocks</h3>
+            <div class="b-listing">
+                <ul itemscope itemtype="http://schema.org/ItemList">
+                    <li itemprop="item">
+                        <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
+                            <header class="listing__body" itemprop="name">
+                                <h4 class="listing__title">White-necked Raven</h4>
+                            </header>
+                        </a>
+                    </li>
+                    <li itemprop="item">
+                        <a href="https://en.wikipedia.org/wiki/Australian_raven" itemprop="url">
+                            <header class="listing__body" itemprop="name">
+                                <h4 class="listing__title">Australian raven</h4>
+                            </header>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+```
+
+**Note** how the headings in the block switch to `<h4>`s as they followed `<h3>`s.
+
+### Two column implementation notes
+
+Listing blocks should only be used in two columns if:
+
+- The the titles are short. If they wrap both should wrap.
+- There are no more then 12 items total (six a side) for easy scanning and no need for the user to scroll.
+- is NOT a news variant can not be used in a two column use case.
+
+## Block details
+
+| {{ page.title }}  block meta   |  values
+| --------------| :-------------------------------------:
+| handle              | `listing` 
+| width options       | `u-block--s`, `u-block--l`     
+| colour options      | `u-block--white`,`u-block--grey`
+| section use         | `<main>`                  
+| width type          | fixed                         
+| has heading         | true
+| theme(s)            | CU
+| variants            | events, icon, news, people, video
+| Codepen             | coming soon
+
+
+## Content guidelines
 
 List Group items should:
 
-- Present objects of the same type.
-- Start with a capital letter.
-- Not use commas or semicolons at the end of each line.
-- Link to a page for the item with more information.
-- Have text labels be as short as possible.
-
-##Implementation Notes
-
-- It is important to note the markup changes when different context variants and data attributes are used.
-
+- present objects of the same type.
+- start with a capital letter.
+- not use commas or semicolons at the end of each line.
+- link to a page for the item with more information.
+- have text labels be as short as possible.
 
 ## When To Avoid
 

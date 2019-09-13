@@ -1,18 +1,14 @@
-// Main Accordion Styles
-// ----------------------------------------------
-
 .c-accordion {
 	position: relative;
 	margin-bottom: 1px;
 	width: 100%;
-	//color: $black;
 	overflow: hidden;
-}
 
-.c-accordion input {
-	position: absolute;
-	opacity: 0;
-	z-index: -1;
+	input {
+		position: absolute;
+		opacity: 0;
+		z-index: -1;
+	}
 }
 
 .c-accordion label {

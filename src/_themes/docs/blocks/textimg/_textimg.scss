@@ -1,10 +1,10 @@
-.b-docs-textimg a {
-	color: white;
-
-	&:hover {
-		color: $red;
-	}
-}
+//.b-docs-textimg a {
+//	color: white;
+//
+//	&:hover {
+//		color: $red;
+//	}
+//}
 
 .b-docs-textimg p {
 	color: $grey-luke;
@@ -14,7 +14,7 @@
 	.b-docs-textimg {
 		padding: 50px 0 20px;
 
-		.textimg__heading {
+		h2 {
 			font-size: $pixel48;
 			padding-bottom: 0;
 			margin-bottom: 10px;
@@ -24,7 +24,7 @@
 			}
 		}
 
-		.textimg__desc p {
+		.textimg__text p {
 			font-size: $pixel30;
 			line-height: 1.35;
 
@@ -33,7 +33,7 @@
 			}
 		}
 
-		.textimg__img {
+		img {
 			animation-name: u-ani-fadein;
 			animation-duration: 1000ms;
 			animation-fill-mode: forwards;

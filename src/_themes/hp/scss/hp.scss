@@ -1,54 +1,48 @@
 /*
- * Carleton homepaqe v1.0.0
+ * Carleton Home Page v1.0.0
  * Copyright 2011-2019 Carleton University
  * Licensed under MIT
  */
 
-// Required Base
-// ----------------------------------
-
-@import '../../coreDELME/scss/base/vendor/include-media';
-@import '../../coreDELME/scss/base/vars/vars';
+// Required Tooling
+// ----------------
+@import '../../../_core/scss/tools/include-media';
+@import '../../../_core/scss/tools/vars';
 
 // Layouts
 // -------
+@import '../../../_core/layouts/overlay/overlay';
 
-@import '../../coreDELME/layouts/overlay/overlay';
-
-// Core Components
+// Req. Components
 // ---------------
-
 @import '../../../_components/buttonhamburger/buttonhamburger';
 @import '../../../_components/buttonsocial/buttonsocial';
 @import '../../../_components/searchform/searchform';
 @import '../../../_components/card/card';
 
-// Core Blocks
+// Main Blocks
 // -----------
-
 @import '../../../_blocks/cardgrid/cardgrid';
 
 // Aside blocks
-// -----------
-
+// ------------
 @import '../../../_blocks/menu/menu';
 
 // Footer Blocks
-// -----------
-
+// -------------
 @import '../../../_blocks/footerbrand/footerbrand';
 @import '../../../_blocks/footersitemap/footersitemap';
 
 // Custom Blocks
-// -----------
-
+// -------------
 @import '../blocks/gridadm/gridadm';
 @import '../blocks/imggrid/imggrid';
-// custom core
+
+// Modified Core Blocks
+// --------------------
 @import '../blocks/search/search';
 @import '../blocks/listing/listing';
 
 // IE Fixes
-// -----------
-
+// --------
 @import '../../coreDELME/scss/base/ie-fixes/ie-fixes';

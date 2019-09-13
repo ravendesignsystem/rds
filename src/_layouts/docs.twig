@@ -84,7 +84,6 @@
         {% if (page.menu) or (page.sidebar) %}
         <div class="l-multicol{% if page.sidebar %} l-multicol--ama{% else %} l-multicol--am{% endif %} l-multicol--white{% if 'l' in page.sidebar %} l-multicol--sidebar-large{% endif %} {% if 'top' in page.sidebar %} l-multicol--sidebar-top{% endif %}">
             <div class="multicol__container">
-
                 <aside class="multicol__nav u-sticky">
                     {%include 'docs/inc/menus/menu-' ~ page.menu %}
                 </aside>
@@ -95,12 +94,9 @@
                         <div class="multicol__content">
                             {% endif %}
                             {% if page.content != 'none' %}
-                            <div class="u-block u-block--white u-block--s">
+                            <div class="u-block u-block--s u-block--white">
                                 <div class="b-content">
-{#                                    {% set inContent = true %} TODO remove #}
                             {% endif %}
-
-
                             {% block content %}
                             {% endblock %}
                                     {% if page.subsite == 'dev' and page.menu != 'dev' %}
@@ -180,13 +176,6 @@
         if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
             document.write('<script src="https://unpkg.com/element-closest/browser"><\/script>');
     </script>
-{#    <script src="../node_modules/dialog-polyfill.js"></script>#}
-{#    <script>#}
-{#					var dialog = document.querySelector('dialog');#}
-{#					dialogPolyfill.registerDialog(dialog);#}
-{#					// Now dialog acts like a native <dialog>.#}
-{#					dialog.showModal();#}
-{#    </script>#}
     <script src="{{ site.jsPath }}"></script>
 {% endblock %}  {#END SCRIPTS #}
 
