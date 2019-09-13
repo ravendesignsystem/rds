@@ -10,19 +10,19 @@
 		<ul role="menu">
 			<li><a {% if page.subsite == 'about' %}class="u-active"{% endif %} href="{{ site.url }}about/">About RDS</a></li>
 			<li><a {% if page.subsite == 'dev' %}class="u-active"{% endif %} href="{{ site.url }}dev/">Dev</a></li>
-{#			<li class="c-menupopup"><a {% if page.subsite == 'dev' %}class="u-active"{% endif %} href="{{ site.url }}dev/">Dev</a>#}
-{#				<ul class="menupopup__menu" aria-label="menupopup">#}
-{#					<li>#}
-{#						<a href="#">Submenu link a</a>#}
-{#					</li>#}
-{#					<li>#}
-{#						<a href="#">Submenu link b</a>#}
-{#					</li>#}
-{#					<li>#}
-{#						<a href="#">Submenu link c</a>#}
-{#					</li>#}
-{#				</ul>#}
-{#			</li>#}
+			<li class="c-menupopup"><a {% if page.subsite == 'dev' %}class="u-active"{% endif %} href="{{ site.url }}dev/">Dev</a>
+				<ul class="menupopup__menu" aria-label="menupopup">
+					<li>
+						<a href="#">Submenu link a</a>
+					</li>
+					<li>
+						<a href="#">Submenu link b</a>
+					</li>
+					<li>
+						<a href="#">Submenu link c</a>
+					</li>
+				</ul>
+			</li>
 			<li><a {% if page.subsite == 'design' %}class="u-active"{% endif %} href="{{ site.url }}design/">Design</a></li>
 			<li><a {% if page.subsite == 'content' %}class="u-active"{% endif %} href="{{ site.url }}content/">Content</a></li>
 			<li><a {% if page.subsite == 'ay11' %}class="u-active"{% endif %} href="{{ site.url }}accessibility/">Accessibility</a></li>
