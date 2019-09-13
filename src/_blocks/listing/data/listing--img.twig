@@ -1,40 +1,41 @@
-{% if docs %}
-    <div class="u-block u-block--white u-block--s">
-        <div class="b-content">
-            <h2>Listing block with image</h2>
-            <p>Use an image to highlight each list item.</p>
-        </div>
-    </div>
-{% endif %}
-{% from "listing/listing.twig" import listing %}
+
+{% from 'listing/listing.twig' import listing %}
 {{ listing (
     {
-        color: "white"
-    },
-    [
-        {
-            title: "White-necked raven",
-            subtitle: "Corvus albicollis",
-            url: "https://en.wikipedia.org/wiki/White-necked_raven",
-            img: site.images ~ "img-1.jpg"
-        },
-        {
-            title: "Common raven",
-            subtitle: "Corvus corax",
-            url: "https://en.wikipedia.org/wiki/White-necked_raven",
-            img: site.images ~ "img-2.jpg"
-        },
-        {
-            title: "Thick-billed raven",
-            subtitle: "Corvus crassirostris",
-            url: "https://en.wikipedia.org/wiki/White-necked_raven",
-            img: site.images ~ "img-3.jpg"
-        },
-        {
-            title: "Chihuahuan raven",
-            subtitle: "Corvus cryptoleucus",
-            url: "https://en.wikipedia.org/wiki/Chihuahuan_raven",
-            img: site.images ~ "img-4.jpg"
-        }
-    ]
+        blockColor: "white",
+        blockSize: "s",
+        blockHeading: "Listing block with image",
+        variant: "img",
+        items:
+        [
+            {
+                title: "White-necked Raven",
+                subtitle: "Corvus albicollis",
+                img: site.images ~ "img-1.jpg",
+                imgAlt: "",
+                url: "https://en.wikipedia.org/wiki/White-necked_raven",
+            },
+            {
+                title: "Common raven",
+                subtitle: "Corvus corax",
+                img: site.images ~ "img-2.jpg",
+                imgAlt: "",
+                url: "https://en.wikipedia.org/wiki/Common_raven"
+            },
+            {
+                title: "Australian raven",
+                subtitle: "Corvus crassirostris",
+                img: site.images ~ "img-3.jpg",
+                imgAlt: "",
+                url: "https://en.wikipedia.org/wiki/Australian_raven"
+            },
+            {
+                title: "Thick-billed raven",
+                subtitle: "Corvus cryptoleucus",
+                img: site.images ~ "img-4.jpg",
+                imgAlt: "",
+                url: "https://en.wikipedia.org/wiki/Thick-billed_raven"
+            }
+        ]
+    }
 ) }}

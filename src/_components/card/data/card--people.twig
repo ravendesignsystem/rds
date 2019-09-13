@@ -1,26 +1,12 @@
-{% if docs %}
-    <div class="u-block u-block--s u-block--white">
-        <div class="b-content">
-            <h2>People card variant</h2>
-            <p>To list groups of people, use the people card variant </p>
-        </div>
-    </div>
-<div class="u-block u-block--s u-block--grey">
-    <div class="b-cardgrid u-grid u-grid--3">
-{% endif %}
 {% from "card/card.twig" import card %}
 {{ card (
     {
-    },
-    {
         img: "https://www.fillmurray.com/500/500",
+        imgAlt: "Actor and Writer, Bill Murray",
+        imgWebp: null,
         text: "Actor and Writer",
-        alt: "Actor and Writer, Bill Murray",
-        name: "Bill Murray",
-        url: "https://en.wikipedia.org/wiki/Bill_Murray"
+        title: "Bill Murray",
+        url: "https://en.wikipedia.org/wiki/Bill_Murray",
+        variant: "people"
     }
 ) }}
-{% if docs %}
-    </div>
-</div>
-{% endif %}

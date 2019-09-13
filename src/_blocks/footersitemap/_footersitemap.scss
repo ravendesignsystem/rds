@@ -1,3 +1,11 @@
+.b-footersitemap a {
+	color: $grey-luke;
+
+	&:hover {
+		color: white;
+	}
+}
+
 .footersitemap__links {
 	display: none;
 }
@@ -34,14 +42,14 @@
 		}
 	}
 
-	.footersitemap__heading {
+	.footersitemap__links h2 {
 		font-size: $pixel14;
 		font-weight: 700;
 		text-transform: uppercase;
 		border-bottom: 0;
 	}
 
-	.footersitemap__list {
+	.footersitemap__links ul {
 		margin: 0;
 		list-style-type: none;
 		font-size: $pixel12;
@@ -53,16 +61,11 @@
 			padding-bottom: 8px;
 		}
 
-		a {
-			color: $grey-luke;
-
-			&:hover {
-				color: white;
-			}
-		}
-
 		svg {
 			margin-top: 25px;
+		}
+
+		:nth-of-type(2) {
 		}
 	}
 
@@ -73,14 +76,17 @@
 	.footersitemap__list--three {
 		column-count: 3;
 	}
-}
+} // End >l
 
-// Footer Contact Block
-// ====================================
+// Footer Contact
+// ==============
 
-.b-footer-cu-contact {
+.footer__contact {
 	padding: 0 25px 40px;
 	margin-bottom: -25px;
+	font-size: $pixel14;
+	line-height: 1.6;
+	color: white;
 
 	@include media('>l') {
 		border-top: 1px solid $grey-vader;
@@ -89,59 +95,59 @@
 	}
 }
 
-@include media('>l') {
-	.cu-contact__group {
+address {
+	text-align: center;
+	text-transform: uppercase;
+
+	@include media('>l') {
 		display: flex;
 		align-items: center;
 	}
-}
 
-.cu-contact__item {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 5px;
-	font-size: $pixel14;
-	line-height: 1.6;
-	color: white;
-	text-transform: uppercase;
-	text-align: center;
+	div,
+	ul {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 5px;
+		font-size: $pixel14;
 
-	@include media('>l') {
-		flex: 1 1 auto;
-		margin-bottom: 0;
-		text-align: left;
+		@include media('>l') {
+			flex: 1 1 auto;
+			margin-bottom: 0;
+			text-align: left;
 
-		&:first-child {
-			justify-content: flex-start;
+			&:first-child {
+				justify-content: flex-start;
+			}
+
+			&:last-child {
+				justify-content: flex-end;
+			}
 		}
 
-		&:last-child {
-			justify-content: flex-end;
+		a {
+			color: $grey-luke;
+
+			&:hover {
+				color: white;
+			}
 		}
 	}
 
-	a {
-		color: $grey-luke;
+	ul {
+		margin: 30px 0 0 0;
+		list-style: none;
 
-		&:hover {
-			color: white;
+		@include media('>l') {
+			margin: 0;
 		}
-	}
-}
 
-.cu-contact__item--social {
-	margin: 30px 0 0 0;
-	list-style: none;
+		li {
+			display: inline-block;
 
-	@include media('>l') {
-		margin: 0;
-	}
-
-	li {
-		display: inline-block;
-
-		&:not(:last-child) {
-			margin-right: 6px;
+			&:not(:last-child) {
+				margin-right: 6px;
+			}
 		}
 	}
 }

@@ -39,7 +39,7 @@
 		"css-mqpacker": "^7.0.0",
 		"cssnano": "^4.1.10",
 		"dialog-polyfill": "^0.5.0",
-		"laravel-mix": "^4.1.2",
+		"laravel-mix": "^4.1.4",
 		"node-sass": "^4.12.0",
 		"postcss-pxtorem": "^4.0.1",
 		"prettier": "^1.18.2",
@@ -48,7 +48,6 @@
 		"sass-loader": "^7.1.0",
 		"stylelint": "^10.1.0",
 		"stylelint-config-rational-order": "^0.1.2",
-		"stylelint-order": "^3.1.0",
-		"vue-template-compiler": "^2.6.10"
+		"stylelint-order": "^3.1.0"
 	}
 }

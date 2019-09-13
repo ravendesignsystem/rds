@@ -15,21 +15,16 @@ The login block can be used in one of two ways: as a stand alone block on a page
 
 ```html
 <div class="u-block u-block--grey u-block--s">
-	<div class="b-login">
-
-		<h1 class="login__heading">Form Title</h1>
-
-		<form class="c-form" name="loginform" action="/" method="post" accept-charset="UTF-8">
-
-			<label for="user_login">Username</label>
-			<input type="text" id="user_login" name="log" class="login__field" value="" tabindex="1" autocapitalize="off" autocorrect="off" autofocus="autofocus" aria-required="true">
-
-			<label for="user_pass">Password</label>
-			<input type="password" name="pwd" id="user_pass" value="" class="form-control form-control input-block" tabindex="2" aria-required="true">
-
-			<input type="submit" value="Login" tabindex="3" class="u-width-full">
-		</form>
-	</div>
+    <div class="b-login">
+        <h2>Login Title</h2>
+        <form class="c-form" name="loginform" action="/" method="post" accept-charset="UTF-8">
+            <label for="user_login">Username</label>
+            <input type="text" id="user_login" name="log" class="login__field" value="" tabindex="1" autocapitalize="off" autocorrect="off" autofocus="autofocus" aria-required="true">
+            <label for="user_pass">Password<a class="login__link" href="https://myone.carleton.ca/">Forgot password?</a></label>
+            <input type="password" name="pwd" id="user_pass" value="" class="form-control form-control input-block" tabindex="2" aria-required="true">
+            <input type="submit" value="Login" tabindex="3" >
+        </form>
+    </div>
 </div>
 ```
 
@@ -40,10 +35,10 @@ The login block can be used in one of two ways: as a stand alone block on a page
 | handle              | `login` 
 | options examples    | n/a
 | width options       | `u-block--s`, `u-block--l`     
-| colour options      | `u-block--grey`  
+| colour options      | `u-block--white`, `u-block--grey`  
 | section use         | `<dialogue>`, `<main>`                 
 | width type          | fixed                          
-| has heading         | true
+| has heading         | n/a
 | theme(s)            | CU
 | variants            | n/a
 | Codepen             | [comingsoon](#)

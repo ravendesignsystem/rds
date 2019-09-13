@@ -2,8 +2,10 @@
 title: RDS Local
 subtitle: RDS
 version: 0.10.3
-coreSize: 8KB
-coreSizeJS: 2KB
+cssSize: 45KB
+cssG: 10KB
+jsSize: 10KB
+jsG: 6KB
 url: /docs/
 #fw: Carleton
 #cms: CU

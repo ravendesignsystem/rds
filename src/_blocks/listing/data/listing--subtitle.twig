@@ -1,40 +1,32 @@
-{% if docs %}
-    <div class="u-block u-block--white u-block--s">
-        <div class="b-content">
-            <h2>Listing block with subtitle</h2>
-            <p>Add a subtitle to your list items.</p>
-        </div>
-    </div>
-{% endif %}
-{% from "listing/listing.twig" import listing %}
+
+{% from 'listing/listing.twig' import listing %}
 {{ listing (
     {
-        color: "white"
-    },
-    [
-        {
-            title: "White-necked Raven",
-            subtitle: "Corvus albicollis",
-            url: "https://en.wikipedia.org/wiki/White-necked_raven"
-        },
-        {
-            title: "Common Raven",
-            subtitle: "Corvus corax",
-            url: "https://en.wikipedia.org/wiki/White-necked_raven"
-        },
-        {
-            title: "Thick-billed raven",
-            subtitle: "Corvus crassirostris",
-            url: "https://en.wikipedia.org/wiki/White-necked_raven"
-        },
-        {
-            title: "Chihuahuan raven",
-            subtitle: "Corvus cryptoleucus",
-            url: "https://en.wikipedia.org/wiki/Chihuahuan_raven"
-        }
-    ],
-    {
-        level: "h3",
-        subheading: ""
+        blockColor: "white",
+        blockSize: "s",
+        blockHeading: "Listing block with subtitles",
+        items:
+        [
+            {
+                title: "White-necked Raven",
+                subtitle: "Corvus albicollis",
+                url: "https://en.wikipedia.org/wiki/White-necked_raven",
+            },
+            {
+                title: "Common raven",
+                subtitle: "Corvus corax",
+                url: "https://en.wikipedia.org/wiki/Common_raven"
+            },
+            {
+                title: "Australian raven",
+                subtitle: "Corvus crassirostris",
+                url: "https://en.wikipedia.org/wiki/Australian_raven"
+            },
+            {
+                title: "Thick-billed raven",
+                subtitle: "Corvus cryptoleucus",
+                url: "https://en.wikipedia.org/wiki/Thick-billed_raven"
+            }
+        ]
     }
 ) }}

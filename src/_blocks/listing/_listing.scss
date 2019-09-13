@@ -3,31 +3,26 @@
  * =============
  */
 
-// Main Selectors
-//================================
-
-.b-listing + .c-buttoncta {
-	margin-top: $block-margin;
-}
-
-.listing__list {
-	list-style-type: none;
-	margin: 0;
-	border-top: 1px solid $grey-yoda;
-	border-bottom: 1px solid $grey-yoda;
-}
-
-.listing__list li {
-	position: relative;
-
-	&:not(:last-child):before {
-		content: '';
-		position: absolute;
+.b-listing {
+	> ul {
+		list-style-type: none;
+		margin: 0;
+		border-top: 1px solid $grey-yoda;
 		border-bottom: 1px solid $grey-yoda;
-		width: 100%;
-		left: 0;
-		bottom: 0;
-		height: 1px;
+	}
+
+	li {
+		position: relative;
+
+		&:not(:last-child):before {
+			content: '';
+			position: absolute;
+			border-bottom: 1px solid $grey-yoda;
+			width: 100%;
+			left: 0;
+			bottom: 0;
+			height: 1px;
+		}
 	}
 
 	a {
@@ -35,7 +30,6 @@
 		align-items: center;
 		min-height: 60px;
 		padding: 10px 50px 10px 0;
-
 		background-size: 12px;
 		background-position: right 15px center;
 		background-repeat: no-repeat;
@@ -43,85 +37,125 @@
 
 		&:hover {
 			background-color: $grey;
-			color: $red;
 
-			.listing__subtitle,
-			.listing__excerpt {
-				color: initial;
+			h3,
+			h4 {
+				color: $red;
 			}
 		}
 	}
-}
 
-// Grey Block Overrides
-//================================
-
-// Change border & hover color when grey block is used
-.u-block--grey {
-	.listing__list {
-		border-top: 1px solid $grey-kenobi;
-		border-bottom: 1px solid $grey-kenobi;
+	header {
+		flex: 1;
+		min-width: 0; // this allows text to be truncated inside a flex item
 	}
 
-	.listing__list li {
-		&:not(:last-child):before {
-			border-bottom: 1px solid $grey-kenobi;
+	h3,
+	h4 {
+		font-size: $pixel16;
+		line-height: 1.4em;
+		margin: 3px 0 2px 0;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	p {
+		font-size: $pixel14;
+		font-weight: 300;
+		word-wrap: break-word;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	figure {
+		margin-right: 15px;
+		width: 15%;
+		min-width: 70px;
+
+		@include media('>s') {
+			//margin-right: 25px;
+			width: 10%;
+		}
+
+		svg {
+			width: 45px;
+			height: auto;
+			margin-right: 15px;
 		}
 	}
-}
 
-// Body Content
-//================================
+	.c-badge {
+		position: absolute;
+		right: 5px;
+	}
+} // End .b-listing
 
-.listing__body {
-	flex: 1;
-	min-width: 0; // this allows text to be truncated inside a flex item
-}
-
-.listing__title {
-	font-size: $pixel16;
-	line-height: 1.4em;
-	margin: 3px 0 2px 0;
-}
-
-.listing__excerpt {
+// News variant
+//=============
+.b-listing--news time {
 	font-size: $pixel14;
-	font-weight: 300;
-	word-wrap: break-word;
-}
-
-// Truncating title and subtitle
-.listing__title,
-.listing__excerpt {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.listing__post-date {
-	font-size: $pixel12;
 	font-weight: 400;
 	color: $grey-vader;
 }
 
-// Events, Times & Dates
-//================================
+.b-listing.b-listing--news figure {
+	width: 30%;
 
-.listing__event-date {
-	flex: 0 0 60px;
+	@include media('>s') {
+		margin-right: 30px;
+	}
+}
+
+.b-listing--news p {
+	display: none;
+
+	@include media('>1000px') {
+		display: block;
+		white-space: initial;
+		overflow: initial;
+		text-overflow: initial;
+		//font-size: $pixel16;
+	}
+}
+
+.b-listing--news h3 {
+	white-space: initial;
+	overflow: initial;
+	text-overflow: initial;
+
+	@include media('>s') {
+		font-size: $pixel20;
+	}
+}
+
+// Event variant
+//===============
+.b-listing--events time {
+	margin-right: 20px;
+	margin-top: -8px;
 	color: $red;
 	text-transform: uppercase;
 	font-size: $pixel12;
-	line-height: 1.25;
-	padding-top: 4px;
+	line-height: 1.1;
+
+	@include media('>s') {
+		margin-right: 30px;
+	}
 }
 
-.listing__event-day {
+.b-listing--events time span {
 	color: $black;
 	font-size: $pixel24;
+
+	&:before {
+		content: ' ';
+		display: block;
+	}
 }
 
-.listing__event-time {
+.b-listing--events time + div {
 	display: none;
 
 	@include media('>s') {
@@ -132,90 +166,23 @@
 	}
 }
 
-// Images, Icons & Badges
-//================================
-
-.listing__figure {
-	margin-right: 15px;
-
-	svg {
-		width: 45px;
-		height: auto;
-	}
+// People variant
+//===============
+.b-listing--people img {
+	border: 4px solid hsla(0, 0%, 93%, 0.75);
+	border-radius: 50%;
 }
 
-// Image Small Block Type Modifiers
-//================================
-
-// Set individual item underline
-.listing__list--img-small li:not(:last-child):before {
-	width: calc(100% - 95px);
-	left: 95px;
+// Icon variant
+//=============
+.b-listing--icon figure {
+	min-width: auto;
+	margin-right: 0;
 }
 
-// Set the width of the figure element
-.listing__list--img-small .listing__figure {
-	flex: 0 0 80px;
-}
-
-// Image Large Block Type Modifiers
-//================================
-
-// Set individual item underline
-.listing__list--img-large li:not(:last-child):before {
-	width: calc(100% - 155px);
-	left: 155px;
-
-	@include media('>s') {
-		width: calc(100% - 215px);
-		left: 215px;
-	}
-}
-
-.listing__list--img-large li a {
-	align-items: initial;
-}
-
-// Set the width of the figure element
-.listing__list--img-large .listing__figure {
-	flex: 0 0 140px;
-
-	@include media('>s') {
-		flex: 0 0 200px;
-	}
-}
-
-// Image Rounded Block Type Modifiers
-//================================
-
-// Set individual item underline
-.listing__list--img-people li:not(:last-child):before {
-	width: calc(100% - 95px);
-	left: 95px;
-}
-
-// Set the width of the figure element
-.listing__list--img-people .listing__figure {
-	flex: 0 0 80px;
-
-	img {
-		border: 4px solid hsla(0, 0%, 93%, 0.75);
-		border-radius: 50%;
-	}
-}
-
-// Image Dark Block Type Modifiers
-//================================
-
-// Set individual item underline
-.listing__list--img-video li:not(:last-child):before {
-	width: calc(100% - 95px);
-	left: 95px;
-}
-
-// Set the width of the figure element
-.listing__list--img-video .listing__figure {
-	flex: 0 0 80px;
+// Video variant
+//==============
+.b-listing--video figure {
 	position: relative;
 
 	&:before {
@@ -228,62 +195,26 @@
 		width: 100%;
 		background-color: rgba(black, 0.4);
 	}
-
-	img {
-		margin: 0;
-	}
-
-	svg {
-		position: absolute;
-		top: calc(50% - 15px); // calc is used to determine center by subtracting half the height of the icon
-		left: calc(50% - 15px); // calc is used to determine center by subtracting half the width of the icon
-		width: 30px;
-		height: 30px;
-		fill: white;
-	}
 }
 
-// Icon Block Type Modifiers
-//================================
-
-// Set individual item underline
-.listing__list--icon li:not(:last-child):before {
-	width: calc(100% - 60px);
-	left: 60px;
+.b-listing--video figure svg {
+	position: absolute;
+	top: calc(
+		50% - 15px
+	); // calc is used to determine center by subtracting half the height of the icon
+	left: calc(
+		50% - 15px
+	); // calc is used to determine center by subtracting half the width of the icon
+	width: 30px;
+	height: 30px;
+	fill: white;
 }
 
-// Set the width of the figure element
-.listing__list--icon .listing__figure {
-	flex: 0 0 45px;
-	display: flex;
-	align-items: center;
-}
+// Grey Block
+//===========
 
-// Event Block Type Modifiers
-//================================
-
-// Set individual item underline
-.listing__list--events li:not(:last-child):before {
-	width: calc(100% - 60px);
-	left: 60px;
-}
-
-// News Block Type Modifiers
-//================================
-
-.listing__list--news {
-	.listing__excerpt {
-		display: none;
-
-		@include media('>s') {
-			display: block;
-		}
-	}
-
-	.listing__title,
-	.listing__excerpt {
-		white-space: initial;
-		overflow: initial;
-		text-overflow: initial;
+.u-block--grey {
+	.b-listing a:hover {
+		background-color: $grey-yoda;
 	}
 }

@@ -1,14 +1,17 @@
 {% macro sidebar(settings, data) %}
 <div class="u-block u-block--white u-block--s">
-    <{% if (settings.variant == 'cta' and data.url) %}a{% else %}div{% endif %} class="b-sidebar" href="{{ data.url }}">
-        <h2 class="{% if (data.title and data.heading == false) %}sidebar__title{% else %}sidebar__heading{% endif %}">{% if data.headingIcon %}<span class="u-icon">{% include 'icons/'~ data.headingIcon ~'.svg' %} {% endif %}{% if (data.title and data.heading == false) %}{{ data.title }}{% else %}{{ data.heading }}{% endif %}{% if settings.heading.icon %}</span>{% endif %}</h2>
-        {% if data.img %}<img class="sidebar__img" src="{{ data.img }}" alt="{{ data.img.alt }}" />{% endif %}
-{% if data.heading %}<h3>{{ data.title }}</h3>{% endif %}
-
-        {% if data.content %}{{ data.content|raw }}{% endif %}
-
-        {% if data.button %}<{% if settings.variant == 'cta' %}div{% else %}a{% endif %} class="c-buttoncta{% if settings.variant == 'cta-ghost' %} c-buttoncta--ghost{% endif %}"{% if settings.variant != 'cta' %} href="{{ data.url }}"{% endif %}>{% if data.buttonIcon %}<span class="u-icon">{% include 'icons/'~ data.buttonIcon ~'.svg' %} {% endif %}{{ data.button }}{% if data.buttonIcon %}</span>{% endif %}</{% if settings.variant == 'cta' %}div{% else %}a{% endif %}>{% endif %}
-
-    </{% if settings.variant == 'cta' %}a{% else %}div{% endif %}>
+    <{% if (settings.variant == 'cta' and data.url) %}a{% else %}div{% endif %} class="b-sidebar"{% if data.url %} href="{{ data.url }}"{% endif %}>
+        <h2{% if data.heading  %} class="sidebar__heading"{% endif %}>{% if data.headingIcon %}<span class="u-icon">{% include 'icons/'~ data.headingIcon ~'.svg' %} {% endif %}{% if (data.title and data.heading == false) %}{{ data.title }}{% else %}{{ data.heading }}{% endif %}{% if settings.heading.icon %}</span>{% endif %}</h2>
+{% if data.img %}
+        <img src="{{ data.img }}" alt="{{ data.imgAlt }}" />{% endif %}
+{% if data.heading %}
+        <h3>{{ data.title }}</h3>
+{% endif %}
+{% if data.content %}
+        {{ data.content|raw }}
+{% endif %}
+{% if data.button %}
+        <{% if settings.variant == 'cta' %}div{% else %}a{% endif %} class="c-buttoncta{% if settings.variant == 'cta-ghost' %} c-buttoncta--ghost{% endif %}"{% if settings.variant != 'cta' %} href="{{ data.url }}"{% endif %}>{% if data.buttonIcon %}<span class="u-icon">{% include 'icons/'~ data.buttonIcon ~'.svg' %} {% endif %}{{ data.button }}{% if data.buttonIcon %}</span>{% endif %}</{% if settings.variant == 'cta' %}div{% else %}a{% endif %}>
+{% endif %}    </{% if settings.variant == 'cta' %}a{% else %}div{% endif %}>
 </div>
 {% endmacro %}

@@ -1,34 +1,36 @@
-.b-alertheader svg {
-	height: 60px;
-	float: left;
-	padding-right: 15px;
-}
-
-.b-alertheader p {
-	margin-bottom: 0;
-}
-
-.b-alertheader a {
-	border-bottom: 1px solid $red;
-	color: $red;
-
-	&:hover {
-		color: $link;
-		border-bottom: 1px solid $link;
+.b-alertheader {
+	svg {
+		height: 60px;
+		float: left;
+		padding-right: 15px;
 	}
 
-	&::after {
-		content: '→';
-		// &#8594
+	p {
+		margin-bottom: 0;
 	}
-}
 
-.b-alertheader button {
-	position: absolute;
-	top: 20px;
-	right: 20px;
+	a {
+		border-bottom: 1px solid $red;
+		color: $red;
 
-	span {
-		font-size: $pixel20;
+		&:hover {
+			color: $link;
+			border-bottom: 1px solid $link;
+		}
+
+		&::after {
+			content: '→';
+			// &#8594
+		}
+	}
+
+	button {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+
+		span {
+			font-size: $pixel20;
+		}
 	}
 }

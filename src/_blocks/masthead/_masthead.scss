@@ -4,6 +4,7 @@
 	& .masthead__nav {
 		position: absolute;
 		top: 75px;
+		left: 0;
 	}
 }
 
@@ -19,9 +20,8 @@
 }
 
 .js-masthead-2biggie .masthead__nav::before {
-	content: 'YOUR MENU IS TOO WIDE! PLEASE SHORTEN IT OR USE A VERTICAL PRIMARY MENU. THANK YOU!';
+	content: 'YOUR MENU IS TOO WIDE! PLEASE SHORTEN IT OR USE A VERTICAL SIDE NAV MENU. THANK YOU!';
 	color: white;
-	// position: absolute;
 }
 
 // used in conjunction with js to stick the masthead on scroll up
@@ -37,7 +37,6 @@
 .js-masthead-2packed .l-overlay-modal {
 	top: 150px !important;
 }
-
 
 .b-masthead {
 	// Positioning
@@ -192,7 +191,6 @@
 	}
 }
 
-
 .masthead__nav > ul > li,
 .masthead__actions > ul > li {
 	display: inline-flex;
@@ -205,11 +203,7 @@
 	//}
 }
 
-.js-masthead-2packed
-	.b-masthead--responsivenav
-	.masthead__nav
-	.c-menupopup:hover
-	ul.menupopup__menu {
+.js-masthead-2packed .b-masthead--responsivenav .masthead__nav .c-menupopup:hover ul.menupopup__menu {
 	top: 150px;
 }
 
@@ -221,7 +215,7 @@
 
 	//IE Only styles
 	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-		margin-left: -95px;
+		margin-left: -50px;
 	}
 }
 

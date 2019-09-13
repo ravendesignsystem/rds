@@ -2,18 +2,18 @@
 	margin-top: $block-margin;
 }
 
-.b-cardgrid .c-card {
+.b-cardgrid .c-card a {
 	pointer-events: auto;
 	transition: 300ms opacity, 300ms transform;
 }
 
-.b-cardgrid.u-grid:hover .c-card,
-.b-cardgrid .u-grid:hover .c-card {
+.b-cardgrid.u-grid:hover .c-card a,
+.b-cardgrid .u-grid:hover .c-card a {
 	opacity: 0.5;
 }
 
-.b-cardgrid .u-grid:hover .c-card:hover,
-.b-cardgrid.u-grid:hover .c-card:hover {
+.b-cardgrid .u-grid:hover .c-card a:hover,
+.b-cardgrid.u-grid:hover .c-card a:hover {
 	transform: scale(1.05);
 	opacity: 1;
 }

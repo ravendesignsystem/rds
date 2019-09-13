@@ -15,7 +15,7 @@
 // 0. RDS version
 // --------------
 .u-v::after {
-	content: "#{ ($version)}";
+	content: '#{ ($version)}';
 }
 
 // 1. Grid system
@@ -24,7 +24,7 @@
 // CSS Grid IE11 Fallback
 // TODO: look into @support grid
 @media screen and (-ms-high-contrast: active),
-screen and (-ms-high-contrast: none) {
+	screaen and (-ms-high-contrast: none) {
 	.u-grid {
 		display: flex;
 		flex-wrap: wrap;
@@ -153,8 +153,8 @@ screen and (-ms-high-contrast: none) {
 }
 
 // cant use a :not on the style above because chrome doesnt accept multi level classes in :not
-// this disallows gry blocks when there are sidebars
-.body__container > .u-block--grey {
+// this disallows grey blocks when there are sidebars
+.multicol__content > .u-block--grey {
 	background-color: white;
 }
 
@@ -321,6 +321,10 @@ a.u-link,
 	position: absolute;
 }
 
+.u-font-size-20 {
+	font-size: $pixel20;
+}
+
 // 7. Content
 // -----------
 
@@ -344,7 +348,6 @@ a.u-link,
 		display: none !important;
 	}
 }
-
 
 // hide on l screens
 @include media('>=s') {
@@ -378,4 +381,3 @@ a.u-link,
 		opacity: 1;
 	}
 }
-

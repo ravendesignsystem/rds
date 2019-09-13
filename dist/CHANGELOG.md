@@ -2,6 +2,12 @@
 
 All notable changes to the project will be documented in this file.
 
+## [v0.11.0](https://github.com/ravendesignsystem/rds/releases/tag/0.11.0) 2019-09-13 
+
+**Changed**: Breaking changes update required*
+
+- **Changed**: Refactored all blocks and components to adhere to the new BTM CSS methodology reducing package CSS by 2k and simplifying all markup.
+
 ## [v0.10.3](https://github.com/ravendesignsystem/rds/releases/tag/0.10.3) 2019-09-04 
 
 **Added**, **Fixed**, **Docs**: update recommended

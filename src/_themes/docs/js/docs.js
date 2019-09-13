@@ -20,7 +20,7 @@ for (let i = 0; i < emptyP.length; i++) {
 		emptyP[i].classList.add('is-gone');
 		let remove = document.getElementsByClassName('is-gone');
 		while (remove[0]) {
-			emptyP[i].remove();
+			emptyP[i].outerHTML = ""; //removed .remove() for stupid IE
 		}
 	}
 }

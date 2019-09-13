@@ -2,6 +2,7 @@
     <a class="c-buttoncta" href="{{ url }}">{{ cta }}</a>
 {% endif %}
 {% if component %}
+    {% set noclose = true %}
 {% if '-' in component %}
 {% set ex = component|split('-') %}
 {% if code == true %}
@@ -14,8 +15,8 @@
 {% include component ~ '/' ~ component %}
 {% endif %}
 {% endif %}
-{% if (page.content != 'none' or close == true) and open == false and sidebar != true and code != true %}
-    </div>
+{% if (page.content != 'none' or close == true) and open == false and sidebar != true and code != true and noclose != true %}
+    {{ noclose}}</div>
 </div>
 {% endif %}
 {#---- For including blocks ----#}
@@ -66,21 +67,8 @@
         ]
     ) }}
 {% endif %}
-{% if macro == 'textimg' %}
-{% from macro ~ '/' ~ macro import textimg %}
-    {{ textimg (
-        {
-            color: color,
-            modifier: modifier
-        },
-        {
-            title: title,
-            img : { url: img.url, alt: img.alt},
-            content: content
-        }
-    ) }}
-{% endif %}
-{% if (page.content != 'none' or open == true) and close == false and sidebar != true and code != true %}
+
+{% if (page.content != 'none' or open == true) and close == false and sidebar != true and code != true and noclose != true %}
 <div class="u-block u-block--white u-block--s">
     <div class="b-content">
 {% endif %}

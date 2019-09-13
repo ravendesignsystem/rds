@@ -1,29 +1,15 @@
-{% if docs %}
-    <div class="u-block u-block--s u-block--white">
-        <div class="b-content">
-            <h2>Card with date</h2>
-            <p>For news or blog posts, you can provide an associated publishing date.</p>
-        </div>
-    </div>
-<div class="u-block u-block--s u-block--grey">
-    <div class="b-cardgrid u-grid u-grid--3">
-{% endif %}
 {% from "card/card.twig" import card %}
 {{ card (
     {
-        variant: "news"
-    },
-    {
         date: "2018-03-11",
-        img: "http://cu-raven.s3.amazonaws.com/assets/img/raven/img-2.jpg",
+        img: "https://cu-raven.s3.amazonaws.com/assets/img/raven/img-3.jpg",
+        imgAlt: "White-necked Raven",
+        imgWebp: null,
         title: "We knew ravens are smart. But not this smart",
-        url: "https://news.nationalgeographic.com/2017/07/ravens-problem-solving-smart-birds/"
+        url: "https://bit.ly/2E6yTwZ",
+        variant: "news"
     }
 ) }}
-{% if docs %}
-    </div>
-</div>
-{% endif %}
 
 
 

@@ -44,7 +44,7 @@ Sometimes your sidebar block is related to a taxonomy or section of your site th
 
 ## Sidebar with image
 
-A single image can be added to the sidebar block. Notice how the text size is reduced when following an image. This is intentional to minimize the height of the block.
+A single image can be added to the sidebar block.
 
 {% include 'inc' with {'block': 'sidebar-img'} %}
 
