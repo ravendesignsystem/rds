@@ -1,0 +1,77 @@
+.b-textimg {
+	img {
+		padding-bottom: 20px;
+	}
+
+	// Majority of styling is only needed above small
+	@include media('>=s') {
+		display: grid;
+		grid-template-areas: 'text img';
+		grid-template-columns: 52% 1fr;
+		grid-template-rows: repeat(3, minmax(0, auto));
+		column-gap: 30px;
+		min-height: 265px;
+
+		div:nth-of-type(2) {
+			position: relative;
+		}
+
+		h2 {
+			padding-bottom: 0;
+			line-height: 1.25;
+		}
+
+		img {
+			position: absolute;
+		}
+	}
+}
+
+@include media('>=s') {
+	.b-textimg--imgtext {
+		grid-template-columns: 46% 1fr;
+
+		div:nth-of-type(1) {
+			grid-area: img;
+		}
+
+		div:nth-of-type(2) {
+			grid-area: text;
+		}
+
+		div:nth-of-type(3) {
+			margin-left: calc(100% + 32px);
+			width: 100%;
+		}
+	}
+}
+
+.c-heading--center + p + .b-textimg {
+
+	div:nth-of-type(1) {
+		display: none;
+	}
+
+	div:nth-of-type(2) {
+		grid-area: img;
+	}
+
+	div:nth-of-type(3) {
+		grid-area: text;
+	}
+}
+
+.c-heading--center + p + .b-textimg--imgtext {
+	div:nth-of-type(2) {
+		grid-area: text;
+	}
+
+	div:nth-of-type(3) {
+		grid-area: img;
+		margin-left: 0;
+	}
+}
+
+.u-block--l .b-textimg {
+	min-height: 365px;
+}
