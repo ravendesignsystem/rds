@@ -2,7 +2,7 @@
 	background-color: white;
 	max-width: 768px;
 	border-radius: 5px;
-	border: 1px solid $grey;
+	border: 1px solid $grey-yoda;
 	display: block;
 
 	> * {
@@ -28,30 +28,26 @@
 	}
 }
 
-
 a.b-sidebar {
-	box-shadow: 0 1px 10px -2px rgba($grey-emperor, 0.1);
+	box-shadow: $ds-k;
 
 	&:hover {
-		box-shadow: 0 1px 10px -4px rgba($grey-emperor, 0.7);;
+		box-shadow: $ds-l;
 	}
 
 	&:hover .c-buttoncta:not(.c-buttoncta--ghost) {
 		background-color: $black;
 	}
-}
 
-a.b-sidebar {
 	&:hover .c-buttoncta--ghost {
 		background-color: $red;
 		color: white;
 	}
 }
 
-.sidebar__heading, .sidebar__title {
+.sidebar__heading, .b-sidebar h2 {
 	background-color: $grey;
 	text-transform: uppercase;
-	margin-bottom: 0;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	margin-bottom: 20px;
@@ -62,11 +58,11 @@ a.b-sidebar {
 	}
 }
 
-.sidebar__title {
+.b-sidebar > h2 {
 	text-transform: none;
 }
 
-.sidebar__img {
+.b-sidebar > h2 + img {
 	object-fit: cover;
 	width: 100%;
 	margin-bottom: 20px;
@@ -74,10 +70,6 @@ a.b-sidebar {
 
 	+ p {
 		padding-top: 0;
-	}
-
-	~ p {
-		font-size: $pixel14;
 	}
 
 	@include media('>=l') {

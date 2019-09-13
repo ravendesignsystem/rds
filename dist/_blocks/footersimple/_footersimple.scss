@@ -2,23 +2,22 @@
 	text-align: center;
 	color: $grey-luke;
 
-	& span {
+	span {
 		line-height: 1.9;
 	}
 
-	& a,
-	& strong {
+	a, strong {
 		color: white;
 	}
 
-	& a:hover {
+	a:hover {
 		color: $red;
 	}
-}
 
-.b-footersimple time {
-	display: inline;
-}
+	time {
+		display: inline;
+	}
+} // End b-footersimple
 
 .footersimple__social {
 	list-style: none;

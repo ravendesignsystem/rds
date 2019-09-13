@@ -1,89 +1,88 @@
-.textimg__wrapper {
-	position: relative;
-}
-
-.textimg__section {
-	@include media('>=s') {
-		//max-height: 390px;
-		min-height: 320px;
-	}
-
-	@include media('>=l') {
-		min-width: 430px;
-		max-width: 50%;
+// Small screen styling
+//=====================
+.b-textimg {
+	img {
+		padding-bottom: 20px;
 	}
 }
 
-.u-block--s {
-	& .textimg__section {
-		@include media('>=l') {
-			max-width: 45%;
-			min-width: 230px;
-		}
-	}
-}
-
-.textimg__heading {
-	text-align: left;
-	border-bottom: none;
-	font-size: $pixel28;
-
-	@include media('>=820px','<=960px') {
-		max-width: 370px;
-		margin: 0;
-	}
-
-	@include media('>=720px','<=820px') {
-		max-width: 335px;
-		margin: 0;
-	}
-}
-
-.textimg__desc {
-	margin: 0 auto;
-	text-align: left;
-
-	@include media('>=820px','<=960px') {
-		max-width: 370px;
-		margin: 0;
-	}
-
-	@include media('>=720px','<=820px') {
-		max-width: 335px;
-		margin: 0;
-	}
-}
-
-.textimg__img {
-	margin-bottom: 20px;
-
-	@include media('>=s') {
-		right: 0;
-		position: absolute;
-		top: 0;
-		width: auto;
-		max-width: 50%;
-		max-height: 320px;
-	}
-}
-
-// Variants
-
+// > then small styles
+//====================
 @include media('>=s') {
+	// Block
+	.b-textimg {
+		// Block wrapper
+		.textimg__wrapper {
+			position: relative;
+		}
+		// Additonal wrapper
+		section {
+			min-height: 270px;
+			max-width: 50%;
+			//min-width: 220px;
+		}
+
+		h2,
+		h3 {
+			//text-align: left;
+			//border-bottom: none;
+			//font-size: $pixel28;
+
+			@include media('>=820px', '<=960px') {
+				max-width: 370px;
+				margin: 0;
+			}
+
+			@include media('>=720px', '<=820px') {
+				max-width: 335px;
+				margin: 0;
+			}
+		}
+
+		.textimg__text {
+			//margin: 0 auto;
+			//text-align: left;
+
+			@include media('>=820px', '<=960px') {
+				max-width: 370px;
+				//margin: 0;
+			}
+
+			@include media('>=720px', '<=820px') {
+				max-width: 335px;
+				//margin: 0;
+			}
+		}
+
+		img {
+			//margin-bottom: 20px;
+
+			@include media('>=s') {
+				right: 0;
+				position: absolute;
+				top: 0;
+				//width: auto;
+				max-width: 45%;
+				max-height: 320px;
+			}
+		}
+	} // end b-textimg
+
 	.b-textimg--imgtext {
-		& .textimg__img {
+		& img {
 			left: 0;
 			right: auto;
 			position: absolute;
 		}
 
-		& .textimg__heading {
+		& h2,
+		h3 {
 			@include media('>=l') {
 				max-width: none;
 			}
 		}
 
-		& .textimg__section {
+		& section {
 			float: right;
 		}
 
@@ -94,4 +93,9 @@
 			clear: both;
 		}
 	}
-}
+
+	.u-block--l section {
+		min-height: 320px;
+		max-width: 55%;
+	}
+} // end if > s

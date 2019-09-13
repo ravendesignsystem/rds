@@ -21,7 +21,7 @@ $version: '0.10.3';
 // 1. Media query breakpoints
 // --------------------------
 $breakpoints: (
-	s: 720px,
+	s: 760px,
 	l: 1024px
 );
 
@@ -91,6 +91,7 @@ $pixel30: 30px;
 $pixel36: 36px;
 $pixel42: 42px;
 $pixel48: 48px;
+$pixel54: 54px;
 $pixel60: 60px;
 $pixel72: 72px;
 
@@ -98,3 +99,11 @@ $pixel72: 72px;
 // ----------------
 
 $z-index-10000: 10000;
+
+// 8. Drop shadows
+// lighter to darker
+// ds = drop shadow
+// y = yoda, k = kenobi, l = luke
+$ds-y: 0 1px 2px rgba($black, 0.2);
+$ds-k: 0 5px 8px 2px rgba($grey-emperor, 0.1);
+$ds-l: 0 5px 18px 2px rgba(83, 83, 83, 0.2);
