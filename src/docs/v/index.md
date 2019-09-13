@@ -16,7 +16,7 @@ Latest production currently  [v{{site.version}}](https://github.com/ravendesigns
 | RDS CU Theme - [CSS GZipped and minified](http://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.gz.css) | {{ site.cssG }} | {{site.version}}
 | RDS CU Theme - [JS GZipped and minified](http://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.gz.js)  | {{ site.jsG }} | {{site.version}}
 | RDS CU Theme - [CSS minified](http://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.css)     | {{ site.cssSize }} |  {{site.version}}
-| RDS CU Theme - [JS minified](http://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.js) | 18k  | {{ site.jsSize }} 
+| RDS CU Theme - [JS minified](http://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.js) | {{ site.jsSize }}  | {{site.version}} 
 
 
 ```xml
