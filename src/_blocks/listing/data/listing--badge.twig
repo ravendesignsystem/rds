@@ -1,44 +1,32 @@
-{% if docs %}
-    <div class="u-block u-block--white u-block--s">
-        <div class="b-content">
-            <h2>Listing block with badges</h2>
-            <p>Badges usually numerical indicators of how many items are associated with a link or category tags.</p>
-        </div>
-    </div>
-{% endif %}
-{% from "listing/listing.twig" import listing %}
+
+{% from 'listing/listing.twig' import listing %}
 {{ listing (
     {
-        color: "white"
-    },
-    [
-        {
-            title: "White-necked Raven",
-            subtitle: "Corvus albicollis",
-            url: "https://en.wikipedia.org/wiki/White-necked_raven",
-            img: site.images ~ "img-1.jpg",
-            badge: 30
-        },
-        {
-            title: "Common Raven",
-            subtitle: "Corvus corax",
-            url: "https://en.wikipedia.org/wiki/White-necked_raven",
-            img: site.images ~ "img-2.jpg",
-            badge: 5
-        },
-        {
-            title: "Thick-billed raven",
-            subtitle: "Corvus crassirostris",
-            url: "https://en.wikipedia.org/wiki/White-necked_raven",
-            img: site.images ~ "img-3.jpg",
-            badge: "More"
-        },
-        {
-            title: "Chihuahuan raven",
-            subtitle: "Corvus cryptoleucus",
-            url: "https://en.wikipedia.org/wiki/Chihuahuan_raven",
-            img: site.images ~ "img-4.jpg",
-            badge: 2
-        }
-    ]
+        blockColor: "white",
+        blockSize: "s",
+        blockHeading: "Listing block with badges",
+        items:
+        [
+            {
+                badge: "3",
+                title: "White-necked Raven",
+                url: "https://en.wikipedia.org/wiki/White-necked_raven",
+            },
+            {
+                badge: "5",
+                title: "Common raven",
+                url: "https://en.wikipedia.org/wiki/Common_raven"
+            },
+            {
+                badge: "v1.0",
+                title: "Australian raven",
+                url: "https://en.wikipedia.org/wiki/Australian_raven"
+            },
+            {
+                badge: "New",
+                title: "Thick-billed raven",
+                url: "https://en.wikipedia.org/wiki/Thick-billed_raven"
+            }
+        ]
+    }
 ) }}

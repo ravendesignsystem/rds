@@ -1,0 +1,38 @@
+
+{% from 'listing/listing.twig' import listing %}
+{{ listing (
+    {
+        blockColor: "white",
+        blockSize: "s",
+        blockHeading: "Files listing block - icons and subtitles ",
+        blockSubheading: "To list files, combine the listing block with icons and subtitles.",
+        variant: "icon",
+        items:
+        [
+            {
+                icon: "file-pdf",
+                title: "Ravens Annual Report (PDF)",
+                subtitle: "73KB - June 15 1973",
+                url: "#filepath",
+            },
+            {
+                icon: "file-excel",
+                title: "Yay, Another Spreadsheet (XLS)",
+                subtitle: "73KB - June 15 1973",
+                url: "#filepath"
+            },
+            {
+                icon: "file-word",
+                title: "Project Charter (DOC)",
+                subtitle: "73KB - June 15 1973",
+                url: "#filepath"
+            },
+            {
+                icon: "file-zip",
+                title: "Nintendo 64 Roms (ZIP)",
+                subtitle: "73KB - June 15 1973",
+                url: "#filepath"
+            }
+        ]
+    }
+) }}

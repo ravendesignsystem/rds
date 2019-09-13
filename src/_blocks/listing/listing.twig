@@ -1,80 +1,76 @@
-{% macro listing(settings, data) %}
-{% set blockHeading, itemHeading = 'h2', 'h3' %}
-{% if settings.heading %}
-<section class="u-block {% if settings.size %}u-block--{{ settings.size }}{% else %}u-block--s{% endif %}{% if settings.color %} u-block--{{ settings.color }}{% endif %}">
-    <{{ blockHeading }}{% if settings.headingContent != 'none' %} class="c-heading"{% endif %}>{{ settings.heading }}</{{ blockHeading }}>
-{% if settings.headingContent != 'none' and settings.headingContent %}
-    {{ settings.headingContent|raw }}
+{% macro listing(data) %}
+{% if data.blockHeading %}
+<section class="u-block {% if data.blockSize %}u-block--{{ data.blockSize }}{% else %}u-block--l{% endif %} {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
+    <h2{% if data.blockHeadingCenter %} class="c-heading--center{% if data.subHeading %} c-heading--subheading{% endif %}"{% endif %}>{{ data.blockHeading }}</h2>
+    {% if data.blockSubheading %}<p>{{ data.blockSubheading }}</p>
 {% endif %}
 {% else %}
-{#u-no-borders#}
-<div class="u-block {% if settings.size %}u-block--{{ settings.size }}{% else %}u-block--s{% endif %}{% if settings.color %} u-block--{{ settings.color }}{% endif %}">
+<div class="u-block {% if data.blockSize %}u-block--{{ data.blockSize }}{% else %}u-block--l{% endif %} {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
 {% endif %}
-{% if settings.grid %}
-<div class="u-grid u-grid--{{ settings.grid }}">
+{% if data.grid %}
+<div class="u-grid u-grid--{{ data.grid }}">
 {% endif %}
-    <div class="b-listing">
-        <ul class="listing__list{% if settings.variant == "news" %} listing__list--news{% elseif settings.variant == "event" %} listing__list--events{% endif %}{% for item in data %}{% if item.img %}{% if (settings.variant == "video") and (loop.first) %} listing__list--img-video{% elseif (settings.variant == "news") and (loop.first) %} listing__list--img-large{% elseif (settings.variant == "people") and (loop.first) %} listing__list--img-people{% elseif loop.first %} listing__list--img-small{% endif %}{% endif %}{% endfor %}" itemscope{% if settings.variant == 'people' %} itemtype="http://schema.org/Person"{% elseif settings.variant == "event" %} itemtype="http://schema.org/Event"{% else %} itemtype="http://schema.org/ItemList"{% endif %}>
-{% for item in data %}
+<div class="b-listing{% if data.variant == "news" %} b-listing--news{% elseif data.variant == "event" %} b-listing--events{% elseif data.variant == "people" %} b-listing--people{% elseif data.variant == "icon" %} b-listing--icon{% elseif data.variant == "video" %} b-listing--video{% endif %}">
+        <ul itemscope{% if data.variant == 'people' %} itemtype="http://schema.org/Person"{% elseif data.variant == "event" %} itemtype="http://schema.org/Event"{% else %} itemtype="http://schema.org/ItemList"{% endif %}>
+{% for item in data.items %}
             <li itemprop="item">
                 <a href="{{ item.url }}" itemprop="url">
 {% if item.img %}
-                    <figure class="listing__figure">
-                        <img src="{{ item.img }}" alt="" itemprop="image">
-{% if settings.variant == "video" %}
-                        <svg  viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M0 12c0-3.205 1.248-6.219 3.515-8.485A11.921 11.921 0 0 1 12 0c3.205 0 6.219 1.248 8.485 3.515A11.92 11.92 0 0 1 24 12a11.92 11.92 0 0 1-3.515 8.485A11.92 11.92 0 0 1 12 24a11.92 11.92 0 0 1-8.485-3.515A11.921 11.921 0 0 1 0 12zM12 1.1C5.99 1.1 1.1 5.99 1.1 12c0 6.01 4.89 10.9 10.9 10.9 6.01 0 10.9-4.89 10.9-10.9 0-6.01-4.89-10.9-10.9-10.9zm-1.98 15.919h.001c-.524.333-1.161.036-1.161-.619v-.53h.006V8.907H8.86V7.61c0-.654.637-.963 1.161-.63l6.653 4.366c.525.333.513.874-.005 1.201l-6.648 4.473z" /></svg>
+                    <figure>
+                        <img src="{{ item.img }}" alt="{{ imgAlt }}" itemprop="image">
+{% if data.variant == "video" %}
+                        <svg  viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 12c0-3.205 1.248-6.219 3.515-8.485A11.921 11.921 0 0 1 12 0c3.205 0 6.219 1.248 8.485 3.515A11.92 11.92 0 0 1 24 12a11.92 11.92 0 0 1-3.515 8.485A11.92 11.92 0 0 1 12 24a11.92 11.92 0 0 1-8.485-3.515A11.921 11.921 0 0 1 0 12zM12 1.1C5.99 1.1 1.1 5.99 1.1 12c0 6.01 4.89 10.9 10.9 10.9 6.01 0 10.9-4.89 10.9-10.9 0-6.01-4.89-10.9-10.9-10.9zm-1.98 15.919h.001c-.524.333-1.161.036-1.161-.619v-.53h.006V8.907H8.86V7.61c0-.654.637-.963 1.161-.63l6.653 4.366c.525.333.513.874-.005 1.201l-6.648 4.473z" /></svg>
 {% endif %}
                     </figure>
 {% elseif item.icon %}
-                    <figure class="listing__figure">
-                        {% include "icons/" ~ item.icon ~ ".svg" ignore missing %}
+                    <figure>
+                        {% include "icons/" ~ item.icon ~ ".svg" %}
                     </figure>
 {% endif %}
 {# news variant #}
-{% if settings.variant == "news" %}
-                    <div class="listing__body" itemscope itemtype="http://schema.org/NewsArticle">
-                        <time class="listing__post-date" datetime="{{ item.date }}" itemprop="datePublished" content="{{ item.date }}">{{ item.date|date("l, F jS") }}</time>
+{% if data.variant == "news" %}
+                    <header itemscope itemtype="http://schema.org/NewsArticle">
+                        <time datetime="{{ item.date }}" itemprop="datePublished" content="{{ item.date }}">{{ item.date|date("l, F jS") }}</time>
                         {# Limit length of text to 2 lines if there is an image -#}
-                        <{{ itemHeading }} class="listing__title" itemprop="headline">{% if item.img|length -%}{{ item.title|length > 240 ? item.title|slice(0, 240) ~ '...' : item.title  }}{% else %}{{ item.title }}{%  endif %}</{{itemHeading}}>
+                        <h3 itemprop="headline">{% if item.img|length %}{{ item.title|length > 240 ? item.title|slice(0, 240) ~ '...' : item.title  }}{% else %}{{ item.title }}{%  endif %}</h3>
                         {# Trying to limit length of text to 2 lines if there is an image -#}
-                        <p class="listing__excerpt">{% if item.img %}{{ item.subtitle|length > 240 ? item.subtitle|slice(0, 240) ~ '...' : item.subtitle  }}{% else %}{{ item.subtitle }}{% endif %}</p>
-                    </div>
-{# Events #}
-{% elseif item.startDate %}
-                    <time class="listing__event-date" itemprop="startDate" datetime="{{ item.startDate }}" content="{{ item.startDate }}">
-                        {{ item.startDate|date("M") }}<br>
-                        <span class="listing__event-day">{{ item.startDate|date("j") }}</span>
+                        <p>{% if item.img %}{{ item.subtitle|length > 240 ? item.subtitle|slice(0, 240) ~ '...' : item.subtitle  }}{% else %}{{ item.subtitle }}{% endif %}</p>
+                    </header>
+{# event variant #}
+{% elseif item.dateStart %}
+                    <time itemprop="startDate" datetime="{{ item.startDate }}" content="{{ item.startDate }}">
+                        {{ item.dateStart|date("M") }}<span>{{ item.startDate|date("j") }}</span>
                     </time>
-                     <div class="listing__event-time">
-                        <h3 class="listing__title">{{ item.startDate|date("h:i a") }}</h3>
-                        <p class="listing__excerpt">{{ item.endDate|date("h:i a") }}</p>
+                     <div>
+                        <h3>{{ item.dateStart|date("h:i a") }}</h3>
+                        <p>{{ item.dateEnd|date("h:i a") }}</p>
                     </div>
-                    <div class="listing__body">
-                        <h3 class="listing__title" itemprop="name">{{ item.title }}</h3>
-                        <p class="listing__excerpt" itemprop="description">{{ item.location }}</p>
-                    </div>
+                    <header>
+                        <h3 itemprop="name">{{ item.title }}</h3>
+                        <p itemprop="location">{{ item.location }}</p>
+                    </header>
 {# with subtitle -#}
 {% elseif item.subtitle %}
-                    <div class="listing__body">
-                        <{{ itemHeading }} class="listing__title" itemprop="name">{{ item.title }}</{{itemHeading}}>
-                        <p class="listing__excerpt" itemprop="description">{{ item.subtitle }}</p>
-                    </div>
+                    <header>
+                        <h3 itemprop="name">{{ item.title }}</h3>
+                        <p itemprop="description">{{ item.subtitle }}</p>
+                    </header>
 {% else %}
-                    <div class="listing__body" itemprop="name">
-                        <p class="listing__title">{{ item.title }}</p>
-                    </div>
+                    <header itemprop="name">
+                        <h3>{{ item.title }}</h3>
+                    </header>
 {% endif %}
 {% if item.badge %}
-                    <span class="c-badge c-badge--primary">{{ item.badge }}</span>
+                    <span class="c-badge">{{ item.badge }}</span>
 {% endif %}
                 </a>
             </li>
 {% endfor %}
         </ul>
-{% if settings.heading|length == 0 %}
+{% if data.blockHeading|length == 0 %}
     </div>
 </div>
-{% if settings.grid %}
+{% if data.grid %}
 </div>
 {% endif %}
 {% else %}
