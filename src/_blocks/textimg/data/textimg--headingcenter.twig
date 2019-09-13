@@ -1,0 +1,15 @@
+{% from "textimg/textimg.twig" import textimg %}
+{{ textimg (
+    {
+        blockColor: "grey",
+        blockSize: "s",
+        blockHeading: "Supports centered block headings",
+        blockSubheading: "In addition, it supports subheadings.",
+        blockHeadingCenter: true,
+        heading: null,
+        text: "<p>At least one heading is required when using the Text-Image block. But if a block heading is used, you do not need to add a heading within the block...as per this example.</p><p>Multiple paragraphs can be used in the text are of this block.</p>",
+        img: "https://via.placeholder.com/640x480",
+        imgAlt: "",
+        variant: "imgtext"
+    }
+) }}
