@@ -2,6 +2,14 @@
 	max-width: 440px;
 	margin: 0 auto;
 
+	h2 {
+		margin-bottom: 15px;
+		text-align: center;
+		font-size: $pixel24;
+		font-weight: 400;
+		letter-spacing: -0.5px;
+	}
+
 	form {
 		padding: 20px;
 		font-size: $pixel14;
@@ -14,20 +22,4 @@
 	input[type=submit] {
 		width: 100%;
 	}
-}
-
-.login__heading {
-	margin-bottom: 15px;
-	text-align: center;
-	font-size: $pixel24;
-	font-weight: 400;
-	letter-spacing: -0.5px;
-}
-
-.login__account {
-	padding: 15px 20px;
-	text-align: center;
-	border: 1px solid $grey-kenobi;
-	border-radius: 5px;
-	font-size: $pixel14;
 }
