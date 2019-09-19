@@ -57,3 +57,12 @@
 .c-buttonsocial--linkedin:hover::before {
 	background-color: #007bb5;
 }
+
+.c-buttonsocialgroup {
+	list-style: none;
+	margin-left: 0;
+
+	li {
+		display: inline-block;
+	}
+}

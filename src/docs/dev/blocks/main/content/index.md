@@ -12,7 +12,7 @@ The Content block can only be used within the `<main>` section of a page. Intend
 ## Base block code
 
 ```html
-<div class="u-block u-block--white u-block--s">
+<div class="u-block u-block--white">
     <div class="b-content">
         <!-- Add your content here -->
     </div>
@@ -24,8 +24,7 @@ The Content block can only be used within the `<main>` section of a page. Intend
 | {{ page.title }}  block meta   |  values
 | --------------| :-------------------------------------:
 | handle              | `content` 
-| options examples    | n/a
-| block width options       | `u-block--s`, `u-block--l`    
+| options examples    | n/a  
 | block colour options      | `u-block--white`, `u-block--grey`  
 | section use         | `<main>`                  
 | width type          | fixed                           
@@ -43,7 +42,7 @@ Content within this block should follow the <a href="#">RDS HTML coding conventi
 - close all HTML elements.
 
 ```html
-<div class="u-block u-block--white u-block--s">
+<div class="u-block u-block--white">
     <div class="b-content">
         <h3>Use proper HTML coding conventions</h3>
         <p>Content within this block should follow the <a href="#">RDS HTML coding conventions</a>, including:</p>
@@ -573,7 +572,7 @@ Avoid using the Content block if:
 ### QA code
 
 ```html
-<div class="u-block u-block--s">
+<div class="u-block">
     <h2>Header 2</h2>
     <p>Lorem ipsum dolor sit amet, <a href="#">Mauris ac gravida</a> consectetur adipiscing elit. Ut quis nulla eu nulla tincidunt varius a fringilla justo. Integer elit leo, semper et lorem sit amet, feugiat congue ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.</p>
     <p>Lorem ipsum dolor sit amet, <a href="#">Mauris ac gravida</a> consectetur adipiscing elit. Ut quis nulla eu nulla tincidunt varius a fringilla justo. Integer elit leo, semper et lorem sit amet, feugiat congue ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.</p>

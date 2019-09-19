@@ -25,32 +25,32 @@ The right-hand aside is contained within the main container, but outside of the 
 		<main class="body__main">
 
 			<div class="body__content">
-				<div class="u-block u-block--l u-block--white">
+				<div class="u-block u-block--white">
 					<h2>White Block</h2>
 					<p>Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.</p>
 				</div>
-				<div class="u-block u-block--l u-block--white">
+				<div class="u-block u-block--white">
 					<h2>White Block</h2>
 					<p>Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.</p>
 				</div>
-				<div class="u-block u-block--l u-block--grey">
+				<div class="u-block u-block--grey">
 					<h2>Grey Block</h2>
 					<p>Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.</p>
 				</div>
-				<div class="u-block u-block--l u-block--white">
+				<div class="u-block u-block--white">
 					<h2>White Block</h2>
 					<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
 				</div>
 			</div>
 
 			<aside class="body__sidebar">
-				<div class="u-block u-block--l u-block--grey">
+				<div class="u-block u-block--grey">
 					<p>This is a grey block</p>
 				</div>
-				<div class="u-block u-block--l u-block--white">
+				<div class="u-block u-block--white">
 					<p>This is a white block</p>
 				</div>
-				<div class="u-block u-block--l u-block--white">
+				<div class="u-block u-block--white">
 					<p>This is a white block</p>
 				</div>
 			</aside>

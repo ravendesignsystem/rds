@@ -1,0 +1,36 @@
+
+{% from 'details/details.twig' import details %}
+{{ details (
+    {
+        blockColor: "white",
+        blockHeading: "Past event",
+        blockSubheading: null,
+        dateStart: "2017-04-24T08:00:00",
+        dateEnd: "2017-04-24T10:30:00",
+        pastevent: true,
+        variant: "event",
+        items:
+        [
+            {
+                term: "Location",
+                description: "A602 <a href=\"link to building\">Loeb Building</a>",
+            },
+            {
+                term: "Cost",
+                description: "Free"
+            },
+            {
+                term: "Registration",
+                description: "Not required"
+            },
+            {
+                term: "Contact",
+                description: "<a hred=\"mailto:janed.doe@carleton.ca\">Jane Doe</a>, x7373"
+            },
+            {
+                term: "More info",
+                description: "<a hred=\"link\">Event website</a>"
+            }
+        ]
+    }
+) }}

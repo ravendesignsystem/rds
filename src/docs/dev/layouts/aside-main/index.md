@@ -21,13 +21,13 @@ The main area would contain all of the primary content of the page. Inside the m
 	<div class="body__container">
 
 		<aside class="body__nav">
-			<div class="u-block u-block--l u-block--white">
+			<div class="u-block u-block--white">
 				<p>This is a white block</p>
 			</div>
-			<div class="u-block u-block--l u-block--white">
+			<div class="u-block u-block--white">
 				<p>This is a white block</p>
 			</div>
-			<div class="u-block u-block--l u-block--grey">
+			<div class="u-block u-block--grey">
 				<p>This is a grey block</p>
 			</div>
 		</aside>
@@ -35,19 +35,19 @@ The main area would contain all of the primary content of the page. Inside the m
 		<main class="body__main">
 
 			<div class="body__content">
-				<div class="u-block u-block--l u-block--white">
+				<div class="u-block u-block--white">
 					<h2>White Block</h2>
 					<p>Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.</p>
 				</div>
-				<div class="u-block u-block--l u-block--white">
+				<div class="u-block u-block--white">
 					<h2>White Block</h2>
 					<p>Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.</p>
 				</div>
-				<div class="u-block u-block--l u-block--grey">
+				<div class="u-block u-block--grey">
 					<h2>Grey Block</h2>
 					<p>Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.</p>
 				</div>
-				<div class="u-block u-block--l u-block--white">
+				<div class="u-block u-block--white">
 					<h2>White Block</h2>
 					<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
 				</div>

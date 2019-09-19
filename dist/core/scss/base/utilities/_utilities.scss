@@ -146,7 +146,7 @@
 
 .u-block--alert {
 	z-index: 1000;
-	background-color: #f9e6e9;
+	background-color: $pink;
 	border-bottom: 5px solid $red;
 	//border-top: 1px solid $red;
 	position: relative;
@@ -175,8 +175,8 @@
 // Utility widths
 // --------------
 
-.u-block--s > *,
-.u-width-s {
+.u-block > *,
+.u-block--s > * {
 	max-width: #{map-get($breakpoints, s)};
 	margin-left: auto;
 	margin-right: auto;
@@ -193,6 +193,10 @@
 
 .u-block--full {
 	padding: 0 !important;
+
+	> * {
+		max-width: none;
+	}
 }
 
 .u-block--border-top {

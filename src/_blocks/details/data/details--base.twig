@@ -1,0 +1,40 @@
+
+{% from 'details/details.twig' import details %}
+{{ details (
+    {
+        blockColor: "white",
+        blockHeading: "Base example",
+        image: "http://cu-rds.s3.amazonaws.com/docs/assets/raven-profile.png",
+        imageAlt: "Head of Common Raven",
+        imageHeading: "Common Raven",
+        imageSubheading: "Species: Corvus corax",
+        variant: null,
+        items:
+        [
+            {
+                term: "Kingdom",
+                description: "Animalia Raven",
+            },
+            {
+                term: "Phylum",
+                description: "Chordata"
+            },
+            {
+                term: "Class",
+                description: "Aves"
+            },
+            {
+                term: "Order",
+                description: "Passeriformes"
+            },
+            {
+                term: "Family",
+                description: "Corvidae"
+            },
+            {
+                term: "Genus",
+                description: "Corvus"
+            }
+        ]
+    }
+) }}

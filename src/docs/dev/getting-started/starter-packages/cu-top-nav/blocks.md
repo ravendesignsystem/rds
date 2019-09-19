@@ -3,19 +3,19 @@ layout: starter
 title: Block examples
 nav: top
 ---
-<div class="u-block u-block--white u-block--s">
+<div class="u-block u-block--white">
     <div class="b-content">
         <h2>Content</h2>
         <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>
     </div>
 </div>
-<div class="u-block u-block--grey u-block--s">
+<div class="u-block u-block--grey">
     <div class="b-content">
         <h2>Content with grey background row</h2>
         <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>
     </div>
 </div>
-<section class="u-block u-block--s u-block--white">
+<section class="u-block u-block--white">
     <h2>Listing block</h2>
     <div class="b-listing">
         <ul class="listing__list" itemscope itemtype="http://schema.org/ItemList">
@@ -57,7 +57,7 @@ nav: top
         </ul>
     </div>
 </section>
-<section class="u-block u-block--s u-block--grey">
+<section class="u-block u-block--grey">
     <h2 class="c-heading">Card Grid block</h2>
     <div class="b-cardgrid">
         <div class="u-grid u-grid--3">

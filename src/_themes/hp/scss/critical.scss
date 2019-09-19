@@ -6,13 +6,13 @@
 
 // Required tooling
 // ----------------
-@import '../../coreDELME/scss/base/vendor/include-media';
-@import '../../coreDELME/scss/base/vars/vars';
+@import '../../../_core/scss/tools/include-media';
+@import '../../../_core/scss/tools/vars';
 
 // CU Homepage Critical CSS
 // -------------------------
-@import '../../coreDELME/scss/base/reboot/reboot';
-@import '../../coreDELME/scss/base/utilities/utilities';
+@import '../../../_core/scss/base/reboot/reboot';
+@import '../../../_core/scss/base/utilities/utilities';
 @import '../../../_blocks/masthead/masthead';
 @import '../blocks/bannerhero/bannerhero';
 @import '../../../_components/menupopup/menupopup';

@@ -1,34 +1,12 @@
 ---
 layout: docs
 subsite: dev
+main: l
 section: Blocks
 title: Text-Image
 banner:
   breadcrumbs:
     grandparent: Blocks
-meta:
-  version: 1.0.0
-  status: review required
-  handle: textimg
-  type: Fixed-width
-  section: Main
-  path: textimg/
-  theme: na
-  heading: Yes
-context: 
-- name: imgtext
-dependencies:
-    js: n/a
-    selector: b-textimg
-    restricted: div or section
-    maxwidth: u-block--l
-examples:
-- name: base
-- name: heading
-- name: imgtext
-- name: widths
-wild: n/a
-alternatives: wrap images in content block.
 ---
 
 The Text-Image block allows you to display text to the right or the left of an image with an appropriate amount of whitespace padding around the image.
@@ -52,8 +30,7 @@ The Text-Image block allows you to display text to the right or the left of an i
 | {{ page.title }}  block meta   |  values
 | --------------| :-------------------------------------:
 | handle              | `textimg` 
-| width type          | fixed     
-| width options       | `u-block--s`, `u-block--l`   
+| width type          | fixed 
 | colour options      | `u-block--white`, `u-block--grey`  
 | section use         | `<main>`                                      
 | has heading         | true
@@ -95,7 +72,7 @@ While all blocks are separate, a pattern for this block is to use the same backg
 {% include 'close' %}
 
 <section>
-<section class="u-block u-block--s u-block--grey">
+<section class="u-block u-block--grey">
     <h2 class="c-heading- c-heading--center">Supports centered block headings</h2>
     <p>In addition, it supports subheadings.</p>
     <div class="b-textimg">
@@ -109,7 +86,7 @@ While all blocks are separate, a pattern for this block is to use the same backg
         </div>
     </div>
 </section>
-<div class="u-block u-block--s u-block--grey">
+<div class="u-block u-block--grey">
     <div class="b-textimg">
         <div class="textimg__wrapper">
             <section>
@@ -122,7 +99,7 @@ While all blocks are separate, a pattern for this block is to use the same backg
         </div>
     </div>
 </div>
-<div class="u-block u-block--s u-block--grey">
+<div class="u-block u-block--grey">
     <div class="b-textimg">
         <div class="textimg__wrapper">
             <section>
@@ -141,7 +118,7 @@ While all blocks are separate, a pattern for this block is to use the same backg
 
 ```html
 <section>
-<section class="u-block u-block--s u-block--grey">
+<section class="u-block u-block--grey">
     <h2 class="c-heading- c-heading--center">Supports centered block headings</h2>
     <p>In addition, it supports subheadings.</p>
     <div class="b-textimg">
@@ -155,7 +132,7 @@ While all blocks are separate, a pattern for this block is to use the same backg
         </div>
     </div>
 </section>
-<div class="u-block u-block--s u-block--grey">
+<div class="u-block u-block--grey">
     <div class="b-textimg">
         <div class="textimg__wrapper">
             <section>
@@ -168,7 +145,7 @@ While all blocks are separate, a pattern for this block is to use the same backg
         </div>
     </div>
 </div>
-<div class="u-block u-block--s u-block--grey">
+<div class="u-block u-block--grey">
     <div class="b-textimg">
         <div class="textimg__wrapper">
             <section>

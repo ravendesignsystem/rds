@@ -1,11 +1,11 @@
 {% macro listing(data) %}
 {% if data.blockHeading %}
-<section class="u-block {% if data.blockSize %}u-block--{{ data.blockSize }}{% else %}u-block--l{% endif %} {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
+<section class="u-block {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
     <h2{% if data.blockHeadingCenter %} class="c-heading--center{% if data.subHeading %} c-heading--subheading{% endif %}"{% endif %}>{{ data.blockHeading }}</h2>
     {% if data.blockSubheading %}<p>{{ data.blockSubheading }}</p>
 {% endif %}
 {% else %}
-<div class="u-block {% if data.blockSize %}u-block--{{ data.blockSize }}{% else %}u-block--l{% endif %} {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
+<div class="u-block {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
 {% endif %}
 {% if data.grid %}
 <div class="u-grid u-grid--{{ data.grid }}">

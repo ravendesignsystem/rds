@@ -5,7 +5,6 @@ title: Card Grid
 section: Blocks
 subsection: Main blocks
 ---
-
 The Card Grid block uses RDS' [responsive grid](#) to list [Card components]({{site.url}}/dev/components/cards/card/) in equal-width columns.
 
 **Note**: this block should be only be used to list cards and should not be used for general layout purposes.
@@ -15,7 +14,7 @@ The Card Grid block uses RDS' [responsive grid](#) to list [Card components]({{s
 {%include "inc" with {'block': 'cardgrid-base', 'close': false} %}
 
 ```html
-<div class="u-block u-block--white u-block--s">
+<div class="u-block u-block--white">
 	<div class="b-cardgrid u-grid u-grid--3">
 		{% verbatim %}{%include 'components/card'%}{% endverbatim %}
         {% verbatim %}{%include 'components/card'%}{% endverbatim %}
@@ -31,7 +30,6 @@ The Card Grid block uses RDS' [responsive grid](#) to list [Card components]({{s
 | --------------| :-------------------------------------:
 | handle              | `cardgrid` 
 | options examples    | <a href="#small-screen-stack-modifier">stack mod</a>, <a href="#card-grid-with-cta-link-or-button">CTA button</a>
-| block width options       | `u-block--s`, `u-block--l`    
 | block colour options      | `u-block--white`, `u-block--grey`  
 | section use         | `<main>`                  
 | width type          | fixed                           
@@ -52,7 +50,7 @@ The modifier `b-cardgrid--stacks` implements a single column view on small scree
 <p class="u-hide-s"><strong>Note</strong>: your screen size is currently too large to view the difference applying this modifier makes in the example above. To see the difference, make your browser window smaller.</p>
 
 ```html
-<div class="u-block u-block--white u-block--s">
+<div class="u-block u-block--white">
 	<div class="b-cardgrid b-cardgrid--stacks u-grid u-grid--3">
 		{% verbatim %}{%include 'components/card'%}{% endverbatim %}
         {% verbatim %}{%include 'components/card'%}{% endverbatim %}
@@ -66,7 +64,7 @@ The modifier `b-cardgrid--stacks` implements a single column view on small scree
 ## With heading
 
 ```html
-<section class="u-block u-block--white u-block--s"
+<section class="u-block u-block--white"
     <h2>Heading</h2>
     <div class="b-cardgrid u-grid u-grid--3">
         {% verbatim %}{%include 'components/card'%}
@@ -83,7 +81,7 @@ Four and three column grids are available. To control the number of columns, adj
 
 {%include "inc" with {'close': true} %}
 
-<div class="u-block u-block--grey u-block--l">
+<div class="u-block u-block--grey">
 	<div class="b-cardgrid u-grid u-grid--4">
 		{%include "card/data/card--base"%}
 		{%include "card/data/card--base"%}
@@ -95,7 +93,7 @@ Four and three column grids are available. To control the number of columns, adj
 {%include "inc" with {'open': 'true'} %}
 
 ```html
-<div class="u-block u-block--grey u-block--s">
+<div class="u-block u-block--grey">
 	<div class="b-cardgrid u-grid u-grid--4">
 		{% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
         {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
@@ -112,7 +110,7 @@ If you need a 'Load more' button under the card grid add it within the `u-block`
 
 {%include "inc" with {'close': 'true'} %}
 
-<div class="u-block u-block--white u-block--l">
+<div class="u-block u-block--white">
 	<div class="b-cardgrid u-grid u-grid--4">
 		{%include "card/data/card--base"%}
         {%include "card/data/card--base"%}
@@ -125,7 +123,7 @@ If you need a 'Load more' button under the card grid add it within the `u-block`
 {%include "inc" with {'open': 'true'} %}
 
 ```
-<div class="u-block u-block--white u-block--l">
+<div class="u-block u-block--white">
 	<div class="b-cardgrid u-grid u-grid--4">
 		{% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
         {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
@@ -140,7 +138,7 @@ Or, if you want to use a CTA to link off to an archive or another page.
 
 {%include "inc" with {'close': 'true'} %}
 
-<div class="u-block u-block--white u-block--l">
+<div class="u-block u-block--white">
 	<div class="b-cardgrid u-grid u-grid--4">
 		{%include "card/data/card--base"%}
         {%include "card/data/card--base"%}
@@ -153,7 +151,7 @@ Or, if you want to use a CTA to link off to an archive or another page.
 {%include "inc" with {'open': 'true'} %}
 
 ```
-<div class="u-block u-block--white u-block--l">
+<div class="u-block u-block--white">
 	<div class="b-cardgrid u-grid u-grid--4">
 		{% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
         {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
@@ -167,6 +165,8 @@ Or, if you want to use a CTA to link off to an archive or another page.
 
 ## Block settings
 
+TODO UPDATE
+
 Control the block's width and background colour using the following [block settings](#)
 
 - **Block widths**: `u-block--s`\*, `u-block--l`, `u-block--l`
@@ -178,7 +178,7 @@ Control the block's width and background colour using the following [block setti
 
 {%include "inc" with {'close': 'true'} %}
 
-<section class="u-block u-block--grey u-block--l">
+<section class="u-block u-block--grey">
 	<h2>Grid block with medium width and grey background setting</h2>
 	<div class="b-cardgrid u-grid u-grid--4">
 		{%include "card/data/card--base"%}
@@ -191,7 +191,7 @@ Control the block's width and background colour using the following [block setti
 {%include "inc" with {'open': 'true'} %}
 
 ```html
-<div class="u-block u-block--grey u-block--l">
+<div class="u-block u-block--grey">
 	<div class="b-cardgrid u-grid u-grid--4">
 		{% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
         {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
@@ -208,10 +208,6 @@ Grid block cards should:
 
 - Present objects of the same content and type.
 - Images should have a similar tone and treatment to visually unify the panel.
-
-## Implementation Notes
-
-- If you are building pages with the Card Grid block that do not contain [Content blocks](#), for more space consider using the four column grid and the large-size width setting `u-block--l`.
 
 ## When To Avoid
 

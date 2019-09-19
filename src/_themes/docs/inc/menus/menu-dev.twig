@@ -85,11 +85,6 @@
                             },
                             {
                                 active: page.title,
-                                title: "Global Nav",
-                                url: site.url ~ 'dev/blocks/header/globalnav/'
-                            },
-                            {
-                                active: page.title,
                                 title: "Masthead",
                                 url: site.url ~ 'dev/blocks/header/masthead/'
                             }
@@ -110,6 +105,11 @@
                                 active: page.title,
                                 title: "Content",
                                 url: site.url ~ 'dev/blocks/main/content/'
+                            },
+                            {
+                                active: page.title,
+                                title: "Details",
+                                url: site.url ~ 'dev/blocks/main/details/'
                             },
                             {
                                 active: page.title,
@@ -138,6 +138,30 @@
                         ]
                         },
                         {
+                            title: 'Footer blocks',
+                            url: site.url ~ 'dev/blocks/footer/',
+                            active: page.title,
+                            section: page.section,
+                            subsection: page.subsection,
+                            submenu: [
+                            {
+                                active: page.title,
+                                title: 'Footer Brand',
+                                url: site.url ~ 'dev/blocks/footer/footerbrand/'
+                            },
+                            {
+                                active: page.title,
+                                title: 'Footer Simple',
+                                url: site.url ~ 'dev/blocks/footer/footersimple/'
+                            },
+                            {
+                            active: page.title,
+                            title: 'Footer Sitemap',
+                            url: site.url ~ 'dev/blocks/footer/footersitemap/'
+                            }
+                        ]
+                        },
+                        {
                             title: 'Dialogue blocks',
                             url: site.url ~ 'dev/blocks/dialogue/',
                             active: page.title,
@@ -155,10 +179,6 @@
                                 url: site.url ~ 'dev/blocks/header/search/'
                             }
                         ]
-                        },
-                        {
-                            title: 'Footer blocks',
-                            url: site.url ~ 'dev/getting-started/recipes-and-patterns/'
                         }
                     ]
                 },
@@ -211,6 +231,13 @@
                                 active: page.title
                             }
                         ]
+                        },
+                        {
+                            title: 'Alert',
+                            url: site.url ~ 'dev/components/alert/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            active: page.title
                         },
                         {
                             title: 'Badge',

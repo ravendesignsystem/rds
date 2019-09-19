@@ -1,14 +1,14 @@
 {% macro listing(settings, data) %}
 {% set blockHeading, itemHeading = 'h2', 'h3' %}
 {% if settings.heading %}
-<section class="u-block {% if settings.size %}u-block--{{ settings.size }}{% else %}u-block--s{% endif %}{% if settings.color %} u-block--{{ settings.color }}{% endif %}">
+<section class="u-block {% if settings.color %} u-block--{{ settings.color }}{% endif %}">
     <{{ blockHeading }}{% if settings.headingContent != 'none' %} class="c-heading"{% endif %}>{{ settings.heading }}</{{ blockHeading }}>
 {% if settings.headingContent != 'none' and settings.headingContent %}
     {{ settings.headingContent|raw }}
 {% endif %}
 {% else %}
 {#u-no-borders#}
-<div class="u-block {% if settings.size %}u-block--{{ settings.size }}{% else %}u-block--s{% endif %}{% if settings.color %} u-block--{{ settings.color }}{% endif %}">
+<div class="u-block {% if settings.color %} u-block--{{ settings.color }}{% endif %}">
 {% endif %}
 {% if settings.grid %}
 <div class="u-grid u-grid--{{ settings.grid }}">

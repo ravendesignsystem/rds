@@ -1,0 +1,60 @@
+{% macro details(data) %}
+{% if data.blockHeading %}
+<section class="u-block {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
+    <h2{% if data.blockHeadingCenter %} class="c-heading--center{% if data.subHeading %} c-heading--subheading{% endif %}"{% endif %}>{{ data.blockHeading }}</h2>
+{% if data.pastevent == true  %}
+        <div class="c-alert c-alert--warning c-alert--icon" role="alert">
+            <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle cx="12" cy="12" fill="#000" r="10"/><path d="M13.824 17.538H10V14.67h3.824zm0-4.301H10V5.07h3.824z" fill="#fff"/></g></svg>
+            <h2>Warning: Past Event</h2>
+            <p>Note, you are viewing an event that occurred back on {{ data.dateStart|date("l, F dS, Y") }}.</p>
+        </div>
+{% endif %}
+{% if data.blockSubheading %}
+    <p>{{ data.blockSubheading|raw }}</p>
+{% endif %}
+{% else %}
+<div class="u-block {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
+{% endif %}
+    <div class="b-details{% if data.variant == "figure" %} b-details--figure{% elseif data.variant == "event" %} b-details--event{% endif %}">
+{% if data.variant == "figure" or "event" %}
+        <div>
+            <figure>
+{% if data.img %}
+                <img src="{{ data.img }}" alt="{{ data.imgAlt }}">
+                <figcaption>{{ data.caption }}<br>{{ data.subCaption }}</figcaption>
+{% endif %}
+{% if data.pastevent == true %}
+                <figcaption>Past Event</figcaption>
+{% elseif data.dateStart %}
+                <figcaption>{{ item.dateStart|date("M") }}<br>{{ item.startDate|date("j") }}</figcaption>
+{% endif %}
+            </figure>
+        </div>
+{% endif %}
+        <div>
+            <dl class="u-link">
+{% if data.dateStart %}
+                <dt>Date</dt>
+                <dd>{{ data.dateStart|date("l, F dS, Y") }}</dd>
+
+                <dt>Time</dt>
+                <dd>{{ data.dateStart|date("h:i A") }} - {{ data.dateEnd|date("h:i A") }}</dd>
+{% endif %}
+{% for item in data.items %}
+                <dt>{{ item.term }}</dt>
+                <dd>{{ item.description|raw }}</dd>
+
+{% endfor %}
+            </dl>
+{% if data.cta %}
+    <a class="c-buttoncta u-icon" href="{{ data.ctaURL }}">{% if data.ctaIcon %}{% include "icons/"~data.ctaIcon~".svg" %}{% endif %}{{ data.cta }}</a>
+{% endif %}
+{% if data.cta %}
+    <a class="c-buttoncta c-buttoncta--ghost u-icon" href="{{ data.ctaURL2 }}">{% if data.ctaIcon2 %}{% include "icons/"~data.ctaIcon2~".svg" %}{% endif %}{{ data.cta2 }}</a>
+{% endif %}
+        </div>
+    </div>
+{% if data.blockHeading %}
+</section>
+{% endif %}
+{% endmacro %}

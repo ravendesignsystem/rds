@@ -9,15 +9,15 @@
 	@include media('>868px') {
 		padding: $block-margin;
 	}
+
+	.u-block {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 .l-multicol--white {
 	background-color: white;
-
-	.u-block--white {
-		padding-left: 0;
-		padding-right: 0;
-	}
 
 	.multicol__content > .u-block--white:first-child, .multicol__sidebar > .u-block--white:first-child {
 		padding-top: 10px;

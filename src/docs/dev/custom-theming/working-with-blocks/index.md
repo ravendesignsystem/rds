@@ -47,6 +47,8 @@ Not only do these modifiers set the background colour, they are also used as a m
 By using `u-block--white` the system will remove the top padding from each white block that immediately follows the first instance, resulting in a `40px` space as expected.
 
 # Block Sizes
+
+TODO update!!
 There are 3 modifiers that you can use to set the width of the contents inside each block. Each size corresponds with the default breakpoint map.
 
 * `u-block--s` &mdash; Set the max width at 768px wide
@@ -56,7 +58,7 @@ There are 3 modifiers that you can use to set the width of the contents inside e
 The max width is only applied to the direct children of the main `u-block` wrapper, allowing the background colours, if applied, to span the full window width.
 
 ```html
-<div class="u-block u-block--s">
+<div class="u-block">
     <p>The p tag is a direct child, and now has a max-width of 768px</p>
 </div>
 
@@ -87,7 +89,7 @@ The following are examples of how blocks should be used.
 ## White block with a max-width of 768px
 
 ```html
-<div class="u-block u-block--white u-block--s">
+<div class="u-block u-block--white">
     <h1>Header</h1>
     <ul>
         <li>List Item 1</li>

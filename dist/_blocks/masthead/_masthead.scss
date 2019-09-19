@@ -296,3 +296,7 @@ li.masthead__cta.c-menupopup > a {
 		right: 15px !important;
 	}
 }
+
+.masthead__nav .u-active > a, .masthead__nav .u-active > button {
+	color: $red;
+}

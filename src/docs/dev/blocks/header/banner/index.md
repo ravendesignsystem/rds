@@ -21,8 +21,7 @@ At its bare minimum, the Banner block displays the page's  `<h1>` title.
 | {{ page.title }}  block meta   |  values
 | --------------| :-------------------------------------:
 | handle              | `banner` 
-| options examples    | <a href="#banner-with-breadcrumbs">breadcrumbs</a>, <a href="#banner-with-cta-button">CTA button</a>, <a href="#multiple-buttons">CTA buttons</a>
-| width options       | `u-block--s`    
+| options examples    | <a href="#banner-with-breadcrumbs">breadcrumbs</a>, <a href="#banner-with-cta-button">CTA button</a>, <a href="#multiple-buttons">CTA buttons</a>  
 | colour options      | `u-block--grey`  
 | section use         | `<header>`                  
 | width type          | fixed-row                           

@@ -1,11 +1,12 @@
 ---
 layout: docs
-subsite: dev
 title: Listing
+subsite: dev
+main: null
+menu: dev
 banner:
   breadcrumbs:
     grandparent: Blocks
-menu: dev
 section: Blocks
 subsection: Main blocks
 ---
@@ -56,7 +57,7 @@ The Listing block is one of the few blocks that can be positioned side-by-side, 
 
 {% include 'close' %}
 
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <div class="u-grid u-grid--2 u-grid--s1">
      <section>
         <h3>Two column Listing blocks</h3>
@@ -106,7 +107,7 @@ The Listing block is one of the few blocks that can be positioned side-by-side, 
 {% include 'open' %}
 
 ```html
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <div class="u-grid u-grid--2 u-grid--s1">
      <section>
         <h3>Two column Listing blocks</h3>
@@ -168,8 +169,7 @@ Listing blocks should only be used in two columns if:
 
 | {{ page.title }}  block meta   |  values
 | --------------| :-------------------------------------:
-| handle              | `listing` 
-| width options       | `u-block--s`, `u-block--l`     
+| handle              | `listing`    
 | colour options      | `u-block--white`,`u-block--grey`
 | section use         | `<main>`                  
 | width type          | fixed                         

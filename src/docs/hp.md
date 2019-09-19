@@ -22,7 +22,7 @@ banner: none
 {% set docs = {modifier: 'b-docs-textimg'} %}
 {{ hero.textimg(settings, fields, docs) }}
 
-<div class="u-block u-block--l u-block--black">
+<div class="u-block u-block--black">
     <div class="b-docs-gridhome u-grid u-grid--2 u-grid--s1">
         <a href="dev/">
             <div class="docs-gridhome__panel docs-gridhome__panel--dev">

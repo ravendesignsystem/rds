@@ -1,0 +1,8 @@
+{% from "alert/alert.twig" import alert %}
+{{ alert (
+    {
+        heading: "Outdoor event",
+        message: "Regardless of weather, this event will be held outdoors. Please dress appropriately.",
+        type: "warning"
+    }
+) }}

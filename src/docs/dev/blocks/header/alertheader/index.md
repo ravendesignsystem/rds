@@ -27,8 +27,7 @@ Check out the Page Alert block in use directly above the Banner on this page.
 
 | {{ page.title }}  block meta   |  values
 | --------------| :-------------------------------------:
-| handle              | `alertheader` 
-| width options       | `u-block--s`, `u-block--l`     
+| handle              | `alertheader`   
 | colour options      | n/a  
 | section use         | `<header>`                  
 | width type          | fixed-row                           

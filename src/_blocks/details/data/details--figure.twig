@@ -1,0 +1,41 @@
+
+{% from 'details/details.twig' import details %}
+{{ details (
+    {
+        blockColor: "white",
+        blockHeading: "Figure variant",
+        blockSubheading: "A common pattern for this block is to include a figure displaying an image or chart with an optional caption.",
+        img: "http://cu-rds.s3.amazonaws.com/docs/assets/raven-profile.png",
+        imgAlt: "Head of Common Raven",
+        caption: "Common Raven",
+        subCaption: "Species: Corvus corax",
+        variant: "figure",
+        items:
+        [
+            {
+                term: "Kingdom",
+                description: "Animalia Raven",
+            },
+            {
+                term: "Phylum",
+                description: "Chordata"
+            },
+            {
+                term: "Class",
+                description: "Aves"
+            },
+            {
+                term: "Order",
+                description: "Passeriformes"
+            },
+            {
+                term: "Family",
+                description: "Corvidae"
+            },
+            {
+                term: "Genus",
+                description: "Corvus"
+            }
+        ]
+    }
+) }}

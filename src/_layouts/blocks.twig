@@ -3,7 +3,7 @@
 <main>
 {% for item in page.examples %}
     {% include page.meta.path ~ 'data/'~ page.meta.handle ~ '--' ~ item.name ~ '.twig' ignore missing with {'docs': true} %}
-    <section class="u-block u-block--s u-block--white">
+    <section class="u-block u-block--white">
         <div class="b-tabs" role="tablist">
             <div class="b-tabs__tab" role="tab">
                 <a class="b-tabs__button u-icon" href="#">{% include "icons/code.svg" ignore missing %} HTML</a>
@@ -139,7 +139,7 @@
     </section>
 
 {% endfor %}
-    <div class="u-block u-block--s u-block--white">
+    <div class="u-block u-block--white">
         <div class="b-content">
               {% block content %}
               {% endblock %}

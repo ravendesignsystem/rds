@@ -2,18 +2,18 @@
 	margin-top: $block-margin;
 }
 
-.b-cardgrid .c-card a {
+.b-cardgrid .c-card {
 	pointer-events: auto;
 	transition: 300ms opacity, 300ms transform;
 }
 
-.b-cardgrid.u-grid:hover .c-card a,
-.b-cardgrid .u-grid:hover .c-card a {
+.b-cardgrid.u-grid:hover .c-card,
+.b-cardgrid .u-grid:hover .c-card {
 	opacity: 0.5;
 }
 
-.b-cardgrid .u-grid:hover .c-card a:hover,
-.b-cardgrid.u-grid:hover .c-card a:hover {
+.b-cardgrid .u-grid:hover .c-card:hover,
+.b-cardgrid.u-grid:hover .c-card:hover {
 	transform: scale(1.05);
 	opacity: 1;
 }
@@ -33,11 +33,11 @@
 		border: 1px solid $grey;
 		margin-bottom: 20px;
 
-		.card__text:not(.c-card--people .card__text) {
+		p:not(.c-card--people p) {
 			display: none;
 		}
 
-		.card__figure {
+		figure {
 			width: 40%;
 			float: left;
 
@@ -49,7 +49,7 @@
 			}
 		}
 
-		.card__body {
+		header {
 			float: left;
 			padding: 20px;
 			min-height: auto;
@@ -57,7 +57,7 @@
 		}
 
 		@include media('<550px') {
-			.card__title {
+			h3 {
 				font-size: 15px;
 				display: -webkit-box;
 				-webkit-line-clamp: 3;
@@ -69,11 +69,11 @@
 				// TODO fix this with proper css clamping when available
 			}
 
-			.card__date {
+			time {
 				font-size: 13px;
 			}
 
-			.card__body {
+			header {
 				padding: 15px;
 			}
 		}

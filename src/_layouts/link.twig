@@ -15,6 +15,9 @@
     {% if block == "Content"%}
         <a href="{{site.url}}dev/blocks/main/content/">{{ block }}{% if Block == true %} Block{% endif %}</a>
     {% endif %}
+    {% if block == "Details"%}
+        <a href="{{site.url}}dev/blocks/main/details/">{{ block }}{% if Block == true %} Block{% endif %}</a>
+    {% endif %}
     {% if block == "Footer Brand"%}
         <a href="{{site.url}}dev/blocks/footer/footerbrand/">{{ block }}{% if Block == true %} Block{% endif %}</a>
     {% endif %}

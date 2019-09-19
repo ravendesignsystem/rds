@@ -13,7 +13,7 @@ RDS cards group related content and actions about a single subject. Cards serve 
 ## Base card
 
 {%include "inc" with {'close': true} %}
-<div class="u-block u-block--white u-block--s">
+<div class="u-block u-block--white">
 	<div class="b-cardgrid u-grid u-grid--3">
         {% include 'inc' with {'component': 'card-base'} %}
     </div>
@@ -27,7 +27,7 @@ RDS cards group related content and actions about a single subject. Cards serve 
 Provide more information about the linked item by adding a description to the card.
 
 {%include "inc" with {'close': true} %}
-<div class="u-block u-block--white u-block--s">
+<div class="u-block u-block--white">
 	<div class="b-cardgrid u-grid u-grid--3">
         {% include 'inc' with {'component': 'card-text'} %}
     </div>
@@ -41,7 +41,7 @@ Provide more information about the linked item by adding a description to the ca
 For news or blog posts, you can provide an associated publishing date.
 
 {%include "inc" with {'close': true} %}
-<div class="u-block u-block--white u-block--s">
+<div class="u-block u-block--white">
 	<div class="b-cardgrid u-grid u-grid--3">
         {% include 'inc' with {'component': 'card-news'} %}
     </div>
@@ -55,7 +55,7 @@ For news or blog posts, you can provide an associated publishing date.
 Provide more information about the linked item by adding a description to the card and a date.
 
 {%include "inc" with {'close': true} %}
-<div class="u-block u-block--white u-block--s">
+<div class="u-block u-block--white">
 	<div class="b-cardgrid u-grid u-grid--3">
         {% include 'inc' with {'component': 'card-newstext'} %}
     </div>
@@ -69,7 +69,7 @@ Provide more information about the linked item by adding a description to the ca
 Use the video card variant to highlight that the linked item's content contains a video.
 
 {%include "inc" with {'close': true} %}
-<div class="u-block u-block--white u-block--s">
+<div class="u-block u-block--white">
 	<div class="b-cardgrid u-grid u-grid--3">
         {% include 'inc' with {'component': 'card-video'} %}
     </div>
@@ -81,7 +81,7 @@ Use the video card variant to highlight that the linked item's content contains 
 ## Video card variant with text description
 
 {%include "inc" with {'close': true} %}
-<div class="u-block u-block--white u-block--s">
+<div class="u-block u-block--white">
 	<div class="b-cardgrid u-grid u-grid--3">
         {% include 'inc' with {'component': 'card-videotext'} %}
     </div>
@@ -95,7 +95,7 @@ Use the video card variant to highlight that the linked item's content contains 
 To list groups of people, use the people card variant. People images should be square and at least 500x500px.
 
 {%include "inc" with {'close': true} %}
-<div class="u-block u-block--white u-block--s">
+<div class="u-block u-block--white">
 	<div class="b-cardgrid u-grid u-grid--3">
         {% include 'inc' with {'component': 'card-people'} %}
     </div>

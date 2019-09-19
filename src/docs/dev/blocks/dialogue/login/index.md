@@ -14,7 +14,7 @@ The login block can be used in one of two ways: as a stand alone block on a page
 {% include 'inc' with {'block': 'login'} %}
 
 ```html
-<div class="u-block u-block--grey u-block--s">
+<div class="u-block u-block--grey">
     <div class="b-login">
         <h2>Login Title</h2>
         <form class="c-form" name="loginform" action="/" method="post" accept-charset="UTF-8">

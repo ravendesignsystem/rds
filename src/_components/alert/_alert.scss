@@ -1,25 +1,57 @@
-.c-alert--icon  {
+.c-alert {
+	min-height: 80px;
+}
+.c-alert--icon {
 	background-color: #e6f7ff;
 	border: 1px solid #91d5ff;
-	padding: 25px;
+	padding: 25px 25px 25px 65px;
 	border-radius: 4px;
 	margin-bottom: $margin-bottom;
 	position: relative;
 }
-
-.c-alert--icon {
-	padding-left: 55px;
-}
 .c-alert--icon svg {
-	width: 25px;
+	width: 30px;
 	float: left;
 	position: absolute;
 	top: 25px;
-	left: 15px;
+	left: 19px;
 }
 
-.c-alert--info svg, .c-alert--info  {
-	fill: #1496DA;
+.c-alert--info svg,
+.c-alert--info {
+	fill: #1496da;
+}
+
+.c-alert--error svg,
+.c-alert--info {
+	fill: #1496da;
+}
+
+.c-alert--error {
+	border: 1px solid $red;
+	background-color: $pink;
+}
+
+.c-alert--error svg {
+	fill: $red;
+}
+
+.c-alert--warning {
+	border: 1px solid #faab08;
+	background-color: #fffaf1;
+
+	circle {
+		fill: #faab08;
+	}
+}
+
+.c-alert--success {
+	border: 1px solid #45bf2e;
+	background-color: #fafff5;
+
+	svg {
+		fill: #45bf2e;
+	}
 }
 
 .c-alert p {

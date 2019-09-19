@@ -23,7 +23,7 @@ To see the Menu Popup example, click the purple link below .
 
 {%include "inc" with {'close': true} %}
 
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <div style="position:relative;width:220px">
         <button class="c-menupopup" style="color:purple;width:225px;" aria-label="Open Menu">Graduate Admission links</button>
         <ul class="menupopup__menu" aria-label="menupopup">
@@ -37,7 +37,7 @@ To see the Menu Popup example, click the purple link below .
 {%include "inc" with {'open': true} %}
 
 ```html
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <div style="position:relative;width:220px">
         <button class="c-menupopup" style="color:purple;width:225px;" aria-label="Open Menu">Graduate Admission links</button>
         <ul class="menupopup__menu" aria-label="menupopup">
@@ -60,7 +60,7 @@ Click on the orange link below to see the menu align to the right along with the
 
 {%include "inc" with {'close': true} %}
 
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <div style="position:relative;width:220px">
         <button class="c-menupopup c-menupopup--right" style="color:darkorange;width:225px;" aria-label="Open Menu">Graduate Admission links</button>
         <ul class="menupopup__menu" aria-label="menupopup">
@@ -74,7 +74,7 @@ Click on the orange link below to see the menu align to the right along with the
 {%include "inc" with {'open': true} %}
 
 ```html
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <div style="position:relative;width:220px">
         <button class="c-menupopup c-menupopup--right" style="color:darkorange;width:225px;" aria-label="Open Menu">Graduate Admission links</button>
         <ul class="menupopup__menu" aria-label="menupopup">
@@ -93,7 +93,7 @@ Hover over the green link below to see:
 
 {%include "inc" with {'close': true} %}
 
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <div style="position:relative;width:210px">
         <a class="c-menupopup c-menupopup--right" style="color:darkgreen;display:block" aria-label="Open Menu">Graduate Admission links</a>
         <ul class="menupopup__menu" aria-label="menupopup">
@@ -107,7 +107,7 @@ Hover over the green link below to see:
 {%include "inc" with {'open': true} %}
 
 ```html
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <div style="position:relative;width:210px">
         <a class="c-menupopup c-menupopup--right" style="color:darkgreen;display:block" aria-label="Open Menu">Graduate Admission links</a>
         <ul class="menupopup__menu" aria-label="menupopup">
@@ -137,7 +137,7 @@ Add icons to your popmenu items using the `u-icon` utility class>
 
 {%include "inc" with {'close': true} %}
 
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <div style="position:relative;width:210px">
         <a class="c-menupopup c-menupopup--right" style="color:darkgreen;display:block" aria-label="Open Menu">Menu popup ith Icons</a>
 <ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">

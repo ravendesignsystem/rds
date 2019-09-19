@@ -6,7 +6,7 @@
     }
 </style>
 {% endif %}
-<div class="u-block {% if data.img %}u-block--black u-block--full {% else %}u-block--s u-block--grey{% endif %}">
+<div class="u-block{% if data.img %} u-block--black u-block--full {% else %} u-block--grey{% endif %}">
     <div class="b-banner{% if data.img %} b-banner--img{% endif %}{% if data.imgOpacity == "dark" %} b-banner--img-dark{% elseif data.imgOpacity == "light" %} b-banner--img-light{% endif %}{% if data.imgPosition == "top" %} b-banner--img-top{% elseif data.imgPosition == "bottom" %} b-banner--img-bottom{% endif %}">
         <section>
 {% if data.breadcrumbs.parent %}

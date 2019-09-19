@@ -1,0 +1,18 @@
+{% macro alert(data) %}
+<div class="c-alert {% if data.type == "error" %}c-alert--error{% elseif data.type == "warning" %} c-alert--warning{% elseif data.type == "success" %} c-alert--success{% else %}c-alert--info{% endif %} c-alert--icon" role="alert">
+    {% if data.type == "error" %}{% include 'icons/alert.svg' %}{% elseif data.type == "success" %}{% include 'icons/verified.svg' %}{% elseif data.type == "warning" %}{% include 'icons/warning.svg' %}{% else %}{% include 'icons/info.svg' %}{% endif %}
+{% if data.heading %}
+    <h2>{{ data.heading }}</h2>
+{% endif %}
+    <p>{{ data.message }}</p>
+{#{% if data.dismissible == false %}#}
+{#    <button class="alertheader__dismiss" aria-label="Close alert" type="button" data-close>#}
+{#        <span aria-hidden="true">&times;</span>#}
+{#    </button>#}
+{#{% endif %}#}
+</div>
+{% endmacro %}
+{#<div class="c-alert c-alert--info c-alert--icon">{% include 'icons/info.svg' %}#}
+{#    <h2>Listing block headings</h2>#}
+{#    <p>For Listing blocks a heading is required. Therefore all the  code examples on this page include a block headings.</p>#}
+{#</div>#}

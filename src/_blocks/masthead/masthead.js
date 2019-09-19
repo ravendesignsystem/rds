@@ -26,13 +26,13 @@ import dialogPolyfill from 'dialog-polyfill';
 		lastX = window.innerWidth,
 		mhSubmenu = document.querySelector('button.c-menupopup + .menupopup__menu');
 
-	if (header === null) {
-		alert(
-			'RDS requires you to have a <header> tag wrapping your Header blocks. Please fix this, before continuing with your awesomeness.'
-		);
-	} else {
-		var masthead_y = header.scrollHeight;
-	}
+	// if (header === null) {
+	// 	alert(
+	// 		'RDS requires you to have a <header> tag wrapping your Header blocks. Please fix this, before continuing with your awesomeness.'
+	// 	);
+	// } else {
+	// 	var masthead_y = header.scrollHeight;
+	// }
 
 	// dialogue polyfill
 	if (modal) {

@@ -35,6 +35,10 @@
 		background-repeat: no-repeat;
 		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cpath fill='none' stroke='%23535353' stroke-linecap='round' stroke-linejoin='round' stroke-width='18' d='M37 118l54-54-54-54'/%3E%3C/svg%3E");
 
+		h3, h4 {
+			color: $link;
+		}
+
 		&:hover {
 			background-color: $grey;
 
@@ -177,6 +181,7 @@
 //=============
 .b-listing--icon figure {
 	min-width: auto;
+	width: auto !important;
 	margin-right: 0;
 }
 

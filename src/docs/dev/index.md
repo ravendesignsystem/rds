@@ -31,13 +31,13 @@ banner:
 
 - {%include "link" with {'block': 'Alert Header'} %}
 - {%include "link" with {'block': 'Banner'} %}
-- {%include "link" with {'block': 'Global Nav'} %}
 - {%include "link" with {'block': 'Masthead'} %}
 
 **Main Blocks**
 
 - {%include "link" with {'block': 'Card Grid'} %}
 - {%include "link" with {'block': 'Content'} %}
+- {%include "link" with {'block': 'Details'} %}
 - {%include "link" with {'block': 'Listing'} %}
 - {%include "link" with {'block': 'Text Image'} %}
 
@@ -72,6 +72,7 @@ Add content within the {%include "link" with {'block': 'Content', 'Block': true}
 
 Create DRY blocks using the components below:
 
+- [Alert]({{site.url}}dev/components/alert/)
 - [Button CTA]({{site.url}}dev/components/buttoncta/)
 - [Button Social]({{site.url}}dev/components/buttonsocial/)
 - [Card]({{site.url}}dev/components/card/)
@@ -99,18 +100,20 @@ Create DRY blocks using the components below:
 {% from 'listing/listing.twig' import listing %}
 {{ listing (
     {
-        color: 'white'
-    },
-    [
-        {
-            title: "Google Dev Docs: Abberviations",
-            url: "https://developers.google.com/style/abbreviations",
-        },
-        {
-            title: "Vue Design System Docs",
-            url: "https://github.com/viljamis/vue-design-system/wiki"
-        }
-    ]
+       blockColor: "white",
+            blockHeading: "For review",
+            items:
+            [
+                {
+                    title: "Google Dev Docs: Abberviations",
+                    url: "https://developers.google.com/style/abbreviations",
+                },
+                {
+                    title: "Vue Design System Docs",
+                    url: "https://github.com/viljamis/vue-design-system/wiki"
+                }
+            ]
+    }
 ) }}
 
 

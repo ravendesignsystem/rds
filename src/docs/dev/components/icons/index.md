@@ -203,7 +203,7 @@ We would like to give a big shout out to [Gihtub](https://github.com) as the maj
 
 {% include 'inc' with {'close': 'true'} %}
 
-<div class="u-block u-block--white u-block--s">
+<div class="u-block u-block--white">
     <div class="b-cardgrid u-grid u-grid--4">
     {% for item in page.icons %}
         <div class="c-cardlabel">

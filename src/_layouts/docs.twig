@@ -89,12 +89,12 @@
                 </aside>
         {% endif %}
                 {% block main %}
-                    <main {% if (page.menu) or (page.sidebar) %}class="multicol__main"{% endif %} id="content">
+                    <main {% if (page.main == "l") or (page.homepage == true) %}class="l-col-l"{% endif %} {% if (page.menu) or (page.sidebar) %}class="multicol__main"{% endif %} id="content">
                         {% if (page.menu) or (page.sidebar) %}
                         <div class="multicol__content">
                             {% endif %}
                             {% if page.content != 'none' %}
-                            <div class="u-block u-block--s u-block--white">
+                            <div class="u-block u-block--white">
                                 <div class="b-content">
                             {% endif %}
                             {% block content %}

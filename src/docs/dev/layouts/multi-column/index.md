@@ -89,7 +89,7 @@ The right aside provides a sidebar for additional [Aside blocks](#) relating to 
 		<main class="multicol__main">
 
 			<div class="multicol__content">
-				<div class="u-block u-block--l u-block--white">
+				<div class="u-block u-block--white">
 					<-- Fixed-width Main blocks go here -->
 				</div>
 			</div>

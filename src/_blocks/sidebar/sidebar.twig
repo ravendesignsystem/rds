@@ -1,5 +1,5 @@
 {% macro sidebar(settings, data) %}
-<div class="u-block u-block--white u-block--s">
+<div class="u-block u-block--white">
     <{% if (settings.variant == 'cta' and data.url) %}a{% else %}div{% endif %} class="b-sidebar"{% if data.url %} href="{{ data.url }}"{% endif %}>
         <h2{% if data.heading  %} class="sidebar__heading"{% endif %}>{% if data.headingIcon %}<span class="u-icon">{% include 'icons/'~ data.headingIcon ~'.svg' %} {% endif %}{% if (data.title and data.heading == false) %}{{ data.title }}{% else %}{{ data.heading }}{% endif %}{% if settings.heading.icon %}</span>{% endif %}</h2>
 {% if data.img %}

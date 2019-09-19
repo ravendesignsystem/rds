@@ -33,7 +33,7 @@ Here is what our **Simple block looks like**:
 
 {%include 'inc' with {'close': true}%}
 
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes..</p>
     <hr>
 </div>
@@ -43,7 +43,7 @@ Here is what our **Simple block looks like**:
 Here is its HTML markup that will be explained further below:
 
 ```html
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
     <hr>
 </div>
@@ -141,7 +141,7 @@ Returning to the original implementation of our <em>Simple block</em>, notice it
 
 {%include 'inc' with {'close': true}%}
 
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes</p>
     <hr>
 </div>
@@ -149,7 +149,7 @@ Returning to the original implementation of our <em>Simple block</em>, notice it
 {%include 'inc' with {'open': true}%}
 
 ```html
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
     <hr>
 </div>
@@ -157,7 +157,7 @@ Returning to the original implementation of our <em>Simple block</em>, notice it
 To change the background color to grey, lets replace `u-block--white` with `u-block--grey`.
 
 ```html
-<div class="u-block u-block--s u-block--grey">
+<div class="u-block u-block--grey">
     <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
     <hr>
 </div>
@@ -165,7 +165,7 @@ To change the background color to grey, lets replace `u-block--white` with `u-bl
 
 {%include 'inc' with {'close': true}%}
 
-<div class="u-block u-block--s u-block--grey">
+<div class="u-block u-block--grey">
     <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes..</p>
     <hr>
 </div>
@@ -178,17 +178,17 @@ Use different coloured background rows to separate different sections of content
 
 {%include 'inc' with {'close': true}%}
 
-<div class="u-block u-block--s u-block--grey">
+<div class="u-block u-block--grey">
     <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes</p>
     <hr>
 </div>
 
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <p style="color: green" class="b-simple">This is the Simple block being used for a section with different content. So we have changed the background colour to better seperate it from the block above and below.</p>
     <hr>
 </div>
 
-<div class="u-block u-block--s u-block--grey">
+<div class="u-block u-block--grey">
     <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes</p>
     <hr>
 </div>
@@ -196,17 +196,17 @@ Use different coloured background rows to separate different sections of content
 {%include 'inc' with {'open': true}%}
 
 ```html
-<div class="u-block u-block--s u-block--grey">
+<div class="u-block u-block--grey">
     <p class="b-simple">This is Simple block, an example of a basic block for learning purposes</p>
     <hr>
 </div>
 
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <p class="b-simple">This is the Simple block being used for a section with different content. So we have changed the background colour to better seperate it from the block above and below.</p>
     <hr>
 </div>
 
-<div class="u-block u-block--s u-block--grey">
+<div class="u-block u-block--grey">
     <p class="b-simple">This is Simple block, an example of a basic block for learning purposes</p>
     <hr>
 </div>
@@ -218,11 +218,11 @@ Functionally independent, a **block can NOT be nested** within another block.
 
 ```html
 <!-- 👍 Cool, like Fonzie -->
-<div class="u-block u-block--s u-block--grey">
+<div class="u-block u-block--grey">
     <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
     <hr>
 </div>
-<div class="u-block u-block--s u-block--grey">
+<div class="u-block u-block--grey">
     <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
     <hr>
 </div>
@@ -230,8 +230,8 @@ Functionally independent, a **block can NOT be nested** within another block.
 
 ```html
 <!-- 🦈 Jumping the shark...not cool -->
-<div class="u-block u-block--s u-block--grey">
-    <div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--grey">
+    <div class="u-block u-block--white">
         <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
         <hr>
     </div>
@@ -266,7 +266,7 @@ Lets say our Simple block is restricted only to the `<main>` section.
 
 ```html
 <main>
-    <div class="u-block u-block--s u-block--white">
+    <div class="u-block u-block--white">
         <p class="b-simple">This is the Simple block being used for a section with different content. So we have changed the background colour to better separate it from the block above and below.</p>
         <hr>
     </div>
@@ -276,7 +276,7 @@ Lets say our Simple block is restricted only to the `<main>` section.
 
 ```html
 <header>
-    <div class="u-block u-block--s u-block--white">
+    <div class="u-block u-block--white">
         <p class="b-simple">This is the Simple block being used for a section with different content. So we have changed the background colour to better seperate it from the block above and below.</p>
         <hr>
     </div>
@@ -305,7 +305,7 @@ After the `u-block` utility class wrapper, the first HTML element's class name m
 The `b-` prefix further identifies where the block begins as seen in the Simple block's markup:
 
 ```html
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
      <p class="b-simple">This is the Simple block being used for a section with different content. So we have changed the background colour to better seperate it from the block above and below.</p>
     <hr>
 </div>
@@ -359,7 +359,7 @@ The heading HTML resides between the `u-block` utility class and the block's fir
 Our Simple example block above does not have a heading:
 
 ```html
-<div class="u-block u-block--s u-block--grey">
+<div class="u-block u-block--grey">
     <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
     <hr>
 </div>
@@ -368,7 +368,7 @@ But it can. Lets add a Header to Simple block:
 
 {%include 'inc' with {'close': true}%}
 
-<section class="u-block u-block--s u-block--white">
+<section class="u-block u-block--white">
     <header>
         <h2 class="c-heading">Simple Block</h2>
     </header>
@@ -379,7 +379,7 @@ But it can. Lets add a Header to Simple block:
 {%include 'inc' with {'open': true}%}
 
 ```html
- <section class="u-block u-block--s u-block--white">
+ <section class="u-block u-block--white">
     <header>
         <h2 class="c-heading">Simple Block</h2>
     </header>
@@ -392,7 +392,7 @@ Notice how the utility block wrapper `<div>` was changed to a `<section>` tag an
 Block headings make use of the [Heading component](#) which has a couple of options for styling headers. One option for single column layouts is centered headings by using the `--center` modifier..
 
 ```html
- <section class="u-block u-block--s u-block--white">
+ <section class="u-block u-block--white">
     <header>
         <h2 class="c-heading c-heading--center">Simple Block</h2>
     </header>
@@ -403,7 +403,7 @@ Block headings make use of the [Heading component](#) which has a couple of opti
 
 {%include 'inc' with {'close': true}%}
 
-<section class="u-block u-block--s u-block--white">
+<section class="u-block u-block--white">
     <header>
         <h2 class="c-heading c-heading--center">Simple Block</h2>
     </header>
@@ -424,7 +424,7 @@ Variants change the appearance and/or context of a block, with modifier classes.
 If we needed the exact same block as <em>Simple block</em>, but with <span style="color: red">red</span> text instead of green, it does not make sense to create a new block. Instead, lets add a variant using a modifier class.
 
 ```html
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <p class="b-simple b-simple--red">This is a variant of Simple block, using red text instead of green.</p>
     <hr>
 </div>
@@ -432,7 +432,7 @@ If we needed the exact same block as <em>Simple block</em>, but with <span style
 
 {%include 'inc' with {'close': true}%}
 
-<div class="u-block u-block--s u-block--white">
+<div class="u-block u-block--white">
     <p style="color: red" class="b-simple">This is a variant of Simple block, using red text instead of green.</p>
     <hr>
 </div>
@@ -468,7 +468,7 @@ Props, short for properties are a way to accept data to control the block's sett
 As we have seen, the Simple Block might use a different colour background and would definitely use different paragraph text with each implementation. So the Simple blocks template code might be:
 
 ```html
-<div class="u-block u-block--s u-block--{%verbatim%}{{settings.color}}{%endverbatim%}">
+<div class="u-block u-block--{%verbatim%}{{settings.color}}{%endverbatim%}">
     <p class="b-simple">{%verbatim%}{{prop.text}}{%endverbatim%}</p>
     <hr>
 </div>
@@ -479,7 +479,7 @@ If we wanted to display the above template as:
 
 {%include 'inc' with {'close': true}%}
 
-<div class="u-block u-block--s u-block--grey">
+<div class="u-block u-block--grey">
     <p style="color: green" class="b-simple">This is the Simple block with a grey background.</p>
     <hr>
 </div>
@@ -494,7 +494,7 @@ If we wanted to display the above template as:
 ...so our DOM rendered HTML ended up as:
 
 ```html
-<div class="u-block u-block--s u-block--grey">
+<div class="u-block u-block--grey">
     <p class="b-simple">This is the Simple block with a grey background.</p>
     <hr>
 </div>
