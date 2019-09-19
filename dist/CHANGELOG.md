@@ -2,6 +2,14 @@
 
 All notable changes to the project will be documented in this file.
 
+## [v0.12.0](https://github.com/ravendesignsystem/rds/releases/tag/0.12.0) 2019-09-13 
+
+**Added**, **Changed**, **Docs**: Breaking changes update required*
+
+- **Changed**: Blocks no longer require a size utility. For eg. u-block-s. Refactored all blocks as such.
+- **Added**: New single-col layout `.l-col-l` to make all block that apply large with the <main> 
+- **Docs**: Added docs for the Alert component
+
 ## [v0.11.0](https://github.com/ravendesignsystem/rds/releases/tag/0.11.0) 2019-09-13 
 
 **Added**, **Changed**, **Docs**: Breaking changes update required*
