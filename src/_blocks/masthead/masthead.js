@@ -24,7 +24,8 @@ import dialogPolyfill from 'dialog-polyfill';
 		// scroll vars
 		last_scroll = 0,
 		lastX = window.innerWidth,
-		mhSubmenu = document.querySelector('button.c-menupopup + .menupopup__menu');
+		mhSubmenu = document.querySelector('button.c-menupopup + .menupopup__menu'),
+		masthead_y = header.scrollHeight;
 
 	// if (header === null) {
 	// 	alert(
