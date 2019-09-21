@@ -14,22 +14,15 @@ a.c-buttoncta {
 	box-shadow: 0 4px 9px rgba(black, 0.25);
 	display: inline-flex;
 	text-decoration: none;
-	margin: 0 5px 0 0;
-}
+	margin: 0 10px 20px 0;
 
-.c-buttoncta:hover,
-a.c-buttoncta:hover {
-	text-decoration: none;
-	cursor: pointer;
-	background-color: $black;
-	color: white;
+	&:hover {
+		text-decoration: none;
+		cursor: pointer;
+		background-color: $black;
+		color: white;
+	}
 }
-
-//.c-buttoncta svg,
-//a.c-buttoncta:hover svg {
-//	width: 1.5em;
-//	height: 1.5em;
-//}
 
 .c-buttoncta svg path,
 a.c-buttoncta:hover svg path {
