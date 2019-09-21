@@ -1,14 +1,16 @@
 // if the sticky nav is present add top margin so top of menu is not hidden
-.has-stickyscroll  .b-menu {
-	margin-top: 90px;
+@include media('>s') {
+	.has-stickyscroll .b-menu {
+		margin-top: 90px;
+	}
 }
 
 // Main Nav Styles
 // =======================================
 
- .b-menu {
- 	min-width: 220px;
- }
+.b-menu {
+	min-width: 220px;
+}
 
 .b-menu h2 {
 	// position: relative;
