@@ -203,7 +203,11 @@
 	//}
 }
 
-.js-masthead-2packed .b-masthead--responsivenav .masthead__nav .c-menupopup:hover ul.menupopup__menu {
+.js-masthead-2packed
+	.b-masthead--responsivenav
+	.masthead__nav
+	.c-menupopup:hover
+	ul.menupopup__menu {
 	top: 150px;
 }
 
@@ -250,7 +254,7 @@ li.masthead__cta > a {
 	background-color: $red;
 	color: white;
 	display: none;
-	display: flex;
+	//display: flex;
 
 	svg {
 		fill: white;
@@ -274,18 +278,19 @@ li.masthead__cta--white > a {
 		color: $black !important;
 	}
 }
-
-.masthead__actions ul > li:hover > a,
-.masthead__actions > ul li:hover > button {
-	color: $black;
-	background-color: $grey-kenobi;
-
-	svg {
-		fill: $black;
-	}
-
-	&:after {
+@media (hover: hover) { // if it's not a touch device
+	.masthead__actions ul > li > a:hover,
+	.masthead__actions > ul li > button:hover {
 		color: $black;
+		background-color: $grey-kenobi;
+
+		svg {
+			fill: $black;
+		}
+
+		&:after {
+			color: $black;
+		}
 	}
 }
 
@@ -297,6 +302,7 @@ li.masthead__cta.c-menupopup > a {
 	}
 }
 
-.masthead__nav .u-active > a, .masthead__nav .u-active > button {
+.masthead__nav .u-active > a,
+.masthead__nav .u-active > button {
 	color: $red;
 }
