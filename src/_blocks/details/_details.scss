@@ -1,8 +1,7 @@
 .b-details {
-
 	figure {
 		max-width: 220px;
-		margin: 18px auto 0 auto;
+		margin-top: 18px;
 		text-align: center;
 
 		@include media('<1068px') {
@@ -109,6 +108,18 @@
 					color: $red;
 				}
 			}
+		}
+	}
+}
+
+.b-details--eventpast > div {
+	figure {
+		border: 1px solid $red;
+		background-color: $pink;
+
+		figcaption {
+			font-size: $pixel30;
+			color: $black;
 		}
 	}
 }

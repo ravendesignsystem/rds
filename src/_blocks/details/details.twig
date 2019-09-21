@@ -15,7 +15,7 @@
 {% else %}
 <div class="u-block {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
 {% endif %}
-    <div class="b-details{% if data.variant == "figure" %} b-details--figure{% elseif data.variant == "event" %} b-details--event{% endif %}">
+    <div class="b-details{% if data.variant == "figure" %} b-details--figure{% elseif data.variant == "event" %} b-details--event{% endif %}{% if data.pastevent == true %} b-details--eventpast{% endif %}">
 {% if data.variant == "figure" or data.variant == "event" %}
         <div>
             <figure>
@@ -24,7 +24,7 @@
                 <figcaption>{{ data.caption }}<br>{{ data.subCaption }}</figcaption>
 {% endif %}
 {% if data.pastevent == true %}
-                <figcaption>Past Event</figcaption>
+                <figcaption>Past<br> Event!</figcaption>
 {% elseif data.dateStart %}
                 <figcaption>{{ item.dateStart|date("M") }}<br>{{ item.startDate|date("j") }}</figcaption>
 {% endif %}
