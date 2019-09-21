@@ -16,7 +16,7 @@
 <div class="u-block {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
 {% endif %}
     <div class="b-details{% if data.variant == "figure" %} b-details--figure{% elseif data.variant == "event" %} b-details--event{% endif %}">
-{% if data.variant == "figure" or "event" %}
+{% if data.variant == "figure" or data.variant == "event" %}
         <div>
             <figure>
 {% if data.img %}
@@ -46,10 +46,10 @@
 
 {% endfor %}
             </dl>
-{% if data.cta %}
+{% if data.ctaIcon %}
     <a class="c-buttoncta u-icon" href="{{ data.ctaURL }}">{% if data.ctaIcon %}{% include "icons/"~data.ctaIcon~".svg" %}{% endif %}{{ data.cta }}</a>
 {% endif %}
-{% if data.cta %}
+{% if data.ctaIcon2 %}
     <a class="c-buttoncta c-buttoncta--ghost u-icon" href="{{ data.ctaURL2 }}">{% if data.ctaIcon2 %}{% include "icons/"~data.ctaIcon2~".svg" %}{% endif %}{{ data.cta2 }}</a>
 {% endif %}
         </div>
