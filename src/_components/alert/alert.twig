@@ -1,5 +1,5 @@
 {% macro alert(data) %}
-<div class="c-alert {% if data.type == "error" %}c-alert--error{% elseif data.type == "warning" %} c-alert--warning{% elseif data.type == "success" %} c-alert--success{% else %}c-alert--info{% endif %} c-alert--icon" role="alert">
+<div class="c-alert {% if data.type == "error" %}c-alert--error{% elseif data.type == "warning" %} c-alert--warning{% elseif data.type == "success" %} c-alert--success{% else %}c-alert--info{% endif %}" role="alert">
     {% if data.type == "error" %}{% include 'icons/alert.svg' %}{% elseif data.type == "success" %}{% include 'icons/verified.svg' %}{% elseif data.type == "warning" %}{% include 'icons/warning.svg' %}{% else %}{% include 'icons/info.svg' %}{% endif %}
 {% if data.heading %}
     <h2>{{ data.heading }}</h2>

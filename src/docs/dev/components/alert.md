@@ -12,9 +12,11 @@ banner:
 
 {% include 'inc' with {'component': 'alert-base', 'code': true} %}
 
-Alert headings are recommended but not required.
+While a message is required, alert headings are recommended but not required. However, when a header is not used, messages appear very similar.
 
 {% include 'inc' with {'component': 'alert-noheading'} %}
+
+{% include 'inc' with {'component': 'alert-noheading', 'code': true} %}
 
 There are four different contextual alerts: 
 

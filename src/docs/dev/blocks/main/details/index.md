@@ -33,11 +33,13 @@ For events you can either use a feature image with the figure variant or use the
 
 {% include 'inc' with {'block': 'details-eventpast'} %}
 
-### For events that have already occurred: 
- 
- - consider using an {% include 'link' with {'component': 'alert'} %} component to inform the user they are looking at a past event. 
- - replace the date with "Past Event" in the figure area
- - remove any `Register` or `Add to Calendar` buttons
+### Past events
+
+For events that have already occurred, consider checking if the event date is past the current date. If it is, add the modifier `b-details--eventpast` to the block and the markup below, which includes:
+
+- adding an {% include 'link' with {'component': 'alert'} %} component to inform the user they are looking at a past event. 
+- replacing the date with "Past Event" in the figure area.
+- removing any `Register` or `Add to Calendar` buttons.
 
 {% include 'inc' with {'block': 'details-eventpast', 'code': true} %}
 
@@ -49,30 +51,24 @@ For events you can either use a feature image with the figure variant or use the
 
 | {{ page.title }}  block meta   |  values
 | --------------| :-------------------------------------:
-| handle              | `listing`    
+| handle              | `details`    
 | colour options      | `u-block--white`,`u-block--grey`
-| section use         | `<main>`                  
+| section use         | `<main>`, `<aside>`                 
 | width type          | fixed                         
 | has heading         | true
 | theme(s)            | CU
-| variants            | events, icon, news, people, video
+| variants            | figure, event, eventpast
 | Codepen             | coming soon
 
 
 ## Content guidelines
 
-List Group items should:
-
-- present objects of the same type.
-- start with a capital letter.
-- not use commas or semicolons at the end of each line.
-- link to a page for the item with more information.
-- have text labels be as short as possible.
+tbd
 
 ## When To Avoid
 
 - Don't use this block to replace default content ordered and unordered lists.
-- Don't us this block if you are listing items that don't link anywhere.
+
 
 ## Dates and Times
 Date and time format should always be CCYY-MM-DDThh:mm:ss as per [W3C](https://www.w3.org/TR/NOTE-datetime)

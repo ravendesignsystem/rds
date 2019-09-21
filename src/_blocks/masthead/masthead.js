@@ -24,16 +24,8 @@ import dialogPolyfill from 'dialog-polyfill';
 		// scroll vars
 		last_scroll = 0,
 		lastX = window.innerWidth,
-		mhSubmenu = document.querySelector('button.c-menupopup + .menupopup__menu'),
-		masthead_y = header.scrollHeight;
-
-	// if (header === null) {
-	// 	alert(
-	// 		'RDS requires you to have a <header> tag wrapping your Header blocks. Please fix this, before continuing with your awesomeness.'
-	// 	);
-	// } else {
-	// 	var masthead_y = header.scrollHeight;
-	// }
+		masthead_y = header.scrollHeight,
+		mhSubmenu = document.querySelector('button.c-menupopup + .menupopup__menu');
 
 	// dialogue polyfill
 	if (modal) {
@@ -161,6 +153,7 @@ import dialogPolyfill from 'dialog-polyfill';
 
 		// Detect all clicks on the document
 		document.addEventListener('touchend', function(event) {
+			if (mhSubmenu) {
 			// If the submenus are clicked
 			if (
 				event.target.closest('li.c-menupopup a') ||
@@ -181,54 +174,65 @@ import dialogPolyfill from 'dialog-polyfill';
 				mhSubmenu.classList.remove('is-visible');
 				masthead.focus();
 			}
+			} // end if mhSubmenus exist
 		});
 	} // end touch detection
 
 	// Stick Masthead to the top on scroll up
 	// --------------------------------------
 	// Only fire sticky masthead, if class .js-masthead-scrollupstick is on masthead block
+	// but first, is there a masthead ?
+	if (masthead) {
+		if (masthead.classList.contains('js-masthead-stick')) {
+			var stickMasthead = function() {
+				if (window.scrollY <= 15) {
+					// user has not scrolled past masthead yet
+					// Yell at them if they forgot a <header>
+					if (header === null) {
+						alert(
+							'RDS requires you put your Header blocks inside a <header> tag, or things are going to break. Please fix.'
+						);
+					} else {
+						masthead_y = -header.scrollHeight;
+					}
 
-	if (masthead.classList.contains('js-masthead-stick')) {
-		var stickMasthead = function() {
-			if (window.scrollY <= 15) {
-				// user has not scrolled past masthead yet
-				masthead_y = -header.scrollHeight;
-				masthead.classList.remove(
-					'js-masthead--stickyscroll',
-					'b-masthead--shadow'
-				);
-				document.body.style.marginTop = '0px';
-			} else {
-				// has scrolled past the masthead
-				masthead.classList.add('js-masthead--stickyscroll', 'b-masthead--shadow');
-				masthead_y = masthead_y - (window.scrollY - last_scroll);
-				masthead_y = Math.min(masthead_y, 0);
-				masthead_y = Math.max(masthead_y, -masthead.scrollHeight);
-				masthead.style.top = masthead_y + 'px';
-				document.body.style.marginTop = '15px';
-				if (
-					masthead.style.top === '0px' &&
-					window.scrollY > 300 &&
-					window.innerWidth > 720
-				) {
-					document.body.classList.add('has-stickyscroll');
+					masthead.classList.remove(
+						'js-masthead--stickyscroll',
+						'b-masthead--shadow'
+					);
+					document.body.style.marginTop = '0px';
 				} else {
-					document.body.classList.remove('has-stickyscroll');
+					// has scrolled past the masthead
+					masthead.classList.add('js-masthead--stickyscroll', 'b-masthead--shadow');
+					masthead_y = masthead_y - (window.scrollY - last_scroll);
+					masthead_y = Math.min(masthead_y, 0);
+					masthead_y = Math.max(masthead_y, -masthead.scrollHeight);
+					masthead.style.top = masthead_y + 'px';
+					document.body.style.marginTop = '15px';
+					if (
+						masthead.style.top === '0px' &&
+						window.scrollY > 300 &&
+						window.innerWidth > 720
+					) {
+						document.body.classList.add('has-stickyscroll');
+					} else {
+						document.body.classList.remove('has-stickyscroll');
+					}
 				}
-			}
-			// remove the drop shadow before a banner buts against it
-			if (window.scrollY < 300) {
-				masthead.classList.remove('b-masthead--shadow');
-			}
-			last_scroll = window.scrollY;
-		};
+				// remove the drop shadow before a banner buts against it
+				if (window.scrollY < 300) {
+					masthead.classList.remove('b-masthead--shadow');
+				}
+				last_scroll = window.scrollY;
+			};
 
-		window.addEventListener('scroll', stickMasthead);
-	} // end sticky scroll
+			window.addEventListener('scroll', stickMasthead);
+		} // end sticky scroll
+	}
 
 	// Masthead button/modal functions
 	// oh man, a lot of state going on here
-	// not sure if this can be simplified, but hope so
+	// I'm sure this can be simplified, but hope so
 	// ..for a future review
 	// -----------------------------------------------
 
@@ -262,7 +266,7 @@ import dialogPolyfill from 'dialog-polyfill';
 			if (btn === 'search') {
 				mhSearch.classList.add('u-visually-hidden');
 				modalSearch.classList.remove('u-visually-hidden');
-				document.querySelector('.searchform__input').focus();
+				document.querySelector('.modal__search .searchform__input').focus();
 				if (mhLogin) {
 					modalLogin.classList.add('u-visually-hidden');
 				}
@@ -301,10 +305,6 @@ import dialogPolyfill from 'dialog-polyfill';
 						modal.show();
 						modalMenu.classList.remove('u-visually-hidden');
 						modalMenu.appendChild(leftMenu);
-					} else {
-						alert(
-							"If you are going to have the hamburger button displayed, you need to add 'js-overlay-movemenu to your u-block parent of the b-menu block. If you need the hamburger but don't have a vertical b-menu, add '.is-hidden' to the hamburger."
-						);
 					}
 					preventScroll();
 					window.removeEventListener('scroll', stickMasthead);

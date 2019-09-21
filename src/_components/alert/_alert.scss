@@ -1,24 +1,27 @@
 .c-alert {
-	min-height: 80px;
-}
-.c-alert--icon {
+	//min-height: 80px;
 	background-color: #e6f7ff;
 	border: 1px solid #91d5ff;
 	padding: 25px 25px 25px 65px;
 	border-radius: 4px;
 	margin-bottom: $margin-bottom;
 	position: relative;
-}
-.c-alert--icon svg {
-	width: 30px;
-	float: left;
-	position: absolute;
-	top: 25px;
-	left: 19px;
+
+	svg {
+		width: 30px;
+		float: left;
+		position: absolute;
+		top: 25px;
+		left: 19px;
+
+		+ p {
+			font-weight: 500;
+			margin-top: 2px;
+		}
+	}
 }
 
-.c-alert--info svg,
-.c-alert--info {
+.c-alert--info svg {
 	fill: #1496da;
 }
 
@@ -62,4 +65,5 @@
 	font-size: $pixel16;
 	padding-bottom: 2px;
 	margin-bottom: 2px !important;
+	border-bottom: none;
 }
