@@ -153,11 +153,11 @@
                 <h1 class="login__heading">Login to Your App</h1>
                 <form class="c-form" name="loginform" action="/" method="post" accept-charset="UTF-8">
 
-                    <label for="user_login">Username or Email</label>
-                    <input type="text" id="user_login" name="log" class="login__field" value="" tabindex="1" autocapitalize="off" autocorrect="off" autofocus="autofocus" aria-required="true">
+                    <label for="user_login">Username</label>
+                    <input type="text" autocomplete="username" id="user_login" name="log" class="login__field" value="" tabindex="1" autocapitalize="off" autocorrect="off" autofocus="autofocus" aria-required="true">
 
                     <label for="user_pass">Password <a class="login__link" href="/password-reset/">Forgot password?</a></label>
-                    <input type="password" name="pwd" id="user_pass" value="" class="form-control form-control input-block" tabindex="2" aria-required="true">
+                    <input type="password" autocomplete="current-password" name="pwd" id="user_pass" value="" class="form-control form-control input-block" tabindex="2" aria-required="true">
 
                     <input type="submit" value="Login" tabindex="3" class="u-width-full">
                 </form>
@@ -171,11 +171,7 @@
 
 </div> {#END APP ID #}
 {% block scripts %}
-    <script>
-        {# TODO remove the below IE11 polyfills when we ditch IE#}
-        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
-            document.write('<script src="https://unpkg.com/element-closest/browser"><\/script>');
-    </script>
+    <script id="iePolyFills" src=""></script>
     <script src="{{ site.jsPath }}"></script>
 {% endblock %}  {#END SCRIPTS #}
 

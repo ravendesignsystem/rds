@@ -88,8 +88,8 @@
 				</button>
 			</li>
 			{% if page.subsite %}
-			<li class="masthead__hamburger {% if page.subsite == 'dev' and page.menu != 'dev' %}{% else %}u-hide-l{% endif %}">
-				<button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
+			<li class="masthead__hamburger {% if page.subsite == 'dev' and page.menu != 'dev' %}{% else %}{% endif %}">
+				<button class="c-hamburger c-hamburger--spin" aria-label="Open Menu" title="Open site-wide menu"  type="button">
 						<span class="c-hamburger__box">
 							<span class="c-hamburger__inner"></span>
 					 	</span>

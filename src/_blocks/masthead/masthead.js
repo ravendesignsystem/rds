@@ -1,7 +1,6 @@
 import dialogPolyfill from 'dialog-polyfill';
 
 (function() {
-	'use strict';
 	//mh = masthead
 	let body = document.body,
 		header = document.querySelector('header'),
@@ -154,26 +153,26 @@ import dialogPolyfill from 'dialog-polyfill';
 		// Detect all clicks on the document
 		document.addEventListener('touchend', function(event) {
 			if (mhSubmenu) {
-			// If the submenus are clicked
-			if (
-				event.target.closest('li.c-menupopup a') ||
-				event.target.closest('button.c-menupopup')
-			) {
-				mhSubmenu.style.position = 'absolute';
-				mhSubmenu.classList.remove('u-fixed');
-				mhNav.style.paddingBottom = '100vh';
+				// If the submenus are clicked
 				if (
-					window.innerWidth >= 960 &&
-					!document.querySelector('.js-masthead-2packed')
+					event.target.closest('li.c-menupopup a') ||
+					event.target.closest('button.c-menupopup')
 				) {
-					mhNav.style.paddingTop = '35px';
+					mhSubmenu.style.position = 'absolute';
+					mhSubmenu.classList.remove('u-fixed');
+					mhNav.style.paddingBottom = '100vh';
+					if (
+						window.innerWidth >= 960 &&
+						!document.querySelector('.js-masthead-2packed')
+					) {
+						mhNav.style.paddingTop = '35px';
+					}
+				} else {
+					// If user clicks outside the element, refocus and restyle
+					mhNav.setAttribute('style', 'padding-bottom: 0; padding-top: 0');
+					mhSubmenu.classList.remove('is-visible');
+					masthead.focus();
 				}
-			} else {
-				// If user clicks outside the element, refocus and restyle
-				mhNav.setAttribute('style', 'padding-bottom: 0; padding-top: 0');
-				mhSubmenu.classList.remove('is-visible');
-				masthead.focus();
-			}
 			} // end if mhSubmenus exist
 		});
 	} // end touch detection
@@ -188,13 +187,13 @@ import dialogPolyfill from 'dialog-polyfill';
 				if (window.scrollY <= 15) {
 					// user has not scrolled past masthead yet
 					// Yell at them if they forgot a <header>
-					if (header === null) {
-						alert(
-							'RDS requires you put your Header blocks inside a <header> tag, or things are going to break. Please fix.'
-						);
-					} else {
+					// if (header === null) {
+					// 	alert(
+					// 		'RDS requires you put your Header blocks inside a <header> tag, or things are going to break. Please fix.'
+					// 	);
+					// } else {
 						masthead_y = -header.scrollHeight;
-					}
+					// }
 
 					masthead.classList.remove(
 						'js-masthead--stickyscroll',
@@ -250,6 +249,7 @@ import dialogPolyfill from 'dialog-polyfill';
 			} else {
 				(document.body.style.position = 'static'),
 					(document.body.style.overflowY = 'auto');
+
 			}
 		};
 
@@ -301,8 +301,8 @@ import dialogPolyfill from 'dialog-polyfill';
 			function() {
 				mhHamburgerButton.classList.toggle('is-active');
 				if (mhHamburgerButton.classList.contains('is-active')) {
+					modal.show();
 					if (moveMenu) {
-						modal.show();
 						modalMenu.classList.remove('u-visually-hidden');
 						modalMenu.appendChild(leftMenu);
 					}

@@ -1,7 +1,7 @@
 'use strict';
 
 // let navBody = document.querySelector('.body__nav'),
-	let navExpand = document.querySelector('.menu__toggle'),
+let navExpand = document.querySelector('.menu__toggle'),
 	checks = document.querySelectorAll('.b-menu input');
 
 if (navExpand) {
@@ -29,20 +29,3 @@ if (navExpand) {
 		navExpand.addEventListener('click', expandMenu);
 	}
 }
-
-// if (navBody) {
-// 	// if the menu is taller then the viewport remove the position sticky so it can scroll
-// 	window.addEventListener('scroll', function() {
-// 		let elementTarget = document.querySelector('header');
-// 		// check the height of nav once the header scrolls by
-// 		if (window.scrollY > elementTarget.offsetTop + elementTarget.offsetHeight) {
-// 			let bounding = navBody.getBoundingClientRect();
-// 			if (
-// 				bounding.bottom >
-// 				(window.innerHeight || document.documentElement.clientHeight)
-// 			) {
-// 				navBody.classList.remove('u-sticky');
-// 			}
-// 		}
-// 	});
-// }
