@@ -2,6 +2,19 @@
 
 All notable changes to the project will be documented in this file.
 
+## [v0.12.2](https://github.com/ravendesignsystem/rds/releases/tag/0.12.2) 2019-09-24
+
+**Added**, **Changed**, **Docs**: Maintenance release with small patches*
+
+- **Added**: improved mobile view of figure for Details block. *SCSS only - no Markup changes.
+- **Changed**: removed layout border line from small screens as per GH issue 37. *SCSS only - no Markup changes.
+- **Changed**: Menu block spacing issue fixed as per GH issue 36. *SCSS only - NO markup changes.
+- **Changed**: added padding to b-content blockquote as per GH issue #39. *ONLY SCSS changes - NO markup changes
+- **Docs**: added menu to About section.
+
+## [v0.12.1](https://github.com/ravendesignsystem/rds/releases/tag/0.12.1) 2019-09-23
+ - **Changed**: Fixed Masthead JS issue.
+
 ## [v0.12.0](https://github.com/ravendesignsystem/rds/releases/tag/0.12.0) 2019-09-13 
 
 **Added**, **Changed**, **Docs**: Breaking changes update required*
