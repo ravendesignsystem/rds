@@ -72,10 +72,10 @@
 .multicol__main {
 	display: flex;
 	flex-direction: column;
-	border-left: 1px solid $grey;
 
 	@include media('>=s') {
 		padding-left: 25px;
+		border-left: 1px solid $grey;
 	}
 }
 
@@ -184,14 +184,3 @@
 	}
 }
 
-// b-menu styles
-.multicol__nav .b-menu ul ul li:last-child a {
-	padding-bottom: 14px;
-}
-
-
-
-.multicol__nav .b-menu ul ul ul li:last-child a {
-	padding-top: 0px;
-	padding-bottom: 2px;
-}

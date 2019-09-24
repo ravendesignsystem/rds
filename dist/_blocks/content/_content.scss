@@ -38,4 +38,21 @@
 	p:empty {
 		display: none;
 	}
+
+	blockquote {
+		font-weight: 300;
+		font-style: italic;
+		border-left: 0.3em solid $red;
+		margin: 0 0 25px 0;
+		padding: 15px 25px;
+
+		p {
+			margin-bottom: 0;
+		}
+
+		cite {
+			display: block;
+			margin-top: 15px;
+		}
+	}
 }
