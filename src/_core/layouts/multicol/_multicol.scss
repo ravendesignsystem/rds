@@ -72,10 +72,10 @@
 .multicol__main {
 	display: flex;
 	flex-direction: column;
-	border-left: 1px solid $grey;
 
 	@include media('>=s') {
 		padding-left: 25px;
+		border-left: 1px solid $grey;
 	}
 }
 
