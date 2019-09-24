@@ -1,6 +1,9 @@
 ---
 name: Block QA
 about: QA checklist for new RDS blocks.
+title: ''
+labels: ''
+assignees: ''
 
 ---
 
