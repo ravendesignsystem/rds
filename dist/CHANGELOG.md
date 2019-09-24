@@ -1,6 +1,6 @@
 # RDS Change Log
 
-All notable changes to the project will be documented in this file.
+All notable changes to the project will be documented here, in this file.
 
 ## [v0.12.2](https://github.com/ravendesignsystem/rds/releases/tag/0.12.2) 2019-09-24
 
