@@ -1,4 +1,5 @@
-// if the sticky nav is present add top margin so top of menu is not hidden
+// if the sticky nav is present,
+// add top margin so the top of menu is not hidden
 @include media('>s') {
 	.has-stickyscroll .b-menu {
 		margin-top: 90px;
@@ -6,23 +7,16 @@
 }
 
 // Main Nav Styles
-// =======================================
-
+// ===============
 .b-menu {
 	min-width: 220px;
 	margin-bottom: 60px;
 }
 
 .b-menu h2 {
-	// position: relative;
 	background-color: $grey;
-	// border-bottom: 1px solid white;
-	// font-weight: 500;
-	// height: 30px;
-	// padding: 0 15px;
 	padding: 10px 15px;
 	color: $grey-vader;
-	// line-height: 30px;
 	margin: 0;
 	font-size: $pixel12;
 	text-transform: uppercase;
@@ -152,8 +146,12 @@ div.modal__menu .b-menu i {
 	font-size: $pixel16;
 }
 // 2nd level
-.b-menu ul ul:not(.b-menu ul ul ul) {
+.b-menu ul ul {
 	box-shadow: inset 0px -11px 12px -12px $grey-yoda;
+}
+
+.b-menu ul ul ul {
+	box-shadow: none;
 }
 //
 //.b-menu ul ul:not(.multicol__nav .b-menu ul ul) { // no background color if not in  overlay
@@ -224,3 +222,9 @@ input#menu--1-129:checked + label {
 	color: #f00;
 	font-style: normal;
 }
+
+.multicol__nav .b-menu ul ul li:last-child a {
+	padding-bottom: 10px;
+}
+
+

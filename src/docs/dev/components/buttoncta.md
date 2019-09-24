@@ -181,4 +181,4 @@ Examples of buttons with good calls to action:
 - [Icons As Part Of A Great User Experience](https://www.smashingmagazine.com/2016/10/icons-as-part-of-a-great-user-experience/)
 - [Where to Place Icons Next to Button Labels](http://uxmovement.com/buttons/where-to-place-icons-next-to-button-labels/)
 - [Anatomy of...](https://medium.com/@aureliojota/the-anatomy-of-a-cta-button-in-2017-voice-tone-style-and-component-best-practices-1861c4d2167e)
-
+- [CTA Guidelines](https://uxdesign.cc/7-cta-button-design-guidelines-4cdc21c2c85a)

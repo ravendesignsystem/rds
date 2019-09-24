@@ -142,7 +142,9 @@
         <div class="modal__menu u-visually-hidden">
                 {% block menu %}
                     {% if page.menu != true and page.subsite == 'dev' %}
-                    {%include 'docs/inc/menus/menu-dev' %}
+                        {%include 'docs/inc/menus/menu-dev' %}
+                    {% elseif page.menu != true and page.subsite == 'about' %}
+{#                        {%include 'docs/inc/menus/menu-about' %}#}
                     {% endif %}
                 {% endblock %}
         </div>

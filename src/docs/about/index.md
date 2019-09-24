@@ -1,6 +1,7 @@
 ---
 layout: docs
 subsite: about
+menu: about
 title: About RDS
 content: true
 ---
