@@ -1,11 +1,12 @@
 .b-details {
+	> div {
+		clear: both;
+	}
 	figure {
-		max-width: 220px;
 		margin-top: 18px;
-		text-align: center;
 
-		@include media('<1068px') {
-			max-width: 180px;
+		@include media('>s') {
+			text-align: center;
 		}
 	}
 
@@ -21,6 +22,14 @@
 	}
 	img {
 		border-radius: 10px;
+		max-width: 40%;
+		float: left;
+		margin: 0 20px 15px 0;
+
+		@include media('>s') {
+			max-width: 220px;
+			margin: 0 0 6px 0;
+		}
 	}
 
 	dl {
