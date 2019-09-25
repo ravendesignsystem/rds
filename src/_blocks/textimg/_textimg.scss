@@ -18,7 +18,8 @@
 		// Additonal wrapper
 		section {
 			min-height: 270px;
-			max-width: 50%;
+			padding: 0 45% 0 0; // TODO ADDED FOR GH-40
+			// max-width: 50%; // TODO REMOVED FOR GH-40
 			//min-width: 220px;
 		}
 
@@ -28,15 +29,15 @@
 			//border-bottom: none;
 			//font-size: $pixel28;
 
-			@include media('>=820px', '<=960px') {
-				max-width: 370px;
-				margin: 0;
-			}
+			// @include media('>=820px', '<=960px') {
+			// 	max-width: 370px; // TODO REMOVED FOR GH-40 (not sure what it's doing)
+			// 	margin: 0; // TODO REMOVED FOR GH-40 (not sure what it's doing)
+			// }
 
-			@include media('>=720px', '<=820px') {
-				max-width: 335px;
-				margin: 0;
-			}
+			// @include media('>=720px', '<=820px') {
+			// 	max-width: 335px; // TODO REMOVED FOR GH-40 (not sure what it's doing)
+			// 	margin: 0; // TODO REMOVED FOR GH-40 (not sure what it's doing)
+			// }
 		}
 
 		.textimg__text {
@@ -44,12 +45,12 @@
 			//text-align: left;
 
 			@include media('>=820px', '<=960px') {
-				max-width: 370px;
+				// max-width: 370px; // TODO REMOVED FOR GH-40 (not sure what it's doing)
 				//margin: 0;
 			}
 
 			@include media('>=720px', '<=820px') {
-				max-width: 335px;
+				// max-width: 335px; // TODO REMOVED FOR GH-40 (not sure what it's doing)
 				//margin: 0;
 			}
 		}
@@ -58,11 +59,12 @@
 			//margin-bottom: 20px;
 
 			@include media('>=s') {
-				right: 0;
 				position: absolute;
 				top: 0;
+				right: 0;
 				//width: auto;
-				max-width: 45%;
+				width: 40%; // TODO ADDED FOR GH-40
+				// max-width: 45%; // TODO REMOVED FOR GH-40
 				max-height: 320px;
 			}
 		}
@@ -83,7 +85,8 @@
 		}
 
 		& section {
-			float: right;
+			padding: 0 0 0 45%; // TODO ADDED FOR GH-40
+			// float: right; // TODO REMOVED FOR GH-40
 		}
 
 		&:after {
@@ -96,6 +99,6 @@
 
 	.l-col-l .b-textimg section {
 		min-height: 320px;
-		max-width: 55%;
+		// max-width: 55%; // TODO REMOVED FOR GH-40
 	}
 } // end if > s
