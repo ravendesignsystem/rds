@@ -6,11 +6,11 @@
 .b-banner {
 	display: flex;
 	justify-content: center;
-	padding: 20px;
+	padding: 20px 0;
 	text-align: center;
 
 	@include media('>s') {
-		padding: 40px;
+		padding: 40px 0;
 	}
 
 	// Heading
@@ -19,7 +19,6 @@
 		padding: 0;
 
 		@include media('>s') {
-			max-width: 768px;
 			font-size: $pixel36;
 			line-height: 1.2;
 		}
@@ -33,7 +32,6 @@
 		margin: 0 0 5px 0;
 		padding: 0;
 		list-style: none;
-		text-align: center;
 	}
 
 	// Breadcrumb items
@@ -42,8 +40,8 @@
 
 		+ li::before {
 			display: inline-block;
-			padding-right: 0.5rem;
-			padding-left: 0.5rem;
+			padding-right: 5px;
+			padding-left: 5px;
 			content: '/';
 			font-weight: 300;
 		}
@@ -78,6 +76,7 @@
  * Banner Image Modifier
  * =======================================
  */
+
 .b-banner--img {
 	position: relative;
 	background-size: cover;
@@ -102,7 +101,8 @@
 	section {
 		z-index: 1;
 		width: 100%;
-		max-width: 1426px;
+		max-width: #{map-get($breakpoints, s)};
+		background: red;
 		margin-left: auto;
 		margin-right: auto;
 
@@ -111,12 +111,13 @@
 			padding-right: 30px;
 		}
 
+		// TODO without image has all content restricted to small breakpoint, matching this up by removing the following
 		// Restrict content inside to a set width
-		& > *:not(nav) {
-			max-width: 768px;
-			margin-left: auto;
-			margin-right: auto;
-		}
+		// & > *:not(nav) {
+		// 	max-width: #{map-get($breakpoints, s)};
+		// 	margin-left: auto;
+		// 	margin-right: auto;
+		// }
 	}
 
 	ol {
@@ -131,6 +132,19 @@
 			}
 		}
 	}
+}
+
+/*
+ * Banner Image Opacity Modifier
+ * =======================================
+ */
+
+.b-banner--img-light:after {
+	background-color: rgba(0, 0, 0, 0.35);
+}
+
+.b-banner--img-dark:after {
+	background-color: rgba(0, 0, 0, 0.75);
 }
 
 /*
