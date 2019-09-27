@@ -3,13 +3,15 @@
 	cursor: pointer;
 }
 
-.js-menupopup-clonetxt a::after{
+.js-menupopup-clonetxt a::after {
 	content: ' Home';
 	white-space: pre;
 }
 
 // carrot
-.c-menupopup > a::after, button.c-menupopup::after, a.c-menupopup::after {
+.c-menupopup > a::after,
+button.c-menupopup::after,
+a.c-menupopup::after {
 	position: absolute;
 	content: '';
 	width: 0;
@@ -84,6 +86,11 @@
 			background-color: $grey;
 			color: black;
 		}
+	}
+
+	// hide any other attempts at extra levels
+	ul {
+		display: none;
 	}
 }
 
