@@ -181,7 +181,11 @@ import dialogPolyfill from 'dialog-polyfill';
 	// --------------------------------------
 	// Only fire sticky masthead, if class .js-masthead-scrollupstick is on masthead block
 	// but first, is there a masthead ?
-	if (masthead) {
+	// also check where footer brand is at to see if its worth doing sticky masthead
+	const footer = document.querySelector('.b-footerbrand');
+	const footerBounding = footer.getBoundingClientRect();
+
+	if (masthead && footerBounding.top > 1400) {
 		if (masthead.classList.contains('js-masthead-stick')) {
 			var stickMasthead = function() {
 				if (window.scrollY <= 15) {
