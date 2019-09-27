@@ -1,6 +1,6 @@
 ---
-name: Block QA
-about: QA checklist for new RDS blocks.
+name: Block/Component QA
+about: QA checklist for new RDS blocks and components.
 title: ''
 labels: ''
 assignees: ''
