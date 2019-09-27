@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-# :sparkles: Block QA :sparkles:
+# :sparkles: Block/Component QA :sparkles:
 
 Before a new block can be integrated into prod and versioned 1.0, all of the following items need to be checked and reviewed. If any of the following items are not applicable to what is being reivewed, please edit the issue description and strike out the list item, do not remove it.
 
