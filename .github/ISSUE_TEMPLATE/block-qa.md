@@ -21,7 +21,7 @@ Before a new block can be integrated into prod and versioned 1.0, all of the fol
 
 ## Documentation
 
-- [ ] Block is fully documented. Make notes in comments if anything is unclear of missing.
+- [ ] Block is fully documented. Make notes in comments if anything is unclear or missing.
 - [ ] Markup examples in documentation are correct as per the written documentation.
 - [ ] Live examples has been checked and matches the expected behaviour as described in docs.
 - [ ] Source code for live examples has been checked and matches the examples provided in the docs.
