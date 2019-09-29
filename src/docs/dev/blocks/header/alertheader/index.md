@@ -50,7 +50,7 @@ Check out the Page Alert block in use directly above the Banner on this page.
 
 ### Nunjucks/Twig macro example
 ```twig
-{% verbatim %}<div class="u-block u-block--{{ blockSize }} u-block--alert">
+{% verbatim %}<div class="u-block u-block--l u-block--alert">
     <div class="b-alertheader">{% include 'icons/alert.svg' %}
         <p>{{ message }} <a href="{{ linkHref }}">{{ linkText }}</a></p>
 {% if dismissible != false %}
