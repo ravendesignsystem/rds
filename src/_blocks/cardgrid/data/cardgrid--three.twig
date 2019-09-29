@@ -1,20 +1,26 @@
 {% from "cardgrid/cardgrid.twig" import cardgrid %}
 {{ cardgrid (
     {
-        blockColor: "grey",
+        blockColor: "white",
         blockHeading: "Base example",
         columns: "3",
-        s2: true,
+        stack: false,
         items:
         [
             {
-                inc: "card/data/card--base.twig"
+                inc: "card/data/card--base.twig",
+            },
+            {
+                inc: "card/data/card--base.twig",
             },
             {
                 inc: "card/data/card--base.twig"
             },
             {
-                inc: "card/data/card--base.twig"
+                inc: "card/data/card--base.twig",
+            },
+            {
+                inc: "card/data/card--base.twig",
             }
         ]
     }

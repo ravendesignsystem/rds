@@ -1,22 +1,18 @@
-{% macro cardgrid(settings, data) %}
-{% if settings.heading %}
-<section class="u-block{% if settings.color %} u-block--{{ settings.color }}{% else %} u-block--white{% endif %}{% if settings.width %} u-block--{{ settings.width }}{% else %}{% endif %}">
-{% if settings.heading != 'none' or settings.heading %}<h2>{{ settings.heading }}</h2>{% endif %}
-{% if settings.headingContent != 'none' and settings.headingContent %}
-    {{ settings.headingContent|raw }}
-{% endif %}
+{% macro cardgrid(data) %}
+{% if data.blockHeading %}
+    <section class="u-block {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
+    <h2{% if data.blockHeadingCenter %} class="c-heading--center{% if data.subHeading %} c-heading--subheading{% endif %}"{% endif %}>{{ data.blockHeading }}</h2>
+    {% if data.blockSubheading %}<p>{{ data.blockSubheading }}</p>
+    {% endif %}
 {% else %}
-<div class="u-block{% if settings.color %} u-block--{{ settings.color }}{% else %} u-block--white{% endif %}{% if settings.width %} u-block--{{ settings.width }}{% else %}{% endif %}">
+    <div class="u-block {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
 {% endif %}
-    <div class="b-cardgrid{% if settings.stacks %} b-cardgrid--stacks{% endif %}">
-        <div class="u-grid{% if settings.columns %} u-grid--{{ settings.columns }}{% endif %}">
-{% for item in data %}
+    <div class="b-cardgrid{% if data.s2 == true %} b-cardgrid--s2{% endif %}{% if data.stack == true %} b-cardgrid--stack{% endif %} u-grid{% if data.columns %} u-grid--{{ data.columns }}{% else %} u-grid--3{% endif %}">
+{% for item in data.items %}
             {% include item.inc %}
 {% endfor %}
-        </div>
     </div>
-    </div>
-{% if settings.heading is defined and var is not null %}
+{% if data.blockHeading is defined and var is not null %}
 </div>
 {% else %}
 </section>
