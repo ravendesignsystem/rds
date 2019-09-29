@@ -1,24 +1,30 @@
 ---
-name: Block QA
-about: QA checklist for new RDS blocks.
+name: Block/Component QA
+about: QA checklist for new RDS blocks and components.
 title: ''
 labels: ''
 assignees: ''
 
 ---
 
-# :sparkles: Block QA :sparkles:
+# :sparkles: Block/Component QA :sparkles:
 
-Before a new block can be integrated into prod and versioned 1.0, all of the following items need to be checked and reviewed by at least two core devs.
+Before a new block can be integrated into prod and versioned 1.0, all of the following items need to be checked and reviewed. If any of the following items are not applicable to what is being reivewed, please edit the issue description and strike out the list item, do not remove it.
 
 **Reviewers**:
--- ADD NAME
--- ADD NAME
+-- ADD NAME(S)
 
-## General
+## Browser Testing
+
 - [ ] Fully tested in IE 11 and last two versions of Firefox, Safari, Chrome, Edge.
 - [ ] Fully tested in Safari iOS, Chrome iOS and  Chrome on Android.
-- [ ] Block is documented.
+
+## Documentation
+
+- [ ] Block is fully documented. Make notes in comments if anything is unclear or missing.
+- [ ] Markup examples in documentation are correct as per the written documentation.
+- [ ] Live examples has been checked and matches the expected behaviour as described in docs.
+- [ ] Source code for live examples has been checked and matches the examples provided in the docs.
 - [ ] Block tested in common templates and layouts and integrated with many other RDS blocks.
 
 ## HTML
