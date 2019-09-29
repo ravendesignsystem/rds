@@ -1,5 +1,5 @@
 {
-	"name": "RDS",
+	"name": "cu/rds",
 	"description": "Raven Design System",
 	"type": "sculpin-rds",
 	"license": "MIT",
