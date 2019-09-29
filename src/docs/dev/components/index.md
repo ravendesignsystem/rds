@@ -15,5 +15,3 @@ content: true
 ---
 ##  Components
 
-{% include 'docs/inc/content-components-list.twig' %}
-
