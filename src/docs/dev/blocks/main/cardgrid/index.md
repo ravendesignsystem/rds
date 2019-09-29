@@ -132,11 +132,11 @@ You can include as many card items as you want in Card Grid blocks. However, con
 
 - 3, 6, 9, 12
 
-{% include 'icons/fail.svg' %}
+<div style="width: 40px;margin-bottom: 15px;">{% include 'icons/fail.svg' %}</div>
 
 ![Showing how a 5 card grid is wrong](http://cu-rds.s3.amazonaws.com/docs/assets/grid-fail.png)
 
-{% include 'icons/pass.svg' %}
+<div style="width: 40px;margin-bottom: 15px;">{% include 'icons/pass.svg' %}</div>
 
 ![Showing how a 6 card grid is correct](http://cu-rds.s3.amazonaws.com/docs/assets/grid-pass.png)
 
@@ -144,11 +144,11 @@ For **four column** grids insure your number of cards total to multiples of 4, f
 
 - 4, 8, 12
 
-{% include 'icons/fail.svg' %}
+<div style="width: 40px;margin-bottom: 15px;">{% include 'icons/fail.svg' %}</div>
 
 ![Showing how a 7 card grid is wrong for 4 cols](http://cu-rds.s3.amazonaws.com/docs/assets/grid4-fail.png)
 
-{% include 'icons/pass.svg' %}
+<div style="width: 40px;margin-bottom: 15px;">{% include 'icons/pass.svg' %}</div>
 
 ![Showing how a 8 card grid is correct for 4 cols](http://cu-rds.s3.amazonaws.com/docs/assets/grid4-pass.png)
 
@@ -217,7 +217,7 @@ Or, if you want to use a CTA to link off to an archive or another page.
 
 The Card Grid block is intended for listing related content and in almost all cases the same card variants. 
 
-{% include 'icons/fail.svg' %}
+<div style="width: 40px;margin-bottom: 15px;">{% include 'icons/fail.svg' %}</div>
 
 ![Showing incorrect use of displaying different card types together](http://cu-rds.s3.amazonaws.com/docs/assets/difcards.png)
 
