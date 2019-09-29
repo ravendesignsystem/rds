@@ -66,6 +66,7 @@ icons:
 - name: ellipsis
 - name: eye
 - name: facebook
+- name: fail
 - name: file-binary
 - name: file-code
 - name: file-directory
@@ -135,6 +136,7 @@ icons:
 - name: paintcan
 - name: parking
 - name: parliament
+- name: pass
 - name: pencil
 - name: person
 - name: pin
