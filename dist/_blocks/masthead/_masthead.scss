@@ -224,10 +224,7 @@
 }
 
 // used for displaying masthead nav submenus - js sets some of this
-.b-masthead--responsivenav
-	.masthead__nav
-	.c-menupopup:hover
-	ul.menupopup__menu {
+.b-masthead--responsivenav .masthead__nav .c-menupopup:hover ul.menupopup__menu {
 	position: fixed;
 	top: 146px;
 
@@ -278,7 +275,8 @@ li.masthead__cta--white > a {
 		color: $black !important;
 	}
 }
-@media (hover: hover) { // if it's not a touch device
+@media (hover: hover) {
+	// if it's not a touch device
 	.masthead__actions ul > li > a:hover,
 	.masthead__actions > ul li > button:hover {
 		color: $black;

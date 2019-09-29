@@ -78,9 +78,7 @@
 	border-bottom: none;
 }
 
-.b-menu label:hover a,
 .b-menu li a:hover {
-	// text-decoration: none;
 	color: $red;
 }
 
@@ -226,5 +224,3 @@ input#menu--1-129:checked + label {
 .multicol__nav .b-menu ul ul li:last-child a {
 	padding-bottom: 10px;
 }
-
-
