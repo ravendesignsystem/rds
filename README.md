@@ -27,11 +27,13 @@ Check if they are installed and what version is installed. If either is not inst
 Once the dependencies above are installed, run the commands below to install the required packages.
 
 * `npm install` -- installs all the dependencies set in the package.json file
-* `php composer.phar install` -- installs all the dependencies set in the composer.json file
+* `composer install` -- installs all the dependencies set in the composer.json file
 
-## Running RDS Locally
+The above commands assume you have composer installed globally. If you have composer install at the project level, you would need to run `php composer.phar`.
 
-To run RDS locally and watch all relevant files for changes use `npm run dev`.
+## Running RDS Locally for dev
+
+Run `npm run dev`
 
 The above command runs both the sculpin static site generator, [read more](https://sculpin.io) and the laravel mix watch task, [read more](https://laravel-mix.com) concurrently.
 
