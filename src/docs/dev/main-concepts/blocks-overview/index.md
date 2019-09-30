@@ -7,13 +7,13 @@ banner:
   breadcrumbs:
     parent: Main concepts
 ---
-RDS Blocks are the equivalent of "components" in other [design systems](https://designsystemsrepo.com/design-systems/). They are chunks of reusable code that can be assembled in different combinations to build any number of user interfaces.
+RDS Blocks are the equivalent of [components](https://reactjs.org/docs/components-and-props.html) in other [design systems](https://designsystemsrepo.com/design-systems/) and modern frameworks. They are chunks of reusable code that can be assembled in different combinations to build any number of user interfaces.
 
 Since they account for pretty much every stand-alone UI element on screen, this page provides a must-read, deep dive into RDS Blocks.
 
 # Block guidelines and rules
 
-In their simplest form, RDS blocks are grouped snippets of well formed HTML, styled by CSS, and sometimes controlled JavaScript (JS). The user interface (UI) equivalent to Lego blocks, RDS blocks make up a distinct UI section that you can easily attach together to build interfaces. Unlike a tub of randomly sized/coloured Lego blocks, RDS blocks are more the equivalent to Lego blocks found in [themed Lego sets](https://lego.fandom.com/wiki/Theme) as there are rules and guidelines to follow. 
+In their simplest form, RDS blocks are grouped snippets of well formed HTML, styled by CSS, and sometimes controlled by JavaScript. The user interface (UI) equivalent to Lego blocks, RDS blocks make up a distinct UI section that you can easily attach together to build interfaces. However, unlike a tub of randomly sized/coloured Lego blocks, RDS blocks are more the equivalent to Lego blocks found in [themed Lego sets](https://lego.fandom.com/wiki/Theme) as there are rules and guidelines to follow. 
 
 This page covers the following block rules and guidelines:
 
@@ -49,42 +49,31 @@ Here is its HTML markup that will be explained further below:
 </div>
 ```
 
+
+
 ## Block utility classes
 
-Block utility classes are used to bring a rhythm and familiar flow from page to page by standardizing layout and controlling a block's width, spacing and colour. **All blocks** must be wrapped with the utility class `u-block`. Since all blocks are wrapped in `u-block`, the class name will help you locate where blocks exist in your source code.
+Block utility classes are used to bring a rhythm and a familiar flow from page to page by standardizing layout and controlling a block's width, spacing and colour. **All blocks** must be wrapped with the utility class `u-block`. Since all blocks are wrapped in `u-block`, the class name will help you locate where blocks exist in your source code.
 
 ```html
 <div class="u-block">
 </div>
 ```
 
-In addition, **all blocks** need to be wrapped with **u-block width** and  **u-block colour** modifier classes:
+## Block width types
 
-### `u-block` width modifiers
+RDS blocks are either `fixed-width` or `full-width`.
 
-The `u-block` width modifier controls the maximum width of a block. Available values are:
- 
-- `u-block--s`
-- `u-block--l`
-- `u-block--full`
+### Fixed-width blocks
 
-### Block width types
-
-There are two block types, each set by the `u-block` width modifier class:
-
-1. Fixed-width blocks
-2. Full-width blocks
-
-#### Fixed-width blocks
-
-Fixed-width blocks have a maximum width and standardized side padding. They either use the `u-block--s` (small) or `u-block--l` (large) block width modifiers.
+Fixed-width blocks have a maximum width and standardized side padding. 
 
 TODO add img.
 
-Our <em>Simple block</em> example above was set up as a fixed-width block using the modifier `u-block--s`. Lets look what happens to the block if we change the width modifier to `u-block--l`.
+Our <em>Simple block</em> example is an example of a fixed-width block.
 
 ```html
-<div class="u-block u-block--l u-block--white">
+<div class="u-block u-block--white">
     <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
     <hr>
 </div>

@@ -2,6 +2,15 @@
 
 All notable changes to the project will be documented here, in this file.
 
+## [v0.13.0](https://github.com/ravendesignsystem/rds/releases/tag/0.13.0) 2019-09-30
+
+**Added**, **Changed**, **Docs**: Breaking changes.
+
+- **Added**: Fixed: the sticky masthead no longer fires if the page is too short or does not have scroll - re. #34
+- **Changed**: Fixed: issue with text-Img block where text was aligning incorrectly when a small amount of content was in place - re. #40
+- **Changed**: Refactored the Csrd Grid block. See docs for full changes.
+- **Docs**: redid the Csrd Grid docs
+
 ## [v0.12.2](https://github.com/ravendesignsystem/rds/releases/tag/0.12.2) 2019-09-24
 
 **Added**, **Changed**, **Docs**: Maintenance release with small patches*

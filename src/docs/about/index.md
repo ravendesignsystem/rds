@@ -5,13 +5,11 @@ menu: about
 title: About RDS
 content: true
 ---
-The RDS design system was established to help Carleton University deliver a unified experience across all of its many web properties. In addition to creating a consistent user experience, the project provides an opportunity to unite development teams across campus through a shared language. 
-
-RDS' underlying systems connect all the required pieces together to:
+The RDS design system was established to help Carleton University deliver a unified experience across its many web properties. The RDS design system provides a single source of truth for the university's UI and UX, uniting development teams across campus through a shared language that:
  
- * make it easier for Carleton teams to prototype and implement designs without writing a bunch of new markup and CSS.
- * create consistency across the carleton.ca domain, which in turn will create a familiar user experience for all.
- * create focus, clarity and an understanding across the web development teams by documenting Carleton's design standards.
+ * makes it easier for Carleton teams to prototype and implement designs and patterns.
+ * creates consistency across the carleton.ca domain, which in turn will create a familiar user experience for all.
+ * creates focus, clarity and an understanding across web and software development teams by documenting Carleton's design standards.
  
 ## A work in progress...
  

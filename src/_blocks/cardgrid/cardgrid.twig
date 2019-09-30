@@ -7,7 +7,7 @@
 {% else %}
     <div class="u-block {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
 {% endif %}
-    <div class="b-cardgrid{% if data.s2 == true %} b-cardgrid--s2{% endif %}{% if data.stack == true %} b-cardgrid--stack{% endif %} u-grid{% if data.columns %} u-grid--{{ data.columns }}{% else %} u-grid--3{% endif %}">
+    <div class="b-cardgrid{% if data.s2 == true %} b-cardgrid--s2col{% endif %}{% if data.stack == true %} b-cardgrid--stack{% endif %} u-grid{% if data.columns %} u-grid--{{ data.columns }}{% else %} u-grid--3{% endif %}">
 {% for item in data.items %}
             {% include item.inc %}
 {% endfor %}

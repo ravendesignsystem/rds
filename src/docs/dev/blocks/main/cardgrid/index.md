@@ -95,14 +95,14 @@ Two column views are available on small screens. When used, the cards get revert
 
 ![Showing the Card Grid on mobile in 2 column view](http://cu-rds.s3.amazonaws.com/docs/assets/card-grid-2col.png)
 
-For a two column view on small screens, apply the block modfier `.b-cardgrid--s2`. Where `s` = small and `2` = two columns.
+For a two column view on small screens, apply the block modfier `.b-cardgrid--s2col`. Where `s` = small and `2col` = two columns.
 
 The code below will display a two column card grid on small screens and a four column grid on large screens.
 
 ```html
 <section class="u-block u-block--grey">
     <h2>Base example</h2>
-    <div class="b-cardgrid b-cardgrid--s2 u-grid u-grid--4">
+    <div class="b-cardgrid b-cardgrid--s2col u-grid u-grid--4">
         {% verbatim %}{% include 'components/card' %}{% endverbatim %}
         {% verbatim %}{% include 'components/card' %}{% endverbatim %}
         {% verbatim %}{% include 'components/card' %}{% endverbatim %}

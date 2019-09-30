@@ -119,13 +119,13 @@ Raven Design System</a>
                                                 <main   id="content">
                                                                                 <div class="u-block u-block--white">
                                 <div class="b-content">
-                                                        <p>RDS Blocks are the equivalent of "components" in other <a href="https://designsystemsrepo.com/design-systems/">design systems</a>. They are chunks of reusable code that can be assembled in different combinations to build any number of user interfaces.</p>
+                                                        <p>RDS Blocks are the equivalent of <a href="https://reactjs.org/docs/components-and-props.html">components</a> in other <a href="https://designsystemsrepo.com/design-systems/">design systems</a> and modern frameworks. They are chunks of reusable code that can be assembled in different combinations to build any number of user interfaces.</p>
 
 <p>Since they account for pretty much every stand-alone UI element on screen, this page provides a must-read, deep dive into RDS Blocks.</p>
 
 <h1 id="block-guidelines-and-rules">Block guidelines and rules</h1>
 
-<p>In their simplest form, RDS blocks are grouped snippets of well formed HTML, styled by CSS, and sometimes controlled JavaScript (JS). The user interface (UI) equivalent to Lego blocks, RDS blocks make up a distinct UI section that you can easily attach together to build interfaces. Unlike a tub of randomly sized/coloured Lego blocks, RDS blocks are more the equivalent to Lego blocks found in <a href="https://lego.fandom.com/wiki/Theme">themed Lego sets</a> as there are rules and guidelines to follow.</p>
+<p>In their simplest form, RDS blocks are grouped snippets of well formed HTML, styled by CSS, and sometimes controlled by JavaScript. The user interface (UI) equivalent to Lego blocks, RDS blocks make up a distinct UI section that you can easily attach together to build interfaces. However, unlike a tub of randomly sized/coloured Lego blocks, RDS blocks are more the equivalent to Lego blocks found in <a href="https://lego.fandom.com/wiki/Theme">themed Lego sets</a> as there are rules and guidelines to follow.</p>
 
 <p>This page covers the following block rules and guidelines:</p>
 
@@ -170,42 +170,25 @@ Raven Design System</a>
 
 <h2 id="block-utility-classes">Block utility classes</h2>
 
-<p>Block utility classes are used to bring a rhythm and familiar flow from page to page by standardizing layout and controlling a block's width, spacing and colour. <strong>All blocks</strong> must be wrapped with the utility class <code>u-block</code>. Since all blocks are wrapped in <code>u-block</code>, the class name will help you locate where blocks exist in your source code.</p>
+<p>Block utility classes are used to bring a rhythm and a familiar flow from page to page by standardizing layout and controlling a block's width, spacing and colour. <strong>All blocks</strong> must be wrapped with the utility class <code>u-block</code>. Since all blocks are wrapped in <code>u-block</code>, the class name will help you locate where blocks exist in your source code.</p>
 
 <pre><code class="html">&lt;div class="u-block"&gt;
 &lt;/div&gt;
 </code></pre>
 
-<p>In addition, <strong>all blocks</strong> need to be wrapped with <strong>u-block width</strong> and  <strong>u-block colour</strong> modifier classes:</p>
+<h2 id="block-width-types">Block width types</h2>
 
-<h3 id="%60u-block%60-width-modifiers"><code>u-block</code> width modifiers</h3>
+<p>RDS blocks are either <code>fixed-width</code> or <code>full-width</code>.</p>
 
-<p>The <code>u-block</code> width modifier controls the maximum width of a block. Available values are:</p>
+<h3 id="fixed-width-blocks">Fixed-width blocks</h3>
 
-<ul>
-<li><code>u-block--s</code></li>
-<li><code>u-block--l</code></li>
-<li><code>u-block--full</code></li>
-</ul>
-
-<h3 id="block-width-types">Block width types</h3>
-
-<p>There are two block types, each set by the <code>u-block</code> width modifier class:</p>
-
-<ol>
-<li>Fixed-width blocks</li>
-<li>Full-width blocks</li>
-</ol>
-
-<h4 id="fixed-width-blocks">Fixed-width blocks</h4>
-
-<p>Fixed-width blocks have a maximum width and standardized side padding. They either use the <code>u-block--s</code> (small) or <code>u-block--l</code> (large) block width modifiers.</p>
+<p>Fixed-width blocks have a maximum width and standardized side padding.</p>
 
 <p>TODO add img.</p>
 
-<p>Our <em>Simple block</em> example above was set up as a fixed-width block using the modifier <code>u-block--s</code>. Lets look what happens to the block if we change the width modifier to <code>u-block--l</code>.</p>
+<p>Our <em>Simple block</em> example is an example of a fixed-width block.</p>
 
-<pre><code class="html">&lt;div class="u-block u-block--l u-block--white"&gt;
+<pre><code class="html">&lt;div class="u-block u-block--white"&gt;
     &lt;p class="b-simple"&gt;This is Simple block, an example of a basic block for learning purposes.&lt;/p&gt;
     &lt;hr&gt;
 &lt;/div&gt;
@@ -916,8 +899,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu--1-159" type="checkbox" hidden/>
-                    <label for="menu--1-159">
+                                <input  id="menu--1-111" type="checkbox" hidden/>
+                    <label for="menu--1-111">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/getting-started/">Getting started</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -937,8 +920,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input checked id="menu--1-135" type="checkbox" hidden/>
-                    <label for="menu--1-135">
+                                <input checked id="menu--1-196" type="checkbox" hidden/>
+                    <label for="menu--1-196">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/main-concepts/">Main concepts</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -973,8 +956,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu--1-46" type="checkbox" hidden/>
-                    <label for="menu--1-46">
+                                <input  id="menu--1-56" type="checkbox" hidden/>
+                    <label for="menu--1-56">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/">Blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -982,8 +965,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu-2-1-62" type="checkbox" hidden/>
-                    <label for="menu-2-1-62">
+                                <input  id="menu-2-1-153" type="checkbox" hidden/>
+                    <label for="menu-2-1-153">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/header/">Header blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1008,8 +991,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu-2-1-177" type="checkbox" hidden/>
-                    <label for="menu-2-1-177">
+                                <input  id="menu-2-1-188" type="checkbox" hidden/>
+                    <label for="menu-2-1-188">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/getting-started/quick-start/">Main blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1044,8 +1027,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu-2-1-32" type="checkbox" hidden/>
-                    <label for="menu-2-1-32">
+                                <input  id="menu-2-1-147" type="checkbox" hidden/>
+                    <label for="menu-2-1-147">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/aside/">Aside blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1060,8 +1043,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu-2-1-110" type="checkbox" hidden/>
-                    <label for="menu-2-1-110">
+                                <input  id="menu-2-1-200" type="checkbox" hidden/>
+                    <label for="menu-2-1-200">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/footer/">Footer blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1086,8 +1069,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu-2-1-36" type="checkbox" hidden/>
-                    <label for="menu-2-1-36">
+                                <input  id="menu-2-1-183" type="checkbox" hidden/>
+                    <label for="menu-2-1-183">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/blocks/dialogue/">Dialogue blocks</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1109,8 +1092,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu--1-187" type="checkbox" hidden/>
-                    <label for="menu--1-187">
+                                <input  id="menu--1-117" type="checkbox" hidden/>
+                    <label for="menu--1-117">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/components/">Components</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1118,8 +1101,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu-2-1-86" type="checkbox" hidden/>
-                    <label for="menu-2-1-86">
+                                <input  id="menu-2-1-34" type="checkbox" hidden/>
+                    <label for="menu-2-1-34">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/components/content/">Content Components</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1196,8 +1179,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu--1-139" type="checkbox" hidden/>
-                    <label for="menu--1-139">
+                                <input  id="menu--1-27" type="checkbox" hidden/>
+                    <label for="menu--1-27">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/layouts/">Layouts &amp; Navigation</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1227,8 +1210,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu--1-5" type="checkbox" hidden/>
-                    <label for="menu--1-5">
+                                <input  id="menu--1-146" type="checkbox" hidden/>
+                    <label for="menu--1-146">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/custom-theming/">Custom theming</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>
@@ -1268,8 +1251,8 @@ While they are reusable, they need to be rendered in many different ways with di
                                             
                         
             <li>
-                                <input  id="menu--1-197" type="checkbox" hidden/>
-                    <label for="menu--1-197">
+                                <input  id="menu--1-185" type="checkbox" hidden/>
+                    <label for="menu--1-185">
                         <a class="menu__link" href="https://ravendesignsystem.github.io/rds/dev/guidelines/">Guidelines</a>
                                                 <i aria-hidden="true" role="img" title="Expand menu"></i>
                     </label>

@@ -18,13 +18,13 @@
 	opacity: 1;
 }
 
-.b-cardgrid:not(.b-cardgrid--s2).u-grid {
+.b-cardgrid:not(.b-cardgrid--s2col).u-grid {
 	@include media('<=s') {
 		display: block;
 	}
 }
 
-.b-cardgrid:not(.b-cardgrid--s2).u-grid > .c-card {
+.b-cardgrid:not(.b-cardgrid--s2col).u-grid > .c-card {
 	@include media('<=s') {
 		display: flex;
 		flex-direction: row;
@@ -92,7 +92,7 @@
 	}
 }
 
-.b-cardgrid:not(.b-cardgrid--s2).u-grid > article.c-card--people {
+.b-cardgrid:not(.b-cardgrid--s2col).u-grid > article.c-card--people {
 	@include media('<=s') {
 		text-align: left;
 
