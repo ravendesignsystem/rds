@@ -1,21 +1,10 @@
-{% if docs %}
-    <div class="u-block u-block--white">
-        <div class="b-content">
-            <h2>Base example</h2>
-            <p>The Page Alert block is used to convey important information to the user through a prominent header block. </p>
-        </div>
-    </div>
-{% endif %}
 {% from "alertheader/alertheader.twig" import alertheader %}
 {{ alertheader (
     {
-        size: "s"
-    },
-    {
-        message: "Page Alerts should be used for important messages only. For example: Due expected inclement weather, confirm your exam schedule has not changed.",
-        link: {
-            text: "Learn more",
-            href: "https://carleton.ca/ses/exam-schedule/"
-        }
+        dismissible : true,
+        heading: "University closure, January 28",
+        message: "Due to inclement weather the university will be closed January 28, 2019. Please see the updated exam schedule..",
+        link: "https://carleton.ca/ses/exam-schedule/",
+        linkText: "Learn more"
     }
 ) }}

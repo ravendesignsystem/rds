@@ -69,7 +69,16 @@
             {% include 'masthead/masthead' %}
 {#            {% include 'docs/blocks/masthead/masthead' %}#}
             {% if page.alertheader.message %}
-            {% include 'docs/blocks/alertheader/alertheader' %}
+                {% from "alertheader/alertheader.twig" import alertheader %}
+                {{ alertheader (
+                    {
+                        dismissible: page.alertheader.dismissible,
+                        heading: page.alertheader.heading,
+                        message: page.alertheader.message,
+                        url: page.alertheader.url,
+                        urlText: page.alertheader.urlText
+                    }
+                ) }}
             {% endif %}
             {% if page.banner != 'none' %}
             {% block banner %}

@@ -9,10 +9,10 @@ banner:
   breadcrumbs:
     parent: Docs
 alertheader:
-  blockSize: l
-  message: Page Alerts should be used for important messages only. For example: Exams have been rescheduled due to expected inclement weather. Make sure to confirm your new exam times.
-  link:
-    href: https://carleton.ca/ses/exam-schedule/
+  dismissible : true
+  heading: University closure, January 28
+  message: Due to inclement weather the university will be closed January 28, 2019. Please see the updated exam schedule.
+  link: https://carleton.ca/ses/exam-schedule/
 ---
 The Page Alert block is used to convey important information to the user through a prominent header block. 
 
@@ -22,6 +22,7 @@ Check out the Page Alert block in use directly above the Banner on this page.
 
 {% include 'inc' with {'block': 'alertheader-base', 'code': true} %}
 
+**Note**: this is a rare block with a unique block utility modifier `u-block--alert`.
 
 ## Block details
 
@@ -30,7 +31,7 @@ Check out the Page Alert block in use directly above the Banner on this page.
 | handle              | `alertheader`   
 | colour options      | n/a  
 | section use         | `<header>`                  
-| width type          | fixed-row                           
+| width type          | fixed                          
 | has heading         | n/a
 | theme(s)            | CU
 | variants            | n/a
@@ -40,9 +41,9 @@ Check out the Page Alert block in use directly above the Banner on this page.
 
 | Props        | Desc              | Type  | Default 
 | --------------| :-------------------------------------:| -------:| -:|
-| blockSize *     | u-block modifier class, options: `s`, `l`  | string  | s |
+| heading *     | Page Alert heading                     | string  | - |
 | message *     | Content of Page Alert                  | string  | - | 
-| linkHref      | Redirect url                           | string  | -
+| link          | Redirect url                           | string  | -
 | linkText      | Link text to display                   | string  | Learn more
 | dismissible * | Whether Alert Header can be dismissed    | boolean | true
 
@@ -50,23 +51,29 @@ Check out the Page Alert block in use directly above the Banner on this page.
 
 ### Nunjucks/Twig macro example
 ```twig
-{% verbatim %}<div class="u-block u-block--l u-block--alert">
-    <div class="b-alertheader">{% include 'icons/alert.svg' %}
-        <p>{{ message }} <a href="{{ linkHref }}">{{ linkText }}</a></p>
-{% if dismissible != false %}
-        <button class="alert__dismiss" aria-label="Close alert" type="button" data-close>
-            <span aria-hidden="true">&times;</span>
-        </button>
-{% endif %}
+{% verbatim %}{% macro alertheader(data) %}
+    <div class="u-block u-block--l u-block--alert">
+      <div class="b-alertheader">
+          {% include 'icons/alert.svg' %}
+          <h2>{{ data.heading }}</h2>
+          <p>{{ data.message }}{% if data.url %} <a href="{{ data.link }}">{% if data.linkText %}{{ data.linkText }}{% else %}Learn more{% endif %}</a>{% endif %}</p>
+      </div>
+    {% if data.dismissible != false %}
+      <button class="alertheader__dismiss" aria-label="Close alert" type="button" data-close>
+          <span class="u-icon" aria-hidden="true">
+              {% include 'icons/x.svg'%}
+          </span>
+      </button>
+    {% endif %}
     </div>
-</div>{% endverbatim %}
+{% endmacro %}{% endverbatim %}
 ```
 
 ## Usage
 
 Page Alerts are intended for important errors, warnings or messaging. Usually, these would would run site-wide until a user dismiss them.
 
-For user contextual user interface feedback, check out [Alert components](#)
+For user contextual interface feedback, check out [Alert components](#)
 
 ## Cookies
 
