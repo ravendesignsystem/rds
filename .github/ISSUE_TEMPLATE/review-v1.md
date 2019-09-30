@@ -7,8 +7,6 @@ assignees: ''
 
 ---
 
-# :sparkles: Version 1.0 Review Checklist :sparkles:
-
 Before we can get RDS to version 1.0, blocks and components require on final review using the following lists. Any relevant notes about this review, whether it be suggestions, specific notes about changes made, or URL references to resources or additional supporting information, please add as a comment.
 
 ## Links
