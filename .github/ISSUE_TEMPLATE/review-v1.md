@@ -11,8 +11,12 @@ assignees: ''
 
 Before we can get RDS to version 1.0, blocks and components require on final review using the following lists. Any relevant notes about this review, whether it be suggestions, specific notes about changes made, or URL references to resources or additional supporting information, please add as a comment.
 
-**Reviewers**:
--- ADD NAME(S)
+## Links
+
+The RDS doc link is where you can find the item to be reviewed. The file path is the location in the repo where markdown, scss, js, and data files live.
+
+- RDS doc page: INSERTLINK
+- File path: INSERTLINK
 
 ## Documentation
 
