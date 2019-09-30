@@ -148,7 +148,6 @@
 	z-index: 1000;
 	background-color: $pink;
 	border-bottom: 5px solid $red;
-	//border-top: 1px solid $red;
 	position: relative;
 }
 
@@ -182,10 +181,8 @@
 	margin-right: auto;
 }
 
-.u-block--l > * {
+.u-block--l > *, .u-block--alert > * {
 	max-width: #{map-get($breakpoints, l)};
-	margin-left: auto;
-	margin-right: auto;
 }
 
 // Width Modifiers
