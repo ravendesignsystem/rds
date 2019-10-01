@@ -1,6 +1,7 @@
 {% from "alert/alert.twig" import alert %}
 {{ alert (
     {
+        dismissible: true,
         heading: "Error Alert",
         message: "An error alert is reserved for errors, malfunctions, as well as critical issues campus safety issues.",
         type: "error"

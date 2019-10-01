@@ -1,41 +1,40 @@
-.b-alertheader {
-	position: relative;
+.b-alertheader > .c-alert {
+	margin: 0;
+	border: none;
+	padding: 0 0 0 40px;
+
+	@include media('>s') {
+		padding: 0 0 0 75px;
+	}
 
 	svg {
-		width: 40px;
+		width: 30px;
 		float: left;
 		position: absolute;
 		top: 0;
 		left: 0;
 
 		@include media('>s') {
-			width: 55px;
+			width: 52px;
 		}
 	}
 
-	h2 {
-		font-size: $pixel20;
-		padding-bottom: 2px;
-		margin: 0 0 2px 60px;
-		border-bottom: none;
+	> h2 {
+		font-size: $pixel16;
+		font-weight: 700;
 
 		@include media('>s') {
-			margin: 0 0 2px 85px;
+			font-size: $pixel20;
 		}
 	}
 
 	p {
-		margin: 0 0 0 60px;
 		font-size: $pixel16;
-
-		@include media('>s') {
-			margin: 0 0 2px 85px;
-		}
 	}
 
 	a {
-		border-bottom: 1px solid $red;
-		color: $red;
+		//border-bottom: 1px solid $red;
+		//color: $red;
 
 		&:hover {
 			color: $link;
@@ -43,16 +42,23 @@
 		}
 
 		&::after {
-			content: '→';
+			content: ' →';
 			// &#8594
 		}
 	}
 }
 
-.u-block--alert {
-	button {
-		position: absolute;
+.u-block--alert button {
+	position: absolute;
+	top: 15px;
+	right: 10px;
+
+	@include media('>s') {
 		top: 20px;
-		right: 20px;
+		right: 15px;
+	}
+
+	svg {
+		width: 15px;
 	}
 }

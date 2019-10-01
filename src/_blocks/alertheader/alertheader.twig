@@ -1,12 +1,16 @@
 {% macro alertheader(data) %}
 <div class="u-block u-block--alert">
     <div class="b-alertheader">
-        {% include 'icons/alert.svg' %}
-        <h2>{{ data.heading }}</h2>
-        <p>{{ data.message }}{% if data.url %} <a href="{{ data.link }}">{% if data.linkText %}{{ data.linkText }}{% else %}Learn more{% endif %}</a>{% endif %}</p>
+        <div class="c-alert c-alert--error" role="alert">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><title id="title" lang="en">Warning/attention sign</title><path d="M13.339 1.75a1.54 1.54 0 0 0-1.33-.75c-.551 0-1.055.285-1.33.75L.206 19.749a1.47 1.47 0 0 0 0 1.502c.29.465.795.751 1.33.751h20.946c.55 0 1.056-.285 1.315-.75.265-.465.27-1.033.015-1.503L13.34 1.75zm.2 17.246H10.48v-3.005h3.059v3.005zm0-4.506H10.48V8.48h3.059v6.01z"/></svg>
+{% if data.heading %}
+            <h2>{{ data.heading }}</h2>
+{% endif %}
+            <p>{{ data.message|raw }}</p>
+        </div>
     </div>
 {% if data.dismissible != false %}
-    <button class="alertheader__dismiss" aria-label="Close alert" type="button" data-close>
+    <button aria-label="Close alert" type="button" data-close>
         <span class="u-icon" aria-hidden="true">
             <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title id="title" lang="en">Close alert panel</title><path d="M15.396 12L24 20.604 20.604 24 12 15.396 3.396 24 0 20.604 8.604 12 0 3.396 3.396 0 12 8.604 20.604 0 24 3.396z"/></svg>
         </span>

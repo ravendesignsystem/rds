@@ -9,7 +9,6 @@
 
 	svg {
 		width: 30px;
-		float: left;
 		position: absolute;
 		top: 25px;
 		left: 19px;
@@ -17,6 +16,42 @@
 		+ p {
 			font-weight: 500;
 			margin-top: 2px;
+		}
+	}
+
+	h2 {
+		font-size: $pixel16;
+		padding-bottom: 2px;
+		margin-bottom: 2px !important;
+		border-bottom: none;
+	}
+
+	a {
+		color: $link;
+		border-bottom: 1px solid $link !important;
+		background-color: transparent !important;
+
+		&:hover {
+			border-bottom: 1px solid $red !important;
+		}
+	}
+
+	p {
+		font-size: $pixel14;
+		margin-bottom: 0;
+	}
+
+	button {
+		position: absolute;
+		top: 15px;
+		right: 10px;
+
+		svg {
+			position: relative;
+			top: 0;
+			right: 0;
+			left: 0;
+			width: 12px;
 		}
 	}
 }
@@ -33,6 +68,17 @@
 .c-alert--error {
 	border: 1px solid $red;
 	background-color: $pink;
+
+	a {
+		color: $red !important;
+		border-bottom: 1px solid $red !important;
+		background-color: transparent !important;
+
+		&:hover {
+			border-bottom: 1px solid $black !important;
+			color: $black !important;
+		}
+	}
 }
 
 .c-alert--error svg {
@@ -55,15 +101,4 @@
 	svg {
 		fill: #45bf2e;
 	}
-}
-
-.c-alert p {
-	font-size: $pixel14;
-}
-
-.c-alert h2 {
-	font-size: $pixel16;
-	padding-bottom: 2px;
-	margin-bottom: 2px !important;
-	border-bottom: none;
 }

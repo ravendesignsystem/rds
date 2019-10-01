@@ -18,6 +18,10 @@ While a message is required, alert headings are recommended but not required. Ho
 
 {% include 'inc' with {'component': 'alert-noheading', 'code': true} %}
 
+{% include 'inc' with {'component': 'alert-dismissible'} %}
+
+{% include 'inc' with {'component': 'alert-dismissible', 'code': true} %}
+
 There are four different contextual alerts: 
 
 1. Error alerts
@@ -61,7 +65,7 @@ Used for messages that need the user attention and acknowledgment but might not 
 
 Alerts are currently used in the following blocks:
 
-- 
+- {% include 'link' with {'block': 'Alert Header'} %}
 
 ## Usage guidelines
 

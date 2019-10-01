@@ -10,8 +10,8 @@ banner:
     parent: Docs
 alertheader:
   dismissible : true
-  heading: University closure, January 28
-  message: Due to inclement weather the university will be closed January 28, 2019. Please see the updated exam schedule.
+  heading: University closure, January 28, 2021!
+  message: Due to inclement weather, the university will be closed January 28, 2019. Please see the <a href="https://carleton.ca/ses/exam-schedule/">updated exam schedule</a>
   link: https://carleton.ca/ses/exam-schedule/
 ---
 The Page Alert block is used to convey important information to the user through a prominent header block. 
@@ -42,9 +42,7 @@ Check out the Page Alert block in use directly above the Banner on this page.
 | Props        | Desc              | Type  | Default 
 | --------------| :-------------------------------------:| -------:| -:|
 | heading *     | Page Alert heading                     | string  | - |
-| message *     | Content of Page Alert                  | string  | - | 
-| link          | Redirect url                           | string  | -
-| linkText      | Link text to display                   | string  | Learn more
+| message *     | Content of alert, can include `<a>` tags | HTML  | - | 
 | dismissible * | Whether Alert Header can be dismissed    | boolean | true
 
 <small>`*` = required.</small>

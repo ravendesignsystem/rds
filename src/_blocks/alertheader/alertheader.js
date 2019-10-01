@@ -1,7 +1,7 @@
 const alert = document.querySelector('.u-block--alert');
-const alertClose = document.querySelector('.alertheader__dismiss');
+const alertHeaderClose = document.querySelector('.u-block--alert button');
 
-if (alert) {
+if (alert ) {
 	const sticky = alert.offsetTop;
 
 	function stickTop() {
@@ -16,8 +16,8 @@ if (alert) {
 		stickTop()
 	};
 
-	if (alertClose) {
-		alertClose.addEventListener(
+	if (alertHeaderClose) {
+		alertHeaderClose.addEventListener(
 			'click',
 			function() {
 				alert.parentNode.removeChild(alert);

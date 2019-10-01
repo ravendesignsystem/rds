@@ -6,15 +6,14 @@
 {% if data.heading %}
     <h2>{{ data.heading }}</h2>
 {% endif %}
-    <p>{{ data.message }}</p>
-{#{% if data.dismissible == false %}#}
-{#    <button class="alertheader__dismiss" aria-label="Close alert" type="button" data-close>#}
-{#        <span aria-hidden="true">&times;</span>#}
-{#    </button>#}
-{#{% endif %}#}
+    <p>{{ data.message|raw }}</p>
+{% if data.dismissible != false %}
+    <button aria-label="Close alert" type="button" data-close>
+    <span class="u-icon" aria-hidden="true">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title id="title" lang="en">Close alert panel</title><path d="M15.396 12L24 20.604 20.604 24 12 15.396 3.396 24 0 20.604 8.604 12 0 3.396 3.396 0 12 8.604 20.604 0 24 3.396z"/></svg>
+    </span>
+    </button>
+{% endif %}
 </div>
 {% endmacro %}
-{#<div class="c-alert c-alert--info c-alert--icon">{% include 'icons/info.svg' %}#}
-{#    <h2>Listing block headings</h2>#}
-{#    <p>For Listing blocks a heading is required. Therefore all the  code examples on this page include a block headings.</p>#}
-{#</div>#}
+

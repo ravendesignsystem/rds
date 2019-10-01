@@ -1,0 +1,9 @@
+{% from "alert/alert.twig" import alert %}
+{{ alert (
+    {
+        dismissible: true,
+        heading: "Dismissible Alert Component",
+        message: "To make each Alert dismissible, add the button code below.",
+        type: "info"
+    }
+) }}

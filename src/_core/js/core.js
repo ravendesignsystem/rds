@@ -2,6 +2,7 @@
 import '../../_core/js/polyfills/polyfills';
 // component scripts
 import '../../_components/accordion/accordion';
+import '../../_components/alert/alert';
 import '../../_components/menupopup/menupopup';
 
 // block scripts
