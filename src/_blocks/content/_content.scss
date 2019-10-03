@@ -2,6 +2,7 @@
 	a:not(.c-buttoncta) {
 		color: $link;
 		background-color: #fbfdfd;
+		word-wrap: break-word;
 
 		&:hover:not(.u-icon):not(.c-buttoncta) {
 			border-bottom: 1px solid $red;

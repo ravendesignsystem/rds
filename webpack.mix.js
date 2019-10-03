@@ -66,7 +66,6 @@ if (env === 'production') {
 		.copy('src/_blocks/content/*.scss', 'dist/_blocks/content')
 		.copy('src/_blocks/footerbrand/*.scss', 'dist/_blocks/footerbrand')
 		.copy('src/_blocks/footersimple/*.scss', 'dist/_blocks/footersimple')
-		.copy('src/_blocks/footersitemap/*.scss', 'dist/_blocks/footersitemap')
 		.copy('src/_blocks/globalnav/*.scss', 'dist/_blocks/globalnav')
 		.copy('src/_blocks/globalnav/*.scss', 'dist/_blocks/globalnav')
 		.copy('src/_blocks/imgfull/*.scss', 'dist/_blocks/imgfull')

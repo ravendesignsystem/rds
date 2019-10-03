@@ -3,7 +3,7 @@
 
 	& .masthead__nav {
 		position: absolute;
-		top: 75px;
+		//top: 75px;
 		left: 0;
 	}
 }
@@ -45,7 +45,7 @@
 	// Box-model
 	display: flex;
 	justify-content: space-between;
-	height: 75px;
+	height: 73px;
 	// Visual
 	border-top: 2px solid $red;
 	border-bottom: 1px solid $grey-kenobi;
@@ -61,7 +61,7 @@
 	padding-right: 15px;
 	align-items: center;
 	font-size: 14px;
-	//font-weight: 500;
+	font-weight: 500;
 
 	svg {
 		height: 16px;
@@ -78,7 +78,7 @@
 	display: inline-flex;
 	white-space: nowrap;
 	align-items: center;
-	height: 73px;
+	height: 72px;
 
 	@include media('>s') {
 		border-right: 1px solid $grey-yoda;
@@ -92,8 +92,17 @@
 	margin-right: 3px;
 }
 
+// cu homepage logo without text
+.masthead__brand h1 {
+	svg {
+		height: 40px;
+		width: auto;
+	}
+}
+
+.masthead__brand h1,
 .masthead__brand h2 {
-	margin: 5px 0 0;
+	margin: 6px 0 0;
 	padding-bottom: 0;
 
 	span {
@@ -124,7 +133,7 @@
 	height: 150px;
 
 	@include media('>=960px') {
-		height: 75px;
+		height: 74px;
 	}
 }
 
@@ -144,7 +153,6 @@
 	-ms-overflow-style: none; // IE 10+
 	scrollbar-width: none; // Firefox
 	overflow-y: hidden;
-	white-space: nowrap;
 
 	&::-webkit-scrollbar {
 		width: 0px; /* Remove scrollbar space */
@@ -162,6 +170,10 @@
 		top: auto;
 		overflow-x: hidden;
 		overflow-y: hidden;
+	}
+
+	a:hover {
+		color: $red;
 	}
 }
 
@@ -203,11 +215,7 @@
 	//}
 }
 
-.js-masthead-2packed
-	.b-masthead--responsivenav
-	.masthead__nav
-	.c-menupopup:hover
-	ul.menupopup__menu {
+.js-masthead-2packed .b-masthead--responsivenav .masthead__nav .c-menupopup:hover ul.menupopup__menu {
 	top: 150px;
 }
 
@@ -224,7 +232,10 @@
 }
 
 // used for displaying masthead nav submenus - js sets some of this
-.b-masthead--responsivenav .masthead__nav .c-menupopup:hover ul.menupopup__menu {
+.b-masthead--responsivenav
+	.masthead__nav
+	.c-menupopup:hover
+	ul.menupopup__menu {
 	position: fixed;
 	top: 146px;
 
@@ -240,18 +251,18 @@
 .masthead__actions {
 	display: inline-flex;
 	align-items: center;
-	height: 73px;
+	height: 72px;
 }
 
 .masthead__actions > ul > li {
 	border-left: 1px solid $grey-kenobi;
+
 }
 
 li.masthead__cta > a {
 	background-color: $red;
 	color: white;
-	display: none;
-	//display: flex;
+	display: flex;
 
 	svg {
 		fill: white;
@@ -261,6 +272,10 @@ li.masthead__cta > a {
 		color: white;
 		//right: 15px !important;
 	}
+}
+
+li.masthead__cta--white {
+	border-bottom: 1px solid $grey-kenobi !important;
 }
 
 li.masthead__cta--white > a {
@@ -303,4 +318,10 @@ li.masthead__cta.c-menupopup > a {
 .masthead__nav .u-active > a,
 .masthead__nav .u-active > button {
 	color: $red;
+}
+
+.masthead__sep {
+	border-left: 1px solid #dfdfdf;
+	padding-left: 12px;
+	margin-left: 12px;
 }
