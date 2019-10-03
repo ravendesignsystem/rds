@@ -23,7 +23,6 @@
 		font-size: $pixel16;
 		padding-bottom: 2px;
 		margin-bottom: 2px !important;
-		border-bottom: none;
 	}
 
 	a {
@@ -54,6 +53,10 @@
 			width: 12px;
 		}
 	}
+}
+
+.b-content .c-alert h2 {
+	border-bottom: none;
 }
 
 .c-alert--info svg {
