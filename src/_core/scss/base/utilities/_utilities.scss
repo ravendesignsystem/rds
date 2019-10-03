@@ -21,6 +21,48 @@
 // 1. Grid system
 // --------------
 
+// CSS Grid
+// --------
+
+.u-grid {
+	display: grid;
+	grid-gap: $grid-gutter;
+}
+
+.u-grid--gap-l {
+	grid-gap: 50px;
+
+	@include media('>=l') {
+		grid-gap: 80px;
+	}
+}
+
+.u-grid--2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.u-grid--3 {
+	grid-template-columns: repeat(2, 1fr);
+
+	@include media('>s') {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.u-grid--4 {
+	grid-template-columns: repeat(2, 1fr);
+
+	@include media('>s') {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@include media('<=s') {
+	.u-grid--s1 {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
 // CSS Grid IE11 Fallback
 // TODO: look into @support grid
 @media screen and (-ms-high-contrast: active),
@@ -83,48 +125,6 @@
 	}
 }
 
-// CSS Grid
-// --------
-
-.u-grid {
-	display: grid;
-	grid-gap: $grid-gutter;
-}
-
-.u-grid--gap-l {
-	grid-gap: 50px;
-
-	@include media('>=l') {
-		grid-gap: 80px;
-	}
-}
-
-.u-grid--2 {
-	grid-template-columns: repeat(2, 1fr);
-}
-
-.u-grid--3 {
-	grid-template-columns: repeat(2, 1fr);
-
-	@include media('>s') {
-		grid-template-columns: repeat(3, 1fr);
-	}
-}
-
-.u-grid--4 {
-	grid-template-columns: repeat(2, 1fr);
-
-	@include media('>s') {
-		grid-template-columns: repeat(4, 1fr);
-	}
-}
-
-@include media('<=s') {
-	.u-grid--s1 {
-		grid-template-columns: repeat(1, 1fr);
-	}
-}
-
 // 2. Block utils
 // --------------
 
@@ -181,7 +181,8 @@
 	margin-right: auto;
 }
 
-.u-block--l > *, .u-block--alert > * {
+.u-block--l > *,
+.u-block--alert > * {
 	max-width: #{map-get($breakpoints, l)};
 }
 
