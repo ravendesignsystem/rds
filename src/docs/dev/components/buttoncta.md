@@ -23,7 +23,7 @@ For secondary or tertiary CTAs, consider using a use ghost button modifier.
 <a class="c-buttoncta c-buttoncta--ghost" href="https://en.wikipedia.org/wiki/Stay_Puft_Marshmallow_Man">Stay Puft</a>
 
 ```html
-<a class="c-buttoncta c-buttoncta--ghost" href="https://en.wikipedia.org/wiki/Stay_Puft_Marshmallow_Man"">Stay Puft</a>
+<a class="c-buttoncta c-buttoncta--ghost" href="https://en.wikipedia.org/wiki/Stay_Puft_Marshmallow_Man">Stay Puft</a>
 ```
 
 ## CTA button with icon
@@ -31,7 +31,7 @@ For secondary or tertiary CTAs, consider using a use ghost button modifier.
 To make your CTA button easier to scan, consider adding an RDS icon. Position icons before (left of) the accompanying label.
 
 <a class="c-buttoncta u-icon" href="#"><svg viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M16.8 9.6V0H7.2v9.6H0L12 24 24 9.6z"/></svg>Download our free ebook</a>
- 
+
 ```html
 <a class="c-buttoncta u-icon" href="#"><svg viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M16.8 9.6V0H7.2v9.6H0L12 24 24 9.6z"/></svg>Download our free ebook</a>
 ```
@@ -105,20 +105,20 @@ The following code is okay to open a modal:
 To provide more prominence, apply the modifier `c-buttoncta--full` and the button will stretch to fill 100% of the available width.
 
  <a class="c-buttoncta c-buttoncta--full c-buttoncta--ghost u-icon" href="#">{% include "icons/plus.svg" %} Add to calendar</a>
- 
+
 ```html
  <a class="c-buttoncta c-buttoncta--full c-buttoncta--ghost" href="#">Add to calendar</a>
 ```
 
-**Important**: in the example above the space is too wide to apply the full-width button modifier. It should only be used in small width layout areas, such as sidebars, 
+**Important**: in the example above the space is too wide to apply the full-width button modifier. It should only be used in small width layout areas, such as sidebars,
 
 ### Centering
-    
+
 To center a button, add the modifier class c-buttoncta--center.
 
 <a class="c-buttoncta c-buttoncta--center u-icon" href="#"><svg viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M16.8 9.6V0H7.2v9.6H0L12 24 24 9.6z"/></svg>
  Download our free ebook</a>
- 
+
 ```html
 <a class="c-buttoncta c-buttoncta--center u-icon" href="/ebook.pdf"><svg viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M16.8 9.6V0H7.2v9.6H0L12 24 24 9.6z"/></svg>
  Download our free ebook</a>
