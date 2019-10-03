@@ -1,6 +1,6 @@
 const mix = require('laravel-mix');
 const env = process.env.NODE_ENV;
-const ver = "0.13.0";
+const ver = '0.13.0';
 
 mix
 	// .sass('src/_scss/docs/critical.scss', 'src/_css')
@@ -20,7 +20,7 @@ mix
 			require('postcss-pxtorem')({
 				replace: true,
 			}),
-			require('css-mqpacker'),
+			// require('css-mqpacker'),
 		],
 	})
 	.js('src/_themes/docs/js/docs.js', 'build/docs/js')
@@ -36,7 +36,7 @@ mix
 
 if (env === 'production') {
 	mix
-	 .js('src/_core/js/core.js', 'dist/' + ver + '/rds-cu.js')
+		.js('src/_core/js/core.js', 'dist/' + ver + '/rds-cu.js')
 		.sass('src/_themes/cu/scss/cu.scss', 'dist/' + ver + '/rds-cu.css')
 		.options({
 			postCss: [
