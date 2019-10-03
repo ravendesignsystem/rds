@@ -107,7 +107,8 @@ To provide more prominence, apply the modifier `c-buttoncta--full` and the butto
  <a class="c-buttoncta c-buttoncta--full c-buttoncta--ghost u-icon" href="#">{% include "icons/plus.svg" %} Add to calendar</a>
 
 ```html
- <a class="c-buttoncta c-buttoncta--full c-buttoncta--ghost" href="#">Add to calendar</a>
+<a class="c-buttoncta c-buttoncta--full c-buttoncta--ghost u-icon" href="#"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 14H14v10h-4V14H0v-4h10V0h4v10h10z"></path></svg>
+ Add to calendar</a>
 ```
 
 **Important**: in the example above the space is too wide to apply the full-width button modifier. It should only be used in small width layout areas, such as sidebars,
