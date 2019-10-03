@@ -14,6 +14,5 @@ banner:
 content: true
 ---
 ##  Blocks
-{% include 'docs/inc/content-block-list' %}
 
 

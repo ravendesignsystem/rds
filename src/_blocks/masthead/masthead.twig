@@ -46,7 +46,6 @@
 	</nav>
 	<div class="masthead__actions" aria-label="Header actions and controls">
 		<ul>
-{#			<li class="masthead__cta masthead__cta--white u-hide-s c-menupopup c-menupopup--right">#}
 			<li class="masthead__cta masthead__cta--white c-menupopup c-menupopup--right u-hide-s">
 				<a class="u-icon" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %} Github</a>
 				<ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
@@ -88,7 +87,7 @@
 				</button>
 			</li>
 			{% if page.subsite %}
-			<li class="masthead__hamburger {% if page.subsite == 'dev' and page.menu != 'dev' %}{% else %}{% endif %}">
+			<li class="masthead__hamburger{% if page.subsite == 'dev' and page.menu != 'dev' %} {% else %} u-hide-l{% endif %}">
 				<button class="c-hamburger c-hamburger--spin" aria-label="Open Menu" title="Open site-wide menu"  type="button">
 						<span class="c-hamburger__box">
 							<span class="c-hamburger__inner"></span>
