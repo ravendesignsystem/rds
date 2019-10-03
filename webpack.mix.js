@@ -53,7 +53,7 @@ if (env === 'production') {
 				require('postcss-pxtorem')({
 					replace: true,
 				}),
-				require('css-mqpacker'),
+				// require('css-mqpacker'),
 			],
 		})
 		.copy('build/docs', 'docs')
