@@ -140,7 +140,8 @@
 .masthead__nav {
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
-	position: relative;
+	// TODO - I don't know if this effects sub navigation
+	// position: relative;
 	//overflow: auto;
 	//overflow-y: hidden;
 	border-top: 1px solid $grey-kenobi;
