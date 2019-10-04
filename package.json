@@ -36,7 +36,6 @@
 		"browser-sync": "^2.26.7",
 		"browser-sync-webpack-plugin": "^2.0.1",
 		"clean-webpack-plugin": "^3.0.0",
-		"css-mqpacker": "^7.0.0",
 		"cssnano": "^4.1.10",
 		"dialog-polyfill": "^0.5.0",
 		"laravel-mix": "^5.0.0",
