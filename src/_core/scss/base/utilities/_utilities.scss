@@ -66,7 +66,7 @@
 // CSS Grid IE11 Fallback
 // TODO: look into @support grid
 @media screen and (-ms-high-contrast: active),
-	screaen and (-ms-high-contrast: none) {
+	screen and (-ms-high-contrast: none) {
 	.u-grid {
 		display: flex;
 		flex-wrap: wrap;
