@@ -74,9 +74,9 @@ Create DRY blocks using the components below:
 
 - [Alert]({{site.url}}dev/components/alerts/alert/)
 - [Badge]({{site.url}}dev/components/alerts/badge/)
-- [Button CTA]({{site.url}}dev/components/buttoncta/)
-- [Button Social]({{site.url}}dev/components/buttonsocial/)
-- [Card]({{site.url}}dev/components/card/)
+- [Button CTA]({{site.url}}dev/components/buttons/buttoncta/)
+- [Button Social]({{site.url}}dev/components/buttons/buttonsocial/)
+- [Card]({{site.url}}dev/components/cards/card/)
 - [Icons]({{site.url}}dev/components/icons/)
 - [Search Field]({{site.url}}dev/components/searchfield/)
 - {%include "link" with {'component': 'Menu Popup'} %}
