@@ -1,9 +1,10 @@
 ---
 layout: docs
 subsite: dev
-title: Button CTA
+title: CTA Button
 menu: dev
 section: Components
+subsection: Buttons
 banner:
   breadcrumbs:
     grandparent: Components

@@ -233,32 +233,48 @@
                         ]
                         },
                         {
-                            title: 'Alert',
-                            url: site.url ~ 'dev/components/alert/',
+                            title: 'Alert Components',
+                            url: site.url ~ 'dev/components/alerts/',
                             section: page.section,
                             subsection: page.subsection,
-                            active: page.title
+                            submenu: [
+                            {
+                                title: 'Alert',
+                                url: site.url ~ 'dev/components/alerts/alert/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            },
+                            {
+                                title: 'Badge',
+                                url: site.url ~ 'dev/components/alerts/badge/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            }
+                        ]
                         },
                         {
-                            title: 'Badge',
-                            url: site.url ~ 'dev/components/badge/',
+                            title: 'Buttons',
+                            url: site.url ~ 'dev/components/buttons/',
                             section: page.section,
                             subsection: page.subsection,
-                            active: page.title
-                        },
-                        {
-                            title: 'Button CTA',
-                            url: site.url ~ 'dev/components/buttoncta/',
-                            section: page.section,
-                            subsection: page.subsection,
-                            active: page.title
-                        },
-                        {
-                            title: 'Button Social',
-                            url: site.url ~ 'dev/components/buttonsocial/',
-                            section: page.section,
-                            subsection: page.subsection,
-                            active: page.title
+                            submenu: [
+                            {
+                                title: 'CTA Button',
+                                url: site.url ~ 'dev/components/buttons/buttoncta/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            },
+                            {
+                                title: 'Social Button',
+                                url: site.url ~ 'dev/components/buttons/buttonsocial/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            }
+                        ]
                         },
                         {
                             title: 'Card',

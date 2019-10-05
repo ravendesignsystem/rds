@@ -1,9 +1,10 @@
 ---
 layout: docs
 subsite: dev
-title: Button Social
+title: Social Button
 menu: dev
 section: Components
+subsection: Buttons
 banner:
   breadcrumbs:
     grandparent: Components
@@ -71,7 +72,23 @@ Social buttons are buttons are visual cues to online and social media networks. 
 <span class="u-visually-hidden">Check us out on Pinterest</span></a>
 ```
 
+##Implementation Notes
+
+Social buttons are inline blocks so they can easily be aligned together by including each component one beside each other.
+
+{% include 'buttonsocial/data/buttonsocial--instagram' %} {% include 'buttonsocial/data/buttonsocial--facebook' %} {% include 'buttonsocial/data/buttonsocial--twitter' %} {% include 'buttonsocial/data/buttonsocial--youtube' %} {% include 'buttonsocial/data/buttonsocial--linkedin' %} {% include 'buttonsocial/data/buttonsocial--pinterest' %}
+
+```twig
+{% verbatim %}{% include 'buttonsocial/data/buttonsocial--instagram' %} {% include 'buttonsocial/data/buttonsocial--facebook' %} {% include 'buttonsocial/data/buttonsocial--twitter' %} {% include 'buttonsocial/data/buttonsocial--youtube' %} {% include 'buttonsocial/data/buttonsocial--linkedin' %} {% include 'buttonsocial/data/buttonsocial--pinterest' %}{% endverbatim %}
+```
+
 **Notice** how each social network's brand colour is reflected on the hover state.
+
+## Usage 
+
+These components are best used in global secondary navigation areas, such as footers or with other meta data at the end of articles.
+
+Linking to social media services can be an important part of building community and keeping in touch with users.
 
 ## Found in
 

@@ -11,105 +11,115 @@ banner:
 ---
 RDS cards group related content and actions about a single subject. Cards serve as a linked entry point to more detailed information, while providing a quick preview of the content they link to.
 
-{% include 'close' %}
-<section class="u-block u-block--white">
-    <h2> Base card</h2>
-        <div class="u-grid u-grid--3">
-            {% include 'inc' with {'component': 'card-base'} %}
-        </div>
-</section>
-{% include 'open' %}
-{% include 'inc' with {'component': 'card-base', 'code': true} %}
-{% include 'close' %}
-
-<section class="u-block u-block--white">
-    <h2>Card with title and description</h2>
-        <div class="u-grid u-grid--3">
-            {% include 'inc' with {'component': 'card-text'} %}
-        </div>
-</section>
-{% include 'open' %}
-{% include 'inc' with {'component': 'card-text', 'code': true} %}
-{% include 'close' %}
-
-<section class="u-block u-block--white">
-    <h2>News variant with date</h2>
-    <p>For news or blog posts, you can provide an associated publishing date.</p>
-        <div class="u-grid u-grid--3">
-            {% include 'inc' with {'component': 'card-news'} %}
-        </div>
-</section>
-{% include 'open' %}
-{% include 'inc' with {'component': 'card-news', 'code': true} %}
-{% include 'close' %}
-
-<section class="u-block u-block--white">
-    <h2>News variant with date and description</h2>
-        <div class="u-grid u-grid--3">
-            {% include 'inc' with {'component': 'card-newsdesc'} %}
-        </div>
-</section>
-{% include 'open' %}
-{% include 'inc' with {'component': 'card-newsdesc', 'code': true} %}
-{% include 'close' %}
-
-<section class="u-block u-block--white">
-    <h2>Video card variant</h2>
-        <div class="u-grid u-grid--3">
-            {% include 'inc' with {'component': 'card-video'} %}
-        </div>
-</section>
-{% include 'open' %}
-{% include 'inc' with {'component': 'card-video', 'code': true} %}
-{% include 'close' %}
-
-<section class="u-block u-block--white">
-    <h2>People variant</h2>
-        <div class="u-grid u-grid--3">
-            {% include 'inc' with {'component': 'card-people'} %}
-        </div>
-</section>
-{% include 'open' %}
-{% include 'inc' with {'component': 'card-people', 'code': true} %}
-{% include 'close' %}
-
-<section class="u-block u-block--white">
-    <h2>Figure variant</h2>
-    <p>As per the first result when googling "definition of figure", this block is generally used for "a number, especially one which forms part of official statistics. Use this component to display number based facts or stats. The component includes an optional link and a required caption defining the number/stat.</p>
-        <div class="u-grid u-grid--3">
-            {% include 'inc' with {'component': 'card-figurelinked'} %}
-        </div>
-</section>
-{% include 'open' %}
-{% include 'inc' with {'component': 'card-figurelinked', 'code': true} %}
-{% include 'close' %}
-
-<section class="u-block u-block--white">
-    <h2>Figure variant without a linked URL</h2>
-    <p>This is the first card example where a linked URL is optional.</p>
-        <div class="u-grid u-grid--3">
-            {% include 'inc' with {'component': 'card-figure'} %}
-        </div>
-</section>
-
-{% include 'open' %}
-{% include 'inc' with {'component': 'card-figure', 'code': true} %}
-{% include 'close' %}
-
-<div class="c-alert c-alert--info c-alert--icon">{% include 'icons/info.svg' %}
-<h2>Drop shadows and cards</h2>
-<p>Notice how there is no drop shadow present on the unlinked card above. By design, cards with drop shadows indicate they are clickable/touchable.</p>
+## Base Card
+{%include "inc" with {'close': true} %}
+<div class="u-block u-block--white">
+	<div class="u-grid u-grid--3">
+        {% include 'inc' with {'component': 'card-base'} %}
+    </div>
 </div>
+{%include "inc" with {'open': true} %}
 
-<section class="u-block u-block--white">
-    <h2>Maxwidth variant</h2>
-            {% include 'inc' with {'component': 'card-maxwidth'} %}
-</section>
-{% include 'open' %}
+{% include 'inc' with {'component': 'card-base', 'code': true} %}
+
+## Card with title and description
+
+{%include "inc" with {'close': true} %}
+<div class="u-block u-block--white">
+	<div class="u-grid u-grid--3">
+        {% include 'inc' with {'component': 'card-text'} %}
+    </div>
+</div>
+{%include "inc" with {'open': true} %}
+
+{% include 'inc' with {'component': 'card-base', 'code': true} %}
+
+## News variant with date
+{%include "inc" with {'close': true} %}
+<div class="u-block u-block--white">
+	<div class="u-grid u-grid--3">
+        {% include 'inc' with {'component': 'card-news'} %}
+    </div>
+</div>
+{%include "inc" with {'open': true} %}
+
+{% include 'inc' with {'component': 'card-news', 'code': true} %}
+
+## News variant with date and description
+{%include "inc" with {'close': true} %}
+<div class="u-block u-block--white">
+	<div class="u-grid u-grid--3">
+        {% include 'inc' with {'component': 'card-newsdesc'} %}
+    </div>
+</div>
+{%include "inc" with {'open': true} %}
+
+{% include 'inc' with {'component': 'card-newsdesc', 'code': true} %}
+
+## Video variant 
+{%include "inc" with {'close': true} %}
+<div class="u-block u-block--white">
+	<div class="u-grid u-grid--3">
+        {% include 'inc' with {'component': 'card-video'} %}
+    </div>
+</div>
+{%include "inc" with {'open': true} %}
+
+{% include 'inc' with {'component': 'card-video', 'code': true} %}
+
+## People variant 
+{%include "inc" with {'close': true} %}
+<div class="u-block u-block--white">
+	<div class="u-grid u-grid--3">
+        {% include 'inc' with {'component': 'card-people'} %}
+    </div>
+</div>
+{%include "inc" with {'open': true} %}
+
+{% include 'inc' with {'component': 'card-people', 'code': true} %}
+
+## Figure variant
+
+As per the first result when googling "definition of figure", this block is generally used for "a number, especially one which forms part of official statistics. Use this component to display number based facts or stats. The component includes an optional link and a required caption defining the number/stat.
+
+{%include "inc" with {'close': true} %}
+<div class="u-block u-block--white">
+	<div class="u-grid u-grid--3">
+        {% include 'inc' with {'component': 'card-figurelinked'} %}
+    </div>
+</div>
+{%include "inc" with {'open': true} %}
+
+{% include 'inc' with {'component': 'card-figurelinked', 'code': true} %}
+
+## Figure variant without link
+
+This is the first card example where a linked URL is optional.
+
+{%include "inc" with {'close': true} %}
+<div class="u-block u-block--white">
+	<div class="u-grid u-grid--3">
+        {% include 'inc' with {'component': 'card-figure'} %}
+    </div>
+</div>
+{%include "inc" with {'open': true} %}
+
+{% include 'inc' with {'component': 'card-figure', 'code': true} %}
+
+## Drop shadows and cards
+
+Notice how there is no drop shadow present on the unlinked card above. By design, cards with drop shadows indicate they are clickable/touchable.
+
+## Max-width variant
+
+{%include "inc" with {'close': true} %}
+<div class="u-block u-block--white">
+{% include 'inc' with {'component': 'card-maxwidth'} %}
+</div>
+{%include "inc" with {'open': true} %}
+
 {% include 'inc' with {'component': 'card-maxwidth', 'code': true} %}
-{% include 'close' %}
 
-{% include 'open' %}
 
 ## Twig/Nunjucks Macro example
 

@@ -1,184 +1,91 @@
 ---
 layout: docs
 subsite: dev
-title: Button CTA
+title: Alert
 menu: dev
 section: Components
 banner:
   breadcrumbs:
     grandparent: Components
 ---
-The CTA button prompts your visitors to take action by making common actions more visible and easy to perform with one click or tap. CTA buttons are labeled using text or text and an accompanying icon.
+{% include 'inc' with {'component': 'alert-base'} %}
 
-<a class="c-buttoncta" href="http://www.nooooooooooooooo.com">Join the darkside</a>
+{% include 'inc' with {'component': 'alert-base', 'code': true} %}
 
-```html
-<a class="c-buttoncta" href="http://www.nooooooooooooooo.com">Join the darkside</a>
-```
+While a message is required, alert headings are recommended but not required. However, when a header is not used, messages appear very similar.
 
-## 👻 Ghost CTA button
+{% include 'inc' with {'component': 'alert-noheading'} %}
 
-For secondary or tertiary CTAs, consider using a use ghost button modifier.
+{% include 'inc' with {'component': 'alert-noheading', 'code': true} %}
 
-<a class="c-buttoncta c-buttoncta--ghost" href="https://en.wikipedia.org/wiki/Stay_Puft_Marshmallow_Man">Stay Puft</a>
+{% include 'inc' with {'component': 'alert-dismissible'} %}
 
-```html
-<a class="c-buttoncta c-buttoncta--ghost" href="https://en.wikipedia.org/wiki/Stay_Puft_Marshmallow_Man">Stay Puft</a>
-```
+{% include 'inc' with {'component': 'alert-dismissible', 'code': true} %}
 
-## CTA button with icon
+There are four different contextual alerts: 
 
-To make your CTA button easier to scan, consider adding an RDS icon. Position icons before (left of) the accompanying label.
+1. Error alerts
+2. Information alerts
+3. Success alerts
+4. Warning alerts
 
-<a class="c-buttoncta u-icon" href="#"><svg viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M16.8 9.6V0H7.2v9.6H0L12 24 24 9.6z"/></svg>Download our free ebook</a>
+### Error alert
 
-```html
-<a class="c-buttoncta u-icon" href="#"><svg viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M16.8 9.6V0H7.2v9.6H0L12 24 24 9.6z"/></svg>Download our free ebook</a>
-```
+Reserved for errors, malfunctions, as well as critical issues campus safety issues.
 
-**Notice** the use of the `u-icon` class.
+{% include 'inc' with {'component': 'alert-error'} %}
 
-## Implementation Notes
+{% include 'inc' with {'component': 'alert-error', 'code': true} %}
 
-### Links vs buttons
+### Information alert
 
-Most CTA button classes are designed to redirect off of the current page using the `<a>` element. If this is the case, do NOT use the `<button>` element for CTA buttons.
+Used to highlight informational content. Use when standard tags such as `<b>` and `<strong>`  or headers don't pull the message out enough. Try and avoid overusing this alert in lieu of standard content.
 
-**😎 Cool**:
+{% include 'inc' with {'component': 'alert-info'} %}
 
-```html
-<!-- Cool, like Fonzie -->
-<a class="c-buttoncta" href="/contact">Visit our contact page</a>
-```
+{% include 'inc' with {'component': 'alert-info', 'code': true} %}
 
-**👎 Not cool**:
+### Success alert
 
-```html
-<!-- Fonzie jumping a shark -->
-<button class="c-buttoncta"><a href="/contact">Visit our contact page</a></button>
-```
+Provide a success message after an action has been taken.
 
-### Using `<button>`
+{% include 'inc' with {'component': 'alert-success'} %}
 
-You can use a `<button` element for a CTA, if you are performing actions such as:
+{% include 'inc' with {'component': 'alert-success', 'code': true} %}
 
-- Opening a modal window
-- Triggering a popup menu
-- Toggling an interface
-- Playing media content
-- Inserting with JS if they only work with JS
+### Warning alert
 
-The following code is okay to open a modal:
+Used for messages that need the user attention and acknowledgment but might not cause errors. For example:
 
-```html
-<button class="c-buttoncta">View Terms</button>
-```
+{% include 'inc' with {'component': 'alert-warning'} %}
 
-**Important**: CTA button components should **NOT** be used to submit forms. Form buttons have a purposely distinctive style setup by default in RDS. As seen below:
-
-**😎 Cool**:
-
-<form>
-<input type="submit">
-</form><br>
-
-```html
-<form>
-<input type="submit">
-</form>
-```
-
-**👎 Not cool**:
-
-```html
-<!-- Fonzie jumping a shark -->
-<form>
-<input class="c-buttoncta" type="submit">
-</form>
-
-<!-- more shark jumping -->
-<button class="c-buttoncta">Submit form</button>
-```
-
-### Full-width buttons
-
-To provide more prominence, apply the modifier `c-buttoncta--full` and the button will stretch to fill 100% of the available width.
-
- <a class="c-buttoncta c-buttoncta--full c-buttoncta--ghost u-icon" href="#">{% include "icons/plus.svg" %} Add to calendar</a>
-
-```html
- <a class="c-buttoncta c-buttoncta--full c-buttoncta--ghost" href="#">Add to calendar</a>
-```
-
-**Important**: in the example above the space is too wide to apply the full-width button modifier. It should only be used in small width layout areas, such as sidebars,
-
-### Centering
-
-To center a button, add the modifier class c-buttoncta--center.
-
-<a class="c-buttoncta c-buttoncta--center u-icon" href="#"><svg viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M16.8 9.6V0H7.2v9.6H0L12 24 24 9.6z"/></svg>
- Download our free ebook</a>
-
-```html
-<a class="c-buttoncta c-buttoncta--center u-icon" href="/ebook.pdf"><svg viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M16.8 9.6V0H7.2v9.6H0L12 24 24 9.6z"/></svg>
- Download our free ebook</a>
-```
+{% include 'inc' with {'component': 'alert-warning', 'code': true} %}
 
 ## Found in
 
-Badges are used in the following blocks:
+Alerts are currently used in the following blocks:
 
-- {%include "link" with {'block': 'Banner'} %}
-- {%include "link" with {'block': 'Card Grid'} %}
+- {% include 'link' with {'block': 'Alert Header'} %}
 
 ## Usage guidelines
 
-### Ghost button usage
 
-[Ghost buttons](https://www.smashingmagazine.com/2018/01/ghost-button-design/) have proven to be less effective then our default solid buttons. While Ghost Buttons have their place in web design, they should be used less frequently and in the right context.
 
-Ghost buttons should:
-
-- be used as secondary call-to-actions.
-
-<a class="c-buttoncta" href="http://www.imdb.com/title/tt0087332/" role="button">Main action</a> <a class="c-buttoncta c-buttoncta--ghost" href="http://www.imdb.com/title/tt0087332/" role="button">Secondary action</a>
-
-- Should only be used on solid white backgrounds. If placed over a busy image without sufficient contrast, it can be difficult for users to read the button's text.
-
-<a class="c-buttoncta c-buttoncta--ghost" href="http://www.imdb.com/title/tt0087332/" role="button">Read Ghostbuster reviews</a>
-
-### Further guidelines
-
-CTA Buttons should:
-
-- Begin with an action verb like “Start”, “Get” or “Download”
-- Communicate the action that will occur when the user touches them.
-- Be used as calls to action (cta).
-- Be clearly and accurately labeled and start with strong, actionable verbs.
-- Be brief: A couple of words is best, no more than five is ideal
-- Be used for the most important actions on a page.
-- Fall on their own line and have a good amount of white space surrounding them.
-
-Examples of buttons with good calls to action:
-
-<a class="c-buttoncta u-icon" href="https://central.wordcamp.org" role="button"> {% include "icons/arrow-down.svg" ignore missing %} Download our free e-book now</a>
-
-<a class="c-buttoncta u-icon" href="https://central.wordcamp.org" role="button">Start a free trial</a>
-
-<a class="c-buttoncta u-icon" href="https://central.wordcamp.org" role="button">{% include "icons/heart.svg" ignore missing %}Like this post</a>
-
-<a class="c-buttoncta u-icon" href="https://central.wordcamp.org" role="button">{% include "icons/plus.svg" ignore missing %}Book an appointment</a>
-
-<a class="c-buttoncta u-icon" href="https://central.wordcamp.org" role="button">Register for WordCamp Ottawa 2018</a>
 
 ## Avoid
 
-- Don't use buttons for standard links within text [such as this](http://www.nooooooooooooooo.com).
-- Avoid using Ghost buttons for main actions.
+TODO ADD A DROP SHADOW WHEN DISMISSALE - maybe?
+
+https://sparkdesignsystem.com/patterns/components/alerts
 
 ## References
 
-- [Icons As Part Of A Great User Experience](https://www.smashingmagazine.com/2016/10/icons-as-part-of-a-great-user-experience/)
-- [Where to Place Icons Next to Button Labels](http://uxmovement.com/buttons/where-to-place-icons-next-to-button-labels/)
-- [Anatomy of...](https://medium.com/@aureliojota/the-anatomy-of-a-cta-button-in-2017-voice-tone-style-and-component-best-practices-1861c4d2167e)
+- https://designsystem.digital.gov/components/alert/
+- https://uxplanet.org/how-to-write-good-error-messages-858e4551cd4
 
+Should fill the width of the viewport.
+The content should be kept short and concise.
+role="alert" is required so that assistive technology can inform users their attention is needed.
+The data-id property is provided as a hook for automated tools. If you have multiple instances of the same variant of a component on the same page, make sure each instance has a unique data-id property ("alert-info-1", "alert-info-2", "alert-info-3", etc).
+
+orm assistive technologies of a time-sensitive and important message. If the message is interactive, use the use the ARIA role="alertdialog" instead.

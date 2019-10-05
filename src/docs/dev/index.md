@@ -72,7 +72,8 @@ Add content within the {%include "link" with {'block': 'Content', 'Block': true}
 
 Create DRY blocks using the components below:
 
-- [Alert]({{site.url}}dev/components/alert/)
+- [Alert]({{site.url}}dev/components/alerts/alert/)
+- [Badge]({{site.url}}dev/components/alerts/badge/)
 - [Button CTA]({{site.url}}dev/components/buttoncta/)
 - [Button Social]({{site.url}}dev/components/buttonsocial/)
 - [Card]({{site.url}}dev/components/card/)
