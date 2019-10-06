@@ -78,7 +78,7 @@ Create DRY blocks using the components below:
 - [Button Social]({{site.url}}dev/components/buttons/buttonsocial/)
 - [Card]({{site.url}}dev/components/cards/card/)
 - [Icons]({{site.url}}dev/components/icons/)
-- [Search Field]({{site.url}}dev/components/searchfield/)
+- [Search Ford]({{site.url}}dev/components/searchform/)
 - {%include "link" with {'component': 'Menu Popup'} %}
 
 

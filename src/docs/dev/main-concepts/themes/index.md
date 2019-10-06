@@ -50,7 +50,7 @@ There are two ways to setup your site-wide navigation in the Carleton theme.
 1. **Vertical navigation**: using a multi-column layout to provide a left-side column for vertical navigation using the `b-menu` block. 
 2. **Top horizontal navigation**: a horizontal navigation can be set up in the [masthead block](#).
 
-**Note**: you may notice throughout this RDS docs site that the navigation jumps between the top horizontal nav and the left-side vertical nav. For example, this page, you are reading now, uses the left side vertical nav and [this page]({{site.url}}/dev/blocks/header/banner/) uses the top horizontal nav. **Don't do this**. Pick a navigation structure and stick to it throughout your entire site. The only reason we do it on this site is on [the pages]({{site.url}}/dev/blocks/header/banner/) using the top horizontal nav, we needed to showcase full width items or use the one column layout. To select the best navigation for your site, read the docs below outlining the differences and use cases.
+
 
 
 
