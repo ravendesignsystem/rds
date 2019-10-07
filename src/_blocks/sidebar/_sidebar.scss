@@ -45,7 +45,8 @@ a.b-sidebar {
 	}
 }
 
-.sidebar__heading, .b-sidebar h2 {
+.sidebar__heading,
+.b-sidebar h2 {
 	background-color: $grey;
 	text-transform: uppercase;
 	padding-top: 20px;
@@ -63,17 +64,12 @@ a.b-sidebar {
 }
 
 .b-sidebar > h2 + img {
-	object-fit: cover;
 	width: 100%;
+	height: auto;
 	margin-bottom: 20px;
-	max-height: 232px;
 
 	+ p {
 		padding-top: 0;
-	}
-
-	@include media('>=l') {
-		max-height: 160px;
 	}
 }
 
