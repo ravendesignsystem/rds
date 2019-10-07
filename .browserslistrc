@@ -1,0 +1,9 @@
+# Browsers that we support
+
+ie >= 11
+last 2 Chrome versions
+last 2 Edge versions
+last 2 Firefox versions
+last 2 Opera versions
+last 2 Safari versions
+not op_mini > 0
