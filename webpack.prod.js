@@ -8,8 +8,9 @@ const path = require('path');
 const { resolve } = require('path');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 
-// Current RDS Version
+// TODO figure out conditional loading in webpack.build.js
 const ver = '0.13.0';
+const cssName = ver + '/rds-cu.css';
 
 // Build Config
 module.exports = merge(baseConfig, {
@@ -17,6 +18,43 @@ module.exports = merge(baseConfig, {
 	output: {
 		filename: ver + '/rds-cu.js',
 		path: path.resolve(__dirname, 'dist'),
+	},
+	// TODO with conditional logic working, this all moves back to webpack.build.js
+	module: {
+		rules: [
+			{
+				test: /\.scss$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: cssName,
+						},
+					},
+					{
+						loader: 'extract-loader',
+					},
+					{
+						loader: 'css-loader?-url',
+						options: {
+							sourceMap: true,
+						},
+					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							sourceMap: true,
+						},
+					},
+					{
+						loader: 'sass-loader',
+						options: {
+							sourceMap: true,
+						},
+					},
+				],
+			},
+		],
 	},
 	plugins: [
 		new copyWebpackPlugin([
