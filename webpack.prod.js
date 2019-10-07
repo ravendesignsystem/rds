@@ -19,25 +19,12 @@ module.exports = merge(baseConfig, {
 		path: path.resolve(__dirname, 'dist'),
 	},
 	plugins: [
-		// new copyWebpackPlugin([
-		// 	{ from: "./*.php", to: "../release" },
-		// 	{ from: "./acf-json", to: "../release/acf-json" },
-		// 	{ from: "./blocks", to: "../release/blocks" },
-		// 	{ from: "./components", to: "../release/components" },
-		// 	{ from: "./dist", to: "../release/dist" },
-		// 	{ from: "./functions", to: "../release/functions" },
-		// 	{ from: "./templates", to: "../release/templates" },
-		// 	{ from: "./style.css", to: "../release" }
-		// ]),
-		// new SshWebpackPlugin({
-		// 	port: process.env.SSH_PORT,
-		// 	username: process.env.SSH_USER,
-		// 	// password: process.env.SSH_PASS,
-		// 	privateKey: require("fs").readFileSync(process.env.SSH_KEY),
-		// 	from: "./release",
-		// 	host: process.env.PROD_HOST,
-		// 	before: process.env.PROD_CLEAN,
-		// 	to: process.env.PROD_PATH
-		// })
+		new copyWebpackPlugin([
+			{ from: 'build/docs', to: '../docs' },
+			{ from: 'src/_core/layouts', to: '../dist/core/layouts' },
+			{ from: 'src/_core/scss', to: '../dist/core/scss' },
+			{ from: 'src/_blocks/**/*.scss', to: '../dist/_blocks/banner' },
+			{ from: 'src/_components/icons/', to: '../dist/_components/icons' },
+		]),
 	],
 });
