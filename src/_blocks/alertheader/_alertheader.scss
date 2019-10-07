@@ -1,26 +1,23 @@
-.b-alertheader > .c-alert {
+.b-alertheader .c-alert {
 	margin: 0;
 	border: none;
-	padding: 0 0 0 40px;
+	padding: 0 0 0 50px;
 
 	@include media('>s') {
 		padding: 0 0 0 75px;
 	}
 
 	svg {
-		width: 30px;
-		float: left;
-		position: absolute;
 		top: 0;
 		left: 0;
 
 		@include media('>s') {
-			width: 52px;
+			width: 50px;
+			height: 50px; // force same height as width to fix IE11 issue
 		}
 	}
 
-	> h2 {
-		font-size: $pixel16;
+	h2 {
 		font-weight: 700;
 
 		@include media('>s') {
@@ -28,23 +25,8 @@
 		}
 	}
 
-	p {
-		font-size: $pixel16;
-	}
-
-	a {
-		//border-bottom: 1px solid $red;
-		//color: $red;
-
-		&:hover {
-			color: $link;
-			border-bottom: 1px solid $link;
-		}
-
-		&::after {
-			content: ' →';
-			// &#8594
-		}
+	a:after {
+		content: ' →';
 	}
 }
 
