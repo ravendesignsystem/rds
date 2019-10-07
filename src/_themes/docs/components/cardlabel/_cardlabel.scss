@@ -1,4 +1,4 @@
-.c-cardlabel{
+.c-cardlabel {
 	overflow: hidden;
 	box-shadow: 0 5px 8px 2px rgba($grey-emperor, 0.1);
 	background-color: white;
@@ -10,7 +10,7 @@
 
 .cardlabel__content figure {
 	height: 160px;
-	transition: all .3s ease-out;
+	transition: all 0.3s ease-out;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -28,13 +28,17 @@
 
 .cardlabel__content h2 {
 	font-size: $pixel16;
-	padding: 3px 5px 5px;
+	padding: 8px 5px 5px;
 	margin-bottom: 10px;
 }
 
 .cardlabel__label {
 	background-color: $grey;
-	padding: 10px;
+	// padding: 10px;
+
+	.c-buttoncta {
+		margin: 0;
+	}
 }
 
 .c-cardlabel:hover .cardlabel__content figure {
