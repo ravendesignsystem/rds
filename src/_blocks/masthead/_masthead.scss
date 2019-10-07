@@ -44,7 +44,7 @@
 	z-index: 10000;
 	// Box-model
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	height: 73px;
 	// Visual
 	border-top: 2px solid $red;
@@ -140,7 +140,8 @@
 .masthead__nav {
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
-	position: relative;
+	// TODO - I don't know if this effects sub navigation
+	// position: relative;
 	//overflow: auto;
 	//overflow-y: hidden;
 	border-top: 1px solid $grey-kenobi;
@@ -215,7 +216,11 @@
 	//}
 }
 
-.js-masthead-2packed .b-masthead--responsivenav .masthead__nav .c-menupopup:hover ul.menupopup__menu {
+.js-masthead-2packed
+	.b-masthead--responsivenav
+	.masthead__nav
+	.c-menupopup:hover
+	ul.menupopup__menu {
 	top: 150px;
 }
 
@@ -252,11 +257,11 @@
 	display: inline-flex;
 	align-items: center;
 	height: 72px;
+	margin-left: auto;
 }
 
 .masthead__actions > ul > li {
 	border-left: 1px solid $grey-kenobi;
-
 }
 
 li.masthead__cta > a {

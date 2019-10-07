@@ -20,7 +20,6 @@ mix
 			require('postcss-pxtorem')({
 				replace: true,
 			}),
-			// require('css-mqpacker'),
 		],
 	})
 	.js('src/_themes/docs/js/docs.js', 'build/docs/js')
@@ -53,7 +52,6 @@ if (env === 'production') {
 				require('postcss-pxtorem')({
 					replace: true,
 				}),
-				// require('css-mqpacker'),
 			],
 		})
 		.copy('build/docs', 'docs')
