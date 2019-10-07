@@ -1,14 +1,63 @@
 /**
  * WordPress Webpack Config
  */
-// const path = require('path');
-// const { resolve } = require('path');
-// const env = process.env.NODE_ENV;
+
+const env = process.env.NODE_ENV;
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
+// Set version and css names
+const cssName = 'css/[name].css';
+
+if (env === 'production') {
+	const cssName = ver + '/rds-cu.css';
+}
+
 module.exports = {
+	module: {
+		rules: [
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader',
+				},
+			},
+			{
+				test: /\.scss$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: cssName,
+						},
+					},
+					{
+						loader: 'extract-loader',
+					},
+					{
+						loader: 'css-loader?-url',
+						options: {
+							sourceMap: true,
+						},
+					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							sourceMap: true,
+						},
+					},
+					{
+						loader: 'sass-loader',
+						options: {
+							sourceMap: true,
+						},
+					},
+				],
+			},
+		],
+	},
 	plugins: [
 		new CompressionPlugin({
 			test: /\.(js|css|map)(\?.*)?$/i,
@@ -27,13 +76,13 @@ module.exports = {
 			// notify: false,
 		}),
 	],
-	optimization: {
-		minimizer: [
-			new UglifyJsPlugin({
-				cache: true,
-				parallel: true,
-				sourceMap: true,
-			}),
-		],
-	},
+	// optimization: {
+	// 	minimizer: [
+	// 		new UglifyJsPlugin({
+	// 			cache: true,
+	// 			parallel: true,
+	// 			sourceMap: true,
+	// 		}),
+	// 	],
+	// },
 };
