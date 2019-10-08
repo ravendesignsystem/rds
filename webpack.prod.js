@@ -23,14 +23,6 @@ module.exports = merge(baseConfig, {
 		new copyWebpackPlugin([
 			{ from: './build/docs', to: '../docs' },
 			{ from: './src/_core/scss', to: '../dist/core/scss' },
-
-			// TODO layouts should be moved from being nested in core to a top level to match blocks and components
-			// { from: './src/_core/layouts', to: '../dist/core/layouts' },
-			{
-				from: './src/_core/layouts',
-				to: '../dist/_layouts',
-				ignore: ['./data', '*.json', '*.md', '*.twig', '*.yml'],
-			},
 			{
 				from: './src/_blocks',
 				to: '../dist/_blocks',
@@ -39,8 +31,14 @@ module.exports = merge(baseConfig, {
 			{
 				from: './src/_components',
 				to: '../dist/_components',
-				ignore: ['_components.scss', './data', '*.json', '*.md', '*.twig', '*.yml'],
+				ignore: ['./data', '*.json', '*.md', '*.twig', '*.yml'],
 			},
+			{
+				from: './src/_core/layouts',
+				to: '../dist/core/layouts',
+				ignore: ['./data', '*.json', '*.md', '*.twig', '*.yml'],
+			},
+			{ from: './dist/' + ver + '/rds-cu.js', to: '../dist/core/js/core.js' },
 		]),
 	],
 });
