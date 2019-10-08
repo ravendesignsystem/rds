@@ -8,7 +8,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const ver = '0.13.0';
-const cssName = env === 'production' ? `cdn/rds.${ver}.css` : 'css/[name].css';
+const cssName = env === 'production' ? `${ver}/rds-cu.css` : 'css/[name].css';
 
 module.exports = {
 	module: {

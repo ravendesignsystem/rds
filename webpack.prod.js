@@ -16,8 +16,7 @@ const ver = '0.13.0';
 module.exports = merge(baseConfig, {
 	entry: ['./src/_core/js/core.js', './src/_themes/docs/scss/docs.scss'],
 	output: {
-		// filename: ver + '/rds-cu.js',
-		filename: 'cdn/rds.' + ver + '.js',
+		filename: ver + '/rds-cu.js',
 		path: path.resolve(__dirname, 'dist'),
 	},
 	plugins: [
