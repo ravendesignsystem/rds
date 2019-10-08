@@ -58,11 +58,12 @@ module.exports = merge(baseConfig, {
 	},
 	plugins: [
 		new copyWebpackPlugin([
-			{ from: 'build/docs', to: '../docs' },
-			{ from: 'src/_core/layouts', to: '../dist/core/layouts' },
-			{ from: 'src/_core/scss', to: '../dist/core/scss' },
-			{ from: 'src/_blocks/**/*.scss', to: '../dist/_blocks/banner' },
-			{ from: 'src/_components/icons/', to: '../dist/_components/icons' },
+			{ from: './build/docs', to: '../docs' },
+			{ from: './src/_core/layouts', to: '../dist/core/layouts' },
+			{ from: './src/_core/scss', to: '../dist/core/scss' },
+			{ from: './src/_blocks', to: '../dist/_blocks' },
+			{ from: './src/_components', to: '../dist/_components' },
+			{ from: './src/_components/icons', to: '../dist/_components/icons' },
 		]),
 	],
 });
