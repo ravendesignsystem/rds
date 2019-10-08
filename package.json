@@ -10,7 +10,7 @@
 		"url": "git://github.com/ravendesignsystem/rds.git"
 	},
 	"scripts": {
-		"dev": "vendor/bin/sculpin generate --watch --server & webpack --env=dev --mode=development --config webpack.dev.js --watch --colors",
+		"watch": "vendor/bin/sculpin generate --watch & webpack --env=dev --mode=development --config webpack.dev.js --watch --colors",
 		"prod": "vendor/bin/sculpin generate --clean --server & webpack --env=prod --mode=production --config webpack.prod.js --progress --hide-modules --colors"
 	},
 	"dependencies": {

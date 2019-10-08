@@ -30,9 +30,6 @@
 		]
 	},
 	"autoload": {
-		"files": [
-			"mix.php"
-		],
 		"classmap": [
 			"component-manager.php"
 		]

@@ -16,13 +16,13 @@
 
 // 0. RDS version
 // --------------
-$version: '0.13.0';
+$version: '0.13.1';
 
 // 1. Media query breakpoints
 // --------------------------
 $breakpoints: (
 	s: 760px,
-	l: 1024px
+	l: 1024px,
 );
 
 // 2. Grid vars
