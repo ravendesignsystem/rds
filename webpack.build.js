@@ -8,15 +8,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const ver = '0.13.0';
-
-// TODO why you no workey?
-if (process.env.NODE_ENV === 'production') {
-	console.log('Running in production');
-	// const cssName = ver + '/rds-cu.css';
-} else {
-	console.log('Running in development');
-	// const cssName = 'css/[name].css';
-}
+const cssName = env === 'production' ? `${ver}/rds-cu.css` : 'css/[name].css';
 
 module.exports = {
 	module: {
@@ -28,39 +20,38 @@ module.exports = {
 					loader: 'babel-loader',
 				},
 			},
-			// TODO with conditional logic working, this all comes back and is removed from dev/prod
-			// {
-			// 	test: /\.scss$/,
-			// 	use: [
-			// 		{
-			// 			loader: 'file-loader',
-			// 			options: {
-			// 				name: cssName,
-			// 			},
-			// 		},
-			// 		{
-			// 			loader: 'extract-loader',
-			// 		},
-			// 		{
-			// 			loader: 'css-loader?-url',
-			// 			options: {
-			// 				sourceMap: true,
-			// 			},
-			// 		},
-			// 		{
-			// 			loader: 'postcss-loader',
-			// 			options: {
-			// 				sourceMap: true,
-			// 			},
-			// 		},
-			// 		{
-			// 			loader: 'sass-loader',
-			// 			options: {
-			// 				sourceMap: true,
-			// 			},
-			// 		},
-			// 	],
-			// },
+			{
+				test: /\.scss$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: cssName,
+						},
+					},
+					{
+						loader: 'extract-loader',
+					},
+					{
+						loader: 'css-loader?-url',
+						options: {
+							sourceMap: true,
+						},
+					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							sourceMap: true,
+						},
+					},
+					{
+						loader: 'sass-loader',
+						options: {
+							sourceMap: true,
+						},
+					},
+				],
+			},
 		],
 	},
 	plugins: [
