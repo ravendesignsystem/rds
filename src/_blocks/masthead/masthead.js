@@ -184,9 +184,10 @@ import dialogPolyfill from 'dialog-polyfill';
 	// also check where footer brand is at to see if its worth doing sticky masthead
 	const footer = document.querySelector('.b-footerbrand');
 	const footerBounding = footer.getBoundingClientRect();
+	const alertBlock = document.querySelector('.u-block--alert');
+	const bannerBlock = document.querySelector('.b-banner');
 
-	const alertBock = document.querySelector('.u-block--alert');
-	if (alertBock) {
+	if (alertBlock || bannerBlock) {
 		var bodyMargin = '74px';
 	} else {
 		var bodyMargin = '15px';
