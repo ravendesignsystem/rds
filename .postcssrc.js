@@ -16,8 +16,7 @@ module.exports = {
 					},
 				},
 			],
-			// TODO is z-index being reset to lower numbers still an issue on compile?
-			// zindex: false,
+			zindex: false,
 		}),
 		require('postcss-pxtorem')({
 			replace: true,
