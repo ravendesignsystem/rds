@@ -2,7 +2,7 @@ module.exports = {
 	plugins: [
 		require('autoprefixer')({
 			flexbox: true,
-			grid: true,
+			grid: false,
 		}),
 		require('cssnano')({
 			preset: [
