@@ -35,19 +35,19 @@ module.exports = {
 					{
 						loader: 'css-loader?-url',
 						options: {
-							sourceMap: true,
+							sourceMap: false,
 						},
 					},
 					{
 						loader: 'postcss-loader',
 						options: {
-							sourceMap: true,
+							sourceMap: false,
 						},
 					},
 					{
 						loader: 'sass-loader',
 						options: {
-							sourceMap: true,
+							sourceMap: false,
 						},
 					},
 				],
