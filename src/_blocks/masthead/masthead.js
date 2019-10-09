@@ -185,6 +185,13 @@ import dialogPolyfill from 'dialog-polyfill';
 	const footer = document.querySelector('.b-footerbrand');
 	const footerBounding = footer.getBoundingClientRect();
 
+	const alertBock = document.querySelector('.u-block--alert');
+	if (alertBock) {
+		var bodyMargin = '74px';
+	} else {
+		var bodyMargin = '15px';
+	}
+
 	if (masthead && footerBounding.top > 1400) {
 		if (masthead.classList.contains('js-masthead-stick')) {
 			var stickMasthead = function() {
@@ -196,7 +203,7 @@ import dialogPolyfill from 'dialog-polyfill';
 					// 		'RDS requires you put your Header blocks inside a <header> tag, or things are going to break. Please fix.'
 					// 	);
 					// } else {
-						masthead_y = -header.scrollHeight;
+					masthead_y = -header.scrollHeight;
 					// }
 
 					masthead.classList.remove(
@@ -211,9 +218,9 @@ import dialogPolyfill from 'dialog-polyfill';
 					masthead_y = Math.min(masthead_y, 0);
 					masthead_y = Math.max(masthead_y, -masthead.scrollHeight);
 					masthead.style.top = masthead_y + 'px';
-					document.body.style.marginTop = '15px';
+					document.body.style.marginTop = bodyMargin;
 					if (
-						masthead.style.top === '0px' &&
+						masthead.style.top === '15px' &&
 						window.scrollY > 300 &&
 						window.innerWidth > 720
 					) {
@@ -253,7 +260,6 @@ import dialogPolyfill from 'dialog-polyfill';
 			} else {
 				(document.body.style.position = 'static'),
 					(document.body.style.overflowY = 'auto');
-
 			}
 		};
 
