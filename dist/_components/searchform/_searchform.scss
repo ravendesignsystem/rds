@@ -1,0 +1,70 @@
+.c-searchform {
+	padding: 5px;
+	background-color: white;
+	border-radius: 50px;
+	vertical-align: middle;
+	border: 1px solid $grey-yoda;
+
+	@include media('>=s') {
+		padding: 15px;
+	}
+
+	label {
+		display: none;
+	}
+
+	input {
+		width: calc(100% - 57px);
+		appearance: none; // prevents browser from hijacking border, font sizes, and more
+		-webkit-appearance: none;
+		border: none;
+		font-family: $font-family;
+		font-size: $pixel16; // Needs to be at least 16px to avoid mobile Safari zoom
+		padding-top: 10px;
+		padding-bottom: 10px;
+		margin: 0 2px 0 10px;
+
+		@include media('>=s') {
+			font-size: $pixel18;
+		}
+
+		&::placeholder {
+			color: $grey-vader;
+			opacity: 1;
+			transition: opacity 0.35s ease-in-out;
+		}
+
+		&:focus::placeholder {
+			opacity: 0.3;
+			transition: opacity 0.35s ease-in-out;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	button {
+		background: none;
+		border: none;
+		fill: $grey-vader;
+		padding-right: 15px;
+		display: inline;
+		line-height: 20px;
+
+		svg {
+			width: 18px;
+			height: 18px;
+			top: 5px;
+
+			@include media('>=s') {
+				width: 20px;
+				height: 20px;
+			}
+		}
+
+		@include media('>=s') {
+			line-height: 25px;
+		}
+	}
+}

@@ -38,20 +38,20 @@ module.exports = merge(baseConfig, {
 						destination: './dist/_blocks',
 					},
 					{
+						source: './src/_blocks/**/*.js',
+						destination: './dist/_blocks',
+					},
+					{
 						source: './src/_components/**/*.scss',
 						destination: './dist/_components',
 					},
 					{
-						source: './src/_core/scss',
-						destination: './dist/core/scss',
+						source: './src/_components/**/*.js',
+						destination: './dist/_components',
 					},
 					{
-						source: './src/_core/layouts/**/*.scss',
-						destination: './dist/core/layouts',
-					},
-					{
-						source: './dist/' + ver + '/rds-cu.js',
-						destination: './dist/core/js/core.js',
+						source: './src/_core',
+						destination: './dist/_core',
 					},
 				],
 			},

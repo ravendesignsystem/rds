@@ -1,0 +1,165 @@
+.c-menupopup {
+	position: relative;
+	cursor: pointer;
+}
+
+.js-menupopup-clonetxt a::after {
+	content: ' Home';
+	white-space: pre;
+}
+
+// carrot
+.c-menupopup > a::after,
+button.c-menupopup::after,
+a.c-menupopup::after {
+	position: absolute;
+	content: '';
+	width: 0;
+	height: 0;
+	border-top: 4px solid;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	top: 48%;
+	right: 6px;
+	color: $black;
+	//margin-left: 4px;
+}
+
+.c-menupopup .menupopup__menu,
+.c-menupopup + .menupopup__menu {
+	background-color: white;
+	background-clip: padding-box;
+	visibility: hidden;
+	opacity: 0;
+	min-width: 165px;
+	transition: all 0.25s ease;
+	margin: 0;
+	padding: 3px 0;
+	position: absolute;
+	z-index: -1;
+	border: 1px solid $grey-luke;
+	border-radius: 4px;
+	box-shadow: 0 3px 12px rgba(27, 31, 35, 0.15);
+	display: block;
+
+	//IE Only styles TODO Remove when IE11 support is dropped
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		z-index: 1000;
+	}
+
+	// arrow
+	&::before {
+		top: -16px;
+		left: 9px;
+		border: 8px solid transparent;
+		border-bottom-color: $grey-luke;
+		position: absolute;
+		display: inline-block;
+		content: '';
+		background-color: transparent;
+	}
+
+	//. arrow outline
+	&::after {
+		top: -17px;
+		left: 7px;
+		border: 10px solid transparent;
+		border-bottom-color: white;
+		position: absolute;
+		display: inline-block;
+		content: '';
+		background-color: transparent;
+	}
+
+	a {
+		padding: 8px 15px;
+		height: auto;
+		line-height: 1.25;
+		font-size: $pixel14;
+		font-weight: 400;
+		display: flex;
+		align-items: center;
+		color: $black;
+
+		&:hover {
+			text-decoration: none;
+			background-color: $grey;
+			color: black;
+		}
+	}
+
+	// hide any other attempts at extra levels
+	ul {
+		display: none;
+	}
+}
+
+.c-menupopup--right .menupopup__menu,
+.c-menupopup--right + .menupopup__menu {
+	right: 0;
+	left: auto;
+
+	// arrow
+	&::before {
+		top: -16px;
+		right: 9px;
+		left: auto;
+	}
+
+	// arrow outline
+	&::after {
+		top: -17px;
+		right: 7px;
+		left: auto;
+	}
+}
+.c-menupopup:hover + .menupopup__menu,
+.c-menupopup + .menupopup__menu:hover,
+.c-menupopup:hover > .menupopup__menu,
+//.c-menupopup:focus-within > .menupopup__menu, REMOVED FOR IE
+.c-menupopup .menupopup__menu:hover,
+.c-menupopup .menupopup__menu:focus {
+	visibility: visible;
+	opacity: 1;
+	z-index: 10000;
+}
+
+button.c-menupopup:hover + .menupopup__menu {
+	visibility: hidden;
+	opacity: 0;
+}
+
+.c-menupopup .menupopup__menu li {
+	&:first-of-type {
+		margin: 5px 0 0 0;
+	}
+
+	&:hover {
+		background-color: $grey;
+	}
+}
+
+.menupopup__sep {
+	border-bottom: 1px solid $grey-kenobi;
+}
+.menupopup__title {
+	border-top: 1px solid $grey-kenobi;
+	display: block;
+	text-transform: uppercase;
+	color: $grey-vader;
+	font-size: $pixel10;
+	padding: 5px 15px 2px 15px !important;
+
+	&:hover {
+		background-color: white;
+		cursor: default;
+	}
+}
+
+.menupopup__menu li {
+	display: block !important;
+
+	svg {
+		margin-right: 8px;
+	}
+}
