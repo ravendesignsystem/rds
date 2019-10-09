@@ -1,5 +1,5 @@
 /**
- * WordPress Webpack Config
+ * RDS Webpack Config
  */
 
 const env = process.env.NODE_ENV;
