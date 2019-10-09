@@ -5,11 +5,9 @@
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.build.js');
 const path = require('path');
-const { resolve } = require('path');
-const copyWebpackPlugin = require('copy-webpack-plugin');
+const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 // TODO figure out how to pull this var from webpack.build.js
-// const { ver } = require('./webpack.build.js');
 const ver = '0.13.0';
 
 // Build Config
@@ -20,25 +18,43 @@ module.exports = merge(baseConfig, {
 		path: path.resolve(__dirname, 'dist'),
 	},
 	plugins: [
-		new copyWebpackPlugin([
-			{ from: './build/docs', to: '../docs' },
-			{ from: './src/_core/scss', to: '../dist/core/scss' },
-			{
-				from: './src/_blocks',
-				to: '../dist/_blocks',
-				ignore: ['./data', '*.json', '*.md', '*.twig', '*.yml'],
+		new FileManagerPlugin({
+			onStart: {
+				delete: [
+					'./dist/_blocks',
+					'./dist/_components',
+					'./dist/core',
+					'./dist/' + ver,
+				],
 			},
-			{
-				from: './src/_components',
-				to: '../dist/_components',
-				ignore: ['./data', '*.json', '*.md', '*.twig', '*.yml'],
+			onEnd: {
+				copy: [
+					{
+						source: './build/docs',
+						destination: './docs',
+					},
+					{
+						source: './src/_blocks/**/*.scss',
+						destination: './dist/_blocks',
+					},
+					{
+						source: './src/_components/**/*.scss',
+						destination: './dist/_components',
+					},
+					{
+						source: './src/_core/scss',
+						destination: './dist/core/scss',
+					},
+					{
+						source: './src/_core/layouts/**/*.scss',
+						destination: './dist/core/layouts',
+					},
+					{
+						source: './dist/' + ver + '/rds-cu.js',
+						destination: './dist/core/js/core.js',
+					},
+				],
 			},
-			{
-				from: './src/_core/layouts',
-				to: '../dist/core/layouts',
-				ignore: ['./data', '*.json', '*.md', '*.twig', '*.yml'],
-			},
-			{ from: './dist/' + ver + '/rds-cu.js', to: '../dist/core/js/core.js' },
-		]),
+		}),
 	],
 });
