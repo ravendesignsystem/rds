@@ -4,13 +4,13 @@ const alertHeaderClose = document.querySelector('.u-block--alert button');
 if (alert ) {
 	const sticky = alert.offsetTop;
 
-	function stickTop() {
-		if (window.pageYOffset > sticky) {
-			alert.classList.add("u-sticky");
-		} else {
-			alert.classList.remove("u-sticky");
-		}
-	}
+	// function stickTop() {
+	// 	if (window.pageYOffset > sticky) {
+	// 		alert.classList.add("u-sticky");
+	// 	} else {
+	// 		alert.classList.remove("u-sticky");
+	// 	}
+	// }
 
 	window.onscroll = function() {
 		stickTop()
