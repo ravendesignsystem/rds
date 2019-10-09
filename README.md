@@ -33,9 +33,9 @@ The above commands assume you have composer installed globally. If you have comp
 
 ## Running RDS Locally for dev
 
-Run `npm run dev`
+Run `npm run watch`
 
-The above command runs both the sculpin static site generator, [read more](https://sculpin.io) and the laravel mix watch task, [read more](https://laravel-mix.com) concurrently.
+The above command runs both the sculpin static site generator, [read more](https://sculpin.io) and the webpack watch task, [read more](https://webpack.js.org) concurrently.
 
 ## Deployment
 
@@ -52,7 +52,6 @@ TODO
 RDS and its documentation are built with:
 
 - [Love](https://i.redd.it/qh713wbo4r8y.jpg) - <3
-- [Laravel Mix](https://laravel-mix.com)
 - [SCSS](https://sass-lang.com) - CSS superpower provider used
 - [Sculpin](https://sculpin.io)
 - [webpack](https://webpack.js.org)
