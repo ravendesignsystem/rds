@@ -1,15 +1,54 @@
+// Main Block Styles
+// ----------------------
+
 .b-details {
 	display: grid;
 	grid-gap: $grid-gutter;
-}
 
-.details__aside {
-	background: rgba(blue, 0.2);
+	figure {
+		margin-top: 18px;
 
-	@include media('>s') {
-		order: 2;
+		@include media('>s') {
+			text-align: center;
+		}
+
+		img {
+			border-radius: 10px;
+			margin: 0 20px 15px 0;
+
+			@include media('>s') {
+				margin: 0 0 6px 0;
+			}
+		}
+
+		figcaption {
+			padding: 5px 0 10px 0;
+			line-height: 1.5;
+			font-size: $pixel14;
+
+			&::first-line {
+				font-weight: 600;
+				font-size: $pixel16;
+			}
+		}
+	}
+
+	// Add flex at small breakpoint
+	@include media('<=s') {
+		figure {
+			display: flex;
+
+			img,
+			figcaption {
+				flex: 0 0 50%;
+				height: 0%;
+			}
+		}
 	}
 }
+
+// Details Content Styles
+// ----------------------
 
 .details__meta {
 	background: rgba(red, 0.2);
@@ -19,7 +58,17 @@
 	}
 }
 
+// Details Aside Styles
+// ----------------------
+
+@include media('>s') {
+	.details__aside {
+		order: 2;
+	}
+}
+
 // Variant modifiers
+// ----------------------
 
 @include media('>s') {
 	.b-details--figure,
@@ -28,12 +77,51 @@
 	}
 }
 
+.b-details--event figure {
+	display: none;
+
+	@include media('>s') {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 200px; // IE11 fix for align-items center
+		min-height: 220px;
+		background-color: $grey;
+		border-radius: 10px;
+
+		figcaption {
+			font-size: $pixel54;
+			font-weight: 600;
+			line-height: 1;
+			color: $grey-emperor;
+
+			&::first-line {
+				font-size: $pixel30;
+				color: $red;
+			}
+		}
+	}
+}
+
+.b-details--eventpast figure {
+	border: 1px solid $red;
+	background-color: $pink;
+
+	figcaption {
+		font-size: $pixel30;
+		color: $black;
+	}
+}
+
 // CSS Grid IE11 Fallback
-// TODO: look into @support grid
+// ----------------------
+
 @media screen and (-ms-high-contrast: active),
 	screen and (-ms-high-contrast: none) {
 	.b-details {
-		display: flex;
+		@include media('>s') {
+			display: flex;
+		}
 	}
 
 	.details__meta {
