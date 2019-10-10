@@ -65,12 +65,12 @@ module.exports = {
 			proxy: 'http://localhost:8000/',
 			port: 3000,
 			files: [
+				'build/**/*',
 				'src/_blocks/**/*.scss',
 				'src/_components/**/*.scss',
 				'src/_core/layouts/**/*.scss',
 				'src/_core/scss/**/*.scss',
 				'src/_themes/cu/scss/**/*.scss',
-    'build/**/*'
 			],
 			notify: false,
 		}),
