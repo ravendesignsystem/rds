@@ -1,15 +1,49 @@
 .b-details {
 	display: grid;
+	grid-gap: $grid-gutter;
+}
 
-	figure {
+.details__aside {
+	background: rgba(blue, 0.2);
+
+	@include media('>s') {
 		order: 2;
 	}
+}
 
-	.details__meta {
+.details__meta {
+	background: rgba(red, 0.2);
+
+	@include media('>s') {
 		order: 1;
 	}
 }
 
-.b-details--figure {
-	grid-template-columns: auto 220px;
+// Variant modifiers
+
+@include media('>s') {
+	.b-details--figure,
+	.b-details--event {
+		grid-template-columns: auto 220px;
+	}
+}
+
+// CSS Grid IE11 Fallback
+// TODO: look into @support grid
+@media screen and (-ms-high-contrast: active),
+	screen and (-ms-high-contrast: none) {
+	.b-details {
+		display: flex;
+	}
+
+	.details__meta {
+		flex: 1;
+	}
+
+	.details__aside {
+		@include media('>s') {
+			flex: 0 0 220px;
+			margin-left: $grid-gutter;
+		}
+	}
 }
