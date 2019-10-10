@@ -70,6 +70,7 @@ module.exports = {
 				'src/_core/layouts/**/*.scss',
 				'src/_core/scss/**/*.scss',
 				'src/_themes/cu/scss/**/*.scss',
+    'build/**/*'
 			],
 			notify: false,
 		}),
