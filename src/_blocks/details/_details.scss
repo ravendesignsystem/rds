@@ -1,134 +1,15 @@
 .b-details {
-	> div {
-		clear: both;
-	}
+	display: grid;
+
 	figure {
-		margin-top: 18px;
-
-		@include media('>s') {
-			text-align: center;
-		}
+		order: 2;
 	}
 
-	figcaption {
-		padding: 5px 0 10px 0;
-		line-height: 1.5;
-		font-size: $pixel14;
-
-		&::first-line {
-			font-weight: 600;
-			font-size: $pixel16;
-		}
-	}
-	img {
-		border-radius: 10px;
-		max-width: 40%;
-		float: left;
-		margin: 0 20px 15px 0;
-
-		@include media('>s') {
-			max-width: 220px;
-			margin: 0 0 6px 0;
-		}
-	}
-
-	dl {
-		display: grid;
-		grid-template-columns: auto 1fr;
-		font-size: $pixel14;
-
-		@include media('>s') {
-			font-size: $pixel16;
-		}
-
-		> * {
-			padding: 14px 0;
-		}
-
-		+ a {
-			margin-top: 20px;
-		}
-	}
-
-	dt {
-		padding-right: 15px;
-		position: relative;
-		font-weight: 600;
-
-		@include media('>s') {
-			padding-right: 30px;
-			font-weight: 500;
-		}
-
-		&:after {
-			content: ':';
-			right: 0;
-			position: absolute;
-			color: $grey-kenobi;
-		}
-	}
-
-	dd {
-		border-bottom: 1px solid $grey-yoda;
-		margin-left: 15px;
-
-		@include media('>s') {
-			margin-left: 30px;
-		}
+	.details__meta {
+		order: 1;
 	}
 }
 
-.b-details--figure,
-.b-details--event {
-	@include media('>s') {
-		display: grid;
-		grid-template-columns: 1fr auto;
-		grid-template-areas: 'dt img';
-		column-gap: 40px;
-
-		div:nth-child(1) {
-			grid-area: img;
-		}
-	}
-}
-
-.b-details--event {
-	figure {
-		display: none;
-
-		@include media('>1068px') {
-			min-width: 200px;
-			min-height: 200px;
-			text-align: center;
-			background-color: $grey;
-			display: flex;
-			align-items: center;
-			border-radius: 10px;
-
-			figcaption {
-				width: 100%;
-				font-size: $pixel54;
-				font-weight: 600;
-				line-height: 1;
-				color: $grey-emperor;
-
-				&::first-line {
-					font-size: $pixel30;
-					color: $red;
-				}
-			}
-		}
-	}
-}
-
-.b-details--eventpast > div {
-	figure {
-		border: 1px solid $red;
-		background-color: $pink;
-
-		figcaption {
-			font-size: $pixel30;
-			color: $black;
-		}
-	}
+.b-details--figure {
+	grid-template-columns: auto 220px;
 }

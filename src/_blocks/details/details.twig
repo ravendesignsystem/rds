@@ -17,21 +17,21 @@
 {% endif %}
     <div class="b-details{% if data.variant == "figure" %} b-details--figure{% elseif data.variant == "event" %} b-details--event{% endif %}{% if data.pastevent == true %} b-details--eventpast{% endif %}">
 {% if data.variant == "figure" or data.variant == "event" %}
-        <div>
-            <figure>
+        {# <div> #}
+        <figure>
 {% if data.img %}
-                <img src="{{ data.img }}" alt="{{ data.imgAlt }}">
-                <figcaption>{{ data.caption }}<br>{{ data.subCaption }}</figcaption>
+            <img src="{{ data.img }}" alt="{{ data.imgAlt }}">
+            <figcaption>{{ data.caption }}<br>{{ data.subCaption }}</figcaption>
 {% endif %}
 {% if data.pastevent == true %}
-                <figcaption>Past<br> Event!</figcaption>
+            <figcaption>Past<br> Event!</figcaption>
 {% elseif data.dateStart %}
-                <figcaption>{{ item.dateStart|date("M") }}<br>{{ item.startDate|date("j") }}</figcaption>
+            <figcaption>{{ item.dateStart|date("M") }}<br>{{ item.startDate|date("j") }}</figcaption>
 {% endif %}
-            </figure>
-        </div>
+        </figure>
+        {# </div> #}
 {% endif %}
-        <div>
+        <div class="details__meta">
             <dl class="u-link">
 {% if data.dateStart %}
                 <dt>Date</dt>
@@ -47,10 +47,10 @@
 {% endfor %}
             </dl>
 {% if data.ctaIcon %}
-    <a class="c-buttoncta u-icon" href="{{ data.ctaURL }}">{% if data.ctaIcon %}{% include "icons/"~data.ctaIcon~".svg" %}{% endif %}{{ data.cta }}</a>
+            <a class="c-buttoncta u-icon" href="{{ data.ctaURL }}">{% if data.ctaIcon %}{% include "icons/"~data.ctaIcon~".svg" %}{% endif %}{{ data.cta }}</a>
 {% endif %}
 {% if data.ctaIcon2 %}
-    <a class="c-buttoncta c-buttoncta--ghost u-icon" href="{{ data.ctaURL2 }}">{% if data.ctaIcon2 %}{% include "icons/"~data.ctaIcon2~".svg" %}{% endif %}{{ data.cta2 }}</a>
+            <a class="c-buttoncta c-buttoncta--ghost u-icon" href="{{ data.ctaURL2 }}">{% if data.ctaIcon2 %}{% include "icons/"~data.ctaIcon2~".svg" %}{% endif %}{{ data.cta2 }}</a>
 {% endif %}
         </div>
     </div>
