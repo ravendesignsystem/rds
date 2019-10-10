@@ -19,5 +19,24 @@ We are not in production with the system just yet. We are working hard to get th
 
 Stay tuned.
  
-[STUB] TODO - update this page...we told you
+[STUB] TODO - update this page...see, we told you
+
+## RDS Principles and aspirations
+
+### Principles
+
+stub TODO
+
+### ASPIRE
+
+We love [this post](https://www.filamentgroup.com/lab/aspire/) from the Filament Group.
+
+RDS sites projects should follow the ideals captured in the ASPIRE acronym and aspire to be:
+
+- **Accessible** to everyone with varying cognitive and physical abilities and disabilities
+- **Secure and reliable** for storing, manipulating, and transferring information
+- **Performant** on average devices and in constrained or unreliable network conditions
+- **Inclusive** to diverse audiences and produced by diverse teams to create better experiences
+- **Responsive** in adapting the user interface contextually to any screen
+- **Ethical** in how users’ preferences and data are handled
  

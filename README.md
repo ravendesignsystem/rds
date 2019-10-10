@@ -51,8 +51,9 @@ TODO
 
 RDS and its documentation are built with:
 
-- [Love](https://i.redd.it/qh713wbo4r8y.jpg) - <3
-- [SCSS](https://sass-lang.com) - CSS superpower provider used
+- [Love ❤️](https://i.redd.it/qh713wbo4r8y.jpg) 
+- [PostCSS](https://postcss.org)
+- [SCSS](https://sass-lang.com)
 - [Sculpin](https://sculpin.io)
 - [webpack](https://webpack.js.org)
 
