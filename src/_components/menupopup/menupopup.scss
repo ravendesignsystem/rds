@@ -1,6 +1,10 @@
 .c-menupopup {
 	position: relative;
 	cursor: pointer;
+
+	.u-active {
+		padding-right: 18px;
+	}
 }
 
 .js-menupopup-clonetxt a::after {

@@ -1,102 +1,117 @@
 <div class="u-block u-block--full">
-<div class="b-masthead b-masthead--responsivenav{% if page.masthead != 'nostick' %} js-masthead-stick{% endif %}">
+    <div class="b-masthead b-masthead--responsivenav{% if page.masthead != 'nostick' %} js-masthead-stick{% endif %}">
 
-	<div class="masthead__brand">
-		<h2>
-			<a href="{{ site.url }}">{% include 'icons/mark-cushield.svg' %}Raven Design System</a>
-		</h2>
-	</div>
-	<nav class="masthead__nav">
-		<ul role="menu">
-			<li {% if page.subsite == 'about' %}class="u-active"{% endif %} ><a href="{{ site.url }}about/">About RDS</a></li>
-			<li {% if page.subsite == 'dev' %}class="u-active"{% endif %} ><a href="{{ site.url }}dev/">Dev</a></li>
-{#			<li class="c-menupopup"><a {% if page.subsite == 'dev' %}class="u-active"{% endif %} href="{{ site.url }}dev/">Dev</a>#}
-{#				<ul class="menupopup__menu" aria-label="menupopup">#}
-{#					<li>#}
-{#						<a href="#">Submenu link a</a>#}
-{#					</li>#}
-{#					<li>#}
-{#						<a href="#">Submenu link b</a>#}
-{#					</li>#}
-{#					<li>#}
-{#						<a href="#">Submenu link c</a>#}
-{#					</li>#}
-{#				</ul>#}
-{#			</li>#}
-			<li {% if page.subsite == 'design' %}class="u-active"{% endif %}><a href="{{ site.url }}design/">Design</a></li>
-			<li {% if page.subsite == 'content' %}class="u-active"{% endif %} ><a href="{{ site.url }}content/">Content</a></li>
-			<li {% if page.subsite == 'ay11' %}class="u-active"{% endif %} ><a href="{{ site.url }}accessibility/">Accessibility</a></li>
-{#			<li><button class="c-menupopup">submenu</button>#}
-{#				<ul class="menupopup__menu" aria-label="menupopup">#}
-{#					<li>#}
-{#						<a href="#">Submenu link a</a>#}
-{#					</li>#}
-{#					<li>#}
-{#						<a href="#">Submenu link b</a>#}
-{#					</li>#}
-{#					<li><a href="#">Submenu link c</a></li>#}
-{#				</ul>#}
-{#			</li>#}
-{#			<li><a {% if page.subsite == 'content' %}class="u-active"{% endif %} href="{{ site.url }}content/">content</a></li>#}
-{#			<li><a {% if page.subsite == 'design' %}class="u-active"{% endif %} href="{{ site.url }}accessibility/">Accessibility</a></li>#}
-{#			<li><a {% if page.subsite == 'content' %}class="u-active"{% endif %} href="{{ site.url }}content/">content</a></li>#}
-{#			<li><a {% if page.subsite == 'design' %}class="u-active"{% endif %} href="{{ site.url }}accessibility/">Accessibility</a></li>#}
+        <div class="masthead__brand">
+            <h2>
+                <a href="{{ site.url }}">{% include 'icons/mark-cushield.svg' %}Raven Design System</a>
+            </h2>
+        </div>
+        <nav class="masthead__nav">
+            <ul role="menu">
+                <li {% if page.subsite == 'about' %} class="u-active" {% endif %}>
+                    <a href="{{ site.url }}about/">About RDS</a>
+                </li>
+                {# <li {% if page.subsite == 'dev' %} class="u-active" {% endif %}>
+                                                                    <a href="{{ site.url }}dev/">Dev</a>
+                                                                </li> #}
+                <li class="c-menupopup">
+                    <a {% if page.subsite == 'dev' %} class="u-active" {% endif %} href="{{ site.url }}dev/">Dev</a>
+                    <ul class="menupopup__menu" aria-label="menupopup">
+                        <li>
+                            <a href="#">Submenu link a</a>
+                        </li>
+                        <li>
+                            <a href="#">Submenu link b</a>
+                        </li>
+                        <li>
+                            <a href="#">Submenu link c</a>
+                        </li>
+                    </ul>
+                </li>
+                <li {% if page.subsite == 'design' %} class="u-active" {% endif %}>
+                    <a href="{{ site.url }}design/">Design</a>
+                </li>
+                <li {% if page.subsite == 'content' %} class="u-active" {% endif %}>
+                    <a href="{{ site.url }}content/">Content</a>
+                </li>
+                <li {% if page.subsite == 'ay11' %} class="u-active" {% endif %}>
+                    <a href="{{ site.url }}accessibility/">Accessibility</a>
+                </li>
+                <li>
+                    <button class="c-menupopup">submenu</button>
+                    <ul class="menupopup__menu" aria-label="menupopup">
+                        <li>
+                            <a href="#">Submenu link a</a>
+                        </li>
+                        <li>
+                            <a href="#">Submenu link b</a>
+                        </li>
+                        <li>
+                            <a href="#">Submenu link c</a>
+                        </li>
+                    </ul>
+                </li>
 
-		</ul>
-	</nav>
-	<div class="masthead__actions" aria-label="Header actions and controls">
-		<ul>
-			<li class="masthead__cta masthead__cta--white c-menupopup c-menupopup--right u-hide-s">
-				<a class="u-icon" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %} Github</a>
-				<ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
-					<li>
-						<a class="u-icon" href="https://github.com/ravendesignsystem/rds/releases">{% include 'icons/code.svg' %}
-							Releases
-						</a>
-					</li>
-					<li>
-						<a class="u-icon" href="https://github.com/ravendesignsystem/rds">{% include 'icons/code.svg' %}
-							RDS
-						</a>
-					</li>
-					<li>
-						<a class="u-icon" href="https://github.com/ravendesignsystem/design">{% include 'icons/eye.svg' %}
-							Design
-						</a>
-					</li>
-					<li>
-						<a class="u-icon" href="https://github.com/ravendesignsystem/content">{% include 'icons/pencil.svg' %}
-							Content
-						</a>
-					</li>
-					<li>
-						<a class="u-icon" href="https://github.com/ravendesignsystem/accessibility">{% include 'icons/accessibility.svg' %}
-							Accessibility
-						</a>
-					</li>
-				</ul>
-			</li>
-{#			<li class="masthead__login u-hide-s">#}
-{#				<button class="u-icon u-btn-reset"><svg style="top:0" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.4 20.8H6.8v-1.6h1.6v1.6zm12.8-9.6v11.2c0 .88-.72 1.6-1.6 1.6h-16c-.88 0-1.6-.72-1.6-1.6V11.2c0-.88.72-1.6 1.6-1.6h1.6V6.4C5.2 2.88 8.08 0 11.6 0 15.12 0 18 2.88 18 6.4v3.2h1.6c.88 0 1.6.72 1.6 1.6zM8.08 9.6h7.056V6.4a3.51 3.51 0 0 0-3.52-3.52 3.51 3.51 0 0 0-3.52 3.52v3.2H8.08zm11.52 1.6H5.2v11.2h14.4V11.2zM8.4 12.8H6.8v1.6h1.6v-1.6zm0 3.2H6.8v1.6h1.6V16z"></path></svg>#}
-{#					<span class="u-hide-s">Login</span></button>#}
-{#			</li>#}
-			<li class="masthead__search">
-				<button aria-label="Open Search" class="masthead__searchbtn u-icon">
-					{% include "icons/search.svg" %}
-					<span class="u-hide-s">Search</span>
-				</button>
-			</li>
-			{% if page.subsite %}
-			<li class="masthead__hamburger{% if page.subsite == 'dev' and page.menu != 'dev' %} {% else %} u-hide-l{% endif %}">
-				<button class="c-hamburger c-hamburger--spin" aria-label="Open Menu" title="Open site-wide menu"  type="button">
-						<span class="c-hamburger__box">
-							<span class="c-hamburger__inner"></span>
-					 	</span>
-				</button>
-			</li>
-			{% endif %}
-		</ul>
-	</div>
+            </ul>
+        </nav>
+        <div class="masthead__actions" aria-label="Header actions and controls">
+            <ul>
+                <li class="masthead__cta masthead__cta--white c-menupopup c-menupopup--right u-hide-s">
+                    <a class="u-icon" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %}
+                        Github</a>
+                    <ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/rds/releases">{% include 'icons/code.svg' %}
+                                Releases
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/rds">{% include 'icons/code.svg' %}
+                                RDS
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/design">{% include 'icons/eye.svg' %}
+                                Design
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/content">{% include 'icons/pencil.svg' %}
+                                Content
+                            </a>
+                        </li>
+                        <li>
+                            <a class="u-icon" href="https://github.com/ravendesignsystem/accessibility">{% include 'icons/accessibility.svg' %}
+                                Accessibility
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="masthead__login u-hide-s">
+                    <button class="u-icon u-btn-reset">
+                        <svg style="top:0" width="24" height="24" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.4 20.8H6.8v-1.6h1.6v1.6zm12.8-9.6v11.2c0 .88-.72 1.6-1.6 1.6h-16c-.88 0-1.6-.72-1.6-1.6V11.2c0-.88.72-1.6 1.6-1.6h1.6V6.4C5.2 2.88 8.08 0 11.6 0 15.12 0 18 2.88 18 6.4v3.2h1.6c.88 0 1.6.72 1.6 1.6zM8.08 9.6h7.056V6.4a3.51 3.51 0 0 0-3.52-3.52 3.51 3.51 0 0 0-3.52 3.52v3.2H8.08zm11.52 1.6H5.2v11.2h14.4V11.2zM8.4 12.8H6.8v1.6h1.6v-1.6zm0 3.2H6.8v1.6h1.6V16z"></path>
+                        </svg>
+                        <span class="u-hide-s">Login</span>
+                    </button>
+                </li>
+                <li class="masthead__search">
+                    <button aria-label="Open Search" class="masthead__searchbtn u-icon">
+                        {% include "icons/search.svg" %}
+                        <span class="u-hide-s">Search</span>
+                    </button>
+                </li>
+                {% if page.subsite %}
+                    <li class="masthead__hamburger{% if page.subsite == 'dev' and page.menu != 'dev' %} {% else %} u-hide-l{% endif %}">
+                        <button class="c-hamburger c-hamburger--spin" aria-label="Open Menu" title="Open site-wide menu" type="button">
+                            <span class="c-hamburger__box">
+                                <span class="c-hamburger__inner"></span>
+                            </span>
+                        </button>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
 
-</div>
+    </div>
 </div>
