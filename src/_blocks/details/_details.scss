@@ -165,23 +165,56 @@
 		@include media('>s') {
 			display: flex;
 		}
+
+		.details__meta {
+			flex: 1;
+
+			dl {
+				display: block;
+			}
+
+			dt,
+			dd {
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			dt {
+				width: calc(15% - 15px);
+				float: left;
+				margin-right: 15px;
+			}
+
+			dd {
+				width: calc(85% - 15px);
+				float: right;
+				margin-left: 15px;
+			}
+		}
 	}
 
-	.details__meta {
-		flex: 1;
-
-		dl {
-			display: flex;
-			flex-wrap: wrap;
-		}
-
+	.b-details--figure .details__meta {
 		dt {
-			flex: 0 0 15%;
-			padding-right: 0;
+			width: calc(20% - 15px);
+			margin-right: 15px;
 		}
 
 		dd {
-			flex: 0 0 80%;
+			width: calc(80% - 15px);
+			margin-left: 15px;
+		}
+	}
+
+	.b-details--event .details__meta,
+	.b-details--eventpast .details__meta {
+		dt {
+			width: calc(25% - 15px);
+			margin-right: 15px;
+		}
+
+		dd {
+			width: calc(75% - 15px);
+			margin-left: 15px;
 		}
 	}
 
