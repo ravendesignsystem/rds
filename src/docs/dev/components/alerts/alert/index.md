@@ -69,12 +69,9 @@ Alerts are currently used in the following blocks:
 
 ## Usage guidelines
 
-
-
-
 ## Avoid
 
-TODO ADD A DROP SHADOW WHEN DISMISSALE - maybe?
+TODO ADD A DROP SHADOW WHEN DISMISSIBLE - maybe?
 
 https://sparkdesignsystem.com/patterns/components/alerts
 

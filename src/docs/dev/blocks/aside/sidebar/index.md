@@ -8,6 +8,9 @@ title: Sidebar
 banner:
   breadcrumbs:
     parent: Docs
+sidebar:
+  content: This is an example of the base Sidebar block within an actual aside section.
+  title: Sidebar block example
 ---
 ## Sidebar block
 
