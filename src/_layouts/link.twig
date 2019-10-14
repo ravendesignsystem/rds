@@ -3,6 +3,9 @@
 {% endif %}
 
 {% if block %}
+    {% if block == "Alert Aside"%}
+        <a href="{{site.url}}dev/blocks/aside/alertaside/">{{ block }}</a>
+    {% endif %}
     {% if block == "Alert Header"%}
         <a href="{{site.url}}dev/blocks/header/alertheader/">{{ block }}</a>
     {% endif %}

@@ -1,0 +1,9 @@
+{% macro alertheader(data) %}
+<div class="u-block u-block--white">
+    <div class="b-alertaside">
+{% if data.type == "error" %}
+    {% include 'inc' with {'component': 'alert-error'} %}
+{% endif %}
+    </div>
+</div>
+{% endmacro %}

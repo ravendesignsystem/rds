@@ -43,6 +43,7 @@ banner:
 
 **Aside Blocks**
 
+- {%include "link" with {'block': 'Alert Aside'} %}
 - {%include "link" with {'block': 'Sidebar'} %}
 
 **Dialogue Blocks**
