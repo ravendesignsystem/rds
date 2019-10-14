@@ -17,7 +17,7 @@
 {% endif %}
     <div class="b-details{% if data.variant == "figure" %} b-details--figure{% elseif data.variant == "event" %} b-details--event{% endif %}{% if data.pastevent == true %} b-details--eventpast{% endif %}">
 {% if data.variant == "figure" or data.variant == "event" %}
-        <div>
+        <div class="details__aside">
             <figure>
 {% if data.img %}
                 <img src="{{ data.img }}" alt="{{ data.imgAlt }}">
@@ -31,7 +31,7 @@
             </figure>
         </div>
 {% endif %}
-        <div>
+        <div class="details__meta">
             <dl class="u-link">
 {% if data.dateStart %}
                 <dt>Date</dt>

@@ -1,35 +1,58 @@
+// Main Block Styles
+// ----------------------
+
 .b-details {
-	> div {
-		clear: both;
-	}
+	display: grid;
+	grid-gap: $grid-gutter;
+
 	figure {
 		margin-top: 18px;
 
 		@include media('>s') {
 			text-align: center;
 		}
-	}
 
-	figcaption {
-		padding: 5px 0 10px 0;
-		line-height: 1.5;
-		font-size: $pixel14;
+		img {
+			border-radius: 10px;
+			margin: 0 20px 15px 0;
 
-		&::first-line {
-			font-weight: 600;
-			font-size: $pixel16;
+			@include media('>s') {
+				margin: 0 0 6px 0;
+			}
+		}
+
+		figcaption {
+			padding: 5px 0 10px 0;
+			line-height: 1.5;
+			font-size: $pixel14;
+
+			&::first-line {
+				font-weight: 600;
+				font-size: $pixel16;
+			}
 		}
 	}
-	img {
-		border-radius: 10px;
-		max-width: 40%;
-		float: left;
-		margin: 0 20px 15px 0;
 
-		@include media('>s') {
-			max-width: 220px;
-			margin: 0 0 6px 0;
+	// Add flex at small breakpoint
+	@include media('<=s') {
+		figure {
+			display: flex;
+
+			img,
+			figcaption {
+				max-width: 50%;
+				height: 0%;
+			}
 		}
+	}
+}
+
+// Details Content Styles
+// ----------------------
+
+.details__meta {
+	@include media('>s') {
+		order: 1;
 	}
 
 	dl {
@@ -78,57 +101,127 @@
 	}
 }
 
-.b-details--figure,
-.b-details--event {
-	@include media('>s') {
-		display: grid;
-		grid-template-columns: 1fr auto;
-		grid-template-areas: 'dt img';
-		column-gap: 40px;
+// Details Aside Styles
+// ----------------------
 
-		div:nth-child(1) {
-			grid-area: img;
-		}
+@include media('>s') {
+	.details__aside {
+		order: 2;
 	}
 }
 
-.b-details--event {
-	figure {
-		display: none;
+// Variant modifiers
+// ----------------------
 
-		@include media('>1068px') {
-			min-width: 200px;
-			min-height: 200px;
-			text-align: center;
-			background-color: $grey;
-			display: flex;
-			align-items: center;
-			border-radius: 10px;
+@include media('>s') {
+	.b-details--figure,
+	.b-details--event {
+		grid-template-columns: auto 220px;
+	}
+}
 
-			figcaption {
-				width: 100%;
-				font-size: $pixel54;
-				font-weight: 600;
-				line-height: 1;
-				color: $grey-emperor;
+.b-details--event figure {
+	display: none;
 
-				&::first-line {
-					font-size: $pixel30;
-					color: $red;
-				}
+	@include media('>s') {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 200px; // IE11 fix for align-items center
+		min-height: 220px;
+		background-color: $grey;
+		border-radius: 10px;
+
+		figcaption {
+			font-size: $pixel54;
+			font-weight: 600;
+			line-height: 1;
+			color: $grey-emperor;
+
+			&::first-line {
+				font-size: $pixel30;
+				color: $red;
 			}
 		}
 	}
 }
 
-.b-details--eventpast > div {
-	figure {
-		border: 1px solid $red;
-		background-color: $pink;
+.b-details--eventpast figure {
+	border: 1px solid $red;
+	background-color: $pink;
 
-		figcaption {
-			font-size: $pixel30;
-			color: $black;
+	figcaption {
+		font-size: $pixel30;
+		color: $black;
+	}
+}
+
+// CSS Grid IE11 Fallback
+// ----------------------
+
+@media screen and (-ms-high-contrast: active),
+	screen and (-ms-high-contrast: none) {
+	.b-details {
+		@include media('>s') {
+			display: flex;
+		}
+
+		.details__meta {
+			flex: 1;
+
+			dl {
+				display: block;
+			}
+
+			dt,
+			dd {
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			dt {
+				width: calc(15% - 15px);
+				float: left;
+				margin-right: 15px;
+			}
+
+			dd {
+				width: calc(85% - 15px);
+				float: right;
+				margin-left: 15px;
+			}
+		}
+	}
+
+	.b-details--figure .details__meta {
+		dt {
+			width: calc(20% - 15px);
+			margin-right: 15px;
+		}
+
+		dd {
+			width: calc(80% - 15px);
+			margin-left: 15px;
+		}
+	}
+
+	.b-details--event .details__meta,
+	.b-details--eventpast .details__meta {
+		dt {
+			width: calc(25% - 15px);
+			margin-right: 15px;
+		}
+
+		dd {
+			width: calc(75% - 15px);
+			margin-left: 15px;
+		}
+	}
+
+	.details__aside {
+		@include media('>s') {
+			flex: 0 0 220px;
+			margin-left: $grid-gutter;
 		}
 	}
 }
