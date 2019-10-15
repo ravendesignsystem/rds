@@ -61,6 +61,14 @@
 		//text-overflow: ellipsis;
 		transition: all 0.25s ease-in; // TODO: what was this doing? can't figure it out
 	}
+
+// Remove expand / collapse menu for IE11
+	@media screen and (-ms-high-contrast: active),
+		screen and (-ms-high-contrast: none) {
+		&:last-child {
+			display: none;
+		}
+	}
 }
 
 .b-menu > ul li:last-of-type:not(.b-menu ul ul li:last-of-type) {
