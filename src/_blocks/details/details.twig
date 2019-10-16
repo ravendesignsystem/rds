@@ -4,7 +4,7 @@
     <h2{% if data.blockHeadingCenter %} class="c-heading--center{% if data.subHeading %} c-heading--subheading{% endif %}"{% endif %}>{{ data.blockHeading }}</h2>
 {% if data.pastevent == true  %}
         <div class="c-alert c-alert--warning c-alert--icon" role="alert">
-            <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle cx="12" cy="12" fill="#000" r="10"/><path d="M13.824 17.538H10V14.67h3.824zm0-4.301H10V5.07h3.824z" fill="#fff"/></g></svg>
+            <svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle cx="12" cy="12" fill="#000" r="10"/><path d="M13.824 17.538H10V14.67h3.824zm0-4.301H10V5.07h3.824z" fill="#fff"/></g></svg>
             <h2>Warning: Past Event</h2>
             <p>Note, you are viewing an event that occurred back on {{ data.dateStart|date("l, F dS, Y") }}.</p>
         </div>
