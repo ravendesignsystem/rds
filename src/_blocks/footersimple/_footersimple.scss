@@ -26,8 +26,14 @@
 	li {
 		display: inline-block;
 
-		&:not(:last-child) {
-			margin-right: 6px;
+		.u-icon svg {
+			margin-right: 8px;
+		}
+
+		&:last-child {
+			.u-icon svg {
+				margin-right: 0;
+			}
 		}
 	}
 }
