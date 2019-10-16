@@ -17,9 +17,9 @@ The Card Grid block uses RDS' [responsive grid](#) to list related [Card compone
 <section class="u-block u-block--grey">
     <h2>Base example</h2>
     <div class="b-cardgrid u-grid u-grid--3">
-        {% verbatim %}{% include 'components/card' %}{% endverbatim %}
-        {% verbatim %}{% include 'components/card' %}{% endverbatim %}
-        {% verbatim %}{% include 'components/card' %}{% endverbatim %}
+        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
+        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
+        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
     </div>
 </section>
 ```
@@ -28,17 +28,17 @@ The Card Grid block uses RDS' [responsive grid](#) to list related [Card compone
 
 ## Block details
 
-| {{ page.title }}  block meta   |  values
-| --------------| :-------------------------------------:
-| handle              | `cardgrid` 
-| options examples    | <a href="#small-screen-stack-modifier">stack mod</a>, <a href="#card-grid-with-cta-link-or-button">CTA button</a>
-| block colour options  | `u-block--white`, `u-block--grey`  
-| section use         | `<main>`                  
-| width type          | fixed                           
-| has heading         | true
-| theme(s)            | CU
-| variants            | [3 column](#grid-column-settings), [4 column](#grid-column-settings)
-| Codepen             | [https://codepen.io/cuweb/live/mdbwyEd](https://codepen.io/cuweb/live/mdbwyEd)
+| {{ page.title }}  block meta |                                                      values                                                       |
+| ---------------------------- | :---------------------------------------------------------------------------------------------------------------: |
+| handle                       |                                                    `cardgrid`                                                     |
+| options examples             | <a href="#small-screen-stack-modifier">stack mod</a>, <a href="#card-grid-with-cta-link-or-button">CTA button</a> |
+| block colour options         |                                         `u-block--white`, `u-block--grey`                                         |
+| section use                  |                                                     `<main>`                                                      |
+| width type                   |                                                       fixed                                                       |
+| has heading                  |                                                       true                                                        |
+| theme(s)                     |                                                        CU                                                         |
+| variants                     |                       [3 column](#grid-column-settings), [4 column](#grid-column-settings)                        |
+| Codepen                      |                  [https://codepen.io/cuweb/live/mdbwyEd](https://codepen.io/cuweb/live/mdbwyEd)                   |
 
 
 ## Card Grid columns
@@ -48,8 +48,8 @@ The number of columns available for Card Grids differs from small screens and la
 ### Large screen Card Grid Options
 
 On large screens, above RDS' small breakpoint of 768px, Card Grids rely on either three or four column grids. These are set by adding the respective grid modifier of either:
- 
- - `u-grid--3` or 
+
+ - `u-grid--3` or
  - `u-grid--4`.
 
 ![Showing 3 and 4 grid column options](http://cu-rds.s3.amazonaws.com/docs/assets/cardgrid-cols.png)
@@ -59,9 +59,9 @@ On large screens, above RDS' small breakpoint of 768px, Card Grids rely on eithe
 <section class="u-block u-block--grey">
     <h2>Base example</h2>
     <div class="b-cardgrid u-grid u-grid--3">
-        {% verbatim %}{% include 'components/card' %}{% endverbatim %}
-        {% verbatim %}{% include 'components/card' %}{% endverbatim %}
-        {% verbatim %}{% include 'components/card' %}{% endverbatim %}
+        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
+        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
+        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
     </div>
 </section>
 ```
@@ -71,15 +71,15 @@ On large screens, above RDS' small breakpoint of 768px, Card Grids rely on eithe
 <section class="u-block u-block--grey">
     <h2>Base example</h2>
     <div class="b-cardgrid u-grid u-grid--4">
-        {% verbatim %}{% include 'components/card' %}{% endverbatim %}
-        {% verbatim %}{% include 'components/card' %}{% endverbatim %}
-        {% verbatim %}{% include 'components/card' %}{% endverbatim %}
-        {% verbatim %}{% include 'components/card' %}{% endverbatim %}
+        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
+        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
+        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
+        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
     </div>
 </section>
 ```
 
-**Note**: reminder 
+**Note**: reminder
 
 ### Small screen Card Grid: 1 or 2 columns
 
@@ -103,10 +103,10 @@ The code below will display a two column card grid on small screens and a four c
 <section class="u-block u-block--grey">
     <h2>Base example</h2>
     <div class="b-cardgrid b-cardgrid--s2col u-grid u-grid--4">
-        {% verbatim %}{% include 'components/card' %}{% endverbatim %}
-        {% verbatim %}{% include 'components/card' %}{% endverbatim %}
-        {% verbatim %}{% include 'components/card' %}{% endverbatim %}
-        {% verbatim %}{% include 'components/card' %}{% endverbatim %}
+        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
+        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
+        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
+        {% verbatim %}{%include "card/data/card--base"%}{% endverbatim %}
     </div>
 </section>
 ```
@@ -127,7 +127,7 @@ You can include as many card items as you want in Card Grid blocks. However, con
 ### Filling grid rows
 
 **It is important to try and avoid leftover grid cards** and fill each row in the grid. To avoid grid item widows and orphans:
- 
+
  - for three column grids insure your grid items total multiples of 3, for example:
 
 - 3, 6, 9, 12
@@ -215,7 +215,7 @@ Or, if you want to use a CTA to link off to an archive or another page.
 
 ## Related card content
 
-The Card Grid block is intended for listing related content and in almost all cases the same card variants. 
+The Card Grid block is intended for listing related content and in almost all cases the same card variants.
 
 <div style="width: 40px;margin-bottom: 15px;">{% include 'icons/fail.svg' %}</div>
 
