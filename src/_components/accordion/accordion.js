@@ -1,13 +1,17 @@
 'use strict';
 
+console.log('poo');
 // Switch aria items for accordions on click for accessilibity
 var accordionLabelIndex = 0,
-	accordionTriggerClass = document.getElementsByClassName('accordion__toggle'),
+    accordionTriggerClass = document.getElementsByClassName('accordion__input'),
+
 	accordionToggleAria = function() {
 		var _this = this,
 			expandedState = _this.getAttribute('aria-expanded'),
 			previousElement = this.previousElementSibling,
-			singleInput = document.getElementsByClassName('accordion__input--single');
+            singleInput = document.getElementsByClassName('accordion__input--single');
+
+            console.log(this);
 
 		// This switches all aria back to default on accordion items when being unchecked
 		Array.prototype.forEach.call(singleInput, function(el) {
