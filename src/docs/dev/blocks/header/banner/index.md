@@ -6,13 +6,13 @@ banner:
   breadcrumbs:
     grandparent: Blocks
 ---
-The banner block provides a variety of functions relating to being a prominent visual a visitor encounters on each page. At the minimum, the base banner provides the primary page heading. To take advantage of the its prime position, the banner block affords many options including: breadcrumb navigational aids, call to action buttons and hero images.
+The banner block acts as the first prominent visual a visitor sees on a page, and at a minimum, should include an H1 that acts as the page title. Other options available in the banner block are breadcrumb navigation, call to action buttons, and hero images.
+
+{% include 'inc' with {'block': 'banner-base'} %}
 
 ## Base Banner
 
 At its bare minimum, the Banner block displays the page's  `<h1>` title.
-
-{% include 'inc' with {'block': 'banner-base'} %}
 
 {% include 'inc' with {'block': 'banner-base', 'code': true} %}
 
@@ -42,37 +42,38 @@ At its bare minimum, the Banner block displays the page's  `<h1>` title.
 
 <small>`*` = required.</small>
 
+{% include 'inc' with {'block': 'banner-breadcrumbs'} %}
+
 ## Banner with breadcrumbs
 
 For websites that have a lot of pages, enhance the way users find their way around by adding breadcrumb navigation.
 Breadcrumbs indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS.
 
-{% include 'inc' with {'block': 'banner-breadcrumbs'} %}
-
 {% include 'inc' with {'block': 'banner-breadcrumbs', 'code': true} %}
 
-**Note**: that the current page (`aria-current="page"`) is included in the breadcrumb trail but is visually hidden. 
- 
-
-## Banner with CTA button
+**Note**: that the current page (`aria-current="page"`) is included in the breadcrumb trail but is visually hidden.
 
 {% include 'inc' with {'block': 'banner-button'} %}
 
+## Banner with CTA button
+
+Call to action buttons can be added to banner using the button cta component.
+
 {% include 'inc' with {'block': 'banner-button', 'code': true} %}
-
-## Multiple buttons
-
-You can add up to two CTA buttons.
 
 {% include 'inc' with {'block': 'banner-buttons'} %}
 
+## Banner with multiple buttons
+
+You can add up to two CTA buttons by using the example below.
+
 {% include 'inc' with {'block': 'banner-buttons', 'code': true} %}
+
+{% include 'inc' with {'block': 'banner-img'} %}
 
 ## Hero image banner
 
 Because people are highly visual, having high quality imagery at the top of your page can help create a positive first impression.
-
-{% include 'inc' with {'block': 'banner-img'} %}
 
 {% include 'inc' with {'block': 'banner-img', 'code': true} %}
 
@@ -96,15 +97,15 @@ By default banner images are centered to the container. Depending on the image a
 - To align an image to the bottom, add the modifier: `b-banner--img-bottom`.
 - To align an image to the top, add the modifier: `b-banner--img-top`.
 
-### Hero image darkened and aligned to the bottom
-
 {% include 'inc' with {'block': 'banner-imgdark'} %}
+
+### Hero image darkened and aligned to the bottom
 
 {% include 'inc' with {'block': 'banner-imgdark', 'code': true} %}
 
-### Hero image lightened and aligned to the top
-
 {% include 'inc' with {'block': 'banner-imglight'} %}
+
+### Hero image lightened and aligned to the top
 
 {% include 'inc' with {'block': 'banner-imglight', 'code': true} %}
 

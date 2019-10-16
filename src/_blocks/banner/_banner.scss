@@ -36,9 +36,9 @@
 
 	// Breadcrumb items
 	li {
-		font-size: $pixel14;
+		font-size: 15px;
 
-		+ li::before {
+		&:after {
 			display: inline-block;
 			padding-right: 5px;
 			padding-left: 5px;
