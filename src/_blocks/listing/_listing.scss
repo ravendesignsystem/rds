@@ -14,14 +14,8 @@
 	li {
 		position: relative;
 
-		&:not(:last-child):before {
-			content: '';
-			position: absolute;
+		&:not(:last-child) {
 			border-bottom: 1px solid $grey-yoda;
-			width: 100%;
-			left: 0;
-			bottom: 0;
-			height: 1px;
 		}
 	}
 
