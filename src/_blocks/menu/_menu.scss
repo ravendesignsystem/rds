@@ -203,16 +203,18 @@ div.modal__menu .b-menu i {
 	color: $grey-vader;
 	text-transform: capitalize;
 	padding: 15px 15px 15px 22px;
+	line-height: 20px;//
 
 	&:hover {
 		color: $red;
 	}
 
 	i {
-		top: 11px;
+		top: 15px;
 		left: 0;
+		right: 0;
 		width: 25px;
-		height: 0;
+		height: 20px;
 		line-height: 20px;
 
 		&:after {
