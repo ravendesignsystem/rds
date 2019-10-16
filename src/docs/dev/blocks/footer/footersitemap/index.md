@@ -109,6 +109,8 @@ The Sitemap Footer helps users and search engines determine how the website is l
 
 Include the HTML globally in your footer section. This block should be placed above the [Footer Brand block](../brand/) as the second-last visible block on a page.
 
+**Note:** this block is hidden for mobile devices.
+
 ## Best Practices
 
 - Don't add too many links. Try and keep the number of links under 50. If you have more pages then this, make sure to be selective and display links to your most important pages.
