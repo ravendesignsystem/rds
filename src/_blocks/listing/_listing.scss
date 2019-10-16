@@ -187,17 +187,22 @@
 //==============
 .b-listing--video figure {
 	position: relative;
+	background-color: black;
 
-	&:before {
-		content: '';
-		display: block;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		background-color: rgba(black, 0.4);
+	img {
+		opacity: 0.6;
 	}
+
+	// &:before {
+	// 	content: '';
+	// 	display: block;
+	// 	height: 100%;
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	background-color: rgba(black, 0.4);
+	// }
 }
 
 .b-listing--video figure svg {
