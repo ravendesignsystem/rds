@@ -15,7 +15,7 @@ The Accordion component is a vertically stacked list of items with content secti
 ## Base example
 
 {% include 'inc' with {'component': 'accordion-base'} %}
-<br>
+
 {% include 'inc' with {'component': 'accordion-base', 'code': true} %}
 
 
@@ -24,7 +24,7 @@ The Accordion component is a vertically stacked list of items with content secti
 The single variant insures only one section is open at any given time.
 
 {% include 'inc' with {'component': 'accordion-single'} %}
-<br>
+
 {% include 'inc' with {'component': 'accordion-single', 'code': true} %}
 
 ## Found in
@@ -39,4 +39,4 @@ The {{page.title}} components are used in the following blocks:
 - [nngroup](https://www.nngroup.com/articles/accordions-complex-content/)
 - [Use of details tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
 
-TODO move to `<details` and `<summary>` tags when browsers ctach up.
+<!-- TODO move to `<details>` and `<summary>` tags when browsers ctach up. -->
