@@ -12,8 +12,6 @@ Ready-made form component with search and button inputs.
  
 {% include 'inc' with {'component': 'searchform'} %}
 
-<br>
-
 ```html
 <form class="c-searchform" role="search" method="get" action="https://carleton.ca">
     <label for="searchform__input">Search</label>
