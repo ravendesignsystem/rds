@@ -18,13 +18,13 @@
 
 	.footersitemap__links {
 		display: block;
-		padding-right: 25px;
-		padding-left: 25px;
+		// padding-right: 25px;
+		// padding-left: 25px;
 
-		@include media('>=s') {
-			padding-right: 30px;
-			padding-left: 30px;
-		}
+		// @include media('>=s') {
+		// 	padding-right: 30px;
+		// 	padding-left: 30px;
+		// }
 	}
 
 	.footersitemap__columns {
@@ -90,7 +90,7 @@
 
 	@include media('>l') {
 		border-top: 1px solid $grey-vader;
-		padding: 40px 30px;
+		padding: 40px 0;
 		margin-bottom: -40px;
 	}
 

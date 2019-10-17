@@ -65,7 +65,7 @@
 
 .multicol__main,
 .multicol__content {
-	overflow: hidden;
+	// overflow: hidden; // NOTE: removed this to prevent drop shadows on cards from being cut off at small breakpoint
 	width: 100%;
 }
 

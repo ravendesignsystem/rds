@@ -32,7 +32,7 @@ RDS cards group related content and actions about a single subject. Cards serve 
 </div>
 {%include "inc" with {'open': true} %}
 
-{% include 'inc' with {'component': 'card-base', 'code': true} %}
+{% include 'inc' with {'component': 'card-text', 'code': true} %}
 
 ## News variant with date
 {%include "inc" with {'close': true} %}

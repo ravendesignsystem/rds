@@ -14,7 +14,7 @@
             <img src="{{ data.img }}" alt="{% if data.alt %}{{ data.imgAlt }}{% else %}Read more about {{ data.title }}{% endif  %}" loading="lazy">
 {% endif %}
 {% if data.variant == "video" %}
-            <span class="u-icon u-icon--circle">
+            <span class="u-icon u-icon--circle" aria-hidden="true">
                 {% include '/icons/play.svg' %}
             </span>
 {% endif %}

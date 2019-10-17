@@ -27,29 +27,29 @@ The Text-Image block allows you to display text to the right or the left of an i
 
 ## Block details
 
-| {{ page.title }}  block meta   |  values
-| --------------| :-------------------------------------:
-| handle              | `textimg` 
-| width type          | fixed 
-| colour options      | `u-block--white`, `u-block--grey`  
-| section use         | `<main>`                                      
-| has heading         | true
-| theme(s)            | CU
-| variants            | <a href="#left-image">Left image</a>
-| Codepen             | [https://codepen.io/cuweb/pen/pozdQzK](https://codepen.io/cuweb/pen/pozdQzK?editors=1000)
+| {{ page.title }}  block meta |                                          values                                           |
+| ---------------------------- | :---------------------------------------------------------------------------------------: |
+| handle                       |                                         `textimg`                                         |
+| width type                   |                                           fixed                                           |
+| colour options               |                             `u-block--white`, `u-block--grey`                             |
+| section use                  |                                         `<main>`                                          |
+| has heading                  |                                           true                                            |
+| theme(s)                     |                                            CU                                             |
+| variants                     |                           <a href="#left-image">Left image</a>                            |
+| Codepen                      | [https://codepen.io/cuweb/pen/pozdQzK](https://codepen.io/cuweb/pen/pozdQzK?editors=1000) |
 
 ## Properties
 
-| Props        | Description              | Type  | Default 
-| --------------| :-------------------------------------:| -------:| -:|
-| blockSize*    | block width, options: `s`, `l`           | string  | s |
-| blockColor*   | block color, options: `white`, `grey`           | string  | white | 
-| heading*       | `<h2>` or `<h3>` heading | string  | -
-| img*       | URL of 640x480 image | string  | -
-| text* ** | Text content in one or more `<p>` tags  | HTML | -
+| Props       |              Description               |   Type | Default |
+| ----------- | :------------------------------------: | -----: | ------: |
+| blockSize*  |     block width, options: `s`, `l`     | string |       s |
+| blockColor* | block color, options: `white`, `grey`  | string |   white |
+| heading*    |        `<h2>` or `<h3>` heading        | string |       - |
+| img*        |          URL of 640x480 image          | string |       - |
+| text* **    | Text content in one or more `<p>` tags |   HTML |       - |
 
 <small>`*` = required.</small><br>
-<small>`**` = HTML tags available include: `<p>`,`<a>`,`<strong>`, `<b>`, `<code>`, ``<h4>`</small>
+<small>`**` = HTML tags available include: `<p>`,`<a>`,`<strong>`, `<b>`, `<code>`, `<h4>`</small>
 
 
 {% include 'inc' with {'block': 'textimg-grey'} %}
@@ -71,18 +71,18 @@ While all blocks are separate, a pattern for this block is to use the same backg
 
 {% include 'close' %}
 
-<section>
+
 <section class="u-block u-block--grey">
     <h2 class="c-heading- c-heading--center">Supports centered block headings</h2>
     <p>In addition, it supports subheadings.</p>
     <div class="b-textimg">
         <div class="textimg__wrapper">
-            <section>
+            <div>
                 <img src="https://via.placeholder.com/640x480" alt="">
                 <div class="textimg__text">
                     <p>At least one heading is required when using the Text-Image block. But if a block heading is used, you do not need to add a heading within the block...as per this example.</p><p>Multiple paragraphs can be used in the text are of this block.</p>
                 </div>
-            </section>
+            </div>
         </div>
     </div>
 </section>
@@ -112,23 +112,22 @@ While all blocks are separate, a pattern for this block is to use the same backg
         </div>
     </div>
 </div>
-</section>
+
 
 {% include 'open' %}
 
 ```html
-<section>
 <section class="u-block u-block--grey">
     <h2 class="c-heading- c-heading--center">Supports centered block headings</h2>
     <p>In addition, it supports subheadings.</p>
     <div class="b-textimg">
         <div class="textimg__wrapper">
-            <section>
+            <div>
                 <img src="https://via.placeholder.com/640x480" alt="">
                 <div class="textimg__text">
                     <p>At least one heading is required when using the Text-Image block. But if a block heading is used, you do not need to add a heading within the block...as per this example.</p><p>Multiple paragraphs can be used in the text are of this block.</p>
                 </div>
-            </section>
+            </div>
         </div>
     </div>
 </section>
@@ -158,5 +157,4 @@ While all blocks are separate, a pattern for this block is to use the same backg
         </div>
     </div>
 </div>
-</section>
 ```
