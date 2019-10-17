@@ -155,7 +155,7 @@ The Listing block is one of the few blocks that can be positioned side-by-side, 
 </div>
 ```
 
-**Note** how the headings in the block switch to `<h4>`s as they followed `<h3>`s.
+**Note**: any heading following an `<h4>` needs to be changed to an `<h3>` as seen in the above example.
 
 ### Two column implementation notes
 
