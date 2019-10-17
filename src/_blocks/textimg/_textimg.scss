@@ -16,7 +16,8 @@
 			position: relative;
 		}
 		// Additonal wrapper
-		section {
+		section,
+		.textimg__wrapper > div {
 			min-height: 270px;
 			padding: 0 45% 0 0; // TODO ADDED FOR GH-40
 			// max-width: 50%; // TODO REMOVED FOR GH-40
@@ -97,7 +98,8 @@
 		}
 	}
 
-	.l-col-l .b-textimg section {
+	.l-col-l .b-textimg section,
+	.l-col-l .b-textimg .textimg__wrapper > div {
 		min-height: 320px;
 		// max-width: 55%; // TODO REMOVED FOR GH-40
 	}

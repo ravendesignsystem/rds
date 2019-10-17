@@ -9,7 +9,11 @@
 {% endif %}
     <div class="b-textimg{% if data.variant %} b-textimg--imgtext{% endif %}{% if data.modifier %} {{ data.modifier }}{% endif %}">
         <div class="textimg__wrapper">
+{% if data.heading %}
             <section>
+{% else %}
+            <div>
+ {% endif %}
 {% if data.heading %}
                 <{% if data.blockHeading %}h3{% else %}h2{% endif %}>{{ data.heading }}</{% if data.blockHeading %}h3{% else %}h2{% endif %}>
 {% endif %}
@@ -19,7 +23,11 @@
                 <div class="textimg__text">
                     {{ data.text|raw }}
                 </div>
+ {% if data.heading %}
             </section>
+{% else %}
+            </div>
+{% endif %}
         </div>
     </div>
 {% if (data.blockHeading) %}
