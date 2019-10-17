@@ -442,6 +442,19 @@ Avoid using the Content block if:
 
 <p>Lorem ipsum dolor sit amet, <a href="#">Mauris ac gravida</a> consectetur adipiscing elit. Ut quis nulla eu nulla tincidunt varius a fringilla justo. Integer elit leo, semper et lorem sit amet, feugiat congue ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin gravida, ex sit amet pellentesque fermentum, purus massa facilisis dolor, et porta magna libero a velit.</p>
 
+<h2>Form Component</h2>
+<p>Curabitur cursus viverra neque et aliquam. Duis sit amet leo libero. Etiam non velit odio. Etiam ornare, felis ut congue viverra, nisl lectus commodo mi, vel scelerisque orci nisl nec ante. Nam posuere nisl id auctor posuere. Mauris porttitor tempus nisi et cursus. Duis a eleifend dolor, et molestie eros. Etiam dolor felis, tristique non lacus nec, dapibus semper dolor.</p>
+
+<form class="c-form">
+    <fieldset>
+        <legend>What is Your Favorite Pet?</legend>
+        <input type="radio" name="favorite_pet" value="Cats">Cats<br>
+        <input type="radio" name="favorite_pet" value="Dogs">Dogs<br>
+        <input type="radio" name="favorite_pet" value="Birds">Birds<br>
+        <input type="submit" value="Submit now">
+    </fieldset>
+</form>
+
 <!-- Large Images Start -->
 
 <h2>Large Images</h2>
