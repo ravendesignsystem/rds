@@ -21,7 +21,6 @@ This page covers the following block rules and guidelines:
 - block handles and naming
 - block section restrictions
 - block headings
-- block versioning
 - block properties and data
 - block variants
 
@@ -34,13 +33,13 @@ Here is what our **Simple block looks like**:
 {%include 'inc' with {'close': true}%}
 
 <div class="u-block u-block--white">
-    <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes..</p>
+    <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
     <hr>
 </div>
 
 {%include 'inc' with {'open': true}%}
 
-Here is its HTML markup that will be explained further below:
+Below is our Simple block's HTML markup, which we will break down later:
 
 ```html
 <div class="u-block u-block--white">
@@ -49,11 +48,11 @@ Here is its HTML markup that will be explained further below:
 </div>
 ```
 
-
-
 ## Block utility classes
 
-Block utility classes are used to bring a rhythm and a familiar flow from page to page by standardizing layout and controlling a block's width, spacing and colour. **All blocks** must be wrapped with the utility class `u-block`. Since all blocks are wrapped in `u-block`, the class name will help you locate where blocks exist in your source code.
+Block utility classes are used to bring a rhythm and a familiar flow from page to page by standardizing layout and controlling a block's width, spacing and colour. 
+
+**All blocks** must be wrapped with the utility class `u-block`. Since all blocks are wrapped in `u-block`, the class name will help you locate where blocks exist in your source code.
 
 ```html
 <div class="u-block">
@@ -68,34 +67,32 @@ RDS blocks are either `fixed-width` or `full-width`.
 
 Fixed-width blocks have a maximum width and standardized side padding. 
 
-TODO add img.
+![Example of fixed-width block](http://cu-rds.s3.amazonaws.com/docs/assets/fixed-width.png)
 
-Our <em>Simple block</em> example is an example of a fixed-width block.
+By default, blocks are fixed-width, this includes our <em>Simple block</em> example.
 
 ```html
 <div class="u-block u-block--white">
-    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
+    <p class="b-simple">This is Simple block, does not have any modifiers to change it from being fixed-width.</p>
     <hr>
 </div>
 ```
 {%include 'inc' with {'close': true}%}
 
-<div class="u-block u-block--l u-block--white">
-    <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes..</p>
+<div class="u-block u-block--white">
+    <p style="color: green" class="b-simple">This is Simple block, does not have any modifiers to change it from being fixed-width.</p>
     <hr>
 </div>
 
 {%include 'inc' with {'open': true}%}
 
-Notice how the block is wider as it is now using the larger fixed width modifier: <br> `u-block--l`. 
-
-#### Full-width blocks
+### Full-width blocks
 
 Full-width blocks, such as the [Masthead block]({{site.url}}dev/blocks/header/masthead/), span the entire width of the screen.
 
-TODO add img.
+![Example of full-width block](http://cu-rds.s3.amazonaws.com/docs/assets/full-width.png)
 
-Lets look what happens to the Simple block if we change the width modifier to `u-block--full`.
+Lets look what happens to the Simple block if we add the width modifier `u-block--full`.
 
 ```html
 <div class="u-block u-block--full u-block--white">
@@ -112,13 +109,11 @@ Lets look what happens to the Simple block if we change the width modifier to `u
 
 {%include 'inc' with {'open': true}%}
 
-The Simple block now spans the full-width of the window and no longer has padding surrounding the block.
+Our Simple block now spans the full-width of the window and no longer has padding surrounding the block.
 
 **Note**: block widths are ultimately controlled by their [layout](#) containers. Full-width blocks are primarily used in single column layouts.
 
-**Note**: for better readability, the recommended width for content blocks with paragraphs of type is `u-block--s`.
-
-### `u-block` color modifiers
+## `u-block` color modifiers
 
 The `u-block` colour modifier controls the block's background colour. Available values are:
  
@@ -161,7 +156,7 @@ To change the background color to grey, lets replace `u-block--white` with `u-bl
 
 {%include 'inc' with {'open': true}%}
 
-Notice that while the content remains fixed in width, the block's grey background extends the full length of the window. This allows us to create blocks with differing background colours that appear as rows. Spacing between same or changing background colour rows is auto-configured by the `u-block` colour modifier. 
+Notice that while the content remains fixed in width, the block's grey background extends the full length of the window. This allows us to create blocks with differing background colours that appear as rows with predefined spacing.
 
 Use different coloured background rows to separate different sections of content.
 
@@ -237,15 +232,15 @@ While blocks can be stacked in any order to build interfaces, they are restricte
 - Main - `<main>`
 - Aside - `<aside>`
 - Footer - `<footer>`
-- Dialogue -  `<dialogue>` - this the default off-screen overlay.
+- Dialog -  `<dialog>` - this the default off-screen overlay.
 
 For example, the [Content block](#) (`b-content`) can only be used within the `<main>` section.
 
-Some blocks can be used in multiple sections. For example, the [Search block](#) (`b-search`) can be used inside both the `<header>`, `<aside>` and `<dialogue>` sections.
+Some blocks can be used in multiple sections. For example, the [Search block](#) (`b-search`) can be used inside both the `<header>`, `<aside>` and `<dialog>` sections.
 
 Sections restrictions are noted in each block's documentation.
 
-**Note**: While an HTML document can have multiple `<header>` and `<footer>` elements. In RDS, the 'Header section' is always denoted by the first `<header>Header section</header>` on the page and the 'Footer section' by the last `<footer>Footer section</footer>` on the page. 
+**Note**: While an HTML document can have multiple `<header>` and `<footer>` elements. In RDS, the 'Header section' is always denoted by the first `<header>Header section</header>` on the page and the 'Footer section' by the last `<footer>Footer section</footer>`. 
 
 ### Example of section restrictions using Simple block
 
@@ -341,50 +336,34 @@ your-project/
 
 ## Block headings
 
-Some fixed-width blocks (blocks using either `u-block--s` or `u-block--l`) can have headings.
-
-The heading HTML resides between the `u-block` utility class and the block's first class name starting with `b-`.
-
-Our Simple example block above does not have a heading:
-
-```html
-<div class="u-block u-block--grey">
-    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
-    <hr>
-</div>
-```
-But it can. Lets add a Header to Simple block:
+Some fixed-width blocks can have headings. Our Simple block is an example of a block that can have a heading:
 
 {%include 'inc' with {'close': true}%}
 
 <section class="u-block u-block--white">
-    <header>
-        <h2 class="c-heading">Simple Block</h2>
-    </header>
+    <h2 class="c-heading">Simple Block</h2>
     <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes..</p>
     <hr>
 </section>
 
 {%include 'inc' with {'open': true}%}
 
+The header HTML resides between the `u-block` utility class and the block's first class name starting with `b-`.
+
 ```html
  <section class="u-block u-block--white">
-    <header>
-        <h2 class="c-heading">Simple Block</h2>
-    </header>
+    <h2 class="c-heading">Simple Block</h2>
     <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
     <hr>
 </section>
 ```
-Notice how the utility block wrapper `<div>` was changed to a `<section>` tag and a `<header>` tag wrapping an `h2` was added above the `b-simple` tag. Switching the div to a section is encouraged when using a block heading to help associate the heading and block as a standalone section.
+Notice how the utility block wrapper `<div>` was changed to a `<section>` tag and an `h2` was added above the `b-simple` tag. Switching the div to a section is encouraged when using a block heading to help associate the heading and block as a standalone section.
 
 Block headings make use of the [Heading component](#) which has a couple of options for styling headers. One option for single column layouts is centered headings by using the `--center` modifier..
 
 ```html
  <section class="u-block u-block--white">
-    <header>
-        <h2 class="c-heading c-heading--center">Simple Block</h2>
-    </header>
+    <h2 class="c-heading c-heading--center">Simple Block</h2>
     <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
     <hr>
 </section>
