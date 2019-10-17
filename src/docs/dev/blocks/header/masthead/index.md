@@ -8,7 +8,7 @@ banner:
   grandparent: Blocks
   parent: Header
 ---
-As the first block located on top of the page, the masthead is an essential toolbar that provides site-wide content and actions. 
+As the first block located on top of the page, the masthead is an essential toolbar that provides site-wide content and actions.
 
 ## Masthead sections
 
@@ -67,22 +67,22 @@ The Masthead block and its sections in code:
 
 <small>* = required</small>
 
-## Masthead dependencies 
+## Masthead dependencies
 
-1. **Javascript Required**: the masthead block requires the use of RDS' [core JavaScript file](#) to function. 
+1. **Javascript Required**: the masthead block requires the use of RDS' [core JavaScript file](#) to function.
 2. **Overlay layout required**: when using the action and mobile menu buttons, the hidden [overlay layout](#) is required on your page.
 
-Make sure your page template accommodates these dependencies. To easily get started with the masthead, use one of the RDS [getting started templates](/docs/dev/getting-started) or grabbing the minimum template code example from the same page. 
+Make sure your page template accommodates these dependencies. To easily get started with the masthead, use one of the RDS [getting started templates](/docs/dev/getting-started) or grabbing the minimum template code example from the same page.
 
 ## Block details
 
 | {{ page.title }}  block meta   |  values
 | --------------| :-------------------------------------:
-| handle              | `masthead` 
-| width options       | `u-block--full`    
-| colour options      | n/a  
-| section use         | `<header>`                  
-| width type          | full-width                           
+| handle              | `masthead`
+| width options       | `u-block--full`
+| colour options      | n/a
+| section use         | `<header>`
+| width type          | full-width
 | has heading         | n/a
 | theme(s)            | CU
 | variants            | n/a
@@ -110,7 +110,7 @@ The masthead block has many options and configurations. At it's simplest, the ma
 ```html
 <div class="u-block u-block--full">
     <div class="b-masthead">
-        <div class="masthead__brand">
+        <div class="masthead__brand b-masthead--shadow">
             <h2>
                 <a href="/docs/">
                     {%filter escape%}{% include 'icons/mark-cushield.svg' %}{%endfilter%}
@@ -137,7 +137,7 @@ The masthead block has many options and configurations. At it's simplest, the ma
 ## Scrolling behaviour - stick on scroll
 
 Upon scrolling down, the Masthead disappears.
- 
+
 By adding `js-masthead-stick` to the `b-masthead` element, scrolling upward reveals the Masthead for easy access at any point on the page. Try it out by scrolling back up on this page.
 
 ```html
@@ -150,7 +150,7 @@ By adding `js-masthead-stick` to the `b-masthead` element, scrolling upward reve
 <div class="b-masthead">
 ```
 
-**Notes**: 
+**Notes**:
 
 - this behaviour is forced on small screens.
 - the remaining code examples on this page include this option. Simply remove `js-masthead-stick` from any snippets below to disable this feature for large screens.
@@ -199,7 +199,7 @@ For examples, instead of using "The Department of History at Carleton University
 
 ## Adding action buttons
 
-Action buttons get added to the right side of the Masthead blocks. 
+Action buttons get added to the right side of the Masthead blocks.
 
 
 ### With search button
@@ -213,7 +213,7 @@ If your application requires search functionality, you can add a search button t
         <div class="masthead__brand">
             <h2>
                 <a href="/docs/">
-                    {% include 'icons/mark-cushield.svg' %} 
+                    {% include 'icons/mark-cushield.svg' %}
                     Raven Design System
                 </a>
             </h2>
@@ -230,7 +230,7 @@ If your application requires search functionality, you can add a search button t
     </div>
 </div>
 
-{% include 'open' %} 
+{% include 'open' %}
 
 ```html
 <div class="u-block u-block--full">
@@ -288,7 +288,7 @@ If your application requires search functionality, you can add a search button t
     </div>
 </div>
 
-{% include 'open' %} 
+{% include 'open' %}
 
 ```html
 <div class="u-block u-block--full">
@@ -355,7 +355,7 @@ To promote key links or actions, add a CTA button to the action buttons section.
     </div>
 </div>
 
-{% include 'open' %} 
+{% include 'open' %}
 
 ```html
 <div class="u-block u-block--full">
@@ -425,7 +425,7 @@ To further communicate meaning to your CTA button, add an icon.
     </div>
 </div>
 
-{% include 'open' %} 
+{% include 'open' %}
 
 ```html
 <div class="u-block u-block--full">
@@ -495,7 +495,7 @@ The red background added to the CTA by default adds significant visual emphasis 
     </div>
 </div>
 
-{% include 'open' %} 
+{% include 'open' %}
 
 ```html
 <div class="u-block u-block--full">
@@ -596,7 +596,7 @@ Use the {% include 'link' with {'component': 'Menu Popup'} %} to setup a submenu
     </div>
 </div>
 
-{% include 'open' %} 
+{% include 'open' %}
 
 ```html
 <div class="u-block u-block--full">
@@ -771,7 +771,7 @@ Most of the time you only need the menu to appear on small screens. To hide the 
 
 #### Space considerations and utility classes
 
-Like all RDS blocks, the Masthead is responsive to best make us of horizontal space on all screen sizes. However, there is always a limit to how much horizontal space is available. As you add elements to your Masthead, make sure to test on all screen sizes to ensure everything fits. 
+Like all RDS blocks, the Masthead is responsive to best make us of horizontal space on all screen sizes. However, there is always a limit to how much horizontal space is available. As you add elements to your Masthead, make sure to test on all screen sizes to ensure everything fits.
 
 At times you are going to want to hide Masthead elements when on smaller screens and show certain elements only on large screens. You might have noticed in many of the examples above, the utility classes listed below are used to accomplish this:
 
@@ -803,7 +803,7 @@ To provide more space, this hides the search label on screens smaller then 1474p
 When using multiple action buttons, they should always be presented in the following order from left to right:
 
 [ CTA link/submnenu | Login | Search | Mobile menu ]
-                                                   
+
 ![Action button order](https://cu-rds.s3.amazonaws.com/docs/assets/masthead-but-order.png)
 
 <div class="c-alert c-alert--info c-alert--icon u-hide-s">{% include 'icons/info.svg' %}
@@ -816,7 +816,7 @@ When using multiple action buttons, they should always be presented in the follo
 
  RDS has several options for handling navigation. In addition to this section, please review the [RDS navigation docs]({{site.url}}/dev/layouts/navigation/). Lets look at adding the Top Nav navigation.
 
-The Masthead Top Nav displays right after the title/brand section and will grow to occupy as much horizontal space as possible. 
+The Masthead Top Nav displays right after the title/brand section and will grow to occupy as much horizontal space as possible.
 
 {% include 'close' %}
 
@@ -899,7 +899,7 @@ If you have an overflowing top nav below 640px, to use this feature:
 
 ### We check if your nav is too wide!
 
-The Masthead navigation is responsive and will drop down to providing even more space when your navigation starts to wrap. However, if your navigation wraps again, after dropping, we provide an in your face warning. 
+The Masthead navigation is responsive and will drop down to providing even more space when your navigation starts to wrap. However, if your navigation wraps again, after dropping, we provide an in your face warning.
 
 {% include 'close' %}
 
@@ -987,7 +987,7 @@ The following will only open the submenu onclick and not link off:
         </li>
          <li>
              <a href="#">Submenu link c</a>
-         </li>                   
+         </li>
     </ul>
 </li>
 ```

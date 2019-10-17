@@ -1,6 +1,5 @@
 'use strict';
 
-console.log('poo');
 // Switch aria items for accordions on click for accessilibity
 var accordionLabelIndex = 0,
     accordionTriggerClass = document.getElementsByClassName('accordion__input'),
