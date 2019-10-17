@@ -1,8 +1,11 @@
 // Small screen styling
 //=====================
-.b-textimg {
-	img {
-		padding-bottom: 20px;
+
+@include media("<=s") {
+	.b-textimg {
+		img {
+			padding-bottom: 20px;
+		}
 	}
 }
 
