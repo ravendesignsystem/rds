@@ -195,30 +195,36 @@ div.modal__menu .b-menu i {
 
 // Expand/show nested lists
 // =======================================
+
 .menu__toggle {
-	font-style: normal;
-	font-size: $pixel10;
-	text-transform: uppercase;
-	padding: 15px;
 	display: inline-block;
+	font-style: normal;
+	font-size: $pixel12;
+	color: $grey-vader;
+	text-transform: capitalize;
+	padding: 15px 15px 15px 22px;
+	line-height: 20px;//
 
 	&:hover {
 		color: $red;
 	}
 
-	&:before {
-		content: '+';
-		display: inline-block;
-		transition: all 0.25s ease-in;
-		font-size: $pixel14;
-		vertical-align: middle;
-		line-height: normal;
-		margin-right: 5px;
-		margin-top: -1px;
-		color: $grey-emperor;
+	i {
+		top: 15px;
+		left: 0;
+		right: 0;
+		width: 25px;
+		height: 20px;
+		line-height: 20px;
+
+		&:after {
+			content: '+';
+			display: inline-block;
+			transition: all 0.25s ease-in;
+		}
 	}
 
-	&.menu__toggle--opened:before {
+	&.menu__toggle--opened i:before {
 		transform: rotate(135deg);
 		transform-origin: center center;
 	}

@@ -16,13 +16,22 @@
 
 	ul {
 		display: flex;
-		justify-content: space-between;
+		flex-wrap: wrap;
+		justify-content: center;
 		margin: 20px auto 0 auto;
 		list-style: none;
+
+		@include media(">s") {
+			justify-content: space-between;
+		}
 	}
 
 	li {
 		font-size: $pixel12;
+
+		@include media("<=s") {
+			margin: 0 10px;
+		}
 	}
 
 	li a {

@@ -4,12 +4,11 @@ a.c-buttoncta {
 	white-space: nowrap;
 	border: 1px solid transparent;
 	padding: 0.85rem 1.35rem;
-	font-size: $pixel14;
+	font-size: $pixel16;
 	line-height: 1.75;
 	transition: background 200ms, box-shadow 200ms;
 	background-color: $red;
 	color: white;
-	text-transform: uppercase;
 	border-radius: 0.3rem;
 	box-shadow: 0 4px 9px rgba(black, 0.25);
 	display: inline-flex;
