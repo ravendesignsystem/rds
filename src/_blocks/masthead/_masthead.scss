@@ -1,9 +1,9 @@
 .js-masthead-2packed .b-masthead {
-	height: 150px;
+	height: 153px;
 
 	& .masthead__nav {
 		position: absolute;
-		top: 75px;
+		top: 72px;
 		left: 0;
 	}
 }
@@ -35,12 +35,22 @@
 
 // used when nav is stacked and modal gets opened
 .js-masthead-2packed .l-overlay-modal {
-	top: 150px !important;
+	top: 153px !important;
 }
-
+header .b-masthead {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+header .b-masthead.fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
 .b-masthead {
 	// Positioning
-	position: relative;
 	z-index: 10000;
 	// Box-model
 	display: flex;
@@ -130,7 +140,7 @@
 }
 
 .b-masthead--responsivenav {
-	height: 150px;
+	height: 153px;
 
 	@include media('>=960px') {
 		height: 74px;
@@ -163,7 +173,7 @@
 
 .b-masthead--responsivenav .masthead__nav {
 	position: absolute;
-	top: 73px;
+	top: 72px;
 	display: inline-flex;
 
 	@include media('>=960px') {
@@ -268,7 +278,15 @@
 }
 
 .masthead__actions > ul > li {
-	border-left: 1px solid $grey-kenobi;
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		height: 100%;
+		width: 1px;
+		background: $grey-kenobi;
+		// border-left: 1px solid $grey-kenobi;
+	}
 }
 
 li.masthead__cta > a {
@@ -287,7 +305,7 @@ li.masthead__cta > a {
 }
 
 li.masthead__cta--white {
-	border-bottom: 1px solid $grey-kenobi !important;
+	// border-bottom: 1px solid $grey-kenobi !important;
 }
 
 li.masthead__cta--white > a {
@@ -337,3 +355,10 @@ li.masthead__cta.c-menupopup > a {
 	padding-left: 12px;
 	margin-left: 12px;
 }
+
+// body {
+// 	margin-top: 75px;
+// }
+// .body--extra-margin-top {
+// 	margin-top: 150px !important;
+// }
