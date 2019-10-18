@@ -192,13 +192,13 @@ Avoid using the Content block if:
 <table>
     <thead>
         <tr>
-            <td>No wrapper</td>
-            <td>And larger width</td>
-            <td>Header</td>
-            <td>Header</td>
-            <td>Header</td>
-            <td>Header</td>
-            <td>Header</td>
+            <th>No wrapper</th>
+            <th>And larger width</th>
+            <th>Header</th>
+            <th>Header</th>
+            <th>Header</th>
+            <th>Header</th>
+            <th>Header</th>
         </tr>
     </thead>
     <tbody>
@@ -255,9 +255,9 @@ Avoid using the Content block if:
 <table>
     <thead>
         <tr>
-            <td>No wrapper</td>
-            <td>And smaller width</td>
-            <td>Header</td>
+            <th>No wrapper</th>
+            <th>And smaller width</th>
+            <th>Header</th>
         </tr>
     </thead>
     <tbody>
@@ -299,13 +299,13 @@ Avoid using the Content block if:
     <table>
         <thead>
             <tr>
-                <td>With wrapper</td>
-                <td>And larger width</td>
-                <td>Header</td>
-                <td>Header</td>
-                <td>Header</td>
-                <td>Header</td>
-                <td>Header</td>
+                <th>With wrapper</th>
+                <th>And larger width</th>
+                <th>Header</th>
+                <th>Header</th>
+                <th>Header</th>
+                <th>Header</th>
+                <th>Header</th>
             </tr>
         </thead>
         <tbody>
@@ -364,9 +364,9 @@ Avoid using the Content block if:
     <table>
         <thead>
             <tr>
-                <td>With wrapper</td>
-                <td>And smaller width</td>
-                <td>Header</td>
+                <th>With wrapper</th>
+                <th>And smaller width</th>
+                <th>Header</th>
             </tr>
         </thead>
         <tbody>
@@ -678,13 +678,13 @@ Avoid using the Content block if:
 <table>
     <thead>
         <tr>
-            <td>No wrapper</td>
-            <td>And larger width</td>
-            <td>Header</td>
-            <td>Header</td>
-            <td>Header</td>
-            <td>Header</td>
-            <td>Header</td>
+            <th>No wrapper</th>
+            <th>And larger width</th>
+            <th>Header</th>
+            <th>Header</th>
+            <th>Header</th>
+            <th>Header</th>
+            <th>Header</th>
         </tr>
     </thead>
     <tbody>
@@ -741,9 +741,9 @@ Avoid using the Content block if:
 <table>
     <thead>
         <tr>
-            <td>No wrapper</td>
-            <td>And smaller width</td>
-            <td>Header</td>
+            <th>No wrapper</th>
+            <th>And smaller width</th>
+            <th>Header</th>
         </tr>
     </thead>
     <tbody>
@@ -785,13 +785,13 @@ Avoid using the Content block if:
     <table>
         <thead>
             <tr>
-                <td>With wrapper</td>
-                <td>And larger width</td>
-                <td>Header</td>
-                <td>Header</td>
-                <td>Header</td>
-                <td>Header</td>
-                <td>Header</td>
+                <th>With wrapper</th>
+                <th>And larger width</th>
+                <th>Header</th>
+                <th>Header</th>
+                <th>Header</th>
+                <th>Header</th>
+                <th>Header</th>
             </tr>
         </thead>
         <tbody>
@@ -850,9 +850,9 @@ Avoid using the Content block if:
     <table>
         <thead>
             <tr>
-                <td>With wrapper</td>
-                <td>And smaller width</td>
-                <td>Header</td>
+                <th>With wrapper</th>
+                <th>And smaller width</th>
+                <th>Header</th>
             </tr>
         </thead>
         <tbody>
