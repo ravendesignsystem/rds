@@ -462,7 +462,7 @@ Avoid using the Content block if:
 
 <h3>No Alignment, No Caption, Wrapped in P tag</h3>
 <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
-<p><img src="https://cu-raven.s3.amazonaws.com/assets/img/raven/img1.jpg" alt="" width="1200" height="625" srcset="https://devsite.carleton.ca/cms/wp-content/uploads/delme-full1.jpg 1200w, https://devsite.carleton.ca/cms/wp-content/uploads/delme-full1-160x83.jpg 160w, https://devsite.carleton.ca/cms/wp-content/uploads/delme-full1-240x125.jpg 240w, https://devsite.carleton.ca/cms/wp-content/uploads/delme-full1-768x400.jpg 768w, https://devsite.carleton.ca/cms/wp-content/uploads/delme-full1-400x208.jpg 400w, https://devsite.carleton.ca/cms/wp-content/uploads/delme-full1-360x188.jpg 360w" sizes="(max-width: 1200px) 100vw, 1200px"></p>
+<p><img src="https://devsite.carleton.ca/cms/wp-content/uploads/delme-full1.jpg" alt="" width="1200" height="625" srcset="https://devsite.carleton.ca/cms/wp-content/uploads/delme-full1.jpg 1200w, https://devsite.carleton.ca/cms/wp-content/uploads/delme-full1-160x83.jpg 160w, https://devsite.carleton.ca/cms/wp-content/uploads/delme-full1-240x125.jpg 240w, https://devsite.carleton.ca/cms/wp-content/uploads/delme-full1-768x400.jpg 768w, https://devsite.carleton.ca/cms/wp-content/uploads/delme-full1-400x208.jpg 400w, https://devsite.carleton.ca/cms/wp-content/uploads/delme-full1-360x188.jpg 360w" sizes="(max-width: 1200px) 100vw, 1200px"></p>
 
 <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
 <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
@@ -579,7 +579,8 @@ Avoid using the Content block if:
 </figure>
 
 <p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
-
+<p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
+<p>Cras mollis purus est, ut volutpat purus fermentum porttitor. Quisque nec ipsum facilisis, aliquet lacus aliquam, tincidunt est. Quisque nibh lectus, tempus in ipsum eget, venenatis congue elit. Morbi dictum sollicitudin elit quis pharetra. Sed suscipit dui est, eget tempus orci dictum at.</p>
 ### QA code
 
 ```html
