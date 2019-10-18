@@ -1,11 +1,12 @@
-<div class="u-block u-block--full">
+<div id="b-masthead" class="u-block u-block--full">
 <div class="b-masthead b-masthead--responsivenav{% if page.masthead != 'nostick' %} js-masthead-stick{% endif %}">
 
 	<div class="masthead__brand">
-		<h2>
-			<a href="{{ site.url }}">{% include 'icons/mark-cushield.svg' %}Raven Design System</a>
-		</h2>
-	</div>
+            <h2>
+                <a href="{{ site.url }}">{% include 'icons/mark-cushield.svg' %}Raven Design System</a>
+            </h2>
+        </div>
+
 	<nav class="masthead__nav">
 		<ul role="menu">
 			<li {% if page.subsite == 'about' %}class="u-active"{% endif %} ><a href="{{ site.url }}about/">About RDS</a></li>
