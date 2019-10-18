@@ -448,9 +448,12 @@ Avoid using the Content block if:
 <form class="c-form">
     <fieldset>
         <legend>What is Your Favorite Pet?</legend>
-        <input type="radio" name="favorite_pet" value="Cats">Cats<br>
-        <input type="radio" name="favorite_pet" value="Dogs">Dogs<br>
-        <input type="radio" name="favorite_pet" value="Birds">Birds<br>
+        <label for="cats">Cats</label>
+        <input type="radio" name="favorite_pet" id="cats" value="Cats">Cats<br>
+        <label for="dogs">Dogs</label>
+        <input type="radio" name="favorite_pet" id="dogs" value="Dogs">Dogs<br>
+        <label for="birds">Birds</label>
+        <input type="radio" name="favorite_pet" id="birds" value="Birds">Birds<br>
         <input type="submit" value="Submit now">
     </fieldset>
 </form>
@@ -931,9 +934,12 @@ Avoid using the Content block if:
 <form class="c-form">
     <fieldset>
         <legend>What is Your Favorite Pet?</legend>
-        <input type="radio" name="favorite_pet" value="Cats">Cats<br>
-        <input type="radio" name="favorite_pet" value="Dogs">Dogs<br>
-        <input type="radio" name="favorite_pet" value="Birds">Birds<br>
+        <label for="cats">Cats</label>
+        <input type="radio" name="favorite_pet" id="cats" value="Cats">Cats<br>
+        <label for="dogs">Dogs</label>
+        <input type="radio" name="favorite_pet" id="dogs" value="Dogs">Dogs<br>
+        <label for="birds">Birds</label>
+        <input type="radio" name="favorite_pet" id="birds" value="Birds">Birds<br>
         <input type="submit" value="Submit now">
     </fieldset>
 </form>
