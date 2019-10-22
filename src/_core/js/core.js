@@ -8,9 +8,15 @@ import '../../_components/menupopup/menupopup';
 // block scripts
 import '../../_blocks/alertheader/alertheader';
 // import '../../_blocks/masthead/masthead';
-import { Masthead } from '../../_blocks/masthead/mh';
 import '../../_blocks/menu/menu';
-Masthead();
+import {
+	MastheadIsScrolling,
+	MastheadIsResizing,
+	MastheadIsLoading,
+} from '../../_blocks/masthead/mh';
+MastheadIsScrolling();
+MastheadIsResizing();
+MastheadIsLoading();
 
 // we should probably get rid of this before v1
 // but for old time sake...
