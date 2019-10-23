@@ -94,7 +94,7 @@ body {
 		&:hover {
 			color: $red;
 		}
-	
+
 		@include media('>s') {
 			font-size: 20px;
 		}
@@ -111,9 +111,9 @@ body {
 // Masthead Nav Styles
 // -----------------------------
 
-// .masthead__nav {
-// 	overflow: scroll;
-// }
+.masthead__nav {
+	width: 100%;
+}
 
 .masthead__nav > ul,
 .masthead__actions > ul {
@@ -181,14 +181,6 @@ body {
 		}
 	}
 }
-
-
-
-
-
-
-
-
 
 /**************************
 NAV SIZE ERROR

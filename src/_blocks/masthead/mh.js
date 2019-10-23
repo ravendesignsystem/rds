@@ -10,7 +10,7 @@ const mastheadHeight = masthead.offsetHeight;
 const mastheadSearch = document.querySelector('.masthead__search');
 const mhHamburger = document.querySelector('.masthead__hamburger');
 const mhHamburgerButton = document.querySelector('.c-hamburger');
-const mhLogin = document.querySelector('.masthead__login');
+const mastheadLogin = document.querySelector('.masthead__login');
 const modal = document.querySelector('.l-overlay-modal');
 const modalMenu = document.querySelector('.modal__menu');
 const modalSearch = document.querySelector('.modal__search');
@@ -25,14 +25,15 @@ const leftMenu = document.querySelector('.b-menu');
  *  @return { boolean }
  */
 const detectOverflowOnMasthead = function(element) {
-	return element.scrollWidth > element.offsetWidth;
+	const m = document.querySelector('.masthead__nav');
+	const mu = document.querySelector('.masthead__nav ul');
+	return m.offsetWidth <= mu.offsetWidth + 1;
 };
 
 /**
  *  @name toggleMastheadSizeAlert()
  *  @desc adds class to display red banner error stating the menu is too wide
  */
-
 const toggleMastheadSizeAlert = () => {
 	if (window.innerWidth >= 960 && detectOverflowOnMasthead(mastheadNav)) {
 		mastheadNav.classList.add('masthead__overflow-detected');
@@ -73,117 +74,44 @@ const toggleMastheadVisibilty = () => {
 	lastScrollTop = st <= 0 ? 0 : st;
 };
 
-const MastheadModals = () => {
-	if (!mhHamburgerButton) return;
-	// Prevent scrolling other then menu when dialogue modal open
-	// ----------------------------------------------------------
-	const preventScroll = function() {
-		if (
-			document.body.style.overflowY === '' ||
-			document.body.style.overflowY === 'auto'
-		) {
-			(document.body.style.position = 'fixed'),
-				(document.body.style.overflowY = 'scroll');
-		} else {
-			(document.body.style.position = 'static'),
-				(document.body.style.overflowY = 'auto');
-		}
-	};
-
-	const showModal = function(btn) {
-		modal.show();
-		mhHamburger.classList.remove('u-hide-l');
-		mhHamburgerButton.classList.add('is-active');
-		// window.removeEventListener('scroll', stickMasthead);
-		preventScroll();
-		if (isHamburgerHidden !== null) {
-			mhHamburger.classList.remove(isHamburgerHidden);
-		}
-
-		if (btn === 'search') {
-			mastheadSearch.classList.add('u-visually-hidden');
-			modalSearch.classList.remove('u-visually-hidden');
-			document.querySelector('.modal__search .searchform__input').focus();
-			if (mhLogin) {
-				modalLogin.classList.add('u-visually-hidden');
-			}
-		}
-
-		if (btn === 'login') {
-			document.querySelector('.login__field').focus();
-			modalLogin.classList.remove('u-visually-hidden');
-			modal.show();
-			mhLogin.classList.add('u-visually-hidden');
-		}
-	};
-
-	if (mastheadSearch) {
-		mastheadSearch.addEventListener(
-			'click',
-			function() {
-				showModal('search');
-			},
-			false
-		);
+const preventScroll = function() {
+	if (
+		document.body.style.overflowY === '' ||
+		document.body.style.overflowY === 'auto'
+	) {
+		(document.body.style.position = 'fixed'),
+			(document.body.style.overflowY = 'scroll');
+	} else {
+		(document.body.style.position = 'static'),
+			(document.body.style.overflowY = 'auto');
 	}
+};
 
-	if (mhHamburger.classList.contains('u-hide-l')) {
-		isHamburgerHidden = 'u-hide-l';
-	} else if (mhHamburger.classList.contains('is-hidden')) {
-		isHamburgerHidden = 'is-hidden';
+const showModal = type => {
+	const modalToShow = document.querySelector(`.modal__${type}`);
+	const modalToShowButton = document.querySelector(`.masthead__${type}`);
+	const closeAllModalsButton = document.querySelector('.masthead__close-modals');
+	modal.style.display = 'block';
+	modalToShowButton.classList.add('u-visually-hidden');
+	modalToShow.classList.remove('u-visually-hidden');
+	closeAllModalsButton.classList.remove('u-visually-hidden');
+	preventScroll();
+};
+
+const closeAllModals = () => {
+	const closeAllModalsButton = document.querySelector('.masthead__close-modals');
+	modal.style.display = 'none';
+	modalSearch.classList.add('u-visually-hidden');
+	modalLogin.classList.add('u-visually-hidden');
+	closeAllModalsButton.classList.add('u-visually-hidden');
+	if (modalSearch) {
+		modalSearch.classList.remove('u-visually-hidden');
+		mastheadSearch.classList.remove('u-visually-hidden');
 	}
-
-	mhHamburgerButton.addEventListener(
-		'mousedown',
-		function() {
-			mhHamburgerButton.classList.toggle('is-active');
-			if (mhHamburgerButton.classList.contains('is-active')) {
-				modal.show();
-				if (moveMenu) {
-					modalMenu.classList.remove('u-visually-hidden');
-					modalMenu.appendChild(leftMenu);
-				}
-				preventScroll();
-				// window.removeEventListener('scroll', stickMasthead);
-				if (mhLogin) {
-					modal.close();
-					mhLogin.classList.add('u-visually-hidden');
-				}
-			} else {
-				preventScroll();
-				// window.addEventListener('scroll', stickMasthead);
-				modal.close();
-				if (moveMenu) {
-					modalMenu.classList.add('u-visually-hidden');
-					// modal.close();
-					moveMenu.appendChild(leftMenu);
-				}
-				if (mastheadSearch) {
-					modalSearch.classList.add('u-visually-hidden');
-					mastheadSearch.classList.remove('u-visually-hidden');
-				}
-				if (mhLogin) {
-					mhLogin.classList.remove('u-visually-hidden');
-					modalLogin.classList.remove('u-visually-hidden');
-				}
-				if (isHamburgerHidden !== null) {
-					mhHamburger.classList.add(isHamburgerHidden);
-				}
-			}
-		},
-		false
-	);
-
-	if (mhLogin) {
-		mhLogin.addEventListener(
-			'click',
-			function() {
-				showModal('login');
-			},
-			false
-		);
+	if (modalLogin) {
+		modalLogin.classList.remove('u-visually-hidden');
+		mastheadLogin.classList.remove('u-visually-hidden');
 	}
-	return;
 };
 
 const MastheadIsScrolling = () => {
@@ -225,6 +153,20 @@ const MastheadHandleClick = () => {
 		},
 		false
 	);
+	mastheadLogin.addEventListener(
+		'click',
+		() => {
+			showModal('login');
+		},
+		false
+	);
+	document.querySelector('.masthead__close-modals').addEventListener(
+		'click',
+		() => {
+			closeAllModals();
+		},
+		false
+	);
 };
 
 const Masthead = () => {
@@ -232,7 +174,6 @@ const Masthead = () => {
 	MastheadIsResizing();
 	MastheadIsLoading();
 	MastheadHandleClick();
-	MastheadModals();
 };
 
 export default Masthead;
