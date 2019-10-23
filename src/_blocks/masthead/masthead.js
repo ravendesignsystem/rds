@@ -63,7 +63,7 @@ import dialogPolyfill from 'dialog-polyfill';
 				isNav2packed = true;
 				body.classList.add('js-masthead-2packed');
 				body.classList.add('body--extra-margin-top');
-				// setup vars to test if resizing bigger or smaller
+				// setup vars to test if resizing bi gger or smaller
 				let xwidth = window.innerWidth;
 				lastX = xwidth;
 			} else {

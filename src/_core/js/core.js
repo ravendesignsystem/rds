@@ -9,14 +9,9 @@ import '../../_components/menupopup/menupopup';
 import '../../_blocks/alertheader/alertheader';
 // import '../../_blocks/masthead/masthead';
 import '../../_blocks/menu/menu';
-import {
-	MastheadIsScrolling,
-	MastheadIsResizing,
-	MastheadIsLoading,
-} from '../../_blocks/masthead/mh';
-MastheadIsScrolling();
-MastheadIsResizing();
-MastheadIsLoading();
+import Masthead from '../../_blocks/masthead/mh';
+
+Masthead();
 
 // we should probably get rid of this before v1
 // but for old time sake...

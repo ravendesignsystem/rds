@@ -1,6 +1,6 @@
 body {
 	margin-top: 75px;
-	@include media('>s') {
+	@include media('<s') {
 		margin-top: 150px;
 	}
 }
@@ -47,6 +47,7 @@ body {
 			align-items: center;
 			font-size: 0.875rem;
 			font-weight: 500;
+			white-space: nowrap;
 		}
 	}
 }
@@ -84,12 +85,12 @@ body {
 * Actions
 *********/
 .masthead__actions {
+	position: relative;
 	margin-left: auto;
 }
 .masthead__actions ul li {
-	position: relative;
 	padding: 0 8px;
-	&:before {
+	&:after {
 		content: ' ';
 		position: absolute;
 		height: 100%;
