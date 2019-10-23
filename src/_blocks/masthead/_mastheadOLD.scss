@@ -37,32 +37,35 @@
 .js-masthead-2packed .l-overlay-modal {
 	top: 153px !important;
 }
+
 header .b-masthead {
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 }
+
 header .b-masthead.fixed {
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 }
-.b-masthead {
-	// Positioning
-	z-index: 10000;
-	// Box-model
-	display: flex;
-	justify-content: flex-start;
-	height: 73px;
-	// Visual
-	border-top: 2px solid $red;
-	border-bottom: 1px solid $grey-kenobi;
-	background-color: white;
-	// Misc
-	transition: 0.2s;
-}
+
+// .b-masthead {
+// 	// Positioning
+// 	z-index: 10000;
+// 	// Box-model
+// 	display: flex;
+// 	justify-content: flex-start;
+// 	height: 73px;
+// 	// Visual
+// 	border-top: 2px solid $red;
+// 	border-bottom: 1px solid $grey-kenobi;
+// 	background-color: white;
+// 	// Misc
+// 	transition: 0.2s;
+// }
 
 .b-masthead a,
 .b-masthead button {
@@ -79,21 +82,21 @@ header .b-masthead.fixed {
 	}
 }
 
-.b-masthead--shadow {
-	box-shadow: 0 10px 11px -7px $grey-yoda;
-	margin-bottom: 6px;
-}
+// .b-masthead--shadow {
+// 	box-shadow: 0 10px 11px -7px $grey-yoda;
+// 	margin-bottom: 6px;
+// }
 
-.masthead__brand {
-	display: inline-flex;
-	white-space: nowrap;
-	align-items: center;
-	height: 72px;
+// .masthead__brand {
+// 	display: inline-flex;
+// 	white-space: nowrap;
+// 	align-items: center;
+// 	height: 72px;
 
-	@include media('>s') {
-		border-right: 1px solid $grey-yoda;
-	}
-}
+// 	@include media('>s') {
+// 		border-right: 1px solid $grey-yoda;
+// 	}
+// }
 
 .masthead__brand svg:not(.c-culogo) {
 	min-width: 40px;
@@ -102,42 +105,42 @@ header .b-masthead.fixed {
 	margin-right: 3px;
 }
 
-// cu homepage logo without text
-.masthead__brand h1 {
-	svg {
-		height: 40px;
-		width: auto;
-	}
-}
+// // cu homepage logo without text
+// .masthead__brand h1 {
+// 	svg {
+// 		height: 40px;
+// 		width: auto;
+// 	}
+// }
 
-.masthead__brand h1,
-.masthead__brand h2 {
-	margin: 6px 0 0;
-	padding-bottom: 0;
+// .masthead__brand h1,
+// .masthead__brand h2 {
+// 	margin: 6px 0 0;
+// 	padding-bottom: 0;
 
-	span {
-		display: table;
-	}
-}
+// 	span {
+// 		display: table;
+// 	}
+// }
 
-.masthead__brand a {
-	font-size: 18px;
-	display: inline-flex;
-	align-items: center;
-	//height: $b-height;
-	padding-left: 8px;
-	padding-right: 8px;
+// .masthead__brand a {
+// 	font-size: 18px;
+// 	display: inline-flex;
+// 	align-items: center;
+// 	//height: $b-height;
+// 	padding-left: 8px;
+// 	padding-right: 8px;
 
-	&:hover {
-		color: $red;
-	}
+// 	&:hover {
+// 		color: $red;
+// 	}
 
-	@include media('>=s') {
-		padding-left: 15px;
-		padding-right: 15px;
-		font-size: 20px;
-	}
-}
+// 	@include media('>=s') {
+// 		padding-left: 15px;
+// 		padding-right: 15px;
+// 		font-size: 20px;
+// 	}
+// }
 
 .b-masthead--responsivenav {
 	height: 153px;
@@ -195,13 +198,13 @@ header .b-masthead.fixed {
 	}
 }
 
-.masthead__nav ul,
-.masthead__actions ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	display: inline-flex;
-}
+// .masthead__nav ul,
+// .masthead__actions ul {
+// 	margin: 0;
+// 	padding: 0;
+// 	list-style: none;
+// 	display: inline-flex;
+// }
 
 // this slides out the top nav on small devices
 // to remind users they can scroll horizontally
@@ -270,15 +273,16 @@ header .b-masthead.fixed {
 	top: 146px !important;
 }
 
-.masthead__actions {
-	display: inline-flex;
-	align-items: center;
-	height: 70px;
-	margin-left: auto;
-}
+// .masthead__actions {
+// 	display: inline-flex;
+// 	align-items: center;
+// 	height: 70px;
+// 	margin-left: auto;
+// }
 
 .masthead__actions > ul > li {
 	position: relative;
+
 	&:after {
 		content: '';
 		position: absolute;
@@ -289,37 +293,38 @@ header .b-masthead.fixed {
 	}
 }
 
-li.masthead__cta > a {
-	background-color: $red;
-	color: white;
-	display: flex;
+// li.masthead__cta > a {
+// 	background-color: $red;
+// 	color: white;
+// 	display: flex;
 
-	svg {
-		fill: white;
-	}
+// 	svg {
+// 		fill: white;
+// 	}
 
-	&:after {
-		color: white;
-		//right: 15px !important;
-	}
-}
+// 	&:after {
+// 		color: white;
+// 		//right: 15px !important;
+// 	}
+// }
 
-li.masthead__cta--white {
-	// border-bottom: 1px solid $grey-kenobi !important;
-}
+// li.masthead__cta--white {
+// 	// border-bottom: 1px solid $grey-kenobi !important;
+// }
 
-li.masthead__cta--white > a {
-	background-color: white;
-	color: $black;
+// li.masthead__cta--white > a {
+// 	background-color: white;
+// 	color: $black;
 
-	svg {
-		fill: black;
-	}
+// 	svg {
+// 		fill: black;
+// 	}
 
-	&:after {
-		color: $black !important;
-	}
-}
+// 	&:after {
+// 		color: $black !important;
+// 	}
+// }
+
 @media (hover: hover) {
 	// if it's not a touch device
 	.masthead__actions ul > li > a:hover,
@@ -337,18 +342,18 @@ li.masthead__cta--white > a {
 	}
 }
 
-li.masthead__cta.c-menupopup > a {
-	padding-right: 25px;
+// li.masthead__cta.c-menupopup > a {
+// 	padding-right: 25px;
 
-	&:after {
-		right: 15px !important;
-	}
-}
+// 	&:after {
+// 		right: 15px !important;
+// 	}
+// }
 
-.masthead__nav .u-active > a,
-.masthead__nav .u-active > button {
-	color: $red;
-}
+// .masthead__nav .u-active > a,
+// .masthead__nav .u-active > button {
+// 	color: $red;
+// }
 
 .masthead__sep {
 	border-left: 1px solid #dfdfdf;
@@ -356,9 +361,9 @@ li.masthead__cta.c-menupopup > a {
 	margin-left: 12px;
 }
 
-body {
-	margin-top: 75px;
-}
-.body--extra-margin-top {
-	margin-top: 150px !important;
-}
+// body {
+// 	margin-top: 75px;
+// }
+// .body--extra-margin-top {
+// 	margin-top: 150px !important;
+// }
