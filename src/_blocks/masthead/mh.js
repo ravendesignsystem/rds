@@ -91,19 +91,31 @@ const showModal = type => {
 	const modalToShow = document.querySelector(`.modal__${type}`);
 	const modalToShowButton = document.querySelector(`.masthead__${type}`);
 	const closeAllModalsButton = document.querySelector('.masthead__close-modals');
+
+	// show modal container
 	modal.style.display = 'block';
+	// hide selected modal CTA
 	modalToShowButton.classList.add('u-visually-hidden');
+	// show selected modal content
 	modalToShow.classList.remove('u-visually-hidden');
+	// show close all modals CTA
 	closeAllModalsButton.classList.remove('u-visually-hidden');
+	//prevent scrolling while modal is open
 	preventScroll();
 };
 
 const closeAllModals = () => {
 	const closeAllModalsButton = document.querySelector('.masthead__close-modals');
+
+	// hide modal container
 	modal.style.display = 'none';
+	// hide search modal
 	modalSearch.classList.add('u-visually-hidden');
+	// hide login modal
 	modalLogin.classList.add('u-visually-hidden');
+	// hide close all modal CTA
 	closeAllModalsButton.classList.add('u-visually-hidden');
+	// show/hide CTA buttons for modals in masthead depending on selected modal
 	if (modalSearch) {
 		modalSearch.classList.remove('u-visually-hidden');
 		mastheadSearch.classList.remove('u-visually-hidden');
@@ -148,7 +160,7 @@ const MastheadIsLoading = () => {
 const MastheadHandleClick = () => {
 	mastheadSearch.addEventListener(
 		'click',
-		() => {
+		e => {
 			showModal('search');
 		},
 		false
