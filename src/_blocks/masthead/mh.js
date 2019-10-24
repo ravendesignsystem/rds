@@ -3,20 +3,23 @@ import dialogPolyfill from 'dialog-polyfill';
 let scrollPosition;
 let lastScrollTop = 0;
 let st;
-let isNavIconHidden = null;
+// let isNavIconHidden = null;
 const masthead = document.querySelector('#b-masthead');
 const mastheadNav = document.querySelector('.masthead__nav');
 const mastheadHeight = masthead.offsetHeight;
 const mastheadSearch = document.querySelector('.masthead__search');
-const mhNavIcon = document.querySelector('.masthead__navicon');
-const mhNavIconButton = document.querySelector('.c-navicon');
+const mastheadNavIcon = document.querySelector('.masthead__navicon');
+// const mhNavIconButton = document.querySelector('.c-navicon');
 const mastheadLogin = document.querySelector('.masthead__login');
+const mastHeadCloseAllModals = document.querySelector(
+	'.masthead__close-modals'
+);
 const modal = document.querySelector('.l-overlay-modal');
 const modalMenu = document.querySelector('.modal__menu');
 const modalSearch = document.querySelector('.modal__search');
 const modalLogin = document.querySelector('.modal__login');
-const moveMenu = document.querySelector('.js-overlay-movemenu');
-const leftMenu = document.querySelector('.b-menu');
+// const moveMenu = document.querySelector('.js-overlay-movemenu');
+const secondaryNav = document.querySelector('.b-menu');
 
 /**
  *  @name detectOverflowOnMasthead()
@@ -74,6 +77,10 @@ const toggleMastheadVisibilty = () => {
 	lastScrollTop = st <= 0 ? 0 : st;
 };
 
+/**
+ *  @name preventScroll()
+ *  @desc disables scroll on body
+ */
 const preventScroll = function() {
 	if (
 		document.body.style.overflowY === '' ||
@@ -86,27 +93,32 @@ const preventScroll = function() {
 			(document.body.style.overflowY = 'auto');
 	}
 };
-
+/**
+ *  @name showModal()
+ *  @desc reveals modals depending on type passed in
+ *  @param { string } type the class name slug  of modal to show
+ */
 const showModal = type => {
 	const modalToShow = document.querySelector(`.modal__${type}`);
 	const modalToShowButton = document.querySelector(`.masthead__${type}`);
-	const closeAllModalsButton = document.querySelector('.masthead__close-modals');
+	const isMenu = type === 'menu' ? mastheadNavIcon : modalToShowButton;
 
 	// show modal container
 	modal.style.display = 'block';
 	// hide selected modal CTA
-	modalToShowButton.classList.add('u-visually-hidden');
+	isMenu.classList.add('u-visually-hidden');
 	// show selected modal content
 	modalToShow.classList.remove('u-visually-hidden');
 	// show close all modals CTA
-	closeAllModalsButton.classList.remove('u-visually-hidden');
+	mastHeadCloseAllModals.classList.remove('u-visually-hidden');
 	//prevent scrolling while modal is open
 	preventScroll();
 };
-
+/**
+ *  @name closeAllModals()
+ *  @desc closes all modals
+ */
 const closeAllModals = () => {
-	const closeAllModalsButton = document.querySelector('.masthead__close-modals');
-
 	// hide modal container
 	modal.style.display = 'none';
 	// hide search modal
@@ -114,15 +126,33 @@ const closeAllModals = () => {
 	// hide login modal
 	modalLogin.classList.add('u-visually-hidden');
 	// hide close all modal CTA
-	closeAllModalsButton.classList.add('u-visually-hidden');
+	mastHeadCloseAllModals.classList.add('u-visually-hidden');
+
 	// show/hide CTA buttons for modals in masthead depending on selected modal
 	if (modalSearch) {
-		modalSearch.classList.remove('u-visually-hidden');
 		mastheadSearch.classList.remove('u-visually-hidden');
 	}
 	if (modalLogin) {
-		modalLogin.classList.remove('u-visually-hidden');
 		mastheadLogin.classList.remove('u-visually-hidden');
+	}
+	if (modalMenu) {
+		mastheadNavIcon.classList.remove('u-visually-hidden');
+	}
+};
+/**
+ *  @name appendSecondaryNav()
+ *  @desc copies .b-menu and appends it to .modal__menu
+ */
+const appendSecondaryNav = () => {
+	modalMenu.appendChild(secondaryNav);
+};
+/**
+ *  @name removeSecondaryNav()
+ *  @desc removes .b-menu from .modal__menu
+ */
+const removeSecondaryNav = () => {
+	if (modalMenu.childNodes.length > 1) {
+		modalMenu.removeChild(secondaryNav);
 	}
 };
 
@@ -172,10 +202,19 @@ const MastheadHandleClick = () => {
 		},
 		false
 	);
-	document.querySelector('.masthead__close-modals').addEventListener(
+	mastHeadCloseAllModals.addEventListener(
 		'click',
 		() => {
 			closeAllModals();
+			removeSecondaryNav();
+		},
+		false
+	);
+	mastheadNavIcon.addEventListener(
+		'click',
+		() => {
+			appendSecondaryNav();
+			showModal('menu');
 		},
 		false
 	);
