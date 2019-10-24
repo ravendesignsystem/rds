@@ -4,6 +4,7 @@ let scrollPosition;
 let lastScrollTop = 0;
 let st;
 // let isNavIconHidden = null;
+const body = document.querySelector('body');
 const masthead = document.querySelector('#b-masthead');
 const mastheadNav = document.querySelector('.masthead__nav');
 const mastheadHeight = masthead.offsetHeight;
@@ -58,6 +59,10 @@ const toggleMastheadDropNav = () => {
 	} else {
 		return;
 	}
+};
+
+const mastheadHasDropNav = () => {
+	return mastheadNav.classList.contains('masthead__second-level');
 };
 /**
  *  @name toggleMastheadVisibilty()
@@ -171,6 +176,11 @@ const MastheadIsResizing = () => {
 		() => {
 			toggleMastheadSizeAlert();
 			toggleMastheadDropNav();
+			if (mastheadHasDropNav()) {
+				body.classList.add('extraMarginTop');
+			} else {
+				body.classList.remove('extraMarginTop');
+			}
 		},
 		false
 	);
@@ -182,6 +192,12 @@ const MastheadIsLoading = () => {
 		() => {
 			toggleMastheadDropNav();
 			toggleMastheadSizeAlert();
+
+			if (mastheadHasDropNav()) {
+				body.classList.add('extraMarginTop');
+			} else {
+				body.classList.remove('extraMarginTop');
+			}
 		},
 		false
 	);
@@ -210,14 +226,16 @@ const MastheadHandleClick = () => {
 		},
 		false
 	);
-	mastheadNavIcon.addEventListener(
-		'click',
-		() => {
-			appendSecondaryNav();
-			showModal('menu');
-		},
-		false
-	);
+	if (mastheadNavIcon) {
+		mastheadNavIcon.addEventListener(
+			'click',
+			() => {
+				appendSecondaryNav();
+				showModal('menu');
+			},
+			false
+		);
+	}
 };
 
 const Masthead = () => {

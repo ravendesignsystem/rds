@@ -6,10 +6,9 @@ $masthead_height: 72px;
 
 body {
 	margin-top: 75px;
-
-	@include media('<=s') {
-		margin-top: 148px;
-	}
+}
+.extraMarginTop {
+	margin-top: 148px;
 }
 
 #b-masthead {
@@ -164,24 +163,24 @@ body {
 // -----------------------------
 
 // @include media("<=s") {
-	.masthead__second-level {
-		position: absolute;
-		top: $masthead_height + 1px;
-		left: 0;
-		background-color: white;
-		border-bottom: 1px solid $grey-yoda;
-		overflow-x: scroll;
-		overflow-y: hidden;
-		-webkit-overflow-scrolling: touch;
-		
-		&::-webkit-scrollbar {
-			display: none;
-		}
+.masthead__second-level {
+	position: absolute;
+	top: $masthead_height + 1px;
+	left: 0;
+	background-color: white;
+	border-bottom: 1px solid $grey-yoda;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
 
-		ul.menupopup__menu {
-			position: fixed;
-		}
+	&::-webkit-scrollbar {
+		display: none;
 	}
+
+	ul.menupopup__menu {
+		position: fixed;
+	}
+}
 // }
 
 //
