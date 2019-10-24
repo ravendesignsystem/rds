@@ -122,7 +122,8 @@ body {
 	list-style: none;
 	margin: 0;
 
-	li {
+	li, button {
+		height: 72px;
 		line-height: 72px;
 	}
 
