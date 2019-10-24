@@ -163,7 +163,7 @@ body {
 // Masthead Second Line Nav
 // -----------------------------
 
-@include media("<=s") {
+// @include media("<=s") {
 	.masthead__second-level {
 		position: absolute;
 		top: $masthead_height + 1px;
@@ -172,25 +172,17 @@ body {
 		border-bottom: 1px solid $grey-yoda;
 		overflow-x: scroll;
 		overflow-y: hidden;
-		// -webkit-overflow-scrolling: touch;
+		-webkit-overflow-scrolling: touch;
 		
 		&::-webkit-scrollbar {
 			display: none;
 		}
-	}
 
-	// .menupopup__menu {
-	// 	//position: fixed;
-	// 	position: absolute;
-	// 	top: 70px;
-	// 	margin-left: 5px;
-	
-	// 	//IE Only styles
-	// 	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	// 		margin-left: -50px;
-	// 	}
-	// }
-}
+		ul.menupopup__menu {
+			position: fixed;
+		}
+	}
+// }
 
 //
 // Masthead Action Button Styles

@@ -11,7 +11,7 @@
 		<ul role="menu">
 			<li {% if page.subsite == 'about' %}class="u-active"{% endif %} ><a href="{{ site.url }}about/">About RDS</a></li>
 			<li {% if page.subsite == 'dev' %}class="u-active"{% endif %} ><a href="{{ site.url }}dev/">Dev</a></li>
-			<li class="c-menupopup"><a {% if page.subsite == 'dev' %}class="u-active"{% endif %} href="{{ site.url }}dev/">Dev Sub</a>
+			<li><a class="c-menupopup" {% if page.subsite == 'dev' %}class="u-active"{% endif %} href="{{ site.url }}dev/">Dev Sub</a>
 				<ul class="menupopup__menu" aria-label="menupopup">
 					<li>
 						<a href="#">Submenu link a</a>
