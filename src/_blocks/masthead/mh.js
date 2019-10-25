@@ -7,12 +7,18 @@ let st;
 const body = document.querySelector('body');
 const masthead = document.querySelector('#b-masthead');
 const mastheadNav = document.querySelector('.masthead__nav');
+const mastheadNavUL = document.querySelector('.masthead__nav ul');
+const mastheadActions = document.querySelector('.masthead__actions ul');
+const mastheadActionsCTA = mastheadActions.querySelectorAll(
+	`li[class*="masthead__"]`
+);
+
 const mastheadHeight = masthead.offsetHeight;
 const mastheadSearch = document.querySelector('.masthead__search');
 const mastheadNavIcon = document.querySelector('.masthead__navicon');
 // const mhNavIconButton = document.querySelector('.c-navicon');
 const mastheadLogin = document.querySelector('.masthead__login');
-const mastHeadCloseAllModals = document.querySelector(
+const globalCloseModalButton = document.querySelector(
 	'.masthead__close-modals'
 );
 const modal = document.querySelector('.l-overlay-modal');
@@ -28,10 +34,8 @@ const secondaryNav = document.querySelector('.b-menu');
  *  @param { html entity } element element to compare
  *  @return { boolean }
  */
-const detectOverflowOnMasthead = function(element) {
-	const m = document.querySelector('.masthead__nav');
-	const mu = document.querySelector('.masthead__nav ul');
-	return m.offsetWidth <= mu.offsetWidth + 1;
+const detectOverflowOnMasthead = () => {
+	return mastheadNav.offsetWidth <= mastheadNavUL.offsetWidth + 1;
 };
 
 /**
@@ -105,17 +109,23 @@ const preventScroll = function() {
  */
 const showModal = type => {
 	const modalToShow = document.querySelector(`.modal__${type}`);
-	const modalToShowButton = document.querySelector(`.masthead__${type}`);
-	const isMenu = type === 'menu' ? mastheadNavIcon : modalToShowButton;
+	// const modalToShowButton = document.querySelector(`.masthead__${type}`);
+	// const isMenu = type === 'menu' ? mastheadNavIcon : modalToShowButton;
 
 	// show modal container
 	modal.style.display = 'block';
-	// hide selected modal CTA
-	isMenu.classList.add('u-visually-hidden');
+	// hide masthead actions
+	Array.from(mastheadActionsCTA).map(el =>
+		el.classList.add('u-visually-hidden')
+	);
+	// hide masthead nav
+	if (!mastheadNav.classList.contains('masthead__second-level')) {
+		mastheadNav.classList.add('u-visually-hidden');
+	}
 	// show selected modal content
 	modalToShow.classList.remove('u-visually-hidden');
 	// show close all modals CTA
-	mastHeadCloseAllModals.classList.remove('u-visually-hidden');
+	globalCloseModalButton.classList.remove('u-visually-hidden');
 	//prevent scrolling while modal is open
 	preventScroll();
 };
@@ -131,8 +141,11 @@ const closeAllModals = () => {
 	// hide login modal
 	modalLogin.classList.add('u-visually-hidden');
 	// hide close all modal CTA
-	mastHeadCloseAllModals.classList.add('u-visually-hidden');
-
+	Array.from(mastheadActionsCTA).map(el =>
+		el.classList.remove('u-visually-hidden')
+	);
+	globalCloseModalButton.classList.add('u-visually-hidden');
+	mastheadNav.classList.remove('u-visually-hidden');
 	// show/hide CTA buttons for modals in masthead depending on selected modal
 	if (modalSearch) {
 		mastheadSearch.classList.remove('u-visually-hidden');
@@ -161,7 +174,7 @@ const removeSecondaryNav = () => {
 	}
 };
 
-const MastheadIsScrolling = () => {
+const handleScroll = () => {
 	window.addEventListener(
 		'scroll',
 		() => {
@@ -170,7 +183,7 @@ const MastheadIsScrolling = () => {
 		false
 	);
 };
-const MastheadIsResizing = () => {
+const handleResize = () => {
 	window.addEventListener(
 		'resize',
 		() => {
@@ -185,8 +198,11 @@ const MastheadIsResizing = () => {
 		false
 	);
 };
-
-const MastheadIsLoading = () => {
+/**
+ *  @name handleLoading()
+ *  @desc init function for the masthead functionality
+ */
+const handleLoading = () => {
 	window.addEventListener(
 		'load',
 		() => {
@@ -203,7 +219,7 @@ const MastheadIsLoading = () => {
 	);
 };
 
-const MastheadHandleClick = () => {
+const handleClick = () => {
 	mastheadSearch.addEventListener(
 		'click',
 		e => {
@@ -218,7 +234,7 @@ const MastheadHandleClick = () => {
 		},
 		false
 	);
-	mastHeadCloseAllModals.addEventListener(
+	globalCloseModalButton.addEventListener(
 		'click',
 		() => {
 			closeAllModals();
@@ -237,12 +253,15 @@ const MastheadHandleClick = () => {
 		);
 	}
 };
-
+/**
+ *  @name Masthead()
+ *  @desc init function for the masthead functionality
+ */
 const Masthead = () => {
-	MastheadIsScrolling();
-	MastheadIsResizing();
-	MastheadIsLoading();
-	MastheadHandleClick();
+	handleScroll();
+	handleResize();
+	handleLoading();
+	handleClick();
 };
 
 export default Masthead;
