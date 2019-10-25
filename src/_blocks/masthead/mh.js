@@ -118,7 +118,7 @@ const showModal = type => {
 	Array.from(mastheadActionsCTA).map(el =>
 		el.classList.add('u-visually-hidden')
 	);
-	// hide masthead nav
+	// hide masthead nav if it does not include second level
 	if (!mastheadNav.classList.contains('masthead__second-level')) {
 		mastheadNav.classList.add('u-visually-hidden');
 	}
