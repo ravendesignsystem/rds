@@ -6,7 +6,7 @@
 	background: white;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
-	top: 74px; //account for masthead
+	top: 75px; //account for masthead
 	left: 0;
 	border: 0;
 
@@ -17,6 +17,10 @@
 	&:not([open]) { // HTML 5 <dialogue> polyfill
 		display: none;
 	}
+}
+
+.extraMarginTop .l-overlay-modal {
+	top: 148px;
 }
 
 //.l-overlay-modal--tall {
