@@ -119,9 +119,9 @@ const showModal = type => {
 		el.classList.add('u-visually-hidden')
 	);
 	// hide masthead nav if it does not include second level
-	if (!mastheadNav.classList.contains('masthead__second-level')) {
-		mastheadNav.classList.add('u-visually-hidden');
-	}
+	// if (!mastheadNav.classList.contains('masthead__second-level')) {
+	// 	mastheadNav.classList.add('u-visually-hidden');
+	// }
 	// show selected modal content
 	modalToShow.classList.remove('u-visually-hidden');
 	// show close all modals CTA
