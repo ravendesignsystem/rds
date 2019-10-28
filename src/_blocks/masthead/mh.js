@@ -28,6 +28,13 @@ const modalLogin = document.querySelector('.modal__login');
 // const moveMenu = document.querySelector('.js-overlay-movemenu');
 const secondaryNav = document.querySelector('.b-menu');
 
+const setAriaHidden = target => {
+	target.setAttribute('aria-hidden', false);
+};
+const unsetAriaHidden = target => {
+	target.setAttribute('aria-hidden', true);
+};
+
 /**
  *  @name detectOverflowOnMasthead()
  *  @desc returns boolean where viewport width is compared to elements total width
@@ -75,8 +82,9 @@ const mastheadHasDropNav = () => {
 const toggleMastheadVisibilty = () => {
 	scrollPosition = window.scrollY;
 	st = window.pageYOffset || document.documentElement.scrollTop;
+	const modalIsOpen = modal.getAttribute('aria-hidden');
 
-	if (st > lastScrollTop && st > mastheadHeight) {
+	if (st > lastScrollTop && st > mastheadHeight && modalIsOpen === 'false') {
 		// on scroll down
 		masthead.classList.add('hidden');
 	} else {
@@ -91,16 +99,16 @@ const toggleMastheadVisibilty = () => {
  *  @desc disables scroll on body
  */
 const preventScroll = function() {
-	if (
-		document.body.style.overflowY === '' ||
-		document.body.style.overflowY === 'auto'
-	) {
-		(document.body.style.position = 'fixed'),
-			(document.body.style.overflowY = 'scroll');
-	} else {
-		(document.body.style.position = 'static'),
-			(document.body.style.overflowY = 'auto');
-	}
+	// if (
+	// 	document.body.style.overflowY === '' ||
+	// 	document.body.style.overflowY === 'auto'
+	// ) {
+	// 	(document.body.style.position = 'fixed'),
+	// 		(document.body.style.overflowY = 'scroll');
+	// } else {
+	// 	(document.body.style.position = 'static'),
+	// 		(document.body.style.overflowY = 'auto');
+	// }
 };
 /**
  *  @name showModal()
@@ -114,6 +122,8 @@ const showModal = type => {
 
 	// show modal container
 	modal.style.display = 'block';
+	unsetAriaHidden(modal);
+
 	// hide masthead actions
 	Array.from(mastheadActionsCTA).map(el =>
 		el.classList.add('u-visually-hidden')
@@ -133,6 +143,7 @@ const showModal = type => {
 const closeAllModals = () => {
 	// hide modal container
 	modal.style.display = 'none';
+	setAriaHidden(modal);
 	// hide search modal
 	modalSearch.classList.add('u-visually-hidden');
 	// hide login modal

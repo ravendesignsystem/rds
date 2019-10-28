@@ -14,13 +14,14 @@
 		background: transparent;
 	}
 
-	&:not([open]) { // HTML 5 <dialogue> polyfill
+	&:not([open]) {
+		// HTML 5 <dialogue> polyfill
 		display: none;
 	}
 }
 
 .extraMarginTop .l-overlay-modal {
-	top: 148px;
+	top: 147px;
 }
 
 //.l-overlay-modal--tall {
@@ -33,11 +34,10 @@
 //}
 
 .l-overlay-modal--cu {
-
-	@include media(">=s") {
+	@include media('>=s') {
 		background-color: rgba(255, 255, 255, 0.95);
 	}
-	@include media(">=1472px") {
+	@include media('>=1472px') {
 		top: 90px;
 	}
 }
