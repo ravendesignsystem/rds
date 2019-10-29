@@ -3,7 +3,6 @@ import dialogPolyfill from 'dialog-polyfill';
 let scrollPosition;
 let lastScrollTop = 0;
 let st;
-// let isNavIconHidden = null;
 const body = document.querySelector('body');
 const masthead = document.querySelector('#b-masthead');
 const mastheadNav = document.querySelector('.masthead__nav');
@@ -46,13 +45,26 @@ const detectOverflowOnMasthead = () => {
 };
 
 /**
+ *  @name toggleMastheadSizeAlert()
+ *  @desc adds class to display red banner error stating the menu is too wide
+ */
+const toggleMastheadSizeAlert = () => {
+	if (window.innerWidth >= 960 && detectOverflowOnMasthead(mastheadNav)) {
+		mastheadNav.classList.add('masthead__overflow-detected');
+	}
+};
+
+/**
  *  @name toggleMastheadDropNav()
  *  @desc adds class to move the menu to a second level if conditions are met
  */
 const toggleMastheadDropNav = () => {
 	if (window.innerWidth <= 960 || detectOverflowOnMasthead(mastheadNav)) {
 		mastheadNav.classList.add('masthead__second-level');
-	} else if (window.innerWidth >= 96 && !detectOverflowOnMasthead(mastheadNav)) {
+	} else if (
+		window.innerWidth >= 961 &&
+		!detectOverflowOnMasthead(mastheadNav)
+	) {
 		mastheadNav.classList.remove('masthead__second-level');
 	} else {
 		return;
@@ -179,15 +191,23 @@ const handleScroll = () => {
 	);
 };
 const handleResize = () => {
+	let timeout = true;
+
 	window.addEventListener(
 		'resize',
 		() => {
+			if (!timeout) return;
+
+			timeout = false;
+			toggleMastheadSizeAlert();
 			toggleMastheadDropNav();
+
 			if (mastheadHasDropNav()) {
 				body.classList.add('extraMarginTop');
 			} else {
 				body.classList.remove('extraMarginTop');
 			}
+			setTimeout(() => (timeout = true), 500);
 		},
 		false
 	);
@@ -201,6 +221,7 @@ const handleLoading = () => {
 		'load',
 		() => {
 			toggleMastheadDropNav();
+			toggleMastheadSizeAlert();
 
 			if (mastheadHasDropNav()) {
 				body.classList.add('extraMarginTop');
