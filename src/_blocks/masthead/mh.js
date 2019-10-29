@@ -29,10 +29,10 @@ const modalLogin = document.querySelector('.modal__login');
 const secondaryNav = document.querySelector('.b-menu');
 
 const setAriaHidden = target => {
-	target.setAttribute('aria-hidden', false);
+	target.setAttribute('aria-hidden', true);
 };
 const unsetAriaHidden = target => {
-	target.setAttribute('aria-hidden', true);
+	target.setAttribute('aria-hidden', false);
 };
 
 /**
@@ -82,14 +82,14 @@ const mastheadHasDropNav = () => {
 const toggleMastheadVisibilty = () => {
 	scrollPosition = window.scrollY;
 	st = window.pageYOffset || document.documentElement.scrollTop;
-	const modalIsOpen = modal.getAttribute('aria-hidden');
+	const modalIsClosed = modal.getAttribute('aria-hidden');
 
-	if (st > lastScrollTop && st > mastheadHeight && modalIsOpen === 'false') {
+	if (st > lastScrollTop && st > mastheadHeight && modalIsClosed === 'true') {
 		// on scroll down
 		masthead.classList.add('hidden');
 	} else {
-		// on scroll up
 		masthead.classList.remove('hidden');
+		// on scroll up
 	}
 	lastScrollTop = st <= 0 ? 0 : st;
 };
