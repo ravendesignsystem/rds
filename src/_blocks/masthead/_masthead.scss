@@ -216,23 +216,3 @@ body {
 	top: 0;
 	right: 0;
 }
-
-//
-// Heavy-handed Overflow detection
-// -----------------------------
-
-.masthead__overflow-detected.masthead__nav::before {
-	content: 'YOUR MENU IS TOO WIDE! PLEASE SHORTEN IT OR USE A VERTICAL SIDE NAV MENU. THANK YOU!';
-	color: white;
-}
-
-.masthead__overflow-detected.masthead__nav {
-	background-color: $red !important;
-	width: 3000px;
-	color: white;
-	padding: 0 40px;
-
-	ul {
-		display: none;
-	}
-}
