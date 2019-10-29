@@ -3,6 +3,7 @@ import dialogPolyfill from 'dialog-polyfill';
 let scrollPosition;
 let lastScrollTop = 0;
 let st;
+// let isNavIconHidden = null;
 const body = document.querySelector('body');
 const masthead = document.querySelector('#b-masthead');
 const mastheadNav = document.querySelector('.masthead__nav');
@@ -15,6 +16,7 @@ const mastheadActionsCTA = mastheadActions.querySelectorAll(
 const mastheadHeight = masthead.offsetHeight;
 const mastheadSearch = document.querySelector('.masthead__search');
 const mastheadNavIcon = document.querySelector('.masthead__navicon');
+// const mhNavIconButton = document.querySelector('.c-navicon');
 const mastheadLogin = document.querySelector('.masthead__login');
 const globalCloseModalButton = document.querySelector(
 	'.masthead__close-modals'
@@ -23,6 +25,7 @@ const modal = document.querySelector('.l-overlay-modal');
 const modalMenu = document.querySelector('.modal__menu');
 const modalSearch = document.querySelector('.modal__search');
 const modalLogin = document.querySelector('.modal__login');
+// const moveMenu = document.querySelector('.js-overlay-movemenu');
 const secondaryNav = document.querySelector('.b-menu');
 
 const setAriaHidden = target => {
@@ -33,16 +36,23 @@ const unsetAriaHidden = target => {
 };
 
 /**
+ *  @name detectOverflowOnMasthead()
+ *  @desc returns boolean where viewport width is compared to elements total width
+ *  @param { html entity } element element to compare
+ *  @return { boolean }
+ */
+const detectOverflowOnMasthead = () => {
+	return mastheadNav.offsetWidth <= mastheadNavUL.offsetWidth + 1;
+};
+
+/**
  *  @name toggleMastheadDropNav()
  *  @desc adds class to move the menu to a second level if conditions are met
  */
 const toggleMastheadDropNav = () => {
 	if (window.innerWidth <= 960 || detectOverflowOnMasthead(mastheadNav)) {
 		mastheadNav.classList.add('masthead__second-level');
-	} else if (
-		window.innerWidth >= 961 &&
-		!detectOverflowOnMasthead(mastheadNav)
-	) {
+	} else if (window.innerWidth >= 96 && !detectOverflowOnMasthead(mastheadNav)) {
 		mastheadNav.classList.remove('masthead__second-level');
 	} else {
 		return;
@@ -71,6 +81,22 @@ const toggleMastheadVisibilty = () => {
 	lastScrollTop = st <= 0 ? 0 : st;
 };
 
+/**
+ *  @name preventScroll()
+ *  @desc disables scroll on body
+ */
+const preventScroll = function() {
+	// if (
+	// 	document.body.style.overflowY === '' ||
+	// 	document.body.style.overflowY === 'auto'
+	// ) {
+	// 	(document.body.style.position = 'fixed'),
+	// 		(document.body.style.overflowY = 'scroll');
+	// } else {
+	// 	(document.body.style.position = 'static'),
+	// 		(document.body.style.overflowY = 'auto');
+	// }
+};
 /**
  *  @name showModal()
  *  @desc reveals modals depending on type passed in
@@ -175,7 +201,6 @@ const handleLoading = () => {
 		'load',
 		() => {
 			toggleMastheadDropNav();
-			toggleMastheadSizeAlert();
 
 			if (mastheadHasDropNav()) {
 				body.classList.add('extraMarginTop');
