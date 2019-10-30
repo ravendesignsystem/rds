@@ -2,9 +2,9 @@
 	position: relative;
 	cursor: pointer;
 
-	.u-active {
-		padding-right: 18px;
-	}
+	// .u-active {
+	// 	padding-right: 18px;
+	// }
 }
 
 .js-menupopup-clonetxt a::after {
@@ -76,7 +76,7 @@ a.c-menupopup::after {
 	}
 
 	a {
-		padding: 8px 15px;
+		padding: 8px 25px 8px 15px;
 		height: auto;
 		line-height: 1.25;
 		font-size: $pixel14;

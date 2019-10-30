@@ -344,6 +344,11 @@ a.u-link,
 	margin-left: 30px;
 }
 
+.u-hide {
+	opacity: 0;
+	visibility: hidden;
+}
+
 // hide on small screens
 @include media('<=s') {
 	.u-hide-s:not(.u-show-s) {

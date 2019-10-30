@@ -163,7 +163,7 @@ Very few icons are universally recognized among all users. As rare as these are,
 
 - <span class="u-icon">{% include "icons/home.svg" %} home</span> 
 - <span class="u-icon">{% include "icons/search.svg" %} search</span> 
-- <span class="u-icon">{% include "icons/grabber.svg" %} hamburger menu</span> 
+- <span class="u-icon">{% include "icons/grabber.svg" %} nav icon</span> 
 - <span class="u-icon">{% include "icons/facebook.svg" %} Facebook</span>  
 - <span class="u-icon">{% include "icons/twitter.svg" %} Twitter</span> 
 - <span class="u-icon">{% include "icons/instagram.svg" %} Instagram</span> 

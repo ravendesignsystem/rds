@@ -62,7 +62,8 @@ import dialogPolyfill from 'dialog-polyfill';
 			if (isOverflowing(mhNav) || window.innerWidth <= 960) {
 				isNav2packed = true;
 				body.classList.add('js-masthead-2packed');
-				// setup vars to test if resizing bigger or smaller
+				body.classList.add('body--extra-margin-top');
+				// setup vars to test if resizing bi gger or smaller
 				let xwidth = window.innerWidth;
 				lastX = xwidth;
 			} else {
@@ -71,6 +72,7 @@ import dialogPolyfill from 'dialog-polyfill';
 				// needed to reduce flickering on resize
 				if (lastX < xwidth) {
 					body.classList.remove('js-masthead-2packed');
+					body.classList.remove('body--extra-margin-top');
 				}
 			}
 		};

@@ -47,7 +47,7 @@ To use the Basic Top Nav, you:
 
 - likely, require a short site title.
 - are limited to a small number of top level nav items, without long names.
-- can only use a limited amount, or no, Masthead action items. The good news here is you won't need a mobile (hamburger) menu. But if, you want a search button, it gets that much tighter.
+- can only use a limited amount, or no, Masthead action items. The good news here is you won't need a mobile nav icon. But if, you want a search button, it gets that much tighter.
 
 While this nav is limited to one level, you can use [button submenus](https://codepen.io/cuweb/pen/XWraZyv) to fit in more navigation items. But, you need to make sure they also have enough space for proper viewing. If so, this does provide the ability to have bigger sites and still use the Simple Top Nav.
 
@@ -194,7 +194,7 @@ The Side Nav can handle up to three levels of navigation hierarchy. On the homep
 #### Cons
 
 - The [single column layout](#) is NOT available using this navigation.
-- The menu is less discoverable on mobile, requiring users to click the mobile (hamburger menu) to access it. Although, this has become a familiar pattern for mobile users.
+- The menu is less discoverable on mobile, requiring users to click the mobile nav icon to access it. Although, this has become a familiar pattern for mobile users.
 
 #### Usage
 

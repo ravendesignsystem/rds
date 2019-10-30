@@ -1,339 +1,218 @@
-.js-masthead-2packed .b-masthead {
-	height: 150px;
+//
+// Main Masthead Styles
+// -----------------------------
 
-	& .masthead__nav {
-		position: absolute;
-		top: 75px;
-		left: 0;
-	}
+$masthead_height: 72px;
+
+body {
+	margin-top: 75px;
 }
 
-.js-masthead-2biggie .masthead__nav {
-	background-color: $red !important;
-	width: 3000px;
-	color: white;
-	padding: 0 40px;
-
-	a {
-		color: $red;
-	}
+.extraMarginTop {
+	margin-top: 150px;
 }
 
-.js-masthead-2biggie .masthead__nav::before {
-	content: 'YOUR MENU IS TOO WIDE! PLEASE SHORTEN IT OR USE A VERTICAL SIDE NAV MENU. THANK YOU!';
-	color: white;
-}
-
-// used in conjunction with js to stick the masthead on scroll up
-.js-masthead--stickyscroll {
-	position: fixed !important;
+#b-masthead {
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 10;
-}
 
-// used when nav is stacked and modal gets opened
-.js-masthead-2packed .l-overlay-modal {
-	top: 150px !important;
-}
-
-.b-masthead {
-	// Positioning
-	position: relative;
-	z-index: 10000;
-	// Box-model
-	display: flex;
-	justify-content: flex-start;
-	height: 73px;
 	// Visual
+	height: 75px;
 	border-top: 2px solid $red;
 	border-bottom: 1px solid $grey-kenobi;
 	background-color: white;
-	// Misc
+	z-index: 10000;
 	transition: 0.2s;
 }
 
-.b-masthead a,
-.b-masthead button {
-	display: inline-flex;
-	padding-left: 15px;
-	padding-right: 15px;
-	align-items: center;
-	font-size: 14px;
-	font-weight: 500;
-
-	svg {
-		height: 16px;
-		width: 16px;
-	}
+// TODO replace in JS with u-hide that exists in core utils
+.hidden {
+	opacity: 0;
+	visibility: hidden;
 }
+
+//
+// Masthead Flex Layout
+// -----------------------------
+
+.b-masthead,
+.masthead__brand,
+.masthead__actions,
+.masthead__nav {
+	height: $masthead_height;
+	display: flex;
+	align-items: center;
+}
+
+.masthead__brand,
+.masthead__nav {
+	justify-content: flex-start;
+}
+
+.masthead__actions {
+	justify-content: flex-end;
+	margin-left: auto;
+}
+
+//
+// Main Masthead Modifiers
+// -----------------------------
 
 .b-masthead--shadow {
 	box-shadow: 0 10px 11px -7px $grey-yoda;
 	margin-bottom: 6px;
 }
 
+//
+// Masthead Branding
+// -----------------------------
+
 .masthead__brand {
-	display: inline-flex;
 	white-space: nowrap;
-	align-items: center;
-	height: 72px;
+	padding: 0 15px;
 
 	@include media('>s') {
+		padding: 0 15px;
 		border-right: 1px solid $grey-yoda;
 	}
-}
 
-.masthead__brand svg:not(.c-culogo) {
-	min-width: 40px;
-	height: 40px;
-	vertical-align: middle;
-	margin-right: 3px;
-}
+	h1,
+	h2 {
+		margin: 0;
+		padding: 0;
 
-// cu homepage logo without text
-.masthead__brand h1 {
+		span {
+			display: table;
+		}
+	}
+
+	a {
+		display: flex;
+		align-items: center;
+		font-size: 18px;
+
+		&:hover {
+			color: $red;
+		}
+
+		@include media('>s') {
+			font-size: 20px;
+		}
+	}
+
 	svg {
+		width: 40px;
 		height: 40px;
-		width: auto;
+		margin-right: 3px;
 	}
 }
 
-.masthead__brand h1,
-.masthead__brand h2 {
-	margin: 6px 0 0;
-	padding-bottom: 0;
-
-	span {
-		display: table;
-	}
-}
-
-.masthead__brand a {
-	font-size: 18px;
-	display: inline-flex;
-	align-items: center;
-	//height: $b-height;
-	padding-left: 8px;
-	padding-right: 8px;
-
-	&:hover {
-		color: $red;
-	}
-
-	@include media('>=s') {
-		padding-left: 15px;
-		padding-right: 15px;
-		font-size: 20px;
-	}
-}
-
-.b-masthead--responsivenav {
-	height: 150px;
-
-	@include media('>=960px') {
-		height: 74px;
-	}
-}
+//
+// Masthead Nav Styles
+// -----------------------------
 
 .masthead__nav {
-	-webkit-overflow-scrolling: touch;
-	-ms-overflow-style: -ms-autohiding-scrollbar;
-	// TODO - I don't know if this effects sub navigation
-	// position: relative;
-	//overflow: auto;
-	//overflow-y: hidden;
-	border-top: 1px solid $grey-kenobi;
-	// for smaller stacked on s
-	// above---------
-	align-items: center;
-	white-space: nowrap;
 	width: 100%;
-	overflow-x: scroll;
-	-ms-overflow-style: none; // IE 10+
-	scrollbar-width: none; // Firefox
-	overflow-y: hidden;
-
-	&::-webkit-scrollbar {
-		width: 0px; /* Remove scrollbar space */
-		background: transparent; /* Optional: just make scrollbar invisible */
-	}
 }
 
-.b-masthead--responsivenav .masthead__nav {
-	position: absolute;
-	top: 73px;
-	display: inline-flex;
+.masthead__nav > ul,
+.masthead__actions > ul {
+	display: flex;
+	align-items: center;
+	list-style: none;
+	margin: 0;
 
-	@include media('>=960px') {
-		position: relative;
-		top: auto;
-		overflow-x: hidden;
-		overflow-y: hidden;
+	> li,
+	button {
+		height: $masthead_height;
+		line-height: $masthead_height;
+	}
 
-		// IE11 fix
-		// TODO: look into @support grid
-		@media screen and (-ms-high-contrast: active),
-			screen and (-ms-high-contrast: none) {
-			position: absolute;
+	a,
+	button {
+		display: flex;
+		align-items: center;
+		font-size: 0.875rem;
+		font-weight: 500;
+		white-space: nowrap;
+		padding-left: 15px;
+		padding-right: 15px;
+
+		&:hover {
+			color: $red;
 		}
 	}
 
-	a:hover {
+	.c-menupopup a,
+	.c-menupopup button {
+		padding-right: 25px;
+
+		&:after {
+			right: 14px;
+		}
+	}
+
+	.u-active a {
 		color: $red;
 	}
 }
 
-.masthead__nav ul,
-.masthead__actions ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	display: inline-flex;
-}
+//
+// Masthead Second Line Nav
+// -----------------------------
 
-// this slides out the top nav on small devices
-// to remind users they can scroll horizontally
-// Note: it is only applied if the body tag has a class of 'homepage'.
-.masthead__nav.js-masthead-slidenav > ul {
-	animation-duration: 0.666s;
-	animation-name: masthead__nav--slidein;
-}
-
-@keyframes masthead__nav--slidein {
-	from {
-		margin-left: 900px;
-	}
-
-	to {
-		margin-left: 0;
-	}
-}
-
-.masthead__nav > ul > li,
-.masthead__actions > ul > li {
-	display: inline-flex;
-	position: relative;
-	height: 72px;
-	//line-height: 72px;
-
-	//&:hover > a {
-	//	color: $red;
-	//}
-}
-
-.js-masthead-2packed
-	.b-masthead--responsivenav
-	.masthead__nav
-	.c-menupopup:hover
-	ul.menupopup__menu {
-	top: 150px;
-}
-
-.b-masthead .menupopup__menu {
-	//position: fixed;
+// @include media("<=s") {
+.masthead__second-level {
 	position: absolute;
-	top: 70px;
-	margin-left: 5px;
-
-	//IE Only styles
-	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-		margin-left: -50px;
-	}
-}
-
-// used for displaying masthead nav submenus - js sets some of this
-.b-masthead--responsivenav
-	.masthead__nav
-	.c-menupopup:hover
-	ul.menupopup__menu {
-	position: fixed;
-	top: 146px;
-
-	@include media('>=960px') {
-		top: 70px;
-	}
-}
-
-.js-masthead-2packed ul.menupopup__menu.u-fixed {
-	top: 146px !important;
-}
-
-.masthead__actions {
-	display: inline-flex;
-	align-items: center;
-	height: 72px;
-	margin-left: auto;
-}
-
-.masthead__actions > ul > li {
-	border-left: 1px solid $grey-kenobi;
-}
-
-li.masthead__cta > a {
-	background-color: $red;
-	color: white;
-	display: flex;
-
-	svg {
-		fill: white;
-	}
-
-	&:after {
-		color: white;
-		//right: 15px !important;
-	}
-}
-
-li.masthead__cta--white {
-	border-bottom: 1px solid $grey-kenobi !important;
-}
-
-li.masthead__cta--white > a {
+	top: $masthead_height + 1px;
+	left: 0;
 	background-color: white;
-	color: $black;
+	border-bottom: 1px solid $grey-yoda;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
 
-	svg {
-		fill: black;
+	&::-webkit-scrollbar {
+		display: none;
 	}
 
-	&:after {
-		color: $black !important;
+	ul.menupopup__menu {
+		position: fixed;
 	}
 }
-@media (hover: hover) {
-	// if it's not a touch device
-	.masthead__actions ul > li > a:hover,
-	.masthead__actions > ul li > button:hover {
-		color: $black;
+// }
+
+//
+// Masthead Action Button Styles
+// -----------------------------
+
+.masthead__actions ul li {
+	border-left: 1px solid $grey-yoda;
+
+	a:hover {
 		background-color: $grey-kenobi;
+		color: black;
+	}
+}
+
+.masthead__cta:not(.masthead__cta--white) {
+	background-color: $red;
+	border-left: transparent;
+	border-bottom: 1px solid $red;
+
+	a {
+		color: white;
 
 		svg {
-			fill: $black;
-		}
-
-		&:after {
-			color: $black;
+			fill: white;
 		}
 	}
 }
 
-li.masthead__cta.c-menupopup > a {
-	padding-right: 25px;
-
-	&:after {
-		right: 15px !important;
-	}
-}
-
-.masthead__nav .u-active > a,
-.masthead__nav .u-active > button {
-	color: $red;
-}
-
-.masthead__sep {
-	border-left: 1px solid #dfdfdf;
-	padding-left: 12px;
-	margin-left: 12px;
+.masthead__close-modals {
+	position: absolute;
+	top: 0;
+	right: 0;
 }

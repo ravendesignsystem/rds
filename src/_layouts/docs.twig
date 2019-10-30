@@ -112,7 +112,7 @@
                                         <div class="c-alert c-alert--info c-alert--icon u-hide-s">
                                             {% include "icons/info.svg" %}
                                             <h2>Dude, where's my left-side nav?</h2>
-                                            <p>To show full width elements on this page, we removed the <-- left-side secondary navigation. In lieu of this, we have added the mobile/hamburger menu (top-right) in the masthead ^ above . </p>
+                                            <p>To show full width elements on this page, we removed the <-- left-side secondary navigation. In lieu of this, we have added the mobile nav icon menu (top-right) in the masthead ^ above . </p>
                                         </div>
                                     {% endif %}
                             {% if page.content != 'none' %}
@@ -167,7 +167,8 @@
         </footer>
     {% endblock %} {# END footer block #}
 {#    <dialog class="l-overlay-modal is-hidden">#}
-    <dialog class="l-overlay-modal">
+    <dialog
+     class="l-overlay-modal" aria-modal="true" aria-hidden="true">
         <div class="modal__search u-visually-hidden">
             {% include "search/search" %}
         </div>
@@ -184,7 +185,7 @@
         {# Good to wrap in an is-logged-in conditional...#}
         <div class="modal__login u-visually-hidden">
             <div class="b-login u-block">
-                <h1 class="login__heading">Login to Your App</h1>
+                <h1 id="aria-dialog-title" class="login__heading">Login to Your App</h1>
                 <form class="c-form" name="loginform" action="/" method="post" accept-charset="UTF-8">
 
                     <label for="user_login">Username</label>

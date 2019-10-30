@@ -661,17 +661,17 @@ Use the {% include 'link' with {'component': 'Menu Popup'} %} to setup a submenu
 
 ### Adding the overlay mobile menu
 
-The three horizontal line mobile (hamburger) menu  <button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
-<span class="c-hamburger__box">
-<span class="c-hamburger__inner"></span>
+The three horizontal line mobile (nav icon) menu  <button aria-label="Open Menu" title="Open site-wide menu" class="c-navicon c-navicon--spin" type="button">
+<span class="c-navicon__box">
+<span class="c-navicon__inner"></span>
 </span>
 </button> is a common control to activate navigation that is hidden to start. The most common use case is on small/mobile screens where space is a premium. We call it the overlay mobile menu because when clicked it opens the [overlay layout](#).This control icon should be the last item (far right) of your masthead and can be added to the actions section with :
 
 ```html
-<li class="masthead__hamburger {% if page.subsite == 'dev' and page.menu != 'dev' %}{% else %}u-hide-l{% endif %}">
-    <button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
-            <span class="c-hamburger__box">
-                <span class="c-hamburger__inner"></span>
+<li class="masthead__navicon__ {% if page.subsite == 'dev' and page.menu != 'dev' %}{% else %}u-hide-l{% endif %}">
+    <button aria-label="Open Menu" title="Open site-wide menu" class="c-navicon c-navicon--spin" type="button">
+            <span class="c-navicon__box">
+                <span class="c-navicon__inner"></span>
             </span>
     </button>
 </li>
@@ -689,10 +689,10 @@ Below is a simple masthead with the overlay mobile menu button.
         </div>
         <div class="masthead__actions" aria-label="Header actions and controls">
             <ul>
-                <li class="masthead__hamburger {% if page.subsite == 'dev' and page.menu != 'dev' %}{% else %}u-hide-l{% endif %}">
-                    <button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
-                            <span class="c-hamburger__box">
-                                <span class="c-hamburger__inner"></span>
+                <li class="masthead__navicon__ {% if page.subsite == 'dev' and page.menu != 'dev' %}{% else %}u-hide-l{% endif %}">
+                    <button aria-label="Open Menu" title="Open site-wide menu" class="c-navicon c-navicon--spin" type="button">
+                            <span class="c-navicon__box">
+                                <span class="c-navicon__inner"></span>
                             </span>
                     </button>
             </li>
@@ -713,10 +713,10 @@ Below is a simple masthead with the overlay mobile menu button.
         </div>
         <div class="masthead__actions" aria-label="Header actions and controls">
             <ul>
-                <li class="masthead__hamburger">
-                    <button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
-                        <span class="c-hamburger__box">
-                            <span class="c-hamburger__inner"></span>
+                <li class="masthead__navicon__">
+                    <button aria-label="Open Menu" title="Open site-wide menu" class="c-navicon c-navicon--spin" type="button">
+                        <span class="c-navicon__box">
+                            <span class="c-navicon__inner"></span>
                         </span>
                     </button>
                 </li>
@@ -731,7 +731,7 @@ Below is a simple masthead with the overlay mobile menu button.
 Most of the time you only need the menu to appear on small screens. To hide the mobile menu on large screens add the utility class `u-hide-l`.
 
 ```html
-<li class="masthead__hamburger u-hide-l">
+<li class="masthead__navicon__ u-hide-l">
 ```
 
 {% include 'close' %}
@@ -745,10 +745,10 @@ Most of the time you only need the menu to appear on small screens. To hide the 
         </div>
         <div class="masthead__actions" aria-label="Header actions and controls">
             <ul>
-                <li class="masthead__hamburger u-hide-l">
-                    <button aria-label="Open Menu" title="Open site-wide menu" class="c-hamburger c-hamburger--spin" type="button">
-                            <span class="c-hamburger__box">
-                                <span class="c-hamburger__inner"></span>
+                <li class="masthead__navicon__ u-hide-l">
+                    <button aria-label="Open Menu" title="Open site-wide menu" class="c-navicon c-navicon--spin" type="button">
+                            <span class="c-navicon__box">
+                                <span class="c-navicon__inner"></span>
                             </span>
                     </button>
             </li>
