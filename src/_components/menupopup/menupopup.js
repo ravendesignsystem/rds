@@ -19,9 +19,9 @@
 				return;
 			} else {
 				// if this is a popup menu in the masthead nav
-				if (mastheadNav.contains(this)) {
-					this.nextElementSibling.classList.add('u-fixed');
-				}
+				// if (mastheadNav.contains(this)) {
+				// 	this.nextElementSibling.classList.add('u-fixed');
+				// }
 			}
 		}
 

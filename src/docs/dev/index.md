@@ -91,7 +91,7 @@ Create DRY blocks using the components below:
 - [Creating custom blocks]({{site.url}}dev/custom-theming/installing-rds/)
 - [Layouts]({{site.url}}dev/custom-theming/layouts/)
 - [Icon system]({{site.url}}dev/custom-theming/icon-system/)
-- [Grid system]({{site.url}}dev/custom-theming/grid-system/)
+- [Grid system]({{site.url}}dev/custom-theming/working-with-grids/)
 
 
 ## Examples

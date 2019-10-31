@@ -5,4 +5,5 @@ subsite: design
 content: true
 ---
 
-> “Digital design is like painting, except the paint never dries.”
+> “System design is really a term we use to talk about best design practices.” 
+- Laying the foundation - Andrew Couldwell
