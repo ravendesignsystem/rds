@@ -27,6 +27,15 @@ body {
 	transition: 0.2s;
 }
 
+.b-masthead a, .b-masthead button {
+	font-size: 0.875rem;
+	font-weight: 500;
+	white-space: nowrap;
+	padding-left: 15px;
+	padding-right: 15px;
+	position: relative;
+}
+
 // TODO replace in JS with u-hide that exists in core utils
 .hidden {
 	opacity: 0;
@@ -40,16 +49,16 @@ body {
 .b-masthead,
 .masthead__brand,
 .masthead__actions,
-.masthead__nav {
+.c-nav {
 	height: $masthead_height;
 	display: flex;
 	align-items: center;
 }
 
-.masthead__brand,
-.masthead__nav {
-	justify-content: flex-start;
-}
+//.masthead__brand,
+//.masthead__nav {
+//	justify-content: flex-start;
+//}
 
 .masthead__actions {
 	justify-content: flex-end;
@@ -57,7 +66,7 @@ body {
 }
 
 //
-// Main Masthead Modifiers
+// Masthead Modifiers
 // -----------------------------
 
 .b-masthead--shadow {
@@ -112,13 +121,12 @@ body {
 //
 // Masthead Nav Styles
 // -----------------------------
+//
+//.masthead__nav {
+//	width: 100%;
+//}
 
-.masthead__nav {
-	width: 100%;
-}
-
-.masthead__nav > ul,
-.masthead__actions > ul {
+.b-masthead div > ul, .b-masthead nav > ul {
 	display: flex;
 	align-items: center;
 	list-style: none;
@@ -134,14 +142,9 @@ body {
 	button {
 		display: flex;
 		align-items: center;
-		font-size: 0.875rem;
-		font-weight: 500;
-		white-space: nowrap;
-		padding-left: 15px;
-		padding-right: 15px;
 
 		&:hover {
-			color: $red;
+			background-color: $grey-yoda;
 		}
 	}
 
@@ -164,24 +167,24 @@ body {
 // -----------------------------
 
 // @include media("<=s") {
-.masthead__second-level {
-	position: absolute;
-	top: $masthead_height + 1px;
-	left: 0;
-	background-color: white;
-	border-bottom: 1px solid $grey-yoda;
-	overflow-x: scroll;
-	overflow-y: hidden;
-	-webkit-overflow-scrolling: touch;
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
-
-	ul.menupopup__menu {
-		position: fixed;
-	}
-}
+//.masthead__second-level {
+//	position: absolute;
+//	top: $masthead_height + 1px;
+//	left: 0;
+//	background-color: white;
+//	border-bottom: 1px solid $grey-yoda;
+//	overflow-x: scroll;
+//	overflow-y: hidden;
+//	-webkit-overflow-scrolling: touch;
+//
+//	&::-webkit-scrollbar {
+//		display: none;
+//	}
+//
+//	ul.menupopup__menu {
+//		position: fixed;
+//	}
+//}
 // }
 
 //
@@ -215,4 +218,165 @@ body {
 	position: absolute;
 	top: 0;
 	right: 0;
+}
+
+.b-masthead .nav__menu {
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+
+	ul {
+
+		background-color: white;
+		border: 1px solid $grey-luke;
+		display: block;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+	}
+
+	li {
+		margin: 0;
+	}
+
+	ul a {
+		//border: 0;
+		//color: #000;
+		display: block;
+		//margin: 0;
+		//padding: 0.5em 1em;
+		//text-decoration: underline;
+	}
+
+	ul a:hover,
+	ul a:focus {
+		background-color: $grey-yoda;
+		margin-bottom: 0;
+		text-decoration: none;
+	}
+
+	ul a:focus,
+	> li > a:focus {
+		outline: 5px solid rgba(0, 90, 156, 0.75);
+		position: relative;
+	}
+
+	button,
+	> li > a {
+		align-items: center;
+		//border: 1px solid transparent;
+		display: flex;
+	}
+
+	// old arrow
+	//button::after {
+	//	content: '';
+	//	border-bottom: 1px solid #000;
+	//	border-right: 1px solid #000;
+	//	height: 0.5em;
+	//	margin-left: 0.75em;
+	//	width: 0.5em;
+	//	transform: rotate(45deg);
+	//}
+
+	button:focus {
+		border-color: $link;
+		outline: 5px solid $link;
+		position: relative ;
+	}
+
+	button:hover,
+	button[aria-expanded='true'] {
+		background-color: $grey-yoda;
+		color: $black;
+	}
+
+	//button:hover::after,
+	//button[aria-expanded='true']::after {
+	//	border-color: #fff;
+	//}
+}
+
+.masthead__nav > ul,
+.masthead__actions > ul {
+	display: flex;
+	align-items: center;
+	list-style: none;
+	margin: 0;
+
+	> li,
+	button {
+		height: $masthead_height;
+		line-height: $masthead_height;
+	}
+
+	a,
+	button {
+		display: flex;
+		align-items: center;
+		font-size: 0.875rem;
+		font-weight: 500;
+		white-space: nowrap;
+		padding-left: 15px;
+		padding-right: 15px;
+
+		&:hover {
+			background-color: $grey-yoda;
+			color: $black;
+		}
+	}
+
+	.c-menupopup a,
+	.c-menupopup button {
+		padding-right: 25px;
+
+		&:after {
+			right: 14px;
+		}
+	}
+
+	.u-active a {
+		color: $red;
+	}
+}
+
+// arrow
+.b-masthead .has-submenu > button::after {
+	position: absolute;
+	content: '';
+	width: 0;
+	height: 0;
+	border-top: 4px solid;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	top: 50%;
+	right: 13px;
+	color: $black;
+}
+
+// pad more for button
+.b-masthead .has-submenu > button {
+	padding-right: 25px;
+}
+
+.b-masthead .has-submenu ul {
+	background-color: white;
+	background-clip: padding-box;
+
+	width: 225px;
+	transition: all 0.25s ease;
+	margin: 0;
+	padding: 3px 0;
+	position: absolute;
+	z-index: -1;
+	border: 1px solid $grey-luke;
+	border-radius: 4px;
+	box-shadow: 0 3px 12px rgba(27, 31, 35, 0.15);
+	display: block;
+}
+
+.b-masthead .has-submenu ul ul {
+	border-top: none;
+	border-radius: 0 0 4px 4px;
 }
