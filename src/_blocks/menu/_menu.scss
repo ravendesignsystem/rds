@@ -38,7 +38,7 @@
 
 .c-nav--vert {
 	.has-submenu.open {
-		button {
+		& > button {
 			transform: rotate(45deg);
 			transition: transform 0.25s ease;
 		}

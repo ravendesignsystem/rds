@@ -1,32 +1,17 @@
-// Using approach #2 as per https://www.w3.org/WAI/tutorials/menus/flyout/
+const buttons = document.querySelectorAll(
+	'.nav__menu--vert .has-submenu button'
+);
+const buttonsArray = Array.from(buttons);
 
-var menuItems = document.querySelectorAll('.c-nav--vert .has-submenu');
-
-Array.prototype.forEach.call(menuItems, function(el, i) {
-	var activatingA = el.querySelector('a');
-	var btn = '<button>+</button>';
-
-	// var btn =
-	// 	'<button><span><span class="visuallyhidden">show submenu for “' +
-	// 	activatingA.text +
-	// 	'”</span></span></button>';
-
-	activatingA.insertAdjacentHTML('afterend', btn);
-
-	el.querySelector('button').addEventListener('click', function(event) {
-		if (this.parentNode.className == 'has-submenu') {
-			this.parentNode.className = 'has-submenu open';
-			this.parentNode.querySelector('a').setAttribute('aria-expanded', 'true');
-			this.parentNode
-				.querySelector('button')
-				.setAttribute('aria-expanded', 'true');
+buttonsArray.map(button => {
+	button.addEventListener('click', e => {
+		const isExpanded = e.target.getAttribute('aria-expanded');
+		if (isExpanded === 'false') {
+			e.target.setAttribute('aria-expanded', true);
+			e.target.parentNode.classList.add('open');
 		} else {
-			this.parentNode.className = 'has-submenu';
-			this.parentNode.querySelector('a').setAttribute('aria-expanded', 'false');
-			this.parentNode
-				.querySelector('button')
-				.setAttribute('aria-expanded', 'false');
+			e.target.setAttribute('aria-expanded', false);
+			e.target.parentNode.classList.remove('open');
 		}
-		event.preventDefault();
 	});
 });
