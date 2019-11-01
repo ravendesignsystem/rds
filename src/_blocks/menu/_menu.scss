@@ -1,5 +1,5 @@
 //
-// Main Side Nav Styles
+// Side Nav Styles
 // ------------------------
 
 .c-nav--vert {
@@ -8,12 +8,16 @@
 		list-style-type: none;
 	}
 
+	// Add borders to top most elements only
 	& > ul {
 		border-bottom: 1px solid $grey;
+
+		& > li {
+			border-top: 1px solid $grey;
+		}
 	}
 
 	li {
-		border-top: 1px solid $grey;
 		position: relative;
 
 		a {
@@ -31,29 +35,44 @@
 		font-size: 18px;
 		color: $grey-luke;
 		transition: transform 0.25s ease;
-
-		// background-color: rgba(red, 0.1);
 	}
-}
 
-.c-nav--vert {
+	// TODO fix conflicts with top level
+	// Child nav
+	// .has-submenu {
+	// 	button {
+	// 		top: 2px;
+	// 	}
+
+	// 	li a {
+	// 		font-size: 15px;
+	// 		color: $grey-emperor;
+	// 		padding-left: 25px;
+	// 	}
+
+	// 	li.has-submenu {
+	// 		background-color: rgba(red, 0.1);
+
+	// 		ul {
+	// 			padding-left: 20px;
+	// 		}
+	// 	}
+	// }
+
+	// Rotate the open / close button
 	.has-submenu.open {
 		& > button {
 			transform: rotate(45deg);
 			transition: transform 0.25s ease;
 		}
 	}
-}
 
-//
-// Hide / Show child menus
-// ------------------------
-
-.c-nav--vert {
+	// Hide child navs by default
 	.has-submenu > ul {
-		display: none;
+		// display: none;
 	}
 
+	// Show the child nav when expanded
 	.has-submenu.open > ul {
 		display: block;
 	}
