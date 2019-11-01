@@ -1,4 +1,60 @@
-// just testing everything is hooked up
+//
+// Main Side Nav Styles
+// ------------------------
+
 .c-nav--vert {
-  background-color: pink;
+	ul {
+		margin: 0;
+		list-style-type: none;
+	}
+
+	& > ul {
+		border-bottom: 1px solid $grey;
+	}
+
+	li {
+		border-top: 1px solid $grey;
+		position: relative;
+
+		a {
+			display: block;
+			padding: 8px 10px;
+		}
+	}
+
+	button {
+		position: absolute;
+		top: 5px;
+		right: -10px;
+		height: 40px;
+		width: 40px;
+		font-size: 18px;
+		color: $grey-luke;
+		transition: transform 0.25s ease;
+
+		// background-color: rgba(red, 0.1);
+	}
+}
+
+.c-nav--vert {
+	.has-submenu.open {
+		button {
+			transform: rotate(45deg);
+			transition: transform 0.25s ease;
+		}
+	}
+}
+
+//
+// Hide / Show child menus
+// ------------------------
+
+.c-nav--vert {
+	.has-submenu > ul {
+		display: none;
+	}
+
+	.has-submenu.open > ul {
+		display: block;
+	}
 }
