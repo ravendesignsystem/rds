@@ -9,7 +9,7 @@ import '../../_components/navmenu/navmenu';
 // block scripts
 import '../../_blocks/alertheader/alertheader';
 // import '../../_blocks/masthead/masthead';
-import '../../_blocks/menu/menu';
+// import '../../_blocks/menu/menu';
 // import Masthead from '../../_blocks/masthead/mh';
 //
 // Masthead();
