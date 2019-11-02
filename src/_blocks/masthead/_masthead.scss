@@ -27,7 +27,8 @@ body {
 	transition: 0.2s;
 }
 
-.b-masthead a, .b-masthead button {
+.b-masthead a,
+.b-masthead button {
 	font-size: 0.875rem;
 	font-weight: 500;
 	white-space: nowrap;
@@ -80,10 +81,10 @@ body {
 
 .masthead__brand {
 	white-space: nowrap;
-	padding: 0 15px;
+	// padding: 0 15px;
 
 	@include media('>s') {
-		padding: 0 15px;
+		// padding: 0 15px;
 		border-right: 1px solid $grey-yoda;
 	}
 
@@ -126,7 +127,8 @@ body {
 //	width: 100%;
 //}
 
-.b-masthead div > ul, .b-masthead nav > ul {
+.b-masthead div > ul,
+.b-masthead nav > ul {
 	display: flex;
 	align-items: center;
 	list-style: none;
@@ -226,7 +228,6 @@ body {
 	padding: 0;
 
 	ul {
-
 		background-color: white;
 		border: 1px solid $grey-luke;
 		display: block;
@@ -283,7 +284,7 @@ body {
 	button:focus {
 		border-color: $link;
 		outline: 5px solid $link;
-		position: relative ;
+		position: relative;
 	}
 
 	button:hover,
