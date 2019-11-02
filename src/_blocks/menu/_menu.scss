@@ -8,12 +8,19 @@
 		list-style-type: none;
 	}
 
-	// Add borders to top most elements only
+	// Target direct decendants
 	& > ul {
 		border-bottom: 1px solid $grey;
 
+		// Add border to all top level list items
 		& > li {
 			border-top: 1px solid $grey;
+		}
+
+		// Gradient and padding for top most level expanded nav
+		& > .has-submenu.open {
+			box-shadow: inset 0 -11px 12px -12px $grey-yoda;
+			padding-bottom: 5px;
 		}
 	}
 
@@ -22,6 +29,7 @@
 
 		a {
 			display: block;
+			font-size: 16px;
 			padding: 8px 10px;
 		}
 	}
@@ -37,43 +45,45 @@
 		transition: transform 0.25s ease;
 	}
 
-	// TODO fix conflicts with top level
 	// Child nav
-	// .has-submenu {
-	// 	button {
-	// 		top: 2px;
-	// 	}
+	.is-submenu {
+		button {
+			top: 0;
+		}
 
-	// 	li a {
-	// 		font-size: 15px;
-	// 		color: $grey-emperor;
-	// 		padding-left: 25px;
-	// 	}
+		li a {
+			font-size: 15px;
+			color: $grey-emperor;
+			padding-top: 4px;
+			padding-left: 25px;
+		}
 
-	// 	li.has-submenu {
-	// 		background-color: rgba(red, 0.1);
-
-	// 		ul {
-	// 			padding-left: 20px;
-	// 		}
-	// 	}
-	// }
-
-	// Rotate the open / close button
-	.has-submenu.open {
-		& > button {
-			transform: rotate(45deg);
-			transition: transform 0.25s ease;
+		// Third level
+		.is-submenu {
+			padding-left: 20px;
 		}
 	}
 
-	// Hide child navs by default
-	.has-submenu > ul {
-		// display: none;
-	}
+	// Set transitions for child navs
+	.has-submenu {
+		// Hide child navs by default
+		& > ul {
+			max-height: 0;
+			overflow: hidden;
+		}
 
-	// Show the child nav when expanded
-	.has-submenu.open > ul {
-		display: block;
+		// Show the child nav when expanded
+		&.open > ul {
+			max-height: 1000px;
+			transition: max-height 0.5s ease-in-out;
+		}
+
+		// Rotate the open / close button
+		&.open {
+			& > button {
+				transform: rotate(45deg);
+				transition: transform 0.25s ease;
+			}
+		}
 	}
 }
