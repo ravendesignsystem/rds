@@ -1,0 +1,147 @@
+//
+// Nav Menu Styles
+// ------------------------
+
+.c-nav:not(.c-nav--menubar) {
+  h2 {
+    background-color: $grey;
+    padding: 10px 15px;
+    color: $grey-vader;
+    margin: 0;
+    font-size: $pixel12;
+    text-transform: uppercase;
+
+    @include media('>s') {
+      background-color: white;
+      border-bottom: 1px solid $grey;
+      display: block;
+    }
+  }
+
+  ul {
+    margin: 0;
+    list-style-type: none;
+  }
+
+  // Target direct descendants
+  & > ul {
+    & > li {
+      border-bottom: 1px solid $grey;
+    }
+
+    // Gradient and padding for top most level expanded nav
+    & > .has-submenu.open {
+      box-shadow: inset 0 -11px 12px -12px $grey-yoda;
+      border: none;
+      padding-bottom: 5px;
+    }
+  }
+
+  li {
+    position: relative;
+
+    a {
+      display: block;
+      font-size: 16px;
+      padding: 8px 10px;
+    }
+  }
+
+  button:not(.nav__menu--bar button) {
+    position: absolute;
+    top: 5px;
+    right: -10px;
+    height: 40px;
+    width: 40px;
+    font-size: 18px;
+    color: $grey-luke;
+    transition: transform 0.25s ease;
+  }
+
+  // Child nav
+  .is-submenu {
+    button {
+      top: 0;
+    }
+
+    li a {
+      font-size: 15px;
+      color: $grey-emperor;
+      padding-top: 4px;
+      padding-left: 25px;
+    }
+
+    // Third level
+    .is-submenu {
+      padding-left: 20px;
+    }
+  }
+
+  // Set transitions for child navs
+  .has-submenu {
+    // Hide child navs by default
+    & > ul {
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    // Show the child nav when expanded
+    &.open > ul {
+      max-height: 1000px;
+      transition: max-height 0.5s ease-in-out;
+    }
+
+    // Rotate the open / close button
+    &.open {
+      & > button {
+        transform: rotate(45deg);
+        transition: transform 0.25s ease;
+      }
+    }
+  }
+}
+
+// Styles needed for altering masthead nav in modal
+
+dialog {
+  .nav__menu--bar {
+    li a {
+      padding-left: 25px !important;
+      color: $grey-emperor;
+      font-size: 15px !important;
+    }
+
+    > .has-submenu.open {
+      box-shadow: none !important;
+      border-bottom: 1px solid $grey !important;
+      padding-bottom: 0 !important;
+    }
+
+
+    .nav--menubar__button {
+      transform: none !important;
+      position: relative;
+      top: auto;
+      right: auto;
+      height: auto;
+      width: 100%;
+      font-size: 16px;
+      background-color: $grey;
+      padding: 10px 15px;
+      color: #767676;
+      margin: 0;
+      font-size: $pixel12;
+      text-transform: uppercase;
+      text-align: left;
+      cursor: default;
+
+      & + ul ul {
+        padding-left: 25px !important;
+
+        .popup__sep {
+          border: none;
+        }
+      }
+    }
+  }
+}

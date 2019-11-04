@@ -1,34 +1,67 @@
 <nav class="c-nav" role="presentation" aria-label="Main Navigation">
+    <h2>Nav Title</h2>
+
     <ul class="nav__menu">
+        <li>
+            <a href="/programs/">A - Level 1</a>
+        </li>
+
         <li class="has-submenu">
-            <button aria-expanded="true" aria-controls="id_programs_menu">
-                <span class="u-visually-hidden">Show submenu for </span>Programs
-            </button>
-            <ul id="id_programs_menu">
-                <li><a href="/programs/" aria-haspopup="true" aria-expanded="false">All Programs</a>
-                    <ul>
-                        <li><a href="/programs/masters-programs/">Masters Programs</a></li>
-                        <li><a href="/programs/doctoral-programs/">Doctoral Programs</a></li>
-                        <li><a href="/programs/graduate-programs/">Graduate Diplomas</a></li>
-                        <li><a href="/programs/collaborative-specializations/">Collaborative Specializations</a></li>
+            <a href="/programs/">B - Level 1</a>
+            <button aria-expanded="false" aria-controls="submenu_level_b1">+</button>
+            <ul id="submenu_level_b1" class="is-submenu">
+                <li>
+                    <a href="/programs/">B - Level 2A</a>
+                </li>
+                <li class="has-submenu">
+                    <a href="/programs/">B - Level 2B</a>
+                    <button aria-expanded="false" aria-controls="submenu_level_b2">+</button>
+                    <ul id="submenu_level_b2" class="is-submenu">
+                        <li>
+                            <a href="/programs/doctoral-programs/">B - Level 3A</a>
+                        </li>
+                        <li>
+                            <a href="/programs/doctoral-programs/">B - Level 3B</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/programs/">B - Level 2C</a>
+                </li>
+                <li>
+                    <a href="/programs/">B - Level 2D</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="/contact/">C - Level 1</a>
+        </li>
+
+        <li class="has-submenu">
+            <a href="/programs/">D - Level 1</a>
+            <button aria-expanded="false" aria-controls="submenu_level_d1">+</button>
+            <ul id="submenu_level_d1" class="is-submenu">
+                <li>
+                    <a href="/programs/">D - Level 2A</a>
+                </li>
+                <li class="has-submenu">
+                    <a href="/programs/">D - Level 2B</a>
+                    <button aria-expanded="false" aria-controls="submenu_level_d2">+</button>
+                    <ul id="submenu_level_d2" class="is-submenu">
+                        <li>
+                            <a href="/programs/doctoral-programs/">D - Level 3A</a>
+                        </li>
+                        <li>
+                            <a href="/programs/doctoral-programs/">D - Level 3B</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
         </li>
-        <li class="has-submenu">
-            <button aria-expanded="true" aria-controls="id_international_menu">
-                <span class="u-visually-hidden">Show submenu for </span>International
-            </button>
-            <ul id="id_international_menu">
-                <li><a href="/international/">International Students</a>
-                    <ul>
-                        <li><a href="/international/admission-requirements/">Admission Requirements</a></li>
-                        <li><a href="/international/cost-and-fees/">Cost and Fees</a></li>
-                    </ul>
-                </li>
-            </ul>
+
+        <li>
+            <a href="/contact/">E - Level 1</a>
         </li>
-        <li><a href="/contact/">Contact</a></li>
     </ul>
 </nav>
-{#    Do we need: aria-haspopup="true" aria-expanded="false"#}
