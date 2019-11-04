@@ -1,4 +1,4 @@
-const buttons = document.querySelectorAll('.nav__menu .has-submenu button');
+const buttons = document.querySelectorAll('.has-submenu button');
 const buttonsArray = Array.from(buttons);
 
 buttonsArray.map(button => {
