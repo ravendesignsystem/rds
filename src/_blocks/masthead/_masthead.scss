@@ -118,6 +118,13 @@ body {
 				}
 			}
 		}
+
+		li:not(.masthead__navicon) {
+			& > a,
+			& > button {
+				display: flex;
+			}
+		}
 	}
 
 	// Modifiers
