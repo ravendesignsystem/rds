@@ -59,7 +59,8 @@ body {
 	button {
 		display: block;
 		position: relative;
-		align-items: center;
+		white-space: nowrap;
+		// align-items: center;
 		font-size: $pixel14;
 		font-weight: 500;
 		padding-left: 15px;
@@ -79,8 +80,12 @@ body {
 		margin: 0;
 		white-space: nowrap;
 
+		@include media('>s') {
+			border-right: 1px solid $grey-yoda;
+		}
+
 		& a {
-			padding: 0;
+			padding: 0 8px;
 			font-size: 18px;
 
 			&:hover {
@@ -91,7 +96,6 @@ body {
 			@include media('>s') {
 				font-size: 20px;
 				padding: 0 15px;
-				border-right: 1px solid $grey-yoda;
 			}
 		}
 
