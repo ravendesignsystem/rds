@@ -119,10 +119,13 @@ body {
 			}
 		}
 
-		li:not(.masthead__navicon) {
-			& > a,
-			& > button {
-				display: flex;
+		@include media('>s') {
+			li:not(.masthead__navicon) {
+				& > a,
+				& > button {
+					display: flex;
+					align-items: center;
+				}
 			}
 		}
 	}
