@@ -1,56 +1,21 @@
-<div id="b-masthead" class="u-block u-block--full">
-<div class="b-masthead b-masthead--responsivenav{% if page.masthead != 'nostick' %} js-masthead-stick{% endif %}">
+<div id="id-masthead" class="u-block u-block--full">
+<div class="b-masthead {% if page.masthead != 'nostick' %} js-masthead-stick{% endif %}">
 
-	<div class="masthead__brand">
-            <h2>
-                <a href="{{ site.url }}">{% include 'icons/mark-cushield.svg' %}Raven Design System</a>
-            </h2>
-        </div>
+	<h1>
+		<a tabindex="2" accesskey="1" href="{{ site.url }}">
+			{% include 'icons/mark-cushield.svg' %}Raven Design System</a>
+		</a>
+	</h1>
 
-    {% include "navmenu/navmenu" %}
+    {% include "navmenu/navmenu--bar" %}
 
+{#	{% if page.subsite == 'design' %}class="u-active"{% endif %}#}
 
+		<ul class="masthead__actions nav__menu--vert ">
+			<li class="has-submenu c-popup c-popup--right u-hide-s">
 
-{#	<nav class="masthead__nav">#}
-{#	#}
-{#		<ul role="menu">#}
-{#			<li {% if page.subsite == 'about' %}class="u-active"{% endif %} ><a href="{{ site.url }}about/">About RDS</a></li>#}
-{#			<li {% if page.subsite == 'dev' %}class="u-active"{% endif %} ><a href="{{ site.url }}dev/">Dev</a></li>#}
-{#			<li><a class="c-menupopup" {% if page.subsite == 'dev' %}class="u-active"{% endif %} href="{{ site.url }}dev/">Dev Sub</a>#}
-{#				<ul class="menupopup__menu" aria-label="menupopup">#}
-{#					<li>#}
-{#						<a href="#">Submenu link a</a>#}
-{#					</li>#}
-{#					<li>#}
-{#						<a href="#">Submenu link b</a>#}
-{#					</li>#}
-{#					<li>#}
-{#						<a href="#">Submenu link c</a>#}
-{#					</li>#}
-{#				</ul>#}
-{#			</li>#}
-{#			<li {% if page.subsite == 'design' %}class="u-active"{% endif %}><a href="{{ site.url }}design/">Design</a></li>#}
-{#			<li {% if page.subsite == 'content' %}class="u-active"{% endif %} ><a href="{{ site.url }}content/">Content</a></li>#}
-{#			<li {% if page.subsite == 'ay11' %}class="u-active"{% endif %} ><a href="{{ site.url }}accessibility/">Accessibility</a></li>#}
-{#			<li><button class="c-menupopup">Child Menu Example</button>#}
-{#				<ul class="menupopup__menu" aria-label="menupopup">#}
-{#					<li>#}
-{#						<a href="https://carleton.ca">Submenu link a</a>#}
-{#					</li>#}
-{#					<li>#}
-{#						<a href="#">Submenu link b</a>#}
-{#					</li>#}
-{#					<li><a href="#">Submenu link c</a></li>#}
-{#				</ul>#}
-{#			</li>#}
-
-{#		</ul>#}
-{#	</nav>#}
-	<div class="masthead__actions" aria-label="Header actions and controls">
-		<ul>
-			<li class="masthead__cta masthead__cta--white c-menupopup c-menupopup--right u-hide-s">
-				<a class="u-icon" href="https://github.com/ravendesignsystem">{% include 'icons/mark-github.svg' %} Github</a>
-				<ul class="menupopup__menu" aria-label="menupopup" aria-expanded="false">
+				<button class="u-icon" href="https://github.com/ravendesignsystem" aria-expanded="false" aria-controls="mh-cta">{% include 'icons/mark-github.svg' %} Github</button>
+				<ul class="is-submenu" id="mh-cta" aria-label="menupopup" aria-expanded="false">
 					<li>
 						<a class="u-icon" href="https://github.com/ravendesignsystem/rds/releases">{% include 'icons/code.svg' %}
 							Releases
@@ -78,12 +43,6 @@
 					</li>
 				</ul>
 			</li>
-			<li class="masthead__cta u-hide-s">
-				<a class="u-icon" href="https://github.com/ravendesignsystem">
-					<svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"  /></svg>
-					Github
-				</a>
-			</li>
 			<li class="masthead__cta masthead__cta--white u-hide-s">
 				<a class="u-icon" href="https://github.com/ravendesignsystem">
 					<svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"  /></svg>
@@ -109,7 +68,7 @@
                 </button>
             </li>
 			{% if page.subsite %}
-			<li name="navicon" class="masthead__navicon{% if page.subsite == 'dev' and page.menu != 'dev' %} {% else %} u-hide-l{% endif %}">
+			<li name="navicon" class="masthead__navicon">
 				<button class="c-navicon" aria-label="Open Menu" title="Open site-wide menu"  type="button">
 						<span class="c-navicon__box">
 							<span class="c-navicon__inner"></span>
@@ -118,7 +77,7 @@
 			</li>
 			{% endif %}
 		</ul>
-	</div>
+
 
 </div>
 </div>

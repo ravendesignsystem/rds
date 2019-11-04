@@ -8,376 +8,147 @@ body {
 	margin-top: 75px;
 }
 
-.extraMarginTop {
-	margin-top: 150px;
-}
-
-#b-masthead {
+#id-masthead {
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-
+	z-index: 10000;
 	// Visual
-	height: 75px;
+	background-color: white;
 	border-top: 2px solid $red;
 	border-bottom: 1px solid $grey-kenobi;
-	background-color: white;
-	z-index: 10000;
-	transition: 0.2s;
+	height: 75px;
 }
 
-.b-masthead a,
-.b-masthead button {
-	font-size: 0.875rem;
-	font-weight: 500;
-	white-space: nowrap;
-	padding-left: 15px;
-	padding-right: 15px;
-	position: relative;
-}
-
-// TODO replace in JS with u-hide that exists in core utils
-.hidden {
-	opacity: 0;
-	visibility: hidden;
-}
-
-//
 // Masthead Flex Layout
-// -----------------------------
-
 .b-masthead,
-.masthead__brand,
-.masthead__actions,
-.c-nav {
+.b-masthead > h1,
+.b-masthead > nav,
+.b-masthead > ul,
+.b-masthead nav > ul {
 	height: $masthead_height;
 	display: flex;
 	align-items: center;
-}
 
-//.masthead__brand,
-//.masthead__nav {
-//	justify-content: flex-start;
-//}
-
-.masthead__actions {
-	justify-content: flex-end;
-	margin-left: auto;
-}
-
-//
-// Masthead Modifiers
-// -----------------------------
-
-.b-masthead--shadow {
-	box-shadow: 0 10px 11px -7px $grey-yoda;
-	margin-bottom: 6px;
-}
-
-//
-// Masthead Branding
-// -----------------------------
-
-.masthead__brand {
-	white-space: nowrap;
-	// padding: 0 15px;
-
-	@include media('>s') {
-		// padding: 0 15px;
-		border-right: 1px solid $grey-yoda;
-	}
-
-	h1,
-	h2 {
-		margin: 0;
-		padding: 0;
-
-		span {
-			display: table;
-		}
-	}
-
-	a {
-		display: flex;
-		align-items: center;
-		font-size: 18px;
-
-		&:hover {
-			color: $red;
-		}
-
-		@include media('>s') {
-			font-size: 20px;
-		}
-	}
-
-	svg {
-		width: 40px;
-		height: 40px;
-		margin-right: 3px;
-	}
-}
-
-//
-// Masthead Nav Styles
-// -----------------------------
-//
-//.masthead__nav {
-//	width: 100%;
-//}
-
-.b-masthead div > ul,
-.b-masthead nav > ul {
-	display: flex;
-	align-items: center;
-	list-style: none;
-	margin: 0;
-
-	> li,
-	button {
+	li {
 		height: $masthead_height;
 		line-height: $masthead_height;
 	}
 
-	a,
-	button {
-		display: flex;
-		align-items: center;
-
-		&:hover {
-			background-color: $grey-yoda;
-		}
+	// Actions float right
+	&:last-child {
+		justify-content: flex-end;
+		margin-left: auto;
 	}
 
-	.c-menupopup a,
-	.c-menupopup button {
-		padding-right: 25px;
-
-		&:after {
-			right: 14px;
-		}
-	}
-
-	.u-active a {
-		color: $red;
-	}
-}
-
-//
-// Masthead Second Line Nav
-// -----------------------------
-
-// @include media("<=s") {
-//.masthead__second-level {
-//	position: absolute;
-//	top: $masthead_height + 1px;
-//	left: 0;
-//	background-color: white;
-//	border-bottom: 1px solid $grey-yoda;
-//	overflow-x: scroll;
-//	overflow-y: hidden;
-//	-webkit-overflow-scrolling: touch;
-//
-//	&::-webkit-scrollbar {
-//		display: none;
-//	}
-//
-//	ul.menupopup__menu {
-//		position: fixed;
-//	}
-//}
-// }
-
-//
-// Masthead Action Button Styles
-// -----------------------------
-
-.masthead__actions ul li {
-	border-left: 1px solid $grey-yoda;
-
-	a:hover {
-		background-color: $grey-kenobi;
-		color: black;
-	}
-}
-
-.masthead__cta:not(.masthead__cta--white) {
-	background-color: $red;
-	border-left: transparent;
-	border-bottom: 1px solid $red;
-
-	a {
-		color: white;
-
-		svg {
-			fill: white;
-		}
-	}
-}
-
-.masthead__close-modals {
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-
-.b-masthead .nav__menu {
-	display: flex;
-	list-style-type: none;
-	padding: 0;
-
-	ul {
-		background-color: white;
-		border: 1px solid $grey-luke;
-		display: block;
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		position: absolute;
-	}
-
-	li {
-		margin: 0;
-	}
-
-	ul a {
-		//border: 0;
-		//color: #000;
-		display: block;
-		//margin: 0;
-		//padding: 0.5em 1em;
-		//text-decoration: underline;
-	}
-
-	ul a:hover,
-	ul a:focus {
-		background-color: $grey-yoda;
-		margin-bottom: 0;
-		text-decoration: none;
-	}
-
-	ul a:focus,
-	> li > a:focus {
-		outline: 5px solid rgba(0, 90, 156, 0.75);
-		position: relative;
-	}
-
-	button,
-	> li > a {
-		align-items: center;
-		//border: 1px solid transparent;
-		display: flex;
-	}
-
-	// old arrow
-	//button::after {
-	//	content: '';
-	//	border-bottom: 1px solid #000;
-	//	border-right: 1px solid #000;
-	//	height: 0.5em;
-	//	margin-left: 0.75em;
-	//	width: 0.5em;
-	//	transform: rotate(45deg);
-	//}
-
-	button:focus {
-		border-color: $link;
+	& a:focus,
+	& button:focus {
 		outline: 5px solid $link;
 		position: relative;
 	}
 
+	// All unordered lists
+	ul {
+		margin: 0;
+		list-style-type: none;
+	}
+
+	// All links and buttons
+	a,
+	button {
+		display: block;
+		position: relative;
+		align-items: center;
+		font-size: $pixel14;
+		font-weight: 500;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	a:hover,
 	button:hover,
 	button[aria-expanded='true'] {
 		background-color: $grey-yoda;
 		color: $black;
 	}
 
-	//button:hover::after,
-	//button[aria-expanded='true']::after {
-	//	border-color: #fff;
-	//}
-}
-
-.masthead__nav > ul,
-.masthead__actions > ul {
-	display: flex;
-	align-items: center;
-	list-style: none;
-	margin: 0;
-
-	> li,
-	button {
-		height: $masthead_height;
-		line-height: $masthead_height;
-	}
-
-	a,
-	button {
-		display: flex;
-		align-items: center;
-		font-size: 0.875rem;
-		font-weight: 500;
+	// Masthead brand
+	h1 {
+		padding: 0;
+		margin: 0;
 		white-space: nowrap;
-		padding-left: 15px;
-		padding-right: 15px;
 
-		&:hover {
-			background-color: $grey-yoda;
-			color: $black;
+		& a {
+			padding: 0;
+			font-size: 18px;
+
+			&:hover {
+				color: $red;
+				background-color: white;
+			}
+
+			@include media('>s') {
+				font-size: 20px;
+				padding: 0 15px;
+				border-right: 1px solid $grey-yoda;
+			}
+		}
+
+		svg {
+			width: 40px;
+			height: 40px;
+			margin-top: -3px;
+			vertical-align: middle;
 		}
 	}
 
-	.c-menupopup a,
-	.c-menupopup button {
+	// Masthead actions
+
+	.masthead__actions {
+		li {
+			border-left: 1px solid $grey-yoda;
+
+			&.masthead__cta > a {
+				background-color: $red;
+				color: white;
+
+				svg {
+					fill: white;
+				}
+			}
+		}
+	}
+
+	// Modifiers
+	.js-has-shadow {
+		box-shadow: 0 10px 11px -7px $grey-yoda;
+		margin-bottom: 6px;
+	}
+
+	.c-menupopup > button {
 		padding-right: 25px;
 
-		&:after {
+		&::after {
 			right: 14px;
 		}
 	}
 
-	.u-active a {
-		color: $red;
+	//
+	// Styles for4 shared JS from navmenu component.
+	// -----------------------------
+	// TODO should this be changed to visually hidden?
+	// But if we do that then should you use aria tags
+	// as the screen readers will see the submenu??
+	.has-submenu {
+		// Hide child navs by default
+		& > ul {
+			display: none;
+		}
+
+		// Show the child nav when expanded
+		&.open > ul {
+			display: block;
+		}
 	}
-}
-
-// arrow
-.b-masthead .has-submenu > button::after {
-	position: absolute;
-	content: '';
-	width: 0;
-	height: 0;
-	border-top: 4px solid;
-	border-right: 4px solid transparent;
-	border-left: 4px solid transparent;
-	top: 50%;
-	right: 13px;
-	color: $black;
-}
-
-// pad more for button
-.b-masthead .has-submenu > button {
-	padding-right: 25px;
-}
-
-.b-masthead .has-submenu ul {
-	background-color: white;
-	background-clip: padding-box;
-
-	width: 225px;
-	transition: all 0.25s ease;
-	margin: 0;
-	padding: 3px 0;
-	position: absolute;
-	z-index: -1;
-	border: 1px solid $grey-luke;
-	border-radius: 4px;
-	box-shadow: 0 3px 12px rgba(27, 31, 35, 0.15);
-	display: block;
-}
-
-.b-masthead .has-submenu ul ul {
-	border-top: none;
-	border-radius: 0 0 4px 4px;
-}
+} // End .b-masthead
