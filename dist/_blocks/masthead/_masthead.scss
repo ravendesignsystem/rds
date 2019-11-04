@@ -3,7 +3,7 @@
 
 	& .masthead__nav {
 		position: absolute;
-		//top: 75px;
+		top: 75px;
 		left: 0;
 	}
 }
@@ -171,6 +171,13 @@
 		top: auto;
 		overflow-x: hidden;
 		overflow-y: hidden;
+
+		// IE11 fix
+		// TODO: look into @support grid
+		@media screen and (-ms-high-contrast: active),
+			screen and (-ms-high-contrast: none) {
+			position: absolute;
+		}
 	}
 
 	a:hover {

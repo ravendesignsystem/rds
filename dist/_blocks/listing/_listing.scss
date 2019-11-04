@@ -14,14 +14,8 @@
 	li {
 		position: relative;
 
-		&:not(:last-child):before {
-			content: '';
-			position: absolute;
+		&:not(:last-child) {
 			border-bottom: 1px solid $grey-yoda;
-			width: 100%;
-			left: 0;
-			bottom: 0;
-			height: 1px;
 		}
 	}
 
@@ -140,7 +134,6 @@
 //===============
 .b-listing--events time {
 	margin-right: 20px;
-	margin-top: -8px;
 	color: $red;
 	text-align: center;
 	text-transform: uppercase;
@@ -153,13 +146,9 @@
 }
 
 .b-listing--events time span {
+	display: block;
 	color: $black;
 	font-size: $pixel24;
-
-	&:before {
-		content: ' ';
-		display: block;
-	}
 }
 
 .b-listing--events time + div {
@@ -193,17 +182,22 @@
 //==============
 .b-listing--video figure {
 	position: relative;
+	background-color: black;
 
-	&:before {
-		content: '';
-		display: block;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		background-color: rgba(black, 0.4);
+	img {
+		opacity: 0.6;
 	}
+
+	// &:before {
+	// 	content: '';
+	// 	display: block;
+	// 	height: 100%;
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	background-color: rgba(black, 0.4);
+	// }
 }
 
 .b-listing--video figure svg {

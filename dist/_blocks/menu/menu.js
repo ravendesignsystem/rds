@@ -10,14 +10,14 @@ if (navExpand) {
 		navExpand.classList.toggle('menu__toggle--opened');
 
 		// Expand the full menu
-		if (navExpand.innerHTML === 'Expand all') {
-			navExpand.innerHTML = 'Collapse all';
+		if (navExpand.innerHTML === '<i aria-hidden="true" role="img" title="Expand all"></i>Expand all') {
+			navExpand.innerHTML = '<i aria-hidden="true" role="img" title="Collapse all"></i>Collapse all';
 			for (let i = 0; i < checks.length; i++) {
 				checks[i].checked = true;
 			}
 		} else {
 			// Collapse the full menu
-			navExpand.innerHTML = 'Expand all';
+			navExpand.innerHTML = '<i aria-hidden="true" role="img" title="Expand all"></i>Expand all';
 			for (let i = 0; i < checks.length; i++) {
 				checks[i].checked = false;
 			}

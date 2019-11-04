@@ -3,15 +3,17 @@ import '../../_core/js/polyfills/polyfills';
 // component scripts
 import '../../_components/accordion/accordion';
 import '../../_components/alert/alert';
-// import '../../_components/menupopup/menupopup';
+
 import '../../_components/navmenu/navmenu';
 
 // block scripts
 import '../../_blocks/alertheader/alertheader';
-// import '../../_blocks/masthead/masthead';
-import '../../_blocks/menu/menu';
+
+import '../../_blocks/masthead/masthead';
+
+
+// commenting out for refactor
 // import Masthead from '../../_blocks/masthead/mh';
-//
 // Masthead();
 
 // we should probably get rid of this before v1
