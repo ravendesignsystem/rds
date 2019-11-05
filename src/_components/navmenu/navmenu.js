@@ -44,17 +44,21 @@ toggleMenuOpenState(navMenuButtonsArray);
 // add click event listener to .nav__expand button target
 navExpandButton.addEventListener('click', e => {
 	// deconstruct the event for cleanliness
-	const { target } = e;
+	const { currentTarget } = e;
+	const navExpandButtonText = currentTarget.querySelector('span');
+
 	// assign isMenuExpanded to the tarets data attr
-	isMenuExpanded = target.getAttribute('data-expanded');
+	isMenuExpanded = currentTarget.getAttribute('data-expanded');
 
 	// if menu is expanded, change text and data attribute
 	if (isMenuExpanded === 'false') {
-		target.textContent = 'Collapse All';
-		target.setAttribute('data-expanded', true);
+		navExpandButtonText.textContent = 'Collapse All';
+		currentTarget.setAttribute('data-expanded', true);
+		currentTarget.classList.add('nav__expand--open');
 	} else {
-		target.textContent = 'Expand All';
-		target.setAttribute('data-expanded', false);
+		navExpandButtonText.textContent = 'Expand All';
+		currentTarget.setAttribute('data-expanded', false);
+		currentTarget.classList.remove('nav__expand--open');
 	}
 
 	// loop over menu buttons that have a parent of .has-menu

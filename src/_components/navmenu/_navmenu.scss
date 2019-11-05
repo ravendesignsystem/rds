@@ -73,12 +73,25 @@
 		border-bottom: none;
 
 		button {
-			// position: initial;
-			font-size: $pixel12;
+			display: flex;
+			align-items: center;
+			font-size: $pixel14;
 			color: $grey-vader;
-			// text-transform: capitalize;
-			// padding: 15px 15px 15px 22px;
-			// line-height: 20px;
+			padding: 8px 10px;
+		}
+
+		svg {
+			width: 8px;
+			height: 8px;
+			fill: $grey-vader;
+			margin-right: 5px;
+		}
+	}
+
+	.nav__expand--open {
+		svg {
+			transform: rotate(45deg);
+			transition: transform 0.25s ease;
 		}
 	}
 
