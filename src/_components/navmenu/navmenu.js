@@ -10,11 +10,23 @@ const navMenuButtons = document.querySelectorAll(
 ); // nodelist
 const navMenuButtonsArray = Array.from(navMenuButtons);
 
+const isTopNav = target => {
+	return target.parentNode.parentNode.parentNode.classList.contains(
+		'c-nav--menubar'
+	);
+};
 // function to toggle nav and side nav state
 const toggleMenuOpenState = buttonArray => {
 	buttonArray.map(button => {
 		button.addEventListener('click', e => {
 			const isExpanded = e.target.getAttribute('aria-expanded');
+			//check if top nav is target to close menu items before opening a new one
+			if (isTopNav(e.currentTarget)) {
+				buttonArray.map(button => {
+					button.parentNode.classList.remove('open');
+					button.setAttribute('aria-expanded', false);
+				});
+			}
 			if (isExpanded === 'false') {
 				e.target.setAttribute('aria-expanded', true);
 				e.target.parentNode.classList.add('open');
