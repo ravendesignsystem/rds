@@ -6,6 +6,8 @@ let st;
 const body = document.querySelector('body');
 const masthead = document.querySelector('#id-masthead');
 const mastheadNav = document.querySelector('.c-nav--menubar');
+const mastheadNavContainer = document.querySelector('.c-nav--menubar')
+	.parentNode;
 const mastheadNavUl = document.querySelector('.c-nav--menubar ul');
 const mastheadActions = document.querySelector('.masthead__actions');
 const sideNav = document.querySelector('.c-nav--sidenav');
@@ -52,14 +54,14 @@ const detectOverflowOnMasthead = () => {
 const toggleMastheadSizeAlert = () => {
 	const mastheadClassList = mastheadNavIcon.parentNode.classList;
 	// check against
-	if (window.innerWidth <= navWidth + 300 || window.innerWidth <= 960) {
+	if (window.innerWidth <= navWidth + 400 || window.innerWidth <= 960) {
 		mastheadNav.classList.add('u-visually-hidden');
-		modalMenu.appendChild(mastheadNavUl);
+		modalMenu.appendChild(mastheadNav);
 		mastheadClassList.remove('u-hide-l');
 	} else {
 		mastheadClassList.add('u-hide-l');
 		mastheadNav.classList.remove('u-visually-hidden');
-		mastheadNav.appendChild(mastheadNavUl);
+		mastheadNavContainer.appendChild(mastheadNav);
 	}
 };
 
@@ -80,9 +82,6 @@ const toggleMastheadDropNav = () => {
 	}
 };
 
-const mastheadHasDropNav = () => {
-	return mastheadNav.classList.contains('masthead__second-level');
-};
 /**
  *  @name toggleMastheadVisibilty()
  *  @desc hides/shows masthead depending on scroll position and direction
@@ -193,12 +192,7 @@ const handleResize = () => {
 			toggleMastheadSizeAlert();
 			toggleMastheadDropNav();
 
-			if (mastheadHasDropNav()) {
-				body.classList.add('extraMarginTop');
-			} else {
-				body.classList.remove('extraMarginTop');
-			}
-			setTimeout(() => (timeout = true), 200);
+			setTimeout(() => (timeout = true), 100);
 		},
 		false
 	);
@@ -212,12 +206,7 @@ const handleLoading = () => {
 		'load',
 		() => {
 			toggleMastheadSizeAlert();
-
-			if (mastheadHasDropNav()) {
-				body.classList.add('extraMarginTop');
-			} else {
-				body.classList.remove('extraMarginTop');
-			}
+			toggleMastheadDropNav();
 		},
 		false
 	);
@@ -257,6 +246,14 @@ const handleClick = () => {
 		);
 	}
 };
+
+const handleKeyPress = () => {
+	window.addEventListener('keydown', e => {
+		if (e.key === 'Escape') {
+			closeAllModals();
+		}
+	});
+};
 /**
  *  @name Masthead()
  *  @desc init function for the masthead functionality
@@ -266,6 +263,7 @@ const Masthead = () => {
 	handleResize();
 	handleLoading();
 	handleClick();
+	handleKeyPress();
 };
 
 export default Masthead;

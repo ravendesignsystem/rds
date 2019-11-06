@@ -38,8 +38,12 @@ const toggleMenuOpenState = buttonArray => {
 	});
 };
 
-toggleMenuOpenState(subMenuButtonsArray);
-toggleMenuOpenState(navMenuButtonsArray);
+if (subMenuButtons) {
+	toggleMenuOpenState(subMenuButtonsArray);
+}
+if (navMenuButtons) {
+	toggleMenuOpenState(navMenuButtonsArray);
+}
 
 // add click event listener to .nav__expand button target
 navExpandButton.addEventListener('click', e => {
