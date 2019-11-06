@@ -41,7 +41,7 @@ if (navMenuButtons) {
 	toggleMenuOpenState(navMenuButtonsArray);
 }
 
-if (subMenuButtons) {
+if (subMenuButtons && navExpandButton) {
 	toggleMenuOpenState(subMenuButtonsArray);
 
 	// add click event listener to .nav__expand button target
@@ -79,8 +79,6 @@ if (subMenuButtons) {
 		});
 	});
 }
-
-// expandNav.addEventListener('click', expandMenu);
 
 // TODO
 // Can we add JS here shared by both Masthead and vertical nav

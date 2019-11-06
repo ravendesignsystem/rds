@@ -54,12 +54,10 @@ const toggleMastheadSizeAlert = () => {
 	const mastheadClassList = mastheadNavIcon.parentNode.classList;
 	// check against
 	if (window.innerWidth <= navWidth + 400 || window.innerWidth <= 960) {
-		mastheadNav.classList.add('u-visually-hidden');
 		modalMenu.appendChild(mastheadNav);
 		mastheadClassList.remove('u-hide-l');
 	} else {
 		mastheadClassList.add('u-hide-l');
-		mastheadNav.classList.remove('u-visually-hidden');
 		mastheadNavContainer.appendChild(mastheadNav);
 	}
 };
@@ -158,6 +156,7 @@ const closeAllModals = () => {
  *  @desc copies .b-menu content and appends it to .modal__menu
  */
 const appendSideNav = () => {
+	console.log('object');
 	modalMenu.appendChild(sideNav);
 };
 /**
@@ -238,8 +237,8 @@ const handleClick = () => {
 		mastheadNavIcon.addEventListener(
 			'click',
 			() => {
-				appendSideNav();
 				showModal('menu');
+				if (sideNavContainer) appendSideNav();
 			},
 			false
 		);
@@ -258,6 +257,7 @@ const handleKeyPress = () => {
  *  @desc init function for the masthead functionality
  */
 const Masthead = () => {
+	if (!masthead) return;
 	handleScroll();
 	handleResize();
 	handleLoading();
