@@ -6,12 +6,11 @@ let st;
 const body = document.querySelector('body');
 const masthead = document.querySelector('#id-masthead');
 const mastheadNav = document.querySelector('.c-nav--menubar');
-const mastheadNavContainer = document.querySelector('.c-nav--menubar')
-	.parentNode;
+const mastheadNavContainer = document.querySelector('.b-menu--topnav');
 const mastheadNavUl = document.querySelector('.c-nav--menubar ul');
 const mastheadActions = document.querySelector('.masthead__actions');
 const sideNav = document.querySelector('.c-nav--sidenav');
-const sideNavContainer = document.querySelector('.b-menu');
+const sideNavContainer = document.querySelector('.b-menu--sidenav');
 const mastheadNavIcon = document.querySelector('.c-navicon');
 const mastheadActionsCTA = mastheadActions.querySelectorAll(
 	`li[class*="masthead__"]`

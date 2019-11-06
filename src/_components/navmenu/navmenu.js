@@ -37,48 +37,48 @@ const toggleMenuOpenState = buttonArray => {
 		});
 	});
 };
-
-if (subMenuButtons) {
-	toggleMenuOpenState(subMenuButtonsArray);
-}
 if (navMenuButtons) {
 	toggleMenuOpenState(navMenuButtonsArray);
 }
 
-// add click event listener to .nav__expand button target
-navExpandButton.addEventListener('click', e => {
-	// deconstruct the event for cleanliness
-	const { currentTarget } = e;
-	const navExpandButtonText = currentTarget.querySelector('span');
+if (subMenuButtons) {
+	toggleMenuOpenState(subMenuButtonsArray);
 
-	// assign isMenuExpanded to the tarets data attr
-	isMenuExpanded = currentTarget.getAttribute('data-expanded');
+	// add click event listener to .nav__expand button target
+	navExpandButton.addEventListener('click', e => {
+		// deconstruct the event for cleanliness
+		const { currentTarget } = e;
+		const navExpandButtonText = currentTarget.querySelector('span');
 
-	// if menu is expanded, change text and data attribute
-	if (isMenuExpanded === 'false') {
-		navExpandButtonText.textContent = 'Collapse All';
-		currentTarget.setAttribute('data-expanded', true);
-		currentTarget.classList.add('nav__expand--open');
-	} else {
-		navExpandButtonText.textContent = 'Expand All';
-		currentTarget.setAttribute('data-expanded', false);
-		currentTarget.classList.remove('nav__expand--open');
-	}
+		// assign isMenuExpanded to the tarets data attr
+		isMenuExpanded = currentTarget.getAttribute('data-expanded');
 
-	// loop over menu buttons that have a parent of .has-menu
-	subMenuButtonsArray.map(subMenuButton => {
-		// assign expanded to the buttons data attribute
-		expanded = subMenuButton.getAttribute('aria-expanded');
-		// if menu is expanded, toggle aria
-		if (expanded === 'false') {
-			subMenuButton.setAttribute('aria-expanded', true);
+		// if menu is expanded, change text and data attribute
+		if (isMenuExpanded === 'false') {
+			navExpandButtonText.textContent = 'Collapse All';
+			currentTarget.setAttribute('data-expanded', true);
+			currentTarget.classList.add('nav__expand--open');
 		} else {
-			subMenuButton.setAttribute('aria-expanded', false);
+			navExpandButtonText.textContent = 'Expand All';
+			currentTarget.setAttribute('data-expanded', false);
+			currentTarget.classList.remove('nav__expand--open');
 		}
-		// if menu is expanded toggle class
-		subMenuButton.parentNode.classList.toggle('open');
+
+		// loop over menu buttons that have a parent of .has-menu
+		subMenuButtonsArray.map(subMenuButton => {
+			// assign expanded to the buttons data attribute
+			expanded = subMenuButton.getAttribute('aria-expanded');
+			// if menu is expanded, toggle aria
+			if (expanded === 'false') {
+				subMenuButton.setAttribute('aria-expanded', true);
+			} else {
+				subMenuButton.setAttribute('aria-expanded', false);
+			}
+			// if menu is expanded toggle class
+			subMenuButton.parentNode.classList.toggle('open');
+		});
 	});
-});
+}
 
 // expandNav.addEventListener('click', expandMenu);
 
