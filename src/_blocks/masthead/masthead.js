@@ -18,7 +18,7 @@ const mastheadNavLis = document.querySelectorAll('.b-masthead .c-menupopup');
 // mastheadNavIcon.addEventListener('click', function() {
 // 	modal.classList.toggle('is-visible');
 // 	// Remove the Masthead c-nav styles when in modal
-// 	mastheadNav.classList.toggle('c-nav--menubar');
+// 	mastheadNav.classList.toggle('c-nav--topnav');
 
 // 	for (var i = 0; i < mastheadNavLis.length; i++) {
 // 		console.log(mastheadNavLis[i]);

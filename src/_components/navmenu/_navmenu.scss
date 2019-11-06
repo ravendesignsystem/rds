@@ -2,7 +2,7 @@
 // Nav Menu Styles
 // ------------------------
 
-.c-nav:not(.c-nav--menubar) {
+.c-nav:not(.c-nav--topnav) {
 	h2 {
 		background-color: $grey;
 		padding: 10px 15px;
@@ -142,15 +142,32 @@
 
 dialog {
 	.nav__menu--bar {
-		li a {
-			padding-left: 25px !important;
-			color: $grey-emperor;
-			font-size: 15px !important;
+		li {
+			margin: 0;
+			list-style-type: none;
+
+			a {
+				display: block;
+				color: $grey-emperor;
+				padding: 10px 15px;
+			}
+
+			ul {
+				margin: 0;
+
+				ul li:first-child a {
+					padding-top: 5px;
+				}
+			}
+		}
+
+		> li {
+			border-bottom: 1px solid $grey;
 		}
 
 		> .has-submenu.open {
 			box-shadow: none !important;
-			border-bottom: 1px solid $grey !important;
+			// border-bottom: 1px solid $grey !important;
 			padding-bottom: 0 !important;
 		}
 

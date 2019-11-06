@@ -5,9 +5,9 @@ let lastScrollTop = 0;
 let st;
 const body = document.querySelector('body');
 const masthead = document.querySelector('#id-masthead');
-const mastheadNav = document.querySelector('.c-nav--menubar');
+const mastheadNav = document.querySelector('.c-nav--topnav');
 const mastheadNavContainer = document.querySelector('.b-menu--topnav');
-const mastheadNavUl = document.querySelector('.c-nav--menubar ul');
+const mastheadNavUl = document.querySelector('.c-nav--topnav ul');
 const mastheadActions = document.querySelector('.masthead__actions');
 const sideNav = document.querySelector('.c-nav--sidenav');
 const sideNavContainer = document.querySelector('.b-menu--sidenav');
@@ -58,8 +58,10 @@ const toggleMastheadSizeAlert = () => {
 		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map(li => {
 			if (li.firstElementChild.getAttribute('aria-disabled') === 'false') {
 				li.firstElementChild.setAttribute('aria-disabled', true);
+				li.firstElementChild.setAttribute('aria-expanded', true);
 			} else {
 				li.firstElementChild.setAttribute('aria-disabled', false);
+				li.firstElementChild.setAttribute('aria-expanded', false);
 			}
 			li.classList.remove('c-menupopup');
 			li.classList.add('open');

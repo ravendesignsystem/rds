@@ -6,13 +6,13 @@ const subMenuButtons = document.querySelectorAll(
 ); // nodelist
 const subMenuButtonsArray = Array.from(subMenuButtons);
 const navMenuButtons = document.querySelectorAll(
-	'.c-nav--menubar .has-submenu button'
+	'.c-nav--topnav .has-submenu button'
 ); // nodelist
 const navMenuButtonsArray = Array.from(navMenuButtons);
 
 const isTopNav = target => {
 	return target.parentNode.parentNode.parentNode.classList.contains(
-		'c-nav--menubar'
+		'c-nav--topnav'
 	);
 };
 // function to toggle nav and side nav state
