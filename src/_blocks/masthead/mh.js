@@ -55,9 +55,23 @@ const toggleMastheadSizeAlert = () => {
 	// check against
 	if (window.innerWidth <= navWidth + 400 || window.innerWidth <= 960) {
 		modalMenu.appendChild(mastheadNav);
+		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map(li => {
+			if (li.firstElementChild.getAttribute('aria-disabled') === 'false') {
+				li.firstElementChild.setAttribute('aria-disabled', true);
+			} else {
+				li.firstElementChild.setAttribute('aria-disabled', false);
+			}
+			li.classList.remove('c-menupopup');
+			li.classList.add('open');
+		});
 		mastheadClassList.remove('u-hide-l');
 	} else {
 		mastheadClassList.add('u-hide-l');
+		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map(li => {
+			li.classList.remove('open');
+			li.classList.add('c-menupopup');
+		});
+
 		mastheadNavContainer.appendChild(mastheadNav);
 	}
 };
@@ -156,7 +170,6 @@ const closeAllModals = () => {
  *  @desc copies .b-menu content and appends it to .modal__menu
  */
 const appendSideNav = () => {
-	console.log('object');
 	modalMenu.appendChild(sideNav);
 };
 /**
