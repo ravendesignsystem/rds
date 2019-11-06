@@ -6,8 +6,10 @@ let st;
 const body = document.querySelector('body');
 const masthead = document.querySelector('#id-masthead');
 const mastheadNav = document.querySelector('.c-nav--menubar');
-const mastheadNavUL = document.querySelector('.c-nav--menubar ul');
+const mastheadNavUl = document.querySelector('.c-nav--menubar ul');
 const mastheadActions = document.querySelector('.masthead__actions');
+const sideNav = document.querySelector('.c-nav--sidenav');
+const sideNavContainer = document.querySelector('.b-menu');
 const mastheadNavIcon = document.querySelector('.c-navicon');
 const mastheadActionsCTA = mastheadActions.querySelectorAll(
 	`li[class*="masthead__"]`
@@ -24,15 +26,14 @@ const modal = document.querySelector('.l-overlay-modal');
 const modalMenu = document.querySelector('.modal__menu');
 const modalSearch = document.querySelector('.modal__search');
 const modalLogin = document.querySelector('.modal__login');
-
-const secondaryNav = document.querySelector('.b-menu');
-
 const setAriaHidden = target => {
 	target.setAttribute('aria-hidden', true);
 };
 const unsetAriaHidden = target => {
 	target.setAttribute('aria-hidden', false);
 };
+
+const navWidth = mastheadNav.offsetWidth;
 
 /**
  *  @name detectOverflowOnMasthead()
@@ -41,7 +42,7 @@ const unsetAriaHidden = target => {
  *  @return { boolean }
  */
 const detectOverflowOnMasthead = () => {
-	return mastheadNav.offsetWidth <= mastheadNavUL.offsetWidth + 1;
+	return mastheadNav.offsetWidth <= mastheadNavUl.offsetWidth;
 };
 
 /**
@@ -49,8 +50,16 @@ const detectOverflowOnMasthead = () => {
  *  @desc adds class to display red banner error stating the menu is too wide
  */
 const toggleMastheadSizeAlert = () => {
-	if (window.innerWidth >= 960 && detectOverflowOnMasthead(mastheadNav)) {
-		mastheadNav.classList.add('masthead__overflow-detected');
+	const mastheadClassList = mastheadNavIcon.parentNode.classList;
+	// check against
+	if (window.innerWidth <= navWidth + 300 || window.innerWidth <= 960) {
+		mastheadNav.classList.add('u-visually-hidden');
+		modalMenu.appendChild(mastheadNavUl);
+		mastheadClassList.remove('u-hide-l');
+	} else {
+		mastheadClassList.add('u-hide-l');
+		mastheadNav.classList.remove('u-visually-hidden');
+		mastheadNav.appendChild(mastheadNavUl);
 	}
 };
 
@@ -147,19 +156,19 @@ const closeAllModals = () => {
 	}
 };
 /**
- *  @name appendSecondaryNav()
- *  @desc copies .b-menu and appends it to .modal__menu
+ *  @name appendSideNav()
+ *  @desc copies .b-menu content and appends it to .modal__menu
  */
-const appendSecondaryNav = () => {
-	modalMenu.appendChild(secondaryNav);
+const appendSideNav = () => {
+	modalMenu.appendChild(sideNav);
 };
 /**
- *  @name removeSecondaryNav()
+ *  @name removeSideNav()
  *  @desc removes .b-menu from .modal__menu
  */
-const removeSecondaryNav = () => {
+const removeSideNav = () => {
 	if (modalMenu.childNodes.length > 1) {
-		modalMenu.removeChild(secondaryNav);
+		sideNavContainer.appendChild(sideNav);
 	}
 };
 
@@ -189,7 +198,7 @@ const handleResize = () => {
 			} else {
 				body.classList.remove('extraMarginTop');
 			}
-			setTimeout(() => (timeout = true), 500);
+			setTimeout(() => (timeout = true), 200);
 		},
 		false
 	);
@@ -202,7 +211,6 @@ const handleLoading = () => {
 	window.addEventListener(
 		'load',
 		() => {
-			toggleMastheadDropNav();
 			toggleMastheadSizeAlert();
 
 			if (mastheadHasDropNav()) {
@@ -234,7 +242,7 @@ const handleClick = () => {
 		'click',
 		() => {
 			closeAllModals();
-			removeSecondaryNav();
+			removeSideNav();
 		},
 		false
 	);
@@ -242,7 +250,7 @@ const handleClick = () => {
 		mastheadNavIcon.addEventListener(
 			'click',
 			() => {
-				appendSecondaryNav();
+				appendSideNav();
 				showModal('menu');
 			},
 			false

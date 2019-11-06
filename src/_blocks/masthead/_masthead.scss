@@ -7,7 +7,13 @@ $masthead_height: 72px;
 body {
 	margin-top: 75px;
 }
-
+.c-nav--menubar {
+	width: 100%;
+	.nav__menu {
+		justify-content: flex-start !important;
+		margin-left: 0 !important;
+	}
+}
 #id-masthead {
 	position: fixed;
 	top: 0;
