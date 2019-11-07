@@ -1,4 +1,5 @@
 import dialogPolyfill from 'dialog-polyfill';
+import { closeMenuState } from '../../_components/navmenu/navmenu';
 
 let scrollPosition;
 let lastScrollTop = 0;
@@ -34,10 +35,6 @@ const unsetAriaHidden = target => {
 	target.setAttribute('aria-hidden', false);
 };
 
-// if (mastheadNav) {
-// 	const navWidth = mastheadNav.offsetWidth;
-// }
-
 /**
  *  @name detectOverflowOnMasthead()
  *  @desc returns boolean where viewport width is compared to elements total width
@@ -58,7 +55,7 @@ const toggleMastheadSizeAlert = () => {
 
 	const navWidth = mastheadNav.offsetWidth;
 	const mastheadClassList = mastheadNavIcon.parentNode.classList;
-	// check against
+	// capture div width and compare against window width
 	if (window.innerWidth <= navWidth + 400 || window.innerWidth <= 960) {
 		modalMenu.appendChild(mastheadNav);
 		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map(li => {
@@ -83,23 +80,6 @@ const toggleMastheadSizeAlert = () => {
 		mastheadNavContainer.appendChild(mastheadNav);
 	}
 };
-
-// /**
-//  *  @name toggleMastheadDropNav()
-//  *  @desc adds class to move the menu to a second level if conditions are met
-//  */
-// const toggleMastheadDropNav = () => {
-// 	if (window.innerWidth <= 960 || detectOverflowOnMasthead(mastheadNav)) {
-// 		mastheadNav.classList.add('masthead__second-level');
-// 	} else if (
-// 		window.innerWidth >= 961 &&
-// 		!detectOverflowOnMasthead(mastheadNav)
-// 	) {
-// 		mastheadNav.classList.remove('masthead__second-level');
-// 	} else {
-// 		return;
-// 	}
-// };
 
 /**
  *  @name toggleMastheadVisibilty()
@@ -209,7 +189,7 @@ const handleResize = () => {
 
 			timeout = false;
 			toggleMastheadSizeAlert();
-			toggleMastheadDropNav();
+			// toggleMastheadDropNav();
 
 			setTimeout(() => (timeout = true), 100);
 		},
@@ -225,7 +205,7 @@ const handleLoading = () => {
 		'load',
 		() => {
 			toggleMastheadSizeAlert();
-			// toggleMastheadDropNav();
+			closeMenuState();
 		},
 		false
 	);

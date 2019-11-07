@@ -5,6 +5,7 @@ const subMenuButtons = document.querySelectorAll(
 	'.c-nav--sidenav .has-submenu button'
 ); // nodelist
 const subMenuButtonsArray = Array.from(subMenuButtons);
+const navMenu = document.querySelector('.c-nav--topnav');
 const navMenuButtons = document.querySelectorAll(
 	'.c-nav--topnav .has-submenu button'
 ); // nodelist
@@ -15,6 +16,28 @@ const isTopNav = target => {
 		'c-nav--topnav'
 	);
 };
+
+//there is a much better way to do this, but for now it's verbose.
+export const closeMenuState = () => {
+	if (!navMenuButtons) return;
+	document.addEventListener('click', e => {
+		if (!navMenu.contains(e.target) || e.key === 'Escape') {
+			navMenuButtonsArray.map(button => {
+				button.parentNode.classList.remove('open');
+				button.setAttribute('aria-expanded', false);
+			});
+		}
+	});
+	document.addEventListener('keydown', e => {
+		if (e.key === 'Escape') {
+			navMenuButtonsArray.map(button => {
+				button.parentNode.classList.remove('open');
+				button.setAttribute('aria-expanded', false);
+			});
+		}
+	});
+};
+
 // function to toggle nav and side nav state
 const toggleMenuOpenState = buttonArray => {
 	buttonArray.map(button => {
