@@ -2,7 +2,7 @@
     <div class="b-masthead {% if page.masthead != 'nostick' %} js-masthead-stick{% endif %}">
 
         <h1>
-            <a tabindex="2" accesskey="1" href="{{ site.url }}">
+            <a href="{{ site.url }}">
                 {% include 'icons/mark-cushield.svg' %}Raven Design System</a>
         </a>
     </h1>
@@ -14,8 +14,7 @@
     <ul class="masthead__actions nav__menu--vert ">
         <li class="masthead__cta has-submenu c-menupopup c-menupopup--right u-hide-s">
 
-            <button class="u-icon" href="https://github.com/ravendesignsystem" aria-expanded="false" aria-controls="mh-cta">{% include 'icons/mark-github.svg' %}
-                Github</button>
+            <button class="u-icon" href="https://github.com/ravendesignsystem" aria-expanded="false" aria-controls="mh-cta">{% include 'icons/mark-github.svg' %}Github</button>
             <ul class="is-submenu" id="mh-cta" aria-label="menupopup" aria-expanded="false">
                 <li>
                     <a class="u-icon" href="https://github.com/ravendesignsystem/rds/releases">{% include 'icons/code.svg' %}

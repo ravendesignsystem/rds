@@ -48,7 +48,7 @@
 
 		button {
 			position: absolute;
-			top: 5px;
+			top: 3px;
 			right: -10px;
 			height: 40px;
 			width: 40px;
@@ -103,7 +103,7 @@
 	// Child nav
 	.is-submenu {
 		button {
-			top: 0;
+			top: -1px !important;
 		}
 
 		li a {
