@@ -36,6 +36,7 @@ body {
 	height: $masthead_height;
 	display: flex;
 	align-items: center;
+	// justify-content: flex-start;
 
 	li {
 		height: $masthead_height;
@@ -44,7 +45,7 @@ body {
 
 	// Actions float right
 	&:last-child {
-		justify-content: flex-end;
+		// justify-content: flex-end;
 		margin-left: auto;
 	}
 
@@ -86,13 +87,23 @@ body {
 		margin: 0;
 		white-space: nowrap;
 
+		span {
+			display: table;
+		}
+
 		@include media('>s') {
 			border-right: 1px solid $grey-yoda;
 		}
 
-		& a {
+		a {
+			display: flex;
+			align-items: center;
 			padding: 0 8px;
 			font-size: 18px;
+
+			// & > span {
+			// 	margin-left: 5px;
+			// }
 
 			&:hover {
 				color: $red;
@@ -108,7 +119,8 @@ body {
 		svg {
 			width: 40px;
 			height: 40px;
-			margin-top: -3px;
+			// margin-top: -3px;
+			margin-right: 5px;
 			vertical-align: middle;
 		}
 	}
