@@ -70,21 +70,26 @@
 	// }
 
 	.nav__expand {
-		border-bottom: none;
+		display: none;
 
-		button {
-			display: flex;
-			align-items: center;
-			font-size: $pixel14;
-			color: $grey-vader;
-			padding: 8px 10px;
-		}
+		@include media('>s') {
+			display: block;
+			border-bottom: none;
 
-		svg {
-			width: 8px;
-			height: 8px;
-			fill: $grey-vader;
-			margin-right: 5px;
+			button {
+				display: flex;
+				align-items: center;
+				font-size: $pixel14;
+				color: $grey-vader;
+				padding: 8px 10px;
+			}
+
+			svg {
+				width: 8px;
+				height: 8px;
+				fill: $grey-vader;
+				margin-right: 5px;
+			}
 		}
 	}
 

@@ -2,7 +2,7 @@
 layout: docs
 subsite: dev
 title: RDS Developer Docs
-menu: dev
+# menu: dev
 banner:
   img:
     img_url: https://cu-raven.s3.amazonaws.com/assets/img/photos/nevermore.jpg

@@ -34,7 +34,9 @@ const unsetAriaHidden = target => {
 	target.setAttribute('aria-hidden', false);
 };
 
-const navWidth = mastheadNav.offsetWidth;
+// if (mastheadNav) {
+// 	const navWidth = mastheadNav.offsetWidth;
+// }
 
 /**
  *  @name detectOverflowOnMasthead()
@@ -43,6 +45,7 @@ const navWidth = mastheadNav.offsetWidth;
  *  @return { boolean }
  */
 const detectOverflowOnMasthead = () => {
+	if (!mastheadNav) return;
 	return mastheadNav.offsetWidth <= mastheadNavUl.offsetWidth;
 };
 
@@ -51,6 +54,9 @@ const detectOverflowOnMasthead = () => {
  *  @desc adds class to display red banner error stating the menu is too wide
  */
 const toggleMastheadSizeAlert = () => {
+	if (!mastheadNav) return;
+
+	const navWidth = mastheadNav.offsetWidth;
 	const mastheadClassList = mastheadNavIcon.parentNode.classList;
 	// check against
 	if (window.innerWidth <= navWidth + 400 || window.innerWidth <= 960) {
@@ -78,22 +84,22 @@ const toggleMastheadSizeAlert = () => {
 	}
 };
 
-/**
- *  @name toggleMastheadDropNav()
- *  @desc adds class to move the menu to a second level if conditions are met
- */
-const toggleMastheadDropNav = () => {
-	if (window.innerWidth <= 960 || detectOverflowOnMasthead(mastheadNav)) {
-		mastheadNav.classList.add('masthead__second-level');
-	} else if (
-		window.innerWidth >= 961 &&
-		!detectOverflowOnMasthead(mastheadNav)
-	) {
-		mastheadNav.classList.remove('masthead__second-level');
-	} else {
-		return;
-	}
-};
+// /**
+//  *  @name toggleMastheadDropNav()
+//  *  @desc adds class to move the menu to a second level if conditions are met
+//  */
+// const toggleMastheadDropNav = () => {
+// 	if (window.innerWidth <= 960 || detectOverflowOnMasthead(mastheadNav)) {
+// 		mastheadNav.classList.add('masthead__second-level');
+// 	} else if (
+// 		window.innerWidth >= 961 &&
+// 		!detectOverflowOnMasthead(mastheadNav)
+// 	) {
+// 		mastheadNav.classList.remove('masthead__second-level');
+// 	} else {
+// 		return;
+// 	}
+// };
 
 /**
  *  @name toggleMastheadVisibilty()
@@ -219,7 +225,7 @@ const handleLoading = () => {
 		'load',
 		() => {
 			toggleMastheadSizeAlert();
-			toggleMastheadDropNav();
+			// toggleMastheadDropNav();
 		},
 		false
 	);

@@ -66,16 +66,14 @@ if (subMenuButtons && navExpandButton) {
 
 		// loop over menu buttons that have a parent of .has-menu
 		subMenuButtonsArray.map(subMenuButton => {
-			// assign expanded to the buttons data attribute
-			expanded = subMenuButton.getAttribute('aria-expanded');
 			// if menu is expanded, toggle aria
-			if (expanded === 'false') {
+			if (isMenuExpanded === 'false') {
 				subMenuButton.setAttribute('aria-expanded', true);
+				subMenuButton.parentNode.classList.add('open');
 			} else {
 				subMenuButton.setAttribute('aria-expanded', false);
+				subMenuButton.parentNode.classList.remove('open');
 			}
-			// if menu is expanded toggle class
-			subMenuButton.parentNode.classList.toggle('open');
 		});
 	});
 }
