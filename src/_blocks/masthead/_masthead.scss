@@ -27,26 +27,17 @@ body {
 	height: 75px;
 }
 
-// Masthead Flex Layout
 .b-masthead,
-.b-masthead > h1,
-.b-masthead > nav,
+.b-masthead nav,
 .b-masthead > ul,
 .b-masthead nav > ul {
 	height: $masthead_height;
 	display: flex;
 	align-items: center;
-	// justify-content: flex-start;
 
 	li {
 		height: $masthead_height;
 		line-height: $masthead_height;
-	}
-
-	// Actions float right
-	&:last-child {
-		// justify-content: flex-end;
-		margin-left: auto;
 	}
 
 	& a:focus,
@@ -57,7 +48,7 @@ body {
 
 	// All unordered lists
 	ul {
-		margin: 0;
+		// margin: 0;
 		list-style-type: none;
 	}
 
@@ -79,82 +70,6 @@ body {
 	button[aria-expanded='true'] {
 		background-color: $grey-yoda;
 		color: $black;
-	}
-
-	// Masthead brand
-	h1 {
-		padding: 0;
-		margin: 0;
-		white-space: nowrap;
-
-		span {
-			display: table;
-		}
-
-		@include media('>s') {
-			border-right: 1px solid $grey-yoda;
-		}
-
-		a {
-			display: flex;
-			align-items: center;
-			padding: 0 8px;
-			font-size: 18px;
-
-			// & > span {
-			// 	margin-left: 5px;
-			// }
-
-			&:hover {
-				color: $red;
-				background-color: white;
-			}
-
-			@include media('>s') {
-				font-size: 20px;
-				padding: 0 15px;
-			}
-		}
-
-		svg {
-			width: 40px;
-			height: 40px;
-			// margin-top: -3px;
-			margin-right: 5px;
-			vertical-align: middle;
-		}
-	}
-
-	// Masthead actions
-
-	.masthead__actions {
-		li {
-			border-left: 1px solid $grey-yoda;
-
-			&.masthead__cta > a {
-				background-color: $red;
-				color: white;
-
-				svg {
-					fill: white;
-				}
-			}
-		}
-
-		@include media('>s') {
-			li:not(.masthead__navicon) {
-				& > a,
-				& > button {
-					display: flex;
-					align-items: center;
-					height: 100%;
-
-					&:hover {
-						background: none;
-					}
-				}
-			}
-		}
 	}
 
 	// Modifiers
@@ -188,4 +103,79 @@ body {
 			display: block;
 		}
 	}
-} // End .b-masthead
+}
+
+.b-masthead h1 {
+	height: $masthead_height;
+	display: flex;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+	white-space: nowrap;
+
+	span {
+		display: table;
+	}
+
+	@include media('>s') {
+		border-right: 1px solid $grey-yoda;
+	}
+
+	a {
+		display: flex;
+		align-items: center;
+		padding: 0 8px;
+		font-size: 18px;
+
+		&:hover {
+			color: $red;
+			background-color: white;
+		}
+
+		@include media('>s') {
+			font-size: 20px;
+			padding: 0 15px;
+		}
+	}
+
+	svg {
+		width: 40px;
+		height: 40px;
+		// margin-top: -3px;
+		margin-right: 5px;
+		vertical-align: middle;
+	}
+}
+
+.masthead__actions {
+	justify-content: flex-end;
+	margin-left: auto;
+
+	li {
+		border-left: 1px solid $grey-yoda;
+
+		&.masthead__cta > a {
+			background-color: $red;
+			color: white;
+
+			svg {
+				fill: white;
+			}
+		}
+	}
+
+	@include media('>s') {
+		li:not(.masthead__navicon) {
+			& > a,
+			& > button {
+				display: flex;
+				align-items: center;
+				height: 100%;
+
+				&:hover {
+					background: none;
+				}
+			}
+		}
+	}
+}

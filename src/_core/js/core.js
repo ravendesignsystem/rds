@@ -1,5 +1,7 @@
 // polyfills
-import '../../_core/js/polyfills/polyfills';
+import './polyfills/polyfills';
+import './polyfills/From-polyfill';
+
 // component scripts
 import '../../_components/accordion/accordion';
 import '../../_components/alert/alert';

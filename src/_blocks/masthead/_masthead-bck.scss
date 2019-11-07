@@ -1,0 +1,189 @@
+//
+// Main Masthead Styles
+// -----------------------------
+
+$masthead_height: 72px;
+
+body {
+	margin-top: 75px;
+}
+.c-nav--topnav {
+	width: 100%;
+	.nav__menu {
+		justify-content: flex-start !important;
+		margin-left: 0 !important;
+	}
+}
+#id-masthead {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10000;
+	// Visual
+	background-color: white;
+	border-top: 2px solid $red;
+	border-bottom: 1px solid $grey-kenobi;
+	height: 75px;
+}
+
+// Masthead Flex Layout
+.b-masthead,
+.b-masthead > h1,
+.b-masthead > nav,
+.b-masthead > ul,
+.b-masthead nav > ul {
+	// height: $masthead_height;
+	// display: flex;
+	// align-items: center;
+
+	// li {
+	// 	height: $masthead_height;
+	// 	line-height: $masthead_height;
+	// }
+
+	// // Actions float right
+	// &:last-child {
+	// 	justify-content: flex-end;
+	// 	margin-left: auto;
+	// }
+
+	// & a:focus,
+	// & button:focus {
+	// 	outline: 5px solid $link;
+	// 	position: relative;
+	// }
+
+	// // All unordered lists
+	// ul {
+	// 	margin: 0;
+	// 	list-style-type: none;
+	// }
+
+	// All links and buttons
+	a,
+	button {
+		display: block;
+		position: relative;
+		white-space: nowrap;
+		// align-items: center;
+		font-size: $pixel14;
+		font-weight: 500;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	a:hover,
+	button:hover,
+	button[aria-expanded='true'] {
+		background-color: $grey-yoda;
+		color: $black;
+	}
+
+	// Masthead brand
+	h1 {
+		padding: 0;
+		margin: 0;
+		white-space: nowrap;
+
+		span {
+			display: table;
+		}
+
+		@include media('>s') {
+			border-right: 1px solid $grey-yoda;
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+			padding: 0 8px;
+			font-size: 18px;
+
+			// & > span {
+			// 	margin-left: 5px;
+			// }
+
+			&:hover {
+				color: $red;
+				background-color: white;
+			}
+
+			@include media('>s') {
+				font-size: 20px;
+				padding: 0 15px;
+			}
+		}
+
+		svg {
+			width: 40px;
+			height: 40px;
+			// margin-top: -3px;
+			margin-right: 5px;
+			vertical-align: middle;
+		}
+	}
+
+	// // Masthead actions
+	// .masthead__actions {
+	// 	li {
+	// 		border-left: 1px solid $grey-yoda;
+
+	// 		&.masthead__cta > a {
+	// 			background-color: $red;
+	// 			color: white;
+
+	// 			svg {
+	// 				fill: white;
+	// 			}
+	// 		}
+	// 	}
+
+	// 	@include media('>s') {
+	// 		li:not(.masthead__navicon) {
+	// 			& > a,
+	// 			& > button {
+	// 				display: flex;
+	// 				align-items: center;
+	// 				height: 100%;
+
+	// 				&:hover {
+	// 					background: none;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	// Modifiers
+	.js-has-shadow {
+		box-shadow: 0 10px 11px -7px $grey-yoda;
+		margin-bottom: 6px;
+	}
+
+	.c-menupopup > button {
+		padding-right: 25px;
+
+		&::after {
+			right: 14px;
+		}
+	}
+
+	//
+	// Styles for4 shared JS from navmenu component.
+	// -----------------------------
+	// TODO should this be changed to visually hidden?
+	// But if we do that then should you use aria tags
+	// as the screen readers will see the submenu??
+	.has-submenu {
+		// Hide child navs by default
+		& > ul {
+			display: none;
+		}
+
+		// Show the child nav when expanded
+		&.open > ul {
+			display: block;
+		}
+	}
+} // End .b-masthead
