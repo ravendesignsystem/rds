@@ -14,7 +14,7 @@ import '../../_blocks/alertheader/alertheader';
 // import '../../_blocks/masthead/masthead';
 
 // commenting out for refactor
-import Masthead from '../../_blocks/masthead/mh';
+import Masthead from '../../_blocks/masthead/masthead';
 Masthead();
 
 // we should probably get rid of this before v1
