@@ -6,10 +6,15 @@ const subMenuButtons = document.querySelectorAll(
 ); // nodelist
 const subMenuButtonsArray = Array.from(subMenuButtons);
 const navMenu = document.querySelector('.c-nav--topnav');
+const actionsMenu = document.querySelector('.masthead__actions');
 const navMenuButtons = document.querySelectorAll(
 	'.c-nav--topnav .has-submenu button'
 ); // nodelist
 const navMenuButtonsArray = Array.from(navMenuButtons);
+const actionMenuButtons = document.querySelectorAll(
+	'.masthead__actions .has-submenu button'
+); // nodelist
+const actionMenuArray = Array.from(actionMenuButtons);
 
 const isTopNav = target => {
 	return target.parentNode.parentNode.parentNode.classList.contains(
@@ -27,10 +32,17 @@ export const closeMenuState = () => {
 				button.setAttribute('aria-expanded', false);
 			});
 		}
+		if (!actionsMenu.contains(e.target) || e.key === 'Escape') {
+			actionMenuArray.map(button => {
+				button.parentNode.classList.remove('open');
+				button.setAttribute('aria-expanded', false);
+			});
+		}
 	});
 	document.addEventListener('keydown', e => {
+		const allMastheadButtons = navMenuButtonsArray.concat(actionMenuArray);
 		if (e.key === 'Escape') {
-			navMenuButtonsArray.map(button => {
+			allMastheadButtons.map(button => {
 				button.parentNode.classList.remove('open');
 				button.setAttribute('aria-expanded', false);
 			});
@@ -62,6 +74,9 @@ const toggleMenuOpenState = buttonArray => {
 };
 if (navMenuButtons) {
 	toggleMenuOpenState(navMenuButtonsArray);
+}
+if (actionMenuButtons) {
+	toggleMenuOpenState(actionMenuArray);
 }
 
 if (subMenuButtons && navExpandButton) {

@@ -95,10 +95,8 @@ const toggleMastheadVisibilty = () => {
 	if (st > lastScrollTop && st > mastheadHeight && modalIsClosed === 'true') {
 		// on scroll down
 		masthead.classList.add('u-visually-hidden');
-		body.classList.remove('u-masthead-sticky');
 	} else {
 		masthead.classList.remove('u-visually-hidden');
-		body.classList.add('u-masthead-sticky');
 		// on scroll up
 	}
 	lastScrollTop = st <= 0 ? 0 : st;
@@ -193,10 +191,9 @@ const handleResize = () => {
 
 			timeout = false;
 
-			setTimeout(() => {
-				toggleMobileMenu();
-				timeout = true;
-			}, 500);
+			// toggleMobileMenu();
+
+			setTimeout(() => (timeout = true), 900);
 		},
 		false
 	);

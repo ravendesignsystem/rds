@@ -1,19 +1,39 @@
 //
-// Main Masthead Styles
-// -----------------------------
-
-$masthead_height: 72px;
+// Top Nav Modifier
+// TODO: move to vars and globals when QA is done
+// ------------------------
 
 body {
 	margin-top: 75px;
 }
+
+//
+// Top Nav Modifier
+// TODO: move to /blocks/menu when QA is done
+// ------------------------
+
+// .b-menu--topnav {
+// 	width: 100%;
+// }
+
+//
+// Top Nav Modifier
+// TODO: move to /components/navmenu when QA is done
+// ------------------------
+
 .c-nav--topnav {
 	width: 100%;
+
 	.nav__menu {
 		justify-content: flex-start !important;
 		margin-left: 0 !important;
 	}
 }
+
+//
+// Main Masthead Styles
+// -----------------------------
+
 #id-masthead {
 	position: fixed;
 	top: 0;
@@ -154,27 +174,28 @@ body {
 	li {
 		border-left: 1px solid $grey-yoda;
 
-		&.masthead__cta > a {
-			background-color: $red;
-			color: white;
-
-			svg {
-				fill: white;
-			}
+		a,
+		button {
+			display: flex;
+			align-items: center;
+			height: 100%;
 		}
 	}
 
-	@include media('>s') {
-		li:not(.masthead__navicon) {
-			& > a,
-			& > button {
-				display: flex;
-				align-items: center;
-				height: 100%;
+	.masthead__cta > a {
+		background-color: $red;
+		color: white;
 
-				&:hover {
-					background: none;
-				}
+		svg {
+			fill: white;
+		}
+
+		&:hover {
+			background: $grey;
+			color: black;
+
+			svg {
+				fill: black;
 			}
 		}
 	}
