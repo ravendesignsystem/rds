@@ -182,13 +182,18 @@ const handleScroll = () => {
 	);
 };
 const handleResize = () => {
-	let timeout;
+	let timeout = true;
+
 	window.addEventListener(
 		'resize',
 		() => {
-			clearTimeout(timeout);
-			timeout = setTimeout(toggleMobileMenu, 500);
-			// modalMenu.classList.add('u-visually-hidden');
+			if (!timeout) return;
+
+			timeout = false;
+
+			// toggleMobileMenu();
+
+			setTimeout(() => (timeout = true), 900);
 		},
 		false
 	);
