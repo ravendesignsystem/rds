@@ -1,46 +1,260 @@
-// Rudimentary js just for building styles on new masthead
-// Expected to reworked into new masthead JS updated from mh.js
+import dialogPolyfill from 'dialog-polyfill';
+import { closeMenuState } from '../../_components/navmenu/navmenu';
 
-// For testing Masthead Nav, click the Hamburger to open modal and move Masthead nav in
+let scrollPosition;
+let lastScrollTop = 0;
+let st;
+const body = document.querySelector('body');
+const masthead = document.querySelector('#id-masthead');
+const mastheadNav = document.querySelector('.c-nav--topnav');
+const mastheadNavContainer = document.querySelector('.b-menu--topnav');
+const mastheadNavUl = document.querySelector('.c-nav--topnav ul');
+const mastheadActions = document.querySelector('.masthead__actions');
+const sideNav = document.querySelector('.c-nav--sidenav');
+const sideNavContainer = document.querySelector('.b-menu--sidenav');
+const mastheadNavIcon = document.querySelector('.c-navicon');
+const mastheadActionsCTA = mastheadActions.querySelectorAll(
+	`li[class*="masthead__"]`
+);
 
-// For testing b-menu, click the Search button to open modal and move vert nav in
+const mastheadHeight = masthead.offsetHeight;
+const mastheadSearch = document.querySelector('.masthead__search');
 
-const modal = document.querySelector('.l-overlay-modal'),
-	mastheadNavIcon = document.querySelector('.c-navicon'),
-	searchBut = document.querySelector('.masthead__search'),
-	mastheadNav = document.querySelector('.b-masthead nav'),
-	modalMenu = document.querySelector('.modal__menu');
+const mastheadLogin = document.querySelector('.masthead__login');
+const globalCloseModalButton = document.querySelector(
+	'.masthead__close-modals'
+);
+const modal = document.querySelector('.l-overlay-modal');
+const modalMenu = document.querySelector('.modal__menu');
+const modalSearch = document.querySelector('.modal__search');
+const modalLogin = document.querySelector('.modal__login');
+const setAriaHidden = target => {
+	target.setAttribute('aria-hidden', true);
+};
+const unsetAriaHidden = target => {
+	target.setAttribute('aria-hidden', false);
+};
+const searchFormInput = document.querySelector('input.searchform__input');
 
-// Only target c-menupopups in masthead as there could be more on page elsewhere
-const mastheadNavLis = document.querySelectorAll('.b-masthead .c-menupopup');
+/**
+ *  @name detectOverflowOnMasthead()
+ *  @desc returns boolean where viewport width is compared to elements total width
+ *  @param { html entity } element element to compare
+ *  @return { boolean }
+ */
+const detectOverflowOnMasthead = () => {
+	if (!mastheadNav) return;
+	return mastheadNav.offsetWidth <= mastheadNavUl.offsetWidth;
+};
 
-// // Move the Masthead nav to modal
-// mastheadNavIcon.addEventListener('click', function() {
-// 	modal.classList.toggle('is-visible');
-// 	// Remove the Masthead c-nav styles when in modal
-// 	mastheadNav.classList.toggle('c-nav--topnav');
+/**
+ *  @name toggleMastheadSizeAlert()
+ *  @desc adds class to display red banner error stating the menu is too wide
+ */
+const toggleMastheadSizeAlert = () => {
+	if (!mastheadNav) return;
 
-// 	for (var i = 0; i < mastheadNavLis.length; i++) {
-// 		console.log(mastheadNavLis[i]);
-// 		// Remove the Masthead c-popup
-// 		mastheadNavLis[i].classList.toggle('c-menupopup');
-// 		// Since there are only 2 levels and vertical space, expand all - also helps deal with buttons
-// 		mastheadNavLis[i].classList.toggle('open');
-// 		// Disable buttons..might be a better approach here?
-// 		mastheadNavLis[i].firstElementChild.setAttribute('disabled', '');
-// 	}
+	const navWidth = mastheadNav.offsetWidth + 800;
+	const mastheadClassList = mastheadNavIcon.parentNode.classList;
 
-// 	modalMenu.classList.toggle('u-visually-hidden');
-// 	modalMenu.appendChild(mastheadNav);
-// });
+	// capture div width and compare against window width
+	if (window.innerWidth <= navWidth || window.innerWidth <= 960) {
+		modalMenu.appendChild(mastheadNav);
+		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map(li => {
+			if (li.firstElementChild.getAttribute('aria-disabled') === 'false') {
+				li.firstElementChild.setAttribute('aria-disabled', true);
+				li.firstElementChild.setAttribute('aria-expanded', true);
+			} else {
+				li.firstElementChild.setAttribute('aria-disabled', false);
+				li.firstElementChild.setAttribute('aria-expanded', false);
+			}
+			li.classList.remove('c-menupopup');
+			li.classList.add('open');
+		});
+		mastheadClassList.remove('u-hide-l');
+	} else {
+		mastheadClassList.add('u-hide-l');
+		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map(li => {
+			li.classList.remove('open');
+			li.classList.add('c-menupopup');
+		});
 
-// Use search to move vertical menu to modal
+		mastheadNavContainer.appendChild(mastheadNav);
+	}
+};
 
-// Aside vert menu
-// const vertMenu = document.querySelector('aside .c-nav');
+/**
+ *  @name toggleMastheadVisibilty()
+ *  @desc hides/shows masthead depending on scroll position and direction
+ */
+const toggleMastheadVisibilty = () => {
+	scrollPosition = window.scrollY;
+	st = window.pageYOffset || document.documentElement.scrollTop;
+	const modalIsClosed = modal.getAttribute('aria-hidden');
 
-// searchBut.addEventListener('click', function() {
-// 	modal.classList.toggle('is-visible');
-// 	modalMenu.classList.toggle('u-visually-hidden');
-// 	modalMenu.appendChild(vertMenu);
-// });
+	if (st > lastScrollTop && st > mastheadHeight && modalIsClosed === 'true') {
+		// on scroll down
+		masthead.classList.add('u-visually-hidden');
+		body.classList.remove('u-masthead-sticky');
+	} else {
+		masthead.classList.remove('u-visually-hidden');
+		body.classList.add('u-masthead-sticky');
+		// on scroll up
+	}
+	lastScrollTop = st <= 0 ? 0 : st;
+};
+
+/**
+ *  @name showModal()
+ *  @desc reveals modals depending on type passed in
+ *  @param { string } type the class name slug  of modal to show
+ */
+const showModal = type => {
+	const modalToShow = document.querySelector(`.modal__${type}`);
+
+	// show modal container
+	modal.style.display = 'block';
+	unsetAriaHidden(modal);
+
+	// hide masthead actions
+	Array.from(mastheadActionsCTA).map(el =>
+		el.classList.add('u-visually-hidden')
+	);
+
+	// show selected modal content
+	modalToShow.classList.remove('u-visually-hidden');
+	// show close all modals CTA
+	globalCloseModalButton.classList.remove('u-visually-hidden');
+};
+/**
+ *  @name closeAllModals()
+ *  @desc closes all modals
+ */
+const closeAllModals = () => {
+	// hide modal container
+	modal.style.display = 'none';
+	setAriaHidden(modal);
+	// hide search modal
+	modalSearch.classList.add('u-visually-hidden');
+	// hide login modal
+	modalLogin.classList.add('u-visually-hidden');
+	// hide masthead modal
+	modalMenu.classList.add('u-visually-hidden');
+	// hide close all modal CTA
+	Array.from(mastheadActionsCTA).map(el =>
+		el.classList.remove('u-visually-hidden')
+	);
+	globalCloseModalButton.classList.add('u-visually-hidden');
+
+	// show/hide CTA buttons for modals in masthead depending on selected modal
+	if (modalSearch) {
+		mastheadSearch.classList.remove('u-visually-hidden');
+	}
+	if (modalLogin) {
+		mastheadLogin.classList.remove('u-visually-hidden');
+	}
+	if (modalMenu) {
+		mastheadNavIcon.classList.remove('u-visually-hidden');
+	}
+};
+/**
+ *  @name appendSideNav()
+ *  @desc copies .b-menu content and appends it to .modal__menu
+ */
+const appendSideNav = () => {
+	modalMenu.appendChild(sideNav);
+};
+/**
+ *  @name removeSideNav()
+ *  @desc removes .b-menu from .modal__menu
+ */
+const removeSideNav = () => {
+	if (modalMenu.childNodes.length > 1) {
+		sideNavContainer.appendChild(sideNav);
+	}
+};
+
+const handleScroll = () => {
+	window.addEventListener(
+		'scroll',
+		() => {
+			toggleMastheadVisibilty();
+		},
+		false
+	);
+};
+const handleResize = () => {
+	window.addEventListener(
+		'resize',
+		() => {
+			toggleMastheadSizeAlert();
+		},
+		false
+	);
+};
+/**
+ *  @name handleLoading()
+ *  @desc init function for the masthead functionality
+ */
+const handleLoading = () => {
+	window.addEventListener(
+		'load',
+		() => {
+			toggleMastheadSizeAlert();
+			closeMenuState();
+		},
+		false
+	);
+};
+
+const handleClick = () => {
+	mastheadSearch.addEventListener('click', e => {
+		showModal('search');
+		document.querySelector('.searchform__input').focus();
+	});
+	mastheadLogin.addEventListener(
+		'click',
+		() => {
+			showModal('login');
+		},
+		false
+	);
+	globalCloseModalButton.addEventListener(
+		'click',
+		() => {
+			closeAllModals();
+		},
+		false
+	);
+	if (mastheadNavIcon) {
+		mastheadNavIcon.addEventListener(
+			'click',
+			() => {
+				showModal('menu');
+			},
+			false
+		);
+	}
+};
+
+const handleKeyPress = () => {
+	window.addEventListener('keydown', e => {
+		if (e.key === 'Escape') {
+			closeAllModals();
+		}
+	});
+};
+/**
+ *  @name Masthead()
+ *  @desc init function for the masthead functionality
+ */
+const Masthead = () => {
+	if (!masthead) return;
+	handleScroll();
+	handleResize();
+	handleLoading();
+	handleClick();
+	handleKeyPress();
+};
+
+export default Masthead;
