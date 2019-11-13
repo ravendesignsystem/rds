@@ -48,10 +48,10 @@ const detectOverflowOnMasthead = () => {
 };
 
 /**
- *  @name toggleMastheadSizeAlert()
+ *  @name toggleMobileMenu()
  *  @desc adds class to display red banner error stating the menu is too wide
  */
-const toggleMastheadSizeAlert = () => {
+const toggleMobileMenu = () => {
 	if (!mastheadNav) return;
 
 	const navWidth = mastheadNav.offsetWidth + 800;
@@ -182,10 +182,13 @@ const handleScroll = () => {
 	);
 };
 const handleResize = () => {
+	let timeout;
 	window.addEventListener(
 		'resize',
 		() => {
-			toggleMastheadSizeAlert();
+			clearTimeout(timeout);
+			timeout = setTimeout(toggleMobileMenu, 500);
+			// modalMenu.classList.add('u-visually-hidden');
 		},
 		false
 	);
@@ -198,7 +201,7 @@ const handleLoading = () => {
 	window.addEventListener(
 		'load',
 		() => {
-			toggleMastheadSizeAlert();
+			toggleMobileMenu();
 			closeMenuState();
 		},
 		false
