@@ -34,6 +34,7 @@ const setAriaHidden = target => {
 const unsetAriaHidden = target => {
 	target.setAttribute('aria-hidden', false);
 };
+const searchFormInput = document.querySelector('input.searchform__input');
 
 /**
  *  @name detectOverflowOnMasthead()
@@ -53,10 +54,11 @@ const detectOverflowOnMasthead = () => {
 const toggleMastheadSizeAlert = () => {
 	if (!mastheadNav) return;
 
-	const navWidth = mastheadNav.offsetWidth;
+	const navWidth = mastheadNav.offsetWidth + 800;
 	const mastheadClassList = mastheadNavIcon.parentNode.classList;
+
 	// capture div width and compare against window width
-	if (window.innerWidth <= navWidth + 400 || window.innerWidth <= 960) {
+	if (window.innerWidth <= navWidth || window.innerWidth <= 960) {
 		modalMenu.appendChild(mastheadNav);
 		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map(li => {
 			if (li.firstElementChild.getAttribute('aria-disabled') === 'false') {
@@ -121,8 +123,6 @@ const showModal = type => {
 	modalToShow.classList.remove('u-visually-hidden');
 	// show close all modals CTA
 	globalCloseModalButton.classList.remove('u-visually-hidden');
-	// //prevent scrolling while modal is open
-	// preventScroll();
 };
 /**
  *  @name closeAllModals()
@@ -136,12 +136,14 @@ const closeAllModals = () => {
 	modalSearch.classList.add('u-visually-hidden');
 	// hide login modal
 	modalLogin.classList.add('u-visually-hidden');
+	// hide masthead modal
+	modalMenu.classList.add('u-visually-hidden');
 	// hide close all modal CTA
 	Array.from(mastheadActionsCTA).map(el =>
 		el.classList.remove('u-visually-hidden')
 	);
 	globalCloseModalButton.classList.add('u-visually-hidden');
-	mastheadNav.classList.remove('u-visually-hidden');
+
 	// show/hide CTA buttons for modals in masthead depending on selected modal
 	if (modalSearch) {
 		mastheadSearch.classList.remove('u-visually-hidden');
@@ -180,18 +182,10 @@ const handleScroll = () => {
 	);
 };
 const handleResize = () => {
-	let timeout = true;
-
 	window.addEventListener(
 		'resize',
 		() => {
-			if (!timeout) return;
-
-			timeout = false;
 			toggleMastheadSizeAlert();
-			// toggleMastheadDropNav();
-
-			setTimeout(() => (timeout = true), 100);
 		},
 		false
 	);
@@ -212,13 +206,10 @@ const handleLoading = () => {
 };
 
 const handleClick = () => {
-	mastheadSearch.addEventListener(
-		'click',
-		e => {
-			showModal('search');
-		},
-		false
-	);
+	mastheadSearch.addEventListener('click', e => {
+		showModal('search');
+		document.querySelector('.searchform__input').focus();
+	});
 	mastheadLogin.addEventListener(
 		'click',
 		() => {
@@ -230,7 +221,6 @@ const handleClick = () => {
 		'click',
 		() => {
 			closeAllModals();
-			removeSideNav();
 		},
 		false
 	);
@@ -239,7 +229,6 @@ const handleClick = () => {
 			'click',
 			() => {
 				showModal('menu');
-				if (sideNavContainer) appendSideNav();
 			},
 			false
 		);
