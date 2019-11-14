@@ -220,7 +220,10 @@
 		height: 1em;
 		width: 1em;
 		flex-shrink: 0;
-		margin-right: 0.3em;
+
+		+ span {
+			margin-left: 0.3em;
+		}
 	}
 }
 
