@@ -1,414 +1,414 @@
-{#<section class="u-block u-block--full js-overlay-movemenu">#}
-{#    <div class="b-menu">#}
-{#        {% if page.subsite == 'dev' %}#}
-{#            <h2 class="menu__section">Dev</h2>#}
-{#        {% else %}#}
-{#            <h2>Site navigation</h2>#}
-{#        {% endif %}#}
-{#        {% from "menu/menu.twig" import menuMacro %}#}
-{#        {{ menuMacro (#}
-{#            [#}
-{#                {#}
-{#                    title: 'Getting started',#}
-{#                    url: site.url ~ 'dev/getting-started/',#}
-{#                    section: page.section,#}
-{#                    submenu:#}
-{#                    [#}
-{#                        {#}
-{#                            active: page.title,#}
-{#                            title: 'Starter packages',#}
-{#                            url: site.url ~ 'dev/getting-started/starter-packages/'#}
-{#                        },#}
-{#                        {#}
-{#                            active: page.title,#}
-{#                            title: 'Recipes and patterns',#}
-{#                            url: site.url ~ 'dev/getting-started/recipes-patterns/'#}
-{#                        }#}
-{#                    ]#}
-{#                },#}
-{#                {#}
-{#                    active: page.title,#}
-{#                    title: "Main concepts",#}
-{#                    url: site.url ~ 'dev/main-concepts/',#}
-{#                    section: page.section,#}
-{#                    submenu:#}
-{#                    [#}
-{#                        {#}
-{#                            active: page.title,#}
-{#                            title: 'Blocks Overview',#}
-{#                            url: site.url ~ 'dev/main-concepts/blocks-overview/'#}
-{#                        },#}
-{#                        {#}
-{#                            active: page.title,#}
-{#                            title: 'Components Overview',#}
-{#                            url: site.url ~ 'dev/main-concepts/components-overview/'#}
-{#                        },#}
-{#                        {#}
-{#                            active: page.title,#}
-{#                            title: 'Layouts',#}
-{#                            url: site.url ~ 'dev/main-concepts/layouts/'#}
-{#                        },#}
-{#                        {#}
-{#                            active: page.title,#}
-{#                            title: 'Themes',#}
-{#                            url: site.url ~ 'dev/main-concepts/themes/'#}
-{#                        },#}
-{#                        {#}
-{#                            active: page.title,#}
-{#                            title: 'Spacing',#}
-{#                            url: site.url ~ 'dev/main-concepts/spacing/'#}
-{#                        }#}
-{#                    ]#}
-{#                },#}
-{#                {#}
-{#                    title: 'Blocks',#}
-{#                    url: site.url ~ 'dev/blocks/',#}
-{#                    section: page.section,#}
-{#                    subsection: page.subsection,#}
-{#                    submenu:#}
-{#                    [#}
-{#                        {#}
-{#                            title: 'Header blocks',#}
-{#                            url: site.url ~ 'dev/blocks/header/',#}
-{#                            section: page.section,#}
-{#                            subsection: page.subsection,#}
-{#                            submenu: [#}
-{#                            {#}
-{#                                active: page.title,#}
-{#                                title: "Alert Header",#}
-{#                                url: site.url ~ 'dev/blocks/header/alertheader/'#}
-{#                            },#}
-{#                            {#}
-{#                                active: page.title,#}
-{#                                title: "Banner",#}
-{#                                url: site.url ~ 'dev/blocks/header/banner/'#}
-{#                            },#}
-{#                            {#}
-{#                                active: page.title,#}
-{#                                title: "Masthead",#}
-{#                                url: site.url ~ 'dev/blocks/header/masthead/'#}
-{#                            }#}
-{#                        ]#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Main blocks',#}
-{#                            url: site.url ~ 'dev/getting-started/quick-start/',#}
-{#                            section: page.section,#}
-{#                            subsection: page.subsection,#}
-{#                            submenu: [#}
-{#                            {#}
-{#                                active: page.title,#}
-{#                                title: "Card Grid",#}
-{#                                url: site.url ~ 'dev/blocks/main/cardgrid/'#}
-{#                            },#}
-{#                            {#}
-{#                                active: page.title,#}
-{#                                title: "Content",#}
-{#                                url: site.url ~ 'dev/blocks/main/content/'#}
-{#                            },#}
-{#                            {#}
-{#                                active: page.title,#}
-{#                                title: "Details",#}
-{#                                url: site.url ~ 'dev/blocks/main/details/'#}
-{#                            },#}
-{#                            {#}
-{#                                active: page.title,#}
-{#                                title: "Listing",#}
-{#                                url: site.url ~ 'dev/blocks/main/listing/'#}
-{#                            },#}
-{#                            {#}
-{#                                active: page.title,#}
-{#                                title: "Text Image",#}
-{#                                url: site.url ~ 'dev/blocks/main/textimg/'#}
-{#                            }#}
-{#                        ]#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Aside blocks',#}
-{#                            url: site.url ~ 'dev/blocks/aside/',#}
-{#                            active: page.title,#}
-{#                            section: page.section,#}
-{#                            subsection: page.subsection,#}
-{#                            submenu: [#}
-{#                            {#}
-{#                                active: page.title,#}
-{#                                title: "Alert Aside",#}
-{#                                url: site.url ~ 'dev/blocks/aside/alertaside/'#}
-{#                            },#}
-{#                            {#}
-{#                                active: page.title,#}
-{#                                title: 'Sidebar',#}
-{#                                url: site.url ~ 'dev/blocks/aside/sidebar/'#}
-{#                            }#}
-{#                        ]#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Footer blocks',#}
-{#                            url: site.url ~ 'dev/blocks/footer/',#}
-{#                            active: page.title,#}
-{#                            section: page.section,#}
-{#                            subsection: page.subsection,#}
-{#                            submenu: [#}
-{#                            {#}
-{#                                active: page.title,#}
-{#                                title: 'Footer Brand',#}
-{#                                url: site.url ~ 'dev/blocks/footer/footerbrand/'#}
-{#                            },#}
-{#                            {#}
-{#                                active: page.title,#}
-{#                                title: 'Footer Simple',#}
-{#                                url: site.url ~ 'dev/blocks/footer/footersimple/'#}
-{#                            },#}
-{#                            {#}
-{#                            active: page.title,#}
-{#                            title: 'Footer Sitemap',#}
-{#                            url: site.url ~ 'dev/blocks/footer/footersitemap/'#}
-{#                            }#}
-{#                        ]#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Dialog blocks',#}
-{#                            url: site.url ~ 'dev/blocks/dialog/',#}
-{#                            active: page.title,#}
-{#                            section: page.section,#}
-{#                            subsection: page.subsection,#}
-{#                            submenu: [#}
-{#                            {#}
-{#                                active: page.title,#}
-{#                                title: 'Login',#}
-{#                                url: site.url ~ 'dev/blocks/dialog/login/'#}
-{#                            },#}
-{#                            {#}
-{#                                active: page.title,#}
-{#                                title: "Search",#}
-{#                                url: site.url ~ 'dev/blocks/dialog/search/'#}
-{#                            }#}
-{#                        ]#}
-{#                        }#}
-{#                    ]#}
-{#                },#}
-{#                {#}
-{#                    title: "Components",#}
-{#                    url: site.url ~ 'dev/components/',#}
-{#                    active: page.title,#}
-{#                    section: page.section,#}
-{#                    submenu:#}
-{#                    [#}
-{#                        {#}
-{#                            title: 'Content Components',#}
-{#                            url: site.url ~ 'dev/components/content/',#}
-{#                            section: page.section,#}
-{#                            subsection: page.subsection,#}
-{#                            submenu: [#}
-{#                            {#}
-{#                                title: 'Accordion',#}
-{#                                url: site.url ~ 'dev/components/content/accordion/',#}
-{#                                section: page.section,#}
-{#                                subsection: page.subsection,#}
-{#                                active: page.title#}
-{#                            },#}
-{#                            {#}
-{#                                title: 'Form',#}
-{#                                url: site.url ~ 'dev/components/content/form/',#}
-{#                                section: page.section,#}
-{#                                subsection: page.subsection,#}
-{#                                active: page.title#}
-{#                            },#}
-{#                            {#}
-{#                                title: 'Image Caption',#}
-{#                                url: site.url ~ 'dev/components/content/imgcaption/',#}
-{#                                section: page.section,#}
-{#                                subsection: page.subsection,#}
-{#                                active: page.title#}
-{#                            },#}
-{#                            {#}
-{#                                title: 'Table',#}
-{#                                url: site.url ~ 'dev/components/content/table/',#}
-{#                                section: page.section,#}
-{#                                subsection: page.subsection,#}
-{#                                active: page.title#}
-{#                            },#}
-{#                            {#}
-{#                                title: 'Video',#}
-{#                                url: site.url ~ 'dev/components/content/video/',#}
-{#                                section: page.section,#}
-{#                                subsection: page.subsection,#}
-{#                                active: page.title#}
-{#                            }#}
-{#                        ]#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Alert Components',#}
-{#                            url: site.url ~ 'dev/components/alerts/',#}
-{#                            section: page.section,#}
-{#                            subsection: page.subsection,#}
-{#                            submenu: [#}
-{#                            {#}
-{#                                title: 'Alert',#}
-{#                                url: site.url ~ 'dev/components/alerts/alert/',#}
-{#                                section: page.section,#}
-{#                                subsection: page.subsection,#}
-{#                                active: page.title#}
-{#                            },#}
-{#                            {#}
-{#                                title: 'Badge',#}
-{#                                url: site.url ~ 'dev/components/alerts/badge/',#}
-{#                                section: page.section,#}
-{#                                subsection: page.subsection,#}
-{#                                active: page.title#}
-{#                            }#}
-{#                        ]#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Buttons',#}
-{#                            url: site.url ~ 'dev/components/buttons/',#}
-{#                            section: page.section,#}
-{#                            subsection: page.subsection,#}
-{#                            submenu: [#}
-{#                            {#}
-{#                                title: 'CTA Button',#}
-{#                                url: site.url ~ 'dev/components/buttons/buttoncta/',#}
-{#                                section: page.section,#}
-{#                                subsection: page.subsection,#}
-{#                                active: page.title#}
-{#                            },#}
-{#                            {#}
-{#                                title: 'Social Button',#}
-{#                                url: site.url ~ 'dev/components/buttons/buttonsocial/',#}
-{#                                section: page.section,#}
-{#                                subsection: page.subsection,#}
-{#                                active: page.title#}
-{#                            }#}
-{#                        ]#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Card',#}
-{#                            url: site.url ~ 'dev/components/cards/card/',#}
-{#                            section: page.section,#}
-{#                            subsection: page.subsection,#}
-{#                            active: page.title#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Icons',#}
-{#                            url: site.url ~ 'dev/components/icons/',#}
-{#                            section: page.section,#}
-{#                            subsection: page.subsection,#}
-{#                            active: page.title#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Menu Popup',#}
-{#                            url: site.url ~ 'dev/components/menupopup/',#}
-{#                            section: page.section,#}
-{#                            subsection: page.subsection,#}
-{#                            active: page.title#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Search Form',#}
-{#                            url: site.url ~ 'dev/components/searchform/',#}
-{#                            section: page.section,#}
-{#                            subsection: page.subsection,#}
-{#                            active: page.title#}
-{#                        }#}
-{#                    ]#}
-{#                },#}
-{#                {#}
-{#                    title: "Layouts & Navigation",#}
-{#                    url: site.url ~ 'dev/layouts/',#}
-{#                    section: page.section,#}
-{#                    submenu:#}
-{#                    [#}
-{#                        {#}
-{#                            title: 'Single column',#}
-{#                            url: site.url ~ 'dev/layouts/single-column/',#}
-{#                            active: page.title,#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Multi-column',#}
-{#                            url: site.url ~ 'dev/layouts/multi-column/',#}
-{#                            active: page.title,#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Overlay',#}
-{#                            url: site.url ~ 'dev/layouts/overlay/',#}
-{#                            active: page.title,#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Navigation',#}
-{#                            url: site.url ~ 'dev/layouts/navigation/',#}
-{#                            active: page.title,#}
-{#                        }#}
-{#                    ]#}
-{#                },#}
-{#                {#}
-{#                    title: "Custom theming",#}
-{#                    url: site.url ~ 'dev/custom-theming/',#}
-{#                    section: page.section,#}
-{#                    submenu:#}
-{#                    [#}
-{#                        {#}
-{#                            title: 'Install and tooling',#}
-{#                            url: site.url ~ 'dev/custom-theming/instalation-and-tooling/'#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'SASS',#}
-{#                            url: site.url ~ 'dev/custom-theming/components/'#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Custom blocks',#}
-{#                            url: site.url ~ 'dev/custom-theming/custom-blocks/'#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Icon system',#}
-{#                            url: site.url ~ 'dev/custom-theming/icon-system/'#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Working with layouts',#}
-{#                            url: site.url ~ 'dev/custom-theming/working-with-layouts/'#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Grid system',#}
-{#                            url: site.url ~ 'dev/custom-theming/grid-system/'#}
-{#                        }#}
-{#                    ]#}
-{#                },#}
-{#                {#}
-{#                    title: "Guidelines",#}
-{#                    url: site.url ~ 'dev/guidelines/',#}
-{#                    section: page.section,#}
-{#                    submenu:#}
-{#                    [#}
-{#                        {#}
-{#                            active: page.title,#}
-{#                            title: 'HTML & CSS Guide',#}
-{#                            url: site.url ~ 'dev/guidelines/html-css-guide/'#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'SASS',#}
-{#                            url: site.url ~ 'dev/#/'#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Naming of thingss',#}
-{#                            url: site.url ~ 'dev/guidelines/naming/'#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Markup and style',#}
-{#                            url: site.url ~ '#'#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'A11y',#}
-{#                            url: site.url ~ 'dev/#'#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Security',#}
-{#                            url: site.url ~ 'dev/#'#}
-{#                        },#}
-{#                        {#}
-{#                            title: 'Glossary',#}
-{#                            url: site.url ~ 'dev/#'#}
-{#                        }#}
-{#                    ]#}
-{#                }#}
-{#            ]#}
-{#        )}}#}
-{#    </div>#}
-{#</section>#}
+<section class="u-block u-block--full js-overlay-movemenu">
+    <div class="b-menu">
+        {% if page.subsite == 'dev' %}
+            <h2 class="menu__section">Dev</h2>
+        {% else %}
+            <h2>Site navigation</h2>
+        {% endif %}
+        {% from "menu/menu.twig" import menuMacro %}
+        {{ menuMacro (
+            [
+                {
+                    title: 'Getting started',
+                    url: site.url ~ 'dev/getting-started/',
+                    section: page.section,
+                    submenu:
+                    [
+                        {
+                            active: page.title,
+                            title: 'Starter packages',
+                            url: site.url ~ 'dev/getting-started/starter-packages/'
+                        },
+                        {
+                            active: page.title,
+                            title: 'Recipes and patterns',
+                            url: site.url ~ 'dev/getting-started/recipes-patterns/'
+                        }
+                    ]
+                },
+                {
+                    active: page.title,
+                    title: "Main concepts",
+                    url: site.url ~ 'dev/main-concepts/',
+                    section: page.section,
+                    submenu:
+                    [
+                        {
+                            active: page.title,
+                            title: 'Blocks Overview',
+                            url: site.url ~ 'dev/main-concepts/blocks-overview/'
+                        },
+                        {
+                            active: page.title,
+                            title: 'Components Overview',
+                            url: site.url ~ 'dev/main-concepts/components-overview/'
+                        },
+                        {
+                            active: page.title,
+                            title: 'Layouts',
+                            url: site.url ~ 'dev/main-concepts/layouts/'
+                        },
+                        {
+                            active: page.title,
+                            title: 'Themes',
+                            url: site.url ~ 'dev/main-concepts/themes/'
+                        },
+                        {
+                            active: page.title,
+                            title: 'Spacing',
+                            url: site.url ~ 'dev/main-concepts/spacing/'
+                        }
+                    ]
+                },
+                {
+                    title: 'Blocks',
+                    url: site.url ~ 'dev/blocks/',
+                    section: page.section,
+                    subsection: page.subsection,
+                    submenu:
+                    [
+                        {
+                            title: 'Header blocks',
+                            url: site.url ~ 'dev/blocks/header/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            submenu: [
+                            {
+                                active: page.title,
+                                title: "Alert Header",
+                                url: site.url ~ 'dev/blocks/header/alertheader/'
+                            },
+                            {
+                                active: page.title,
+                                title: "Banner",
+                                url: site.url ~ 'dev/blocks/header/banner/'
+                            },
+                            {
+                                active: page.title,
+                                title: "Masthead",
+                                url: site.url ~ 'dev/blocks/header/masthead/'
+                            }
+                        ]
+                        },
+                        {
+                            title: 'Main blocks',
+                            url: site.url ~ 'dev/getting-started/quick-start/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            submenu: [
+                            {
+                                active: page.title,
+                                title: "Card Grid",
+                                url: site.url ~ 'dev/blocks/main/cardgrid/'
+                            },
+                            {
+                                active: page.title,
+                                title: "Content",
+                                url: site.url ~ 'dev/blocks/main/content/'
+                            },
+                            {
+                                active: page.title,
+                                title: "Details",
+                                url: site.url ~ 'dev/blocks/main/details/'
+                            },
+                            {
+                                active: page.title,
+                                title: "Listing",
+                                url: site.url ~ 'dev/blocks/main/listing/'
+                            },
+                            {
+                                active: page.title,
+                                title: "Text Image",
+                                url: site.url ~ 'dev/blocks/main/textimg/'
+                            }
+                        ]
+                        },
+                        {
+                            title: 'Aside blocks',
+                            url: site.url ~ 'dev/blocks/aside/',
+                            active: page.title,
+                            section: page.section,
+                            subsection: page.subsection,
+                            submenu: [
+                            {
+                                active: page.title,
+                                title: "Alert Aside",
+                                url: site.url ~ 'dev/blocks/aside/alertaside/'
+                            },
+                            {
+                                active: page.title,
+                                title: 'Sidebar',
+                                url: site.url ~ 'dev/blocks/aside/sidebar/'
+                            }
+                        ]
+                        },
+                        {
+                            title: 'Footer blocks',
+                            url: site.url ~ 'dev/blocks/footer/',
+                            active: page.title,
+                            section: page.section,
+                            subsection: page.subsection,
+                            submenu: [
+                            {
+                                active: page.title,
+                                title: 'Footer Brand',
+                                url: site.url ~ 'dev/blocks/footer/footerbrand/'
+                            },
+                            {
+                                active: page.title,
+                                title: 'Footer Simple',
+                                url: site.url ~ 'dev/blocks/footer/footersimple/'
+                            },
+                            {
+                            active: page.title,
+                            title: 'Footer Sitemap',
+                            url: site.url ~ 'dev/blocks/footer/footersitemap/'
+                            }
+                        ]
+                        },
+                        {
+                            title: 'Dialog blocks',
+                            url: site.url ~ 'dev/blocks/dialog/',
+                            active: page.title,
+                            section: page.section,
+                            subsection: page.subsection,
+                            submenu: [
+                            {
+                                active: page.title,
+                                title: 'Login',
+                                url: site.url ~ 'dev/blocks/dialog/login/'
+                            },
+                            {
+                                active: page.title,
+                                title: "Search",
+                                url: site.url ~ 'dev/blocks/dialog/search/'
+                            }
+                        ]
+                        }
+                    ]
+                },
+                {
+                    title: "Components",
+                    url: site.url ~ 'dev/components/',
+                    active: page.title,
+                    section: page.section,
+                    submenu:
+                    [
+                        {
+                            title: 'Content Components',
+                            url: site.url ~ 'dev/components/content/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            submenu: [
+                            {
+                                title: 'Accordion',
+                                url: site.url ~ 'dev/components/content/accordion/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            },
+                            {
+                                title: 'Form',
+                                url: site.url ~ 'dev/components/content/form/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            },
+                            {
+                                title: 'Image Caption',
+                                url: site.url ~ 'dev/components/content/imgcaption/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            },
+                            {
+                                title: 'Table',
+                                url: site.url ~ 'dev/components/content/table/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            },
+                            {
+                                title: 'Video',
+                                url: site.url ~ 'dev/components/content/video/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            }
+                        ]
+                        },
+                        {
+                            title: 'Alert Components',
+                            url: site.url ~ 'dev/components/alerts/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            submenu: [
+                            {
+                                title: 'Alert',
+                                url: site.url ~ 'dev/components/alerts/alert/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            },
+                            {
+                                title: 'Badge',
+                                url: site.url ~ 'dev/components/alerts/badge/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            }
+                        ]
+                        },
+                        {
+                            title: 'Buttons',
+                            url: site.url ~ 'dev/components/buttons/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            submenu: [
+                            {
+                                title: 'CTA Button',
+                                url: site.url ~ 'dev/components/buttons/buttoncta/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            },
+                            {
+                                title: 'Social Button',
+                                url: site.url ~ 'dev/components/buttons/buttonsocial/',
+                                section: page.section,
+                                subsection: page.subsection,
+                                active: page.title
+                            }
+                        ]
+                        },
+                        {
+                            title: 'Card',
+                            url: site.url ~ 'dev/components/cards/card/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            active: page.title
+                        },
+                        {
+                            title: 'Icons',
+                            url: site.url ~ 'dev/components/icons/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            active: page.title
+                        },
+                        {
+                            title: 'Menu Popup',
+                            url: site.url ~ 'dev/components/menupopup/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            active: page.title
+                        },
+                        {
+                            title: 'Search Form',
+                            url: site.url ~ 'dev/components/searchform/',
+                            section: page.section,
+                            subsection: page.subsection,
+                            active: page.title
+                        }
+                    ]
+                },
+                {
+                    title: "Layouts & Navigation",
+                    url: site.url ~ 'dev/layouts/',
+                    section: page.section,
+                    submenu:
+                    [
+                        {
+                            title: 'Single column',
+                            url: site.url ~ 'dev/layouts/single-column/',
+                            active: page.title,
+                        },
+                        {
+                            title: 'Multi-column',
+                            url: site.url ~ 'dev/layouts/multi-column/',
+                            active: page.title,
+                        },
+                        {
+                            title: 'Overlay',
+                            url: site.url ~ 'dev/layouts/overlay/',
+                            active: page.title,
+                        },
+                        {
+                            title: 'Navigation',
+                            url: site.url ~ 'dev/layouts/navigation/',
+                            active: page.title,
+                        }
+                    ]
+                },
+                {
+                    title: "Custom theming",
+                    url: site.url ~ 'dev/custom-theming/',
+                    section: page.section,
+                    submenu:
+                    [
+                        {
+                            title: 'Install and tooling',
+                            url: site.url ~ 'dev/custom-theming/instalation-and-tooling/'
+                        },
+                        {
+                            title: 'SASS',
+                            url: site.url ~ 'dev/custom-theming/components/'
+                        },
+                        {
+                            title: 'Custom blocks',
+                            url: site.url ~ 'dev/custom-theming/custom-blocks/'
+                        },
+                        {
+                            title: 'Icon system',
+                            url: site.url ~ 'dev/custom-theming/icon-system/'
+                        },
+                        {
+                            title: 'Working with layouts',
+                            url: site.url ~ 'dev/custom-theming/working-with-layouts/'
+                        },
+                        {
+                            title: 'Grid system',
+                            url: site.url ~ 'dev/custom-theming/grid-system/'
+                        }
+                    ]
+                },
+                {
+                    title: "Guidelines",
+                    url: site.url ~ 'dev/guidelines/',
+                    section: page.section,
+                    submenu:
+                    [
+                        {
+                            active: page.title,
+                            title: 'HTML & CSS Guide',
+                            url: site.url ~ 'dev/guidelines/html-css-guide/'
+                        },
+                        {
+                            title: 'SASS',
+                            url: site.url ~ 'dev/#/'
+                        },
+                        {
+                            title: 'Naming of thingss',
+                            url: site.url ~ 'dev/guidelines/naming/'
+                        },
+                        {
+                            title: 'Markup and style',
+                            url: site.url ~ '#'
+                        },
+                        {
+                            title: 'A11y',
+                            url: site.url ~ 'dev/#'
+                        },
+                        {
+                            title: 'Security',
+                            url: site.url ~ 'dev/#'
+                        },
+                        {
+                            title: 'Glossary',
+                            url: site.url ~ 'dev/#'
+                        }
+                    ]
+                }
+            ]
+        )}}
+    </div>
+</section>
