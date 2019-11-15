@@ -30,6 +30,14 @@ module.exports = merge(baseConfig, {
 			onEnd: {
 				copy: [
 					{
+						source: './dist/' + ver + '/rds-cu.css',
+						destination: './docs/css/docs.css',
+					},
+					{
+						source: './dist/' + ver + '/rds-cu.js',
+						destination: './docs/js/docs.js',
+					},
+					{
 						source: './build/docs',
 						destination: './docs',
 					},
