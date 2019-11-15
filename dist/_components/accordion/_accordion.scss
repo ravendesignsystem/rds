@@ -11,6 +11,12 @@
 	}
 }
 
+.c-accordion + *:not(.c-accordion) {
+	margin-top: 25px;
+}
+
+
+
 .c-accordion label {
 	position: relative;
 	display: block;

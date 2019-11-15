@@ -5,6 +5,10 @@
 	vertical-align: middle;
 	border: 1px solid $grey-yoda;
 
+	&:not(:last-child) {
+		margin-bottom: 25px;
+	}
+
 	@include media('>=s') {
 		padding: 15px;
 	}
@@ -50,12 +54,11 @@
 		fill: $grey-vader;
 		padding-right: 15px;
 		display: inline;
-		line-height: 20px;
+		// line-height: 20px;
 
 		svg {
 			width: 18px;
 			height: 18px;
-			top: 5px;
 
 			@include media('>=s') {
 				width: 20px;
@@ -63,8 +66,8 @@
 			}
 		}
 
-		@include media('>=s') {
-			line-height: 25px;
-		}
+		// @include media('>=s') {
+		// 	line-height: 25px;
+		// }
 	}
 }

@@ -1,361 +1,269 @@
 import dialogPolyfill from 'dialog-polyfill';
+import { closeMenuState } from '../../_components/navmenu/navmenu';
 
-(function() {
-	//mh = masthead
-	let body = document.body,
-		header = document.querySelector('header'),
-		//masthead elements
-		masthead = document.querySelector('.b-masthead'),
-		// mh = masthead
-		mhNav = document.querySelector('.masthead__nav'),
-		mhSearch = document.querySelector('.masthead__search'),
-		mhHamburger = document.querySelector('.masthead__hamburger'),
-		mhHamburgerButton = document.querySelector('.c-hamburger'),
-		mhLogin = document.querySelector('.masthead__login'),
-		// dialogue/modal elements
-		modal = document.querySelector('.l-overlay-modal'),
-		modalMenu = document.querySelector('.modal__menu'),
-		modalSearch = document.querySelector('.modal__search'),
-		modalLogin = document.querySelector('.modal__login'),
-		// for swapping b-menu from elsewhere into modal
-		moveMenu = document.querySelector('.js-overlay-movemenu'),
-		leftMenu = document.querySelector('.b-menu'),
-		// scroll vars
-		last_scroll = 0,
-		lastX = window.innerWidth,
-		masthead_y = header.scrollHeight,
-		mhSubmenu = document.querySelector('button.c-menupopup + .menupopup__menu');
+let scrollPosition;
+let lastScrollTop = 0;
+let st;
+const body = document.querySelector('body');
+const masthead = document.querySelector('#id-masthead');
+const mastheadNav = document.querySelector('.c-nav--topnav');
+const mastheadNavContainer = document.querySelector('.b-menu--topnav');
+const mastheadNavUl = document.querySelector('.c-nav--topnav ul');
+const mastheadActions = document.querySelector('.masthead__actions');
+const sideNav = document.querySelector('.c-nav--sidenav');
+const sideNavContainer = document.querySelector('.b-menu--sidenav');
+const mastheadNavIcon = document.querySelector('.c-navicon');
+const mastheadActionsCTA = mastheadActions.querySelectorAll(
+	`li[class*="masthead__"]`
+);
 
-	// dialogue polyfill
-	if (modal) {
-		dialogPolyfill.registerDialog(modal);
-	}
+const mastheadHeight = masthead.offsetHeight;
+const mastheadSearch = document.querySelector('.masthead__search');
 
-	// state vars
-	// -----------
-	// is the mh nav overflowing?
-	let isNav2packed = null,
-		// is the hamburger hidden?
-		isHamburgerHidden = null;
+const mastheadLogin = document.querySelector('.masthead__login');
+const globalCloseModalButton = document.querySelector(
+	'.masthead__close-modals'
+);
+const modal = document.querySelector('.l-overlay-modal');
+const modalMenu = document.querySelector('.modal__menu');
+const modalSearch = document.querySelector('.modal__search');
+const modalLogin = document.querySelector('.modal__login');
+const setAriaHidden = target => {
+	target.setAttribute('aria-hidden', true);
+};
+const unsetAriaHidden = target => {
+	target.setAttribute('aria-hidden', false);
+};
+const searchFormInput = document.querySelector('input.searchform__input');
 
-	// get started here only if masthead contains .masthead__nav
+/**
+ *  @name detectOverflowOnMasthead()
+ *  @desc returns boolean where viewport width is compared to elements total width
+ *  @param { html entity } element element to compare
+ *  @return { boolean }
+ */
+const detectOverflowOnMasthead = () => {
+	if (!mastheadNav) return;
+	return mastheadNav.offsetWidth <= mastheadNavUl.offsetWidth;
+};
 
-	if (mhNav && masthead.classList.contains('b-masthead--responsivenav')) {
-		// check if an element has x overflow
-		const isOverflowing = function(element) {
-			return element.scrollWidth > element.offsetWidth;
-		};
+/**
+ *  @name toggleMobileMenu()
+ *  @desc adds class to display red banner error stating the menu is too wide
+ */
+const toggleMobileMenu = () => {
+	if (!mastheadNav) return;
 
-		let dropNav = function() {
-			// if the mh nav is overflowing and smaller then 640
-			// this slides out the top nav to remind users they can scroll horizontally
-			// This is only applied if the body tag has a class of 'homepage'.
-			if (
-				isOverflowing(mhNav) &&
-				window.innerWidth < 640 &&
-				body.classList.contains('homepage')
-			) {
-				mhNav.classList.add('js-masthead-slidenav');
-			}
+	const navWidth = mastheadNav.offsetWidth + 800;
+	const mastheadClassList = mastheadNavIcon.parentNode.classList;
 
-			// if the mh nav is overflowing and smaller then 960
-			if (isOverflowing(mhNav) || window.innerWidth <= 960) {
-				isNav2packed = true;
-				body.classList.add('js-masthead-2packed');
-				// setup vars to test if resizing bigger or smaller
-				let xwidth = window.innerWidth;
-				lastX = xwidth;
+	// capture div width and compare against window width
+	if (window.innerWidth <= navWidth || window.innerWidth <= 960) {
+		modalMenu.appendChild(mastheadNav);
+		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map(li => {
+			if (li.firstElementChild.getAttribute('aria-disabled') === 'false') {
+				li.firstElementChild.setAttribute('aria-disabled', true);
+				li.firstElementChild.setAttribute('aria-expanded', true);
 			} else {
-				isNav2packed = false;
-				let xwidth = window.innerWidth;
-				// needed to reduce flickering on resize
-				if (lastX < xwidth) {
-					body.classList.remove('js-masthead-2packed');
-				}
+				li.firstElementChild.setAttribute('aria-disabled', false);
+				li.firstElementChild.setAttribute('aria-expanded', false);
 			}
-		};
-
-		// Setup a timer to ease resizing
-		let timeout;
-		window.addEventListener(
-			'resize',
-			function() {
-				// If timer is null, reset it to 66ms.
-				// Otherwise, wait until timer is cleared
-
-				if (!timeout) {
-					timeout = setTimeout(function() {
-						// Reset timeout
-						timeout = null;
-						// Run our resize functions
-						if (
-							window.innerWidth >= 960 &&
-							isNav2packed === true &&
-							mhNav.scrollWidth > mhNav.clientWidth
-						) {
-							masthead.classList.add('js-masthead-2biggie');
-						} else {
-							dropNav();
-							// deciding below is not worth it, for rare case someone resizes with menu open
-							// commenting out for now
-							// if (!modal.classList.contains('is-hidden')) {
-							// 	// if the modal menu is opened and window is resize hide it
-							// 	// so it doesnt get stuck open on large screens without hamburger
-							// 	modal.classList.add('is-hidden');
-							// 	mhHamburgerButton.classList.remove('is-active');
-							// 	if (moveMenu) {
-							// 		moveMenu.appendChild(leftMenu);
-							// 	}
-							// }
-						}
-					}, 66);
-				}
-			},
-			false
-		);
-		window.addEventListener('load', function() {
-			dropNav();
+			li.classList.remove('c-menupopup');
+			li.classList.add('open');
 		});
-	} // end msNavHor stacking shiz
-
-	// need to improve nav popup submenus for touch devices
-	// there's no i in team or hover on touch devices
-	// are we dealing with a touch device?
-	if ('ontouchstart' in document.documentElement) {
-		// ok, so lets account for any hover popupmenu subnavs in masthead
-		// start by finding masthead nav links with hovers
-		let hoverLinks = document.querySelectorAll('.masthead__nav li.c-menupopup');
-		for (let i = 0; i < hoverLinks.length; i++) {
-			// lets listen to them, as they might have something to say
-			hoverLinks[i].addEventListener(
-				'touchend',
-				function touchMenus(event) {
-					[].forEach.call(hoverLinks, function() {
-						// properly position the submenu uls
-						hoverLinks[i]
-							.getElementsByTagName('UL')[0]
-							.setAttribute('style', 'position: absolute; top: 70px;');
-					});
-					// clone the parent link since its no longer clickable
-					let cln = this.cloneNode(true);
-					cln.classList.remove('c-menupopup');
-					cln.classList.add('js-menupopup-clonetxt');
-					cln.classList.add('menupopup__sep');
-					this.getElementsByTagName('A')[0].nextElementSibling.prepend(cln);
-					this.firstChild.href = '#';
-					// kill it so we dont keep cloning like the evil Empire
-					hoverLinks[i].removeEventListener('touchend', touchMenus);
-				},
-				false
-			);
-		}
-
-		// Detect all clicks on the document
-		document.addEventListener('touchend', function(event) {
-			if (mhSubmenu) {
-				// If the submenus are clicked
-				if (
-					event.target.closest('li.c-menupopup a') ||
-					event.target.closest('button.c-menupopup')
-				) {
-					mhSubmenu.style.position = 'absolute';
-					mhSubmenu.classList.remove('u-fixed');
-					mhNav.style.paddingBottom = '100vh';
-					if (
-						window.innerWidth >= 960 &&
-						!document.querySelector('.js-masthead-2packed')
-					) {
-						mhNav.style.paddingTop = '35px';
-					}
-				} else {
-					// If user clicks outside the element, refocus and restyle
-					mhNav.setAttribute('style', 'padding-bottom: 0; padding-top: 0');
-					mhSubmenu.classList.remove('is-visible');
-					masthead.focus();
-				}
-			} // end if mhSubmenus exist
-		});
-	} // end touch detection
-
-	// Stick Masthead to the top on scroll up
-	// --------------------------------------
-	// Only fire sticky masthead, if class .js-masthead-scrollupstick is on masthead block
-	// but first, is there a masthead ?
-	// also check where footer brand is at to see if its worth doing sticky masthead
-	const footer = document.querySelector('.b-footerbrand');
-	const footerBounding = footer.getBoundingClientRect();
-	const alertBlock = document.querySelector('.u-block--alert');
-	const bannerBlock = document.querySelector('.b-banner');
-
-	if (alertBlock || bannerBlock) {
-		var bodyMargin = '74px';
+		mastheadClassList.remove('u-hide-l');
 	} else {
-		var bodyMargin = '15px';
+		mastheadClassList.add('u-hide-l');
+		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map(li => {
+			li.classList.remove('open');
+			li.classList.add('c-menupopup');
+		});
+
+		mastheadNavContainer.appendChild(mastheadNav);
 	}
+};
 
-	if (masthead && footerBounding.top > 1400) {
-		if (masthead.classList.contains('js-masthead-stick')) {
-			var stickMasthead = function() {
-				if (window.scrollY <= 15) {
-					// user has not scrolled past masthead yet
-					// Yell at them if they forgot a <header>
-					// if (header === null) {
-					// 	alert(
-					// 		'RDS requires you put your Header blocks inside a <header> tag, or things are going to break. Please fix.'
-					// 	);
-					// } else {
-					masthead_y = -header.scrollHeight;
-					// }
+/**
+ *  @name toggleMastheadVisibilty()
+ *  @desc hides/shows masthead depending on scroll position and direction
+ */
+const toggleMastheadVisibilty = () => {
+	scrollPosition = window.scrollY;
+	st = window.pageYOffset || document.documentElement.scrollTop;
+	const modalIsClosed = modal.getAttribute('aria-hidden');
 
-					masthead.classList.remove(
-						'js-masthead--stickyscroll',
-						'b-masthead--shadow'
-					);
-					document.body.style.marginTop = '0px';
-				} else {
-					// has scrolled past the masthead
-					masthead.classList.add('js-masthead--stickyscroll', 'b-masthead--shadow');
-					masthead_y = masthead_y - (window.scrollY - last_scroll);
-					masthead_y = Math.min(masthead_y, 0);
-					masthead_y = Math.max(masthead_y, -masthead.scrollHeight);
-					masthead.style.top = masthead_y + 'px';
-					document.body.style.marginTop = bodyMargin;
-					if (
-						masthead.style.top === '15px' &&
-						window.scrollY > 300 &&
-						window.innerWidth > 720
-					) {
-						document.body.classList.add('has-stickyscroll');
-					} else {
-						document.body.classList.remove('has-stickyscroll');
-					}
-				}
-				// remove the drop shadow before a banner buts against it
-				if (window.scrollY < 300) {
-					masthead.classList.remove('b-masthead--shadow');
-				}
-				last_scroll = window.scrollY;
-			};
-
-			window.addEventListener('scroll', stickMasthead);
-		} // end sticky scroll
+	if (st > lastScrollTop && st > mastheadHeight && modalIsClosed === 'true') {
+		// on scroll down
+		masthead.classList.add('u-visually-hidden');
+		body.classList.remove('u-masthead-sticky');
+	} else {
+		masthead.classList.remove('u-visually-hidden');
+		body.classList.add('u-masthead-sticky');
+		// on scroll up
 	}
+	lastScrollTop = st <= 0 ? 0 : st;
+};
 
-	// Masthead button/modal functions
-	// oh man, a lot of state going on here
-	// I'm sure this can be simplified, but hope so
-	// ..for a future review
-	// -----------------------------------------------
+/**
+ *  @name showModal()
+ *  @desc reveals modals depending on type passed in
+ *  @param { string } type the class name slug  of modal to show
+ */
+const showModal = type => {
+	const modalToShow = document.querySelector(`.modal__${type}`);
 
-	// Don't even bother if there isn't a hamburger button
-	if (mhHamburgerButton) {
-		// Prevent scrolling other then menu when dialogue modal open
-		// ----------------------------------------------------------
-		const preventScroll = function() {
-			if (
-				document.body.style.overflowY === '' ||
-				document.body.style.overflowY === 'auto'
-			) {
-				(document.body.style.position = 'fixed'),
-					(document.body.style.overflowY = 'scroll');
-			} else {
-				(document.body.style.position = 'static'),
-					(document.body.style.overflowY = 'auto');
-			}
-		};
+	// show modal container
+	modal.style.display = 'block';
+	unsetAriaHidden(modal);
 
-		const showModal = function(btn) {
-			modal.show();
-			mhHamburger.classList.remove('u-hide-l');
-			mhHamburgerButton.classList.add('is-active');
-			window.removeEventListener('scroll', stickMasthead);
-			preventScroll();
-			if (isHamburgerHidden !== null) {
-				mhHamburger.classList.remove(isHamburgerHidden);
-			}
+	// hide masthead actions
+	Array.from(mastheadActionsCTA).map(el =>
+		el.classList.add('u-visually-hidden')
+	);
 
-			if (btn === 'search') {
-				mhSearch.classList.add('u-visually-hidden');
-				modalSearch.classList.remove('u-visually-hidden');
-				document.querySelector('.modal__search .searchform__input').focus();
-				if (mhLogin) {
-					modalLogin.classList.add('u-visually-hidden');
-				}
-			}
+	// show selected modal content
+	modalToShow.classList.remove('u-visually-hidden');
+	// show close all modals CTA
+	globalCloseModalButton.classList.remove('u-visually-hidden');
+};
+/**
+ *  @name closeAllModals()
+ *  @desc closes all modals
+ */
+const closeAllModals = () => {
+	// hide modal container
+	modal.style.display = 'none';
+	setAriaHidden(modal);
+	// hide search modal
+	modalSearch.classList.add('u-visually-hidden');
+	// hide login modal
+	modalLogin.classList.add('u-visually-hidden');
+	// hide masthead modal
+	modalMenu.classList.add('u-visually-hidden');
+	// hide close all modal CTA
+	Array.from(mastheadActionsCTA).map(el =>
+		el.classList.remove('u-visually-hidden')
+	);
+	globalCloseModalButton.classList.add('u-visually-hidden');
 
-			if (btn === 'login') {
-				document.querySelector('.login__field').focus();
-				modalLogin.classList.remove('u-visually-hidden');
-				modal.show();
-				mhLogin.classList.add('u-visually-hidden');
-			}
-		};
+	// show/hide CTA buttons for modals in masthead depending on selected modal
+	if (modalSearch) {
+		mastheadSearch.classList.remove('u-visually-hidden');
+	}
+	if (modalLogin) {
+		mastheadLogin.classList.remove('u-visually-hidden');
+	}
+	if (modalMenu) {
+		mastheadNavIcon.classList.remove('u-visually-hidden');
+	}
+};
+/**
+ *  @name appendSideNav()
+ *  @desc copies .b-menu content and appends it to .modal__menu
+ */
+const appendSideNav = () => {
+	modalMenu.appendChild(sideNav);
+};
+/**
+ *  @name removeSideNav()
+ *  @desc removes .b-menu from .modal__menu
+ */
+const removeSideNav = () => {
+	if (modalMenu.childNodes.length > 1) {
+		sideNavContainer.appendChild(sideNav);
+	}
+};
 
-		if (mhSearch) {
-			mhSearch.addEventListener(
-				'click',
-				function() {
-					showModal('search');
-				},
-				false
-			);
-		}
+const handleScroll = () => {
+	window.addEventListener(
+		'scroll',
+		() => {
+			toggleMastheadVisibilty();
+		},
+		false
+	);
+};
+const handleResize = () => {
+	let timeout = true;
 
-		if (mhHamburger.classList.contains('u-hide-l')) {
-			isHamburgerHidden = 'u-hide-l';
-		} else if (mhHamburger.classList.contains('is-hidden')) {
-			isHamburgerHidden = 'is-hidden';
-		}
+	window.addEventListener(
+		'resize',
+		() => {
+			if (!timeout) return;
 
-		mhHamburgerButton.addEventListener(
-			'mousedown',
-			function() {
-				mhHamburgerButton.classList.toggle('is-active');
-				if (mhHamburgerButton.classList.contains('is-active')) {
-					modal.show();
-					if (moveMenu) {
-						modalMenu.classList.remove('u-visually-hidden');
-						modalMenu.appendChild(leftMenu);
-					}
-					preventScroll();
-					window.removeEventListener('scroll', stickMasthead);
-					if (mhLogin) {
-						modal.close();
-						mhLogin.classList.add('u-visually-hidden');
-					}
-				} else {
-					preventScroll();
-					window.addEventListener('scroll', stickMasthead);
-					modal.close();
-					if (moveMenu) {
-						modalMenu.classList.add('u-visually-hidden');
-						// modal.close();
-						moveMenu.appendChild(leftMenu);
-					}
-					if (mhSearch) {
-						modalSearch.classList.add('u-visually-hidden');
-						mhSearch.classList.remove('u-visually-hidden');
-					}
-					if (mhLogin) {
-						mhLogin.classList.remove('u-visually-hidden');
-						modalLogin.classList.remove('u-visually-hidden');
-					}
-					if (isHamburgerHidden !== null) {
-						mhHamburger.classList.add(isHamburgerHidden);
-					}
-				}
+			timeout = false;
+
+			setTimeout(() => {
+				toggleMobileMenu();
+				timeout = true;
+			}, 500);
+		},
+		false
+	);
+};
+/**
+ *  @name handleLoading()
+ *  @desc init function for the masthead functionality
+ */
+const handleLoading = () => {
+	window.addEventListener(
+		'load',
+		() => {
+			toggleMobileMenu();
+			closeMenuState();
+		},
+		false
+	);
+};
+
+const handleClick = () => {
+	mastheadSearch.addEventListener('click', e => {
+		showModal('search');
+		document.querySelector('.searchform__input').focus();
+	});
+	mastheadLogin.addEventListener(
+		'click',
+		() => {
+			showModal('login');
+		},
+		false
+	);
+	globalCloseModalButton.addEventListener(
+		'click',
+		() => {
+			closeAllModals();
+		},
+		false
+	);
+	if (mastheadNavIcon) {
+		mastheadNavIcon.addEventListener(
+			'click',
+			() => {
+				showModal('menu');
 			},
 			false
 		);
-
-		if (mhLogin) {
-			mhLogin.addEventListener(
-				'click',
-				function() {
-					showModal('login');
-				},
-				false
-			);
-		}
 	}
-})();
+};
+
+const handleKeyPress = () => {
+	window.addEventListener('keydown', e => {
+		if (e.key === 'Escape') {
+			closeAllModals();
+		}
+	});
+};
+/**
+ *  @name Masthead()
+ *  @desc init function for the masthead functionality
+ */
+const Masthead = () => {
+	if (!masthead) return;
+	handleScroll();
+	handleResize();
+	handleLoading();
+	handleClick();
+	handleKeyPress();
+};
+
+export default Masthead;

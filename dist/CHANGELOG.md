@@ -2,6 +2,12 @@
 
 All notable changes to the project will be documented here, in this file.
 
+## [v0.14.0](https://github.com/ravendesignsystem/rds/releases/tag/0.13.0) 2019-11-14
+
+**Added**, **Changed**, **Docs**: Breaking changes.
+
+- **Changed**: Refactored Masthead, Menu block and added Nav component.
+
 ## [v0.13.0](https://github.com/ravendesignsystem/rds/releases/tag/0.13.0) 2019-09-30
 
 **Added**, **Changed**, **Docs**: Breaking changes.

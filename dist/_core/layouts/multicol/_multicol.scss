@@ -19,7 +19,8 @@
 .l-multicol--white {
 	background-color: white;
 
-	.multicol__content > .u-block--white:first-child, .multicol__sidebar > .u-block--white:first-child {
+	.multicol__content > .u-block--white:first-child,
+	.multicol__sidebar > .u-block--white:first-child {
 		padding-top: 10px;
 	}
 }
@@ -59,13 +60,16 @@
 		width: calc(240px + #{$grid-gutter});
 		//margin-right: $grid-gutter;
 		padding-right: $grid-gutter;
-
 	}
+}
+
+.u-masthead-sticky .multicol__nav {
+	top: $masthead_height + 20px;
 }
 
 .multicol__main,
 .multicol__content {
-	overflow: hidden;
+	// overflow: hidden; // NOTE: removed this to prevent drop shadows on cards from being cut off at small breakpoint
 	width: 100%;
 }
 
@@ -183,4 +187,3 @@
 		}
 	}
 }
-

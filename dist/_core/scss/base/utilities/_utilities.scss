@@ -224,6 +224,16 @@
 	}
 }
 
+.u-icon--notext svg {
+	margin-right: 0;
+}
+
+@include media('<=s') {
+	.u-icon--notext-s svg {
+		margin-right: 0;
+	}
+}
+
 a.u-icon svg:hover {
 	cursor: pointer;
 }
@@ -298,6 +308,10 @@ a.u-link,
 	position: fixed !important;
 }
 
+.u-absolute {
+	position: absolute !important;
+}
+
 .u-sticky {
 	position: sticky;
 	top: 0;
@@ -342,6 +356,11 @@ a.u-link,
 .alignright {
 	float: right;
 	margin-left: 30px;
+}
+
+.u-hide {
+	opacity: 0;
+	visibility: hidden;
 }
 
 // hide on small screens
