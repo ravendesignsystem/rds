@@ -1,0 +1,111 @@
+// Nav Icon Settings
+// ==================================================
+$navicon-layer-height: 2px !default;
+$navicon-layer-spacing: 5px !default;
+$navicon-layer-color: #222 !default;
+$navicon-layer-border-radius: 4px !default;
+
+// Types (Remove or comment out what you don’t need)
+// ==================================================
+$navicon-types: (
+	spin
+) !default;
+
+// Nav Icon
+// ==================================================
+.c-navicon {
+	padding: 0;
+	display: inline-block;
+	cursor: pointer;
+
+	// Normalize (<button>)
+	font: inherit;
+	color: inherit;
+	text-transform: none;
+	background-color: transparent;
+	border: 0;
+	margin: 0;
+	overflow: visible;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.c-navicon__box {
+	width: 20px;
+	height: $navicon-layer-height * 3 + $navicon-layer-spacing * 2;
+	display: inline-block;
+	position: relative;
+}
+
+.c-navicon__inner {
+	display: block;
+	top: 50%;
+	margin-top: $navicon-layer-height / -2;
+
+	&,
+	&::before,
+	&::after {
+		width: 20px;
+		height: $navicon-layer-height;
+		background-color: $navicon-layer-color;
+		border-radius: $navicon-layer-border-radius;
+		position: absolute;
+		transition-property: transform;
+		transition-duration: 0.15s;
+		transition-timing-function: ease;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+	}
+
+	&::before {
+		top: ($navicon-layer-spacing + $navicon-layer-height) * -1;
+	}
+
+	&::after {
+		bottom: ($navicon-layer-spacing + $navicon-layer-height) * -1;
+	}
+}
+
+/*
+  * Spin
+  */
+// .c-navicon--spin {
+// 	.c-navicon__inner {
+// 		transition-duration: 0.22s;
+// 		transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+// 		&::before {
+// 			transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+// 		}
+
+// 		&::after {
+// 			transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+// 		}
+// 	}
+
+// 	&.is-active {
+// 		.c-navicon__inner {
+// 			transform: rotate(225deg);
+// 			transition-delay: 0.12s;
+// 			transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+// 			&::before {
+// 				top: 0;
+// 				opacity: 0;
+// 				transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+// 			}
+
+// 			&::after {
+// 				bottom: 0;
+// 				transform: rotate(-90deg);
+// 				transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+// 			}
+// 		}
+// 	}
+// }
