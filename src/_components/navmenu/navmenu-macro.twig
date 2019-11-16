@@ -1,33 +1,33 @@
-{% macro menuMacro(menu, level) %}
-    {# Set our default level as an integer. #}
-    {% set default_level = 1 %}
-    <ul class="nav__menu">
-        {% for menu_item in menu %}
-            {% set itemKey = random(200) %}
-            {# Check if this is the active item. #}
-            {% set active = (menu_item.active) ? ' is-active' : '' %}
+{#{% macro menuMacro(menu, level) %}#}
+{#    #}{# Set our default level as an integer. #}
+{#    {% set default_level = 1 %}#}
+{#    <ul class="nav__menu">#}
+{#        {% for menu_item in menu %}#}
+{#            {% set itemKey = random(200) %}#}
+{#            #}{# Check if this is the active item. #}
+{#            {% set active = (menu_item.active) ? ' is-active' : '' %}#}
 
-            {# Check if this item is in the active trail. #}
-            {% set active = active ~ ((menu_item.active_trail) ? ' is-active-trail' : '') %}
+{#            #}{# Check if this item is in the active trail. #}
+{#            {% set active = active ~ ((menu_item.active_trail) ? ' is-active-trail' : '') %}#}
 
-            <li class="has-submenu">
-                {% if menu_item.submenu %}
-                    <a href="{{ menu_item.url }}">{{ menu_item.title }}</a>
-                    <button aria-expanded="false" aria-controls="submenu_level_b1">+</button>
-                {% else %}
-                    <a {% if menu_item.active == menu_item.title %}class="active" {% endif %}href="{{ menu_item.url }}">{{ menu_item.title }}</a>
-                {% endif %}
-                {% if menu_item.submenu %}
-                    {# Since this menu item has a submenu, recall function and increment counter. #}
-                    {{ _self.menuMacro(menu_item.submenu, level|default(default_level) + 1) }}
-                {% endif %}
-            </li>
-        {% endfor %}
-        {% if level is null  %}
-            <li>
-                {#<a class="menu__expand" href="#" ><span class="u-icon--xxs u-icon--left u-icon--plus">{% include "icons/plus.svg" ignore missing %}<i class="menu__toggle">Expand all</i></span></a>#}
-                <button><span class="menu__toggle"><i aria-hidden="true" role="img" title="Expand all"></i>Expand all</span></button>
-            </li>
-        {% endif %}
-    </ul>
-{%- endmacro %}
+{#            <li class="has-submenu">#}
+{#                {% if menu_item.submenu %}#}
+{#                    <a href="{{ menu_item.url }}">{{ menu_item.title }}</a>#}
+{#                    <button aria-expanded="false" aria-controls="submenu_level_b1">+</button>#}
+{#                {% else %}#}
+{#                    <a {% if menu_item.active == menu_item.title %}class="active" {% endif %}href="{{ menu_item.url }}">{{ menu_item.title }}</a>#}
+{#                {% endif %}#}
+{#                {% if menu_item.submenu %}#}
+{#                    #}{# Since this menu item has a submenu, recall function and increment counter. #}
+{#                    {{ _self.menuMacro(menu_item.submenu, level|default(default_level) + 1) }}#}
+{#                {% endif %}#}
+{#            </li>#}
+{#        {% endfor %}#}
+{#        {% if level is null  %}#}
+{#            <li>#}
+{#                #}{#<a class="menu__expand" href="#" ><span class="u-icon--xxs u-icon--left u-icon--plus">{% include "icons/plus.svg" ignore missing %}<i class="menu__toggle">Expand all</i></span></a>#}
+{#                <button><span class="menu__toggle"><i aria-hidden="true" role="img" title="Expand all"></i>Expand all</span></button>#}
+{#            </li>#}
+{#        {% endif %}#}
+{#    </ul>#}
+{#{%- endmacro %}#}

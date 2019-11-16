@@ -3,7 +3,7 @@
 	"version": "0.14.0",
 	"description": "Never more",
 	"main": "webpack.config.js",
-	"author": "",
+	"author": "Carleton University",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
