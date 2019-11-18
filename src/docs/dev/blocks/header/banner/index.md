@@ -1,6 +1,7 @@
 ---
 layout: docs
 subsite: dev
+menu: dev
 title: Banner Block
 banner:
   breadcrumbs:
