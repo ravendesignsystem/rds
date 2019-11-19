@@ -1,7 +1,10 @@
 ---
 layout: docs
+title: Banner
 subsite: dev
-title: Banner Block
+menu: dev
+section: Blocks
+subsection: Header Blocks
 banner:
   breadcrumbs:
     grandparent: Blocks

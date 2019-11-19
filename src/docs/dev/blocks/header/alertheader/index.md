@@ -1,10 +1,10 @@
 ---
 layout: docs
-subsite: dev
 title: Alert Header
+subsite: dev
 menu: dev
 section: Blocks
-subsection: Header blocks
+subsection: Header Blocks
 banner:
   breadcrumbs:
     parent: Docs

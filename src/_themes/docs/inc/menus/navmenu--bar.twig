@@ -1,0 +1,47 @@
+<div class="b-menu b-menu--topnav">
+    <nav class="c-nav c-nav--topnav" role="presentation" aria-label="Main Navigation">
+        <ul class="nav__menu nav__menu--bar">
+            <li>
+                <a {% if page.subsite == 'about' %}class="u-active"{% endif %} href="{{ site.url }}about/">About</a>
+            </li>
+            <li>
+                <a {% if page.subsite == 'dev' %}class="u-active"{% endif %} href="{{ site.url }}dev/">Dev</a>
+            </li>
+            <li>
+                <a {% if page.subsite == 'design' %}class="u-active"{% endif %} href="{{ site.url }}design/">Design</a>
+            </li>
+            <li>
+                <a {% if page.subsite == 'content' %}class="u-active"{% endif %} href="{{ site.url }}content/">Content</a>
+            </li>
+            <li>
+                <a {% if page.subsite == 'a11y' %}class="u-active"{% endif %} href="{{ site.url }}a11y/">Accessibility</a>
+            </li>
+            <li class="has-submenu c-menupopup">
+                <button class="nav--menubar__button" aria-expanded="false" aria-controls="id_programs_menu" aria-disabled="false">
+                    <span class="u-visually-hidden">Show submenu for
+                    </span>Submenu
+                </button>
+                <ul id="id_programs_menu" class="is-submenu">
+                    <li>
+                        <a href="/programs/" aria-haspopup="true" aria-expanded="false">All Programs</a>
+                        <ul>
+                            <li class="popup__sep">
+                                <a href="/programs/masters-programs/">Masters Programs</a>
+                            </li>
+                            <li>
+                                <a href="/programs/doctoral-programs/">Doctoral Programs</a>
+                            </li>
+                            <li>
+                                <a href="/programs/graduate-programs/">Graduate Diplomas</a>
+                            </li>
+                            <li>
+                                <a href="/programs/collaborative-specializations/">Collaborative Specializations</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+{#    Do we need: aria-haspopup="true" aria-expanded="false"#}

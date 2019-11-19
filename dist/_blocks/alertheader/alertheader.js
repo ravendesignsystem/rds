@@ -12,9 +12,9 @@ if (alert ) {
 	// 	}
 	// }
 
-	window.onscroll = function() {
-		stickTop()
-	};
+	// window.onscroll = function() {
+	// 	stickTop()
+	// };
 
 	if (alertHeaderClose) {
 		alertHeaderClose.addEventListener(

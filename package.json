@@ -1,9 +1,9 @@
 {
 	"name": "rds",
-	"version": "0.13.0",
+	"version": "0.14.1",
 	"description": "Never more",
 	"main": "webpack.config.js",
-	"author": "",
+	"author": "Carleton University",
 	"license": "MIT",
 	"repository": {
 		"type": "git",

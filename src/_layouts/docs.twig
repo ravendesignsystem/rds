@@ -94,8 +94,8 @@
         <div class="l-multicol{% if page.sidebar %} l-multicol--ama{% else %} l-multicol--am{% endif %} l-multicol--white{% if 'l' in page.sidebar %} l-multicol--sidebar-large{% endif %} {% if 'top' in page.sidebar %} l-multicol--sidebar-top{% endif %}">
             <div class="multicol__container">
                 <aside class="multicol__nav u-sticky">
-                    {% include "menu/menu" %}
-{#                    {%include 'docs/inc/menus/menu-' ~ page.menu %}#}
+{#                    {% include "menu/menu" %}#}
+                    {%include 'docs/inc/menus/menu-' ~ page.menu %}
                 </aside>
         {% endif %}
                 {% block main %}
