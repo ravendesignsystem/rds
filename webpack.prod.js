@@ -8,7 +8,7 @@ const path = require('path');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 // TODO figure out how to pull this var from webpack.build.js
-const ver = '0.13.0';
+const ver = '0.14.1';
 
 // Build Config
 module.exports = merge(baseConfig, {
