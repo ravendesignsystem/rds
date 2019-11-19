@@ -1,8 +1,10 @@
 ---
 layout: docs
+title: Blocks
 subsite: dev
 menu: dev
-title: RDS Blocks
+section: Blocks
+subsection: Header Blocks
 banner:
   settings:
     variant: img
@@ -16,3 +18,4 @@ content: true
 ##  Blocks
 
 
+{{ page.section }}

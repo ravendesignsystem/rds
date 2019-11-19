@@ -28,19 +28,19 @@
             </ul>
         </li>
 
-        <li class="has-submenu">
-            <a href="{{ site.url }}dev/blocks/">Blocks</a>
-            <button aria-expanded="false" aria-controls="submenu_level_b1">+</button>
-            <ul id="submenu_level_b1" class="is-submenu">
-                <li class="has-submenu">
-                    <a href="{{ site.url }}dev/main-concepts/components-overview/">Header Blocks</a>
-                    <button aria-expanded="false" aria-controls="submenu_level_b2">+</button>
-                    <ul id="submenu_level_b2" class="is-submenu">
+        <li class="has-submenu{% if page.section == "Blocks" %} open{% endif %}">
+            <a {% if page.title == "Blocks" %}class="u-active"{% endif %} href="{{ site.url }}dev/blocks/">Blocks</a>
+            <button aria-expanded="{% if page.section == "Blocks" %}true{% else %}false{% endif %}" aria-controls="submenu_Blocks">+</button>
+            <ul id="submenu_Blocks" class="is-submenu">
+                <li class="has-submenu{% if page.subsection == "Header Blocks" %} open{% endif %}">
+                    <a {% if page.title == "Header Blocks" %}class="u-active"{% endif %} href="{{ site.url }}dev/main-concepts/components-overview/">Header Blocks</a>
+                    <button aria-expanded="{% if page.subsection == "Header Blocks" %}true{% else %}false{% endif %}" aria-controls="submenu_header_blocks">+</button>
+                    <ul id="submenu_header_blocks" class="is-submenu">
                         <li>
-                            <a href="{{ site.url }}dev/blocks/header/alertheader/">Alert Header</a>
+                            <a {% if page.title == "Alert Header" %}class="u-active"{% endif %} href="{{ site.url }}dev/blocks/header/alertheader/">Alert Header</a>
                         </li>
                         <li>
-                            <a href="{{ site.url }}dev/blocks/header/banner/">Banner</a>
+                            <a {% if page.title == "Banner" %}class="u-active"{% endif %} href="{{ site.url }}dev/blocks/header/banner/">Banner</a>
                         </li>
                         <li>
                             <a href="{{ site.url }}dev/blocks/header/masthead/">Masthead</a>
