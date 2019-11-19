@@ -42,7 +42,7 @@
 
 	blockquote {
 		font-weight: 300;
-		font-style: italic;
+		// font-style: italic;
 		border-left: 0.3em solid $red;
 		margin: 0 0 25px 0;
 		padding: 15px 25px;
@@ -57,3 +57,24 @@
 		}
 	}
 }
+
+// Component overides
+
+.b-content .c-card h3 {
+	font-size: $pixel18;
+	margin: 0 0 5px !important;
+	line-height: 1.25;
+	border-bottom: 0;
+}
+
+// Card description
+.b-content .c-card p {
+	font-size: $pixel16;
+	line-height: 1.6;
+	font-weight: 400;
+}
+
+.b-content .c-card + .c-card {
+	margin-top: $margin-bottom * 2;
+}
+

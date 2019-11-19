@@ -43,8 +43,8 @@ body {
 	background-color: white;
 	margin: 0;
 	font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', -apple-system,
-	'blinkmacsystemfont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica',
-	'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+		'blinkmacsystemfont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica',
+		'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 	font-style: normal;
 	color: $black;
 }
@@ -187,7 +187,7 @@ ol ol {
 
 blockquote {
 	font-weight: 300;
-	font-style: italic;
+	// font-style: italic;
 	border-left: 0.2em solid $red;
 	margin: 0 0 25px 0;
 	padding: 0.5em 1em;

@@ -33,7 +33,7 @@
 	// link wrapped around entire card
 	a {
 		display: block;
-		color: $black;
+		color: $black !important;
 		box-shadow: $ds-y;
 		height: 100%;
 		border-radius: 5px;

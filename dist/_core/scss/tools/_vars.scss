@@ -16,7 +16,7 @@
 
 // 0. RDS version
 // --------------
-$version: '0.13.1';
+$version: '0.14.1';
 
 // 1. Media query breakpoints
 // --------------------------
@@ -31,6 +31,8 @@ $grid-gutter: 30px !default;
 
 // 2. Margins/spacing
 // ------------------
+$masthead_height: 72px;
+
 $margin-bottom: 30px !default;
 
 // Block Spacing

@@ -8,6 +8,7 @@ The version string resides in several files within the project requiring manual 
 
 - /app/config/sculpin_site.yml - change `version:`
 - /src/_core/scss/tools/_vars.scss - change `$version:`
+- /dist/package.json - change `"version":`
 - /package.json - change `"version":`
 - /webpack.build.js - change `const ver`
 - /webpack.prod.js - change `const ver`
@@ -23,4 +24,6 @@ Update the CHANGELOG.md file in /dist/.
 
 ## Commit the changes
 
-Commit the changes
+Commit the changes including the new dist folder files and files with version number changes.
+
+
