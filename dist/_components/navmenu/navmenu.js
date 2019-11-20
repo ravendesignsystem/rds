@@ -24,7 +24,7 @@ const isTopNav = target => {
 
 //there is a much better way to do this, but for now it's verbose.
 export const closeMenuState = () => {
-	if (!navMenuButtons) return;
+	if (!navMenu || !navMenuButtons) return;
 	document.addEventListener('click', e => {
 		if (!navMenu.contains(e.target) || e.key === 'Escape') {
 			navMenuButtonsArray.map(button => {
