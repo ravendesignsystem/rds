@@ -2,6 +2,15 @@
 
 All notable changes to the project will be documented here, in this file.
 
+## [v0.15.0](https://github.com/ravendesignsystem/rds/releases/tag/0.15.0) 2019-11-20
+
+**Added**, **Fixed**: Maintenance release with small patches*
+
+- **Added**: css class to modify the default red masthead button to be white
+- **Added**: checks in masthead js if cases when login or search buttons do not exits
+- **Fixed**: fixed masthead JS errors relating to topnav/sidenav and how they appear in mobile menu
+
+
 ## [v0.14.1](https://github.com/ravendesignsystem/rds/releases/tag/0.14.1) 2019-11-19
 
 **Added**, **Changed**, **Docs**: Breaking changes.
