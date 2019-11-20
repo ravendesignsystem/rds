@@ -162,10 +162,10 @@ const closeAllModals = () => {
 	globalCloseModalButton.classList.add('u-visually-hidden');
 
 	// show/hide CTA buttons for modals in masthead depending on selected modal
-	if (modalSearch) {
+	if (modalSearch && mastheadSearch) {
 		mastheadSearch.classList.remove('u-visually-hidden');
 	}
-	if (modalLogin) {
+	if (modalLogin && mastheadLogin) {
 		mastheadLogin.classList.remove('u-visually-hidden');
 	}
 	if (modalMenu) {
@@ -234,17 +234,23 @@ const handleLoading = () => {
 };
 
 const handleClick = () => {
-	mastheadSearch.addEventListener('click', e => {
-		showModal('search');
-		document.querySelector('.searchform__input').focus();
-	});
-	mastheadLogin.addEventListener(
-		'click',
-		() => {
-			showModal('login');
-		},
-		false
-	);
+	if (mastheadSearch) {
+		mastheadSearch.addEventListener('click', e => {
+			showModal('search');
+			document.querySelector('.searchform__input').focus();
+		});
+	}
+
+	if (mastheadLogin) {
+		mastheadLogin.addEventListener(
+			'click',
+			() => {
+				showModal('login');
+			},
+			false
+		);
+	}
+
 	globalCloseModalButton.addEventListener(
 		'click',
 		() => {
