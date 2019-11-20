@@ -199,4 +199,22 @@ body {
 			}
 		}
 	}
+
+	.masthead__cta--white > a {
+		background-color: white;
+		color: $black;
+
+		svg {
+			fill: $black;
+		}
+
+		// &:hover {
+		// 	background: $grey;
+		// 	color: black;
+
+		// 	svg {
+		// 		fill: black;
+		// 	}
+		// }
+	}
 }
