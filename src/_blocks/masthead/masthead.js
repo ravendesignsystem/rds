@@ -84,6 +84,21 @@ const toggleMobileMenu = () => {
 };
 
 /**
+ *  @name toggleAppendMenu()
+ *  @desc move secondary menu to dialog
+ */
+const toggleAppendMenu = () => {
+	if (!sideNav) return;
+
+	// capture window size
+	if (window.innerWidth <= 760) {
+		appendSideNav();
+	} else {
+		removeSideNav();
+	}
+};
+
+/**
  *  @name toggleMastheadVisibilty()
  *  @desc hides/shows masthead depending on scroll position and direction
  */
@@ -195,6 +210,7 @@ const handleResize = () => {
 
 			setTimeout(() => {
 				toggleMobileMenu();
+				toggleAppendMenu();
 				timeout = true;
 			}, 500);
 		},
@@ -210,6 +226,7 @@ const handleLoading = () => {
 		'load',
 		() => {
 			toggleMobileMenu();
+			toggleAppendMenu();
 			closeMenuState();
 		},
 		false
