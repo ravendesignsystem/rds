@@ -7,7 +7,7 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-const ver = '0.14.1';
+const ver = '0.15.0';
 const cssName = env === 'production' ? `${ver}/rds-cu.css` : 'css/[name].css';
 
 module.exports = {
