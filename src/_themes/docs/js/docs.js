@@ -1,6 +1,10 @@
 // *** CORE JS ***
 import '../../../_core/js/core';
 
+// Tabs use on docs
+import '../blocks/tabs/tabs';
+import '../blocks/textimg/textimg';
+
 // Import and initialize highlight.js plugin
 import hljs from 'highlight.js/lib/highlight';
 hljs.initHighlightingOnLoad();
@@ -32,10 +36,6 @@ hljs.registerLanguage('xml', xml);
 // Import XML from highlight.js
 import yaml from 'highlight.js/lib/languages/yaml';
 hljs.registerLanguage('yaml', yaml);
-
-// Tabs use on docs
-import '../blocks/tabs/tabs';
-import '../blocks/textimg/textimg';
 
 // TODO lol I'm sure this can be improved
 // The below strips empty and <p> tags filled with whitespace caused by Markdown
