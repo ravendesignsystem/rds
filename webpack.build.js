@@ -7,9 +7,6 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-const ver = '0.15.0';
-const cssName = env === 'production' ? `${ver}/rds-cu.css` : 'css/[name].css';
-
 module.exports = {
 	module: {
 		rules: [
@@ -26,7 +23,7 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						options: {
-							name: cssName,
+							name: 'css/[name].css',
 						},
 					},
 					{
@@ -66,22 +63,26 @@ module.exports = {
 			port: 3000,
 			files: [
 				'build/**/*',
-				'src/_blocks/**/*.scss',
-				'src/_components/**/*.scss',
-				'src/_core/layouts/**/*.scss',
-				'src/_core/scss/**/*.scss',
-				'src/_themes/cu/scss/**/*.scss',
+				'src/_blocks/**/*.scss', // scss, js and main twig files
+				'src/_blocks/**/**/*.scss', // twig data support files
+				'src/_components/**/*.scss', // scss, js and main twig files
+				'src/_components/**/**/*.scss', // twig data support files
+				'src/_core/layouts/**/*.scss', // scss and js files
+				'src/_core/js/*.js', // main js files
+				'src/_core/js/**/*.scss', // js support files
+				'src/_core/scss/*.scss', // main scss files
+				'src/_core/scss/**/*.scss', // scss support files
 			],
 			notify: false,
 		}),
 	],
-	// optimization: {
-	// 	minimizer: [
-	// 		new UglifyJsPlugin({
-	// 			cache: true,
-	// 			parallel: true,
-	// 			sourceMap: true,
-	// 		}),
-	// 	],
-	// },
+	optimization: {
+		minimizer: [
+			new UglifyJsPlugin({
+				cache: true,
+				parallel: true,
+				sourceMap: true,
+			}),
+		],
+	},
 };

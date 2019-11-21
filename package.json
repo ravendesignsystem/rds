@@ -13,7 +13,7 @@
 		"build": "NODE_ENV=development webpack --env=dev --mode=development --config webpack.dev.js --watch --colors",
 		"dev": "vendor/bin/sculpin generate --watch --server & NODE_ENV=development webpack --env=dev --mode=development --config webpack.dev.js --watch --colors",
 		"prod": "vendor/bin/sculpin generate --clean --server --env=prod & NODE_ENV=production webpack --env=prod --mode=production --config webpack.prod.js --progress --hide-modules --colors",
-		"s3": "webpack --env=dev --mode=development --config webpack.s3.js"
+		"release": "webpack --env=prod --mode=production --config webpack.release.js"
 	},
 	"dependencies": {
 		"dompurify": "^2.0.7"
