@@ -2,6 +2,12 @@
 
 All notable changes to the project will be documented here, in this file.
 
+## [v0.15.3](https://github.com/ravendesignsystem/rds/releases/tag/0.15.3) 2019-11-21
+
+**Fixed**: Maintenance release with small patches*
+
+- **Fixed**: JS issue relating to masthead action button not existing on page
+
 ## [v0.15.2](https://github.com/ravendesignsystem/rds/releases/tag/0.15.2) 2019-11-21
 
 **Changed**: Maintenance release with small patches*
