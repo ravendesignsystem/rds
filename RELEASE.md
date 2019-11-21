@@ -1,44 +1,45 @@
 # Raven Design System (RDS) Release Process
 
-Temporary NPM and distribution release processes is documented below. This will be improved upon and further documented prior to the 1.0.0 release.
+NPM and distribution release processes is documented below. This will be improved upon and further documented prior to the 1.0.0 release.
 
-## File changes to version number 
+## Github Release
+Using your preferred github gui, do the following:
 
-The version string resides in several files within the project requiring manual updating for a new release, including:
+- Make sure you are on the `dev` branch
+- Create a `release` branch using the version number that you will be releasing
+- Following the rest of the instructions below
 
-- /app/config/sculpin_site.yml - change `version:`
-- /src/_core/scss/tools/_vars.scss - change `$version:`
-- /dist/package.json - change `"version":`
-- /package.json - change `"version":`
-- /webpack.release.js - change `const version`
+### Update Version Numbers
+The version number exists in several files and is required to be updated:
 
-## Update the distribution CHANGELOG
+- `/app/config/sculpin_site.yml` - change version on line 4
+- `/dist/package.json` - change version on line 3
+- `/src/_core/scss/tools/_vars.scss` - change version variable on line 19
+- `package.json` - change version on line 3
+- `webpack.release.js` - change version on line 15
 
-Update the CHANGELOG.md file in /dist/. 
+### Update the distribution CHANGELOG
 
-## Run the npm Prod command
+- Update the `CHANGELOG.md` file in `/dist`
 
-`npm run prod`
+### Build Release Package
 
-## Commit the changes
+- In a terminal window, run `npm run release`
+- Go into the `/dist` folder and run `npm publish` to push the new release to npm
 
-Commit the changes including the new dist folder files and files with version number changes.
+### Finish Release Branch
 
-Also, push the changes and setup a release on Github (not documented here)
+- Commit all the changes using a message similar to `Updating to version 0.XX.X`
+- Merge release branch into `dev`
+- Merge release branch into `master`
+- Delete release branch from local, and remote if it was pushed
 
-## Move the CSS and JS files to CDN
+### Build Docs for Prod
+To build the docs for production:
 
-Note: this should be made automated but we should create its own command for releases as we don't want the files moving every time the prod command is run. For now, move them manually.
-
-In /dist/NEW VERSION NUMBER/ move the .css, .gz and .js files to both:
-
-- http://cu-rds.s3.amazonaws.com/rds/CORRESPONDING Version number/ 
-- http://cu-rds.s3.amazonaws.com/rds/latest/
-
-## Publish the Dist folder to NPM
-
-For now, I've set up a separate project with the `dist` folder as its root.
-
-Open the project and run `npm publish`.
-
-You will need the permissions to publish. Will note in internal docs.
+- Open a terminal window
+- make sure you are on the `master` branch
+- Run the following command: `npm run prod`
+- Commit all the changes using a message similar to `Updating prod docs for version 0.XX.X`
+- Tag the latest commit to master with the version number being released
+- Push changes from `dev` and `master` to remote
