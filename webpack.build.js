@@ -2,9 +2,7 @@
  * RDS Webpack Config
  */
 
-const env = process.env.NODE_ENV;
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
@@ -52,11 +50,6 @@ module.exports = {
 		],
 	},
 	plugins: [
-		new CompressionPlugin({
-			test: /\.(js|css|map)(\?.*)?$/i,
-			filename: '[path].gz[query]',
-			algorithm: 'gzip',
-		}),
 		new BrowserSyncPlugin({
 			host: 'localhost',
 			proxy: 'http://localhost:8000/',
