@@ -12,15 +12,21 @@ Using your preferred github gui, do the following:
 ### Update Version Numbers
 The version number exists in several files and is required to be updated:
 
-- /app/config/sculpin_site.yml - change `version:`
-- /dist/package.json - change `"version":`
-- /src/_core/scss/tools/_vars.scss - change `$version:`
-- package.json - change `"version":`
-- webpack.release.js - change `const version`
+- `/app/config/sculpin_site.yml` - change version on line 4
+- `/dist/package.json` - change version on line 3
+- `/src/_core/scss/tools/_vars.scss` - change version variable on line 19
+- `package.json` - change version on line 3
+- `webpack.release.js` - change version on line 15
 
-## Update the distribution CHANGELOG
+### Update the distribution CHANGELOG
 
-Update the CHANGELOG.md file in /dist/. 
+- Update the `CHANGELOG.md` file in `/dist`
+
+### Build Release
+
+- In terminal, go into the `/dist` folder and run `npm run release`
+
+--------
 
 ## Run the npm Prod command
 
