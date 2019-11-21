@@ -1,16 +1,22 @@
 # Raven Design System (RDS) Release Process
 
-Temporary NPM and distribution release processes is documented below. This will be improved upon and further documented prior to the 1.0.0 release.
+NPM and distribution release processes is documented below. This will be improved upon and further documented prior to the 1.0.0 release.
 
-## File changes to version number 
+## Github Release
+Using your preferred github gui, do the following:
 
-The version string resides in several files within the project requiring manual updating for a new release, including:
+- Make sure you are on the `dev` branch
+- Create a `release` branch using the version number that you will be releasing
+- Following the rest of the instructions below
+
+### Update Version Numbers
+The version number exists in several files and is required to be updated:
 
 - /app/config/sculpin_site.yml - change `version:`
-- /src/_core/scss/tools/_vars.scss - change `$version:`
 - /dist/package.json - change `"version":`
-- /package.json - change `"version":`
-- /webpack.release.js - change `const version`
+- /src/_core/scss/tools/_vars.scss - change `$version:`
+- package.json - change `"version":`
+- webpack.release.js - change `const version`
 
 ## Update the distribution CHANGELOG
 
