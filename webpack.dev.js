@@ -4,7 +4,7 @@
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.build.js');
 const path = require('path');
-const { resolve } = require('path');
+// const { resolve } = require('path');
 
 // Build Config
 module.exports = merge(baseConfig, {

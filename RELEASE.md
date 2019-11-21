@@ -10,8 +10,7 @@ The version string resides in several files within the project requiring manual 
 - /src/_core/scss/tools/_vars.scss - change `$version:`
 - /dist/package.json - change `"version":`
 - /package.json - change `"version":`
-- /webpack.build.js - change `const ver`
-- /webpack.prod.js - change `const ver`
+- /webpack.release.js - change `const version`
 
 ## Update the distribution CHANGELOG
 
