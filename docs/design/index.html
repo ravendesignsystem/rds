@@ -39,7 +39,53 @@
 Raven Design System</a>
 		</a>
 	</h1>
-	
+		<div class="b-menu b-menu--topnav">
+    <nav aria-label="Main Navigation" class="c-nav c-nav--topnav" role="presentation">
+        <ul class="nav__menu nav__menu--bar">
+            <li>
+                <a  href="https://ravendesignsystem.github.io/rds/about/">About</a>
+            </li>
+            <li>
+                <a  href="https://ravendesignsystem.github.io/rds/dev/">Dev</a>
+            </li>
+            <li>
+                <a class="u-active" href="https://ravendesignsystem.github.io/rds/design/">Design</a>
+            </li>
+            <li>
+                <a  href="https://ravendesignsystem.github.io/rds/content/">Content</a>
+            </li>
+            <li>
+                <a  href="https://ravendesignsystem.github.io/rds/a11y/">Accessibility</a>
+            </li>
+            <li class="has-submenu c-menupopup">
+                <button aria-controls="id_programs_menu" aria-disabled="false" aria-expanded="false" class="nav--menubar__button">
+                    <span class="u-visually-hidden">Show submenu for
+                    </span>Submenu
+                </button>
+                <ul class="is-submenu" id="id_programs_menu">
+                    <li>
+                        <a aria-expanded="false" aria-haspopup="true" href="/programs/">All Programs</a>
+                        <ul>
+                            <li class="popup__sep">
+                                <a href="/programs/masters-programs/">Masters Programs</a>
+                            </li>
+                            <li>
+                                <a href="/programs/doctoral-programs/">Doctoral Programs</a>
+                            </li>
+                            <li>
+                                <a href="/programs/graduate-programs/">Graduate Diplomas</a>
+                            </li>
+                            <li>
+                                <a href="/programs/collaborative-specializations/">Collaborative Specializations</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+
 
 	<ul class="masthead__actions nav__menu--vert ">
 		<li class="masthead__cta has-submenu c-menupopup c-menupopup--right u-hide-s">
@@ -103,14 +149,14 @@ Raven Design System</a>
 				<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15.396 12L24 20.604 20.604 24 12 15.396 3.396 24 0 20.604 8.604 12 0 3.396 3.396 0 12 8.604 20.604 0 24 3.396z"/></svg>
 			</button>
 		</li>
-					<li name="navicon" class="masthead__navicon u-hide-l">
-				<button class="c-navicon" aria-label="Open Menu" title="Open site-wide menu" type="button">
-					<span class="c-navicon__box">
-						<span class="c-navicon__inner"></span>
-					</span>
-				</button>
-			</li>
-			</ul>
+		<li class="masthead__navicon u-hide-l" name="navicon">
+			<button aria-label="Open Menu" class="c-navicon" title="Open site-wide menu" type="button">
+				<span class="c-navicon__box">
+					<span class="c-navicon__inner"></span>
+				</span>
+			</button>
+		</li>
+	</ul>
 
 
 </div></div>
