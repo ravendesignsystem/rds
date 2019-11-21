@@ -149,26 +149,23 @@ const closeAllModals = () => {
 	// hide modal container
 	modal.style.display = 'none';
 	setAriaHidden(modal);
-	// hide search modal
-	modalSearch.classList.add('u-visually-hidden');
-	// hide login modal
-	modalLogin.classList.add('u-visually-hidden');
-	// hide masthead modal
-	modalMenu.classList.add('u-visually-hidden');
+
 	// hide close all modal CTA
 	Array.from(mastheadActionsCTA).map(el =>
 		el.classList.remove('u-visually-hidden')
 	);
 	globalCloseModalButton.classList.add('u-visually-hidden');
 
-	// show/hide CTA buttons for modals in masthead depending on selected modal
 	if (modalSearch && mastheadSearch) {
+		modalSearch.classList.add('u-visually-hidden');
 		mastheadSearch.classList.remove('u-visually-hidden');
 	}
 	if (modalLogin && mastheadLogin) {
+		modalLogin.classList.add('u-visually-hidden');
 		mastheadLogin.classList.remove('u-visually-hidden');
 	}
 	if (modalMenu) {
+		modalMenu.classList.add('u-visually-hidden');
 		mastheadNavIcon.classList.remove('u-visually-hidden');
 	}
 };
