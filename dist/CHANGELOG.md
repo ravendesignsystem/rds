@@ -2,6 +2,13 @@
 
 All notable changes to the project will be documented here, in this file.
 
+## [v0.15.2](https://github.com/ravendesignsystem/rds/releases/tag/0.15.2) 2019-11-21
+
+**Changed**: Maintenance release with small patches*
+
+- **Changed**: Replace custom built highlightjs with npm package, updated the imports for what hljs languages needed
+- **Changed**: Update release proceedure for npm version release
+
 ## [v0.15.1](https://github.com/ravendesignsystem/rds/releases/tag/0.15.1) 2019-11-21
 
 **Added**, **Fixed**: Maintenance release with small patches*

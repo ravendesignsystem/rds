@@ -22,35 +22,24 @@ The version number exists in several files and is required to be updated:
 
 - Update the `CHANGELOG.md` file in `/dist`
 
-### Build Release
+### Build Release Package
 
-- In terminal, go into the `/dist` folder and run `npm run release`
+- In a terminal window, run `npm run release`
+- Go into the `/dist` folder and run `npm publish` to push the new release to npm
 
---------
+### Finish Release Branch
 
-## Run the npm Prod command
+- Commit all the changes using a message similar to `Updating to version 0.XX.X`
+- Merge release branch into `dev`
+- Merge release branch into `master`
+- Delete release branch from local, and remote if it was pushed
 
-`npm run prod`
+### Build Docs for Prod
+To build the docs for production:
 
-## Commit the changes
-
-Commit the changes including the new dist folder files and files with version number changes.
-
-Also, push the changes and setup a release on Github (not documented here)
-
-## Move the CSS and JS files to CDN
-
-Note: this should be made automated but we should create its own command for releases as we don't want the files moving every time the prod command is run. For now, move them manually.
-
-In /dist/NEW VERSION NUMBER/ move the .css, .gz and .js files to both:
-
-- http://cu-rds.s3.amazonaws.com/rds/CORRESPONDING Version number/ 
-- http://cu-rds.s3.amazonaws.com/rds/latest/
-
-## Publish the Dist folder to NPM
-
-For now, I've set up a separate project with the `dist` folder as its root.
-
-Open the project and run `npm publish`.
-
-You will need the permissions to publish. Will note in internal docs.
+- Open a terminal window
+- make sure you are on the `master` branch
+- Run the following command: `npm run prod`
+- Commit all the changes using a message similar to `Updating prod docs for version 0.XX.X`
+- Tag the latest commit to master with the version number being released
+- Push changes from `dev` and `master` to remote
