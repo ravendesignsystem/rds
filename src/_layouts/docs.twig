@@ -181,6 +181,8 @@
                         {%include 'docs/inc/menus/menu-dev' %}
                     {% elseif page.menu != true and page.subsite == 'about' %}
 {#                        {%include 'docs/inc/menus/menu-about' %}#}
+                        {% else %}
+                            {%include 'docs/inc/menus/menu' %}
                     {% endif %}
                 {% endblock %}
         </div>
