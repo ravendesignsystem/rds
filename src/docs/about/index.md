@@ -42,21 +42,18 @@ RDS's design system's principles reflect the university's core values embedded i
     }
 ) }}
 
-
  
 ## A work in progress...
-
-I should stress that the design, build, and ‘rules’ of a system are not set in stone — they are a constant work in progress, open to iteration to improve, adapt, and scale.
  
 Design Systems are living documents and will never be complete. RDS is continually a work in progress improving and adapting.
 
 But if you are checking out this documentation at this time, **you will find these docs very much incomplete**.
  
-We are not in production with the system just yet. We are working hard to get there. Along the way, this site and the RDS documentation will grow and become more complete.
+We are not in production with the system yet. We are working hard to get there. Along the way, this site and the RDS documentation will grow and become more complete.
 
 Stay tuned.
 
-TODO Design Principles
+
 
 ## References
 
