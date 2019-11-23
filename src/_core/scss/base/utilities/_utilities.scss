@@ -362,6 +362,11 @@ a.u-link,
 	visibility: hidden;
 }
 
+// hide in dialogue only
+dialog .u-hide-dialog {
+	display: none !important;
+}
+
 // hide on small screens
 @include media('<=s') {
 	.u-hide-s:not(.u-show-s) {
