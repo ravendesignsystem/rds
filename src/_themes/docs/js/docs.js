@@ -2,7 +2,7 @@
 import '../../../_core/js/core';
 
 // Tabs use on docs
-import '../blocks/tabs/tabs';
+// import '../blocks/tabs/tabs';
 import '../blocks/textimg/textimg';
 
 // Import and initialize highlight.js plugin
