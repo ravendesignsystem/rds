@@ -63,7 +63,7 @@
 		}
 	}
 
-	// button:not(.nav__menu--bar button):not(.nav__expand button) {
+	// button:not(.nav__menu--top button):not(.nav__expand button) {
 	// 	position: absolute;
 	// 	top: 5px;
 	// 	right: -10px;
@@ -151,7 +151,7 @@
 // Styles needed for altering masthead nav in modal
 
 dialog {
-	.nav__menu--bar {
+	.nav__menu--top {
 		li {
 			margin: 0;
 			list-style-type: none;
