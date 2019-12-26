@@ -3,6 +3,9 @@ layout: docs
 subsite: dev
 section: Blocks
 title: Masthead
+menu: dev
+section: Blocks
+subsection: Header Blocks
 banner:
  breadcrumbs:
   grandparent: Blocks
@@ -10,13 +13,38 @@ banner:
 ---
 As the first block located on top of the page, the masthead is an essential toolbar that provides site-wide content and actions.
 
+## Masthead Stories
+
+For the Masthead block, independent test cases have been set up as stories. Each story represents a single, possible visual state of the masthead block.
+
+- [Base](stories/base/): Title and branding
+
+### Buttons
+
+- [Base with search button](stories/search/)
+- [Base with login button](stories/login/)
+- [Base with CTA button](stories/cta/)
+- [Base with CTA white button](stories/cta-white/)
+- [Base with CTA with dropdown](stories/cta-dropdown/)
+- [Base with CTA with dropdown with icons](stories/cta-dropdown-icons/)
+- [Base with ALL buttons](stories/all-buttons/)
+
+### Top Nav
+
+- [Base with Top Nav](stories/top-nav/)
+
+### Side Nav
+
+- [Base with Side Nav](stories/side-nav/)
+- [Base with Side Nav and all CTA](stories/side-nav-cta/)
+
 ## Masthead sections
 
 The masthead block contains three distinct sections.
 
 {% include 'close' %}
 
-<img src="https://cu-rds.s3.amazonaws.com/docs/assets/topnav-mh.png" style="margin: 0 auto;max-width:1200px" alt="Masthead sections">
+<img src="https://cu-rds.s3.amazonaws.com/docs/assets/topnav-mh.png"  alt="Masthead sections">
 
 {% include 'open' %}
 
@@ -53,7 +81,7 @@ The Masthead block and its sections in code:
 
 {% include 'close' %}
 
-<img src="https://cu-rds.s3.amazonaws.com/docs/assets/masthead-anatomy.png" style="margin: 0 auto;max-width:1200px" alt="Masthead anatomy">
+<img src="https://cu-rds.s3.amazonaws.com/docs/assets/masthead-anatomy.png"  alt="Masthead anatomy">
 
 
 {% include 'open' %}

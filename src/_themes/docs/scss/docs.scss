@@ -24,6 +24,14 @@
 //----------------
 @import '../components/cardlabel/cardlabel';
 
+// Modal
+// Hide top menu in modal
+//-----------------------
+//.modal__menu nav:first-child {
+//	display: none;
+//}
+
+
 // Homepage
 //---------
 @import '../../hp/blocks/bannerhero/bannerhero';
