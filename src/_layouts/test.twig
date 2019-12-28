@@ -14,6 +14,8 @@
 {# Masthead stories #}
 {% if page.story == "masthead" %}
     {% include "masthead/stories/base" %}
+{% elseif page.story == "masthead-long-title" %}
+    {% include "masthead/stories/long-title" %}
     {# Masthead buttons #}
 {% elseif page.story == "masthead-search" %}
     {% include "masthead/stories/search" %}

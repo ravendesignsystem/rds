@@ -1,6 +1,6 @@
 ---
 layout: test
 title: Masthead - Base
-story: masthead
+story: masthead-long-title
 ---
 
