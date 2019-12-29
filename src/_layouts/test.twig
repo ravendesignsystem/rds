@@ -34,10 +34,14 @@
     {# Masthead top nav #}
 {% elseif page.story == "masthead-top-nav" %}
     {% include "masthead/stories/top-nav" %}
+{% elseif page.story == "masthead-top-nav-sub" %}
+    {% include "masthead/stories/top-nav-sub" %}
 {% elseif page.story == "masthead-side-nav" %}
     {% include "masthead/stories/side-nav" %}
 {% elseif page.story == "masthead-side-nav-cta" %}
     {% include "masthead/stories/side-nav-cta" %}
+{% elseif page.story == "masthead-ks" %}
+    {% include "masthead/stories/ks" %}
 {% endif %}
 </header>
 
