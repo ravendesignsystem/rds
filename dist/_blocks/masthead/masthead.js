@@ -7,7 +7,7 @@ let st;
 const body = document.querySelector('body');
 const masthead = document.querySelector('#id-masthead');
 const mastheadNav = document.querySelector('.c-nav--topnav');
-const mastheadNavContainer = document.querySelector('.b-menu--topnav');
+const mastheadNavContainer = document.querySelector('.b-masthead nav');
 const mastheadNavUl = document.querySelector('.c-nav--topnav ul');
 const mastheadActions = document.querySelector('.masthead__actions');
 const sideNav = document.querySelector('.c-nav--sidenav');
