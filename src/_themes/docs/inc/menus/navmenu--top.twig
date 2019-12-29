@@ -1,6 +1,6 @@
 <nav>
     <div class="c-nav c-nav--topnav" role="presentation" aria-label="Main Navigation">
-        <ul class="nav__menu nav__menu--top u-hide-dialog">
+        <ul class="nav__menu nav__menu--top{% if page.homepage != true %} u-hide-dialog{% endif %}">
             <li>
                 <a class="{% if page.subsite == 'about' %} u-active{% endif %}" href="{{ site.url }}about/">About</a>
             </li>
