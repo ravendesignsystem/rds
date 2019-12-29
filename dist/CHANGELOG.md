@@ -2,7 +2,7 @@
 
 All notable changes to the project will be documented here, in this file.
 
-## [v0.15.3](https://github.com/ravendesignsystem/rds/releases/tag/0.15.3) 2019-11-21
+## [v0.15.4](https://github.com/ravendesignsystem/rds/releases/tag/0.15.4) 2019-12-29
 
 **Fixed**, **Docs**: Maintenance release with small patchesm and docs updates*
 
