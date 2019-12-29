@@ -40,7 +40,7 @@ Raven Design System</a>
 		</a>
 	</h1>
 		<div class="b-menu b-menu--topnav">
-    <nav aria-label="Main Navigation" class="c-nav c-nav--topnav" role="presentation">
+    <nav class="c-nav c-nav--topnav" role="presentation" aria-label="Main Navigation">
         <ul class="nav__menu nav__menu--bar">
             <li>
                 <a  href="https://ravendesignsystem.github.io/rds/about/">About</a>
@@ -58,13 +58,13 @@ Raven Design System</a>
                 <a  href="https://ravendesignsystem.github.io/rds/a11y/">Accessibility</a>
             </li>
             <li class="has-submenu c-menupopup">
-                <button aria-controls="id_programs_menu" aria-disabled="false" aria-expanded="false" class="nav--menubar__button">
+                <button class="nav--menubar__button" aria-expanded="false" aria-controls="id_programs_menu" aria-disabled="false">
                     <span class="u-visually-hidden">Show submenu for
                     </span>Submenu
                 </button>
-                <ul class="is-submenu" id="id_programs_menu">
+                <ul id="id_programs_menu" class="is-submenu">
                     <li>
-                        <a aria-expanded="false" aria-haspopup="true" href="/programs/">All Programs</a>
+                        <a href="/programs/" aria-haspopup="true" aria-expanded="false">All Programs</a>
                         <ul>
                             <li class="popup__sep">
                                 <a href="/programs/masters-programs/">Masters Programs</a>
@@ -149,8 +149,8 @@ Raven Design System</a>
 				<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15.396 12L24 20.604 20.604 24 12 15.396 3.396 24 0 20.604 8.604 12 0 3.396 3.396 0 12 8.604 20.604 0 24 3.396z"/></svg>
 			</button>
 		</li>
-		<li class="masthead__navicon u-hide-l" name="navicon">
-			<button aria-label="Open Menu" class="c-navicon" title="Open site-wide menu" type="button">
+		<li name="navicon" class="masthead__navicon u-hide-l">
+			<button class="c-navicon" aria-label="Open Menu" title="Open site-wide menu" type="button">
 				<span class="c-navicon__box">
 					<span class="c-navicon__inner"></span>
 				</span>
@@ -437,14 +437,14 @@ Raven Design System</a>
 
 <p>Copy-paste the stylesheet <link> below into your <code>&lt;head&gt;</code> before any other stylesheets.</p>
 
-<pre><code class="html">&lt;link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/0.15.0/rds-cu.css" media="print" onload="this.media='all'"&gt;
+<pre><code class="html">&lt;link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/0.15.3/rds-cu.css" media="print" onload="this.media='all'"&gt;
 </code></pre>
 
 <h4 id="gzipped-css">Gzipped CSS</h4>
 
 <p>If your server supports gzip, use the gzip version for an even smaller file size.</p>
 
-<pre><code class="html">&lt;link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/0.15.0/rds-cu.gzip.css" media="print" onload="this.media='all'"&gt;
+<pre><code class="html">&lt;link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/0.15.3/rds-cu.gzip.css" media="print" onload="this.media='all'"&gt;
 </code></pre>
 
 <p>TODO: add integrity and cross origin hashes.</p>
@@ -453,14 +453,14 @@ Raven Design System</a>
 
 <p>Copy-paste the below <code>&lt;script&gt;</code> directly above your closing <code>&lt;/body&gt;</code>.</p>
 
-<pre><code class="html">&lt;script src="https://cu-rds.s3.amazonaws.com/rds/0.15.0/rds-cu.js" crossorigin="anonymous"&gt;
+<pre><code class="html">&lt;script src="https://cu-rds.s3.amazonaws.com/rds/0.15.3/rds-cu.js" crossorigin="anonymous"&gt;
 </code></pre>
 
 <h4 id="gzipped-js">Gzipped JS</h4>
 
 <p>If your server supports gzip, use the gzip version for an even smaller file size.</p>
 
-<pre><code class="html">&lt;script src="https://cu-rds.s3.amazonaws.com/rds/0.15.0/rds-cu.gzip.js" crossorigin="anonymous"&gt;
+<pre><code class="html">&lt;script src="https://cu-rds.s3.amazonaws.com/rds/0.15.3/rds-cu.gzip.js" crossorigin="anonymous"&gt;
 </code></pre>
 
 <h3 id="what-is-included">What is included</h3>
@@ -478,7 +478,7 @@ Raven Design System</a>
     &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
     &lt;!-- Uncomment the line below if you have been approved to use the CU's paid Gotham font --&gt;
     &lt;!-- &lt;link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" /&gt; --&gt;
-    &lt;link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/0.15.0/rds.css" media="print" onload="this.media='all'"&gt;
+    &lt;link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/0.15.3/rds.css" media="print" onload="this.media='all'"&gt;
     &lt;title&gt;Hello, world!&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
@@ -514,7 +514,7 @@ Raven Design System</a>
     &lt;/dialog&gt;
 
     &lt;!-- Required JavaScript --&gt;
-    &lt;script src="https://cu-rds.s3.amazonaws.com/rds/0.15.0/rds-cu.js" crossorigin="anonymous"&gt;
+    &lt;script src="https://cu-rds.s3.amazonaws.com/rds/0.15.3/rds-cu.js" crossorigin="anonymous"&gt;
 
   &lt;/body&gt;
 &lt;/html&gt;

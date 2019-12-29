@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1, maximum-scale=5" name="viewport">
-        <meta content="ie=edge" http-equiv="x-ua-compatible">
-        <link href="https://cloud.typography.com/6307052/6118752/css/fonts.css" rel="stylesheet" />
-        <link href="/dist/0.15.0/rds-cu.css" media="print" onload="this.media='all'" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" />
+        <link rel="stylesheet" href="/dist/0.15.3/rds-cu.css" media="print" onload="this.media='all'">
         <title></title>
     </head>
 
@@ -19,15 +19,15 @@
     
 
     <dialog
-     aria-hidden="true" aria-modal="true" class="l-overlay-modal">
+     class="l-overlay-modal" aria-modal="true" aria-hidden="true">
         <div class="modal__search u-visually-hidden">
             <div class="u-block u-block--grey">
     <div class="b-search">
-    <form action="https://carleton.ca" class="c-searchform" method="get" role="search">
+    <form class="c-searchform" role="search" method="get" action="https://carleton.ca">
     <label for="searchform__input">Search</label>
-    <input autocomplete="off" class="searchform__input" name="s" placeholder="Search" tabindex="0" type="search">
-    <button title="Search" type="submit">
-        <svg aria-hidden="true"  viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"  /></svg>
+    <input tabindex="0" class="searchform__input" name="s" type="search" autocomplete="off" placeholder="Search">
+    <button type="submit" title="Search">
+        <svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M23.52 21.28l-6.096-6.128A9.488 9.488 0 0 0 19.2 9.6c0-5.296-4.304-9.6-9.6-9.6C4.304 0 0 4.304 0 9.6c0 5.296 4.304 9.6 9.6 9.6 2.08 0 3.968-.656 5.552-1.776l6.128 6.096c.304.32.72.48 1.12.48.4 0 .832-.144 1.12-.48a1.594 1.594 0 0 0 0-2.256v.016zM9.6 17.12c-4.144 0-7.52-3.376-7.52-7.52S5.456 2.08 9.6 2.08s7.52 3.376 7.52 7.52-3.376 7.52-7.52 7.52z"  /></svg>
         <span class="u-visually-hidden">Search button</span>
     </button>
 </form>
@@ -39,16 +39,16 @@
 
                 <div class="modal__login u-visually-hidden">
             <div class="b-login u-block">
-                <h1 class="login__heading" id="aria-dialog-title">Login to Your App</h1>
-                <form accept-charset="UTF-8" action="/" class="c-form" method="post" name="loginform">
+                <h1 id="aria-dialog-title" class="login__heading">Login to Your App</h1>
+                <form class="c-form" name="loginform" action="/" method="post" accept-charset="UTF-8">
 
                     <label for="user_login">Username</label>
-                    <input aria-required="true" autocapitalize="off" autocomplete="username" autocorrect="off" autofocus="autofocus" class="login__field" id="user_login" name="log" type="text" value="">
+                    <input type="text" autocomplete="username" id="user_login" name="log" class="login__field" value="" autocapitalize="off" autocorrect="off" autofocus="autofocus" aria-required="true">
 
                     <label for="user_pass">Password <a class="login__link" href="/password-reset/">Forgot password?</a></label>
-                    <input aria-required="true" autocomplete="current-password" class="form-control form-control input-block" id="user_pass" name="pwd" type="password"  value="">
+                    <input type="password" autocomplete="current-password" name="pwd" id="user_pass" value="" class="form-control form-control input-block"  aria-required="true">
 
-                    <input class="u-width-full" type="submit"  value="Login">
+                    <input type="submit" value="Login"  class="u-width-full">
                 </form>
                 <p class="login__account">Not registered?
                     <a class="u-link" href="/register/">Create an account</a>.
@@ -58,7 +58,7 @@
 
     </dialog>
     <script id="iePolyFills" src=""></script>
-    <script src="href=/dist/0.15.0/rds-cu.js"></script>
+    <script src="href=/dist/0.15.3/rds-cu.js"></script>
 
 </body>
 </html>
