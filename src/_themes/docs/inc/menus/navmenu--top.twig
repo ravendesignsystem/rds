@@ -1,0 +1,21 @@
+<nav>
+    <div class="c-nav c-nav--topnav" role="presentation" aria-label="Main Navigation">
+        <ul class="nav__menu nav__menu--top u-hide-dialog">
+            <li>
+                <a class="{% if page.subsite == 'about' %} u-active{% endif %}" href="{{ site.url }}about/">About</a>
+            </li>
+            <li>
+                <a class="{% if page.subsite == 'dev' %} u-active{% endif %}" href="{{ site.url }}dev/">Dev</a>
+            </li>
+            <li>
+                <a class="{% if page.subsite == 'design' %} u-active{% endif %}" href="{{ site.url }}design/">Design</a>
+            </li>
+            <li>
+                <a class="{% if page.subsite == 'content' %} u-active{% endif %}" href="{{ site.url }}content/">Content</a>
+            </li>
+            <li>
+                <a class="{% if page.subsite == 'a11y' %} u-active{% endif %}" href="{{ site.url }}a11y/">Accessibility</a>
+            </li>
+        </ul>
+    </div>
+</nav>

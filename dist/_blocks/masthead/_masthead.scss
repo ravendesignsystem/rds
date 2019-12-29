@@ -48,9 +48,9 @@ body {
 }
 
 .b-masthead,
-.b-masthead nav,
+.b-masthead .c-nav,
 .b-masthead > ul,
-.b-masthead nav > ul {
+.b-masthead .c-nav > ul {
 	height: $masthead_height;
 	display: flex;
 	align-items: center;

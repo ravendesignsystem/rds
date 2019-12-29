@@ -1,0 +1,52 @@
+<div id="id-masthead" class="u-block u-block--full">
+    <div class="b-masthead">
+        <h1>
+            <a href="/">{% include 'icons/mark-cushield.svg' %}Raven Design System</a>
+        </h1>
+
+        <nav>
+            <div class="c-nav c-nav--topnav" role="presentation" aria-label="Main Navigation">
+                <ul class="nav__menu nav__menu--top">
+                    <li><a href="/docs/about/">About</a></li>
+                    <li><a class="u-active" href="/docs/dev/">Dev</a></li>
+                    <li><a href="/docs/design/">Design</a></li>
+                    <li><a href="/docs/content/">Content</a></li>
+                    <li><a href="/docs/a11y/">Accessibility</a></li>
+                    <li class="has-submenu c-menupopup">
+                        <button class="nav--menubar__button" aria-expanded="false" aria-controls="id_programs_menu" aria-disabled="false">
+                            <span class="u-visually-hidden">Show submenu for</span>Programs
+                        </button>
+                        <ul id="id_programs_menu" class="is-submenu">
+                            <li>
+                                <a href="/programs/" aria-haspopup="true" aria-expanded="false">All Programs</a>
+                                <ul>
+                                    <li class="popup__sep"><a href="/programs/masters-programs/">Masters Programs</a></li>
+                                    <li><a href="/programs/doctoral-programs/">Doctoral Programs</a></li>
+                                    <li><a href="/programs/graduate-programs/">Graduate Diplomas</a></li>
+                                    <li><a href="/programs/collaborative-specializations/">Collaborative Specializations</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="/docs/content/">Another Item</a></li>
+                    <li><a href="/docs/content/">One More</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="masthead__actions">
+            <li class="masthead__close-modals u-visually-hidden">
+                <button aria-label="Close Modals" class="masthead__closebtn u-icon u-icon--notext">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15.396 12L24 20.604 20.604 24 12 15.396 3.396 24 0 20.604 8.604 12 0 3.396 3.396 0 12 8.604 20.604 0 24 3.396z"></path></svg>
+                </button>
+            </li>
+            <li class="masthead__navicon" name="navicon">
+                <button class="c-navicon" aria-label="Open Menu" title="Open site-wide menu" type="button">
+                    <span class="c-navicon__box">
+                        <span class="c-navicon__inner"></span>
+                    </span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>

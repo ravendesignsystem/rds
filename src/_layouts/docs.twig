@@ -176,13 +176,15 @@
             {% include "search/search" %}
         </div>
         <div class="modal__menu u-visually-hidden">
-                {% block menu %}
-                    {% if page.menu != true and page.subsite == 'dev' %}
-                        {%include 'docs/inc/menus/menu-dev' %}
-                    {% elseif page.menu != true and page.subsite == 'about' %}
+{#                {% block menu %}#}
+{#                    {% if page.menu != true and page.subsite == 'dev' %}#}
+{#                        {%include 'docs/inc/menus/menu-dev' %}#}
+{#                    {% elseif page.menu != true and page.subsite == 'about' %}#}
 {#                        {%include 'docs/inc/menus/menu-about' %}#}
-                    {% endif %}
-                {% endblock %}
+{#                        {% else %}#}
+{#                            {%include 'docs/inc/menus/menu' %}#}
+{#                    {% endif %}#}
+{#                {% endblock %}#}
         </div>
 
         {# Good to wrap in an is-logged-in conditional...#}

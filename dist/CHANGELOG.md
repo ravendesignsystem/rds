@@ -2,6 +2,33 @@
 
 All notable changes to the project will be documented here, in this file.
 
+## [v0.15.3](https://github.com/ravendesignsystem/rds/releases/tag/0.15.3) 2019-11-21
+
+**Fixed**, **Docs**: Maintenance release with small patchesm and docs updates*
+
+- **Changed**: Improvements to the new Masthead block.
+- **Docs**: Masthead block docs updated.
+
+## [v0.15.3](https://github.com/ravendesignsystem/rds/releases/tag/0.15.3) 2019-11-21
+
+**Fixed**: Maintenance release with small patches*
+
+- **Fixed**: JS issue relating to masthead action button not existing on page
+
+## [v0.15.2](https://github.com/ravendesignsystem/rds/releases/tag/0.15.2) 2019-11-21
+
+**Changed**: Maintenance release with small patches*
+
+- **Changed**: Replace custom built highlightjs with npm package, updated the imports for what hljs languages needed
+- **Changed**: Update release proceedure for npm version release
+
+## [v0.15.1](https://github.com/ravendesignsystem/rds/releases/tag/0.15.1) 2019-11-21
+
+**Added**, **Fixed**: Maintenance release with small patches*
+
+- **Added**: added display block to video and audio HTML5 tags in core reboot scss file
+- **Changed**: Restructured webpack setup to create individual builds for doc specific dev/prod and an npm/cdn release
+
 ## [v0.15.0](https://github.com/ravendesignsystem/rds/releases/tag/0.15.0) 2019-11-20
 
 **Added**, **Fixed**: Maintenance release with small patches*
