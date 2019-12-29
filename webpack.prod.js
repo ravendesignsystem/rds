@@ -17,7 +17,7 @@ module.exports = merge(baseConfig, {
 	plugins: [
 		new FileManagerPlugin({
 			onStart: {
-				delete: ['./build/docs'],
+				// delete: ['./build/docs'],
 			},
 			onEnd: {
 				copy: [
