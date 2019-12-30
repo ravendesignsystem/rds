@@ -194,6 +194,11 @@ blockquote {
 	margin: 0 0 25px 0;
 	padding: 0.5em 1em;
 
+    cite {
+        display: block;
+        margin-top: 15px;
+    }
+
 	& p {
 		margin-bottom: 0;
 	}
