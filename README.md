@@ -33,9 +33,14 @@ The above commands assume you have composer installed globally. If you have comp
 
 ## Running RDS Locally for dev
 
-Run `npm run watch`
+Run `npm run dev`
 
 The above command runs both the sculpin static site generator, [read more](https://sculpin.io) and the webpack watch task, [read more](https://webpack.js.org) concurrently.
+
+In order to fully stop the watch task and sculpin server, you need to do more than stop webpack. Once that is stopped, to the following:
+
+- `sudo lsof -i tcp:8000` - get the PID of the sculpin task and make note of it
+- `kill -9 PID` - replace PID with the number from the step above
 
 ## Deployment
 

@@ -2,6 +2,8 @@
 
 NPM and distribution release processes is documented below. This will be improved upon and further documented prior to the 1.0.0 release.
 
+**Note**: before starting, make sure the webpack watch task has been stopped, and properly shut down the sculpin service, as noted in the readme file.
+
 ## Github Release
 Using your preferred github gui, do the following:
 
