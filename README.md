@@ -28,14 +28,17 @@ Once the dependencies above are installed, run the commands below to install the
 
 * `npm install` -- installs all the dependencies set in the package.json file
 * `composer install` -- installs all the dependencies set in the composer.json file
+* `cp ./.env-example ./.env` - creates a local env file
+
+**Note**: items in the `.env` file require manual changes, these are only available to a member of Carleton Web Services.
 
 The above commands assume you have composer installed globally. If you have composer install at the project level, you would need to run `php composer.phar`.
 
 ## Running RDS Locally for dev
 
-Run `npm run dev`
-
 The above command runs both the sculpin static site generator, [read more](https://sculpin.io) and the webpack watch task, [read more](https://webpack.js.org) concurrently.
+
+- `npm run dev`
 
 In order to fully stop the watch task and sculpin server, you need to do more than stop webpack. Once that is stopped, to the following:
 
@@ -44,10 +47,12 @@ In order to fully stop the watch task and sculpin server, you need to do more th
 
 ## Deployment
 
-To deploy, terminate the above script and use `npm run prod`.
+To deploy, terminate both the watch task as well as the sculpin services, and follow the steps outlined in the [Release Doc](https://github.com/ravendesignsystem/rds/blob/master/RELEASE.md)
 
 ## Full docs
+
 Further documentation on how to build the RDS docs is available in the [wiki](https://github.com/ravendesignsystem/rds/wiki/RDS-Docs).
+
 ### Break down into end to end tests
 
 TODO

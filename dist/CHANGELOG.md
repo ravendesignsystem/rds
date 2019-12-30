@@ -2,6 +2,12 @@
 
 All notable changes to the project will be documented here, in this file.
 
+## [v0.15.6](https://github.com/ravendesignsystem/rds/releases/tag/0.15.5) 2019-12-30
+
+**Changed**: Maintenance release with small patches
+
+- **Changed**: minor content update to test prod release is properly functioning
+
 ## [v0.15.5](https://github.com/ravendesignsystem/rds/releases/tag/0.15.5) 2019-12-30
 
 **Added**, **Fixed**: Maintenance release with small patches
