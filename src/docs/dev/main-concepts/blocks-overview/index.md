@@ -7,13 +7,13 @@ banner:
   breadcrumbs:
     parent: Main concepts
 ---
-RDS Blocks are the equivalent of [components](https://reactjs.org/docs/components-and-props.html) in other [design systems](https://designsystemsrepo.com/design-systems/) and modern frameworks. They are chunks of reusable code that can be assembled in different combinations to build any number of user interfaces.
+RDS Blocks are the equivalent of [components](https://reactjs.org/docs/components-and-props.html) in other [design systems](https://designsystemsrepo.com/design-systems/) and modern frameworks. Blocks are chunks of reusable code that can be assembled in different combinations to build any number of user interfaces. 
 
-Since they account for pretty much every stand-alone UI element on screen, this page provides a must-read, deep dive into RDS Blocks.
+This page provides a must-read, deep dive into RDS Blocks.
 
 # Block guidelines and rules
 
-In their simplest form, RDS blocks are grouped snippets of well formed HTML, styled by CSS, and sometimes controlled by JavaScript. The user interface (UI) equivalent to Lego blocks, RDS blocks make up a distinct UI section that you can easily attach together to build interfaces. However, unlike a tub of randomly sized/coloured Lego blocks, RDS blocks are more the equivalent to Lego blocks found in [themed Lego sets](https://lego.fandom.com/wiki/Theme) as there are rules and guidelines to follow. 
+In their simplest form, RDS blocks are grouped snippets of well formed HTML, styled by CSS, and sometimes controlled by JavaScript. The user interface (UI) equivalent to Lego blocks, RDS blocks make up a distinct UI section that you can easily attach together to build interfaces. Unlike a tub of random sized/coloured Lego blocks, RDS blocks are more the equivalent to Lego blocks found in [themed Lego sets](https://lego.fandom.com/wiki/Theme) as there are rules and guidelines to follow. 
 
 This page covers the following block rules and guidelines:
 
@@ -33,18 +33,22 @@ Here is what our **Simple block looks like**:
 {%include 'inc' with {'close': true}%}
 
 <div class="u-block u-block--white">
-    <p style="color: green" class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
-    <hr>
+    <div class="b-simple">
+        <p style="color: green">This is Simple block, an example of a basic block for learning purposes.</p>
+        <hr>
+    </div>
 </div>
 
 {%include 'inc' with {'open': true}%}
 
-Below is our Simple block's HTML markup, which we will break down later:
+And the markup, which we will break down later:
 
 ```html
 <div class="u-block u-block--white">
-    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
-    <hr>
+    <div class="b-simple">
+        <p>This is Simple block, an example of a basic block for learning purposes.</p>
+        <hr>
+    </div>
 </div>
 ```
 
@@ -52,7 +56,7 @@ Below is our Simple block's HTML markup, which we will break down later:
 
 Block utility classes are used to bring a rhythm and a familiar flow from page to page by standardizing layout and controlling a block's width, spacing and colour. 
 
-**All blocks** must be wrapped with the utility class `u-block`. Since all blocks are wrapped in `u-block`, the class name will help you locate where blocks exist in your source code.
+**All blocks** must be wrapped with the utility class `u-block`. This convention helps to locate where blocks exist in your source code.
 
 ```html
 <div class="u-block">
@@ -69,18 +73,22 @@ Fixed-width blocks have a maximum width and standardized side padding.
 
 ![Example of fixed-width block](http://cu-rds.s3.amazonaws.com/docs/assets/fixed-width.png)
 
-By default, blocks are fixed-width, this includes our <em>Simple block</em> example.
+**By default, blocks are fixed-width**, which is set by the required 'u-block' clas. 
+
+**Note**: Our <em>Simple block</em> example is a fixed-width block. 
 
 ```html
 <div class="u-block u-block--white">
-    <p class="b-simple">This is Simple block, does not have any modifiers to change it from being fixed-width.</p>
-    <hr>
+    <div class="b-simple">
+        <p>Our Simple block is a fixed-width block, set by the required u-block class.</p>
+        <hr>
+    </div>
 </div>
 ```
 {%include 'inc' with {'close': true}%}
 
 <div class="u-block u-block--white">
-    <p style="color: green" class="b-simple">This is Simple block, does not have any modifiers to change it from being fixed-width.</p>
+    <p style="color: green" class="b-simple">Our Simple block is a fixed-width block, set by the required u-block class.</p>
     <hr>
 </div>
 
@@ -92,12 +100,14 @@ Full-width blocks, such as the [Masthead block]({{site.url}}dev/blocks/header/ma
 
 ![Example of full-width block](http://cu-rds.s3.amazonaws.com/docs/assets/full-width.png)
 
-Lets look what happens to the Simple block if we add the width modifier `u-block--full`.
+Notice what happens to our Simple block if we add the modifier `u-block--full`.
 
 ```html
 <div class="u-block u-block--full u-block--white">
-    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
-    <hr>
+    <div class="b-simple">
+        <p>This is Simple block, an example of a basic block for learning purposes.</p>
+        <hr>
+    </div>
 </div>
 ```
 {%include 'inc' with {'close': true}%}
@@ -134,16 +144,20 @@ Returning to the original implementation of our <em>Simple block</em>, notice it
 
 ```html
 <div class="u-block u-block--white">
-    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
-    <hr>
+    <div class="b-simple">
+        <p>This is Simple block, an example of a basic block for learning purposes.</p>
+        <hr>
+    </div>
 </div>
 ```
 To change the background color to grey, lets replace `u-block--white` with `u-block--grey`.
 
 ```html
 <div class="u-block u-block--grey">
-    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes.</p>
-    <hr>
+    <div class="b-simple">
+        <p>This is Simple block, an example of a basic block for learning purposes.</p>
+        <hr>
+    </div>
 </div>
 ```
 
@@ -181,22 +195,28 @@ Use different coloured background rows to separate different sections of content
 
 ```html
 <div class="u-block u-block--grey">
-    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes</p>
-    <hr>
+    <div class="b-simple">
+        <p>This is Simple block, an example of a basic block for learning purposes.</p>
+        <hr>
+    </div>
 </div>
 
 <div class="u-block u-block--white">
-    <p class="b-simple">This is the Simple block being used for a section with different content. So we have changed the background colour to better seperate it from the block above and below.</p>
-    <hr>
+    <div class="b-simple">
+            <p class="b-simple">This is the Simple block being used for a section with different content. So we have changed the background colour to better seperate it from the block above and below.</p>
+        <hr>
+    </div>
 </div>
 
 <div class="u-block u-block--grey">
-    <p class="b-simple">This is Simple block, an example of a basic block for learning purposes</p>
-    <hr>
+    <div class="b-simple">
+        <p>This is Simple block, an example of a basic block for learning purposes.</p>
+        <hr>
+    </div>
 </div>
 ```
 
-## Block nesting is prohibited
+## Rule: Block nesting is prohibited
 
 Functionally independent, a **block can NOT be nested** within another block.
 
