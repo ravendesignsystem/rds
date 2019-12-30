@@ -33,7 +33,7 @@ The above commands assume you have composer installed globally. If you have comp
 
 ## Running RDS Locally for dev
 
-Run `npm run watch`
+Run `npm run dev`
 
 The above command runs both the sculpin static site generator, [read more](https://sculpin.io) and the webpack watch task, [read more](https://webpack.js.org) concurrently.
 
