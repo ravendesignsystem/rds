@@ -11,7 +11,7 @@ banner:
   grandparent: Blocks
   parent: Header
 ---
-As the first block located on top of the page, the masthead is an essential toolbar that provides site-wide content and actions.
+As the first block at the top of each page, the masthead is an essential toolbar that provides site-wide content and actions.
 
 ## Masthead sections
 
