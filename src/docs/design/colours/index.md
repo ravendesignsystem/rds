@@ -16,7 +16,7 @@ RDS' primary palette uses Carleton's brand colours, red, black and white refacto
 
 <div class="u-grid u-grid--4">
 
-<div style="background-color: #BF112B;">
+<div style="border-radius: 5px;background-color: #BF112B;">
  <h2 style="font-size: 20px;padding: 20px;color:#fff">CU Red</h2>
  <ul style="list-style-type:none;color: #fff;margin: 20px;font-size: 14px"><li>HEX: BF112B</li>
         <li> RGB: 191,17,43</li>
@@ -27,7 +27,7 @@ RDS' primary palette uses Carleton's brand colours, red, black and white refacto
          </ul>
  </div>
  
- <div style="background-color: #222;">
+ <div style="border-radius: 5px;background-color: #222;">
   <h2 style="font-size: 20px;padding: 20px;color:#fff">CU Black</h2>
   <ul style="list-style-type:none;color: #fff;margin: 20px;font-size: 14px">
         <li>HEX: 222222</li>
@@ -39,7 +39,7 @@ RDS' primary palette uses Carleton's brand colours, red, black and white refacto
           </ul>
   </div>
   
-   <div style="background-color: #f3f3f3;">
+   <div style="border-radius: 5px;background-color: #f3f3f3;">
     <h2 style="font-size: 20px;padding: 20px;color:#222;border-bottom: 1px solid white">CU Grey</h2>
     <ul style="list-style-type:none;color: #222;margin: 20px;font-size: 14px"><li>HEX: F3F3F3</li>
            <li> RGB: 243,243,243</li>
@@ -50,7 +50,7 @@ RDS' primary palette uses Carleton's brand colours, red, black and white refacto
             </ul>
     </div>
  
-   <div style="background-color: #fff;border: 1px solid #dfdfdf">
+   <div style="border-radius: 5px;background-color: #fff;border: 1px solid #dfdfdf">
     <h2 style="font-size: 20px;padding: 20px;color:#222">White</h2>
     <ul style="list-style-type:none;color: #222;margin: 20px;font-size: 14px"><li>HEX: FFFFFF</li>
            <li> RGB: 255,255,255</li>
@@ -77,7 +77,7 @@ RDS uses 6 shades of grey to work alongside our primary palette for user interfa
 
 <div class="u-grid u-grid--3">
 
-<div style="background-color: #535353;">
+<div style="border-radius: 5px;background-color: #535353;">
  <h2 style="font-size: 20px;padding: 20px;color:#fff">Grey E</h2>
  <ul style="list-style-type:none;color: #fff;margin: 20px;font-size: 14px"><li>HEX: 535353</li>
         <li> RGB: 83,83,83</li>
@@ -88,7 +88,7 @@ RDS uses 6 shades of grey to work alongside our primary palette for user interfa
          </ul>
  </div>
  
- <div style="background-color: #767676;">
+ <div style="border-radius: 5px;background-color: #767676;">
   <h2 style="font-size: 20px;padding: 20px;color:#fff">Grey V</h2>
   <ul style="list-style-type:none;color: #fff;margin: 20px;font-size: 14px"><li>HEX: 767676</li>
          <li> RGB: 118,118,118</li>
@@ -99,7 +99,7 @@ RDS uses 6 shades of grey to work alongside our primary palette for user interfa
           </ul>
   </div>
   
-   <div style="background-color: #939393;">
+   <div style="border-radius: 5px;background-color: #939393;">
     <h2 style="font-size: 20px;padding: 20px;color:#fff;border-bottom: 1px solid white">Grey A</h2>
     <ul style="list-style-type:none;color: #fff;margin: 20px;font-size: 14px"><li>HEX: 939393</li>
            <li> RGB: 147,147,147</li>
@@ -110,7 +110,7 @@ RDS uses 6 shades of grey to work alongside our primary palette for user interfa
             </ul>
     </div>
  
-<div style="background-color: #B1B1B1;">
+<div style="border-radius: 5px;background-color: #B1B1B1;">
  <h2 style="font-size: 20px;padding: 20px;color:#222">Grey L</h2>
  <ul style="list-style-type:none;color: #222;margin: 20px;font-size: 14px"><li>HEX: B1B1B1</li>
         <li> RGB: 191,17,43</li>
@@ -121,7 +121,7 @@ RDS uses 6 shades of grey to work alongside our primary palette for user interfa
          </ul>
  </div>
  
- <div style="background-color: #DFDFDF;">
+ <div style="border-radius: 5px;background-color: #DFDFDF;">
   <h2 style="font-size: 20px;padding: 20px;color:#222">Grey K</h2>
   <ul style="list-style-type:none;color: #222;margin: 20px;font-size: 14px"><li>HEX: DFDFDF</li>
          <li> RGB: 34,34,34</li>
@@ -132,7 +132,7 @@ RDS uses 6 shades of grey to work alongside our primary palette for user interfa
           </ul>
   </div>
   
-   <div style="background-color: #EAEAEA;">
+   <div style="border-radius: 5px;background-color: #EAEAEA;">
     <h2 style="font-size: 20px;padding: 20px;color:#222;border-bottom: 1px solid white">Grey Y</h2>
     <ul style="list-style-type:none;color: #222;margin: 20px;font-size: 14px"><li>HEX: EAEAEA</li>
            <li> RGB: 243,243,243</li>
@@ -147,8 +147,10 @@ RDS uses 6 shades of grey to work alongside our primary palette for user interfa
 
 ## Feedback Colours
 
-<div style="width: 50px;height: 50px;background-color: #126B93;float:left"> </div><div style="width: 50px;height: 50px;background-color: #91d5ff;float:left"> </div>
+<div style="width: 50px;height: 50px;background-color: #105F83;float:left"> </div><div style="width: 50px;height: 50px;background-color: #91d5ff;float:left"> </div>
 <div style="width: 50px;height: 50px;background-color: #E6F7FF;float:left"> </div>
+<div style="width: 50px;height: 50px;background-color: #BF112B;float:left"> </div>
+
 <div style="width: 50px;height: 50px;background-color: #F9E6E9;float:left;"> </div>
 
 <div style="width: 50px;height: 50px;background-color: #45BF2E;float:left"> </div>
@@ -158,7 +160,7 @@ RDS uses 6 shades of grey to work alongside our primary palette for user interfa
 <div style="width: 50px;height: 50px;background-color: #fffaf1;float:left;"> </div>
 <div style="clear:both"><br><br></div>
 
-Feedback colours reinforce a user action and represents a clear message as well as status, such as information, success, error, warning and link.
+Feedback colours reinforce a user action and represents a clear message as well as [alert statuses](https://ravendesignsystem.github.io/rds/dev/components/alerts/alert/), such as information, success, error, warning and link.
 
 ### Link feedback
 
@@ -166,19 +168,23 @@ The link colour identifies navigational elements.
 
 <div class="u-grid u-grid--2">
 
-<div style="background-color: #126b93;">
+<div style="border-radius: 5px;background-color: #105F83;">
  <h2 style="font-size: 20px;padding: 20px;color:#fff">CU Link</h2>
- <ul style="list-style-type:none;color: #fff;margin: 20px;font-size: 14px"><li>HEX: 126B93</li>
+    <ul style="list-style-type:none;color: #fff;margin: 20px;font-size: 14px"><li>HEX: 105F83</li>
         <li> RGB: 18, 107, 147</li>
          <li>HSL: 199, 78%, 32%</li>
          <li>SASS: $link</li>
-         </ul>
+         <li>AA: Passes</li>
+         <li>AAA: Passes</li>
+     </ul>
  </div>
  
- <div style="background-color: #BF112B;">
+ <div style="border-radius: 5px;background-color: #BF112B;">
    <h2 style="font-size: 20px;padding: 20px;color:#fff">CU Link:hover</h2>
    <ul style="list-style-type:none;color: #fff;margin: 20px;font-size: 14px"><li>HEX: BF112B</li>
           <li> Duplicate: see above</li>
+                   <li>AA: Passes</li>
+                   <li>AAA: Fails</li>
            </ul>
    </div>
  
@@ -186,11 +192,11 @@ The link colour identifies navigational elements.
 
 ### Information feedback
 
-This alert provides additional description and highlights information, generally, within copy and content.
+This status colour provides additional description and highlights information, generally, within copy and content.
 
 <div class="u-grid u-grid--2">
 
-<div style="background-color: #91d5ff;">
+<div style="border-radius: 5px;background-color: #91d5ff;">
  <h2 style="font-size: 20px;padding: 20px;color:#222">Info Foreground</h2>
  <ul style="list-style-type:none;color: #222;margin: 20px;font-size: 14px"><li>HEX: 91d5ff</li>
         <li> RGB: 145, 213, 255</li>
@@ -199,7 +205,7 @@ This alert provides additional description and highlights information, generally
          </ul>
  </div>
  
-<div style="background-color: #e6f7ff;">
+<div style="border-radius: 5px;background-color: #e6f7ff;">
  <h2 style="font-size: 20px;padding: 20px;color:#222">Info Background</h2>
  <ul style="list-style-type:none;color: #222;margin: 20px;font-size: 14px"><li>HEX: E6F7FF</li>
         <li> RGB: 145, 213, 255</li>
@@ -212,19 +218,19 @@ This alert provides additional description and highlights information, generally
  
  </div>
  
-<h3>Alert Feedback</h3>
+<h3>Error Feedback</h3>
  
- Reserved for errors, malfunctions, as well as critical issues campus safety issues.
+ Reserved for errors, malfunctions, as well as hover and selected states.
 
   <div class="u-grid u-grid--2">
-  <div style="background-color: #BF112B;">
+  <div style="border-radius: 5px;background-color: #BF112B;">
    <h2 style="font-size: 20px;padding: 20px;color:#fff">Error FG - CU Red</h2>
    <ul style="list-style-type:none;color: #fff;margin: 20px;font-size: 14px"><li>HEX: BF112B</li>
           <li> Duplicate: see above</li>
            </ul>
    </div>
    
-  <div style="background-color: #f9e6e9;">
+  <div style="border-radius: 5px;background-color: #f9e6e9;">
    <h2 style="font-size: 20px;padding: 20px;color:#222">Error Background</h2>
    <ul style="list-style-type:none;color: #222;margin: 20px;font-size: 14px"><li>HEX: F9E6E9</li>
           <li> RGB: 249, 230, 233</li>
@@ -236,13 +242,13 @@ This alert provides additional description and highlights information, generally
    </div>
 </div>
 
- <h3>Success Feedback</h3>
+<h3>Success Feedback</h3>
   
 Can be used to provide a success message after an action has been taken.
  
 <div class="u-grid u-grid--2">
 
-   <div style="background-color: #45bf2e;">
+   <div style="border-radius: 5px;background-color: #45bf2e;">
     <h2 style="font-size: 20px;padding: 20px;color:#fff">Success Foreground</h2>
     <ul style="list-style-type:none;color: #fff;margin: 20px;font-size: 14px"><li>HEX: 45BF2E</li>
             <li> RGB: 69, 191, 46</li>
@@ -251,7 +257,7 @@ Can be used to provide a success message after an action has been taken.
             </ul>
     </div>
 
-   <div style="background-color: #fafff5;">
+   <div style="border-radius: 5px;background-color: #fafff5;">
     <h2 style="font-size: 20px;padding: 20px;color:#222">Success Background</h2>
     <ul style="list-style-type:none;color: #22;margin: 20px;font-size: 14px"><li>HEX: FAFFF5</li>
             <li> RGB: 250, 255, 245</li>
@@ -270,7 +276,7 @@ Can be used to provide a success message after an action has been taken.
    
 <div class="u-grid u-grid--2">
 
-  <div style="background-color: #faab08;">
+  <div style="border-radius: 5px;background-color: #faab08;">
    <h2 style="font-size: 20px;padding: 20px;color:#fff">Warning Foreground</h2>
    <ul style="list-style-type:none;color: #fff;margin: 20px;font-size: 14px"><li>HEX: fAAB08</li>
            <li> RGB: 250, 171, 8</li>
@@ -279,7 +285,7 @@ Can be used to provide a success message after an action has been taken.
            </ul>
    </div>
 
-  <div style="background-color: #fffaf1;">
+  <div style="border-radius: 5px;background-color: #fffaf1;">
    <h2 style="font-size: 20px;padding: 20px;color:#222">Warning Background</h2>
    <ul style="list-style-type:none;color: #22;margin: 20px;font-size: 14px"><li>HEX: fffaf1</li>
            <li> RGB: 255, 250, 241</li>
