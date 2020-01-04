@@ -145,7 +145,7 @@ RDS uses 6 shades of grey to work alongside our primary palette for user interfa
 
 </div>
 
-## Feedback Colours
+## Feedback Palette
 
 <div style="width: 50px;height: 50px;background-color: #105F83;float:left"> </div><div style="width: 50px;height: 50px;background-color: #91d5ff;float:left"> </div>
 <div style="width: 50px;height: 50px;background-color: #E6F7FF;float:left"> </div>
@@ -196,7 +196,7 @@ This status colour provides additional description and highlights information, g
 
 <div class="u-grid u-grid--2">
 
-<div style="border-radius: 5px;background-color: #91d5ff;">
+<div style="border-radius: 5px;background-color: #1496da;">
  <h2 style="font-size: 20px;padding: 20px;color:#222">Info Foreground</h2>
  <ul style="list-style-type:none;color: #222;margin: 20px;font-size: 14px"><li>HEX: 91d5ff</li>
         <li> RGB: 145, 213, 255</li>
