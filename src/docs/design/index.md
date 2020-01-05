@@ -10,3 +10,4 @@ banner:
 ---
 
 - [Colours](colours/)
+- [Typography](typography/)

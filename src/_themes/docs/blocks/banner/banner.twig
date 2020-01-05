@@ -16,6 +16,9 @@
                 {% if (page.subsite == 'dev') and ('Subsite' not in page.title) %}
                 <li itemprop="breadcrumb"><a href="{{ site.url }}/dev/">Dev</a></li>
                 {% endif %}
+                {% if (page.subsite == 'design') and ('Subsite' not in page.title) %}
+                    <li itemprop="breadcrumb"><a href="{{ site.url }}/design/">Design</a></li>
+                {% endif %}
                 {% if page.section %}<li itemprop="breadcrumb"><a href="../../">{{ page.section }}</a></li>{%  endif %}
                 {% if page.subsection %}<li itemprop="breadcrumb"><a href="../">{{ page.subsection }}</a></li>{%  endif %}
                 <li class="u-visually-hidden" itemprop="breadcrumb" aria-current="page">{{ data.title }}</li>
