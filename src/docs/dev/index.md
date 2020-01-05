@@ -46,7 +46,7 @@ banner:
 - {%include "link" with {'block': 'Alert Aside'} %}
 - {%include "link" with {'block': 'Sidebar'} %}
 
-**Dialogue Blocks**
+**Dialog Blocks**
 
 - {%include "link" with {'block': 'Login'} %}
 - {%include "link" with {'block': 'Search'} %}

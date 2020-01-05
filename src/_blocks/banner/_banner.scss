@@ -50,7 +50,7 @@
 			font-weight: 300;
 
 			&:hover {
-				color: $red;
+				text-decoration: underline;
 			}
 		}
 	}
@@ -123,9 +123,9 @@
 		a {
 			color: white;
 
-			&:hover {
-				color: $red;
-			}
+			//&:hover {
+			//	color: $red;
+			//}
 		}
 	}
 }
