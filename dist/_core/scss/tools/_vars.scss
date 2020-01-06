@@ -16,7 +16,7 @@
 
 // 0. RDS version
 // --------------
-$version: '0.15.6';
+$version: '0.15.7';
 
 // 1. Media query breakpoints
 // --------------------------
@@ -42,6 +42,7 @@ $block-padding-m: 30px !default;
 
 // 4. Colors
 // ---------
+// Primary palette
 
 // CU digital near black
 $black: #222;
@@ -53,7 +54,7 @@ $grey: #f3f3f3;
 $red: #bf112b;
 
 // main link color
-$link: #126b93;
+$link: #105F83;
 
 $pink: #f9e6e9; // error bg color
 
@@ -83,8 +84,8 @@ $font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', -apple-system,
 
 // 6. Type Scale
 // -------------
-$pixel10: 10px;
 $pixel12: 12px;
+$pixel13: 13px;
 $pixel14: 14px;
 $pixel16: 16px;
 $pixel18: 18px;
@@ -93,11 +94,8 @@ $pixel24: 24px;
 $pixel28: 28px;
 $pixel30: 30px;
 $pixel36: 36px;
-$pixel42: 42px;
 $pixel48: 48px;
 $pixel54: 54px;
-$pixel60: 60px;
-$pixel72: 72px;
 
 // 7. z-index scale
 // ----------------

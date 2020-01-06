@@ -132,7 +132,7 @@
 
 // Event variant
 //===============
-.b-listing--events time {
+.b-listing--event time {
 	margin-right: 20px;
 	color: $red;
 	text-align: center;
@@ -145,13 +145,13 @@
 	}
 }
 
-.b-listing--events time span {
+.b-listing--event time span {
 	display: block;
 	color: $black;
 	font-size: $pixel24;
 }
 
-.b-listing--events time + div {
+.b-listing--event time + div {
 	display: none;
 
 	@include media('>s') {
