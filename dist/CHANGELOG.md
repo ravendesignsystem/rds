@@ -2,7 +2,13 @@
 
 All notable changes to the project will be documented here, in this file.
 
-## [v0.15.6](https://github.com/ravendesignsystem/rds/releases/tag/0.15.5) 2019-12-30
+## [v0.15.7](https://github.com/ravendesignsystem/rds/releases/tag/0.15.7) 2020-01-06
+
+**Changed**: Maintenance release with small patches
+
+- **Changed**: changed b-listing--events to b-listing--event to be singular like the rest of the listing and card modifiers
+
+## [v0.15.6](https://github.com/ravendesignsystem/rds/releases/tag/0.15.6) 2019-12-30
 
 **Changed**: Maintenance release with small patches
 
