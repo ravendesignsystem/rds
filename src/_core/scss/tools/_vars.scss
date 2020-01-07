@@ -16,13 +16,13 @@
 
 // 0. RDS version
 // --------------
-$version: '0.15.7';
+$version: '0.16.0';
 
 // 1. Media query breakpoints
 // --------------------------
 $breakpoints: (
     s: 760px,
-    l: layout-l,
+    l: 1024px,
     layout-s: 810px,
     layout-l: 1168px,
 );

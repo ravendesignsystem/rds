@@ -1,189 +1,307 @@
 /**
- * Layout: Multi Column Background Colours
- * =======================================
+ * Grid Global Styles
  */
 
 .l-multicol {
-	padding: $block-padding-s;
+    display: grid;
+    grid-template-columns: 1;
+    grid-gap: $grid-gutter;
+    padding: $block-padding-s;
+    margin: 0 auto;
 
-	@include media('>868px') {
-		padding: $block-margin;
-	}
+    @include media(">layout-s") {
+        padding: $block-margin;
+    }
 
-	.u-block {
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
+    // Remove side padding on all u-block elements
+    .u-block {
+        padding-left: 0;
+        padding-right: 0;
+    }
 
-.l-multicol--white {
-	background-color: white;
+    // Set max width on main content area
+    main {
+        max-width: 760px;
 
-	.multicol__content > .u-block--white:first-child,
-	.multicol__sidebar > .u-block--white:first-child {
-		padding-top: 10px;
-	}
-}
+        // Change grey block bg to white
+        .u-block--grey {
+            background-color: white;
+        }
 
-.l-multicol--grey {
-	background-color: $grey;
+        // Remove top spacing when white/grey blocks follow each other
+        .u-block--white + .u-block--grey,
+        .u-block--grey + .u-block--white {
+            padding-top: 0;
+        }
 
-	.u-block--grey {
-		padding-left: 0;
-		padding-right: 0;
-	}
-
-	.multicol__content > .u-block--grey:first-child {
-		padding-top: 10px;
-	}
-}
-
-/**
- * Layout: Wrapper
- * ===============
- */
-
-.multicol__container {
-	display: flex;
-	margin: 0 auto; // 40px adds space between layout and footer
+		// Pull up the first white u-block
+		& > .u-block--white {
+			padding-top: 5px;
+		}
+    }
 }
 
 .multicol__nav {
-	display: none;
+    display: none;
 
-	@include media('>s') {
-		display: block;
-		align-self: flex-start; // this is needed for position sticky to work inside a flex container
-		// flex-grow: 0;
-		// flex-shrink: 0;
-		// flex-basis: calc(240px + #{$grid-gutter});
-		width: calc(240px + #{$grid-gutter});
-		//margin-right: $grid-gutter;
-		padding-right: $grid-gutter;
-	}
-}
-
-.u-masthead-sticky .multicol__nav {
-	top: $masthead_height + 20px;
-}
-
-.multicol__main,
-.multicol__content {
-	// overflow: hidden; // NOTE: removed this to prevent drop shadows on cards from being cut off at small breakpoint
-	width: 100%;
-}
-
-.multicol__main {
-	display: flex;
-	flex-direction: column;
-
-	@include media('>=s') {
-		padding-left: 25px;
-		border-left: 1px solid $grey;
-	}
-}
-
-.multicol__sidebar {
-	flex-grow: 0;
-	flex-shrink: 0;
-	// margin-left: $grid-gutter;
-	// padding-left: $grid-gutter;
-	// border-left: 1px solid $grey;
+    @include media(">layout-s") {
+        display: block;
+    }
 }
 
 /**
- * Layout Modifier: Aside + Main
- * =============
+ * Grid Aside + Main Layout
  */
 
 .l-multicol--am {
-	.multicol__container {
-		max-width: calc(1008px + #{$block-padding-m} * 2);
-	}
+    max-width: calc(1021px + #{$block-padding-s} * 2);
+
+    @include media(">layout-s") {
+        grid-template-columns: calc(200px + #{$layout-gutter}) auto;
+        max-width: calc(1021px + #{$block-margin} * 2);
+
+        // Add padding and border to nav element
+        .multicol__nav {
+            border-right: 1px solid $grey;
+            padding-right: $grid-gutter;
+        }
+    }
 }
 
 /**
- * Layout Modifier: Main + Aside
- * =============
+ * Grid Main + Aside Layout
  */
 
 .l-multicol--ma {
-	.multicol__container {
-		max-width: calc(1068px + #{$block-padding-m} * 2);
-	}
+    max-width: calc(1091px + #{$block-padding-s} * 2);
 
-	@include media('>1024px') {
-		.multicol__main {
-			flex-direction: row;
-		}
-	}
+    @include media(">layout-s") {
+        grid-template-columns: auto calc(270px + #{$layout-gutter});
+        max-width: calc(1091px + #{$block-margin} * 2);
 
-	@include media('>1024px') {
-		.multicol__sidebar {
-			width: calc(300px + #{$grid-gutter * 2});
-			// flex-basis: calc(300px + #{$grid-gutter});
-			margin-left: $grid-gutter;
-			padding-left: $grid-gutter;
-			border-left: 1px solid $grey;
-		}
+        // Add padding and border to sidebar element
+        .multicol__sidebar {
+            border-left: 1px solid $grey;
+            padding-left: $grid-gutter;
+        }
+    }
 
-		&.l-multicol--sidebar-large {
-			.multicol__sidebar {
-				width: calc(400px + #{$grid-gutter * 2});
-				// flex-basis: calc(400px + #{$grid-gutter});
-				margin-left: $grid-gutter;
-				padding-left: $grid-gutter;
-				border-left: 1px solid $grey;
-			}
-		}
-	}
+    // Modifier to change element order when stacked
+    @include media("<=layout-s") {
+        &.l-multicol--sidebar-top {
+            main {
+                order: 2;
+            }
 
-	@include media('<=1024px') {
-		&.l-multicol--sidebar-top .multicol__content {
-			order: 2;
-		}
-	}
+            .multicol__sidebar {
+                order: 1;
+            }
+        }
+    }
 }
 
 /**
- * Layout Modifier: Aside + Main + Aside
- * =============
+ * Grid Aside + Main + Aside Layout
  */
 
 .l-multicol--ama {
-	.multicol__container {
-		max-width: calc(1368px + #{$block-padding-m} * 2);
-	}
+    max-width: calc(1382px + #{$block-padding-s} * 2);
 
-	@include media('>1112px') {
-		.multicol__main {
-			flex-direction: row;
-		}
-	}
+    // Add padding and border to nav element
+    .multicol__nav {
+        border-right: 1px solid $grey;
+        padding-right: $grid-gutter;
+    }
 
-	@include media('>1112px') {
-		.multicol__sidebar {
-			width: calc(300px + #{$grid-gutter * 2});
-			// flex-basis: calc(300px + #{$grid-gutter});
-			margin-left: $grid-gutter;
-			padding-left: $grid-gutter;
-			border-left: 1px solid $grey;
-		}
+    @include media(">layout-s", "<layout-l") {
+        grid-template-columns: calc(200px + #{$layout-gutter}) auto;
+        max-width: calc(1382px + #{$block-margin} * 2);
 
-		&.l-multicol--sidebar-large {
-			.multicol__sidebar {
-				width: calc(400px + #{$grid-gutter * 2});
-				// flex-basis: calc(400px + #{$grid-gutter});
-				margin-left: $grid-gutter;
-				padding-left: $grid-gutter;
-				border-left: 1px solid $grey;
-			}
-		}
-	}
+        // Create grid template areas stacked layout
+        grid-template-areas:
+            "nav main"
+            "nav sidebar";
 
-	@include media('<=1112px') {
-		&.l-multicol--sidebar-top .multicol__content {
-			order: 2;
-		}
-	}
+        .multicol__nav {
+            grid-area: nav;
+        }
+
+        main {
+            grid-area: main;
+        }
+
+        .multicol__sidebar {
+            grid-area: sidebar;
+        }
+    }
+
+    @include media(">=layout-l") {
+        grid-template-columns: calc(200px + #{$layout-gutter}) auto calc(
+                270px + #{$layout-gutter}
+            );
+
+        // Add padding and border to sidebar element
+        .multicol__sidebar {
+            border-left: 1px solid $grey;
+            padding-left: $grid-gutter;
+        }
+    }
+
+    // Modifier to change element template areas and order when stacked
+    &.l-multicol--sidebar-top {
+        @include media(">layout-s", "<layout-l") {
+            grid-template-areas:
+                "nav sidebar"
+                "nav main";
+        }
+
+        @include media("<=layout-s") {
+            main {
+                order: 2;
+            }
+
+            .multicol__sidebar {
+                order: 1;
+            }
+        }
+    }
 }
+
+// CSS Grid IE11 Fallback
+// TODO: look into @support grid
+@media screen and (-ms-high-contrast: active),
+    screen and (-ms-high-contrast: none) {
+    /**
+    * Flexbox Global Styles
+    */
+
+    .l-multicol {
+        display: flex;
+        flex-wrap: wrap;
+
+        .multicol__nav {
+            flex: 0 0 calc(200px + #{$layout-gutter});
+            max-width: calc(200px + #{$layout-gutter});
+            width: calc(200px + #{$layout-gutter});
+        }
+
+        main {
+            flex: 0 0 100%;
+
+            @include media(">layout-s") {
+                flex: 1;
+            }
+        }
+
+        .multicol__sidebar {
+            flex: 0 0 100%;
+            margin-top: $grid-gutter;
+        }
+    }
+
+    /**
+    * Flexbox Aside + Main Layout
+    */
+
+    @include media(">layout-s") {
+        .l-multicol--am {
+            .multicol__nav {
+                margin-right: $grid-gutter;
+            }
+        }
+    }
+
+    /**
+    * Flexbox Main + Aside Layout
+    */
+
+    @include media(">layout-s") {
+        .l-multicol--ma {
+            main {
+                margin-right: $grid-gutter;
+            }
+
+            .multicol__sidebar {
+                flex: 0 0 calc(270px + #{$layout-gutter});
+                width: calc(270px + #{$layout-gutter});
+                margin-top: 0;
+            }
+        }
+    }
+
+    @include media("<=layout-s") {
+        .l-multicol--ma.l-multicol--sidebar-top {
+            .multicol__sidebar {
+                margin-top: 0;
+                margin-bottom: $grid-gutter;
+            }
+        }
+    }
+
+    /**
+    * Flexbox Aside + Main + Aside Layout
+    */
+
+    .l-multicol--ama {
+        @include media(">layout-s") {
+            main {
+                margin-left: $grid-gutter;
+            }
+
+            .multicol__nav {
+                flex: 0 0 calc(200px + #{$layout-gutter});
+                width: calc(200px + #{$layout-gutter});
+                max-width: calc(200px + #{$layout-gutter});
+            }
+        }
+
+        @include media(">layout-s", "<layout-l") {
+            .multicol__sidebar {
+                padding-left: calc(200px + #{$layout-gutter} + #{$grid-gutter});
+            }
+        }
+
+        @include media(">=layout-l") {
+            main {
+                margin-right: $grid-gutter;
+            }
+
+            .multicol__sidebar {
+                flex: 0 0 calc(270px + #{$layout-gutter});
+                width: calc(270px + #{$layout-gutter});
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+/**
+ * Styles from old layouts that haven't been used in new setup yet
+ * =======================================
+ */
+
+// .l-multicol--white {
+//     background-color: white;
+
+//     .multicol__content > .u-block--white:first-child,
+//     .multicol__sidebar > .u-block--white:first-child {
+//         padding-top: 10px;
+//     }
+// }
+
+// .l-multicol--grey {
+//     background-color: $grey;
+
+//     .u-block--grey {
+//         padding-left: 0;
+//         padding-right: 0;
+//     }
+
+//     .multicol__content > .u-block--grey:first-child {
+//         padding-top: 10px;
+//     }
+// }
+
+// .u-masthead-sticky .multicol__nav {
+//     top: $masthead_height + 20px;
+// }
