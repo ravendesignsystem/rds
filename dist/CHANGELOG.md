@@ -2,6 +2,12 @@
 
 All notable changes to the project will be documented here, in this file.
 
+## [v0.16.0](https://github.com/ravendesignsystem/rds/releases/tag/0.16.0) 2020-01-07
+
+**Changed**: Breaking changes.
+
+- **Changed**: Refactored l-multicol and all layout types to use CSS Grid, with a flexbox fallback
+
 ## [v0.15.7](https://github.com/ravendesignsystem/rds/releases/tag/0.15.7) 2020-01-06
 
 **Changed**: Maintenance release with small patches

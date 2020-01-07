@@ -16,18 +16,21 @@
 
 // 0. RDS version
 // --------------
-$version: '0.15.7';
+$version: '0.16.0';
 
 // 1. Media query breakpoints
 // --------------------------
 $breakpoints: (
-	s: 760px,
-	l: 1024px,
+    s: 760px,
+    l: 1024px,
+    layout-s: 810px,
+    layout-l: 1168px,
 );
 
 // 2. Grid vars
 // ------------
 $grid-gutter: 30px !default;
+$layout-gutter: $grid-gutter + 1px; // Used by grid and flex to set gutters with an included 1px for the border
 
 // 2. Margins/spacing
 // ------------------
