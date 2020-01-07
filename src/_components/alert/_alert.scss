@@ -1,4 +1,5 @@
-.c-alert {
+// Using div. to circumvent the specificity of b-content
+div.c-alert {
 	position: relative;
 	padding: 27px 25px 25px 65px;
 	margin-bottom: $margin-bottom;
@@ -24,7 +25,7 @@
 	h2 {
 		font-size: $pixel18;
 		margin: 0;
-		border-bottom: none !important; // use !important to circumvent specificity of b-content
+		border-bottom: none;
 	}
 
 	p {
@@ -33,9 +34,8 @@
 		margin: 0;
 	}
 
-	// Using !important will circumvent the specificity of b-content
 	a {
-		border-bottom: 1px solid $link !important;
+		border-bottom: 1px solid $link !important; // !important to circumvent the specificity of b-content
 		background-color: transparent !important;
 
 		&:hover {
@@ -61,7 +61,7 @@
 	}
 }
 
-.c-alert--error {
+div.c-alert.c-alert--error {
 	border: 1px solid $red;
 	background-color: $pink;
 
@@ -69,10 +69,10 @@
 		fill: $red;
 	}
 
-	// Using !important will circumvent the specificity of b-content
-	a {
-		color: $red !important;
-		border-bottom: 1px solid $red !important;
+	p a {
+		color: $red;
+		border-bottom: 1px solid $red !important; // !important to circumvent the specificity of b-content
+		background-color: transparent;
 
 		&:hover {
 			border-bottom: 1px solid $black !important;
@@ -81,7 +81,7 @@
 	}
 }
 
-.c-alert--warning {
+div.c-alert--warning {
 	border: 1px solid #faab08;
 	background-color: #fffaf1;
 
@@ -90,7 +90,6 @@
 		fill: #faab08;
 	}
 
-	// Using !important will circumvent the specificity of b-content
 	a {
 		color: #faab08 !important;
 		border-bottom: 1px solid #faab08 !important;
@@ -102,7 +101,7 @@
 	}
 }
 
-.c-alert--success {
+div.c-alert--success {
 	border: 1px solid #45bf2e;
 	background-color: #fafff5;
 
@@ -110,7 +109,6 @@
 		fill: #45bf2e;
 	}
 
-	// Using !important will circumvent the specificity of b-content
 	a {
 		color: #45bf2e !important;
 		border-bottom: 1px solid #45bf2e !important;
