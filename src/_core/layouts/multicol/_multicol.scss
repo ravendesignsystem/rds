@@ -1,18 +1,4 @@
 /**
- * Layout Vars
- */
-
- $breakpoints: (
-    s: 760px,
-    l: layout-l,
-    layout-s: 810px,
-    layout-l: 1168px,
-);
-
-// Used by grid and flex to set gutters with an included 1px for the border
-$layout-gutter: $grid-gutter + 1px;
-
-/**
  * Grid Global Styles
  */
 
@@ -47,6 +33,11 @@ $layout-gutter: $grid-gutter + 1px;
         .u-block--grey + .u-block--white {
             padding-top: 0;
         }
+
+		// Pull up the first white u-block
+		& > .u-block--white {
+			padding-top: 5px;
+		}
     }
 }
 
