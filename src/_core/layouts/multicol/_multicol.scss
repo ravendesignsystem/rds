@@ -36,6 +36,7 @@ $layout-gutter: $grid-gutter + 1px;
 	// Set max width on main content area
 	main {
 		max-width: 760px;
+		min-width: 0; // Needed for responsive pre code blocks
 
 		// Change grey block bg to white
 		.u-block--grey {
@@ -46,6 +47,11 @@ $layout-gutter: $grid-gutter + 1px;
 		.u-block--white + .u-block--grey,
 		.u-block--grey + .u-block--white {
 			padding-top: 0;
+		}
+
+		// Pull up the first white u-block
+		& > .u-block--white {
+			padding-top: 5px;
 		}
 	}
 }
