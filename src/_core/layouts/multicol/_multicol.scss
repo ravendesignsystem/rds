@@ -22,6 +22,7 @@
     // Set max width on main content area
     main {
         max-width: 760px;
+        min-width: 0; // Needed for responsive pre code blocks
 
         // Change grey block bg to white
         .u-block--grey {
