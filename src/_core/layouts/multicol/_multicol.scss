@@ -29,6 +29,11 @@
             background-color: white;
         }
 
+        // Remove padding if u-block is last element
+        .u-block--white:last-child {
+            padding-bottom: 0;
+        }
+
         // Remove top spacing when white/grey blocks follow each other
         .u-block--white + .u-block--grey,
         .u-block--grey + .u-block--white {
