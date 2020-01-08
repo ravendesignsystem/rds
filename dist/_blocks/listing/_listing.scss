@@ -213,6 +213,17 @@
 	fill: white;
 }
 
+// Accordion Variant
+//===========
+
+.b-listing--accordion ul {
+	border: none;
+}
+
+.b-listing--accordion li:not(:last-child) {
+	border-bottom: none;
+}
+
 // Grey Block
 //===========
 
