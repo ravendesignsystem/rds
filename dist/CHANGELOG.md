@@ -2,12 +2,18 @@
 
 All notable changes to the project will be documented here, in this file.
 
+## [v0.16.2](https://github.com/ravendesignsystem/rds/releases/tag/0.16.2) 2020-01-08
+
+**Added**, **Changed**: Maintenance release with small patches
+
+- **Changed**: Updated styles for masthead to allow for the proper creation of top level modifiers in the future
+
 ## [v0.16.1](https://github.com/ravendesignsystem/rds/releases/tag/0.16.1) 2020-01-07
 
 **Added**, **Changed**: Maintenance release with small patches
 
 - **Added**: Style for l-multicol that removes bottom padding if last child of main is u-block
-**Changed**: Updated documentation for l-multicol to reflect changes relating to switch to css grid
+- **Changed**: Updated documentation for l-multicol to reflect changes relating to switch to css grid
 
 ## [v0.16.0](https://github.com/ravendesignsystem/rds/releases/tag/0.16.0) 2020-01-07
 
