@@ -7,25 +7,27 @@ title: Multi-column
 title: Aside + Main + Aside Layout
 ---
 
-RDS and the [CU theme](#) ship with both two and three column layouts, each having a few options. 
+RDS ships with both two and three column layouts, each having a few options. All multi-column layouts include the `<main>` section and at least one `<aside>`. 
 
-All multi-column layouts include the `<main>` section and at least one `<aside>`. 
+## Layout AM (Aside + Main)
 
-## Two column: a-m layout
+This is a two column layout consisting of an `aside`, immediately followed by the `main` content area. The base class name `l-multicol-am` reflects the order that the elements appears in its used of `am`.
 
-The two column `a-m` layout is being used on this very page. 
+The main purpose of this layout is to provide a main content area with a lefthand aside containing the site navigation.
+
+**Note:** The two column `l-multicol-am` layout is being used on this very page, and sets the columns up as per the following diagram.
 
 ```markdown
-+-----------+----------------------+
-|           |                      |
-| Aside (a) |       Main (m)       |
-|           |                      |
-+-----------+----------------------+
++-------------+----------------------+
+|             |                      |
+|  Aside (a)  |       Main (m)       |
+|             |                      |
++-------------+----------------------+
 ```
 
 ### Left aside
 
-The left-side `<aside>` is intended for site navigation using the [Menu block](#) and disappears from view below 720px. Other Aside blocks can go beneath the navigation.
+The left-side `<aside>` is intended for site navigation using the [Menu block](#). The column has a fixed width of 200px, and disappears from view below 810px. While the main purposes of this aside is to contain a site navigation, additional aside blocks can be added below the menu.
 
 ### Main
 
@@ -34,39 +36,32 @@ The main area contains your primary page content.
 ### Code
 
 ```html
-<div class="l-multicol l-multicol--am l-multicol--white">
-	<div class="multicol__container">
+<div class="l-multicol l-multicol--am">
 
-		<aside class="multicol__nav">
-			<-- the Menu block go here -->
-		</aside>
+	<aside class="multicol__nav">
+		{ the Menu block go here }
+	</aside>
 
-		<main class="multicol__main">
-			<div class="multicol__content">
-		        <-- Fixed-width Main blocks go here -->
-			</div>
-		</main>
+	<main class="multicol__main">
+		{ Fixed-width Main blocks go here }
+	</main>
 
-	</div>
 </div>
 ```
 
-## Three column: a-m-a layout
+## Layout AM (Aside + Main)
 
-The three column `a-m-a layout` includes asides on the left and right, with the main content area in the middle.
+This is another two column layout, but this time it consists of a `main` content area, immediately followed by the `aside`. The base class name `l-multicol-ma` reflects the order that the elements appears in its used of `ma`.
 
+The main purpose of this layout is to provide a main content area with a sidebar of that would contain related or additional content.
 
 ```markdown
-+-----------+----------------------+------------+
-|           |                      |            |
-| Aside (a) |       Main (m)       |  Aside (a) |
-|           |                      |            |
-+-----------+----------------------+------------+
++----------------------+-------------+
+|                      |             |
+|       Main (m)       |  Aside (a)  |
+|                      |             |
++----------------------+-------------+
 ```
-
-### Left aside
-
-The left-side `<aside>` is intended for site navigation using the [Menu block](#) and disappears from view below 720px. Other Aside blocks can go beneath the navigation.
 
 ### Main
 
@@ -74,103 +69,20 @@ The main area contains your primary page content.
 
 ### Right aside
 
-The right aside provides a sidebar for additional [Aside blocks](#) relating to the page. 
+The right-side `<aside>` is intended for providing content related to what is dispplayed in the main area. The column has a fixed width of 270px, and disappears from view below 810px.
 
 ### Code
 
 ```html
-<div class="l-multicol l-multicol--ama l-multicol--white">
-	<div class="multicol__container">
+<div class="l-multicol l-multicol--ma">
 
-	    <aside class="multicol__nav">
-			<-- the Menu block go here -->
-		</aside>
+	<main class="multicol__main">
+		{ Fixed-width Main blocks go here }
+	</main>
 
-		<main class="multicol__main">
+	<aside class="multicol__sidebar">
+		{ the Menu block go here }
+	</aside>
 
-			<div class="multicol__content">
-				<div class="u-block u-block--white">
-					<-- Fixed-width Main blocks go here -->
-				</div>
-			</div>
-
-			<aside class="multicol__sidebar">
-				<-- Aside blocks go here -->
-			</aside>
-
-		</main>
-
-	</div>
 </div>
 ```
-{%include 'inc' with {'cta': 'AMA Example on Codepen', 'url': 'https://codepen.io/cuweb/pen/QWLOdQJ?editors=1000'} %}
-
-
-### Right aside modifiers
-
-The three column layout has two modifiers impacting the right aside. 
-
-#### Larger right aside modifier
-
-- `l-multicol--sidebar-large` -- increases the width of the right aside to 350px.
-
-```html
-<div class="l-multicol l-multicol--ama l-multicol--white l-multicol--sidebar-large">
-```
-
-```markdown
-+-----------+----------------------+----------------+
-|           |                      |                |
-| Aside (a) |       Main (m)       |    Aside (a)   |
-|           |                      |                |
-+-----------+----------------------+----------------+
-```
-#### Right aside top modifier
-
-At smaller screen sizes the three column layout breaks to a two column layout. By default, the right aside moves underneath the main content.
-
-```markdown
-+-----------+----------------------+
-|           |                      |
-| Aside (a) |       Main (m)       |
-|           |       Aside(a)       |
-+-----------+----------------------+
-```
-
-- Use the `l-multicol--sidebar-top` modifier to position the right aside above the content area when the screen width is smaller then 720px wide.
-
-```markdown
-+-----------+----------------------+
-|           |       Aside(a)       |
-| Aside (a) |       Main (m)       |
-|           |                      |
-+-----------+----------------------+
-```
-#### Combine
-
-Both right aside modifiers can be used together or independently. The code below increases the right aside and forces it above the content wheen breaking to two columns.
-
-```html
-<div class="l-multicol l-multicol--ama l-multicol--white l-multicol--sidebar-large l-multicol--sidebar-top">
-```
-
-## Layout colour modifiers
-
-- `l-multicol--white` -- the default modifier, makes the full width of the layout background white, and removes the left and right padding on all white blocks used inside the layout
-
-```html
-<div class="l-multicol l-multicol--ama l-multicol--white">
-```
-- `l-multicol--grey` -- makes the full width of the layout background grey, and removes the left and right padding on all grey blocks used inside the layout
-
-```html
-<div class="l-multicol l-multicol--ama l-multicol--grey">
-```
-
-## Available blocks
-
-When using multi-column layouts, only fixed-width [Main section blocks](#) can be used within the `<main>` section. [Aside blocks](#) can be used in the `aside` sections.
-
-
-
-
