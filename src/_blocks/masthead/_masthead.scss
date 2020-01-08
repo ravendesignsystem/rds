@@ -40,22 +40,29 @@ body {
     left: 0;
     right: 0;
     z-index: 10000;
-    // Visual
-    // background-color: white;
-    border-top: 2px solid $red;
-    border-bottom: 1px solid $grey-kenobi;
-    height: 75px;
 }
+
+//
+// Masthead Color Modifiers
+// -----------------------------
 
 .b-masthead {
     background-color: white;
+    border-top: 2px solid $red;
+    border-bottom: 1px solid $grey-kenobi;
+    height: calc(#{$masthead_height} + 3px);
+
+    & .c-nav,
+    & > ul,
+    & .c-nav > ul {
+        height: $masthead_height;
+    }
 }
 
 .b-masthead,
 .b-masthead .c-nav,
 .b-masthead > ul,
 .b-masthead .c-nav > ul {
-    height: $masthead_height;
     display: flex;
     align-items: center;
 
@@ -153,7 +160,7 @@ body {
 
         &:hover {
             color: $red;
-            background-color: white;
+            background-color: transparent;
         }
 
         @include media(">s") {
