@@ -41,10 +41,14 @@ body {
 	right: 0;
 	z-index: 10000;
 	// Visual
-	background-color: white;
+	// background-color: white;
 	border-top: 2px solid $red;
 	border-bottom: 1px solid $grey-kenobi;
 	height: 75px;
+}
+
+.b-masthead {
+	background-color: white;
 }
 
 .b-masthead,
