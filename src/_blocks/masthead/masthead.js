@@ -248,21 +248,23 @@ const handleClick = () => {
 		);
 	}
 
-	globalCloseModalButton.addEventListener(
-		'click',
-		() => {
-			closeAllModals();
-		},
-		false
-	);
-	if (mastheadNavIcon) {
-		mastheadNavIcon.addEventListener(
+	if (globalCloseModalButton) {
+		globalCloseModalButton.addEventListener(
 			'click',
 			() => {
-				showModal('menu');
+				closeAllModals();
 			},
 			false
 		);
+		if (mastheadNavIcon) {
+			mastheadNavIcon.addEventListener(
+				'click',
+				() => {
+					showModal('menu');
+				},
+				false
+			);
+		}
 	}
 };
 
