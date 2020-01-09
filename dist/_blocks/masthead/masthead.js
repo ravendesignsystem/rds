@@ -13,9 +13,13 @@ const mastheadActions = document.querySelector('.masthead__actions');
 const sideNav = document.querySelector('.c-nav--sidenav');
 const sideNavContainer = document.querySelector('.b-menu--sidenav');
 const mastheadNavIcon = document.querySelector('.c-navicon');
-const mastheadActionsCTA = mastheadActions.querySelectorAll(
-	`li[class*="masthead__"]`
-);
+
+let mastheadActionsCTA;
+if (mastheadActions !== null) {
+	mastheadActionsCTA = mastheadActions.querySelectorAll(
+		`li[class*="masthead__"]`
+	);
+}
 
 const mastheadHeight = masthead.offsetHeight;
 const mastheadSearch = document.querySelector('.masthead__search');
@@ -166,6 +170,7 @@ const closeAllModals = () => {
 	}
 	if (modalMenu) {
 		modalMenu.classList.add('u-visually-hidden');
+		if (!mastheadNavIcon) return;
 		mastheadNavIcon.classList.remove('u-visually-hidden');
 	}
 };
@@ -248,21 +253,23 @@ const handleClick = () => {
 		);
 	}
 
-	globalCloseModalButton.addEventListener(
-		'click',
-		() => {
-			closeAllModals();
-		},
-		false
-	);
-	if (mastheadNavIcon) {
-		mastheadNavIcon.addEventListener(
+	if (globalCloseModalButton) {
+		globalCloseModalButton.addEventListener(
 			'click',
 			() => {
-				showModal('menu');
+				closeAllModals();
 			},
 			false
 		);
+		if (mastheadNavIcon) {
+			mastheadNavIcon.addEventListener(
+				'click',
+				() => {
+					showModal('menu');
+				},
+				false
+			);
+		}
 	}
 };
 

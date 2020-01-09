@@ -2,9 +2,15 @@
 
 All notable changes to the project will be documented here, in this file.
 
+## [v0.16.3](https://github.com/ravendesignsystem/rds/releases/tag/0.16.3) 2020-01-09
+
+**Fixed**: Maintenance release with small patches
+
+- **Fixed**: Updated masthead js to fix issues noted in GH-96
+
 ## [v0.16.2](https://github.com/ravendesignsystem/rds/releases/tag/0.16.2) 2020-01-08
 
-**Added**, **Changed**: Maintenance release with small patches
+**Changed**: Maintenance release with small patches
 
 - **Changed**: Updated styles for masthead to allow for the proper creation of top level modifiers in the future
 
