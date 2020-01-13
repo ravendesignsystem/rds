@@ -65,6 +65,15 @@
 			margin-top: 10px;
 		}
 	}
+
+	.c-searchform {
+		min-width: #{map-get($breakpoints, s)};
+		margin-top: $block-padding-s;
+
+		@include media('>s') {
+			margin-top: $block-padding-m;
+		}
+	}
 } // End b-banner
 
 // need for Yoast plugin UGH!!
@@ -100,7 +109,7 @@
 
 	section {
 		z-index: 1;
-		max-width: #{map-get($breakpoints, s)};
+		max-width: calc(#{map-get($breakpoints, s)} + #{$block-padding-m} * 2);
 
 		@include media('>s') {
 			padding-left: 30px;
