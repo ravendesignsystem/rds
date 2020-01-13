@@ -2,6 +2,12 @@
 
 All notable changes to the project will be documented here, in this file.
 
+## [v0.16.4](https://github.com/ravendesignsystem/rds/releases/tag/0.16.4) 2020-01-13
+
+**Changed**: Maintenance release with small patches
+
+- **Changed**: Updated forms to include styles for several field types, updated documentation to display examples of all newly styles field types
+
 ## [v0.16.3](https://github.com/ravendesignsystem/rds/releases/tag/0.16.3) 2020-01-09
 
 **Fixed**: Maintenance release with small patches
