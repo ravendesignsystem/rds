@@ -16,15 +16,15 @@
 
 // 0. RDS version
 // --------------
-$version: '0.16.3';
+$version: '0.16.4';
 
 // 1. Media query breakpoints
 // --------------------------
 $breakpoints: (
-    s: 760px,
-    l: 1024px,
-    layout-s: 810px,
-    layout-l: 1168px,
+	s: 760px,
+	l: 1024px,
+	layout-s: 810px,
+	layout-l: 1168px,
 );
 
 // 2. Grid vars
@@ -57,7 +57,7 @@ $grey: #f3f3f3;
 $red: #bf112b;
 
 // main link color
-$link: #105F83;
+$link: #105f83;
 
 $pink: #f9e6e9; // error bg color
 

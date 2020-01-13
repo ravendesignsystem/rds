@@ -1,6 +1,6 @@
 {
 	"name": "rds",
-	"version": "0.16.3",
+	"version": "0.16.4",
 	"description": "Never more",
 	"main": "webpack.config.js",
 	"author": "Carleton University",
