@@ -129,285 +129,167 @@ Form elements in RDS are styled based on their type attribute rather than a clas
 </form>
 ```
 
-## HEADER
+## Radio Buttons
+
+### Option #1: Grouping with fieldsets
 
 <form class="c-form">
+    <fieldset>
+        <legend>What is the best time of day?</legend>
+        <div class="radio row">
+        <input type="radio" name="day" id="morning" value="morning"/>
+        <label for="morning">Morning</label>
+        <input type="radio" name="day" id="night" value="night"/>
+        <label for="night">Night</label>
+        <input type="radio" name="day" id="coffee" value="coffee"/>
+        <label for="coffee">Any time I'm drinking coffee</label>
+        </div>
+    </fieldset>
 </form>
 
 ```html
 <form class="c-form">
+    <fieldset>
+        <legend>What is the best time of day?</legend>
+        <div class="radio row">
+        <input type="radio" name="day" id="morning" value="morning"/>
+        <label for="morning">Morning</label>
+        <input type="radio" name="day" id="night" value="night"/>
+        <label for="night">Night</label>
+        <input type="radio" name="day" id="coffee" value="coffee"/>
+        <label for="coffee">Any time I'm drinking coffee</label>
+        </div>
+    </fieldset>
 </form>
 ```
 
-## HEADER
+### Option #2: Use ARIA to group options
 
 <form class="c-form">
+    <div role="group" aria-labelledby="zeppelin_head">
+        <h4 id="zeppelin_head" class="bold">Who is the best member of Led Zeppelin?</h4>
+        <div class="radio column">
+        <input id="zeppelin_jimmy" type="radio" name="zeppelin" value="zeppelin_jimmy"/>
+        <label for="zeppelin_jimmy">Jimmy Page</label>
+        <input id="zeppelin_john_paul" type="radio" name="zeppelin" value="zeppelin_john_paul"/>
+        <label for="zeppelin_john_paul">John Paul Jones</label>
+        <input id="zeppelin_robert" type="radio" name="zeppelin" value="zeppelin_robert"/>
+        <label for="zeppelin_robert">Robert Plant</label>
+        <input id="zeppelin_john" type="radio" name="zeppelin" value="zeppelin_john"/>
+        <label for="zeppelin_john">John Bonham</label>
+        </div>
+    </div>
 </form>
 
 ```html
 <form class="c-form">
+    <div role="group" aria-labelledby="zeppelin_head">
+        <h4 id="zeppelin_head" class="bold">Who is the best member of Led Zeppelin?</h4>
+        <div class="radio column">
+        <input id="zeppelin_jimmy" type="radio" name="zeppelin" value="zeppelin_jimmy"/>
+        <label for="zeppelin_jimmy">Jimmy Page</label>
+        <input id="zeppelin_john_paul" type="radio" name="zeppelin" value="zeppelin_john_paul"/>
+        <label for="zeppelin_john_paul">John Paul Jones</label>
+        <input id="zeppelin_robert" type="radio" name="zeppelin" value="zeppelin_robert"/>
+        <label for="zeppelin_robert">Robert Plant</label>
+        <input id="zeppelin_john" type="radio" name="zeppelin" value="zeppelin_john"/>
+        <label for="zeppelin_john">John Bonham</label>
+        </div>
+    </div>
 </form>
 ```
 
-## HEADER
+## Select Lists
+
+### Option #1: Select with no grouping
 
 <form class="c-form">
+    <div class="select">
+        <label for="section1" class="u-visually-hidden">Label for section 1</label>
+        <select id="section1" name="section1">
+        <option label="First select" disabled selected>First select</option>
+        <option label="Option 1.1">Option 1.1</option>
+        <option label="Option 1.2">Option 1.2</option>
+        </select>
+        <div class="select__arrow"></div>
+    </div>
+    <div class="select">
+        <label for="section2" class="u-visually-hidden">Label for section 2</label>
+        <select id="section2" name="section2">
+        <option label="Second select" disabled selected>Second select</option>
+        <option label="Option 2.1">Option 2.1</option>
+        <option label="Option 2.2">Option 2.2</option>
+        </select>
+        <div class="select__arrow"></div>
+    </div>
 </form>
 
 ```html
 <form class="c-form">
+    <div class="select">
+        <label for="section1" class="u-visually-hidden">Label for section 1</label>
+        <select id="section1" name="section1">
+        <option label="First select" disabled selected>First select</option>
+        <option label="Option 1.1">Option 1.1</option>
+        <option label="Option 1.2">Option 1.2</option>
+        </select>
+        <div class="select__arrow"></div>
+    </div>
+    <div class="select">
+        <label for="section2" class="u-visually-hidden">Label for section 2</label>
+        <select id="section2" name="section2">
+        <option label="Second select" disabled selected>Second select</option>
+        <option label="Option 2.1">Option 2.1</option>
+        <option label="Option 2.2">Option 2.2</option>
+        </select>
+        <div class="select__arrow"></div>
+    </div>
 </form>
 ```
 
-## HEADER
+### Option #2: Select with grouping
 
 <form class="c-form">
+    <div class="select">
+        <label for="lecture" class="u-visually-hidden">Choose a Lecture</label>
+        <select id="lecture" name="lecture">
+        <option label="Choose a Lecture" disabled selected>Choose a Lecture</option>
+        <optgroup label="1.0 The History of the World: Part I">
+            <option label="Lecture 1.1" value="1.1">Lecture 1.1: In the Beginning</option>
+            <option label="Lecture 1.2" value="1.2">Lecture 1.2: Stuck in the Middle</option>
+            <option label="Lecture 1.3" value="1.3">Lecture 1.3: At the End</option>
+        </optgroup>
+        <optgroup label="2.0 The History of the World: Part II">
+            <option label="Lecture 2.2" value="2.1">Lecture 2.1: Wait! There's More</option>
+        </optgroup>
+        </select>
+        <div class="select__arrow"></div>
+    </div>
 </form>
 
 ```html
 <form class="c-form">
+    <div class="select">
+        <label for="lecture" class="u-visually-hidden">Choose a Lecture</label>
+        <select id="lecture" name="lecture">
+        <option label="Choose a Lecture" disabled selected>Choose a Lecture</option>
+        <optgroup label="1.0 The History of the World: Part I">
+            <option label="Lecture 1.1" value="1.1">Lecture 1.1: In the Beginning</option>
+            <option label="Lecture 1.2" value="1.2">Lecture 1.2: Stuck in the Middle</option>
+            <option label="Lecture 1.3" value="1.3">Lecture 1.3: At the End</option>
+        </optgroup>
+        <optgroup label="2.0 The History of the World: Part II">
+            <option label="Lecture 2.2" value="2.1">Lecture 2.1: Wait! There's More</option>
+        </optgroup>
+        </select>
+        <div class="select__arrow"></div>
+    </div>
 </form>
 ```
 
-## HEADER
+## References
 
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
-
-## HEADER
-
-<form class="c-form">
-</form>
-
-```html
-<form class="c-form">
-</form>
-```
+- [A11Y Style Guide for Forms](https://a11y-style-guide.com/style-guide/section-forms.html)
 
 ## TODO
 
