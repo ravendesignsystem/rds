@@ -390,32 +390,278 @@ Raven Design System
 
 <p>Form elements in RDS are styled based on their type attribute rather than a class. Simply add the class <code>c-form</code> to <code>&lt;form&gt;</code> tags.</p>
 
+<h2 id="general-fields">General Fields</h2>
+
+<form class="c-form">
+    <label for="first-name">First Name</label>
+    <input id="first-name" type="text" name="textfield">
+    <label for="last-name" class="required-field">Last Name</label>
+    <input id="last-name" type="text" name="textfield" aria-describedby="required-message" required>
+    <div id="required-message" class="u-visually-hidden">This field is required.</div>
+    <label for="username">Username</label>
+    <input id="username" type="text" name="textfield" aria-describedby="username-help-text" aria-invalid="true">
+    <span id="username-help-text">There was an error with the input above.</span>
+    <label for="city">City</label>
+    <input id="city" type="text" name="textfield" aria-describedby="city-help-text" aria-invalid="false">
+    <span id="city-help-text">The input above is successful.</span>
+    <label for="address">Enter your street address</label>
+    <textarea id="address" name="addresstext"></textarea>
+</form>
+
+<pre><code class="html">&lt;form class="c-form"&gt;
+    &lt;label for="first-name"&gt;First Name&lt;/label&gt;
+    &lt;input id="first-name" type="text" name="textfield"&gt;
+    &lt;label for="last-name" class="required-field"&gt;Last Name&lt;/label&gt;
+    &lt;input id="last-name" type="text" name="textfield" aria-describedby="required-message" required&gt;
+    &lt;div id="required-message" class="u-visually-hidden"&gt;This field is required.&lt;/div&gt;
+    &lt;label for="username"&gt;Username&lt;/label&gt;
+    &lt;input id="username" type="text" name="textfield" aria-describedby="username-help-text" aria-invalid="true"&gt;
+    &lt;span id="username-help-text"&gt;There was an error with the input above.&lt;/span&gt;
+    &lt;label for="city"&gt;City&lt;/label&gt;
+    &lt;input id="city" type="text" name="textfield" aria-describedby="city-help-text" aria-invalid="false"&gt;
+    &lt;span id="city-help-text"&gt;The input above is successful.&lt;/span&gt;
+    &lt;label for="address"&gt;Enter your street address&lt;/label&gt;
+    &lt;textarea id="address" name="addresstext"&gt;&lt;/textarea&gt;
+&lt;/form&gt;
+</code></pre>
+
+<h2 id="checkboxes">Checkboxes</h2>
+
+<h3 id="option-%231%3A-grouping-with-fieldsets">Option #1: Grouping with fieldsets</h3>
+
 <form class="c-form">
     <fieldset>
-        <legend>What is Your Favorite Pet?</legend>
-        <label for="cats">Cats</label>
-        <input type="radio" name="favorite_pet" id="cats" value="Cats">Cats<br>
-        <label for="dogs">Dogs</label>
-        <input type="radio" name="favorite_pet" id="dogs" value="Dogs">Dogs<br>
-        <label for="birds">Birds</label>
-        <input type="radio" name="favorite_pet" id="birds" value="Birds">Birds<br>
-        <input type="submit" value="Submit now">
+        <legend>Who is your favorite 19th century scientist</legend>
+        <div class="checkbox column">
+        <input id="bell" type="checkbox" name="scientist" value="bell"/>
+        <label for="bell">Alexander Graham Bell</label>
+        <input id="curry" type="checkbox" name="scientist" value="curry"/>
+        <label for="curry">Marie Curie</label>
+        <input id="lovelace" type="checkbox" name="scientist" value="lovelace"/>
+        <label for="lovelace">Ada Lovelace</label>
+        <input id="nobel" type="checkbox" name="scientist" value="nobel"/>
+        <label for="nobel">Alfred Nobel</label>
+        <input id="pasteur" type="checkbox" name="scientist" value="pasteur"/>
+        <label for="pasteur">Louis Pasteur</label>
+        <input id="tesla" type="checkbox" name="scientist" value="tesla"/>
+        <label for="tesla">Nikola Tesla</label>
+        </div>
     </fieldset>
 </form>
 
 <pre><code class="html">&lt;form class="c-form"&gt;
     &lt;fieldset&gt;
-        &lt;legend&gt;What is Your Favorite Pet?&lt;/legend&gt;
-        &lt;label for="cats"&gt;Cats&lt;/label&gt;
-        &lt;input type="radio" name="favorite_pet" id="cats" value="Cats"&gt;Cats&lt;br&gt;
-        &lt;label for="dogs"&gt;Dogs&lt;/label&gt;
-        &lt;input type="radio" name="favorite_pet" id="dogs" value="Dogs"&gt;Dogs&lt;br&gt;
-        &lt;label for="birds"&gt;Birds&lt;/label&gt;
-        &lt;input type="radio" name="favorite_pet" id="birds" value="Birds"&gt;Birds&lt;br&gt;
-        &lt;input type="submit" value="Submit now"&gt;
+        &lt;legend&gt;Who is your favorite 19th century scientist&lt;/legend&gt;
+        &lt;div class="checkbox column"&gt;
+        &lt;input id="bell" type="checkbox" name="scientist" value="bell"/&gt;
+        &lt;label for="bell"&gt;Alexander Graham Bell&lt;/label&gt;
+        &lt;input id="curry" type="checkbox" name="scientist" value="curry"/&gt;
+        &lt;label for="curry"&gt;Marie Curie&lt;/label&gt;
+        &lt;input id="lovelace" type="checkbox" name="scientist" value="lovelace"/&gt;
+        &lt;label for="lovelace"&gt;Ada Lovelace&lt;/label&gt;
+        &lt;input id="nobel" type="checkbox" name="scientist" value="nobel"/&gt;
+        &lt;label for="nobel"&gt;Alfred Nobel&lt;/label&gt;
+        &lt;input id="pasteur" type="checkbox" name="scientist" value="pasteur"/&gt;
+        &lt;label for="pasteur"&gt;Louis Pasteur&lt;/label&gt;
+        &lt;input id="tesla" type="checkbox" name="scientist" value="tesla"/&gt;
+        &lt;label for="tesla"&gt;Nikola Tesla&lt;/label&gt;
+        &lt;/div&gt;
     &lt;/fieldset&gt;
 &lt;/form&gt;
 </code></pre>
+
+<h3 id="option-%232%3A-use-aria-to-group-options">Option #2: Use ARIA to group options</h3>
+
+<form class="c-form">
+    <div role="group" aria-labelledby="beatle_head">
+        <h4 id="beatle_head" class="bold">Who is the best Beatle?</h4>
+        <div class="checkbox row">
+        <input id="beatle_john" type="checkbox" name="beatle" value="beatle_john"/>
+        <label for="beatle_john">John Lennon</label>
+        <input id="beatle_paul" type="checkbox" name="beatle" value="beatle_paul"/>
+        <label for="beatle_paul">Paul McCartney</label>
+        <input id="beatle_george" type="checkbox" name="beatle" value="beatle_george"/>
+        <label for="beatle_george">George Harrison</label>
+        <input id="beatle_ringo" type="checkbox" name="beatle" value="beatle_ringo"/>
+        <label for="beatle_ringo">Ringo Starr</label>
+    </div>
+</form>
+
+<pre><code class="html">&lt;form class="c-form"&gt;
+    &lt;div role="group" aria-labelledby="beatle_head"&gt;
+        &lt;h4 id="beatle_head" class="bold"&gt;Who is the best Beatle?&lt;/h4&gt;
+        &lt;div class="checkbox row"&gt;
+        &lt;input id="beatle_john" type="checkbox" name="beatle" value="beatle_john"/&gt;
+        &lt;label for="beatle_john"&gt;John Lennon&lt;/label&gt;
+        &lt;input id="beatle_paul" type="checkbox" name="beatle" value="beatle_paul"/&gt;
+        &lt;label for="beatle_paul"&gt;Paul McCartney&lt;/label&gt;
+        &lt;input id="beatle_george" type="checkbox" name="beatle" value="beatle_george"/&gt;
+        &lt;label for="beatle_george"&gt;George Harrison&lt;/label&gt;
+        &lt;input id="beatle_ringo" type="checkbox" name="beatle" value="beatle_ringo"/&gt;
+        &lt;label for="beatle_ringo"&gt;Ringo Starr&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+
+<h2 id="radio-buttons">Radio Buttons</h2>
+
+<h3 id="option-%231%3A-grouping-with-fieldsets">Option #1: Grouping with fieldsets</h3>
+
+<form class="c-form">
+    <fieldset>
+        <legend>What is the best time of day?</legend>
+        <div class="radio row">
+        <input type="radio" name="day" id="morning" value="morning"/>
+        <label for="morning">Morning</label>
+        <input type="radio" name="day" id="night" value="night"/>
+        <label for="night">Night</label>
+        <input type="radio" name="day" id="coffee" value="coffee"/>
+        <label for="coffee">Any time I'm drinking coffee</label>
+        </div>
+    </fieldset>
+</form>
+
+<pre><code class="html">&lt;form class="c-form"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;What is the best time of day?&lt;/legend&gt;
+        &lt;div class="radio row"&gt;
+        &lt;input type="radio" name="day" id="morning" value="morning"/&gt;
+        &lt;label for="morning"&gt;Morning&lt;/label&gt;
+        &lt;input type="radio" name="day" id="night" value="night"/&gt;
+        &lt;label for="night"&gt;Night&lt;/label&gt;
+        &lt;input type="radio" name="day" id="coffee" value="coffee"/&gt;
+        &lt;label for="coffee"&gt;Any time I'm drinking coffee&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+</code></pre>
+
+<h3 id="option-%232%3A-use-aria-to-group-options">Option #2: Use ARIA to group options</h3>
+
+<form class="c-form">
+    <div role="group" aria-labelledby="zeppelin_head">
+        <h4 id="zeppelin_head" class="bold">Who is the best member of Led Zeppelin?</h4>
+        <div class="radio column">
+        <input id="zeppelin_jimmy" type="radio" name="zeppelin" value="zeppelin_jimmy"/>
+        <label for="zeppelin_jimmy">Jimmy Page</label>
+        <input id="zeppelin_john_paul" type="radio" name="zeppelin" value="zeppelin_john_paul"/>
+        <label for="zeppelin_john_paul">John Paul Jones</label>
+        <input id="zeppelin_robert" type="radio" name="zeppelin" value="zeppelin_robert"/>
+        <label for="zeppelin_robert">Robert Plant</label>
+        <input id="zeppelin_john" type="radio" name="zeppelin" value="zeppelin_john"/>
+        <label for="zeppelin_john">John Bonham</label>
+        </div>
+    </div>
+</form>
+
+<pre><code class="html">&lt;form class="c-form"&gt;
+    &lt;div role="group" aria-labelledby="zeppelin_head"&gt;
+        &lt;h4 id="zeppelin_head" class="bold"&gt;Who is the best member of Led Zeppelin?&lt;/h4&gt;
+        &lt;div class="radio column"&gt;
+        &lt;input id="zeppelin_jimmy" type="radio" name="zeppelin" value="zeppelin_jimmy"/&gt;
+        &lt;label for="zeppelin_jimmy"&gt;Jimmy Page&lt;/label&gt;
+        &lt;input id="zeppelin_john_paul" type="radio" name="zeppelin" value="zeppelin_john_paul"/&gt;
+        &lt;label for="zeppelin_john_paul"&gt;John Paul Jones&lt;/label&gt;
+        &lt;input id="zeppelin_robert" type="radio" name="zeppelin" value="zeppelin_robert"/&gt;
+        &lt;label for="zeppelin_robert"&gt;Robert Plant&lt;/label&gt;
+        &lt;input id="zeppelin_john" type="radio" name="zeppelin" value="zeppelin_john"/&gt;
+        &lt;label for="zeppelin_john"&gt;John Bonham&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+
+<h2 id="select-lists">Select Lists</h2>
+
+<h3 id="option-%231%3A-select-with-no-grouping">Option #1: Select with no grouping</h3>
+
+<form class="c-form">
+    <div class="select">
+        <label for="section1" class="u-visually-hidden">Label for section 1</label>
+        <select id="section1" name="section1">
+        <option label="First select" disabled selected>First select</option>
+        <option label="Option 1.1">Option 1.1</option>
+        <option label="Option 1.2">Option 1.2</option>
+        </select>
+        <div class="select__arrow"></div>
+    </div>
+    <div class="select">
+        <label for="section2" class="u-visually-hidden">Label for section 2</label>
+        <select id="section2" name="section2">
+        <option label="Second select" disabled selected>Second select</option>
+        <option label="Option 2.1">Option 2.1</option>
+        <option label="Option 2.2">Option 2.2</option>
+        </select>
+        <div class="select__arrow"></div>
+    </div>
+</form>
+
+<pre><code class="html">&lt;form class="c-form"&gt;
+    &lt;div class="select"&gt;
+        &lt;label for="section1" class="u-visually-hidden"&gt;Label for section 1&lt;/label&gt;
+        &lt;select id="section1" name="section1"&gt;
+        &lt;option label="First select" disabled selected&gt;First select&lt;/option&gt;
+        &lt;option label="Option 1.1"&gt;Option 1.1&lt;/option&gt;
+        &lt;option label="Option 1.2"&gt;Option 1.2&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;div class="select__arrow"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="select"&gt;
+        &lt;label for="section2" class="u-visually-hidden"&gt;Label for section 2&lt;/label&gt;
+        &lt;select id="section2" name="section2"&gt;
+        &lt;option label="Second select" disabled selected&gt;Second select&lt;/option&gt;
+        &lt;option label="Option 2.1"&gt;Option 2.1&lt;/option&gt;
+        &lt;option label="Option 2.2"&gt;Option 2.2&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;div class="select__arrow"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+
+<h3 id="option-%232%3A-select-with-grouping">Option #2: Select with grouping</h3>
+
+<form class="c-form">
+    <div class="select">
+        <label for="lecture" class="u-visually-hidden">Choose a Lecture</label>
+        <select id="lecture" name="lecture">
+        <option label="Choose a Lecture" disabled selected>Choose a Lecture</option>
+        <optgroup label="1.0 The History of the World: Part I">
+            <option label="Lecture 1.1" value="1.1">Lecture 1.1: In the Beginning</option>
+            <option label="Lecture 1.2" value="1.2">Lecture 1.2: Stuck in the Middle</option>
+            <option label="Lecture 1.3" value="1.3">Lecture 1.3: At the End</option>
+        </optgroup>
+        <optgroup label="2.0 The History of the World: Part II">
+            <option label="Lecture 2.2" value="2.1">Lecture 2.1: Wait! There's More</option>
+        </optgroup>
+        </select>
+        <div class="select__arrow"></div>
+    </div>
+</form>
+
+<pre><code class="html">&lt;form class="c-form"&gt;
+    &lt;div class="select"&gt;
+        &lt;label for="lecture" class="u-visually-hidden"&gt;Choose a Lecture&lt;/label&gt;
+        &lt;select id="lecture" name="lecture"&gt;
+        &lt;option label="Choose a Lecture" disabled selected&gt;Choose a Lecture&lt;/option&gt;
+        &lt;optgroup label="1.0 The History of the World: Part I"&gt;
+            &lt;option label="Lecture 1.1" value="1.1"&gt;Lecture 1.1: In the Beginning&lt;/option&gt;
+            &lt;option label="Lecture 1.2" value="1.2"&gt;Lecture 1.2: Stuck in the Middle&lt;/option&gt;
+            &lt;option label="Lecture 1.3" value="1.3"&gt;Lecture 1.3: At the End&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label="2.0 The History of the World: Part II"&gt;
+            &lt;option label="Lecture 2.2" value="2.1"&gt;Lecture 2.1: Wait! There's More&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;/select&gt;
+        &lt;div class="select__arrow"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="https://a11y-style-guide.com/style-guide/section-forms.html">A11Y Style Guide for Forms</a></li>
+</ul>
 
 <h2 id="todo">TODO</h2>
 

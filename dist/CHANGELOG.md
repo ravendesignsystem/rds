@@ -4,6 +4,12 @@ All notable changes to the project will be documented here, in this file.
 
 ## [v0.16.5](https://github.com/ravendesignsystem/rds/releases/tag/0.16.5) 2020-01-13
 
+**Fixed**: Maintenance release with small patches
+
+- **Fixed**: Added a check on c-form styles to prevent conflict with c-searchform
+
+## [v0.16.5](https://github.com/ravendesignsystem/rds/releases/tag/0.16.5) 2020-01-13
+
 **Removed**: Maintenance release
 
 - **Removed**: Removed files for old form styles, and documentation
