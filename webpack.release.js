@@ -12,7 +12,7 @@ const path = require('path');
 const S3Plugin = require('webpack-s3-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-const version = '0.16.6';
+const version = '0.16.7';
 
 // Build Config
 module.exports = {

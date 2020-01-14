@@ -2,7 +2,14 @@
 
 All notable changes to the project will be documented here, in this file.
 
-## [v0.16.5](https://github.com/ravendesignsystem/rds/releases/tag/0.16.5) 2020-01-13
+## [v0.16.7](https://github.com/ravendesignsystem/rds/releases/tag/0.16.7) 2020-01-13
+
+**Added**, **Changed**: Maintenance release with small patches
+
+- **Added**: spacing above c-searchform if used inside the banner
+- **Changed**: updated max-width of banner content section to match the max width of the small breakpoint used by the main content area
+
+## [v0.16.6](https://github.com/ravendesignsystem/rds/releases/tag/0.16.6) 2020-01-13
 
 **Fixed**: Maintenance release with small patches
 
