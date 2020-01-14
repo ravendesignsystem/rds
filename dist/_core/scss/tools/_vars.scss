@@ -16,7 +16,7 @@
 
 // 0. RDS version
 // --------------
-$version: '0.16.6';
+$version: '0.16.7';
 
 // 1. Media query breakpoints
 // --------------------------
@@ -56,10 +56,17 @@ $grey: #f3f3f3;
 // CU digital red
 $red: #bf112b;
 
-// main link color
+// Main link color
 $link: #105f83;
 
-$pink: #f9e6e9; // error bg color
+// Other colors
+$blue: #91d5ff; // info foreground
+$light-blue: #e6f7ff; // info background
+$pink: #f9e6e9; // error background
+$green: #45bf2e; // success foreground
+$light-green: #fafff5; // success background
+$yellow: #faab08; // warning foreground
+$light-yellow: #fffaf1; // warning background
 
 // 50-44 shades of grey
 // mostly for light bgs
