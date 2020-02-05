@@ -3,7 +3,8 @@
 	padding-top: 0;
 }
 
-.b-banner {
+.b-banner,
+.b-wideimage {
 	display: flex;
 	justify-content: center;
 	padding: 20px 0;
@@ -14,7 +15,8 @@
 	}
 
 	// Heading
-	h1 {
+	h1,
+	h2 {
 		margin: 0;
 		padding: 0;
 
@@ -86,7 +88,8 @@
  * =======================================
  */
 
-.b-banner--img {
+.b-banner--img,
+.b-wideimage {
 	position: relative;
 	background-size: cover;
 	background-position: center center;
@@ -144,11 +147,13 @@
  * =======================================
  */
 
-.b-banner--img-light:after {
+.b-banner--img-light:after,
+.b-wideimage--light:after {
 	background-color: rgba(0, 0, 0, 0.35);
 }
 
-.b-banner--img-dark:after {
+.b-banner--img-dark:after,
+.b-wideimage--dark:after {
 	background-color: rgba(0, 0, 0, 0.75);
 }
 
@@ -157,10 +162,12 @@
  * =======================================
  */
 
-.b-banner--img-top {
+.b-banner--img-top,
+.b-wideimage--top {
 	background-position: center top;
 }
 
-.b-banner--img-bottom {
+.b-banner--img-bottom,
+.b-wideimage--bottom {
 	background-position: center bottom;
 }
