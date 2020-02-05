@@ -1,6 +1,13 @@
 # RDS Change Log
 
-All notable changes to the project will be documented here, in this file.
+All notable changes to the project will be documented here, in this file
+
+## [v0.16.8](https://github.com/ravendesignsystem/rds/releases/tag/0.16.8) 2020-02-05
+
+**Added**: Maintenance release with small patches
+
+- **Added**: added shared classes to b-banner to be used for b-wideimage
+- **Added**: added checks to multicol__sidebar for first of type to modify spacing
 
 ## [v0.16.7](https://github.com/ravendesignsystem/rds/releases/tag/0.16.7) 2020-01-13
 
