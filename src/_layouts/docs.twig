@@ -92,7 +92,6 @@
 {% block body %}
     {% if (page.menu) or (page.sidebar) %}
 
-
     <div class="l-multicol{% if page.sidebar %} l-multicol--ama{% else %} l-multicol--am{% endif %}{% if 'l' in page.sidebar %} l-multicol--sidebar-large{% endif %} {% if 'top' in page.sidebar %} l-multicol--sidebar-top{% endif %}">
         {% block menu %}
             <aside class="multicol__nav">
