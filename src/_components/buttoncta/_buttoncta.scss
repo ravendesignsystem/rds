@@ -13,7 +13,7 @@ a.c-buttoncta {
 	box-shadow: 0 4px 9px rgba(black, 0.25);
 	display: inline-flex;
 	text-decoration: none;
-	margin: 0 10px 20px 0;
+	margin: 0 10px 0 0;
 	overflow: hidden;
 
 	&:hover {
@@ -72,8 +72,9 @@ a.c-buttoncta--ghost {
 	transform: translateX(-50%);
 }
 
-.c-buttoncta--full {
+a.c-buttoncta--full {
 	width: 100%;
+	margin: 0;
 }
 
 .c-buttoncta.u-icon svg {
