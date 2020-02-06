@@ -61,11 +61,12 @@
 	p {
 		margin-top: 10px;
 		margin-bottom: 0;
+	}
 
-		// Buttons
-		.c-buttoncta {
-			margin-top: 10px;
-		}
+	// Buttons
+	.c-buttoncta,
+	a.c-buttoncta {
+		margin: 10px 5px 0 5px;
 	}
 
 	.c-searchform {
