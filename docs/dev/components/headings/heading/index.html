@@ -126,7 +126,6 @@ Raven Design System
                             </header>
 
     
-
     <div class="l-multicol l-multicol--am ">
                     <aside class="multicol__nav">
             <div class="b-menu b-menu--sidenav u-sticky">
@@ -287,10 +286,10 @@ Raven Design System
                     <button aria-expanded="false" aria-controls="submenu_level_b2">+</button>
                     <ul id="submenu_level_b2" class="is-submenu">
                         <li>
-                            <a href="https://ravendesignsystem.github.io/rds/dev/components/buttons/cta/">CTA</a>
+                            <a href="https://ravendesignsystem.github.io/rds/dev/components/buttons/buttoncta/">CTA</a>
                         </li>
                         <li>
-                            <a href="https://ravendesignsystem.github.io/rds/dev/components/buttons/social/">Social</a>
+                            <a href="https://ravendesignsystem.github.io/rds/dev/components/buttons/buttonsocial/">Social</a>
                         </li>
                     </ul>
                 </li>
@@ -386,46 +385,70 @@ Raven Design System
                                         <div class="u-block u-block--white">
                         <div class="b-content">
                     
-                    <p>The Heading component specifies a block's header. Use it for introductory content in <a href="#blockswithheadings">blocks that allow for heading components</a>.</p>
+                    <p>The Heading component provides <a href="#blocks-with-headings">certain blocks</a> the option to employ a heading at the start of the block. Use the Heading component for block headers and introductory content.</p>
 
-<h2 id="base-heading">Base Heading</h2>
+<h2 class="c-heading">Base Heading component example</h2>
 
-<pre><code class="html">&lt;header&gt;
-    &lt;h2 class="c-heading"&gt;Heading component example&lt;/h2&gt;
-&lt;/header&gt;
+<pre><code class="html">&lt;h2 class="c-heading"&gt;Base Heading component&lt;/h2&gt;
+&lt;u-block...
 </code></pre>
 
-<p>The base Heading component is always an <code>&lt;h2&gt;</code> wrapped in a <code>header</code> tag.</p>
+<p><strong>Note:</strong> the first heading in the Heading component is always an <code>&lt;h2&gt;</code>.</p>
 
-<h2 id="heading-component-centered">Heading component centered</h2>
+<h2 id="centered-heading-component">Centered Heading component</h2>
 
 <p>In <a href="#">single column layouts</a>, the Heading component can be centered using the <br> <code>c-heading--center</code> modifier.</p>
 
+<h2 class="c-heading c-heading--center">Centered Heading component</h2>
+
+<pre><code class="html">&lt;h2 class="c-heading c-heading--center"&gt;Centered Heading component&lt;/h2&gt;
+</code></pre>
+
+<h2 id="subheadings-and-paragraphs">Subheadings and paragraphs</h2>
+
+<p>An <code>&lt;h3&gt;</code> subheading and a single paragraph can be used either together or individually.</p>
+
+<header>
+    <h2 class="c-heading">Heading with Paragraph</h2>
+    <p>There should only be one, short paragraph within heading components.</p>
+</header>
+
 <pre><code class="html">&lt;header&gt;
-    &lt;h2 class="c-heading c-heading--center"&gt;Centered Heading component example&lt;/h2&gt;
+    &lt;h2 class="c-heading"&gt;Heading with Paragraph&lt;/h2&gt;
+    &lt;p&gt;There should only be one, short paragraph within heading components.&lt;/p&gt;
 &lt;/header&gt;
 </code></pre>
 
+<p><br></p>
+
 <header>
-    <h2 class="c-heading c-heading--center">Centered Heading component example</h2>
+    <h2 class="c-heading c-heading--center">Centered Heading with Paragraph</h2>
+    <p>There should only be one, short paragraph within heading components</p>
 </header>
 
-<h3 id="subheadings">Subheadings</h3>
-
-<p>Centered Heading components can have slightly longer subheadings.</p>
-
 <pre><code class="html">&lt;header&gt;
-    &lt;h2 class="c-heading c-heading--center"&gt;Centered Heading component example&lt;/h2&gt;
-    &lt;p&gt;Centered Heading components can have slightly longer subheadings.&lt;/p&gt;
+    &lt;h2 class="c-heading c-heading--center"&gt;Centered Heading with Paragraph&lt;/h2&gt;
+    &lt;p&gt;There should only be one, short paragraph within heading components.&lt;/p&gt;
 &lt;/header&gt;
 </code></pre>
 
+<p><br></p>
+
 <header>
-    <h2 class="c-heading c-heading--center">Centered Heading component example</h2>
-    <p>Centered Heading components can have slightly longer subheadings.</p>
+    <h2 class="c-heading">Heading with Paragraph and Subheading</h2>
+    <p>There should only be one, short paragraph within heading components.</p>
+    <h3>Subheadings following an h2 need to be an h3.</h3>
 </header>
 
-<h3 id="blocks-with-headings">Blocks with headings</h3>
+<pre><code class="html">&lt;header&gt;
+    &lt;h2 class="c-heading"&gt;Heading with Paragraph and Subheading&lt;/h2&gt;
+    &lt;p&gt;There should only be one, short paragraph within heading components.&lt;/p&gt;
+    &lt;h3&gt;Subheadings following an &lt;code&gt;h2&lt;/code&gt; need to be &lt;code&gt;h3&lt;/code&gt;s.&lt;/h3&gt;
+&lt;/header&gt;
+&lt;u-block...
+</code></pre>
+
+<h2 id="blocks-with-headings">Blocks with headings</h2>
 
 <p>The heading component can be used in the following blocks:</p>
 
