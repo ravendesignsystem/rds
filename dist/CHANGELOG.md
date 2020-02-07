@@ -2,6 +2,15 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.16.9](https://github.com/ravendesignsystem/rds/releases/tag/0.16.9) 2020-02-06
+
+**Added**, **Changed**: Maintenance release with small patches
+
+- **Changed**: Removed margin from main button components
+- **Changed**: Added spacing to button components only when used inside banners
+- **Changed**: Modifying list style type for ordered lists
+- **Changed**: Updated banner styles to fix issue with c-searchform being responsive
+
 ## [v0.16.8](https://github.com/ravendesignsystem/rds/releases/tag/0.16.8) 2020-02-05
 
 **Added**: Maintenance release with small patches

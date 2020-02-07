@@ -14,6 +14,10 @@
 		padding: 40px 0;
 	}
 
+	section {
+		width: 100%;
+	}
+
 	// Heading
 	h1,
 	h2 {
@@ -69,7 +73,7 @@
 	}
 
 	.c-searchform {
-		min-width: #{map-get($breakpoints, s)};
+		width: 100%;
 		margin-top: $block-padding-s;
 
 		@include media('>s') {
