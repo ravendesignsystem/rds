@@ -187,6 +187,14 @@ ol ol {
 	line-height: 1.9;
 }
 
+ol li li {
+	list-style-type: lower-alpha;
+}
+
+ol li li li {
+	list-style-type: lower-roman;
+}
+
 blockquote {
 	font-weight: 300;
 	// font-style: italic;
@@ -194,10 +202,10 @@ blockquote {
 	margin: 0 0 25px 0;
 	padding: 0.5em 1em;
 
-    cite {
-        display: block;
-        margin-top: 15px;
-    }
+	cite {
+		display: block;
+		margin-top: 15px;
+	}
 
 	& p {
 		margin-bottom: 0;

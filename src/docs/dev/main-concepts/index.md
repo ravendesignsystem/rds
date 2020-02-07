@@ -38,13 +38,13 @@ RDS pages are divided into sections to define the structure of a page and isolat
 - Main - `<main>`
 - Aside - `<aside>`
 - Footer - `<footer>`
-- Dialogue - `<dialogue>`
+- Dialog - `<dialog>`
 
 By defining the above page sections, we help provide a clear understanding of what role is played by the content within those sections. In addition, we can provide clear use cases for specific content types. For example, the [Banner block](#) is categorized as a *header block* since it can only reside within the `<header>` section.
 
 TBD: show image of banner blocks
 
-**Note**: the specs dictate that a single HTML document can have multiple `<header>` and `<footer>` elements. In RDS, the 'Header section' is always denoted by the first `<header>Header section</header>` on the page. The 'Footer section' by the last `<footer>Footer section</footer>` on the page. For example:
+**Note**: the specs dictate that a single HTML document can have multiple `<header>` and `<footer>` elements. In RDS, the 'Header section' is always denoted by the first `<header>Header section</header>` on the page and the 'Footer section' by the last `<footer>Footer section</footer>` on the page. For example:
 
 ```html
 <html lang="en">

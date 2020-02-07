@@ -16,49 +16,71 @@ meta:
     path: heading/
     theme: Core
 ---
-The Heading component specifies a block's header. Use it for introductory content in [blocks that allow for heading components](#blockswithheadings).
+The Heading component provides [certain blocks](#blocks-with-headings) the option to employ a heading at the start of the block. Use the Heading component for block headers and introductory content.
 
-## Base Heading
+<h2 class="c-heading">Base Heading component example</h2>
 
 ```html
-<header>
-    <h2 class="c-heading">Heading component example</h2>
-</header>
+<h2 class="c-heading">Base Heading component</h2>
+<u-block...
 ```
 
-The base Heading component is always an `<h2>` wrapped in a `header` tag.
+**Note:** the first heading in the Heading component is always an `<h2>`.
 
-## Heading component centered
+## Centered Heading component 
 
 In [single column layouts](#), the Heading component can be centered using the <br> `c-heading--center` modifier.
 
-```html
-<header>
-    <h2 class="c-heading c-heading--center">Centered Heading component example</h2>
-</header>
-```
-
-<header>
-    <h2 class="c-heading c-heading--center">Centered Heading component example</h2>
-</header>
-
-### Subheadings 
-
-Centered Heading components can have slightly longer subheadings. 
+<h2 class="c-heading c-heading--center">Centered Heading component</h2>
 
 ```html
-<header>
-    <h2 class="c-heading c-heading--center">Centered Heading component example</h2>
-    <p>Centered Heading components can have slightly longer subheadings.</p>
-</header>
+<h2 class="c-heading c-heading--center">Centered Heading component</h2>
 ```
 
+## Subheadings and paragraphs
+
+An `<h3>` subheading and a single paragraph can be used either together or individually. 
+
 <header>
-    <h2 class="c-heading c-heading--center">Centered Heading component example</h2>
-    <p>Centered Heading components can have slightly longer subheadings.</p>
+    <h2 class="c-heading">Heading with Paragraph</h2>
+    <p>There should only be one, short paragraph within heading components.</p>
 </header>
 
-### Blocks with headings
+```html
+<header>
+    <h2 class="c-heading">Heading with Paragraph</h2>
+    <p>There should only be one, short paragraph within heading components.</p>
+</header>
+```
+<br>
+<header>
+    <h2 class="c-heading c-heading--center">Centered Heading with Paragraph</h2>
+    <p>There should only be one, short paragraph within heading components</p>
+</header>
+
+```html
+<header>
+    <h2 class="c-heading c-heading--center">Centered Heading with Paragraph</h2>
+    <p>There should only be one, short paragraph within heading components.</p>
+</header>
+```
+<br>
+<header>
+    <h2 class="c-heading">Heading with Paragraph and Subheading</h2>
+    <p>There should only be one, short paragraph within heading components.</p>
+    <h3>Subheadings following an h2 need to be an h3.</h3>
+</header>
+
+```html
+<header>
+    <h2 class="c-heading">Heading with Paragraph and Subheading</h2>
+    <p>There should only be one, short paragraph within heading components.</p>
+    <h3>Subheadings following an <code>h2</code> need to be <code>h3</code>s.</h3>
+</header>
+<u-block...
+```
+
+## Blocks with headings
 
 The heading component can be used in the following blocks:
 

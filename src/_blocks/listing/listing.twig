@@ -1,9 +1,9 @@
 {% macro listing(data) %}
-{% if data.blockHeading %}
+{% if (data.blockHeading) or (data.h3) %}
 <section class="u-block {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
-    <h2{% if data.blockHeadingCenter %} class="c-heading--center{% if data.subHeading %} c-heading--subheading{% endif %}"{% endif %}>{{ data.blockHeading }}</h2>
-    {% if data.blockSubheading %}<p>{{ data.blockSubheading }}</p>
-{% endif %}
+    {% if data.blockHeading %}<h2 class="c-heading{% if (data.blockHeadingCenter) %} c-heading--center{% endif %} {% if (data.h3) or (data.blockParagraph) %}{% else %}u-no-border{% endif %}">{{ data.blockHeading }}</h2>{% endif %}
+    {% if data.blockParagraph %}<p>{{ data.blockParagraph }}</p>{% endif %}
+    {% if data.h3 %}<h3>{{ data.h3 }}</h3>{% endif %}
 {% else %}
 <div class="u-block {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
 {% endif %}
@@ -67,9 +67,9 @@
             </li>
 {% endfor %}
         </ul>
-{% if data.blockHeading|length == 0 %}
+{% if (data.blockHeading) or (data.h3) %}
     </div>
-</div>
+</section>
 {% if data.grid %}
 </div>
 {% endif %}

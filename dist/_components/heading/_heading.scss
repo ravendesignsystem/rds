@@ -5,9 +5,9 @@
 .c-heading--center {
 	font-size: $pixel30;
 	text-align: center;
-	border-bottom: none;
+	border-bottom: none !important;
 	padding-bottom: 20px;
-	margin-bottom: 40px;
+	margin-bottom: 25px;
 	position: relative;
 
 	&:after {
@@ -34,6 +34,8 @@
 	padding-bottom: 25px;
 	max-width: 620px;
 	margin-top: -5px;
+	margin-left: auto;
+	margin-right: auto;
 
 	@include media('>=s') {
 		font-size: $pixel20;
@@ -41,9 +43,10 @@
 	}
 }
 
-.c-heading--subheading {
+.c-heading--center {
 	padding-bottom: 20px;
 	margin-bottom: 0;
+	border-bottom: 1px solid red;
 
 	&:after {
 		border-bottom: none;
