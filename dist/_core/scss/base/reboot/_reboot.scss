@@ -307,6 +307,17 @@ table thead tr th {
 	color: white;
 }
 
+table tfoot tr td {
+	border: 1px solid $grey-kenobi;
+	background-color: $grey-kenobi;
+	color: black;
+}
+
+table + figcaption {
+	font-style: italic;
+	margin-bottom: 25px;
+}
+
 td,
 th {
 	padding: 0;

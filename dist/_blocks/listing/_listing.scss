@@ -3,22 +3,14 @@
  * =============
  */
 
-.b-listing {
-	> ul {
-		list-style-type: none;
-		margin: 0;
-		border-top: 1px solid $grey-yoda;
-		border-bottom: 1px solid $grey-yoda;
-	}
+.b-listing > ul {
+	list-style-type: none;
+	margin: 0;
+	border-top: 1px solid $grey-yoda;
+	border-bottom: 1px solid $grey-yoda;
+}
 
-	li {
-		position: relative;
-
-		&:not(:last-child) {
-			border-bottom: 1px solid $grey-yoda;
-		}
-	}
-
+.b-listing:not(.b-listing--accordion) {
 	a {
 		display: flex;
 		align-items: center;
@@ -218,10 +210,7 @@
 
 .b-listing--accordion ul {
 	border: none;
-}
-
-.b-listing--accordion li:not(:last-child) {
-	border-bottom: none;
+	margin-bottom: 25px;
 }
 
 // Grey Block
