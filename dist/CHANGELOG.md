@@ -2,6 +2,13 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.17.0](https://github.com/ravendesignsystem/rds/releases/tag/0.17.0) 2020-02-25
+
+**Added**, **Changed**: Maintenance release with small patches
+
+**Added**: Table styles for tfoot and figcaption
+**Changed**: b-listing styles to prevent conflicts when b-listing--accordion is used
+
 ## [v0.16.9](https://github.com/ravendesignsystem/rds/releases/tag/0.16.9) 2020-02-06
 
 **Added**, **Changed**: Maintenance release with small patches

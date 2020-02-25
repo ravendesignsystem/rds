@@ -1,6 +1,6 @@
 {
 	"name": "@carleton/rds",
-	"version": "0.16.9",
+	"version": "0.17.0",
 	"description": "RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language.",
 	"main": "core/js/core",
 	"scripts": {
