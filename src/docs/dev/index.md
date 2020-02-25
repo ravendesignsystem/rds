@@ -261,7 +261,7 @@ banner:
 
 {# 
 
-- [Introduction]({{site.url}}dev/custom-theming/)
+- [Intro]({{site.url}}dev/custom-theming/)
 - [Installing RDS]({{site.url}}dev/custom-theming/installing-rds/)
 - [SASS]({{site.url}}dev/custom-theming/sass/)
 - [Creating custom blocks]({{site.url}}dev/custom-theming/installing-rds/)
