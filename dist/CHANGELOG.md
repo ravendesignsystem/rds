@@ -2,6 +2,12 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.17.1](https://github.com/ravendesignsystem/rds/releases/tag/0.17.1) 2020-02-26
+
+**Changed**: Maintenance release with small patches
+
+**Changed**: updated b-listing and c-accordion styles to fixed issues that went unnoticed in v0.17.0
+
 ## [v0.17.0](https://github.com/ravendesignsystem/rds/releases/tag/0.17.0) 2020-02-25
 
 **Added**, **Changed**: Maintenance release with small patches
