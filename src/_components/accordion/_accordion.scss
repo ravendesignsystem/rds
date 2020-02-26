@@ -15,6 +15,19 @@
 		text-overflow: initial;
 		white-space: initial;
 	}
+
+	a {
+		color: $link;
+		background-color: #fbfdfd;
+		border-bottom: 1px solid #c8dae3;
+		word-wrap: break-word;
+
+		&:hover {
+			border-bottom: 1px solid $red;
+			color: $red;
+			background-color: #fefbfb;
+		}
+	}
 }
 
 .c-accordion + *:not(.c-accordion) {
@@ -47,7 +60,7 @@
 // ----------------------------------------------
 
 .c-accordion input:checked ~ .accordion__content {
-	max-height: 5000px;
+	max-height: 1000px;
 	transition: max-height 1.5s;
 }
 

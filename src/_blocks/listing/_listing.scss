@@ -8,6 +8,14 @@
 	margin: 0;
 	border-top: 1px solid $grey-yoda;
 	border-bottom: 1px solid $grey-yoda;
+
+	& > li {
+		position: relative;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid $grey-yoda;
+		}
+	}
 }
 
 .b-listing:not(.b-listing--accordion) {
