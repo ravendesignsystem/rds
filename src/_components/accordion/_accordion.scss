@@ -60,7 +60,7 @@
 // ----------------------------------------------
 
 .c-accordion input:checked ~ .accordion__content {
-	max-height: 1000px;
+	max-height: 5000px;
 	transition: max-height 1.5s;
 }
 
