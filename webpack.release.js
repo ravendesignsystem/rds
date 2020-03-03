@@ -99,7 +99,7 @@ module.exports = {
 					},
 					{
 						source: './src/_components/icons/*.svg',
-						destination: './dist/_components',
+						destination: './dist/_components/icons',
 					},
 					{
 						source: './src/_core',
