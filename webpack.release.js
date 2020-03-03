@@ -98,6 +98,10 @@ module.exports = {
 						destination: './dist/_components',
 					},
 					{
+						source: './src/_components/icons/*.svg',
+						destination: './dist/_components',
+					},
+					{
 						source: './src/_core',
 						destination: './dist/_core',
 					},
