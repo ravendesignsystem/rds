@@ -2,6 +2,12 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.17.3](https://github.com/ravendesignsystem/rds/releases/tag/0.17.3) 2020-03-03
+
+**Fixed**: Maintenance release with small patches
+
+- **Fixed**: Incorrectly copied icons, updated webpack to do this properly
+
 ## [v0.17.2](https://github.com/ravendesignsystem/rds/releases/tag/0.17.2) 2020-03-03
 
 **Added**: Maintenance release with small patches
