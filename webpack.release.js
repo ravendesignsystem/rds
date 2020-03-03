@@ -12,7 +12,7 @@ const path = require('path');
 const S3Plugin = require('webpack-s3-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-const version = '0.17.1';
+const version = '0.17.2';
 
 // Build Config
 module.exports = {
@@ -95,6 +95,10 @@ module.exports = {
 					},
 					{
 						source: './src/_components/**/*.js',
+						destination: './dist/_components',
+					},
+					{
+						source: './src/_components/icons/*.svg',
 						destination: './dist/_components',
 					},
 					{

@@ -2,6 +2,12 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.17.2](https://github.com/ravendesignsystem/rds/releases/tag/0.17.2) 2020-03-03
+
+**Added**: Maintenance release with small patches
+
+**Added**: svg icons now being included in npm package
+
 ## [v0.17.1](https://github.com/ravendesignsystem/rds/releases/tag/0.17.1) 2020-02-26
 
 **Changed**: Maintenance release with small patches
