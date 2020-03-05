@@ -110,6 +110,12 @@
 	@include media('>s') {
 		margin: 0 30px 0 0;
 	}
+
+	// Reduce font size of decsription area
+	& + p {
+		color: $grey-emperor;
+		font-size: $pixel16;
+	}
 }
 
 // Timeline paragraph top line
@@ -159,9 +165,4 @@
 			left: -46px;
 		}
 	}
-}
-
-.timeline__list p + p {
-	color: $grey-emperor;
-	font-size: $pixel16;
 }
