@@ -6,47 +6,30 @@ title: Timeline
 section: Blocks
 subsection: Main blocks
 ---
-Description
+The timeline block allows you to display a chronological list of items that have a start point, and end point. The most common use case for this block would be a list of events with a defined start and end year, with each individual item pertaining to a specific day, month, or even year.
 
-<!-- {%include "inc" with {'block': 'cardgrid-base', 'close': false} %} -->
+{% include 'timeline/timeline' %}
 
-### Markup Example
+<div class="c-alert c-alert--info c-alert--icon u-hide-s">
+    {% include "icons/info.svg" %}
+    <h2>Optional Components</h2>
+    <p>Both the heading and paragraph components are optional for this block. While they are optional, the paragraph should not be used without the header, the formatting will not be what you expect.</p>
+</div>
+
+## Markup Example
 ```html
-<section class="b-timeline">
-
-    <h2 class="c-heading c-heading--center">Heading is Optional</h2>
-    <p>And the description is optional as well.</p>
-
-    <div class="timeline__container">
-
-        <div class="timeline__bookend">
-            <p>2009</p>
-        </div>
-
-        <ul class="timeline__list" itemscope itemtype="http://schema.org/ItemList">
-            <li itemprop="item">
-                <p itemprop="name">Sub title for an individual item</p>
-                <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consectetur eleifend diam.</p>
-            </li>
-            <li itemprop="item">
-                <p itemprop="name">A second item on the righthand side</p>
-                <p itemprop="description">Praesent condimentum magna in augue sodales pellentesque quis vel nunc.</p>
-            </li>
-            <li itemprop="item">
-                <p itemprop="name">Items alternate from side to side</p>
-                <p itemprop="description">In imperdiet imperdiet maximus. Sed urna quam, ullam corper eu ligula pulvina.</p>
-            </li>
-            <li itemprop="item">
-                <p itemprop="name">One final item to round it out</p>
-                <p itemprop="description">Donec placerat felis est, in auctor ante varius vel. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </li>
-        </ul>
-
-        <div class="timeline__bookend">
-            <p>2020</p>
-        </div>
-        
-    </div>
-</section>
-
+{% filter escape %}
+{% include 'timeline/timeline' %}
+{% endfilter %}
 ```
+
+## Block details
+
+| {{ page.title }}  block meta |                                          values                                           |
+| ---------------------------- | :---------------------------------------------------------------------------------------: |
+| handle                       |                                         `timeline`                                        |
+| width type                   |                                           fixed                                           |
+| colour options               |                             `u-block--white`, `u-block--grey`                             |
+| section use                  |                                         `<main>`                                          |
+| has heading                  |                                           true                                            |
+| theme(s)                     |                                            CU                                             |

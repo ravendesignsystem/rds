@@ -111,6 +111,10 @@ banner:
                 {
                     title: "Text Image",
                     url: site.url ~ "dev/blocks/main/textimg/"
+                },
+                {
+                    title: "Timeline",
+                    url: site.url ~ "dev/blocks/main/timeline/"
                 }
             ]
     }
