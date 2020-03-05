@@ -160,3 +160,8 @@
 		}
 	}
 }
+
+.timeline__list p + p {
+	color: $grey-emperor;
+	font-size: $pixel16;
+}
