@@ -105,6 +105,10 @@ banner:
                     url: site.url ~ "dev/blocks/main/details/"
                 },
                 {
+                    title: "Image Tiles",
+                    url: site.url ~ "dev/blocks/main/imagetile/"
+                },
+                {
                     title: "Listing",
                     url: site.url ~ "dev/blocks/main/listing/"
                 },

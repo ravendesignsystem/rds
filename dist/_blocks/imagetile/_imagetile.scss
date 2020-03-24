@@ -1,0 +1,181 @@
+//
+// Image Tiles Block
+// TODO: Add line-clamp fallback for IE11
+// TODO: testing in IE11, need a grid fallback
+// -----------------------------
+
+// Main block styles
+.b-imagetile {
+	// position: relative;
+	display: grid;
+	grid-gap: 1px;
+
+	@include media('>l') {
+		grid-template-columns: 50% 25% 25%;
+		grid-template-areas:
+			'big small small'
+			'big small small';
+	}
+}
+
+// Single Tile - Container
+.imagetile__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	// width: 100%;
+	// height: 100%;
+	min-height: 250px;
+	padding: 25px;
+}
+
+// Individual tile item
+.imagetile__item {
+	position: relative;
+	// z-index: 1;
+	// overflow: hidden;
+	background-color: $grey;
+
+	a {
+		color: white;
+	}
+}
+
+// Increase large item size above large breakpoint
+@include media('>l') {
+	.imagetile__item--large {
+		grid-area: big;
+
+		.imagetile__container {
+			min-height: 500px;
+			// padding: 2rem;
+		}
+	}
+}
+
+//
+// Image Tiles Images
+// -----------------------------
+
+.imagetile__image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	// z-index: 2;
+	width: 100%;
+	height: 100%;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover; // TODO: need a fallback for IE11
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		// z-index: 3;
+		display: block;
+		width: 100%;
+		height: 100%;
+		opacity: 0.7;
+		transition: all 0.2s ease-in-out;
+		background-image: linear-gradient(
+			to bottom,
+			rgba(black, 0) 40%,
+			rgba(black, 1),
+			rgba(black, 1)
+		);
+	}
+}
+
+//
+// Image Tiles Content
+// -----------------------------
+
+.imagetile__content {
+	position: relative;
+	// z-index: 4;
+
+	h3 {
+		font-size: 16px;
+		font-weight: 400;
+		margin: 0;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+
+		@include media('>s') {
+			font-size: 20px;
+		}
+	}
+
+	p {
+		font-size: 14px;
+		font-weight: 300;
+		line-height: 1.3;
+		margin: 0;
+		padding-top: 8px;
+
+		@include media('>s') {
+			font-size: 16px;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+	}
+}
+
+// Create hover effect for description
+@include media('>l') {
+	.imagetile__item:not(.imagetile__item--large) {
+		p {
+			opacity: 0;
+			max-height: 0;
+			padding-top: 0;
+			// height: auto;
+			// overflow: hidden;
+		}
+
+		&:hover p {
+			opacity: 1;
+			max-height: 250px;
+			padding-top: 8px;
+		}
+
+		p,
+		&:hover p {
+			transition: max-height 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s,
+				padding-top 0.2s ease-in-out 0s;
+		}
+	}
+}
+
+//
+// Image Tiles Share Tools
+// -----------------------------
+
+.imagetile__tools {
+	position: absolute;
+	right: 25px;
+	bottom: 25px;
+	display: flex;
+	justify-content: flex-end;
+	z-index: 1;
+	display: none; // TODO: remove when building out share tools
+
+	a {
+		width: 25px;
+		height: 25px;
+		overflow: hidden; // TODO: remove when icon is setup
+		background-color: white;
+
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
+	}
+}
