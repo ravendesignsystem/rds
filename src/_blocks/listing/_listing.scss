@@ -53,7 +53,7 @@
 	h4 {
 		font-size: $pixel16;
 		line-height: 1.4em;
-		margin: 3px 0 2px 0;
+		margin: 3px 0;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -117,9 +117,16 @@
 	overflow: hidden;
 	white-space: normal !important;
 	text-overflow: ellipsis;
+	line-height: 1.5 !important;
 
 	@include media('>s') {
 		font-size: $pixel20;
+	}
+
+	// IE11 Fallback, line-clamp not supported
+	@media screen and (-ms-high-contrast: active),
+		screen and (-ms-high-contrast: none) {
+		white-space: nowrap !important;
 	}
 }
 
@@ -135,6 +142,12 @@
 		overflow: hidden;
 		white-space: normal !important;
 		text-overflow: ellipsis;
+	}
+
+	// IE11 Fallback, line-clamp not supported
+	@media screen and (-ms-high-contrast: active),
+		screen and (-ms-high-contrast: none) {
+		white-space: nowrap !important;
 	}
 }
 
