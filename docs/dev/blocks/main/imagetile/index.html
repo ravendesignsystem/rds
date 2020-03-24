@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
         <meta name="robots" content="noodp, noydir"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="canonical" href="https://ravendesignsystem.github.io/rds//docs/dev/components/alerts/alert"/>
+        <link rel="canonical" href="https://ravendesignsystem.github.io/rds//docs/dev/blocks/main/imagetile"/>
 
         <link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" />
                                             <link rel="stylesheet" href="https://ravendesignsystem.github.io/rds/css/docs.css" media="print" onload="this.media='all'">
@@ -17,12 +17,12 @@
         <meta name="msapplication-TileColor" content="#bf112b">
         <meta name="msapplication-config" content="https://cu-rds.s3.amazonaws.com/assets/favicons/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
-        <title>Alert | Raven Design System | RDS</title>
-                                                <meta property="og:url" content="https://ravendesignsystem.github.io/rds//docs/dev/components/alerts/alert">
+        <title>Image Tile | Raven Design System | RDS</title>
+                                                <meta property="og:url" content="https://ravendesignsystem.github.io/rds//docs/dev/blocks/main/imagetile">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Alert">
+        <meta property="og:title" content="Image Tile">
                                                 <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Alert">
+        <meta name="twitter:title" content="Image Tile">
                                     </head>
 
 <body >
@@ -116,10 +116,10 @@ Raven Design System
             <ol itemscope itemtype="http://schema.org/BreadcrumbList">
                 <li itemprop="breadcrumb"><a href="https://ravendesignsystem.github.io/rds/">Home</a></li>
                                 <li itemprop="breadcrumb"><a href="https://ravendesignsystem.github.io/rds//dev/">Dev</a></li>
-                                                <li itemprop="breadcrumb"><a href="../../">Components</a></li>                                <li class="u-visually-hidden" itemprop="breadcrumb" aria-current="page"></li>
+                                                <li itemprop="breadcrumb"><a href="../../">Blocks</a></li>                <li itemprop="breadcrumb"><a href="../">Main blocks</a></li>                <li class="u-visually-hidden" itemprop="breadcrumb" aria-current="page"></li>
             </ol>
         </nav>
-        <h1>Alert Component</h1>
+        <h1>Image Tile Block</h1>
     </section>
 </div>
 </div>
@@ -164,7 +164,7 @@ Raven Design System
 
 		<li class="has-submenu">
 			<a  href="https://ravendesignsystem.github.io/rds/dev/blocks/">Blocks</a>
-			<button aria-expanded="false" aria-controls="submenu_Blocks">+</button>
+			<button aria-expanded="true" aria-controls="submenu_Blocks">+</button>
 			<ul id="submenu_Blocks" class="is-submenu">
 				<li class="has-submenu">
 					<a  href="https://ravendesignsystem.github.io/rds/dev/main-concepts/components-overview/">Header Blocks</a>
@@ -393,210 +393,145 @@ Raven Design System
                                         <div class="u-block u-block--white">
                         <div class="b-content">
                     
-                    <p>    <div class="c-alert c-alert--info" role="alert">
-    <svg height="30" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m10.32 6.874c0-.48.154-.891.48-1.2.326-.308.72-.48 1.2-.48s.891.155 1.2.48c.309.326.48.72.48 1.2s-.154.892-.48 1.2c-.3163741.32328455-.7477148.50840159-1.2.515-.48 0-.891-.189-1.2-.515-.3200568-.31575007-.4940066-.75062456-.48-1.2zm2.863 3.96c-.343-.325-.72-.514-1.183-.531h-1.714c-.463.034-.823.223-1.183.531-.3224942.3115081-.51295382.7350301-.532 1.183h1.715v5.143c.034.463.188.857.531 1.183.343.343.72.531 1.183.531h1.714c.463 0 .823-.188 1.183-.531.343-.326.514-.72.532-1.183h-1.715v-5.16.017c-.0298897-.4451313-.2182721-.8648231-.531-1.183zm-1.183-8.571c-5.383 0-9.771 4.354-9.771 9.737s4.388 9.771 9.771 9.771 9.771-4.371 9.771-9.771-4.388-9.754-9.771-9.754zm0-2.263c6.617 0 12 5.383 12 12s-5.383 12-12 12-12-5.349-12-12 5.383-12 12-12z" fill="#1496da" fill-rule="nonzero" transform="translate(3 3)"/><circle cx="15" cy="15" opacity=".295573" r="12" stroke="#91d5ff" stroke-width="5"/></g></svg>    <h2>Alert Components</h2>
-    <p>Alert components inform users of important information through contextual messages.</p>
-</div>
+                    <p>The image tile block allows you to feature content using images as the primary focal point. The left hand portion of the block is the featured content and uses a large image with title and excerpt, while the right hand side displays 4 additional items with hover effects to reveal the excerpt.</p>
 
+<p><img src="https://cu-rds.s3.amazonaws.com/docs/assets/imagetile.png"  alt="Image tile sections"></p>
 
-</p>
+<h2 id="markup-example">Markup Example</h2>
 
-<p>    <pre><code class="html">&lt;div class=&quot;c-alert c-alert--info&quot; role=&quot;alert&quot;&gt;
-    &lt;svg height=&quot;30&quot; viewBox=&quot;0 0 30 30&quot; width=&quot;30&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;path d=&quot;m10.32 6.874c0-.48.154-.891.48-1.2.326-.308.72-.48 1.2-.48s.891.155 1.2.48c.309.326.48.72.48 1.2s-.154.892-.48 1.2c-.3163741.32328455-.7477148.50840159-1.2.515-.48 0-.891-.189-1.2-.515-.3200568-.31575007-.4940066-.75062456-.48-1.2zm2.863 3.96c-.343-.325-.72-.514-1.183-.531h-1.714c-.463.034-.823.223-1.183.531-.3224942.3115081-.51295382.7350301-.532 1.183h1.715v5.143c.034.463.188.857.531 1.183.343.343.72.531 1.183.531h1.714c.463 0 .823-.188 1.183-.531.343-.326.514-.72.532-1.183h-1.715v-5.16.017c-.0298897-.4451313-.2182721-.8648231-.531-1.183zm-1.183-8.571c-5.383 0-9.771 4.354-9.771 9.737s4.388 9.771 9.771 9.771 9.771-4.371 9.771-9.771-4.388-9.754-9.771-9.754zm0-2.263c6.617 0 12 5.383 12 12s-5.383 12-12 12-12-5.349-12-12 5.383-12 12-12z&quot; fill=&quot;#1496da&quot; fill-rule=&quot;nonzero&quot; transform=&quot;translate(3 3)&quot;/&gt;&lt;circle cx=&quot;15&quot; cy=&quot;15&quot; opacity=&quot;.295573&quot; r=&quot;12&quot; stroke=&quot;#91d5ff&quot; stroke-width=&quot;5&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;    &lt;h2&gt;Alert Components&lt;/h2&gt;
-    &lt;p&gt;Alert components inform users of important information through contextual messages.&lt;/p&gt;
-&lt;/div&gt;</code>
-</pre>
+<pre><code class="html">&lt;div class=&quot;u-block u-block--full&quot;&gt;
+	&lt;div class=&quot;b-imagetile&quot;&gt;
 
-</p>
+		&lt;article class=&quot;imagetile__item imagetile__item--large&quot;&gt;
+			&lt;div class=&quot;imagetile__container&quot;&gt;
+				&lt;a href=&quot;https://hubforgood2.carleton.ca/story/making-music-accessible-to-everyone/&quot;&gt;
+					&lt;figure class=&quot;imagetile__image&quot;&gt;
+						&lt;img src=&quot;https://hubforgood2.carleton.ca/wp-content/uploads/Carleton-campus-music-dominion-chalmers.png&quot; alt=&quot;&quot;&gt;
+					&lt;/figure&gt;
+					&lt;div class=&quot;imagetile__content&quot;&gt;
+						&lt;h3&gt;Making Music Accessible to Everyone&lt;/h3&gt;
+						&lt;p&gt;WAAM delivers community music opportunities to under-served populations&lt;/p&gt;
+					&lt;/div&gt;
+				&lt;/a&gt;
+				&lt;div class=&quot;imagetile__tools&quot;&gt;
+					&lt;a href=&quot;#&quot;&gt;Share&lt;/a&gt;
+					&lt;a href=&quot;#&quot;&gt;Save&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/article&gt;
 
-<p>While a message is required, alert headings are recommended but not required. However, when a header is not used, messages appear very similar.</p>
+		&lt;article class=&quot;imagetile__item&quot;&gt;
+			&lt;div class=&quot;imagetile__container&quot;&gt;
+				&lt;a href=&quot;#&quot;&gt;
+					&lt;figure class=&quot;imagetile__image&quot;&gt;
+						&lt;img src=&quot;https://hubforgood2.carleton.ca/wp-content/uploads/Carleton-University-HubforGood-Science-is-for-everyone2.jpg&quot; alt=&quot;&quot;&gt;
+					&lt;/figure&gt;
+					&lt;div class=&quot;imagetile__content&quot;&gt;
+						&lt;h3&gt;Science is for Everyone&lt;/h3&gt;
+						&lt;p&gt;Faculty of Science brings community together one Café at a time&lt;/p&gt;
+					&lt;/div&gt;
+				&lt;/a&gt;
+				&lt;div class=&quot;imagetile__tools&quot;&gt;
+					&lt;a href=&quot;#&quot;&gt;Share&lt;/a&gt;
+					&lt;a href=&quot;#&quot;&gt;Save&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/article&gt;
 
-<p>    <div class="c-alert c-alert--info" role="alert">
-    <svg height="30" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m10.32 6.874c0-.48.154-.891.48-1.2.326-.308.72-.48 1.2-.48s.891.155 1.2.48c.309.326.48.72.48 1.2s-.154.892-.48 1.2c-.3163741.32328455-.7477148.50840159-1.2.515-.48 0-.891-.189-1.2-.515-.3200568-.31575007-.4940066-.75062456-.48-1.2zm2.863 3.96c-.343-.325-.72-.514-1.183-.531h-1.714c-.463.034-.823.223-1.183.531-.3224942.3115081-.51295382.7350301-.532 1.183h1.715v5.143c.034.463.188.857.531 1.183.343.343.72.531 1.183.531h1.714c.463 0 .823-.188 1.183-.531.343-.326.514-.72.532-1.183h-1.715v-5.16.017c-.0298897-.4451313-.2182721-.8648231-.531-1.183zm-1.183-8.571c-5.383 0-9.771 4.354-9.771 9.737s4.388 9.771 9.771 9.771 9.771-4.371 9.771-9.771-4.388-9.754-9.771-9.754zm0-2.263c6.617 0 12 5.383 12 12s-5.383 12-12 12-12-5.349-12-12 5.383-12 12-12z" fill="#1496da" fill-rule="nonzero" transform="translate(3 3)"/><circle cx="15" cy="15" opacity=".295573" r="12" stroke="#91d5ff" stroke-width="5"/></g></svg>    <p>Headings are not required</p>
-</div>
+		&lt;article class=&quot;imagetile__item&quot;&gt;
+			&lt;div class=&quot;imagetile__container&quot;&gt;
+				&lt;a href=&quot;#&quot;&gt;
+					&lt;figure class=&quot;imagetile__image&quot;&gt;
+						&lt;img src=&quot;https://hubforgood2.carleton.ca/wp-content/uploads/Carleton-University-HubforGood-ButterflyShow-Biology.jpg&quot; alt=&quot;&quot;&gt;
+					&lt;/figure&gt;
+					&lt;div class=&quot;imagetile__content&quot;&gt;
+						&lt;h3&gt;Butterfly Show&lt;/h3&gt;
+						&lt;p&gt;More than 10,000 people each year experience and learn about butterflies and their ecosystems&lt;/p&gt;
+					&lt;/div&gt;
+				&lt;/a&gt;
+				&lt;div class=&quot;imagetile__tools&quot;&gt;
+					&lt;a href=&quot;#&quot;&gt;Share&lt;/a&gt;
+					&lt;a href=&quot;#&quot;&gt;Save&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/article&gt;
 
+		&lt;article class=&quot;imagetile__item&quot;&gt;
+			&lt;div class=&quot;imagetile__container&quot;&gt;
+				&lt;a href=&quot;#&quot;&gt;
+					&lt;figure class=&quot;imagetile__image&quot;&gt;
+						&lt;img src=&quot;https://hubforgood2.carleton.ca/wp-content/uploads/Carleton-University-HubforGood-Interndisciplinary2.jpg&quot; alt=&quot;&quot;&gt;
+					&lt;/figure&gt;
+					&lt;div class=&quot;imagetile__content&quot;&gt;
+						&lt;h3&gt;International, Interdisciplinary Health Intervention&lt;/h3&gt;
+						&lt;p&gt;Carleton researcher leverages diverse perspectives to improve mother-infant outcomes&lt;/p&gt;
+					&lt;/div&gt;
+				&lt;/a&gt;
+				&lt;div class=&quot;imagetile__tools&quot;&gt;
+					&lt;a href=&quot;#&quot;&gt;Share&lt;/a&gt;
+					&lt;a href=&quot;#&quot;&gt;Save&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/article&gt;
 
-</p>
+		&lt;article class=&quot;imagetile__item&quot;&gt;
+			&lt;div class=&quot;imagetile__container&quot;&gt;
+				&lt;a href=&quot;#&quot;&gt;
+					&lt;figure class=&quot;imagetile__image&quot;&gt;
+						&lt;img src=&quot;https://hubforgood2.carleton.ca/wp-content/uploads/Carleton-University-HubforGood-Ravens-Football.jpg&quot; alt=&quot;&quot;&gt;
+					&lt;/figure&gt;
+					&lt;div class=&quot;imagetile__content&quot;&gt;
+						&lt;h3&gt;Ravens for Life&lt;/h3&gt;
+						&lt;p&gt;Carleton football team makes an impact on and off the field&lt;/p&gt;
+					&lt;/div&gt;
+				&lt;/a&gt;
+				&lt;div class=&quot;imagetile__tools&quot;&gt;
+					&lt;a href=&quot;#&quot;&gt;Share&lt;/a&gt;
+					&lt;a href=&quot;#&quot;&gt;Save&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/article&gt;
 
-<p>    <pre><code class="html">&lt;div class=&quot;c-alert c-alert--info&quot; role=&quot;alert&quot;&gt;
-    &lt;svg height=&quot;30&quot; viewBox=&quot;0 0 30 30&quot; width=&quot;30&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;path d=&quot;m10.32 6.874c0-.48.154-.891.48-1.2.326-.308.72-.48 1.2-.48s.891.155 1.2.48c.309.326.48.72.48 1.2s-.154.892-.48 1.2c-.3163741.32328455-.7477148.50840159-1.2.515-.48 0-.891-.189-1.2-.515-.3200568-.31575007-.4940066-.75062456-.48-1.2zm2.863 3.96c-.343-.325-.72-.514-1.183-.531h-1.714c-.463.034-.823.223-1.183.531-.3224942.3115081-.51295382.7350301-.532 1.183h1.715v5.143c.034.463.188.857.531 1.183.343.343.72.531 1.183.531h1.714c.463 0 .823-.188 1.183-.531.343-.326.514-.72.532-1.183h-1.715v-5.16.017c-.0298897-.4451313-.2182721-.8648231-.531-1.183zm-1.183-8.571c-5.383 0-9.771 4.354-9.771 9.737s4.388 9.771 9.771 9.771 9.771-4.371 9.771-9.771-4.388-9.754-9.771-9.754zm0-2.263c6.617 0 12 5.383 12 12s-5.383 12-12 12-12-5.349-12-12 5.383-12 12-12z&quot; fill=&quot;#1496da&quot; fill-rule=&quot;nonzero&quot; transform=&quot;translate(3 3)&quot;/&gt;&lt;circle cx=&quot;15&quot; cy=&quot;15&quot; opacity=&quot;.295573&quot; r=&quot;12&quot; stroke=&quot;#91d5ff&quot; stroke-width=&quot;5&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;    &lt;p&gt;Headings are not required&lt;/p&gt;
-&lt;/div&gt;</code>
-</pre>
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
 
-</p>
+<h2 id="block-details">Block details</h2>
 
-<p>    <div class="c-alert c-alert--info" role="alert">
-    <svg height="30" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m10.32 6.874c0-.48.154-.891.48-1.2.326-.308.72-.48 1.2-.48s.891.155 1.2.48c.309.326.48.72.48 1.2s-.154.892-.48 1.2c-.3163741.32328455-.7477148.50840159-1.2.515-.48 0-.891-.189-1.2-.515-.3200568-.31575007-.4940066-.75062456-.48-1.2zm2.863 3.96c-.343-.325-.72-.514-1.183-.531h-1.714c-.463.034-.823.223-1.183.531-.3224942.3115081-.51295382.7350301-.532 1.183h1.715v5.143c.034.463.188.857.531 1.183.343.343.72.531 1.183.531h1.714c.463 0 .823-.188 1.183-.531.343-.326.514-.72.532-1.183h-1.715v-5.16.017c-.0298897-.4451313-.2182721-.8648231-.531-1.183zm-1.183-8.571c-5.383 0-9.771 4.354-9.771 9.737s4.388 9.771 9.771 9.771 9.771-4.371 9.771-9.771-4.388-9.754-9.771-9.754zm0-2.263c6.617 0 12 5.383 12 12s-5.383 12-12 12-12-5.349-12-12 5.383-12 12-12z" fill="#1496da" fill-rule="nonzero" transform="translate(3 3)"/><circle cx="15" cy="15" opacity=".295573" r="12" stroke="#91d5ff" stroke-width="5"/></g></svg>    <h2>Dismissible Alert Component</h2>
-    <p>To make each Alert dismissible, add the button code below.</p>
-    <button aria-label="Close alert" type="button" data-close>
-    <span class="u-icon" aria-hidden="true">
-        <svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.396 12L24 20.604 20.604 24 12 15.396 3.396 24 0 20.604 8.604 12 0 3.396 3.396 0 12 8.604 20.604 0 24 3.396z"/></svg>
-    </span>
-    </button>
-</div>
-
-
-</p>
-
-<p>    <pre><code class="html">&lt;div class=&quot;c-alert c-alert--info&quot; role=&quot;alert&quot;&gt;
-    &lt;svg height=&quot;30&quot; viewBox=&quot;0 0 30 30&quot; width=&quot;30&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;path d=&quot;m10.32 6.874c0-.48.154-.891.48-1.2.326-.308.72-.48 1.2-.48s.891.155 1.2.48c.309.326.48.72.48 1.2s-.154.892-.48 1.2c-.3163741.32328455-.7477148.50840159-1.2.515-.48 0-.891-.189-1.2-.515-.3200568-.31575007-.4940066-.75062456-.48-1.2zm2.863 3.96c-.343-.325-.72-.514-1.183-.531h-1.714c-.463.034-.823.223-1.183.531-.3224942.3115081-.51295382.7350301-.532 1.183h1.715v5.143c.034.463.188.857.531 1.183.343.343.72.531 1.183.531h1.714c.463 0 .823-.188 1.183-.531.343-.326.514-.72.532-1.183h-1.715v-5.16.017c-.0298897-.4451313-.2182721-.8648231-.531-1.183zm-1.183-8.571c-5.383 0-9.771 4.354-9.771 9.737s4.388 9.771 9.771 9.771 9.771-4.371 9.771-9.771-4.388-9.754-9.771-9.754zm0-2.263c6.617 0 12 5.383 12 12s-5.383 12-12 12-12-5.349-12-12 5.383-12 12-12z&quot; fill=&quot;#1496da&quot; fill-rule=&quot;nonzero&quot; transform=&quot;translate(3 3)&quot;/&gt;&lt;circle cx=&quot;15&quot; cy=&quot;15&quot; opacity=&quot;.295573&quot; r=&quot;12&quot; stroke=&quot;#91d5ff&quot; stroke-width=&quot;5&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;    &lt;h2&gt;Dismissible Alert Component&lt;/h2&gt;
-    &lt;p&gt;To make each Alert dismissible, add the button code below.&lt;/p&gt;
-    &lt;button aria-label=&quot;Close alert&quot; type=&quot;button&quot; data-close&gt;
-    &lt;span class=&quot;u-icon&quot; aria-hidden=&quot;true&quot;&gt;
-        &lt;svg aria-hidden=&quot;true&quot; viewbox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path d=&quot;M15.396 12L24 20.604 20.604 24 12 15.396 3.396 24 0 20.604 8.604 12 0 3.396 3.396 0 12 8.604 20.604 0 24 3.396z&quot;/&gt;&lt;/svg&gt;
-    &lt;/span&gt;
-    &lt;/button&gt;
-&lt;/div&gt;</code>
-</pre>
-
-</p>
-
-<p>There are four different contextual alerts:</p>
-
-<ol>
-<li>Error alerts</li>
-<li>Information alerts</li>
-<li>Success alerts</li>
-<li>Warning alerts</li>
-</ol>
-
-<h3 id="error-alert">Error alert</h3>
-
-<p>Reserved for errors, malfunctions, as well as critical issues campus safety issues.</p>
-
-<p>    <div class="c-alert c-alert--error" role="alert">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13.339 1.75a1.54 1.54 0 0 0-1.33-.75c-.551 0-1.055.285-1.33.75L.206 19.749a1.47 1.47 0 0 0 0 1.502c.29.465.795.751 1.33.751h20.946c.55 0 1.056-.285 1.315-.75.265-.465.27-1.033.015-1.503L13.34 1.75zm.2 17.246H10.48v-3.005h3.059v3.005zm0-4.506H10.48V8.48h3.059v6.01z"/></svg>
-    <h2>Error Alert</h2>
-    <p>An error alert is reserved <a href="#">for errors, malfunctions</a>, as well as critical issues campus safety issues.</p>
-    <button aria-label="Close alert" type="button" data-close>
-    <span class="u-icon" aria-hidden="true">
-        <svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.396 12L24 20.604 20.604 24 12 15.396 3.396 24 0 20.604 8.604 12 0 3.396 3.396 0 12 8.604 20.604 0 24 3.396z"/></svg>
-    </span>
-    </button>
-</div>
-
-
-</p>
-
-<p>    <pre><code class="html">&lt;div class=&quot;c-alert c-alert--error&quot; role=&quot;alert&quot;&gt;
-    &lt;svg viewBox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M13.339 1.75a1.54 1.54 0 0 0-1.33-.75c-.551 0-1.055.285-1.33.75L.206 19.749a1.47 1.47 0 0 0 0 1.502c.29.465.795.751 1.33.751h20.946c.55 0 1.056-.285 1.315-.75.265-.465.27-1.033.015-1.503L13.34 1.75zm.2 17.246H10.48v-3.005h3.059v3.005zm0-4.506H10.48V8.48h3.059v6.01z&quot;/&gt;&lt;/svg&gt;
-    &lt;h2&gt;Error Alert&lt;/h2&gt;
-    &lt;p&gt;An error alert is reserved &lt;a href=&quot;#&quot;&gt;for errors, malfunctions&lt;/a&gt;, as well as critical issues campus safety issues.&lt;/p&gt;
-    &lt;button aria-label=&quot;Close alert&quot; type=&quot;button&quot; data-close&gt;
-    &lt;span class=&quot;u-icon&quot; aria-hidden=&quot;true&quot;&gt;
-        &lt;svg aria-hidden=&quot;true&quot; viewbox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path d=&quot;M15.396 12L24 20.604 20.604 24 12 15.396 3.396 24 0 20.604 8.604 12 0 3.396 3.396 0 12 8.604 20.604 0 24 3.396z&quot;/&gt;&lt;/svg&gt;
-    &lt;/span&gt;
-    &lt;/button&gt;
-&lt;/div&gt;</code>
-</pre>
-
-</p>
-
-<h3 id="information-alert">Information alert</h3>
-
-<p>Used to highlight informational content. Use when standard tags such as <code>&lt;b&gt;</code> and <code>&lt;strong&gt;</code>  or headers don't pull the message out enough. Try and avoid overusing this alert in lieu of standard content.</p>
-
-<p>    <div class="c-alert c-alert--info" role="alert">
-    <svg height="30" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m10.32 6.874c0-.48.154-.891.48-1.2.326-.308.72-.48 1.2-.48s.891.155 1.2.48c.309.326.48.72.48 1.2s-.154.892-.48 1.2c-.3163741.32328455-.7477148.50840159-1.2.515-.48 0-.891-.189-1.2-.515-.3200568-.31575007-.4940066-.75062456-.48-1.2zm2.863 3.96c-.343-.325-.72-.514-1.183-.531h-1.714c-.463.034-.823.223-1.183.531-.3224942.3115081-.51295382.7350301-.532 1.183h1.715v5.143c.034.463.188.857.531 1.183.343.343.72.531 1.183.531h1.714c.463 0 .823-.188 1.183-.531.343-.326.514-.72.532-1.183h-1.715v-5.16.017c-.0298897-.4451313-.2182721-.8648231-.531-1.183zm-1.183-8.571c-5.383 0-9.771 4.354-9.771 9.737s4.388 9.771 9.771 9.771 9.771-4.371 9.771-9.771-4.388-9.754-9.771-9.754zm0-2.263c6.617 0 12 5.383 12 12s-5.383 12-12 12-12-5.349-12-12 5.383-12 12-12z" fill="#1496da" fill-rule="nonzero" transform="translate(3 3)"/><circle cx="15" cy="15" opacity=".295573" r="12" stroke="#91d5ff" stroke-width="5"/></g></svg>    <h2>Information alert</h2>
-    <p>Used to highlight informational content.</p>
-</div>
-
-
-</p>
-
-<p>    <pre><code class="html">&lt;div class=&quot;c-alert c-alert--info&quot; role=&quot;alert&quot;&gt;
-    &lt;svg height=&quot;30&quot; viewBox=&quot;0 0 30 30&quot; width=&quot;30&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;path d=&quot;m10.32 6.874c0-.48.154-.891.48-1.2.326-.308.72-.48 1.2-.48s.891.155 1.2.48c.309.326.48.72.48 1.2s-.154.892-.48 1.2c-.3163741.32328455-.7477148.50840159-1.2.515-.48 0-.891-.189-1.2-.515-.3200568-.31575007-.4940066-.75062456-.48-1.2zm2.863 3.96c-.343-.325-.72-.514-1.183-.531h-1.714c-.463.034-.823.223-1.183.531-.3224942.3115081-.51295382.7350301-.532 1.183h1.715v5.143c.034.463.188.857.531 1.183.343.343.72.531 1.183.531h1.714c.463 0 .823-.188 1.183-.531.343-.326.514-.72.532-1.183h-1.715v-5.16.017c-.0298897-.4451313-.2182721-.8648231-.531-1.183zm-1.183-8.571c-5.383 0-9.771 4.354-9.771 9.737s4.388 9.771 9.771 9.771 9.771-4.371 9.771-9.771-4.388-9.754-9.771-9.754zm0-2.263c6.617 0 12 5.383 12 12s-5.383 12-12 12-12-5.349-12-12 5.383-12 12-12z&quot; fill=&quot;#1496da&quot; fill-rule=&quot;nonzero&quot; transform=&quot;translate(3 3)&quot;/&gt;&lt;circle cx=&quot;15&quot; cy=&quot;15&quot; opacity=&quot;.295573&quot; r=&quot;12&quot; stroke=&quot;#91d5ff&quot; stroke-width=&quot;5&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;    &lt;h2&gt;Information alert&lt;/h2&gt;
-    &lt;p&gt;Used to highlight informational content.&lt;/p&gt;
-&lt;/div&gt;</code>
-</pre>
-
-</p>
-
-<h3 id="success-alert">Success alert</h3>
-
-<p>Provide a success message after an action has been taken.</p>
-
-<p>    <div class="c-alert  c-alert--success" role="alert">
-    <svg viewbox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M23.503 10.598l-1.62-2.01a2.25 2.25 0 0 1-.463-1.155l-.285-2.547A2.265 2.265 0 0 0 19.14 2.89l-2.548-.285c-.45-.045-.84-.239-1.17-.494L13.416.494a2.256 2.256 0 0 0-2.817 0l-2.01 1.62a2.25 2.25 0 0 1-1.155.465l-2.547.285a2.264 2.264 0 0 0-1.995 1.993l-.285 2.549c-.045.45-.238.84-.493 1.17L.494 10.58a2.256 2.256 0 0 0 0 2.817l1.62 2.01c.255.33.42.72.465 1.155l.285 2.547a2.264 2.264 0 0 0 1.993 1.995l2.549.285c.45.045.84.238 1.17.493l2.008 1.62a2.255 2.255 0 0 0 2.817 0l2.01-1.62c.33-.255.72-.42 1.155-.465l2.547-.285a2.264 2.264 0 0 0 1.995-1.993l.285-2.549c.045-.45.238-.84.493-1.17l1.62-2.008a2.256 2.256 0 0 0 0-2.817l-.003.002zM9.758 18L4.51 12.756l2.25-2.25 2.997 3 7.495-7.495L19.5 8.334l-9.743 9.667z"  /></svg>
-    <h2>Upload success</h2>
-    <p>Your document was uploaded successfully.</p>
-    <button aria-label="Close alert" type="button" data-close>
-    <span class="u-icon" aria-hidden="true">
-        <svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.396 12L24 20.604 20.604 24 12 15.396 3.396 24 0 20.604 8.604 12 0 3.396 3.396 0 12 8.604 20.604 0 24 3.396z"/></svg>
-    </span>
-    </button>
-</div>
-
-
-</p>
-
-<p>    <pre><code class="html">&lt;div class=&quot;c-alert  c-alert--success&quot; role=&quot;alert&quot;&gt;
-    &lt;svg viewbox=&quot;0 0 24 24&quot;  xmlns=&quot;http://www.w3.org/2000/svg&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M23.503 10.598l-1.62-2.01a2.25 2.25 0 0 1-.463-1.155l-.285-2.547A2.265 2.265 0 0 0 19.14 2.89l-2.548-.285c-.45-.045-.84-.239-1.17-.494L13.416.494a2.256 2.256 0 0 0-2.817 0l-2.01 1.62a2.25 2.25 0 0 1-1.155.465l-2.547.285a2.264 2.264 0 0 0-1.995 1.993l-.285 2.549c-.045.45-.238.84-.493 1.17L.494 10.58a2.256 2.256 0 0 0 0 2.817l1.62 2.01c.255.33.42.72.465 1.155l.285 2.547a2.264 2.264 0 0 0 1.993 1.995l2.549.285c.45.045.84.238 1.17.493l2.008 1.62a2.255 2.255 0 0 0 2.817 0l2.01-1.62c.33-.255.72-.42 1.155-.465l2.547-.285a2.264 2.264 0 0 0 1.995-1.993l.285-2.549c.045-.45.238-.84.493-1.17l1.62-2.008a2.256 2.256 0 0 0 0-2.817l-.003.002zM9.758 18L4.51 12.756l2.25-2.25 2.997 3 7.495-7.495L19.5 8.334l-9.743 9.667z&quot;  /&gt;&lt;/svg&gt;
-    &lt;h2&gt;Upload success&lt;/h2&gt;
-    &lt;p&gt;Your document was uploaded successfully.&lt;/p&gt;
-    &lt;button aria-label=&quot;Close alert&quot; type=&quot;button&quot; data-close&gt;
-    &lt;span class=&quot;u-icon&quot; aria-hidden=&quot;true&quot;&gt;
-        &lt;svg aria-hidden=&quot;true&quot; viewbox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path d=&quot;M15.396 12L24 20.604 20.604 24 12 15.396 3.396 24 0 20.604 8.604 12 0 3.396 3.396 0 12 8.604 20.604 0 24 3.396z&quot;/&gt;&lt;/svg&gt;
-    &lt;/span&gt;
-    &lt;/button&gt;
-&lt;/div&gt;</code>
-</pre>
-
-</p>
-
-<h3 id="warning-alert">Warning alert</h3>
-
-<p>Used for messages that need the user attention and acknowledgment but might not cause errors. For example:</p>
-
-<p>    <div class="c-alert  c-alert--warning" role="alert">
-    <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" fill-rule="evenodd"><circle cx="12" cy="12" fill="#000" r="10"/><path d="M13.824 17.538H10V14.67h3.824zm0-4.301H10V5.07h3.824z" fill="#fff"/></g></svg>
-    <h2>Outdoor event</h2>
-    <p>Regardless of weather, this event will be held outdoors. Please dress appropriately.</p>
-</div>
-
-
-</p>
-
-<p>    <pre><code class="html">&lt;div class=&quot;c-alert  c-alert--warning&quot; role=&quot;alert&quot;&gt;
-    &lt;svg viewbox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; aria-hidden=&quot;true&quot;&gt;&lt;g fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; fill=&quot;#000&quot; r=&quot;10&quot;/&gt;&lt;path d=&quot;M13.824 17.538H10V14.67h3.824zm0-4.301H10V5.07h3.824z&quot; fill=&quot;#fff&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;
-    &lt;h2&gt;Outdoor event&lt;/h2&gt;
-    &lt;p&gt;Regardless of weather, this event will be held outdoors. Please dress appropriately.&lt;/p&gt;
-&lt;/div&gt;</code>
-</pre>
-
-</p>
-
-<h2 id="found-in">Found in</h2>
-
-<p>Alerts are currently used in the following blocks:</p>
-
-<ul>
-<li>
-                <a href="https://ravendesignsystem.github.io/rds/dev/blocks/header/alertheader/">Alert Header</a>
-                                                                </li>
-</ul>
-
-<h2 id="usage-guidelines">Usage guidelines</h2>
-
-<h2 id="avoid">Avoid</h2>
-
-<p>TODO ADD A DROP SHADOW WHEN DISMISSIBLE - maybe?</p>
-
-<p>https://sparkdesignsystem.com/patterns/components/alerts</p>
-
-<h2 id="references">References</h2>
-
-<ul>
-<li>https://designsystem.digital.gov/components/alert/</li>
-<li>https://uxplanet.org/how-to-write-good-error-messages-858e4551cd4</li>
-</ul>
-
-<p>Should fill the width of the viewport.
-The content should be kept short and concise.
-role="alert" is required so that assistive technology can inform users their attention is needed.
-The data-id property is provided as a hook for automated tools. If you have multiple instances of the same variant of a component on the same page, make sure each instance has a unique data-id property ("alert-info-1", "alert-info-2", "alert-info-3", etc).</p>
-
-<p>orm assistive technologies of a time-sensitive and important message. If the message is interactive, use the use the ARIA role="alertdialog" instead.</p>
+<table>
+<thead>
+<tr>
+  <th align="left">Image Tile block meta</th>
+  <th align="left">values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td align="left">handle</td>
+  <td align="left"><code>imagetile</code></td>
+</tr>
+<tr>
+  <td align="left">width type</td>
+  <td align="left">full</td>
+</tr>
+<tr>
+  <td align="left">colour options</td>
+  <td align="left"><code>u-block--full</code></td>
+</tr>
+<tr>
+  <td align="left">section use</td>
+  <td align="left"><code>&lt;main&gt;</code></td>
+</tr>
+<tr>
+  <td align="left">has heading</td>
+  <td align="left">false</td>
+</tr>
+<tr>
+  <td align="left">theme(s)</td>
+  <td align="left">CU</td>
+</tr>
+</tbody>
+</table>
 
                                                                 </div>
                     </div>
