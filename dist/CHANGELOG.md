@@ -2,6 +2,14 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.18.0](https://github.com/ravendesignsystem/rds/releases/tag/0.18.0) 2020-03-24
+
+**Added**, **Changed**: Maintenance release with small patches and new blocks
+
+- **Added**: Timeline block, including css, markup and documentation
+- **Added**: Image tile block, including css, markup and documentation
+- **Changed**: Updated b-listing--news to allow titles and excerpts to flow over 2 lines with a ellipsis if necessary
+
 ## [v0.17.3](https://github.com/ravendesignsystem/rds/releases/tag/0.17.3) 2020-03-03
 
 **Fixed**: Maintenance release with small patches

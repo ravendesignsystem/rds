@@ -105,12 +105,20 @@ banner:
                     url: site.url ~ "dev/blocks/main/details/"
                 },
                 {
+                    title: "Image Tiles",
+                    url: site.url ~ "dev/blocks/main/imagetile/"
+                },
+                {
                     title: "Listing",
                     url: site.url ~ "dev/blocks/main/listing/"
                 },
                 {
                     title: "Text Image",
                     url: site.url ~ "dev/blocks/main/textimg/"
+                },
+                {
+                    title: "Timeline",
+                    url: site.url ~ "dev/blocks/main/timeline/"
                 }
             ]
     }
@@ -261,7 +269,7 @@ banner:
 
 {# 
 
-- [Introduction]({{site.url}}dev/custom-theming/)
+- [Intro]({{site.url}}dev/custom-theming/)
 - [Installing RDS]({{site.url}}dev/custom-theming/installing-rds/)
 - [SASS]({{site.url}}dev/custom-theming/sass/)
 - [Creating custom blocks]({{site.url}}dev/custom-theming/installing-rds/)
