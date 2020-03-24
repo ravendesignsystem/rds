@@ -6,11 +6,10 @@ title: Image Tile
 section: Blocks
 subsection: Main blocks
 ---
-The timeline block allows you to display a chronological list of items that have a start point, and end point. The most common use case for this block would be a list of events with a defined start and end year, with each individual item pertaining to a specific day, month, or even year.
 
-{% include 'close' %}
-{% include 'imagetile/imagetile' %}
-{% include 'open' %}
+The image tile block allows you to feature content using images as the primary focal point. The left hand portion of the block is the featured content and uses a large image with title and excerpt, while the right hand side displays 4 additional items with hover effects to reveal the excerpt.
+
+<img src="https://cu-rds.s3.amazonaws.com/docs/assets/imagetile.png"  alt="Image tile sections">
 
 ## Markup Example
 ```html
@@ -21,11 +20,11 @@ The timeline block allows you to display a chronological list of items that have
 
 ## Block details
 
-| {{ page.title }}  block meta |                                          values                                           |
-| ---------------------------- | :---------------------------------------------------------------------------------------: |
-| handle                       |                                         `timeline`                                        |
-| width type                   |                                           fixed                                           |
-| colour options               |                             `u-block--white`, `u-block--grey`                             |
-| section use                  |                                         `<main>`                                          |
-| has heading                  |                                           true                                            |
-| theme(s)                     |                                            CU                                             |
+| {{ page.title }} block meta | values          |
+| :-------------------------- | :-------------- |
+| handle                      | `imagetile`     |
+| width type                  | full            |
+| colour options              | `u-block--full` |
+| section use                 | `<main>`        |
+| has heading                 | false           |
+| theme(s)                    | CU              |
