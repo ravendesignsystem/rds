@@ -215,18 +215,18 @@ Form elements in RDS are styled based on their type attribute rather than a clas
     <div class="select">
         <label for="section1" class="u-visually-hidden">Label for section 1</label>
         <select id="section1" name="section1">
-        <option label="First select" disabled selected>First select</option>
-        <option label="Option 1.1">Option 1.1</option>
-        <option label="Option 1.2">Option 1.2</option>
+        <option label="First select" value="1.0" disabled selected>First select</option>
+        <option label="Option 1.1" value="1.1">Option 1.1</option>
+        <option label="Option 1.2" value="1.2">Option 1.2</option>
         </select>
         <div class="select__arrow"></div>
     </div>
     <div class="select">
         <label for="section2" class="u-visually-hidden">Label for section 2</label>
         <select id="section2" name="section2">
-        <option label="Second select" disabled selected>Second select</option>
-        <option label="Option 2.1">Option 2.1</option>
-        <option label="Option 2.2">Option 2.2</option>
+        <option label="Second select" value="2.0" disabled selected>Second select</option>
+        <option label="Option 2.1" value="2.1">Option 2.1</option>
+        <option label="Option 2.2" value="2.2">Option 2.2</option>
         </select>
         <div class="select__arrow"></div>
     </div>
@@ -237,18 +237,18 @@ Form elements in RDS are styled based on their type attribute rather than a clas
     <div class="select">
         <label for="section1" class="u-visually-hidden">Label for section 1</label>
         <select id="section1" name="section1">
-        <option label="First select" disabled selected>First select</option>
-        <option label="Option 1.1">Option 1.1</option>
-        <option label="Option 1.2">Option 1.2</option>
+        <option label="First select" value="1.0" disabled selected>First select</option>
+        <option label="Option 1.1" value="1.1">Option 1.1</option>
+        <option label="Option 1.2" value="1.2">Option 1.2</option>
         </select>
         <div class="select__arrow"></div>
     </div>
     <div class="select">
         <label for="section2" class="u-visually-hidden">Label for section 2</label>
         <select id="section2" name="section2">
-        <option label="Second select" disabled selected>Second select</option>
-        <option label="Option 2.1">Option 2.1</option>
-        <option label="Option 2.2">Option 2.2</option>
+        <option label="Second select" value="2.0" disabled selected>Second select</option>
+        <option label="Option 2.1" value="2.1">Option 2.1</option>
+        <option label="Option 2.2" value="2.2">Option 2.2</option>
         </select>
         <div class="select__arrow"></div>
     </div>
