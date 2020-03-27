@@ -55,6 +55,8 @@
 	@include media('>s') {
 		grid-template-columns: repeat(4, 1fr);
 	}
+
+	grid-gap: 24px;
 }
 
 @include media('<=s') {
