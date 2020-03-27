@@ -24,6 +24,10 @@ Form elements in RDS are styled based on their type attribute rather than a clas
     <label for="username">Username</label>
     <input id="username" type="text" name="textfield" aria-describedby="username-help-text" aria-invalid="true">
     <span id="username-help-text">There was an error with the input above.</span>
+    <label for="read-only">Read Only</label>
+    <input id="read-only" type="text" name="textfield" value="This field is read only" readonly>
+    <label for="disabled">Disabled</label>
+    <input id="disabled" type="text" name="textfield" value="This field is disabled" disabled>
     <label for="city">City</label>
     <input id="city" type="text" name="textfield" aria-describedby="city-help-text" aria-invalid="false">
     <span id="city-help-text">The input above is successful.</span>
@@ -41,6 +45,10 @@ Form elements in RDS are styled based on their type attribute rather than a clas
     <label for="username">Username</label>
     <input id="username" type="text" name="textfield" aria-describedby="username-help-text" aria-invalid="true">
     <span id="username-help-text">There was an error with the input above.</span>
+    <label for="read-only">Read Only</label>
+    <input id="read-only" type="text" name="textfield" value="This field is read only" readonly>
+    <label for="disabled">Disabled</label>
+    <input id="disabled" type="text" name="textfield" value="This field is disabled" disabled>
     <label for="city">City</label>
     <input id="city" type="text" name="textfield" aria-describedby="city-help-text" aria-invalid="false">
     <span id="city-help-text">The input above is successful.</span>

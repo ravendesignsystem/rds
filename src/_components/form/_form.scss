@@ -27,6 +27,11 @@ form:not(.c-searchform),
 		font-size: $pixel16;
 		margin: 10px 0 25px 0;
 		background-color: white;
+
+		&:read-only,
+		&:disabled {
+			background-color: $grey;
+		}
 	}
 
 	// Fieldset groups
