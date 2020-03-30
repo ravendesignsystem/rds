@@ -51,12 +51,11 @@
 
 .u-grid--4 {
 	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 24px;
 
 	@include media('>s') {
 		grid-template-columns: repeat(4, 1fr);
 	}
-
-	grid-gap: 24px;
 }
 
 @include media('<=s') {
@@ -152,7 +151,6 @@
 	border-bottom: 4px solid $red;
 	position: relative;
 }
-
 
 //.multicol__content > .u-block--grey {
 //	background-color: white;
@@ -368,7 +366,7 @@ a.u-link,
 	visibility: hidden;
 }
 
- //hide in dialogue only
+//hide in dialogue only
 dialog .u-hide-dialog {
 	display: none !important;
 }
