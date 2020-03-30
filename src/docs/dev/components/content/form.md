@@ -21,16 +21,16 @@ Form elements in RDS are styled based on their type attribute rather than a clas
     <label for="last-name" class="required-field">Last Name</label>
     <input id="last-name" type="text" name="textfield" aria-describedby="required-message" required>
     <div id="required-message" class="u-visually-hidden">This field is required.</div>
-    <label for="username">Username</label>
-    <input id="username" type="text" name="textfield" aria-describedby="username-help-text" aria-invalid="true">
-    <span id="username-help-text">There was an error with the input above.</span>
+    <label for="success">Success Message</label>
+    <input id="success" type="text" name="textfield" aria-describedby="success-text" aria-invalid="false">
+    <span id="success-text">The input above is successful.</span>
+    <label for="error">Error Message</label>
+    <input id="error" type="text" name="textfield" aria-describedby="error-text" aria-invalid="true">
+    <span id="error-text">There was an error with the input above.</span>
     <label for="read-only">Read Only</label>
     <input id="read-only" type="text" name="textfield" value="This field is read only" readonly>
     <label for="disabled">Disabled</label>
     <input id="disabled" type="text" name="textfield" value="This field is disabled" disabled>
-    <label for="city">City</label>
-    <input id="city" type="text" name="textfield" aria-describedby="city-help-text" aria-invalid="false">
-    <span id="city-help-text">The input above is successful.</span>
     <label for="address">Enter your street address</label>
     <textarea id="address" name="addresstext"></textarea>
 </form>
@@ -39,19 +39,25 @@ Form elements in RDS are styled based on their type attribute rather than a clas
 <form class="c-form">
     <label for="first-name">First Name</label>
     <input id="first-name" type="text" name="textfield">
+    
     <label for="last-name" class="required-field">Last Name</label>
     <input id="last-name" type="text" name="textfield" aria-describedby="required-message" required>
     <div id="required-message" class="u-visually-hidden">This field is required.</div>
-    <label for="username">Username</label>
-    <input id="username" type="text" name="textfield" aria-describedby="username-help-text" aria-invalid="true">
-    <span id="username-help-text">There was an error with the input above.</span>
+    
+    <label for="success">Success Message</label>
+    <input id="success" type="text" name="textfield" aria-describedby="success-text" aria-invalid="false">
+    <span id="success-text">The input above is successful.</span>
+    
+    <label for="error">Error Message</label>
+    <input id="error" type="text" name="textfield" aria-describedby="error-text" aria-invalid="true">
+    <span id="error-text">There was an error with the input above.</span>
+    
     <label for="read-only">Read Only</label>
     <input id="read-only" type="text" name="textfield" value="This field is read only" readonly>
+    
     <label for="disabled">Disabled</label>
     <input id="disabled" type="text" name="textfield" value="This field is disabled" disabled>
-    <label for="city">City</label>
-    <input id="city" type="text" name="textfield" aria-describedby="city-help-text" aria-invalid="false">
-    <span id="city-help-text">The input above is successful.</span>
+    
     <label for="address">Enter your street address</label>
     <textarea id="address" name="addresstext"></textarea>
 </form>
