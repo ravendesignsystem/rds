@@ -79,7 +79,8 @@ a:focus,
 button:focus,
 button:hover,
 input[type='submit']:focus,
-input[type='submit']:hover {
+input[type='submit']:hover input[type='reset']:focus,
+input[type='reset']:hover {
 	text-decoration: none;
 }
 
@@ -359,7 +360,8 @@ iframe {
 
 // only apply the below styles if wrapped in a form
 form {
-	& input[type='submit'] {
+	& input[type='submit'],
+	& input[type='reset'] {
 		background-image: linear-gradient(-180deg, #3f9feb 3%, #0268b0 100%);
 		border: 1px solid #0077cc;
 		box-shadow: 0 5px 4px 0 rgba(130, 130, 130, 0.5), inset 0 1px 3px 0 #e9f5ff;
@@ -377,5 +379,12 @@ form {
 			background-image: linear-gradient(-180deg, #50b2ff 3%, #0268b0 100%);
 			cursor: pointer;
 		}
+	}
+
+	& input[type='reset'] {
+		color: $grey-emperor;
+		text-shadow: none;
+		border-color: $grey-yoda;
+		background-image: linear-gradient(-180deg, $grey 3%, $grey-kenobi 100%);
 	}
 }
