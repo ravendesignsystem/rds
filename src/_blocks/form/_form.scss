@@ -252,7 +252,8 @@
 	& + input,
 	& + textarea,
 	& + select,
-	& + .form__group {
+	& + .form__group,
+	& + .form__upload {
 		margin-top: 10px;
 	}
 }
@@ -261,7 +262,8 @@
 .b-form {
 	input,
 	textarea,
-	select {
+	select,
+	.form__upload {
 		& + .form__description {
 			margin-top: 10px;
 		}
