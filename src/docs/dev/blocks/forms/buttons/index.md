@@ -17,13 +17,13 @@ Add information about available form button components.
 Add a short description.
 
 <form class="b-form">
-  <div class="form__button">
+  <div class="form__field form__field--button">
       <input id="" type="submit" class="form__reset" value="Submit" onclick="" onkeypress="">
   </div>
 </form>
 
 ```html
-<div class="form__button">
+<div class="form__field form__field--button">
     <input id="" type="submit" class="form__reset" value="Submit" onclick="" onkeypress="">
 </div>
 ```
@@ -33,14 +33,14 @@ Add a short description.
 Add a short description.
 
 <form class="b-form">
-  <div class="form__button">
+  <div class="form__field form__field--button">
       <input id="" type="submit" class="form__reset" value="Submit" onclick="" onkeypress="">
       <input id="" type="reset" class="form__submit" value="Reset" onclick="" onkeypress="">
   </div>
 </form>
 
 ```html
-<div class="form__button">
+<div class="form__field form__field--button">
     <input id="" type="submit" class="form__reset" value="Submit" onclick="" onkeypress="">
     <input id="" type="reset" class="form__submit" value="Reset" onclick="" onkeypress="">
 </div>
