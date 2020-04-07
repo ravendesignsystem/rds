@@ -218,6 +218,8 @@ A file upload field requires that the label `for` and the input `id` attributes 
 
 Each form requires a submit button and should be used as the last element inside the `b-form` wrapping div. The reset button is optional.
 
+**TODO:** what is needed on a submit/reset button, onclick? onkeypress? what's needed for resetting fields?
+
 <form class="b-form">
   <div class="form__field form__field--button">
       <input type="submit" class="form__reset" value="Submit" onclick="" onkeypress="">
@@ -241,4 +243,3 @@ Add information about validation, how to implement it, and more. Need to wait un
 The following examples need to be documented:
 
 - required (checkboxes, radios, select lists, file upload)
-- what is needed on a submit/reset button, onclick? onkeypress? what's needed for resetting fields?
