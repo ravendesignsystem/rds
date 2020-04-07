@@ -52,7 +52,8 @@
 
 	// Input validation success
 	.form__success {
-		input {
+		input,
+		textarea {
 			border: 2px solid green;
 			background-color: rgba(green, 0.05);
 		}
@@ -64,7 +65,8 @@
 
 	// Input validation error
 	.form__error {
-		input {
+		input,
+		textarea {
 			border: 2px solid $red;
 			background-color: rgba($red, 0.05);
 		}

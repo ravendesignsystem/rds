@@ -12,11 +12,188 @@ banner:
 
 Add information about available form text area components.
 
-## Heading
+## Basic Text Area
 
 <div class="c-form">
-
+  <div class="form__textarea">
+      <label for="textarea_1">Customize the label</label>
+      <textarea id="textarea_1" name="textarea_1"></textarea>
+  </div>
 </div>
 
 ```html
-CODE
+<div class="form__textarea">
+    <label for="textarea_1">Customize the label</label>
+    <textarea id="textarea_1" name="textarea_1"></textarea>
+</div>
+```
+
+## Set Height with Rows
+
+<div class="c-form">
+  <div class="form__textarea">
+      <label for="textarea_2">Customize the label</label>
+      <textarea id="textarea_2" name="textarea_2" rows="8"></textarea>
+  </div>
+</div>
+
+```html
+<div class="form__textarea">
+    <label for="textarea_2">Customize the label</label>
+    <textarea id="textarea_2" name="textarea_2" rows="8"></textarea>
+</div>
+```
+
+## Description Above Input
+
+<div class="c-form">
+  <div class="form__textarea">
+      <label for="textarea_3">Customize the label</label>
+      <p class="form__description">This example has the description above the input field</p>
+      <textarea id="textarea_3" name="textarea_3"></textarea>
+  </div>
+</div>
+
+```html
+<div class="form__textarea">
+    <label for="textarea_3">Customize the label</label>
+    <p class="form__description">This example has the description above the input field</p>
+    <textarea id="textarea_3" name="textarea_3"></textarea>
+</div>
+```
+
+## Description Below Input
+
+<div class="c-form">
+  <div class="form__textarea">
+      <label for="textarea_4">Customize the label</label>
+      <textarea id="textarea_4" name="textarea_4"></textarea>
+      <p class="form__description">This example has the description below the input field</p>
+  </div>
+</div>
+
+```html
+<div class="form__textarea">
+    <label for="textarea_4">Customize the label</label>
+    <textarea id="textarea_4" name="textarea_4"></textarea>
+    <p class="form__description">This example has the description below the input field</p>
+</div>
+```
+
+## Add a Placeholder
+
+<div class="c-form">
+  <div class="form__textarea">
+      <label for="textarea_5">Customize the label</label>
+      <textarea id="textarea_5" name="textarea_5" placeholder="This field has a placeholder"></textarea>
+  </div>
+</div>
+
+```html
+<div class="form__textarea">
+    <label for="textarea_5">Customize the label</label>
+    <textarea id="textarea_5" name="textarea_5" placeholder="This field has a placeholder"></textarea>
+</div>
+```
+
+## Read Only Field
+
+<div class="c-form">
+  <div class="form__textarea">
+      <label for="textarea_6">Customize the label</label>
+      <textarea id="textarea_6" name="textarea_6" readonly>This field is read only</textarea>
+  </div>
+</div>
+
+```html
+<div class="form__textarea">
+    <label for="textarea_6">Customize the label</label>
+    <textarea id="textarea_6" name="textarea_6" readonly>This field is read only</textarea>
+</div>
+```
+
+## Disabled Field
+
+<div class="c-form">
+  <div class="form__textarea">
+      <label for="textarea_7">Customize the label</label>
+      <textarea id="textarea_7" name="textarea_7" disabled>This field is disabled</textarea>
+  </div>
+</div>
+
+```html
+<div class="form__textarea">
+    <label for="textarea_7">Customize the label</label>
+    <textarea id="textarea_7" name="textarea_7" disabled>This field is disabled</textarea>
+</div>
+```
+
+## Required Field
+
+<div class="c-form">
+  <div class="form__textarea">
+      <label for="textarea_8">
+          Customize the label
+          <span class="form__required">*</span>
+       </label>
+      <textarea id="textarea_8" name="textarea_8" required></textarea>
+  </div>
+</div>
+
+```html
+<div class="form__textarea">
+    <label for="textarea_8">
+        Customize the label
+        <span class="form__required">*</span>
+     </label>
+    <textarea id="textarea_8" name="textarea_8" required></textarea>
+</div>
+```
+
+## Validation Successful
+
+<div class="c-form">
+  <div class="form__textarea form__success">
+      <label for="textarea_9">
+          Customize the label
+          <span class="form__required">*</span>
+      </label>
+      <textarea id="textarea_9" name="textarea_9" aria-describedby="text_9_success" aria-invalid="false" required></textarea>
+      <span id="text_9_success" class="form__message">The input above is successful.</span>
+  </div>
+</div>
+
+```html
+<div class="form__textarea form__success">
+    <label for="textarea_9">
+        Customize the label
+        <span class="form__required">*</span>
+     </label>
+    <textarea id="textarea_9" name="textarea_9" aria-describedby="text_9_success" aria-invalid="false" required></textarea>
+    <span id="text_9_success" class="form__message">The input above is successful.</span>
+</div>
+```
+
+## Validation Error
+
+<div class="c-form">
+  <div class="form__textarea form__error">
+      <label for="textarea_10">
+          Customize the label
+          <span class="form__required">*</span>
+      </label>
+      <textarea id="textarea_10" name="textarea_10" aria-describedby="text_10_error" aria-invalid="false" required></textarea>
+      <span id="text_10_error" class="form__message">The input above is successful.</span>
+  </div>
+</div>
+
+```html
+<div class="form__textarea form__error">
+    <label for="textarea_10">
+        Customize the label
+        <span class="form__required">*</span>
+    </label>
+    <textarea id="textarea_10" name="textarea_10" aria-describedby="text_10_error" aria-invalid="false" required></textarea>
+    <span id="text_10_error" class="form__message">The input above is successful.</span>
+</div>
+```
