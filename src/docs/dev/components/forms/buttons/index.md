@@ -14,6 +14,8 @@ Add information about available form button components.
 
 ## Submit Button
 
+Add a short description.
+
 <form class="c-form">
   <div class="form__button">
       <input id="" type="submit" class="form__reset" value="Submit" onclick="" onkeypress="">
@@ -27,6 +29,8 @@ Add information about available form button components.
 ```
 
 ## Submit and Reset Buttons
+
+Add a short description.
 
 <form class="c-form">
   <div class="form__button">

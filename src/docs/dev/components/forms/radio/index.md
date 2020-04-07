@@ -14,9 +14,24 @@ Add information about available form radio components.
 
 ## Heading
 
+Add a short description.
+
 <div class="c-form">
 
 </div>
 
 ```html
 CODE
+```
+
+## Heading
+
+Add a short description.
+
+<div class="c-form">
+
+</div>
+
+```html
+CODE
+```
