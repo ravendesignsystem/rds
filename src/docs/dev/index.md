@@ -216,6 +216,10 @@ banner:
                     url: site.url ~ "dev/components/cards/card/"
                 },
                 {
+                    title: "Forms",
+                    url: site.url ~ "dev/components/forms/"
+                },
+                {
                     title: "Heading",
                     url: site.url ~ "dev/components/headings/heading/"
                 },
@@ -242,6 +246,45 @@ banner:
                 {
                     title: "Video",
                     url: site.url ~ "dev/components/content/video/"
+                }
+            ]
+    }
+) }}
+
+{% from 'listing/listing.twig' import listing %}
+{{ listing (
+    {
+       blockColor: "white",
+            h3: "Forms and input type components",
+            items:
+            [
+                {
+                    title: "Text Inputs",
+                    url: site.url ~ "dev/components/forms/text/"
+                },
+                {
+                    title: "Text Area",
+                    url: site.url ~ "dev/components/forms/textarea/"
+                },
+                {
+                    title: "Checkboxes",
+                    url: site.url ~ "dev/components/forms/checkboxes/"
+                },
+                {
+                    title: "Radio Buttons",
+                    url: site.url ~ "dev/components/forms/radio/"
+                },
+                {
+                    title: "Select Lists",
+                    url: site.url ~ "dev/components/forms/select/"
+                },
+                {
+                    title: "File Upload",
+                    url: site.url ~ "dev/components/forms/file/"
+                },
+                {
+                    title: "Buttons",
+                    url: site.url ~ "dev/components/forms/buttons/"
                 }
             ]
     }
