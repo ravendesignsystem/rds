@@ -21,7 +21,7 @@ The following checkbox examples are using aria for grouping options
 Add a short description.
 
 <div class="b-form">
-  <div class="form__checkbox">
+  <div class="form__field form__field--checkbox">
       <fieldset>
           <legend>Checkbox Label</legend>
           <div class="form__group">
@@ -37,7 +37,7 @@ Add a short description.
 </div>
 
 ```html
-<div class="form__checkbox">
+<div class="form__field form__field--checkbox">
     <fieldset>
         <legend>Checkbox Label</legend>
         <div class="form__group">
@@ -57,7 +57,7 @@ Add a short description.
 Add a short description.
 
 <div class="b-form">
-  <div class="form__checkbox">
+  <div class="form__field form__field--checkbox">
       <fieldset>
           <legend>Checkbox Label</legend>
           <p class="form__description">This example has the description above the input field</p>
@@ -74,7 +74,7 @@ Add a short description.
 </div>
 
 ```html
-<div class="form__checkbox">
+<div class="form__field form__field--checkbox">
     <fieldset>
         <legend>Checkbox Label</legend>
         <p class="form__description">This example has the description above the input field</p>
@@ -95,7 +95,7 @@ Add a short description.
 Add a short description.
 
 <div class="b-form">
-  <div class="form__checkbox">
+  <div class="form__field form__field--checkbox">
       <fieldset>
           <legend>Checkbox Label</legend>
           <div class="form__group">
@@ -112,7 +112,7 @@ Add a short description.
 </div>
 
 ```html
-<div class="form__checkbox">
+<div class="form__field form__field--checkbox">
     <fieldset>
         <legend>Checkbox Label</legend>
         <div class="form__group">
@@ -137,7 +137,7 @@ The following checkbox examples are using fieldset for grouping options
 Add a short description.
 
 <div class="b-form">
-    <div class="form__checkbox">
+    <div class="form__field form__field--checkbox">
         <div role="group" aria-labelledby="checkbox_1">
             <p id="checkbox_1" class="form__heading">Basic Checkbox Field</p>
             <div class="form__group">
@@ -153,7 +153,7 @@ Add a short description.
 </div>
 
 ```html
-<div class="form__checkbox">
+<div class="form__field form__field--checkbox">
     <div role="group" aria-labelledby="checkbox_1">
         <p id="checkbox_1" class="form__heading">Basic Checkbox Field</p>
         <div class="form__group">
@@ -173,7 +173,7 @@ Add a short description.
 Add a short description.
 
 <div class="b-form">
-    <div class="form__checkbox">
+    <div class="form__field form__field--checkbox">
         <div role="group" aria-labelledby="checkbox_2">
             <p id="checkbox_2" class="form__heading">Checkbox Field with Description</p>
             <p class="form__description">This example has the description above the input field</p>
@@ -190,7 +190,7 @@ Add a short description.
 </div>
 
 ```html
-<div class="form__checkbox">
+<div class="form__field form__field--checkbox">
     <div role="group" aria-labelledby="checkbox_2">
         <p id="checkbox_2" class="form__heading">Checkbox Field with Description</p>
         <p class="form__description">This example has the description above the input field</p>
@@ -211,7 +211,7 @@ Add a short description.
 Add a short description.
 
 <div class="b-form">
-    <div class="form__checkbox">
+    <div class="form__field form__field--checkbox">
         <div role="group" aria-labelledby="checkbox_3">
             <p id="checkbox_3" class="form__heading">Checkbox Field with Description</p>
             <div class="form__group">
@@ -228,7 +228,7 @@ Add a short description.
 </div>
 
 ```html
-<div class="form__checkbox">
+<div class="form__field form__field--checkbox">
     <div role="group" aria-labelledby="checkbox_3">
         <p id="checkbox_3" class="form__heading">Checkbox Field with Description</p>
         <div class="form__group">

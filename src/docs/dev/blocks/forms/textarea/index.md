@@ -17,14 +17,14 @@ Add information about available form text area components.
 Add a short description.
 
 <div class="b-form">
-  <div class="form__textarea">
+  <div class="form__field form__field--textarea">
       <label for="textarea_1">Text Area Label</label>
       <textarea id="textarea_1" name="textarea_1"></textarea>
   </div>
 </div>
 
 ```html
-<div class="form__textarea">
+<div class="form__field form__field--textarea">
     <label for="textarea_1">Text Area Label</label>
     <textarea id="textarea_1" name="textarea_1"></textarea>
 </div>
@@ -35,14 +35,14 @@ Add a short description.
 Add a short description.
 
 <div class="b-form">
-  <div class="form__textarea">
+  <div class="form__field form__field--textarea">
       <label for="textarea_2">Text Area Label</label>
       <textarea id="textarea_2" name="textarea_2" rows="8"></textarea>
   </div>
 </div>
 
 ```html
-<div class="form__textarea">
+<div class="form__field form__field--textarea">
     <label for="textarea_2">Text Area Label</label>
     <textarea id="textarea_2" name="textarea_2" rows="8"></textarea>
 </div>
@@ -53,7 +53,7 @@ Add a short description.
 Add a short description.
 
 <div class="b-form">
-  <div class="form__textarea">
+  <div class="form__field form__field--textarea">
       <label for="textarea_3">Text Area Label</label>
       <p class="form__description">This example has the description above the input field</p>
       <textarea id="textarea_3" name="textarea_3"></textarea>
@@ -61,7 +61,7 @@ Add a short description.
 </div>
 
 ```html
-<div class="form__textarea">
+<div class="form__field form__field--textarea">
     <label for="textarea_3">Text Area Label</label>
     <p class="form__description">This example has the description above the input field</p>
     <textarea id="textarea_3" name="textarea_3"></textarea>
@@ -73,7 +73,7 @@ Add a short description.
 Add a short description.
 
 <div class="b-form">
-  <div class="form__textarea">
+  <div class="form__field form__field--textarea">
       <label for="textarea_4">Text Area Label</label>
       <textarea id="textarea_4" name="textarea_4"></textarea>
       <p class="form__description">This example has the description below the input field</p>
@@ -81,7 +81,7 @@ Add a short description.
 </div>
 
 ```html
-<div class="form__textarea">
+<div class="form__field form__field--textarea">
     <label for="textarea_4">Text Area Label</label>
     <textarea id="textarea_4" name="textarea_4"></textarea>
     <p class="form__description">This example has the description below the input field</p>
@@ -93,14 +93,14 @@ Add a short description.
 Add a short description.
 
 <div class="b-form">
-  <div class="form__textarea">
+  <div class="form__field form__field--textarea">
       <label for="textarea_5">Text Area Label</label>
       <textarea id="textarea_5" name="textarea_5" placeholder="This field has a placeholder"></textarea>
   </div>
 </div>
 
 ```html
-<div class="form__textarea">
+<div class="form__field form__field--textarea">
     <label for="textarea_5">Text Area Label</label>
     <textarea id="textarea_5" name="textarea_5" placeholder="This field has a placeholder"></textarea>
 </div>
@@ -111,14 +111,14 @@ Add a short description.
 Add a short description.
 
 <div class="b-form">
-  <div class="form__textarea">
+  <div class="form__field form__field--textarea">
       <label for="textarea_6">Text Area Label</label>
       <textarea id="textarea_6" name="textarea_6" readonly>This field is read only</textarea>
   </div>
 </div>
 
 ```html
-<div class="form__textarea">
+<div class="form__field form__field--textarea">
     <label for="textarea_6">Text Area Label</label>
     <textarea id="textarea_6" name="textarea_6" readonly>This field is read only</textarea>
 </div>
@@ -129,14 +129,14 @@ Add a short description.
 Add a short description.
 
 <div class="b-form">
-  <div class="form__textarea">
+  <div class="form__field form__field--textarea">
       <label for="textarea_7">Text Area Label</label>
       <textarea id="textarea_7" name="textarea_7" disabled>This field is disabled</textarea>
   </div>
 </div>
 
 ```html
-<div class="form__textarea">
+<div class="form__field form__field--textarea">
     <label for="textarea_7">Text Area Label</label>
     <textarea id="textarea_7" name="textarea_7" disabled>This field is disabled</textarea>
 </div>
@@ -147,7 +147,7 @@ Add a short description.
 Add a short description.
 
 <div class="b-form">
-  <div class="form__textarea">
+  <div class="form__field form__field--textarea">
       <label for="textarea_8">
           Text Area Label
           <span class="form__required">*</span>
@@ -157,7 +157,7 @@ Add a short description.
 </div>
 
 ```html
-<div class="form__textarea">
+<div class="form__field form__field--textarea">
     <label for="textarea_8">
         Text Area Label
         <span class="form__required">*</span>
@@ -171,7 +171,7 @@ Add a short description.
 Add a short description.
 
 <div class="b-form">
-  <div class="form__textarea form__success">
+  <div class="form__field form__field--textarea form__success">
       <label for="textarea_9">
           Text Area Label
           <span class="form__required">*</span>
@@ -182,7 +182,7 @@ Add a short description.
 </div>
 
 ```html
-<div class="form__textarea form__success">
+<div class="form__field form__field--textarea form__success">
     <label for="textarea_9">
         Text Area Label
         <span class="form__required">*</span>
@@ -197,7 +197,7 @@ Add a short description.
 Add a short description.
 
 <div class="b-form">
-  <div class="form__textarea form__error">
+  <div class="form__field form__field--textarea form__error">
       <label for="textarea_10">
           Text Area Label
           <span class="form__required">*</span>
@@ -208,7 +208,7 @@ Add a short description.
 </div>
 
 ```html
-<div class="form__textarea form__error">
+<div class="form__field form__field--textarea form__error">
     <label for="textarea_10">
         Text Area Label
         <span class="form__required">*</span>

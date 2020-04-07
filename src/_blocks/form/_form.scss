@@ -3,7 +3,7 @@
  */
 
 // Add spacing to all main form elements except the last one
-.b-form > div[class*='form__']:not(:last-child) {
+.form__field:not(:last-child) {
 	margin-bottom: 30px;
 }
 
@@ -41,38 +41,37 @@
 		padding: 15px;
 		background-color: white;
 	}
+}
 
-	// Success / error warning text
+//
+// Form Messages
+// ---------------
+
+.form__message {
+	display: block;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.form__field--success {
+	input {
+		border: 2px solid green;
+		background-color: rgba(green, 0.05);
+	}
+
 	.form__message {
-		display: block;
-		font-weight: bold;
-		margin-top: 10px;
+		color: green;
+	}
+}
+
+.form__field--error {
+	input {
+		border: 2px solid $red;
+		background-color: rgba($red, 0.05);
 	}
 
-	// Input validation success
-	.form__success {
-		input,
-		textarea {
-			border: 2px solid green;
-			background-color: rgba(green, 0.05);
-		}
-
-		.form__message {
-			color: green;
-		}
-	}
-
-	// Input validation error
-	.form__error {
-		input,
-		textarea {
-			border: 2px solid $red;
-			background-color: rgba($red, 0.05);
-		}
-
-		.form__message {
-			color: $red;
-		}
+	.form__message {
+		color: $red;
 	}
 }
 
@@ -80,8 +79,8 @@
 // Checkboxes and Radios
 // ---------------
 
-.form__checkbox,
-.form__radio {
+.form__field--checkbox,
+.form__field--radio {
 	label {
 		position: relative;
 		display: flex;
@@ -135,7 +134,7 @@
 }
 
 // Active state for checkbox inputs
-.form__checkbox .form__group {
+.form__field--checkbox .form__group {
 	label::after {
 		top: 3px;
 		left: 7px;
@@ -153,7 +152,7 @@
 }
 
 // Active state for radio inputs
-.form__radio .form__group {
+.form__field--radio .form__group {
 	label::before {
 		border-radius: 50%;
 	}
@@ -173,7 +172,7 @@
 // Select Lists
 // ---------------
 
-.form__select {
+.form__field--select {
 	select {
 		cursor: pointer;
 		display: inline-block;
@@ -199,7 +198,7 @@
 // File Upload
 // ---------------
 
-.form__file {
+.form__field--file {
 	.form__upload {
 		display: flex;
 		max-width: 500px;
@@ -227,7 +226,7 @@
 // Buttons
 // ---------------
 
-.form__button {
+.form__field--button {
 	display: flex;
 
 	input {
@@ -260,11 +259,13 @@
 }
 
 // When description is above
-input,
-textarea,
-select {
-	& + .form__description {
-		margin-top: 10px;
+.b-form {
+	input,
+	textarea,
+	select {
+		& + .form__description {
+			margin-top: 10px;
+		}
 	}
 }
 
