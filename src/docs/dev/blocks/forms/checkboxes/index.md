@@ -3,11 +3,11 @@ layout: docs
 subsite: dev
 title: Checkbox
 menu: dev
-section: Components
-subsection: Form Components
+section: Blocks
+subsection: Form Blocks
 banner:
   breadcrumbs:
-    grandparent: Components
+    grandparent: Blocks
 ---
 
 Add information about available form checkbox components.
@@ -20,7 +20,7 @@ The following checkbox examples are using aria for grouping options
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__checkbox">
       <fieldset>
           <legend>Checkbox Label</legend>
@@ -56,7 +56,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__checkbox">
       <fieldset>
           <legend>Checkbox Label</legend>
@@ -94,7 +94,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__checkbox">
       <fieldset>
           <legend>Checkbox Label</legend>
@@ -136,7 +136,7 @@ The following checkbox examples are using fieldset for grouping options
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
     <div class="form__checkbox">
         <div role="group" aria-labelledby="checkbox_1">
             <p id="checkbox_1" class="form__heading">Basic Checkbox Field</p>
@@ -172,7 +172,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
     <div class="form__checkbox">
         <div role="group" aria-labelledby="checkbox_2">
             <p id="checkbox_2" class="form__heading">Checkbox Field with Description</p>
@@ -210,7 +210,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
     <div class="form__checkbox">
         <div role="group" aria-labelledby="checkbox_3">
             <p id="checkbox_3" class="form__heading">Checkbox Field with Description</p>

@@ -3,11 +3,11 @@ layout: docs
 subsite: dev
 title: Text Area
 menu: dev
-section: Components
-subsection: Form Components
+section: Blocks
+subsection: Form Blocks
 banner:
   breadcrumbs:
-    grandparent: Components
+    grandparent: Blocks
 ---
 
 Add information about available form text area components.
@@ -16,7 +16,7 @@ Add information about available form text area components.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__textarea">
       <label for="textarea_1">Text Area Label</label>
       <textarea id="textarea_1" name="textarea_1"></textarea>
@@ -34,7 +34,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__textarea">
       <label for="textarea_2">Text Area Label</label>
       <textarea id="textarea_2" name="textarea_2" rows="8"></textarea>
@@ -52,7 +52,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__textarea">
       <label for="textarea_3">Text Area Label</label>
       <p class="form__description">This example has the description above the input field</p>
@@ -72,7 +72,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__textarea">
       <label for="textarea_4">Text Area Label</label>
       <textarea id="textarea_4" name="textarea_4"></textarea>
@@ -92,7 +92,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__textarea">
       <label for="textarea_5">Text Area Label</label>
       <textarea id="textarea_5" name="textarea_5" placeholder="This field has a placeholder"></textarea>
@@ -110,7 +110,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__textarea">
       <label for="textarea_6">Text Area Label</label>
       <textarea id="textarea_6" name="textarea_6" readonly>This field is read only</textarea>
@@ -128,7 +128,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__textarea">
       <label for="textarea_7">Text Area Label</label>
       <textarea id="textarea_7" name="textarea_7" disabled>This field is disabled</textarea>
@@ -146,7 +146,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__textarea">
       <label for="textarea_8">
           Text Area Label
@@ -170,7 +170,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__textarea form__success">
       <label for="textarea_9">
           Text Area Label
@@ -196,7 +196,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__textarea form__error">
       <label for="textarea_10">
           Text Area Label

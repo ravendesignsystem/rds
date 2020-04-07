@@ -3,22 +3,22 @@ layout: docs
 subsite: dev
 title: Examples
 menu: dev
-section: Components
-subsection: Form Components
+section: Blocks
+subsection: Form Blocks
 banner:
   breadcrumbs:
-    grandparent: Components
+    grandparent: Blocks
 ---
 
 
 
 The form component provides consistant UX for all form elements.
 
-Form elements in RDS are styled based on their type attribute rather than a class. Simply add the class `c-form` to `<form>` tags.
+Form elements in RDS are styled based on their type attribute rather than a class. Simply add the class `b-form` to `<form>` tags.
 
 ## General Fields
 
-<form class="c-form">
+<form class="b-form">
     <label for="first-name">First Name</label>
     <input id="first-name" type="text" name="textfield">
     <label for="last-name" class="required-field">Last Name</label>
@@ -39,7 +39,7 @@ Form elements in RDS are styled based on their type attribute rather than a clas
 </form>
 
 ```html
-<form class="c-form">
+<form class="b-form">
     <label for="first-name">First Name</label>
     <input id="first-name" type="text" name="textfield">
     
@@ -70,7 +70,7 @@ Form elements in RDS are styled based on their type attribute rather than a clas
 
 ### Option #1: Grouping with fieldsets
 
-<form class="c-form">
+<form class="b-form">
     <fieldset>
         <legend>Who is your favorite 19th century scientist</legend>
         <div class="checkbox column">
@@ -91,7 +91,7 @@ Form elements in RDS are styled based on their type attribute rather than a clas
 </form>
 
 ```html
-<form class="c-form">
+<form class="b-form">
     <fieldset>
         <legend>Who is your favorite 19th century scientist</legend>
         <div class="checkbox column">
@@ -114,7 +114,7 @@ Form elements in RDS are styled based on their type attribute rather than a clas
 
 ### Option #2: Use ARIA to group options
 
-<form class="c-form">
+<form class="b-form">
     <div role="group" aria-labelledby="beatle_head">
         <h4 id="beatle_head" class="bold">Who is the best Beatle?</h4>
         <div class="checkbox row">
@@ -130,7 +130,7 @@ Form elements in RDS are styled based on their type attribute rather than a clas
 </form>
 
 ```html
-<form class="c-form">
+<form class="b-form">
     <div role="group" aria-labelledby="beatle_head">
         <h4 id="beatle_head" class="bold">Who is the best Beatle?</h4>
         <div class="checkbox row">
@@ -150,7 +150,7 @@ Form elements in RDS are styled based on their type attribute rather than a clas
 
 ### Option #1: Grouping with fieldsets
 
-<form class="c-form">
+<form class="b-form">
     <fieldset>
         <legend>What is the best time of day?</legend>
         <div class="radio row">
@@ -165,7 +165,7 @@ Form elements in RDS are styled based on their type attribute rather than a clas
 </form>
 
 ```html
-<form class="c-form">
+<form class="b-form">
     <fieldset>
         <legend>What is the best time of day?</legend>
         <div class="radio row">
@@ -182,7 +182,7 @@ Form elements in RDS are styled based on their type attribute rather than a clas
 
 ### Option #2: Use ARIA to group options
 
-<form class="c-form">
+<form class="b-form">
     <div role="group" aria-labelledby="zeppelin_head">
         <h4 id="zeppelin_head" class="bold">Who is the best member of Led Zeppelin?</h4>
         <div class="radio column">
@@ -199,7 +199,7 @@ Form elements in RDS are styled based on their type attribute rather than a clas
 </form>
 
 ```html
-<form class="c-form">
+<form class="b-form">
     <div role="group" aria-labelledby="zeppelin_head">
         <h4 id="zeppelin_head" class="bold">Who is the best member of Led Zeppelin?</h4>
         <div class="radio column">
@@ -220,7 +220,7 @@ Form elements in RDS are styled based on their type attribute rather than a clas
 
 ### Option #1: Select with no grouping
 
-<form class="c-form">
+<form class="b-form">
     <div class="select">
         <label for="section1" class="u-visually-hidden">Label for section 1</label>
         <select id="section1" name="section1">
@@ -242,7 +242,7 @@ Form elements in RDS are styled based on their type attribute rather than a clas
 </form>
 
 ```html
-<form class="c-form">
+<form class="b-form">
     <div class="select">
         <label for="section1" class="u-visually-hidden">Label for section 1</label>
         <select id="section1" name="section1">
@@ -266,7 +266,7 @@ Form elements in RDS are styled based on their type attribute rather than a clas
 
 ### Option #2: Select with grouping
 
-<form class="c-form">
+<form class="b-form">
     <div class="select">
         <label for="lecture" class="u-visually-hidden">Choose a Lecture</label>
         <select id="lecture" name="lecture">
@@ -285,7 +285,7 @@ Form elements in RDS are styled based on their type attribute rather than a clas
 </form>
 
 ```html
-<form class="c-form">
+<form class="b-form">
     <div class="select">
         <label for="lecture" class="u-visually-hidden">Choose a Lecture</label>
         <select id="lecture" name="lecture">

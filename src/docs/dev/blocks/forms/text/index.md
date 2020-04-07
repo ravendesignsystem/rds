@@ -3,11 +3,11 @@ layout: docs
 subsite: dev
 title: Text Input
 menu: dev
-section: Components
-subsection: Form Components
+section: Blocks
+subsection: Form Block
 banner:
   breadcrumbs:
-    grandparent: Components
+    grandparent: Blocks
 ---
 
 Add information about available form text input components.
@@ -16,7 +16,7 @@ Add information about available form text input components.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__text">
       <label for="text_1">Text Label</label>
       <input id="text_1" type="text" name="text_1">
@@ -34,7 +34,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__text">
       <label for="text_2">Text Label</label>
       <p class="form__description">This example has the description above the input field</p>
@@ -54,7 +54,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__text">
       <label for="text_3">Text Label</label>
       <input id="text_3" type="text" name="text_3">
@@ -74,7 +74,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__text">
       <label for="text_4">Text Label</label>
       <input id="text_4" type="text" name="text_4" placeholder="This field has a placeholder">
@@ -92,7 +92,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__text">
       <label for="text_5">Text Label</label>
       <input id="text_5" type="text" name="text_5" value="This field is read only" readonly>
@@ -110,7 +110,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__text">
       <label for="text_6">Text Label</label>
       <input id="text_6" type="text" name="text_6" value="This field is disabled" disabled>
@@ -128,7 +128,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__text">
       <label for="text_7">
           Text Label
@@ -152,7 +152,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__text form__success">
       <label for="text_8">
           Text Label
@@ -178,7 +178,7 @@ Add a short description.
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
   <div class="form__text form__error">
       <label for="text_9">
           Text Label

@@ -1,22 +1,22 @@
 ---
 layout: docs
 subsite: dev
-title: File
+title: Select
 menu: dev
-section: Components
-subsection: Form Components
+section: Blocks
+subsection: Form Blocks
 banner:
   breadcrumbs:
-    grandparent: Components
+    grandparent: Blocks
 ---
 
-Add information about available form file upload components.
+Add information about available form select list components.
 
 ## Heading
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
 
 </div>
 
@@ -28,7 +28,7 @@ CODE
 
 Add a short description.
 
-<div class="c-form">
+<div class="b-form">
 
 </div>
 

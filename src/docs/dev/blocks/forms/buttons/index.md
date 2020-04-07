@@ -3,11 +3,11 @@ layout: docs
 subsite: dev
 title: Button
 menu: dev
-section: Components
-subsection: Form Components
+section: Blocks
+subsection: Form Blocks
 banner:
   breadcrumbs:
-    grandparent: Components
+    grandparent: Blocks
 ---
 
 Add information about available form button components.
@@ -16,7 +16,7 @@ Add information about available form button components.
 
 Add a short description.
 
-<form class="c-form">
+<form class="b-form">
   <div class="form__button">
       <input id="" type="submit" class="form__reset" value="Submit" onclick="" onkeypress="">
   </div>
@@ -32,7 +32,7 @@ Add a short description.
 
 Add a short description.
 
-<form class="c-form">
+<form class="b-form">
   <div class="form__button">
       <input id="" type="submit" class="form__reset" value="Submit" onclick="" onkeypress="">
       <input id="" type="reset" class="form__submit" value="Reset" onclick="" onkeypress="">
