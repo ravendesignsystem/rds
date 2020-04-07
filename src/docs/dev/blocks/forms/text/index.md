@@ -153,7 +153,7 @@ Add a short description.
 Add a short description.
 
 <div class="b-form">
-  <div class="form__field form__field--text form__success">
+  <div class="form__field form__field--text form__field--success">
       <label for="text_8">
           Text Label
           <span class="form__required">*</span>
@@ -164,7 +164,7 @@ Add a short description.
 </div>
 
 ```html
-<div class="form__field form__field--text form__success">
+<div class="form__field form__field--text form__field--success">
     <label for="text_8">
         Text Label
         <span class="form__required">*</span>
@@ -179,7 +179,7 @@ Add a short description.
 Add a short description.
 
 <div class="b-form">
-  <div class="form__field form__field--text form__error">
+  <div class="form__field form__field--text form__field--error">
       <label for="text_9">
           Text Label
           <span class="form__required">*</span>
@@ -190,7 +190,7 @@ Add a short description.
 </div>
 
 ```html
-<div class="form__field form__field--text form__error">
+<div class="form__field form__field--text form__field--error">
     <label for="text_9">
         Text Label
         <span class="form__required">*</span>

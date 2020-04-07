@@ -12,91 +12,35 @@ banner:
 
 Add information about available form select list components.
 
-## Basic Select List
-
-Add a short description.
-
 <div class="b-form">
   <div class="form__field form__field--select">
-      <label for="select_1">Select List Label</label>
-      <select id="select_1" name="select_1">
+      <label for="select">What faculty are you a part of?</label>
+      <p class="form__description">Please select an option below.</p>
+      <select id="select" name="select">
           <option label="Select an Option" disabled selected>Select an Option</option>
-          <option label="Option 1.1">Option 1.1</option>
-          <option label="Option 1.2">Option 1.2</option>
-          <option label="Option 1.3">Option 1.3</option>
+          <option label="Faculty of Arts and Social Sciences" value="fass">Faculty of Arts and Social Sciences</option>
+          <option label="Faculty of Engineering and Design" value="fed">Faculty of Engineering and Design</option>
+          <option label="Faculty of Graduate and Postdoctoral Affairs" value="fgpa">Faculty of Graduate and Postdoctoral Affairs</option>
+          <option label="Faculty of Public Affairs" value="fpa">Faculty of Public Affairs</option>
+          <option label="Faculty of Science" value="fs">Faculty of Science</option>
+          <option label="Sprott School of Business" value="ssb">Sprott School of Business</option>
       </select>
   </div>
 </div>
 
 ```html
 <div class="form__field form__field--select">
-    <label for="select_1">Select List Label</label>
-    <select id="select_1" name="select_1">
+    <label for="select">What faculty are you a part of?</label>
+    <p class="form__description">Please select an option below.</p>
+    <select id="select" name="select">
         <option label="Select an Option" disabled selected>Select an Option</option>
-        <option label="Option 1.1">Option 1.1</option>
-        <option label="Option 1.2">Option 1.2</option>
-        <option label="Option 1.3">Option 1.3</option>
+        <option label="Faculty of Arts and Social Sciences" value="fass">Faculty of Arts and Social Sciences</option>
+        <option label="Faculty of Engineering and Design" value="fed">Faculty of Engineering and Design</option>
+        <option label="Faculty of Graduate and Postdoctoral Affairs" value="fgpa">Faculty of Graduate and Postdoctoral Affairs</option>
+        <option label="Faculty of Public Affairs" value="fpa">Faculty of Public Affairs</option>
+        <option label="Faculty of Science" value="fs">Faculty of Science</option>
+        <option label="Sprott School of Business" value="ssb">Sprott School of Business</option>
     </select>
-</div>
-```
-
-## Description Above Input
-
-Add a short description.
-
-<div class="b-form">
-  <div class="form__field form__field--select">
-      <label for="select_2">Select List Label</label>
-      <p class="form__description">This example has the description above the input field</p>
-      <select id="select_2" name="select_2">
-          <option label="Select an Option" disabled selected>Select an Option</option>
-          <option label="Option 2.1">Option 2.1</option>
-          <option label="Option 2.2">Option 2.2</option>
-          <option label="Option 2.3">Option 2.3</option>
-      </select>
-  </div>
-</div>
-
-```html
-<div class="form__field form__field--select">
-    <label for="select_2">Select List Label</label>
-    <p class="form__description">This example has the description above the input field</p>
-    <select id="select_2" name="select_2">
-        <option label="Select an Option" disabled selected>Select an Option</option>
-        <option label="Option 2.1">Option 2.1</option>
-        <option label="Option 2.2">Option 2.2</option>
-        <option label="Option 2.3">Option 2.3</option>
-    </select>
-</div>
-```
-
-## Description Below Input
-
-Add a short description.
-
-<div class="b-form">
-  <div class="form__field form__field--select">
-      <label for="select_3">Select List Label</label>
-      <select id="select_3" name="select_3">
-          <option label="Select an Option" disabled selected>Select an Option</option>
-          <option label="Option 3.1">Option 3.1</option>
-          <option label="Option 3.2">Option 3.2</option>
-          <option label="Option 3.3">Option 3.3</option>
-      </select>
-      <p class="form__description">This example has the description above the input field</p>
-  </div>
-</div>
-
-```html
-<div class="form__field form__field--select">
-    <label for="select_3">Select List Label</label>
-    <select id="select_3" name="select_3">
-        <option label="Select an Option" disabled selected>Select an Option</option>
-        <option label="Option 3.1">Option 3.1</option>
-        <option label="Option 3.2">Option 3.2</option>
-        <option label="Option 3.3">Option 3.3</option>
-    </select>
-    <p class="form__description">This example has the description above the input field</p>
 </div>
 ```
 
