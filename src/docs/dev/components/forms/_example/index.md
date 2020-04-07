@@ -1,14 +1,17 @@
 ---
 layout: docs
 subsite: dev
-title: Form
+title: Examples
 menu: dev
 section: Components
-subsection: Content Components
+subsection: Form Components
 banner:
   breadcrumbs:
     grandparent: Components
 ---
+
+
+
 The form component provides consistant UX for all form elements.
 
 Form elements in RDS are styled based on their type attribute rather than a class. Simply add the class `c-form` to `<form>` tags.
