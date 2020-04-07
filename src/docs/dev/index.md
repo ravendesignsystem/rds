@@ -105,6 +105,10 @@ banner:
                     url: site.url ~ "dev/blocks/main/details/"
                 },
                 {
+                    title: "Forms",
+                    url: site.url ~ "dev/blocks/main/forms/"
+                },
+                {
                     title: "Image Tiles",
                     url: site.url ~ "dev/blocks/main/imagetile/"
                 },
@@ -119,49 +123,6 @@ banner:
                 {
                     title: "Timeline",
                     url: site.url ~ "dev/blocks/main/timeline/"
-                }
-            ]
-    }
-) }}
-
-{% from 'listing/listing.twig' import listing %}
-{{ listing (
-    {
-       blockColor: "white",
-            h3: "Forms block and input types",
-            items:
-            [
-                {
-                    title: "Overview",
-                    url: site.url ~ "dev/blocks/forms/"
-                },
-                {
-                    title: "Text Inputs",
-                    url: site.url ~ "dev/blocks/forms/text/"
-                },
-                {
-                    title: "Text Area",
-                    url: site.url ~ "dev/blocks/forms/textarea/"
-                },
-                {
-                    title: "Checkboxes",
-                    url: site.url ~ "dev/blocks/forms/checkboxes/"
-                },
-                {
-                    title: "Radio Buttons",
-                    url: site.url ~ "dev/blocks/forms/radio/"
-                },
-                {
-                    title: "Select Lists",
-                    url: site.url ~ "dev/blocks/forms/select/"
-                },
-                {
-                    title: "File Upload",
-                    url: site.url ~ "dev/blocks/forms/file/"
-                },
-                {
-                    title: "Buttons",
-                    url: site.url ~ "dev/blocks/forms/buttons/"
                 }
             ]
     }

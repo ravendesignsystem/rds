@@ -11,7 +11,17 @@ banner:
 
 Add some introductory information.
 
-## Text Inputs
+## Overview
+
+All form fields are required to be wrapped with a form tag with a class of `b-form`.
+
+```html
+<form class="b-form" action="">
+  {include form fields}
+</form>
+```
+
+## Basic Inputs
 
 Add description for:
 
@@ -22,6 +32,16 @@ Add live example
 ```html
 Add code example
 ```
+
+### Input Types
+
+The following types are available to be used in a basic input, simple update `type="text"` to one of the following items:
+
+- **text:** add description
+- **email:** add description
+- **number:** add description
+- **tel:** add description
+- **url:** add description
 
 ## Text Area
 
@@ -211,6 +231,10 @@ Each form requires a submit button and should be used as the last element inside
     <input type="reset" class="form__submit" value="Reset" onclick="" onkeypress="">
 </div>
 ```
+
+## Form Validation
+
+Add information about validation, how to implement it, and more. Need to wait until testing is completed and js has been finalized.
 
 ## Missing from Documentation
 
