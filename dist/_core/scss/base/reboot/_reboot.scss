@@ -79,7 +79,8 @@ a:focus,
 button:focus,
 button:hover,
 input[type='submit']:focus,
-input[type='submit']:hover {
+input[type='submit']:hover input[type='reset']:focus,
+input[type='reset']:hover {
 	text-decoration: none;
 }
 
@@ -346,36 +347,13 @@ code {
 // 7. Form elements
 // ----------------
 
-button,
-input,
-select,
-textarea {
-	margin: 0;
-}
+// button,
+// input,
+// select,
+// textarea {
+// 	margin: 0;
+// }
 
 iframe {
 	border: 0;
-}
-
-// only apply the below styles if wrapped in a form
-form {
-	& input[type='submit'] {
-		background-image: linear-gradient(-180deg, #3f9feb 3%, #0268b0 100%);
-		border: 1px solid #0077cc;
-		box-shadow: 0 5px 4px 0 rgba(130, 130, 130, 0.5), inset 0 1px 3px 0 #e9f5ff;
-		border-radius: 5px;
-		min-height: 50px;
-		color: white;
-		padding: 10px 20px;
-		font-size: $pixel18;
-		font-weight: 600;
-		text-align: center;
-		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-		display: block;
-
-		&:hover {
-			background-image: linear-gradient(-180deg, #50b2ff 3%, #0268b0 100%);
-			cursor: pointer;
-		}
-	}
 }

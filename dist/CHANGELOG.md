@@ -2,6 +2,13 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.19.0](https://github.com/ravendesignsystem/rds/releases/tag/0.18.0) 2020-04-08
+
+**Changed**: Breaking changes.
+
+**Changed**: moved forms from a component to a block, restructured documentation, rewrote markup and styles
+**Changed**: tightened up grid gap for u-grid--4
+
 ## [v0.18.0](https://github.com/ravendesignsystem/rds/releases/tag/0.18.0) 2020-03-24
 
 **Added**, **Changed**: Maintenance release with small patches and new blocks

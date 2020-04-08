@@ -105,6 +105,10 @@ banner:
                     url: site.url ~ "dev/blocks/main/details/"
                 },
                 {
+                    title: "Forms",
+                    url: site.url ~ "dev/blocks/main/forms/"
+                },
+                {
                     title: "Image Tiles",
                     url: site.url ~ "dev/blocks/main/imagetile/"
                 },
@@ -214,6 +218,10 @@ banner:
                 {
                     title: "Card",
                     url: site.url ~ "dev/components/cards/card/"
+                },
+                {
+                    title: "Forms",
+                    url: site.url ~ "dev/components/forms/"
                 },
                 {
                     title: "Heading",
