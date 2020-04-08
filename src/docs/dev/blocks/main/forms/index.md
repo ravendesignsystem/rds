@@ -21,41 +21,76 @@ All form fields are required to be wrapped with a form tag with a class of `b-fo
 </form>
 ```
 
+The following checklist are important items that applies to all form fields, with the exception of buttons. Any items that relate only to an individual field are noted with the examples below.
+
+- Each field requires either a label or a legend
+- All label use a `for` attribute, this much match the `id` attribute used on the input (or textarea and select fields)
+- For fields that use a grouping of items (such as checkbox, radio), the `name` attribute of each item must be the same
+- Form descriptions and placeholder are optional elements, while all other markup is required
+
 ## Basic Inputs
 
-Add description for:
+Add description.
 
-- field types and their purposes (eg: email, url, etc)
-
-Add live example
+<div class="b-form">
+  <div class="form__field form__field--text">
+      <label for="text">Text Label</label>
+      <p class="form__description">This example has the description above the input field</p>
+      <input id="text" type="text" name="text" placeholder="This field has a placeholder">
+  </div>
+</div>
 
 ```html
-Add code example
+<div class="b-form">
+  <div class="form__field form__field--text">
+      <label for="text">Text Label</label>
+      <p class="form__description">This example has the description above the input field</p>
+      <input id="text" type="text" name="text" placeholder="This field has a placeholder">
+  </div>
+</div>
 ```
 
 ### Input Types
 
 The following types are available to be used in a basic input, simple update `type="text"` to one of the following items:
 
-- **text:** add description
-- **email:** add description
-- **number:** add description
-- **tel:** add description
-- **url:** add description
+- **text:** defines a single-line text input field
+- **password:** defines a password field
+- **number:** defines a numeric input field
+- **email:** used for input fields that should contain an e-mail address
+- **tel:** used for input fields that should contain a telephone number
+- **url:** used for input fields that should contain a URL address
+
+
+### Additional Attributes
+
+- **min / max:** these can be used on the number type to require input within a specific range
 
 ## Text Area
 
 Add information about textarea.
 
-Add live example
+<div class="b-form">
+  <div class="form__field form__field--textarea">
+      <label for="textarea">Text Area Label</label>
+      <p class="form__description">This example has the description above the input field</p>
+      <textarea id="textarea" name="textarea" rows="8" placeholder="This field has a placeholder"></textarea>
+  </div>
+</div>
 
 ```html
-Add code example
+<div class="b-form">
+  <div class="form__field form__field--textarea">
+      <label for="textarea">Text Area Label</label>
+      <p class="form__description">This example has the description above the input field</p>
+      <textarea id="textarea" name="textarea" rows="8" placeholder="This field has a placeholder"></textarea>
+  </div>
+</div>
 ```
 
 ## Checkboxes
 
-Each item in a checkbox requires an input and a label, and are linked together by matching their `for` and `id` attributes. All `name` attributes in a checkbox group are required to be the same, but unique per group in a form. The `value` for each item should relate to the label content. The `form description` is optional, while all other markup is required.
+Add description.
 
 <div class="b-form">
   <div class="form__field form__field--checkbox">
@@ -105,7 +140,7 @@ Each item in a checkbox requires an input and a label, and are linked together b
 
 ## Radio Buttons
 
-Each item in a radio requires an input and a label, and are linked together by matching their `for` and `id` attributes. All `name` attributes in a radio group are required to be the same, but unique per group in a form. The `value` for each item should relate to the label content. The `form description` is optional, while all other markup is required.
+Add description.
 
 <div class="b-form">
   <div class="form__field form__field--radio">
@@ -155,7 +190,9 @@ Each item in a radio requires an input and a label, and are linked together by m
 
 ## Select Lists
 
-A select list requires the the `for` and `id` attributes on the label and select tag match. The `for`, `id`, and `name` attributes are required to be unique for each select list used in a form. To specify the default selection, add `selected` to the option. If you wish to prevent an item from being selected, add `disabled` to the option. The `form description` is optional, while all other markup is required.
+Add description.
+
+To specify the default selection, add `selected` to the option. If you wish to prevent an item from being selected, add `disabled` to the option. The `form description` is optional, while all other markup is required.
 
 <div class="b-form">
   <div class="form__field form__field--select">
@@ -191,7 +228,7 @@ A select list requires the the `for` and `id` attributes on the label and select
 
 ## File Uploads
 
-A file upload field requires that the label `for` and the input `id` attributes match, and the input `name` be unique for each upload used in a form. The `form description` is optional, while all other markup is required.
+Add description.
 
 <div class="b-form">
   <div class="form__field form__field--file">
