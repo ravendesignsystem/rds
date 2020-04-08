@@ -265,7 +265,7 @@ Each form requires a submit button and should be used as the last element inside
 
 ```html
 <div class="form__field form__field--button">
-    <input type="submit" class="form__reset" value="Submit" onclick="" onkeypress="">
+    <input type="submit" class="form__submit" value="Submit" onclick="" onkeypress="">
 </div>
 ```
 

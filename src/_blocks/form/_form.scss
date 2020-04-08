@@ -43,6 +43,46 @@
 }
 
 //
+// Descriptions
+// ---------------
+
+.form__description {
+	font-size: 15px;
+	margin: 0;
+}
+
+// When description is above
+.form__description {
+	& + input,
+	& + textarea,
+	& + select,
+	& + .form__group,
+	& + .form__upload {
+		margin-top: 10px;
+	}
+}
+
+// When description is above
+.b-form {
+	input,
+	textarea,
+	select,
+	.form__upload {
+		& + .form__description {
+			margin-top: 10px;
+		}
+	}
+}
+
+//
+// Required
+// ---------------
+
+.form__required {
+	color: $red;
+}
+
+//
 // Form Messages
 // ---------------
 
@@ -71,6 +111,28 @@
 
 	.form__message {
 		color: $red;
+	}
+}
+
+//
+// Fieldset
+// ---------------
+
+.b-form fieldset {
+	padding: 10px 20px;
+	border: 1px solid $grey-kenobi;
+	border-radius: 4px;
+}
+
+//
+// Nested Groups (ie: groups of radios or checkboxes)
+// ---------------
+
+.form__group {
+	margin-top: -10px;
+
+	& + .form__description {
+		margin-top: 20px;
 	}
 }
 
@@ -209,7 +271,7 @@
 
 	svg {
 		width: 22px;
-		height: auto;
+		height: 22px;
 		fill: $black;
 		margin-right: 12px;
 	}
@@ -222,101 +284,24 @@
 }
 
 //
-// Buttons
-// ---------------
-
-.form__field--button {
-	display: flex;
-
-	input {
-		width: initial;
-		max-width: initial;
-
-		&:not(:last-child) {
-			margin-right: 15px;
-		}
-	}
-}
-
-//
-// Descriptions
-// ---------------
-
-.form__description {
-	font-size: 15px;
-	margin: 0;
-}
-
-// When description is above
-.form__description {
-	& + input,
-	& + textarea,
-	& + select,
-	& + .form__group,
-	& + .form__upload {
-		margin-top: 10px;
-	}
-}
-
-// When description is above
-.b-form {
-	input,
-	textarea,
-	select,
-	.form__upload {
-		& + .form__description {
-			margin-top: 10px;
-		}
-	}
-}
-
-//
-// Required
-// ---------------
-
-.form__required {
-	color: $red;
-}
-
-//
-// Nested Groups (ie: groups of radios or checkboxes)
-// ---------------
-
-.form__group {
-	margin-top: -10px;
-
-	& + .form__description {
-		margin-top: 20px;
-	}
-}
-
-//
-// Fieldset
-// ---------------
-
-.b-form fieldset {
-	padding: 10px 20px;
-	border: 1px solid $grey-kenobi;
-	border-radius: 4px;
-}
-
-//
 // Submit Button
 // ---------------
 
-.b-form input[type='submit'] {
-	background-image: linear-gradient(-180deg, #3f9feb 3%, #0268b0 100%);
-	border: 1px solid #0077cc;
-	box-shadow: 0 5px 4px 0 rgba(130, 130, 130, 0.5), inset 0 1px 3px 0 #e9f5ff;
-	border-radius: 5px;
+.form__field--button input {
+	display: block;
+	width: initial;
+	max-width: initial;
 	min-height: 50px;
-	color: white;
-	padding: 10px 20px;
 	font-size: $pixel18;
 	font-weight: 600;
+	color: white;
 	text-align: center;
 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-	display: block;
+	padding: 10px 20px;
+	border: 1px solid #0077cc;
+	border-radius: 5px;
+	background-image: linear-gradient(-180deg, #3f9feb 3%, #0268b0 100%);
+	box-shadow: 0 5px 4px 0 rgba(130, 130, 130, 0.5), inset 0 1px 3px 0 #e9f5ff;
 
 	&:hover {
 		background-image: linear-gradient(-180deg, #50b2ff 3%, #0268b0 100%);
