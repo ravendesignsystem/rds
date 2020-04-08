@@ -9,10 +9,6 @@ banner:
     grandparent: Blocks
 ---
 
-Add some introductory information.
-
-## Overview
-
 All form fields are required to be wrapped with a form tag with a class of `b-form`.
 
 ```html
@@ -30,7 +26,7 @@ The following checklist are important items that applies to all form fields, wit
 
 ## Basic Inputs
 
-Add description.
+These are single-line input field for for a variety of purposes. See more about the available types below the code example.
 
 <div class="b-form">
   <div class="form__field form__field--text">
@@ -62,14 +58,14 @@ The following types are available to be used in a basic input, simple update `ty
 - **url:** used for input fields that should contain a URL address
 
 
-### Additional Attributes
+**Additional input attributes**
 
 - **min:** add to a number input type to specify a minimum (eg: `min="2"`)
 - **max:** add to a number input type to specify a maximum (eg: `max="8"`)
 
 ## Text Area
 
-Add information about textarea.
+This element defines a multi-line input that can hold a varying amount of characters.
 
 <div class="b-form">
   <div class="form__field form__field--textarea">
@@ -89,9 +85,14 @@ Add information about textarea.
 </div>
 ```
 
+**Additional textarea attributes**
+
+- **rows:** specifies the visible number of lines in a text area (eg: `rows="12"`)
+- **maxlength:** specifies the maximum number of characters allowed in the text area
+
 ## Checkboxes
 
-Add description.
+This element defines a checkbox and are used to let a user select one or more options of a limited number of choices.
 
 <div class="b-form">
   <div class="form__field form__field--checkbox">
@@ -141,7 +142,7 @@ Add description.
 
 ## Radio Buttons
 
-Add description.
+This element defines a group of radio buttons allowing only one item to be selected at a time.
 
 <div class="b-form">
   <div class="form__field form__field--radio">
@@ -191,9 +192,7 @@ Add description.
 
 ## Select Lists
 
-Add description.
-
-To specify the default selection, add `selected` to the option. If you wish to prevent an item from being selected, add `disabled` to the option. The `form description` is optional, while all other markup is required.
+This element is used to create a drop-down list, and the `<option>` tags inside the `<select>` element define the available options in the list. To specify the default selection, add `selected` to the option. If you wish to prevent an item from being selected, add `disabled` to the option.
 
 <div class="b-form">
   <div class="form__field form__field--select">
@@ -229,7 +228,7 @@ To specify the default selection, add `selected` to the option. If you wish to p
 
 ## File Uploads
 
-Add description.
+This element defines a file-select field and a "Browse" button for file uploads. To define a file-select field that allows multiple files to be selected, add the `multiple` attribute.
 
 <div class="b-form">
   <div class="form__field form__field--file">
