@@ -64,7 +64,8 @@ The following types are available to be used in a basic input, simple update `ty
 
 ### Additional Attributes
 
-- **min / max:** these can be used on the number type to require input within a specific range
+- **min:** add to a number input type to specify a minimum (eg: `min="2"`)
+- **max:** add to a number input type to specify a maximum (eg: `max="8"`)
 
 ## Text Area
 
@@ -253,21 +254,19 @@ Add description.
 
 ## Buttons
 
-Each form requires a submit button and should be used as the last element inside the `b-form` wrapping div. The reset button is optional.
+Each form requires a submit button and should be used as the last element inside the `b-form` wrapper.
 
-**TODO:** what is needed on a submit/reset button, onclick? onkeypress? what's needed for resetting fields?
+**TODO:** what is needed on a submit button, onclick? onkeypress? what's needed for resetting fields?
 
 <form class="b-form">
   <div class="form__field form__field--button">
       <input type="submit" class="form__reset" value="Submit" onclick="" onkeypress="">
-      <input type="reset" class="form__submit" value="Reset" onclick="" onkeypress="">
   </div>
 </form>
 
 ```html
 <div class="form__field form__field--button">
     <input type="submit" class="form__reset" value="Submit" onclick="" onkeypress="">
-    <input type="reset" class="form__submit" value="Reset" onclick="" onkeypress="">
 </div>
 ```
 
