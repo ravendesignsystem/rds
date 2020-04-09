@@ -100,18 +100,18 @@ This element defines a checkbox and are used to let a user select one or more op
           <legend>What faculty are you a part of?</legend>
           <p class="form__description">Please select all options that apply.</p>
           <div class="form__group">
-              <input id="fass" type="checkbox" name="checkbox_name" value="fass"/>
-              <label for="fass">Faculty of Arts and Social Sciences</label>
-              <input id="fed" type="checkbox" name="checkbox_name" value="fed"/>
-              <label for="fed">Faculty of Engineering and Design</label>
-              <input id="fgpa" type="checkbox" name="checkbox_name" value="fgpa"/>
-              <label for="fgpa">Faculty of Graduate and Postdoctoral Affairs</label>
-              <input id="fpa" type="checkbox" name="checkbox_name" value="fpa"/>
-              <label for="fpa">Faculty of Public Affairs</label>
-              <input id="fs" type="checkbox" name="checkbox_name" value="fs"/>
-              <label for="fs">Faculty of Science</label>
-              <input id="ssb" type="checkbox" name="checkbox_name" value="ssb"/>
-              <label for="ssb">Sprott School of Business</label>
+              <input id="fass_1" type="checkbox" name="checkbox_name" value="fass"/>
+              <label for="fass_1">Faculty of Arts and Social Sciences</label>
+              <input id="fed_1" type="checkbox" name="checkbox_name" value="fed"/>
+              <label for="fed_1">Faculty of Engineering and Design</label>
+              <input id="fgpa_1" type="checkbox" name="checkbox_name" value="fgpa"/>
+              <label for="fgpa_1">Faculty of Graduate and Postdoctoral Affairs</label>
+              <input id="fpa_1" type="checkbox" name="checkbox_name" value="fpa"/>
+              <label for="fpa_1">Faculty of Public Affairs</label>
+              <input id="fs_1" type="checkbox" name="checkbox_name" value="fs"/>
+              <label for="fs_1">Faculty of Science</label>
+              <input id="ssb_1" type="checkbox" name="checkbox_name" value="ssb"/>
+              <label for="ssb_1">Sprott School of Business</label>
           </div>
       </fieldset>
   </div>
@@ -150,18 +150,18 @@ This element defines a group of radio buttons allowing only one item to be selec
           <legend>What faculty are you a part of?</legend>
           <p class="form__description">Please select an option below.</p>
           <div class="form__group">
-              <input id="fass" type="radio" name="radio_name" value="fass"/>
-              <label for="fass">Faculty of Arts and Social Sciences</label>
-              <input id="fed" type="radio" name="radio_name" value="fed"/>
-              <label for="fed">Faculty of Engineering and Design</label>
-              <input id="fgpa" type="radio" name="radio_name" value="fgpa"/>
-              <label for="fgpa">Faculty of Graduate and Postdoctoral Affairs</label>
-              <input id="fpa" type="radio" name="radio_name" value="fpa"/>
-              <label for="fpa">Faculty of Public Affairs</label>
-              <input id="fs" type="radio" name="radio_name" value="fs"/>
-              <label for="fs">Faculty of Science</label>
-              <input id="ssb" type="radio" name="radio_name" value="ssb"/>
-              <label for="ssb">Sprott School of Business</label>
+              <input id="fass_2" type="radio" name="radio_name" value="fass"/>
+              <label for="fass_2">Faculty of Arts and Social Sciences</label>
+              <input id="fed_2" type="radio" name="radio_name" value="fed"/>
+              <label for="fed_2">Faculty of Engineering and Design</label>
+              <input id="fgpa_2" type="radio" name="radio_name" value="fgpa"/>
+              <label for="fgpa_2">Faculty of Graduate and Postdoctoral Affairs</label>
+              <input id="fpa_2" type="radio" name="radio_name" value="fpa"/>
+              <label for="fpa_2">Faculty of Public Affairs</label>
+              <input id="fs_2" type="radio" name="radio_name" value="fs"/>
+              <label for="fs_2">Faculty of Science</label>
+              <input id="ssb_2" type="radio" name="radio_name" value="ssb"/>
+              <label for="ssb_2">Sprott School of Business</label>
           </div>
       </fieldset>
   </div>
