@@ -245,6 +245,10 @@
 		border: 1px solid $grey-kenobi;
 		border-radius: 4px;
 		background-color: white;
+	}
+
+	// Add arrow to single item select lists
+	select:not([multiple='multiple']) {
 		background-image: linear-gradient(45deg, transparent 50%, gray 50%),
 			linear-gradient(135deg, gray 50%, transparent 50%),
 			linear-gradient(to right, $grey-kenobi, $grey-kenobi);
