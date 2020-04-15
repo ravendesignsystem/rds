@@ -226,6 +226,40 @@ This element is used to create a drop-down list, and the `<option>` tags inside 
 </div>
 ```
 
+## Multi-Select Lists
+
+This element allows a user to select multiple options. A multi-select field only requires that you add `multiple="multiple"` to a select list. If you want to control how many options are visible in the field simply add `row="10"`. If the row attribute is not used, 5 options will be shown by default.
+
+<div class="b-form">
+  <div class="form__field form__field--select">
+      <label for="select">What faculty are you a part of?</label>
+      <p class="form__description">Please select an option below.</p>
+      <select id="select" name="select" multiple="multiple" size="6">
+          <option label="Faculty of Arts and Social Sciences" value="fass">Faculty of Arts and Social Sciences</option>
+          <option label="Faculty of Engineering and Design" value="fed">Faculty of Engineering and Design</option>
+          <option label="Faculty of Graduate and Postdoctoral Affairs" value="fgpa">Faculty of Graduate and Postdoctoral Affairs</option>
+          <option label="Faculty of Public Affairs" value="fpa">Faculty of Public Affairs</option>
+          <option label="Faculty of Science" value="fs">Faculty of Science</option>
+          <option label="Sprott School of Business" value="ssb">Sprott School of Business</option>
+      </select>
+  </div>
+</div>
+
+```html
+<div class="form__field form__field--select">
+    <label for="select">What faculty are you a part of?</label>
+    <p class="form__description">Please select an option below.</p>
+    <select id="select" name="select" multiple="multiple" size="6">
+        <option label="Faculty of Arts and Social Sciences" value="fass">Faculty of Arts and Social Sciences</option>
+        <option label="Faculty of Engineering and Design" value="fed">Faculty of Engineering and Design</option>
+        <option label="Faculty of Graduate and Postdoctoral Affairs" value="fgpa">Faculty of Graduate and Postdoctoral Affairs</option>
+        <option label="Faculty of Public Affairs" value="fpa">Faculty of Public Affairs</option>
+        <option label="Faculty of Science" value="fs">Faculty of Science</option>
+        <option label="Sprott School of Business" value="ssb">Sprott School of Business</option>
+    </select>
+</div>
+```
+
 ## File Uploads
 
 This element defines a file-select field and a "Browse" button for file uploads. To define a file-select field that allows multiple files to be selected, add the `multiple` attribute.
