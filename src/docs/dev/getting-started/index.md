@@ -22,37 +22,22 @@ There are two ways to get started with RDS:
 
 To quickly get up and running, add RDS' CSS and JS from Carleton's CDN.
 
+ - **TODO:** implement subresource integrity for css and js
+
 ### CSS
 
 Copy-paste the stylesheet <link> below into your `<head>` before any other stylesheets.
 
 ```html
-<link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.css.gz" media="print" onload="this.media='all'">
 ```
-
-#### Gzipped CSS
-
-If your server supports gzip, use the gzip version for an even smaller file size.
-
-```html
-<link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.gzip.css" media="print" onload="this.media='all'">
-```
-
-TODO: add integrity and cross origin hashes.
 
 ### JS
 
 Copy-paste the below `<script>` directly above your closing `</body>`.
 
 ```html
-<script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.js" crossorigin="anonymous">
-```
-#### Gzipped JS
-
-If your server supports gzip, use the gzip version for an even smaller file size.
-
-```html
-<script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.gzip.js" crossorigin="anonymous">
+<script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.js.gz" crossorigin="anonymous">
 ```
 
 ### What is included
@@ -66,50 +51,55 @@ Be sure to have your pages set up with RDS' template requirements, which at a mi
 ```html
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Uncomment the line below if you have been approved to use the CU's paid Gotham font -->
-    <!-- <link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" /> -->
-    <link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds.css" media="print" onload="this.media='all'">
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <!-- A starting <header> tag is required -->
-    <header>
-        <!-- Add Header blocks here -->
-    </header>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Uncomment the line below if you have been approved to use the CU's paid Gotham font -->
+        <!-- <link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" /> -->
+        <link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds.css.gz" media="print" onload="this.media='all'">
+        <title>Hello, world!</title>
+    </head>
 
-    <!-- A <main> tag is required -->
-    <main>
-        <!-- Add Main blocks here -->
-    </main>
+    <body>
+        <a class="u-visually-hidden" href="#content">Skip to main content</a>
+        
+        <!-- A starting <header> tag is required -->
+        <header>
+            <!-- Add Header blocks here -->
+        </header>
 
-    <!-- A bottom <footer> tag is required -->
-    <footer>
-        <!-- Add Footer blocks here -->
-    </footer>
+        <!-- A <main> tag is required -->
+        <main id="content">
+            <!-- Add Main blocks here -->
+        </main>
 
-    <!-- The dialogue Overlay layout is required, if using any dialogue blocks or mobile menu. -->
-    <dialog class="l-overlay-modal">
-        <!-- Uncomment and add Search block, if using Masthead Search  
-        <div class="modal__search is-hidden">
-           ADD SEARCH BLOCK HERE
-        </div> -->
+        <!-- A bottom <footer> tag is required -->
+        <footer>
+            <!-- Add Footer blocks here -->
+        </footer>
 
-        <div class="modal__menu is-hidden">
-            <!-- Add the Menu block code here ONLY if you are NOT using a SideNav and want a menu-->
-        </div>
-        <!-- Uncomment and add Login block, if using Masthead Login 
-        <div class="modal__login is-hidden">
-            ADD LOGIN BLOCK HERE
-        </div> -->
-    </dialog>
+        <!-- The dialogue Overlay layout is required, if using any dialogue blocks or mobile menu. -->
+        <dialog class="l-overlay-modal">
 
-    <!-- Required JavaScript -->
-    <script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.js" crossorigin="anonymous">
+            <!-- Uncomment and add Search block, if using Masthead Search  
+            <div class="modal__search is-hidden">
+              ADD SEARCH BLOCK HERE
+            </div> -->
 
-  </body>
+            <div class="modal__menu is-hidden">
+                <!-- Add the Menu block code here ONLY if you are NOT using a SideNav and want a menu-->
+            </div>
+
+            <!-- Uncomment and add Login block, if using Masthead Login 
+            <div class="modal__login is-hidden">
+                ADD LOGIN BLOCK HERE
+            </div> -->
+        </dialog>
+
+        <!-- Required JavaScript -->
+        <script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.js.gz" crossorigin="anonymous">
+
+    </body>
 </html>
 ```
 

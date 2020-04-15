@@ -100,18 +100,18 @@ This element defines a checkbox and are used to let a user select one or more op
           <legend>What faculty are you a part of?</legend>
           <p class="form__description">Please select all options that apply.</p>
           <div class="form__group">
-              <input id="fass" type="checkbox" name="checkbox_name" value="fass"/>
-              <label for="fass">Faculty of Arts and Social Sciences</label>
-              <input id="fed" type="checkbox" name="checkbox_name" value="fed"/>
-              <label for="fed">Faculty of Engineering and Design</label>
-              <input id="fgpa" type="checkbox" name="checkbox_name" value="fgpa"/>
-              <label for="fgpa">Faculty of Graduate and Postdoctoral Affairs</label>
-              <input id="fpa" type="checkbox" name="checkbox_name" value="fpa"/>
-              <label for="fpa">Faculty of Public Affairs</label>
-              <input id="fs" type="checkbox" name="checkbox_name" value="fs"/>
-              <label for="fs">Faculty of Science</label>
-              <input id="ssb" type="checkbox" name="checkbox_name" value="ssb"/>
-              <label for="ssb">Sprott School of Business</label>
+              <input id="fass_1" type="checkbox" name="checkbox_name" value="fass"/>
+              <label for="fass_1">Faculty of Arts and Social Sciences</label>
+              <input id="fed_1" type="checkbox" name="checkbox_name" value="fed"/>
+              <label for="fed_1">Faculty of Engineering and Design</label>
+              <input id="fgpa_1" type="checkbox" name="checkbox_name" value="fgpa"/>
+              <label for="fgpa_1">Faculty of Graduate and Postdoctoral Affairs</label>
+              <input id="fpa_1" type="checkbox" name="checkbox_name" value="fpa"/>
+              <label for="fpa_1">Faculty of Public Affairs</label>
+              <input id="fs_1" type="checkbox" name="checkbox_name" value="fs"/>
+              <label for="fs_1">Faculty of Science</label>
+              <input id="ssb_1" type="checkbox" name="checkbox_name" value="ssb"/>
+              <label for="ssb_1">Sprott School of Business</label>
           </div>
       </fieldset>
   </div>
@@ -150,18 +150,18 @@ This element defines a group of radio buttons allowing only one item to be selec
           <legend>What faculty are you a part of?</legend>
           <p class="form__description">Please select an option below.</p>
           <div class="form__group">
-              <input id="fass" type="radio" name="radio_name" value="fass"/>
-              <label for="fass">Faculty of Arts and Social Sciences</label>
-              <input id="fed" type="radio" name="radio_name" value="fed"/>
-              <label for="fed">Faculty of Engineering and Design</label>
-              <input id="fgpa" type="radio" name="radio_name" value="fgpa"/>
-              <label for="fgpa">Faculty of Graduate and Postdoctoral Affairs</label>
-              <input id="fpa" type="radio" name="radio_name" value="fpa"/>
-              <label for="fpa">Faculty of Public Affairs</label>
-              <input id="fs" type="radio" name="radio_name" value="fs"/>
-              <label for="fs">Faculty of Science</label>
-              <input id="ssb" type="radio" name="radio_name" value="ssb"/>
-              <label for="ssb">Sprott School of Business</label>
+              <input id="fass_2" type="radio" name="radio_name" value="fass"/>
+              <label for="fass_2">Faculty of Arts and Social Sciences</label>
+              <input id="fed_2" type="radio" name="radio_name" value="fed"/>
+              <label for="fed_2">Faculty of Engineering and Design</label>
+              <input id="fgpa_2" type="radio" name="radio_name" value="fgpa"/>
+              <label for="fgpa_2">Faculty of Graduate and Postdoctoral Affairs</label>
+              <input id="fpa_2" type="radio" name="radio_name" value="fpa"/>
+              <label for="fpa_2">Faculty of Public Affairs</label>
+              <input id="fs_2" type="radio" name="radio_name" value="fs"/>
+              <label for="fs_2">Faculty of Science</label>
+              <input id="ssb_2" type="radio" name="radio_name" value="ssb"/>
+              <label for="ssb_2">Sprott School of Business</label>
           </div>
       </fieldset>
   </div>
@@ -226,6 +226,40 @@ This element is used to create a drop-down list, and the `<option>` tags inside 
 </div>
 ```
 
+## Multi-Select Lists
+
+This element allows a user to select multiple options. A multi-select field only requires that you add `multiple="multiple"` to a select list. If you want to control how many options are visible in the field simply add `row="10"`. If the row attribute is not used, 5 options will be shown by default.
+
+<div class="b-form">
+  <div class="form__field form__field--select">
+      <label for="select">What faculty are you a part of?</label>
+      <p class="form__description">Please select an option below.</p>
+      <select id="select" name="select" multiple="multiple" size="6">
+          <option label="Faculty of Arts and Social Sciences" value="fass">Faculty of Arts and Social Sciences</option>
+          <option label="Faculty of Engineering and Design" value="fed">Faculty of Engineering and Design</option>
+          <option label="Faculty of Graduate and Postdoctoral Affairs" value="fgpa">Faculty of Graduate and Postdoctoral Affairs</option>
+          <option label="Faculty of Public Affairs" value="fpa">Faculty of Public Affairs</option>
+          <option label="Faculty of Science" value="fs">Faculty of Science</option>
+          <option label="Sprott School of Business" value="ssb">Sprott School of Business</option>
+      </select>
+  </div>
+</div>
+
+```html
+<div class="form__field form__field--select">
+    <label for="select">What faculty are you a part of?</label>
+    <p class="form__description">Please select an option below.</p>
+    <select id="select" name="select" multiple="multiple" size="6">
+        <option label="Faculty of Arts and Social Sciences" value="fass">Faculty of Arts and Social Sciences</option>
+        <option label="Faculty of Engineering and Design" value="fed">Faculty of Engineering and Design</option>
+        <option label="Faculty of Graduate and Postdoctoral Affairs" value="fgpa">Faculty of Graduate and Postdoctoral Affairs</option>
+        <option label="Faculty of Public Affairs" value="fpa">Faculty of Public Affairs</option>
+        <option label="Faculty of Science" value="fs">Faculty of Science</option>
+        <option label="Sprott School of Business" value="ssb">Sprott School of Business</option>
+    </select>
+</div>
+```
+
 ## File Uploads
 
 This element defines a file-select field and a "Browse" button for file uploads. To define a file-select field that allows multiple files to be selected, add the `multiple` attribute.
@@ -266,6 +300,45 @@ Each form requires a submit button and should be used as the last element inside
 ```html
 <div class="form__field form__field--button">
     <input type="submit" class="form__submit" value="Submit" onclick="" onkeypress="">
+</div>
+```
+
+## Other Form Elements
+
+### Required fields
+
+To indicate that a field is require, add span like in the example below immediately before the closing label or legend tag on any form field.
+
+```html
+<label for="text">
+    Text Input Label
+    <span class="form__required">*</span>
+</label>
+```
+
+### Read only fields
+
+To make a field read only add `readonly` to the input, like the following example.
+
+- **TODO:** add a list of fields that support this
+
+```html
+<div class="form__field form__field--text">
+    <label for="text_5">Read Only Text Field</label>
+    <input id="text_5" type="text" name="text_5" value="This field is read only" readonly>
+</div>
+```
+
+### Disabled fields
+
+To disable a field add `disabled` to the input, like the following example.
+
+- **TODO:** add a list of fields that support this
+
+```html
+<div class="form__field form__field--text">
+    <label for="text_6">Disabled Text Field</label>
+    <input id="text_6" type="text" name="text_6" value="This field is disabled" disabled>
 </div>
 ```
 
