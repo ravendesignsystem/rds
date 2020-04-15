@@ -303,6 +303,45 @@ Each form requires a submit button and should be used as the last element inside
 </div>
 ```
 
+## Other Form Elements
+
+### Required fields
+
+To indicate that a field is require, add span like in the example below immediately before the closing label or legend tag on any form field.
+
+```html
+<label for="text">
+    Text Input Label
+    <span class="form__required">*</span>
+</label>
+```
+
+### Read only fields
+
+To make a field read only add `readonly` to the input, like the following example.
+
+- **TODO:** add a list of fields that support this
+
+```html
+<div class="form__field form__field--text">
+    <label for="text_5">Read Only Text Field</label>
+    <input id="text_5" type="text" name="text_5" value="This field is read only" readonly>
+</div>
+```
+
+### Disabled fields
+
+To disable a field add `disabled` to the input, like the following example.
+
+- **TODO:** add a list of fields that support this
+
+```html
+<div class="form__field form__field--text">
+    <label for="text_6">Disabled Text Field</label>
+    <input id="text_6" type="text" name="text_6" value="This field is disabled" disabled>
+</div>
+```
+
 ## Form Validation
 
 Add information about validation, how to implement it, and more. Need to wait until testing is completed and js has been finalized.
