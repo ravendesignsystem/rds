@@ -488,18 +488,18 @@ Raven Design System
           <legend>What faculty are you a part of?</legend>
           <p class="form__description">Please select all options that apply.</p>
           <div class="form__group">
-              <input id="fass" type="checkbox" name="checkbox_name" value="fass"/>
-              <label for="fass">Faculty of Arts and Social Sciences</label>
-              <input id="fed" type="checkbox" name="checkbox_name" value="fed"/>
-              <label for="fed">Faculty of Engineering and Design</label>
-              <input id="fgpa" type="checkbox" name="checkbox_name" value="fgpa"/>
-              <label for="fgpa">Faculty of Graduate and Postdoctoral Affairs</label>
-              <input id="fpa" type="checkbox" name="checkbox_name" value="fpa"/>
-              <label for="fpa">Faculty of Public Affairs</label>
-              <input id="fs" type="checkbox" name="checkbox_name" value="fs"/>
-              <label for="fs">Faculty of Science</label>
-              <input id="ssb" type="checkbox" name="checkbox_name" value="ssb"/>
-              <label for="ssb">Sprott School of Business</label>
+              <input id="fass_1" type="checkbox" name="checkbox_name" value="fass"/>
+              <label for="fass_1">Faculty of Arts and Social Sciences</label>
+              <input id="fed_1" type="checkbox" name="checkbox_name" value="fed"/>
+              <label for="fed_1">Faculty of Engineering and Design</label>
+              <input id="fgpa_1" type="checkbox" name="checkbox_name" value="fgpa"/>
+              <label for="fgpa_1">Faculty of Graduate and Postdoctoral Affairs</label>
+              <input id="fpa_1" type="checkbox" name="checkbox_name" value="fpa"/>
+              <label for="fpa_1">Faculty of Public Affairs</label>
+              <input id="fs_1" type="checkbox" name="checkbox_name" value="fs"/>
+              <label for="fs_1">Faculty of Science</label>
+              <input id="ssb_1" type="checkbox" name="checkbox_name" value="ssb"/>
+              <label for="ssb_1">Sprott School of Business</label>
           </div>
       </fieldset>
   </div>
@@ -537,18 +537,18 @@ Raven Design System
           <legend>What faculty are you a part of?</legend>
           <p class="form__description">Please select an option below.</p>
           <div class="form__group">
-              <input id="fass" type="radio" name="radio_name" value="fass"/>
-              <label for="fass">Faculty of Arts and Social Sciences</label>
-              <input id="fed" type="radio" name="radio_name" value="fed"/>
-              <label for="fed">Faculty of Engineering and Design</label>
-              <input id="fgpa" type="radio" name="radio_name" value="fgpa"/>
-              <label for="fgpa">Faculty of Graduate and Postdoctoral Affairs</label>
-              <input id="fpa" type="radio" name="radio_name" value="fpa"/>
-              <label for="fpa">Faculty of Public Affairs</label>
-              <input id="fs" type="radio" name="radio_name" value="fs"/>
-              <label for="fs">Faculty of Science</label>
-              <input id="ssb" type="radio" name="radio_name" value="ssb"/>
-              <label for="ssb">Sprott School of Business</label>
+              <input id="fass_2" type="radio" name="radio_name" value="fass"/>
+              <label for="fass_2">Faculty of Arts and Social Sciences</label>
+              <input id="fed_2" type="radio" name="radio_name" value="fed"/>
+              <label for="fed_2">Faculty of Engineering and Design</label>
+              <input id="fgpa_2" type="radio" name="radio_name" value="fgpa"/>
+              <label for="fgpa_2">Faculty of Graduate and Postdoctoral Affairs</label>
+              <input id="fpa_2" type="radio" name="radio_name" value="fpa"/>
+              <label for="fpa_2">Faculty of Public Affairs</label>
+              <input id="fs_2" type="radio" name="radio_name" value="fs"/>
+              <label for="fs_2">Faculty of Science</label>
+              <input id="ssb_2" type="radio" name="radio_name" value="ssb"/>
+              <label for="ssb_2">Sprott School of Business</label>
           </div>
       </fieldset>
   </div>
@@ -611,6 +611,39 @@ Raven Design System
 &lt;/div&gt;
 </code></pre>
 
+<h2 id="multi-select-lists">Multi-Select Lists</h2>
+
+<p>This element allows a user to select multiple options. A multi-select field only requires that you add <code>multiple="multiple"</code> to a select list. If you want to control how many options are visible in the field simply add <code>row="10"</code>. If the row attribute is not used, 5 options will be shown by default.</p>
+
+<div class="b-form">
+  <div class="form__field form__field--select">
+      <label for="select">What faculty are you a part of?</label>
+      <p class="form__description">Please select an option below.</p>
+      <select id="select" name="select" multiple="multiple" size="6">
+          <option label="Faculty of Arts and Social Sciences" value="fass">Faculty of Arts and Social Sciences</option>
+          <option label="Faculty of Engineering and Design" value="fed">Faculty of Engineering and Design</option>
+          <option label="Faculty of Graduate and Postdoctoral Affairs" value="fgpa">Faculty of Graduate and Postdoctoral Affairs</option>
+          <option label="Faculty of Public Affairs" value="fpa">Faculty of Public Affairs</option>
+          <option label="Faculty of Science" value="fs">Faculty of Science</option>
+          <option label="Sprott School of Business" value="ssb">Sprott School of Business</option>
+      </select>
+  </div>
+</div>
+
+<pre><code class="html">&lt;div class="form__field form__field--select"&gt;
+    &lt;label for="select"&gt;What faculty are you a part of?&lt;/label&gt;
+    &lt;p class="form__description"&gt;Please select an option below.&lt;/p&gt;
+    &lt;select id="select" name="select" multiple="multiple" size="6"&gt;
+        &lt;option label="Faculty of Arts and Social Sciences" value="fass"&gt;Faculty of Arts and Social Sciences&lt;/option&gt;
+        &lt;option label="Faculty of Engineering and Design" value="fed"&gt;Faculty of Engineering and Design&lt;/option&gt;
+        &lt;option label="Faculty of Graduate and Postdoctoral Affairs" value="fgpa"&gt;Faculty of Graduate and Postdoctoral Affairs&lt;/option&gt;
+        &lt;option label="Faculty of Public Affairs" value="fpa"&gt;Faculty of Public Affairs&lt;/option&gt;
+        &lt;option label="Faculty of Science" value="fs"&gt;Faculty of Science&lt;/option&gt;
+        &lt;option label="Sprott School of Business" value="ssb"&gt;Sprott School of Business&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+</code></pre>
+
 <h2 id="file-uploads">File Uploads</h2>
 
 <p>This element defines a file-select field and a "Browse" button for file uploads. To define a file-select field that allows multiple files to be selected, add the <code>multiple</code> attribute.</p>
@@ -649,6 +682,46 @@ Raven Design System
 
 <pre><code class="html">&lt;div class="form__field form__field--button"&gt;
     &lt;input type="submit" class="form__submit" value="Submit" onclick="" onkeypress=""&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="other-form-elements">Other Form Elements</h2>
+
+<h3 id="required-fields">Required fields</h3>
+
+<p>To indicate that a field is require, add span like in the example below immediately before the closing label or legend tag on any form field.</p>
+
+<pre><code class="html">&lt;label for="text"&gt;
+    Text Input Label
+    &lt;span class="form__required"&gt;*&lt;/span&gt;
+&lt;/label&gt;
+</code></pre>
+
+<h3 id="read-only-fields">Read only fields</h3>
+
+<p>To make a field read only add <code>readonly</code> to the input, like the following example.</p>
+
+<ul>
+<li><strong>TODO:</strong> add a list of fields that support this</li>
+</ul>
+
+<pre><code class="html">&lt;div class="form__field form__field--text"&gt;
+    &lt;label for="text_5"&gt;Read Only Text Field&lt;/label&gt;
+    &lt;input id="text_5" type="text" name="text_5" value="This field is read only" readonly&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3 id="disabled-fields">Disabled fields</h3>
+
+<p>To disable a field add <code>disabled</code> to the input, like the following example.</p>
+
+<ul>
+<li><strong>TODO:</strong> add a list of fields that support this</li>
+</ul>
+
+<pre><code class="html">&lt;div class="form__field form__field--text"&gt;
+    &lt;label for="text_6"&gt;Disabled Text Field&lt;/label&gt;
+    &lt;input id="text_6" type="text" name="text_6" value="This field is disabled" disabled&gt;
 &lt;/div&gt;
 </code></pre>
 
