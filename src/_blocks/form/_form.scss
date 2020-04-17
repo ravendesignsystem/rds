@@ -39,6 +39,10 @@
 		border-radius: 4px;
 		padding: 15px;
 		background-color: white;
+
+		&:disabled {
+			background-color: $grey;
+		}
 	}
 }
 
@@ -87,12 +91,14 @@
 // ---------------
 
 .form__message {
-	display: block;
+	display: none;
 	font-weight: bold;
 	margin-top: 10px;
 }
 
 .form__field--success {
+	display: block;
+
 	input {
 		border: 2px solid $green;
 		background-color: $light-green;
@@ -104,6 +110,8 @@
 }
 
 .form__field--error {
+	display: block;
+
 	input {
 		border: 2px solid $red;
 		background-color: $light-red;

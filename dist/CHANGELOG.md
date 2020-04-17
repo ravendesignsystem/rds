@@ -6,6 +6,12 @@ All notable changes to the project will be documented here, in this file
 
 Maintenance release with small patches and new blocks
 
+- **Added**: Validation for forms and a new dependency
+
+## [v0.19.1](https://github.com/ravendesignsystem/rds/releases/tag/0.19.1) 2020-04-14
+
+Maintenance release with small patches and new blocks
+
 - **Added**: Markup examples for multi-select list for b-form
 - **Changed**: Updated CDN references in getting started documentation
 - **Changed**: Updated basic page markup to include "Skip to Content" link for accessibility

@@ -307,13 +307,32 @@ Each form requires a submit button and should be used as the last element inside
 
 ### Required fields
 
-To indicate that a field is require, add span like in the example below immediately before the closing label or legend tag on any form field.
+To indicate that a field is require, a few things need to be added to a form element:
+
+- Add a span with a class of `form__required` inside the label/legend to provide the user a visual that the field is required
+- Add `isrequired` to the input
+- Add a span with a class of `form_message` immediately after the input, and customize the error message that will be displayed
+
+<div class="b-form">
+  <div class="form__field form__field--text">
+      <label for="text">
+            Required Field Label
+            <span class="form__required">*</span>
+        </label>
+      <input id="text" type="text" name="text" isrequired>
+      <span class="form__message">Customize the error message</span>
+  </div>
+</div>
 
 ```html
-<label for="text">
-    Text Input Label
-    <span class="form__required">*</span>
-</label>
+<div class="form__field form__field--text">
+    <label for="text">
+        Required Field Label
+        <span class="form__required">*</span>
+    </label>
+    <input id="text" type="text" name="text" isrequired>
+    <span class="form__message">Customize the error message</span>
+</div>
 ```
 
 ### Read only fields
@@ -321,6 +340,13 @@ To indicate that a field is require, add span like in the example below immediat
 To make a field read only add `readonly` to the input, like the following example.
 
 - **TODO:** add a list of fields that support this
+
+<div class="b-form">
+    <div class="form__field form__field--text">
+        <label for="text_5">Read Only Text Field</label>
+        <input id="text_5" type="text" name="text_5" value="This field is read only" readonly>
+    </div>
+</div>
 
 ```html
 <div class="form__field form__field--text">
@@ -334,6 +360,13 @@ To make a field read only add `readonly` to the input, like the following exampl
 To disable a field add `disabled` to the input, like the following example.
 
 - **TODO:** add a list of fields that support this
+
+<div class="b-form">
+    <div class="form__field form__field--text">
+        <label for="text_6">Disabled Text Field</label>
+        <input id="text_6" type="text" name="text_6" value="This field is disabled" disabled>
+    </div>
+</div>
 
 ```html
 <div class="form__field form__field--text">
