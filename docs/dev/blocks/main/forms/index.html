@@ -689,12 +689,33 @@ Raven Design System
 
 <h3 id="required-fields">Required fields</h3>
 
-<p>To indicate that a field is require, add span like in the example below immediately before the closing label or legend tag on any form field.</p>
+<p>To indicate that a field is require, a few things need to be added to a form element:</p>
 
-<pre><code class="html">&lt;label for="text"&gt;
-    Text Input Label
-    &lt;span class="form__required"&gt;*&lt;/span&gt;
-&lt;/label&gt;
+<ul>
+<li>Add a span with a class of <code>form__required</code> inside the label/legend to provide the user a visual that the field is required</li>
+<li>Add <code>isrequired</code> to the input</li>
+<li>Add a span with a class of <code>form_message</code> immediately after the input, and customize the error message that will be displayed</li>
+</ul>
+
+<div class="b-form">
+  <div class="form__field form__field--text">
+      <label for="text">
+            Required Field Label
+            <span class="form__required">*</span>
+        </label>
+      <input id="text" type="text" name="text" isrequired>
+      <span class="form__message">Customize the error message</span>
+  </div>
+</div>
+
+<pre><code class="html">&lt;div class="form__field form__field--text"&gt;
+    &lt;label for="text"&gt;
+        Required Field Label
+        &lt;span class="form__required"&gt;*&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;input id="text" type="text" name="text" isrequired&gt;
+    &lt;span class="form__message"&gt;Customize the error message&lt;/span&gt;
+&lt;/div&gt;
 </code></pre>
 
 <h3 id="read-only-fields">Read only fields</h3>
@@ -704,6 +725,13 @@ Raven Design System
 <ul>
 <li><strong>TODO:</strong> add a list of fields that support this</li>
 </ul>
+
+<div class="b-form">
+    <div class="form__field form__field--text">
+        <label for="text_5">Read Only Text Field</label>
+        <input id="text_5" type="text" name="text_5" value="This field is read only" readonly>
+    </div>
+</div>
 
 <pre><code class="html">&lt;div class="form__field form__field--text"&gt;
     &lt;label for="text_5"&gt;Read Only Text Field&lt;/label&gt;
@@ -718,6 +746,13 @@ Raven Design System
 <ul>
 <li><strong>TODO:</strong> add a list of fields that support this</li>
 </ul>
+
+<div class="b-form">
+    <div class="form__field form__field--text">
+        <label for="text_6">Disabled Text Field</label>
+        <input id="text_6" type="text" name="text_6" value="This field is disabled" disabled>
+    </div>
+</div>
 
 <pre><code class="html">&lt;div class="form__field form__field--text"&gt;
     &lt;label for="text_6"&gt;Disabled Text Field&lt;/label&gt;
