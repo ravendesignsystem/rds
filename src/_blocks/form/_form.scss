@@ -245,8 +245,7 @@
 // Select Lists
 // ---------------
 
-.form__field--select,
-.form__field--multiselect {
+.form__field--select {
 	select {
 		cursor: pointer;
 		display: inline-block;
@@ -261,7 +260,7 @@
 	}
 
 	// Add arrow to single item select lists
-	select:not([multiple='multiple']) {
+	select:not([multiple]) {
 		background-image: linear-gradient(45deg, transparent 50%, gray 50%),
 			linear-gradient(135deg, gray 50%, transparent 50%),
 			linear-gradient(to right, $grey-kenobi, $grey-kenobi);

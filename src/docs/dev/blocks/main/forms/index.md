@@ -234,7 +234,7 @@ This element allows a user to select multiple options. A multi-select field only
   <div class="form__field form__field--select">
       <label for="select">What faculty are you a part of?</label>
       <p class="form__description">Please select an option below.</p>
-      <select id="select" name="select" multiple="multiple" size="6">
+      <select id="select" name="select" multiple size="6">
           <option label="Faculty of Arts and Social Sciences" value="fass">Faculty of Arts and Social Sciences</option>
           <option label="Faculty of Engineering and Design" value="fed">Faculty of Engineering and Design</option>
           <option label="Faculty of Graduate and Postdoctoral Affairs" value="fgpa">Faculty of Graduate and Postdoctoral Affairs</option>
@@ -249,7 +249,7 @@ This element allows a user to select multiple options. A multi-select field only
 <div class="form__field form__field--select">
     <label for="select">What faculty are you a part of?</label>
     <p class="form__description">Please select an option below.</p>
-    <select id="select" name="select" multiple="multiple" size="6">
+    <select id="select" name="select" multiple size="6">
         <option label="Faculty of Arts and Social Sciences" value="fass">Faculty of Arts and Social Sciences</option>
         <option label="Faculty of Engineering and Design" value="fed">Faculty of Engineering and Design</option>
         <option label="Faculty of Graduate and Postdoctoral Affairs" value="fgpa">Faculty of Graduate and Postdoctoral Affairs</option>
