@@ -96,6 +96,12 @@
 	margin-top: 10px;
 }
 
+.form__warning {
+	font-weight: bold;
+	color: $red;
+	margin-top: 10px;
+}
+
 .form__field--success {
 	input {
 		border: 2px solid $green;
