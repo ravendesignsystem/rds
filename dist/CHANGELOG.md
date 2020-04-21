@@ -2,6 +2,13 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.19.4](https://github.com/ravendesignsystem/rds/releases/tag/0.19.4) 2020-04-21
+
+Maintenance release with small patches and new blocks
+
+- **Added**: documentation, markup and styles for grouping inputs in a fieldset
+- **Changed**: markup and styles for multi-select field
+
 ## [v0.19.3](https://github.com/ravendesignsystem/rds/releases/tag/0.19.3) 2020-04-21
 
 Maintenance release with small patches and new blocks
