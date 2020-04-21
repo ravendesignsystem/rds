@@ -303,7 +303,7 @@ Each form requires a submit button and should be used as the last element inside
 </div>
 ```
 
-## Other Form Elements
+## Additional Form Elements
 
 ### Required fields
 
@@ -372,6 +372,50 @@ To disable a field add `disabled` to the input, like the following example.
 <div class="form__field form__field--text">
     <label for="text_6">Disabled Text Field</label>
     <input id="text_6" type="text" name="text_6" value="This field is disabled" disabled>
+</div>
+```
+
+## Grouping Fields
+
+There are time when you may want to group a series of inputs together, such as an address. The following example can be followed to create a grouping of basic inputs.
+
+<div class="b-form">
+    <div class="form__field form__field--address">
+        <fieldset>
+            <legend>Address Field Legend</legend>
+            <label for="address">Street Address</label>
+            <input id="address"><br />
+            <label for="address2">Address Line 2</label>
+            <input id="address2"><br />
+            <label for="city">City:</label>
+            <input id="city"><br />
+            <label for="state">State / Province / Region:</label>
+            <input id="state"><br />
+            <label for="postalcode">Zip / Postal Code:</label>
+            <input id="postalcode"><br />
+            <label for="country">Country:</label>
+            <input id="country"><br />
+        </fieldset>
+    </div>
+</div>
+
+```html
+<div class="form__field form__field--address">
+    <fieldset>
+        <legend>Address Field Legend</legend>
+        <label for="address">Street Address</label>
+        <input id="address"><br />
+        <label for="address2">Address Line 2</label>
+        <input id="address2"><br />
+        <label for="city">City:</label>
+        <input id="city"><br />
+        <label for="state">State / Province / Region:</label>
+        <input id="state"><br />
+        <label for="postalcode">Zip / Postal Code:</label>
+        <input id="postalcode"><br />
+        <label for="country">Country:</label>
+        <input id="country"><br />
+    </fieldset>
 </div>
 ```
 

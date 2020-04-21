@@ -301,6 +301,18 @@
 }
 
 //
+// Field Grouping
+// ---------------
+
+.form__field--group,
+.form__field--name,
+.form__field--address {
+	fieldset {
+		padding-bottom: 20px;
+	}
+}
+
+//
 // Submit Button
 // ---------------
 
