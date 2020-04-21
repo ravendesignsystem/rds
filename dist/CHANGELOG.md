@@ -2,7 +2,14 @@
 
 All notable changes to the project will be documented here, in this file
 
-## [v0.19.1](https://github.com/ravendesignsystem/rds/releases/tag/0.19.1) 2020-04-14
+## [v0.19.3](https://github.com/ravendesignsystem/rds/releases/tag/0.19.3) 2020-04-21
+
+Maintenance release with small patches and new blocks
+
+- **Added**: new class to handle unique case for warning messages
+- **Fixed**: display block was being set incorrectly for form error messages
+
+## [v0.19.2](https://github.com/ravendesignsystem/rds/releases/tag/0.19.2) 2020-04-17
 
 Maintenance release with small patches and new blocks
 

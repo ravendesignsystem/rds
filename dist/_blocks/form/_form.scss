@@ -96,28 +96,32 @@
 	margin-top: 10px;
 }
 
-.form__field--success {
-	display: block;
+.form__warning {
+	font-weight: bold;
+	color: $red;
+	margin-top: 10px;
+}
 
+.form__field--success {
 	input {
 		border: 2px solid $green;
 		background-color: $light-green;
 	}
 
 	.form__message {
+		display: block;
 		color: $green;
 	}
 }
 
 .form__field--error {
-	display: block;
-
 	input {
 		border: 2px solid $red;
 		background-color: $light-red;
 	}
 
 	.form__message {
+		display: block;
 		color: $red;
 	}
 }
@@ -241,7 +245,8 @@
 // Select Lists
 // ---------------
 
-.form__field--select {
+.form__field--select,
+.form__field--multiselect {
 	select {
 		cursor: pointer;
 		display: inline-block;
@@ -271,7 +276,7 @@
 // File Upload
 // ---------------
 
-.form__field--file {
+.form__field--fileupload {
 	.form__upload {
 		display: flex;
 		max-width: 500px;
