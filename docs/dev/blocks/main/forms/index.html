@@ -619,7 +619,7 @@ Raven Design System
   <div class="form__field form__field--select">
       <label for="select">What faculty are you a part of?</label>
       <p class="form__description">Please select an option below.</p>
-      <select id="select" name="select" multiple="multiple" size="6">
+      <select id="select" name="select" multiple size="6">
           <option label="Faculty of Arts and Social Sciences" value="fass">Faculty of Arts and Social Sciences</option>
           <option label="Faculty of Engineering and Design" value="fed">Faculty of Engineering and Design</option>
           <option label="Faculty of Graduate and Postdoctoral Affairs" value="fgpa">Faculty of Graduate and Postdoctoral Affairs</option>
@@ -633,7 +633,7 @@ Raven Design System
 <pre><code class="html">&lt;div class="form__field form__field--select"&gt;
     &lt;label for="select"&gt;What faculty are you a part of?&lt;/label&gt;
     &lt;p class="form__description"&gt;Please select an option below.&lt;/p&gt;
-    &lt;select id="select" name="select" multiple="multiple" size="6"&gt;
+    &lt;select id="select" name="select" multiple size="6"&gt;
         &lt;option label="Faculty of Arts and Social Sciences" value="fass"&gt;Faculty of Arts and Social Sciences&lt;/option&gt;
         &lt;option label="Faculty of Engineering and Design" value="fed"&gt;Faculty of Engineering and Design&lt;/option&gt;
         &lt;option label="Faculty of Graduate and Postdoctoral Affairs" value="fgpa"&gt;Faculty of Graduate and Postdoctoral Affairs&lt;/option&gt;
@@ -685,7 +685,7 @@ Raven Design System
 &lt;/div&gt;
 </code></pre>
 
-<h2 id="other-form-elements">Other Form Elements</h2>
+<h2 id="additional-form-elements">Additional Form Elements</h2>
 
 <h3 id="required-fields">Required fields</h3>
 
@@ -757,6 +757,49 @@ Raven Design System
 <pre><code class="html">&lt;div class="form__field form__field--text"&gt;
     &lt;label for="text_6"&gt;Disabled Text Field&lt;/label&gt;
     &lt;input id="text_6" type="text" name="text_6" value="This field is disabled" disabled&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="grouping-fields">Grouping Fields</h2>
+
+<p>There are time when you may want to group a series of inputs together, such as an address. The following example can be followed to create a grouping of basic inputs.</p>
+
+<div class="b-form">
+    <div class="form__field form__field--address">
+        <fieldset>
+            <legend>Address Field Legend</legend>
+            <label for="address">Street Address</label>
+            <input id="address"><br />
+            <label for="address2">Address Line 2</label>
+            <input id="address2"><br />
+            <label for="city">City:</label>
+            <input id="city"><br />
+            <label for="state">State / Province / Region:</label>
+            <input id="state"><br />
+            <label for="postalcode">Zip / Postal Code:</label>
+            <input id="postalcode"><br />
+            <label for="country">Country:</label>
+            <input id="country"><br />
+        </fieldset>
+    </div>
+</div>
+
+<pre><code class="html">&lt;div class="form__field form__field--address"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Address Field Legend&lt;/legend&gt;
+        &lt;label for="address"&gt;Street Address&lt;/label&gt;
+        &lt;input id="address"&gt;&lt;br /&gt;
+        &lt;label for="address2"&gt;Address Line 2&lt;/label&gt;
+        &lt;input id="address2"&gt;&lt;br /&gt;
+        &lt;label for="city"&gt;City:&lt;/label&gt;
+        &lt;input id="city"&gt;&lt;br /&gt;
+        &lt;label for="state"&gt;State / Province / Region:&lt;/label&gt;
+        &lt;input id="state"&gt;&lt;br /&gt;
+        &lt;label for="postalcode"&gt;Zip / Postal Code:&lt;/label&gt;
+        &lt;input id="postalcode"&gt;&lt;br /&gt;
+        &lt;label for="country"&gt;Country:&lt;/label&gt;
+        &lt;input id="country"&gt;&lt;br /&gt;
+    &lt;/fieldset&gt;
 &lt;/div&gt;
 </code></pre>
 
