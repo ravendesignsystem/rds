@@ -380,7 +380,7 @@ To disable a field add `disabled` to the input, like the following example.
 There are time when you may want to group a series of inputs together, such as an address. The following example can be followed to create a grouping of basic inputs.
 
 <div class="b-form">
-    <div class="form__field form__field--address">
+    <div class="form__field form__field--group">
         <fieldset>
             <legend>Address Field Legend</legend>
             <label for="address">Street Address</label>
@@ -400,7 +400,7 @@ There are time when you may want to group a series of inputs together, such as a
 </div>
 
 ```html
-<div class="form__field form__field--address">
+<div class="form__field form__field--group">
     <fieldset>
         <legend>Address Field Legend</legend>
         <label for="address">Street Address</label>
