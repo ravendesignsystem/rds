@@ -393,11 +393,13 @@ Raven Design System
                                         <div class="u-block u-block--white">
                         <div class="b-content">
                     
-                    <p>All form fields are required to be wrapped with a form tag with a class of <code>b-form</code>.</p>
+                    <p>All form fields are required to be wrapped with a form tag with a class of <code>b-form</code>, and is wrapped with <code>u-block</code> like any other block throughout RDS.</p>
 
-<pre><code class="html">&lt;form class="b-form" action=""&gt;
-  {include form fields}
-&lt;/form&gt;
+<pre><code class="html">&lt;div class="u-block"&gt;
+    &lt;form class="b-form" action=""&gt;
+    {include form fields}
+    &lt;/form&gt;
+&lt;/div&gt;
 </code></pre>
 
 <p>The following checklist are important items that applies to all form fields, with the exception of buttons. Any items that relate only to an individual field are noted with the examples below.</p>
@@ -421,12 +423,10 @@ Raven Design System
   </div>
 </div>
 
-<pre><code class="html">&lt;div class="b-form"&gt;
-  &lt;div class="form__field form__field--text"&gt;
-      &lt;label for="text"&gt;Text Label&lt;/label&gt;
-      &lt;p class="form__description"&gt;This example has the description above the input field&lt;/p&gt;
-      &lt;input id="text" type="text" name="text" placeholder="This field has a placeholder"&gt;
-  &lt;/div&gt;
+<pre><code class="html">&lt;div class="form__field form__field--text"&gt;
+    &lt;label for="text"&gt;Text Label&lt;/label&gt;
+    &lt;p class="form__description"&gt;This example has the description above the input field&lt;/p&gt;
+    &lt;input id="text" type="text" name="text" placeholder="This field has a placeholder"&gt;
 &lt;/div&gt;
 </code></pre>
 
@@ -462,12 +462,10 @@ Raven Design System
   </div>
 </div>
 
-<pre><code class="html">&lt;div class="b-form"&gt;
-  &lt;div class="form__field form__field--textarea"&gt;
-      &lt;label for="textarea"&gt;Text Area Label&lt;/label&gt;
-      &lt;p class="form__description"&gt;This example has the description above the input field&lt;/p&gt;
-      &lt;textarea id="textarea" name="textarea" rows="8" placeholder="This field has a placeholder"&gt;&lt;/textarea&gt;
-  &lt;/div&gt;
+<pre><code class="html">&lt;div class="form__field form__field--textarea"&gt;
+    &lt;label for="textarea"&gt;Text Area Label&lt;/label&gt;
+    &lt;p class="form__description"&gt;This example has the description above the input field&lt;/p&gt;
+    &lt;textarea id="textarea" name="textarea" rows="8" placeholder="This field has a placeholder"&gt;&lt;/textarea&gt;
 &lt;/div&gt;
 </code></pre>
 
@@ -765,7 +763,7 @@ Raven Design System
 <p>There are time when you may want to group a series of inputs together, such as an address. The following example can be followed to create a grouping of basic inputs.</p>
 
 <div class="b-form">
-    <div class="form__field form__field--address">
+    <div class="form__field form__field--group">
         <fieldset>
             <legend>Address Field Legend</legend>
             <label for="address">Street Address</label>
@@ -784,7 +782,7 @@ Raven Design System
     </div>
 </div>
 
-<pre><code class="html">&lt;div class="form__field form__field--address"&gt;
+<pre><code class="html">&lt;div class="form__field form__field--group"&gt;
     &lt;fieldset&gt;
         &lt;legend&gt;Address Field Legend&lt;/legend&gt;
         &lt;label for="address"&gt;Street Address&lt;/label&gt;
