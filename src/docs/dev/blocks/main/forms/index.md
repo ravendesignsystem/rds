@@ -9,12 +9,14 @@ banner:
     grandparent: Blocks
 ---
 
-All form fields are required to be wrapped with a form tag with a class of `b-form`.
+All form fields are required to be wrapped with a form tag with a class of `b-form`, and is wrapped with `u-block` like any other block throughout RDS.
 
 ```html
-<form class="b-form" action="">
-  {include form fields}
-</form>
+<div class="u-block">
+    <form class="b-form" action="">
+    {include form fields}
+    </form>
+</div>
 ```
 
 The following checklist are important items that applies to all form fields, with the exception of buttons. Any items that relate only to an individual field are noted with the examples below.
@@ -37,12 +39,10 @@ These are single-line input field for for a variety of purposes. See more about 
 </div>
 
 ```html
-<div class="b-form">
-  <div class="form__field form__field--text">
-      <label for="text">Text Label</label>
-      <p class="form__description">This example has the description above the input field</p>
-      <input id="text" type="text" name="text" placeholder="This field has a placeholder">
-  </div>
+<div class="form__field form__field--text">
+    <label for="text">Text Label</label>
+    <p class="form__description">This example has the description above the input field</p>
+    <input id="text" type="text" name="text" placeholder="This field has a placeholder">
 </div>
 ```
 
@@ -76,12 +76,10 @@ This element defines a multi-line input that can hold a varying amount of charac
 </div>
 
 ```html
-<div class="b-form">
-  <div class="form__field form__field--textarea">
-      <label for="textarea">Text Area Label</label>
-      <p class="form__description">This example has the description above the input field</p>
-      <textarea id="textarea" name="textarea" rows="8" placeholder="This field has a placeholder"></textarea>
-  </div>
+<div class="form__field form__field--textarea">
+    <label for="textarea">Text Area Label</label>
+    <p class="form__description">This example has the description above the input field</p>
+    <textarea id="textarea" name="textarea" rows="8" placeholder="This field has a placeholder"></textarea>
 </div>
 ```
 
@@ -380,7 +378,7 @@ To disable a field add `disabled` to the input, like the following example.
 There are time when you may want to group a series of inputs together, such as an address. The following example can be followed to create a grouping of basic inputs.
 
 <div class="b-form">
-    <div class="form__field form__field--address">
+    <div class="form__field form__field--group">
         <fieldset>
             <legend>Address Field Legend</legend>
             <label for="address">Street Address</label>
@@ -400,7 +398,7 @@ There are time when you may want to group a series of inputs together, such as a
 </div>
 
 ```html
-<div class="form__field form__field--address">
+<div class="form__field form__field--group">
     <fieldset>
         <legend>Address Field Legend</legend>
         <label for="address">Street Address</label>
