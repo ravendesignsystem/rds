@@ -56,7 +56,7 @@ Be sure to have your pages set up with RDS' template requirements, which at a mi
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Uncomment the line below if you have been approved to use the CU's paid Gotham font -->
         <!-- <link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" /> -->
-        <link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds.css.gz" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.css.gz" media="print" onload="this.media='all'">
         <title>Hello, world!</title>
     </head>
 
