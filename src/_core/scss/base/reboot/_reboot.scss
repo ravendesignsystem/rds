@@ -176,22 +176,20 @@ ol {
 		margin-top: 3px;
 		margin-bottom: 3px;
 	}
-
-	li:not(:last-child) {
-		padding-bottom: 8px;
-	}
 }
 
 ul,
 ol {
 	margin-left: 30px;
+	// line-height: 1.9;
 }
 
 ul ul,
 ul ol,
 ol ul,
 ol ol {
-	margin-top: 10px;
+	margin-bottom: 0;
+	// line-height: 1.9;
 }
 
 ol li li {
