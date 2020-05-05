@@ -49,6 +49,10 @@ body {
 	color: $black;
 }
 
+// #content {
+// 	padding-bottom: 20px;
+// }
+
 // for ie 11
 main,
 time,
@@ -177,7 +181,7 @@ ol {
 ul,
 ol {
 	margin-left: 30px;
-	line-height: 1.9;
+	// line-height: 1.9;
 }
 
 ul ul,
@@ -185,7 +189,7 @@ ul ol,
 ol ul,
 ol ol {
 	margin-bottom: 0;
-	line-height: 1.9;
+	// line-height: 1.9;
 }
 
 ol li li {

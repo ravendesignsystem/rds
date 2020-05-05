@@ -2,6 +2,13 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.19.6](https://github.com/ravendesignsystem/rds/releases/tag/0.19.6) 2020-05-05
+
+Maintenance release with small patches and new blocks
+
+- **Added:** new form specific styles
+- **Changed:** Updated spacing on various elements
+
 ## [v0.19.5](https://github.com/ravendesignsystem/rds/releases/tag/0.19.5) 2020-04-27
 
 Maintenance release with small patches and new blocks

@@ -84,6 +84,7 @@
 
 .form__required {
 	color: $red;
+	padding-right: 5px;
 }
 
 //
@@ -124,6 +125,15 @@
 	.form__message {
 		display: block;
 		color: $red;
+	}
+
+	fieldset {
+		border: 2px solid #bf112b;
+	}
+
+	select {
+		border: 2px solid #bf112b;
+		background-color: #f9e6e9;
 	}
 }
 
