@@ -31,7 +31,8 @@
 
 		// Remove padding if u-block is last element
 		.u-block--white:last-child {
-			padding-bottom: 0;
+			// padding-bottom: 0;
+			padding-bottom: 20px;
 		}
 
 		// Remove top spacing when white/grey blocks follow each other
