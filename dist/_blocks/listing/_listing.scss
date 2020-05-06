@@ -95,7 +95,7 @@
 // News variant
 //=============
 
-.b-listing--news figure {
+.b-listing.b-listing--news figure {
 	width: 30%;
 
 	@include media('>s') {
