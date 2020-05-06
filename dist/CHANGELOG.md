@@ -2,6 +2,11 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.19.7](https://github.com/ravendesignsystem/rds/releases/tag/0.19.7) 2020-05-05
+
+- **Added:** width of 100% to c-card a tag
+- **Fixed:** added additional level of specificity to b-listing--news missed in previous release
+
 ## [v0.19.6](https://github.com/ravendesignsystem/rds/releases/tag/0.19.6) 2020-05-05
 
 Maintenance release with small patches and new blocks
