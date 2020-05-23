@@ -18,7 +18,7 @@
 @import '../blocks/gridhome/gridhome';
 @import '../blocks/textimg/textimg';
 @import '../blocks/tabs/tabs';
-@import 'vendor/highlight-js--github';
+@import '../../../../node_modules/highlight.js/scss/github.scss';
 
 // Docs Components
 //----------------
@@ -30,7 +30,6 @@
 //.modal__menu nav:first-child {
 //	display: none;
 //}
-
 
 // Homepage
 //---------
