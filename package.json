@@ -15,7 +15,7 @@
 		"release": "webpack --env=prod --mode=production --config webpack.release.js"
 	},
 	"dependencies": {
-		"@babel/runtime": "^7.9.6",
+		"@babel/runtime": "^7.10.2",
 		"dompurify": "^2.0.11"
 	},
 	"devDependencies": {
