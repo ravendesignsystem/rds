@@ -98,7 +98,7 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 
-	@include media(">=710px") {
+	@include media('>=710px') {
 		max-width: 360px;
 	}
 }
@@ -120,7 +120,7 @@
 	line-height: 1.25;
 	padding-top: 4px;
 
-	@include media(">=s") {
+	@include media('>=s') {
 		flex: 0 0 60px;
 	}
 }
@@ -280,7 +280,8 @@
 // News Block Type Modifiers
 //================================
 
-.listing__list--news, .listing__list--events {
+.listing__list--news,
+.listing__list--events {
 	.listing__excerpt {
 		display: none;
 
