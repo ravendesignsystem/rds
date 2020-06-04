@@ -2,6 +2,15 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.19.8](https://github.com/ravendesignsystem/rds/releases/tag/0.19.8) 2020-06-04
+
+**IMPORTANT:** Breaking changes update required
+
+- **Added:** added spacing when a button immediately follows b-listing
+- **Changed:** refactored image tile block to fix issues with horizontal scroll on macos, and to add proper flexbox fallbacks for CSS Grid and IE11
+- **Fixed:** fixed errors in JS relating to highlight.js
+- **Upgraded:** build dependencies in package file
+
 ## [v0.19.7](https://github.com/ravendesignsystem/rds/releases/tag/0.19.7) 2020-05-05
 
 - **Added:** width of 100% to c-card a tag
