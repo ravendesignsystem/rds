@@ -6,7 +6,7 @@ import '../../../_core/js/core';
 import '../blocks/textimg/textimg';
 
 // Import and initialize highlight.js plugin
-import hljs from 'highlight.js/lib/highlight';
+import hljs from 'highlight.js/lib/core';
 hljs.initHighlightingOnLoad();
 
 // Import CSS from highlight.js
@@ -56,4 +56,4 @@ for (let i = 0; i < emptyP.length; i++) {
 // remove empty tags
 document
 	.querySelectorAll('p, strong')
-	.forEach(el => el.innerHTML.trim() === '' && el.parentNode.removeChild(el));
+	.forEach((el) => el.innerHTML.trim() === '' && el.parentNode.removeChild(el));

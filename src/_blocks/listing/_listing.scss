@@ -3,6 +3,10 @@
  * =============
  */
 
+.b-listing + .c-buttoncta {
+	margin-top: $block-padding-m;
+}
+
 .b-listing > ul {
 	list-style-type: none;
 	margin: 0;
