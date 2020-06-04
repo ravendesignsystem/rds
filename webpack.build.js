@@ -3,7 +3,6 @@
  */
 
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
 	module: {
@@ -69,13 +68,4 @@ module.exports = {
 			notify: false,
 		}),
 	],
-	optimization: {
-		minimizer: [
-			new UglifyJsPlugin({
-				cache: true,
-				parallel: true,
-				sourceMap: true,
-			}),
-		],
-	},
 };
