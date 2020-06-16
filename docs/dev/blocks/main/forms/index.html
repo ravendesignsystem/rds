@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
         <meta name="robots" content="noodp, noydir"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="canonical" href="https://ravendesignsystem.github.io/rds//docs/dev/blocks/header/alertheader"/>
+        <link rel="canonical" href="https://ravendesignsystem.github.io/rds//docs/dev/blocks/main/forms"/>
 
         <link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" />
                                             <link rel="stylesheet" href="https://ravendesignsystem.github.io/rds/css/docs.css" media="print" onload="this.media='all'">
@@ -17,12 +17,12 @@
         <meta name="msapplication-TileColor" content="#bf112b">
         <meta name="msapplication-config" content="https://cu-rds.s3.amazonaws.com/assets/favicons/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
-        <title>Alert Header | Raven Design System | RDS</title>
-                                                <meta property="og:url" content="https://ravendesignsystem.github.io/rds//docs/dev/blocks/header/alertheader">
+        <title>Form | Raven Design System | RDS</title>
+                                                <meta property="og:url" content="https://ravendesignsystem.github.io/rds//docs/dev/blocks/main/forms">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Alert Header">
+        <meta property="og:title" content="Form">
                                                 <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Alert Header">
+        <meta name="twitter:title" content="Form">
                                     </head>
 
 <body >
@@ -109,21 +109,6 @@ Raven Design System
 		</ul>
 	</div>
 </div>
-                                <div class="u-block u-block--alert">
-    <div class="b-alertheader">
-        <div class="c-alert c-alert--error" role="alert">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><title id="title" lang="en">Warning/attention sign</title><path d="M13.339 1.75a1.54 1.54 0 0 0-1.33-.75c-.551 0-1.055.285-1.33.75L.206 19.749a1.47 1.47 0 0 0 0 1.502c.29.465.795.751 1.33.751h20.946c.55 0 1.056-.285 1.315-.75.265-.465.27-1.033.015-1.503L13.34 1.75zm.2 17.246H10.48v-3.005h3.059v3.005zm0-4.506H10.48V8.48h3.059v6.01z"/></svg>
-            <h2>University closure, January 28, 2021!</h2>
-            <p>Due to inclement weather, the university will be closed January 28, 2019. Please see the <a href="https://carleton.ca/ses/exam-schedule/">updated exam schedule</a></p>
-        </div>
-    </div>
-    <button aria-label="Close alert" type="button" data-close>
-        <span class="u-icon" aria-hidden="true">
-            <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title id="title" lang="en">Close alert panel</title><path d="M15.396 12L24 20.604 20.604 24 12 15.396 3.396 24 0 20.604 8.604 12 0 3.396 3.396 0 12 8.604 20.604 0 24 3.396z"/></svg>
-        </span>
-    </button>
-</div>
-
                                     <div class="u-block u-block--s u-block--grey">
 <section class="b-banner">
     <section>
@@ -131,10 +116,10 @@ Raven Design System
             <ol itemscope itemtype="http://schema.org/BreadcrumbList">
                 <li itemprop="breadcrumb"><a href="https://ravendesignsystem.github.io/rds/">Home</a></li>
                                 <li itemprop="breadcrumb"><a href="https://ravendesignsystem.github.io/rds//dev/">Dev</a></li>
-                                                <li itemprop="breadcrumb"><a href="../../">Blocks</a></li>                <li itemprop="breadcrumb"><a href="../">Header Blocks</a></li>                <li class="u-visually-hidden" itemprop="breadcrumb" aria-current="page"></li>
+                                                <li itemprop="breadcrumb"><a href="../../">Blocks</a></li>                                <li class="u-visually-hidden" itemprop="breadcrumb" aria-current="page"></li>
             </ol>
         </nav>
-        <h1>Alert Header Block</h1>
+        <h1>Form Block</h1>
     </section>
 </div>
 </div>
@@ -183,10 +168,10 @@ Raven Design System
 			<ul id="submenu_Blocks" class="is-submenu">
 				<li class="has-submenu">
 					<a  href="https://ravendesignsystem.github.io/rds/dev/main-concepts/components-overview/">Header Blocks</a>
-					<button aria-expanded="true" aria-controls="submenu_header_blocks">+</button>
+					<button aria-expanded="false" aria-controls="submenu_header_blocks">+</button>
 					<ul id="submenu_header_blocks" class="is-submenu">
 						<li>
-							<a  class="u-active"  href="https://ravendesignsystem.github.io/rds/dev/blocks/header/alertheader/">Alert Header</a>
+							<a  href="https://ravendesignsystem.github.io/rds/dev/blocks/header/alertheader/">Alert Header</a>
 						</li>
 						<li>
 							<a  href="https://ravendesignsystem.github.io/rds/dev/blocks/header/banner/">Banner</a>
@@ -408,144 +393,425 @@ Raven Design System
                                         <div class="u-block u-block--white">
                         <div class="b-content">
                     
-                    <p>The Page Alert block is used to convey important information to the user through a prominent header block.</p>
+                    <p>All form fields are required to be wrapped with a form tag with a class of <code>b-form</code>, and is wrapped with <code>u-block</code> like any other block throughout RDS.</p>
 
-<h2 id="example">Example</h2>
-
-<p>Check out the Page Alert block in use directly above the Banner on this page.</p>
-
-<p><pre><code class="html">&lt;div class=&quot;u-block u-block--alert&quot;&gt;
-    &lt;div class=&quot;b-alertheader&quot;&gt;
-        &lt;div class=&quot;c-alert c-alert--error&quot; role=&quot;alert&quot;&gt;
-            &lt;svg viewBox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; aria-hidden=&quot;true&quot;&gt;&lt;title id=&quot;title&quot; lang=&quot;en&quot;&gt;Warning/attention sign&lt;/title&gt;&lt;path d=&quot;M13.339 1.75a1.54 1.54 0 0 0-1.33-.75c-.551 0-1.055.285-1.33.75L.206 19.749a1.47 1.47 0 0 0 0 1.502c.29.465.795.751 1.33.751h20.946c.55 0 1.056-.285 1.315-.75.265-.465.27-1.033.015-1.503L13.34 1.75zm.2 17.246H10.48v-3.005h3.059v3.005zm0-4.506H10.48V8.48h3.059v6.01z&quot;/&gt;&lt;/svg&gt;
-            &lt;h2&gt;University closure, January 28&lt;/h2&gt;
-            &lt;p&gt;Due to inclement weather the university will be closed January 28, 2019. Please see the &lt;a href=&quot;https://carleton.ca/ses/exam-schedule/&quot;&gt;updated exam schedule&lt;/a&gt;.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;button aria-label=&quot;Close alert&quot; type=&quot;button&quot; data-close&gt;
-        &lt;span class=&quot;u-icon&quot; aria-hidden=&quot;true&quot;&gt;
-            &lt;svg viewbox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;title id=&quot;title&quot; lang=&quot;en&quot;&gt;Close alert panel&lt;/title&gt;&lt;path d=&quot;M15.396 12L24 20.604 20.604 24 12 15.396 3.396 24 0 20.604 8.604 12 0 3.396 3.396 0 12 8.604 20.604 0 24 3.396z&quot;/&gt;&lt;/svg&gt;
-        &lt;/span&gt;
-    &lt;/button&gt;
-&lt;/div&gt;</code>
-</pre>
-
-</p>
-
-<p><strong>Note</strong>: this is a rare block with a unique block utility modifier <code>u-block--alert</code>.</p>
-
-<h2 id="block-details">Block details</h2>
-
-<table>
-<thead>
-<tr>
-  <th>Alert Header  block meta</th>
-  <th align="center">values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>handle</td>
-  <td align="center"><code>alertheader</code></td>
-</tr>
-<tr>
-  <td>colour options</td>
-  <td align="center">n/a</td>
-</tr>
-<tr>
-  <td>section use</td>
-  <td align="center"><code>&lt;header&gt;</code></td>
-</tr>
-<tr>
-  <td>width type</td>
-  <td align="center">fixed</td>
-</tr>
-<tr>
-  <td>has heading</td>
-  <td align="center">n/a</td>
-</tr>
-<tr>
-  <td>theme(s)</td>
-  <td align="center">CU</td>
-</tr>
-<tr>
-  <td>variants</td>
-  <td align="center">n/a</td>
-</tr>
-<tr>
-  <td>Codepen</td>
-  <td align="center"><a href="https://codepen.io/cuweb/pen/jgLVzB?editors=1000">https://codepen.io/cuweb/pen/jgLVzB</a></td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="properties">Properties</h2>
-
-<table>
-<thead>
-<tr>
-  <th>Props</th>
-  <th align="center">Desc</th>
-  <th align="right">Type</th>
-  <th align="right">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>heading *</td>
-  <td align="center">Page Alert heading</td>
-  <td align="right">string</td>
-  <td align="right">-</td>
-</tr>
-<tr>
-  <td>message *</td>
-  <td align="center">Content of alert, can include <code>&lt;a&gt;</code> tags</td>
-  <td align="right">HTML</td>
-  <td align="right">-</td>
-</tr>
-<tr>
-  <td>dismissible *</td>
-  <td align="center">Whether Alert Header can be dismissed</td>
-  <td align="right">boolean</td>
-  <td align="right">true</td>
-</tr>
-</tbody>
-</table>
-
-<p><small><code>*</code> = required.</small></p>
-
-<h3 id="nunjucks%2Ftwig-macro-example">Nunjucks/Twig macro example</h3>
-
-<pre><code class="twig">{% macro alertheader(data) %}
-    &lt;div class="u-block u-block--alert"&gt;
-      &lt;div class="b-alertheader"&gt;
-          {% include 'icons/alert.svg' %}
-          &lt;h2&gt;{{ data.heading }}&lt;/h2&gt;
-          &lt;p&gt;{{ data.message }}{% if data.url %} &lt;a href="{{ data.link }}"&gt;{% if data.linkText %}{{ data.linkText }}{% else %}Learn more{% endif %}&lt;/a&gt;{% endif %}&lt;/p&gt;
-      &lt;/div&gt;
-    {% if data.dismissible != false %}
-      &lt;button class="alertheader__dismiss" aria-label="Close alert" type="button" data-close&gt;
-          &lt;span class="u-icon" aria-hidden="true"&gt;
-              {% include 'icons/x.svg'%}
-          &lt;/span&gt;
-      &lt;/button&gt;
-    {% endif %}
-    &lt;/div&gt;
-{% endmacro %}
+<pre><code class="html">&lt;div class="u-block"&gt;
+    &lt;form class="b-form" action=""&gt;
+    {include form fields}
+    &lt;/form&gt;
+&lt;/div&gt;
 </code></pre>
 
-<h2 id="usage">Usage</h2>
+<p>The following checklist are important items that applies to all form fields, with the exception of buttons. Any items that relate only to an individual field are noted with the examples below.</p>
 
-<p>Page Alerts are intended for important errors, warnings or messaging. Usually, these would would run site-wide until a user dismiss them.</p>
+<ul>
+<li>Each field requires either a label or a legend</li>
+<li>All label use a <code>for</code> attribute, this much match the <code>id</code> attribute used on the input (or textarea and select fields)</li>
+<li>For fields that use a grouping of items (such as checkbox, radio), the <code>name</code> attribute of each item must be the same</li>
+<li>Form descriptions and placeholder are optional elements, while all other markup is required</li>
+</ul>
 
-<p>For user contextual interface feedback, check out <a href="#">Alert components</a></p>
+<h2 id="basic-inputs">Basic Inputs</h2>
 
-<h2 id="cookies">Cookies</h2>
+<p>These are single-line input field for for a variety of purposes. See more about the available types below the code example.</p>
 
-<p>For dismissible Page Alert blocks displayed site-wide, you will likely want to set a cookie to avoid users from continually seeing dismissed messages.
-We do not cover that here at this time.</p>
+<div class="b-form">
+  <div class="form__field form__field--text">
+      <label for="text">Text Label</label>
+      <p class="form__description">This example has the description above the input field</p>
+      <input id="text" type="text" name="text" placeholder="This field has a placeholder">
+  </div>
+</div>
 
-<p><img src="https://i2.wp.com/hypebeast.com/image/2017/03/cookie-monster-100-years-of-cookie-history-video-0.gif?w=960" alt="cookie!" /></p>
+<pre><code class="html">&lt;div class="form__field form__field--text"&gt;
+    &lt;label for="text"&gt;Text Label&lt;/label&gt;
+    &lt;p class="form__description"&gt;This example has the description above the input field&lt;/p&gt;
+    &lt;input id="text" type="text" name="text" placeholder="This field has a placeholder"&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3 id="input-types">Input Types</h3>
+
+<p>The following types are available to be used in a basic input, simple update <code>type="text"</code> to one of the following items:</p>
+
+<ul>
+<li><strong>text:</strong> defines a single-line text input field</li>
+<li><strong>password:</strong> defines a password field</li>
+<li><strong>number:</strong> defines a numeric input field</li>
+<li><strong>email:</strong> used for input fields that should contain an e-mail address</li>
+<li><strong>tel:</strong> used for input fields that should contain a telephone number</li>
+<li><strong>url:</strong> used for input fields that should contain a URL address</li>
+</ul>
+
+<p><strong>Additional input attributes</strong></p>
+
+<ul>
+<li><strong>min:</strong> add to a number input type to specify a minimum (eg: <code>min="2"</code>)</li>
+<li><strong>max:</strong> add to a number input type to specify a maximum (eg: <code>max="8"</code>)</li>
+</ul>
+
+<h2 id="text-area">Text Area</h2>
+
+<p>This element defines a multi-line input that can hold a varying amount of characters.</p>
+
+<div class="b-form">
+  <div class="form__field form__field--textarea">
+      <label for="textarea">Text Area Label</label>
+      <p class="form__description">This example has the description above the input field</p>
+      <textarea id="textarea" name="textarea" rows="8" placeholder="This field has a placeholder"></textarea>
+  </div>
+</div>
+
+<pre><code class="html">&lt;div class="form__field form__field--textarea"&gt;
+    &lt;label for="textarea"&gt;Text Area Label&lt;/label&gt;
+    &lt;p class="form__description"&gt;This example has the description above the input field&lt;/p&gt;
+    &lt;textarea id="textarea" name="textarea" rows="8" placeholder="This field has a placeholder"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><strong>Additional textarea attributes</strong></p>
+
+<ul>
+<li><strong>rows:</strong> specifies the visible number of lines in a text area (eg: <code>rows="12"</code>)</li>
+<li><strong>maxlength:</strong> specifies the maximum number of characters allowed in the text area</li>
+</ul>
+
+<h2 id="checkboxes">Checkboxes</h2>
+
+<p>This element defines a checkbox and are used to let a user select one or more options of a limited number of choices.</p>
+
+<div class="b-form">
+  <div class="form__field form__field--checkbox">
+      <fieldset>
+          <legend>What faculty are you a part of?</legend>
+          <p class="form__description">Please select all options that apply.</p>
+          <div class="form__group">
+              <input id="fass_1" type="checkbox" name="checkbox_name" value="fass"/>
+              <label for="fass_1">Faculty of Arts and Social Sciences</label>
+              <input id="fed_1" type="checkbox" name="checkbox_name" value="fed"/>
+              <label for="fed_1">Faculty of Engineering and Design</label>
+              <input id="fgpa_1" type="checkbox" name="checkbox_name" value="fgpa"/>
+              <label for="fgpa_1">Faculty of Graduate and Postdoctoral Affairs</label>
+              <input id="fpa_1" type="checkbox" name="checkbox_name" value="fpa"/>
+              <label for="fpa_1">Faculty of Public Affairs</label>
+              <input id="fs_1" type="checkbox" name="checkbox_name" value="fs"/>
+              <label for="fs_1">Faculty of Science</label>
+              <input id="ssb_1" type="checkbox" name="checkbox_name" value="ssb"/>
+              <label for="ssb_1">Sprott School of Business</label>
+          </div>
+      </fieldset>
+  </div>
+</div>
+
+<pre><code class="html">&lt;div class="form__field form__field--checkbox"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;What faculty are you a part of?&lt;/legend&gt;
+        &lt;p class="form__description"&gt;Please select all options that apply.&lt;/p&gt;
+        &lt;div class="form__group"&gt;
+            &lt;input id="fass" type="checkbox" name="checkbox_name" value="fass"/&gt;
+            &lt;label for="fass"&gt;Faculty of Arts and Social Sciences&lt;/label&gt;
+            &lt;input id="fed" type="checkbox" name="checkbox_name" value="fed"/&gt;
+            &lt;label for="fed"&gt;Faculty of Engineering and Design&lt;/label&gt;
+            &lt;input id="fgpa" type="checkbox" name="checkbox_name" value="fgpa"/&gt;
+            &lt;label for="fgpa"&gt;Faculty of Graduate and Postdoctoral Affairs&lt;/label&gt;
+            &lt;input id="fpa" type="checkbox" name="checkbox_name" value="fpa"/&gt;
+            &lt;label for="fpa"&gt;Faculty of Public Affairs&lt;/label&gt;
+            &lt;input id="fs" type="checkbox" name="checkbox_name" value="fs"/&gt;
+            &lt;label for="fs"&gt;Faculty of Science&lt;/label&gt;
+            &lt;input id="ssb" type="checkbox" name="checkbox_name" value="ssb"/&gt;
+            &lt;label for="ssb"&gt;Sprott School of Business&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="radio-buttons">Radio Buttons</h2>
+
+<p>This element defines a group of radio buttons allowing only one item to be selected at a time.</p>
+
+<div class="b-form">
+  <div class="form__field form__field--radio">
+      <fieldset>
+          <legend>What faculty are you a part of?</legend>
+          <p class="form__description">Please select an option below.</p>
+          <div class="form__group">
+              <input id="fass_2" type="radio" name="radio_name" value="fass"/>
+              <label for="fass_2">Faculty of Arts and Social Sciences</label>
+              <input id="fed_2" type="radio" name="radio_name" value="fed"/>
+              <label for="fed_2">Faculty of Engineering and Design</label>
+              <input id="fgpa_2" type="radio" name="radio_name" value="fgpa"/>
+              <label for="fgpa_2">Faculty of Graduate and Postdoctoral Affairs</label>
+              <input id="fpa_2" type="radio" name="radio_name" value="fpa"/>
+              <label for="fpa_2">Faculty of Public Affairs</label>
+              <input id="fs_2" type="radio" name="radio_name" value="fs"/>
+              <label for="fs_2">Faculty of Science</label>
+              <input id="ssb_2" type="radio" name="radio_name" value="ssb"/>
+              <label for="ssb_2">Sprott School of Business</label>
+          </div>
+      </fieldset>
+  </div>
+</div>
+
+<pre><code class="html">&lt;div class="form__field form__field--radio"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;What faculty are you a part of?&lt;/legend&gt;
+        &lt;p class="form__description"&gt;Please select an option below.&lt;/p&gt;
+        &lt;div class="form__group"&gt;
+            &lt;input id="fass" type="radio" name="radio_name" value="fass"/&gt;
+            &lt;label for="fass"&gt;Faculty of Arts and Social Sciences&lt;/label&gt;
+            &lt;input id="fed" type="radio" name="radio_name" value="fed"/&gt;
+            &lt;label for="fed"&gt;Faculty of Engineering and Design&lt;/label&gt;
+            &lt;input id="fgpa" type="radio" name="radio_name" value="fgpa"/&gt;
+            &lt;label for="fgpa"&gt;Faculty of Graduate and Postdoctoral Affairs&lt;/label&gt;
+            &lt;input id="fpa" type="radio" name="radio_name" value="fpa"/&gt;
+            &lt;label for="fpa"&gt;Faculty of Public Affairs&lt;/label&gt;
+            &lt;input id="fs" type="radio" name="radio_name" value="fs"/&gt;
+            &lt;label for="fs"&gt;Faculty of Science&lt;/label&gt;
+            &lt;input id="ssb" type="radio" name="radio_name" value="ssb"/&gt;
+            &lt;label for="ssb"&gt;Sprott School of Business&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="select-lists">Select Lists</h2>
+
+<p>This element is used to create a drop-down list, and the <code>&lt;option&gt;</code> tags inside the <code>&lt;select&gt;</code> element define the available options in the list. To specify the default selection, add <code>selected</code> to the option. If you wish to prevent an item from being selected, add <code>disabled</code> to the option.</p>
+
+<div class="b-form">
+  <div class="form__field form__field--select">
+      <label for="select">What faculty are you a part of?</label>
+      <p class="form__description">Please select an option below.</p>
+      <select id="select" name="select">
+          <option label="Select an Option" disabled selected>Select an Option</option>
+          <option label="Faculty of Arts and Social Sciences" value="fass">Faculty of Arts and Social Sciences</option>
+          <option label="Faculty of Engineering and Design" value="fed">Faculty of Engineering and Design</option>
+          <option label="Faculty of Graduate and Postdoctoral Affairs" value="fgpa">Faculty of Graduate and Postdoctoral Affairs</option>
+          <option label="Faculty of Public Affairs" value="fpa">Faculty of Public Affairs</option>
+          <option label="Faculty of Science" value="fs">Faculty of Science</option>
+          <option label="Sprott School of Business" value="ssb">Sprott School of Business</option>
+      </select>
+  </div>
+</div>
+
+<pre><code class="html">&lt;div class="form__field form__field--select"&gt;
+    &lt;label for="select"&gt;What faculty are you a part of?&lt;/label&gt;
+    &lt;p class="form__description"&gt;Please select an option below.&lt;/p&gt;
+    &lt;select id="select" name="select"&gt;
+        &lt;option label="Select an Option" disabled selected&gt;Select an Option&lt;/option&gt;
+        &lt;option label="Faculty of Arts and Social Sciences" value="fass"&gt;Faculty of Arts and Social Sciences&lt;/option&gt;
+        &lt;option label="Faculty of Engineering and Design" value="fed"&gt;Faculty of Engineering and Design&lt;/option&gt;
+        &lt;option label="Faculty of Graduate and Postdoctoral Affairs" value="fgpa"&gt;Faculty of Graduate and Postdoctoral Affairs&lt;/option&gt;
+        &lt;option label="Faculty of Public Affairs" value="fpa"&gt;Faculty of Public Affairs&lt;/option&gt;
+        &lt;option label="Faculty of Science" value="fs"&gt;Faculty of Science&lt;/option&gt;
+        &lt;option label="Sprott School of Business" value="ssb"&gt;Sprott School of Business&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="multi-select-lists">Multi-Select Lists</h2>
+
+<p>This element allows a user to select multiple options. A multi-select field only requires that you add <code>multiple="multiple"</code> to a select list. If you want to control how many options are visible in the field simply add <code>row="10"</code>. If the row attribute is not used, 5 options will be shown by default.</p>
+
+<div class="b-form">
+  <div class="form__field form__field--select">
+      <label for="select">What faculty are you a part of?</label>
+      <p class="form__description">Please select an option below.</p>
+      <select id="select" name="select" multiple size="6">
+          <option label="Faculty of Arts and Social Sciences" value="fass">Faculty of Arts and Social Sciences</option>
+          <option label="Faculty of Engineering and Design" value="fed">Faculty of Engineering and Design</option>
+          <option label="Faculty of Graduate and Postdoctoral Affairs" value="fgpa">Faculty of Graduate and Postdoctoral Affairs</option>
+          <option label="Faculty of Public Affairs" value="fpa">Faculty of Public Affairs</option>
+          <option label="Faculty of Science" value="fs">Faculty of Science</option>
+          <option label="Sprott School of Business" value="ssb">Sprott School of Business</option>
+      </select>
+  </div>
+</div>
+
+<pre><code class="html">&lt;div class="form__field form__field--select"&gt;
+    &lt;label for="select"&gt;What faculty are you a part of?&lt;/label&gt;
+    &lt;p class="form__description"&gt;Please select an option below.&lt;/p&gt;
+    &lt;select id="select" name="select" multiple size="6"&gt;
+        &lt;option label="Faculty of Arts and Social Sciences" value="fass"&gt;Faculty of Arts and Social Sciences&lt;/option&gt;
+        &lt;option label="Faculty of Engineering and Design" value="fed"&gt;Faculty of Engineering and Design&lt;/option&gt;
+        &lt;option label="Faculty of Graduate and Postdoctoral Affairs" value="fgpa"&gt;Faculty of Graduate and Postdoctoral Affairs&lt;/option&gt;
+        &lt;option label="Faculty of Public Affairs" value="fpa"&gt;Faculty of Public Affairs&lt;/option&gt;
+        &lt;option label="Faculty of Science" value="fs"&gt;Faculty of Science&lt;/option&gt;
+        &lt;option label="Sprott School of Business" value="ssb"&gt;Sprott School of Business&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="file-uploads">File Uploads</h2>
+
+<p>This element defines a file-select field and a "Browse" button for file uploads. To define a file-select field that allows multiple files to be selected, add the <code>multiple</code> attribute.</p>
+
+<div class="b-form">
+  <div class="form__field form__field--fileupload">
+      <label for="file">Upload a File</label>
+      <p class="form__description">Please select a file to be uploaded.</p>
+      <div class="form__upload">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M452 432c0 11-9 20-20 20s-20-9-20-20 9-20 20-20 20 9 20 20zm-84-20c-11 0-20 9-20 20s9 20 20 20 20-9 20-20-9-20-20-20zm144-48v104c0 24.3-19.7 44-44 44H44c-24.3 0-44-19.7-44-44V364c0-24.3 19.7-44 44-44h124v-99.3h-52.7c-35.6 0-53.4-43.1-28.3-68.3L227.7 11.7c15.6-15.6 40.9-15.6 56.6 0L425 152.4c25.2 25.2 7.3 68.3-28.3 68.3H344V320h124c24.3 0 44 19.7 44 44zM200 188.7V376c0 4.4 3.6 8 8 8h96c4.4 0 8-3.6 8-8V188.7h84.7c7.1 0 10.7-8.6 5.7-13.7L261.7 34.3c-3.1-3.1-8.2-3.1-11.3 0L109.7 175c-5 5-1.5 13.7 5.7 13.7H200zM480 364c0-6.6-5.4-12-12-12H344v24c0 22.1-17.9 40-40 40h-96c-22.1 0-40-17.9-40-40v-24H44c-6.6 0-12 5.4-12 12v104c0 6.6 5.4 12 12 12h424c6.6 0 12-5.4 12-12V364z"/></svg>
+          <input id="file" type="file" name="file">
+      </div>
+  </div>
+</div>
+
+<pre><code class="html">&lt;div class="form__field form__field--fileupload"&gt;
+    &lt;label for="file"&gt;Upload a File&lt;/label&gt;
+    &lt;div class="form__upload"&gt;
+        &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"&gt;&lt;path d="M452 432c0 11-9 20-20 20s-20-9-20-20 9-20 20-20 20 9 20 20zm-84-20c-11 0-20 9-20 20s9 20 20 20 20-9 20-20-9-20-20-20zm144-48v104c0 24.3-19.7 44-44 44H44c-24.3 0-44-19.7-44-44V364c0-24.3 19.7-44 44-44h124v-99.3h-52.7c-35.6 0-53.4-43.1-28.3-68.3L227.7 11.7c15.6-15.6 40.9-15.6 56.6 0L425 152.4c25.2 25.2 7.3 68.3-28.3 68.3H344V320h124c24.3 0 44 19.7 44 44zM200 188.7V376c0 4.4 3.6 8 8 8h96c4.4 0 8-3.6 8-8V188.7h84.7c7.1 0 10.7-8.6 5.7-13.7L261.7 34.3c-3.1-3.1-8.2-3.1-11.3 0L109.7 175c-5 5-1.5 13.7 5.7 13.7H200zM480 364c0-6.6-5.4-12-12-12H344v24c0 22.1-17.9 40-40 40h-96c-22.1 0-40-17.9-40-40v-24H44c-6.6 0-12 5.4-12 12v104c0 6.6 5.4 12 12 12h424c6.6 0 12-5.4 12-12V364z"/&gt;&lt;/svg&gt;
+        &lt;input id="file" type="file" name="file"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="buttons">Buttons</h2>
+
+<p>Each form requires a submit button and should be used as the last element inside the <code>b-form</code> wrapper.</p>
+
+<p><strong>TODO:</strong> what is needed on a submit button, onclick? onkeypress? what's needed for resetting fields?</p>
+
+<form class="b-form">
+  <div class="form__field form__field--button">
+      <input type="submit" class="form__reset" value="Submit" onclick="" onkeypress="">
+  </div>
+</form>
+
+<pre><code class="html">&lt;div class="form__field form__field--button"&gt;
+    &lt;input type="submit" class="form__submit" value="Submit" onclick="" onkeypress=""&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="additional-form-elements">Additional Form Elements</h2>
+
+<h3 id="required-fields">Required fields</h3>
+
+<p>To indicate that a field is require, a few things need to be added to a form element:</p>
+
+<ul>
+<li>Add a span with a class of <code>form__required</code> inside the label/legend to provide the user a visual that the field is required</li>
+<li>Add <code>isrequired</code> to the input</li>
+<li>Add a span with a class of <code>form_message</code> immediately after the input, and customize the error message that will be displayed</li>
+</ul>
+
+<div class="b-form">
+  <div class="form__field form__field--text">
+      <label for="text">
+            Required Field Label
+            <span class="form__required">*</span>
+        </label>
+      <input id="text" type="text" name="text" isrequired>
+      <span class="form__message">Customize the error message</span>
+  </div>
+</div>
+
+<pre><code class="html">&lt;div class="form__field form__field--text"&gt;
+    &lt;label for="text"&gt;
+        Required Field Label
+        &lt;span class="form__required"&gt;*&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;input id="text" type="text" name="text" isrequired&gt;
+    &lt;span class="form__message"&gt;Customize the error message&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3 id="read-only-fields">Read only fields</h3>
+
+<p>To make a field read only add <code>readonly</code> to the input, like the following example.</p>
+
+<ul>
+<li><strong>TODO:</strong> add a list of fields that support this</li>
+</ul>
+
+<div class="b-form">
+    <div class="form__field form__field--text">
+        <label for="text_5">Read Only Text Field</label>
+        <input id="text_5" type="text" name="text_5" value="This field is read only" readonly>
+    </div>
+</div>
+
+<pre><code class="html">&lt;div class="form__field form__field--text"&gt;
+    &lt;label for="text_5"&gt;Read Only Text Field&lt;/label&gt;
+    &lt;input id="text_5" type="text" name="text_5" value="This field is read only" readonly&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3 id="disabled-fields">Disabled fields</h3>
+
+<p>To disable a field add <code>disabled</code> to the input, like the following example.</p>
+
+<ul>
+<li><strong>TODO:</strong> add a list of fields that support this</li>
+</ul>
+
+<div class="b-form">
+    <div class="form__field form__field--text">
+        <label for="text_6">Disabled Text Field</label>
+        <input id="text_6" type="text" name="text_6" value="This field is disabled" disabled>
+    </div>
+</div>
+
+<pre><code class="html">&lt;div class="form__field form__field--text"&gt;
+    &lt;label for="text_6"&gt;Disabled Text Field&lt;/label&gt;
+    &lt;input id="text_6" type="text" name="text_6" value="This field is disabled" disabled&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="grouping-fields">Grouping Fields</h2>
+
+<p>There are time when you may want to group a series of inputs together, such as an address. The following example can be followed to create a grouping of basic inputs.</p>
+
+<div class="b-form">
+    <div class="form__field form__field--group">
+        <fieldset>
+            <legend>Address Field Legend</legend>
+            <label for="address">Street Address</label>
+            <input id="address"><br />
+            <label for="address2">Address Line 2</label>
+            <input id="address2"><br />
+            <label for="city">City:</label>
+            <input id="city"><br />
+            <label for="state">State / Province / Region:</label>
+            <input id="state"><br />
+            <label for="postalcode">Zip / Postal Code:</label>
+            <input id="postalcode"><br />
+            <label for="country">Country:</label>
+            <input id="country"><br />
+        </fieldset>
+    </div>
+</div>
+
+<pre><code class="html">&lt;div class="form__field form__field--group"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Address Field Legend&lt;/legend&gt;
+        &lt;label for="address"&gt;Street Address&lt;/label&gt;
+        &lt;input id="address"&gt;&lt;br /&gt;
+        &lt;label for="address2"&gt;Address Line 2&lt;/label&gt;
+        &lt;input id="address2"&gt;&lt;br /&gt;
+        &lt;label for="city"&gt;City:&lt;/label&gt;
+        &lt;input id="city"&gt;&lt;br /&gt;
+        &lt;label for="state"&gt;State / Province / Region:&lt;/label&gt;
+        &lt;input id="state"&gt;&lt;br /&gt;
+        &lt;label for="postalcode"&gt;Zip / Postal Code:&lt;/label&gt;
+        &lt;input id="postalcode"&gt;&lt;br /&gt;
+        &lt;label for="country"&gt;Country:&lt;/label&gt;
+        &lt;input id="country"&gt;&lt;br /&gt;
+    &lt;/fieldset&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="form-validation">Form Validation</h2>
+
+<p>Add information about validation, how to implement it, and more. Need to wait until testing is completed and js has been finalized.</p>
+
+<h2 id="missing-from-documentation">Missing from Documentation</h2>
+
+<p>The following examples need to be documented:</p>
+
+<ul>
+<li>required (checkboxes, radios, select lists, file upload)</li>
+</ul>
 
                                                                 </div>
                     </div>
