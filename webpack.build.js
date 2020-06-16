@@ -52,7 +52,7 @@ module.exports = {
 		new BrowserSyncPlugin({
 			host: 'localhost',
 			proxy: 'http://localhost:8000/',
-			port: 3000,
+			port: 5000,
 			files: [
 				'build/**/*',
 				'src/_blocks/**/*.scss', // scss, js and main twig files
