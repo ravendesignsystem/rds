@@ -154,7 +154,7 @@ The right-side `<aside>` is intended for providing content related to what is di
 ### Code
 
 ```html
-<div class="l-multicol l-multicol--am">
+<div class="l-multicol l-multicol--ama">
 
 	<aside class="multicol__nav">
 		{ the Menu block go here }
@@ -183,7 +183,7 @@ To add this modifier, use the `l-multicol--sidebar-top` class on the main div th
 ### Code
 
 ```html
-<div class="l-multicol l-multicol--am l-multicol--sidebar-top">
+<div class="l-multicol l-multicol--ama l-multicol--sidebar-top">
 
 	<aside class="multicol__nav">
 		{ the Menu block go here }
