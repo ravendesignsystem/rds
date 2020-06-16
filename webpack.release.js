@@ -10,9 +10,9 @@ const FileManagerPlugin = require('filemanager-webpack-plugin');
 const merge = require('webpack-merge');
 const path = require('path');
 const S3Plugin = require('webpack-s3-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-const version = '0.19.8';
+const version = '0.19.9';
 
 // Build Config
 module.exports = {
@@ -189,13 +189,13 @@ module.exports = {
 			basePath: 'rds/latest',
 		}),
 	],
-	optimization: {
-		minimizer: [
-			new UglifyJsPlugin({
-				cache: true,
-				parallel: true,
-				sourceMap: true,
-			}),
-		],
-	},
+	// optimization: {
+	// 	minimizer: [
+	// 		new UglifyJsPlugin({
+	// 			cache: true,
+	// 			parallel: true,
+	// 			sourceMap: true,
+	// 		}),
+	// 	],
+	// },
 };

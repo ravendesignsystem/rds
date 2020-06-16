@@ -2,6 +2,13 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.19.9](https://github.com/ravendesignsystem/rds/releases/tag/0.19.9) 2020-06-16
+
+Maintenance release with small patches and new blocks
+
+- **Changed:** styles for accordion components to allow for multi-line labels
+- **Changed:** documentation around layout-ama
+
 ## [v0.19.8](https://github.com/ravendesignsystem/rds/releases/tag/0.19.8) 2020-06-04
 
 **IMPORTANT:** Breaking changes update required
