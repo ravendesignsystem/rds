@@ -55,9 +55,11 @@ const detectOverflowOnMasthead = () => {
  *  @name toggleMobileMenu()
  *  @desc adds class to display red banner error stating the menu is too wide
  */
-const navContainer = document.querySelector('.c-nav--topnav');
+// const navContainer = document.querySelector('.c-nav--topnav');
+
+const navContainer = document.querySelector('.b-masthead nav');
 const navMenu = document.querySelector('.nav__menu--top');
-const initialNavMenuWidth = navMenu && navMenu.offsetWidth + 10;
+const initialNavMenuWidth = navMenu && navMenu.offsetWidth + 20;
 
 const toggleMobileMenu = () => {
 	if (!mastheadNav) return;
@@ -66,7 +68,7 @@ const toggleMobileMenu = () => {
 	const mastheadClassList = mastheadNavIcon.parentNode.classList;
 
 	const navContainerWidth = navContainer.offsetWidth;
-	const navMenuWidth = navMenu.offsetWidth + 10;
+	const navMenuWidth = navMenu.offsetWidth + 20;
 
 	const windowW = window.innerWidth;
 
@@ -75,8 +77,7 @@ const toggleMobileMenu = () => {
 	// capture div width and compare against window width
 	// if (window.innerWidth <= navWidth || window.innerWidth <= 960) {
 
-	if (navMenuWidth >= navContainerWidth || window.innerWidth <= 960) {
-		// if (window.innerWidth <= 960) {
+	if (initialNavMenuWidth >= navContainerWidth) {
 		modalMenu.appendChild(mastheadNav);
 		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map((li) => {
 			if (li.firstElementChild.getAttribute('aria-disabled') === 'false') {
@@ -90,16 +91,12 @@ const toggleMobileMenu = () => {
 			li.classList.add('open');
 		});
 		mastheadClassList.remove('u-hide-l');
-		// console.log('appending');
-	} else if (window.innerWidth <= 960) {
-		// console.log('removing');
-
+	} else {
 		mastheadClassList.add('u-hide-l');
 		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map((li) => {
 			li.classList.remove('open');
 			li.classList.add('c-menupopup');
 		});
-
 		mastheadNavContainer.appendChild(mastheadNav);
 	}
 };
