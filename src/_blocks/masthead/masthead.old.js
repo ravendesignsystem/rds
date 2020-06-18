@@ -32,10 +32,10 @@ const modal = document.querySelector('.l-overlay-modal');
 const modalMenu = document.querySelector('.modal__menu');
 const modalSearch = document.querySelector('.modal__search');
 const modalLogin = document.querySelector('.modal__login');
-const setAriaHidden = (target) => {
+const setAriaHidden = target => {
 	target.setAttribute('aria-hidden', true);
 };
-const unsetAriaHidden = (target) => {
+const unsetAriaHidden = target => {
 	target.setAttribute('aria-hidden', false);
 };
 const searchFormInput = document.querySelector('input.searchform__input');
@@ -55,30 +55,16 @@ const detectOverflowOnMasthead = () => {
  *  @name toggleMobileMenu()
  *  @desc adds class to display red banner error stating the menu is too wide
  */
-const navContainer = document.querySelector('.c-nav--topnav');
-const navMenu = document.querySelector('.nav__menu--top');
-const initialNavMenuWidth = navMenu && navMenu.offsetWidth + 10;
-
 const toggleMobileMenu = () => {
 	if (!mastheadNav) return;
 
 	const navWidth = mastheadNav.offsetWidth + 800;
 	const mastheadClassList = mastheadNavIcon.parentNode.classList;
 
-	const navContainerWidth = navContainer.offsetWidth;
-	const navMenuWidth = navMenu.offsetWidth + 10;
-
-	const windowW = window.innerWidth;
-
-	console.log({ navContainerWidth, navMenuWidth, initialNavMenuWidth, windowW });
-
 	// capture div width and compare against window width
-	// if (window.innerWidth <= navWidth || window.innerWidth <= 960) {
-
-	if (navMenuWidth >= navContainerWidth || window.innerWidth <= 960) {
-		// if (window.innerWidth <= 960) {
+	if (window.innerWidth <= navWidth || window.innerWidth <= 960) {
 		modalMenu.appendChild(mastheadNav);
-		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map((li) => {
+		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map(li => {
 			if (li.firstElementChild.getAttribute('aria-disabled') === 'false') {
 				li.firstElementChild.setAttribute('aria-disabled', true);
 				li.firstElementChild.setAttribute('aria-expanded', true);
@@ -90,12 +76,9 @@ const toggleMobileMenu = () => {
 			li.classList.add('open');
 		});
 		mastheadClassList.remove('u-hide-l');
-		// console.log('appending');
-	} else if (window.innerWidth <= 960) {
-		// console.log('removing');
-
+	} else {
 		mastheadClassList.add('u-hide-l');
-		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map((li) => {
+		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map(li => {
 			li.classList.remove('open');
 			li.classList.add('c-menupopup');
 		});
@@ -145,7 +128,7 @@ const toggleMastheadVisibilty = () => {
  *  @desc reveals modals depending on type passed in
  *  @param { string } type the class name slug  of modal to show
  */
-const showModal = (type) => {
+const showModal = type => {
 	const modalToShow = document.querySelector(`.modal__${type}`);
 
 	// show modal container
@@ -153,7 +136,7 @@ const showModal = (type) => {
 	unsetAriaHidden(modal);
 
 	// hide masthead actions
-	Array.from(mastheadActionsCTA).map((el) =>
+	Array.from(mastheadActionsCTA).map(el =>
 		el.classList.add('u-visually-hidden')
 	);
 
@@ -172,7 +155,7 @@ const closeAllModals = () => {
 	setAriaHidden(modal);
 
 	// hide close all modal CTA
-	Array.from(mastheadActionsCTA).map((el) =>
+	Array.from(mastheadActionsCTA).map(el =>
 		el.classList.remove('u-visually-hidden')
 	);
 	globalCloseModalButton.classList.add('u-visually-hidden');
@@ -254,7 +237,7 @@ const handleLoading = () => {
 
 const handleClick = () => {
 	if (mastheadSearch) {
-		mastheadSearch.addEventListener('click', (e) => {
+		mastheadSearch.addEventListener('click', e => {
 			showModal('search');
 			document.querySelector('.searchform__input').focus();
 		});
@@ -291,7 +274,7 @@ const handleClick = () => {
 };
 
 const handleKeyPress = () => {
-	window.addEventListener('keydown', (e) => {
+	window.addEventListener('keydown', e => {
 		if (e.key === 'Escape') {
 			closeAllModals();
 		}
