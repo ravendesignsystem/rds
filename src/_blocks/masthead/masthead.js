@@ -77,6 +77,8 @@ const toggleMobileMenu = () => {
 	// capture div width and compare against window width
 	// if (window.innerWidth <= navWidth || window.innerWidth <= 960) {
 
+	// TODO: aria expanded stays at true when nav comes back into view, this causes the grey bg on buttons with submenus
+
 	if (initialNavMenuWidth >= navContainerWidth) {
 		modalMenu.appendChild(mastheadNav);
 		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map((li) => {
