@@ -8,6 +8,10 @@
 		content: '';
 	}
 
+	&:hover::before {
+		background-color: $red;
+	}
+
 	&:hover svg path {
 		fill: white;
 	}
