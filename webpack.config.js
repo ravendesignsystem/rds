@@ -2,10 +2,9 @@
  * RDS Webpack Config
  */
 
-const baseConfig = require('./webpack.build.js');
 const path = require('path');
-const FileManagerPlugin = require('filemanager-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 module.exports = {
 	entry: ['./src/_themes/docs/js/docs.js', './src/_themes/docs/scss/docs.scss'],
@@ -73,7 +72,7 @@ module.exports = {
 		new BrowserSyncPlugin({
 			host: 'localhost',
 			proxy: 'http://localhost:8000/',
-			port: 5000,
+			port: 3000,
 			files: [
 				'build/**/*',
 				'src/_blocks/**/*.scss', // scss, js and main twig files
