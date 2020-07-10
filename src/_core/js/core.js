@@ -1,5 +1,5 @@
 // TODO move and rename to core
-import '../../_themes/cu/scss/cu.scss';
+import '../../_core/scss/core.scss';
 
 // polyfills
 import './polyfills/polyfills';

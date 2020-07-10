@@ -1,5 +1,8 @@
-// Core v 1.0.0
-//-------------
+/*
+ * RDS v1.19.9
+ * Copyright 1973-2073 Carleton University
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 
 // Build tools
 // -----------
@@ -24,34 +27,44 @@
 // Blocks
 // ------
 @import '../../_blocks/footerbrand/footerbrand';
-//
 
 // We still hate IE
 @import 'base/ie-fixes/ie-fixes';
 
-/*
-                          .'`  '-.
-                         /     _  \
-                        /     (.)_J
-                       /        / `'-..
-                     .'         \`-..--`\
-                   ,;-'~""'.    /`"'""""'`  "Please follow our SCSS coding standards @ https://goo.gl/VvX6zS... Kaw!"
-                  /`        \  /
-                /`    /      | ;
-               /`       .'   | |
-              ;           /  ; ;
-             /   /     .'   / ;
-            ;             .' /
-           /  .'  /   _.-' .'
-         .'        .-' _,-;
-        /   _..--'`   /_.'
-       ;.-;` / ;., .-'\=\        ,###"
-        /   .'/  \=\   \=\    ,###"
-       /.'/ //    \=\   \=\_###"
-      /  . '/      \=\___#-.)))
-     /  / _//      ((--.)))```
-     |_/ / /       ,###"```
-     /  / /     ,###"
-    /.'/_/   ,###"
-    |_/    ,##
- */
+// Header blocks
+//--------------
+@import '../../_blocks/alertaside/alertaside';
+@import '../../_blocks/alertheader/alertheader';
+@import '../../_blocks/banner/banner';
+@import '../../_blocks/globalnav/globalnav';
+@import '../../_blocks/masthead/masthead';
+
+// Main blocks
+//------------
+@import '../../_blocks/cardgrid/cardgrid';
+@import '../../_blocks/content/content';
+@import '../../_blocks/details/details';
+@import '../../_blocks/imagetile/imagetile';
+@import '../../_blocks/imgfull/imgfull';
+@import '../../_blocks/listing/listing';
+@import '../../_blocks/textimg/textimg';
+@import '../../_blocks/timeline/timeline';
+
+// Main blocks
+//------------
+@import '../../_blocks/form/form';
+@import '../../_blocks/form/flatpickr';
+
+// Aside blocks
+//-------------
+@import '../../_blocks/menu/menu';
+@import '../../_blocks/sidebar/sidebar';
+
+// Footer blocks
+// --------------
+@import '../../_blocks/footersimple/footersimple';
+@import '../../_blocks/footersitemap/footersitemap';
+
+// Overlay blocks
+// --------------
+@import '../../_blocks/login/login';

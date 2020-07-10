@@ -8,7 +8,7 @@ const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 module.exports = {
 	entry: {
-		scripts: './src/_core/js/core.js',
+		core: './src/_core/js/core.js',
 		docs: './src/_themes/docs/js/docs.js',
 	},
 	output: {
