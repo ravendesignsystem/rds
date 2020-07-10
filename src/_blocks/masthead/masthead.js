@@ -1,4 +1,6 @@
 import dialogPolyfill from 'dialog-polyfill';
+
+// TODO revert this back when done fixing errors
 import { closeMenuState } from '../../_components/navmenu/navmenu';
 
 let scrollPosition;
@@ -32,10 +34,10 @@ const modal = document.querySelector('.l-overlay-modal');
 const modalMenu = document.querySelector('.modal__menu');
 const modalSearch = document.querySelector('.modal__search');
 const modalLogin = document.querySelector('.modal__login');
-const setAriaHidden = target => {
+const setAriaHidden = (target) => {
 	target.setAttribute('aria-hidden', true);
 };
-const unsetAriaHidden = target => {
+const unsetAriaHidden = (target) => {
 	target.setAttribute('aria-hidden', false);
 };
 const searchFormInput = document.querySelector('input.searchform__input');
@@ -55,34 +57,53 @@ const detectOverflowOnMasthead = () => {
  *  @name toggleMobileMenu()
  *  @desc adds class to display red banner error stating the menu is too wide
  */
+
+const navContainer = document.querySelector('.b-masthead nav');
+const navMenu = document.querySelector('.nav__menu--top');
+const initialNavMenuWidth = navMenu && navMenu.offsetWidth + 50;
+
 const toggleMobileMenu = () => {
 	if (!mastheadNav) return;
 
-	const navWidth = mastheadNav.offsetWidth + 800;
 	const mastheadClassList = mastheadNavIcon.parentNode.classList;
+	const navContainerWidth = navContainer.offsetWidth;
+
+	console.log('NavContainer: ' + navContainerWidth);
+	console.log('NavWidth: ' + initialNavMenuWidth);
 
 	// capture div width and compare against window width
-	if (window.innerWidth <= navWidth || window.innerWidth <= 960) {
+	// TODO: aria expanded stays at true when nav comes back into view, this causes the grey bg on buttons with submenus
+	if (initialNavMenuWidth >= navContainerWidth) {
+		// Moves nav to mobile dialogue in footer
 		modalMenu.appendChild(mastheadNav);
-		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map(li => {
-			if (li.firstElementChild.getAttribute('aria-disabled') === 'false') {
-				li.firstElementChild.setAttribute('aria-disabled', true);
-				li.firstElementChild.setAttribute('aria-expanded', true);
-			} else {
-				li.firstElementChild.setAttribute('aria-disabled', false);
-				li.firstElementChild.setAttribute('aria-expanded', false);
-			}
+
+		// Remove hide class from hamburger menu
+		mastheadClassList.remove('u-hide-l');
+
+		// a11y
+		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map((li) => {
+			// change aria tags on mobile menu
+			li.firstElementChild.setAttribute('aria-disabled', true);
+			li.firstElementChild.setAttribute('aria-expanded', true);
+
+			// make a note
 			li.classList.remove('c-menupopup');
 			li.classList.add('open');
 		});
-		mastheadClassList.remove('u-hide-l');
 	} else {
+		// Add hide class to hamburger menu
 		mastheadClassList.add('u-hide-l');
-		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map(li => {
+
+		// a11y
+		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map((li) => {
+			// change aria tags on mobile menu
+			li.firstElementChild.removeAttribute('aria-disabled');
+			li.firstElementChild.setAttribute('aria-expanded', false);
+
+			// make a note
 			li.classList.remove('open');
 			li.classList.add('c-menupopup');
 		});
-
 		mastheadNavContainer.appendChild(mastheadNav);
 	}
 };
@@ -128,7 +149,7 @@ const toggleMastheadVisibilty = () => {
  *  @desc reveals modals depending on type passed in
  *  @param { string } type the class name slug  of modal to show
  */
-const showModal = type => {
+const showModal = (type) => {
 	const modalToShow = document.querySelector(`.modal__${type}`);
 
 	// show modal container
@@ -136,7 +157,7 @@ const showModal = type => {
 	unsetAriaHidden(modal);
 
 	// hide masthead actions
-	Array.from(mastheadActionsCTA).map(el =>
+	Array.from(mastheadActionsCTA).map((el) =>
 		el.classList.add('u-visually-hidden')
 	);
 
@@ -155,7 +176,7 @@ const closeAllModals = () => {
 	setAriaHidden(modal);
 
 	// hide close all modal CTA
-	Array.from(mastheadActionsCTA).map(el =>
+	Array.from(mastheadActionsCTA).map((el) =>
 		el.classList.remove('u-visually-hidden')
 	);
 	globalCloseModalButton.classList.add('u-visually-hidden');
@@ -237,7 +258,7 @@ const handleLoading = () => {
 
 const handleClick = () => {
 	if (mastheadSearch) {
-		mastheadSearch.addEventListener('click', e => {
+		mastheadSearch.addEventListener('click', (e) => {
 			showModal('search');
 			document.querySelector('.searchform__input').focus();
 		});
@@ -274,7 +295,7 @@ const handleClick = () => {
 };
 
 const handleKeyPress = () => {
-	window.addEventListener('keydown', e => {
+	window.addEventListener('keydown', (e) => {
 		if (e.key === 'Escape') {
 			closeAllModals();
 		}

@@ -1,86 +1,37 @@
 /**
- * RDS Webpack Config
+ * WordPress Webpack Config
  */
-
 require('dotenv').config();
-
-const baseConfig = require('./webpack.build.js');
-const CompressionPlugin = require('compression-webpack-plugin');
-const FileManagerPlugin = require('filemanager-webpack-plugin');
 const merge = require('webpack-merge');
-const path = require('path');
+const baseConfig = require('./webpack.config.js');
+const FileManagerPlugin = require('filemanager-webpack-plugin');
 const S3Plugin = require('webpack-s3-plugin');
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-const version = '0.19.9';
+const version = '0.20.0';
 
 // Build Config
-module.exports = {
-	entry: ['./src/_core/js/core.js', './src/_themes/cu/scss/cu.scss'],
-	output: {
-		filename: version + '/rds-cu.js',
-		path: path.resolve(__dirname, 'dist'),
-	},
-	module: {
-		rules: [
-			{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader',
-				},
-			},
-			{
-				test: /\.(scss|css)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: version + '/rds-cu.css',
-						},
-					},
-					{
-						loader: 'extract-loader',
-					},
-					{
-						loader: 'css-loader?-url',
-						options: {
-							sourceMap: false,
-						},
-					},
-					{
-						loader: 'postcss-loader',
-						options: {
-							sourceMap: false,
-						},
-					},
-					{
-						loader: 'sass-loader',
-						options: {
-							sourceMap: false,
-						},
-					},
-				],
-			},
-		],
-	},
+module.exports = merge(baseConfig, {
 	plugins: [
-		new CompressionPlugin({
-			test: /\.(js|css|map)(\?.*)?$/i,
-			filename: '[path].gz[query]',
-			algorithm: 'gzip',
-		}),
+		// Build dist for npm package
 		new FileManagerPlugin({
 			onStart: {
 				delete: [
 					'./dist/_blocks',
 					'./dist/_components',
-					'./dist/core',
-					'./dist/' + version,
+					'./dist/_core',
+					// './dist/' + version,
 				],
 			},
 			onEnd: {
 				copy: [
+					{
+						source: './build/docs/css/core.*',
+						destination: './dist/' + version,
+					},
+					{
+						source: './build/docs/js/core.*',
+						destination: './dist/' + version,
+					},
 					{
 						source: './src/_blocks/**/*.scss',
 						destination: './dist/_blocks',
@@ -145,7 +96,7 @@ module.exports = {
 					return 'public-read';
 				},
 			},
-			directory: 'dist/' + version,
+			directory: 'dist/latest',
 			basePath: 'rds/' + version,
 		}),
 		new S3Plugin({
@@ -185,17 +136,8 @@ module.exports = {
 					return 'public-read';
 				},
 			},
-			directory: 'dist/' + version,
+			directory: 'dist/latest',
 			basePath: 'rds/latest',
 		}),
 	],
-	// optimization: {
-	// 	minimizer: [
-	// 		new UglifyJsPlugin({
-	// 			cache: true,
-	// 			parallel: true,
-	// 			sourceMap: true,
-	// 		}),
-	// 	],
-	// },
-};
+});

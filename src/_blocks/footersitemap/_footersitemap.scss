@@ -43,19 +43,19 @@
 	}
 
 	.footersitemap__links h2 {
-		font-size: $pixel14;
+		font-size: $pixel16;
 		font-weight: 700;
-		text-transform: uppercase;
+		// text-transform: uppercase;
 		border-bottom: 0;
 	}
 
 	.footersitemap__links ul {
 		margin: 0;
 		list-style-type: none;
-		font-size: $pixel12;
+		font-size: $pixel14;
 		line-height: 1.6;
 		color: $grey-luke;
-		text-transform: uppercase;
+		// text-transform: uppercase;
 
 		li:not(:last-child) {
 			padding-bottom: 8px;
@@ -84,7 +84,7 @@
 .footer__contact {
 	padding: 0 25px 40px;
 	margin-bottom: -25px;
-	font-size: $pixel14;
+	font-size: $pixel16;
 	line-height: 1.6;
 	color: white;
 
@@ -96,7 +96,7 @@
 
 	address {
 		text-align: center;
-		text-transform: uppercase;
+		// text-transform: uppercase;
 
 		@include media('>l') {
 			display: flex;

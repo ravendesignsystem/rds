@@ -6,10 +6,17 @@
 
 // RDS Core
 // --------
-@import '../../cu/scss/cu';
+// @import '../../../_core/scss/core.scss';
+
+// CORE RESOURCES
+// ----------
+
+@import '../../../_core/scss/tools/include-media';
+@import '../../../_core/scss/tools/vars';
 
 // DOCS THEME
 // ----------
+
 @import 'base/utilities';
 
 // Docs Blocks

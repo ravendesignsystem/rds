@@ -24,9 +24,9 @@ The version number exists in several files and is required to be updated:
 
 - Update the `CHANGELOG.md` file in `/dist`
 
-### Build Release Package
+### Build Release for NPM and Prod Docs
 
-- In a terminal window, run `npm run release`
+- In a terminal window, run `npm run build ; npm run release`
 - Go into the `/dist` folder and run `npm publish` to push the new release to npm
 
 ### Finish Release Branch
@@ -34,14 +34,6 @@ The version number exists in several files and is required to be updated:
 - Commit all the changes using a message similar to `Updating to version 0.XX.X`
 - Merge release branch into `dev`
 - Merge release branch into `master`
-- Delete release branch from local, and remote if it was pushed
-
-### Build Docs for Prod
-To build the docs for production:
-
-- Open a terminal window
-- make sure you are on the `master` branch
-- Run the following command: `npm run prod`
-- Commit all the changes using a message similar to `Updating prod docs for version 0.XX.X`
 - Tag the latest commit to master with the version number being released
 - Push changes from `dev` and `master` to remote
+- Delete release branch from local, and remote if it was pushed

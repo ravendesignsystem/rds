@@ -29,7 +29,7 @@ To quickly get up and running, add RDS' CSS and JS from Carleton's CDN.
 Copy-paste the stylesheet <link> below into your `<head>` before any other stylesheets.
 
 ```html
-<link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.css.gz" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/core.css.gz" media="print" onload="this.media='all'">
 ```
 
 ### JS
@@ -37,7 +37,7 @@ Copy-paste the stylesheet <link> below into your `<head>` before any other style
 Copy-paste the below `<script>` directly above your closing `</body>`.
 
 ```html
-<script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.js.gz" crossorigin="anonymous">
+<script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/core.js.gz" crossorigin="anonymous">
 ```
 
 ### What is included
@@ -56,7 +56,7 @@ Be sure to have your pages set up with RDS' template requirements, which at a mi
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Uncomment the line below if you have been approved to use the CU's paid Gotham font -->
         <!-- <link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" /> -->
-        <link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.css.gz" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/core.css.gz" media="print" onload="this.media='all'">
         <title>Hello, world!</title>
     </head>
 
@@ -97,7 +97,7 @@ Be sure to have your pages set up with RDS' template requirements, which at a mi
         </dialog>
 
         <!-- Required JavaScript -->
-        <script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/rds-cu.js.gz" crossorigin="anonymous">
+        <script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/core.js.gz" crossorigin="anonymous">
 
     </body>
 </html>

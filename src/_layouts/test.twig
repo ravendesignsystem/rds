@@ -1,129 +1,128 @@
 <!doctype html>
 <html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css" />
-        <link rel="stylesheet" href="{{ site.cssPath }}" media="print" onload="this.media='all'">
-        <title>{{ page.title }}</title>
-    </head>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css"/>
+		<link rel="stylesheet" href="{{ site.cssCorePath }}" media="print" onload="this.media='all'">
+		<link rel="stylesheet" href="{{ site.cssDocsPath }}" media="print" onload="this.media='all'">
+		<title>{{ page.title }}</title>
+	</head>
 
-<body>
-<header>
-{# Masthead stories #}
-{% if page.story == "masthead" %}
-    {% include "masthead/stories/base" %}
-{% elseif page.story == "masthead-long-title" %}
-    {% include "masthead/stories/long-title" %}
-    {# Masthead buttons #}
-{% elseif page.story == "masthead-search" %}
-    {% include "masthead/stories/search" %}
-{% elseif page.story == "masthead-login" %}
-    {% include "masthead/stories/login" %}
-{% elseif page.story == "masthead-cta" %}
-    {% include "masthead/stories/cta" %}
-{% elseif page.story == "masthead-cta-white" %}
-    {% include "masthead/stories/cta-white" %}
-{% elseif page.story == "masthead-cta-dropdown" %}
-    {% include "masthead/stories/cta-dropdown" %}
-{% elseif page.story == "masthead-cta-dropdown-icons" %}
-    {% include "masthead/stories/cta-dropdown-icons" %}
-{% elseif page.story == "masthead-all-buttons" %}
-    {% include "masthead/stories/buttons" %}
-    {# Masthead top nav #}
-{% elseif page.story == "masthead-top-nav" %}
-    {% include "masthead/stories/top-nav" %}
-{% elseif page.story == "masthead-top-nav-sub" %}
-    {% include "masthead/stories/top-nav-sub" %}
-{% elseif page.story == "masthead-side-nav" %}
-    {% include "masthead/stories/side-nav" %}
-{% elseif page.story == "masthead-side-nav-cta" %}
-    {% include "masthead/stories/side-nav-cta" %}
-{% elseif page.story == "masthead-ks" %}
-    {% include "masthead/stories/ks" %}
+	<body>
+		<header>
+			{# Masthead stories #}
+			{% if page.story == "masthead" %}
+				{% include "masthead/stories/base" %}
+			{% elseif page.story == "masthead-long-title" %}
+				{% include "masthead/stories/long-title" %}
+				{# Masthead buttons #}
+			{% elseif page.story == "masthead-search" %}
+				{% include "masthead/stories/search" %}
+			{% elseif page.story == "masthead-login" %}
+				{% include "masthead/stories/login" %}
+			{% elseif page.story == "masthead-cta" %}
+				{% include "masthead/stories/cta" %}
+			{% elseif page.story == "masthead-cta-white" %}
+				{% include "masthead/stories/cta-white" %}
+			{% elseif page.story == "masthead-cta-dropdown" %}
+				{% include "masthead/stories/cta-dropdown" %}
+			{% elseif page.story == "masthead-cta-dropdown-icons" %}
+				{% include "masthead/stories/cta-dropdown-icons" %}
+			{% elseif page.story == "masthead-all-buttons" %}
+				{% include "masthead/stories/buttons" %}
+				{# Masthead top nav #}
+			{% elseif page.story == "masthead-top-nav" %}
+				{% include "masthead/stories/top-nav" %}
+			{% elseif page.story == "masthead-top-nav-sub" %}
+				{% include "masthead/stories/top-nav-sub" %}
+			{% elseif page.story == "masthead-side-nav" %}
+				{% include "masthead/stories/side-nav" %}
+			{% elseif page.story == "masthead-side-nav-cta" %}
+				{% include "masthead/stories/side-nav-cta" %}
+			{% elseif page.story == "masthead-ks" %}
+				{% include "masthead/stories/ks" %}
+			{% endif %}
+		</header>
+
+		{% if page.menu %}
+			{% block body %}
+			{% if (page.menu) or (page.sidebar) %}
+				<div class="l-multicol{% if page.sidebar %} l-multicol--ama{% else %} l-multicol--am{% endif %}">
+					<aside class="multicol__nav">
+						<div class="b-menu b-menu--sidenav">
+							{%include 'docs/inc/menus/menu-' ~ page.menu %}
+						</div>
+					</aside>
+
+					{#    <div class="l-multicol{% if page.sidebar %} l-multicol--ama{% else %} l-multicol--am{% endif %} l-multicol--white{% if 'l' in page.sidebar %} l-multicol--sidebar-large{% endif %} {% if 'top' in page.sidebar %} l-multicol--sidebar-top{% endif %}">#}
+				{#        <div class="multicol__container">#}
+					{#            <aside class="multicol__nav">#}
+					{#                <div class="b-menu b-menu--sidenav u-sticky">#}
+					{#                    {%include 'docs/inc/menus/menu-' ~ page.menu %}#}
+					{#                </div>#}
+					{#            </aside>#}
+				{% endif %}
+				{% block main %}
+					<main>
+						{% if page.content != 'none' %}
+							<div class="u-block u-block--white">
+								<div class="b-content">
+								{% endif %}
+								{% block content %}{% endblock %}
+								{% if page.content != 'none' %}
+								</div>
+							</div>
+						{% endif %}
+						{% if page.sidebar %}
+							<aside class="multicol__sidebar"></aside>
+						{% endif %}
+					</main>
+				{% endblock %}
+				{# End main#}
+				{% if page.menu %}
+				</div>
+			</div>
+		{% endif %}
+	{% endblock %}
+	{# END body block #}
 {% endif %}
-</header>
 
-{% if page.menu %}
-{% block body %}
-    {% if (page.menu) or (page.sidebar) %}
-    <div class="l-multicol{% if page.sidebar %} l-multicol--ama{% else %} l-multicol--am{% endif %}">
-    <aside class="multicol__nav">
-        <div class="b-menu b-menu--sidenav">
-            {%include 'docs/inc/menus/menu-' ~ page.menu %}
-        </div>
-    </aside>
+<dialog class="l-overlay-modal" aria-modal="true" aria-hidden="true">
+	<div class="modal__search u-visually-hidden">
+		{% include "search/search" %}
+	</div>
+	<div class="modal__menu u-visually-hidden"> {% block menu %}{% endblock %}
+		</div>
 
-{#    <div class="l-multicol{% if page.sidebar %} l-multicol--ama{% else %} l-multicol--am{% endif %} l-multicol--white{% if 'l' in page.sidebar %} l-multicol--sidebar-large{% endif %} {% if 'top' in page.sidebar %} l-multicol--sidebar-top{% endif %}">#}
-{#        <div class="multicol__container">#}
-{#            <aside class="multicol__nav">#}
-{#                <div class="b-menu b-menu--sidenav u-sticky">#}
-{#                    {%include 'docs/inc/menus/menu-' ~ page.menu %}#}
-{#                </div>#}
-{#            </aside>#}
-    {% endif %}
-    {% block main %}
-        <main>
-            {% if page.content != 'none' %}
-                <div class="u-block u-block--white">
-                    <div class="b-content">
-                        {% endif %}
-                        {% block content %}
-                        {% endblock %}
-                        {% if page.content != 'none' %}
-                    </div>
-                </div>
-            {% endif %}
-            {% if page.sidebar %}
-                <aside class="multicol__sidebar">
-                </aside>
-            {% endif %}
-        </main>
-    {% endblock %}{# End main#}
-    {% if page.menu %}
-        </div>
-        </div>
-    {% endif %}
-{% endblock %} {# END body block #}
-{% endif %}
+		{# Good to wrap in an is-logged-in conditional...#}
+		<div class="modal__login u-visually-hidden">
+			<div class="b-login u-block">
+				<h1 id="aria-dialog-title" class="login__heading">Login to Your App</h1>
+				<form class="c-form" name="loginform" action="/" method="post" accept-charset="UTF-8">
 
-<dialog
- class="l-overlay-modal" aria-modal="true" aria-hidden="true">
-    <div class="modal__search u-visually-hidden">
-        {% include "search/search" %}
-    </div>
-    <div class="modal__menu u-visually-hidden">
-            {% block menu %}
-            {% endblock %}
-    </div>
+					<label for="user_login">Username</label>
+					<input type="text" autocomplete="username" id="user_login" name="log" class="login__field" value="" autocapitalize="off" autocorrect="off" autofocus="autofocus" aria-required="true">
 
-    {# Good to wrap in an is-logged-in conditional...#}
-    <div class="modal__login u-visually-hidden">
-        <div class="b-login u-block">
-            <h1 id="aria-dialog-title" class="login__heading">Login to Your App</h1>
-            <form class="c-form" name="loginform" action="/" method="post" accept-charset="UTF-8">
+					<label for="user_pass">Password
+						<a class="login__link" href="/password-reset/">Forgot password?</a>
+					</label>
+					<input type="password" autocomplete="current-password" name="pwd" id="user_pass" value="" class="form-control form-control input-block" aria-required="true">
 
-                <label for="user_login">Username</label>
-                <input type="text" autocomplete="username" id="user_login" name="log" class="login__field" value="" autocapitalize="off" autocorrect="off" autofocus="autofocus" aria-required="true">
+					<input type="submit" value="Login" class="u-width-full">
+				</form>
+				<p class="login__account">Not registered?
+					<a class="u-link" href="/register/">Create an account</a>.
+				</p>
+			</div>
+		</div>
 
-                <label for="user_pass">Password <a class="login__link" href="/password-reset/">Forgot password?</a></label>
-                <input type="password" autocomplete="current-password" name="pwd" id="user_pass" value="" class="form-control form-control input-block"  aria-required="true">
+	</dialog>
 
-                <input type="submit" value="Login"  class="u-width-full">
-            </form>
-            <p class="login__account">Not registered?
-                <a class="u-link" href="/register/">Create an account</a>.
-            </p>
-        </div>
-    </div>
-
-</dialog>
-
-    {% block scripts %}
-        <script id="iePolyFills" src=""></script>
-        <script src="{{ site.jsPath }}"></script>
-    {% endblock %}
-
-</body>
-</html>
+	{% block scripts %}
+		<script id="iePolyFills" src=""></script>
+		<script src="{{ site.jsCorePath }}"></script>
+		<script src="{{ site.jsDocsPath }}"></script>
+	{% endblock %}
+</html></body></html>

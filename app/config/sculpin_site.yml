@@ -1,7 +1,7 @@
 # Site wide global vars - eg. {{ site.title }} can be used in templates
 title: RDS Local
 subtitle: RDS
-version: 0.19.9
+version: 0.20.0
 cssSize: 45KB
 cssG: 10KB
 jsSize: 10KB
@@ -11,9 +11,11 @@ url: /docs/
 #cms: CU
 fw: Elective
 cms: Clear
-cssPath: /docs/css/docs.css
+cssDocsPath: /docs/css/docs.css
+cssCorePath: /docs/css/core.css
 homecssPath: /docs/css/hp.css
-jsPath: /docs/js/docs.js
+jsCorePath: /docs/js/docs.js
+jsDocsPath: /docs/js/core.js
 jsPathHome: /docs/js/hp.js
 
 blocks:

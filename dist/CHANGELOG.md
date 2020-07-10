@@ -2,6 +2,21 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.20.0](https://github.com/ravendesignsystem/rds/releases/tag/0.20.0) 2020-07-10
+
+**IMPORTANT:** Breaking changes update required
+
+- **Breaking Change:** name of dist files in npm package changed from `rds-cu.js` and `rds-cu.css` to `core.js` and `core.css`
+
+- **Added:** max-width on c-card
+- **Added:** background color to default social icon
+- **Added:** added styles to display skip to content link when in focus
+- **Changed:** refactored webpack config to create separation in core and doc dist files and simplify release process
+- **Changed:** table component docs to have better example for testing
+- **Changed:** removed uppercase in footer sitemap and increased font size
+- **Fixed:** wrapping issue on text inside table cell
+- **Fixed:** refactored topnav script to avoid jumpiness and better check container width
+
 ## [v0.19.9](https://github.com/ravendesignsystem/rds/releases/tag/0.19.9) 2020-06-16
 
 Maintenance release with small patches and new blocks
