@@ -66,9 +66,9 @@ module.exports = {
 			algorithm: 'gzip',
 		}),
 		new FileManagerPlugin({
-			onStart: {
-				delete: ['./build/docs'],
-			},
+			// onStart: {
+			// 	delete: ['./build/docs'],
+			// },
 			onEnd: {
 				copy: [
 					{
