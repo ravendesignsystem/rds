@@ -1,3 +1,5 @@
+import '../../../_themes/docs/scss/docs.scss';
+
 // *** CORE JS ***
 import '../../../_core/js/core';
 

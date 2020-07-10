@@ -7,9 +7,12 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 module.exports = {
-	entry: ['./src/_themes/docs/js/docs.js', './src/_themes/docs/scss/docs.scss'],
+	entry: {
+		scripts: './src/_core/js/core.js',
+		docs: './src/_themes/docs/js/docs.js',
+	},
 	output: {
-		filename: 'js/docs.js',
+		filename: 'js/[name].js',
 		path: path.resolve(__dirname, 'build/docs'),
 	},
 	module: {

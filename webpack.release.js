@@ -4,13 +4,12 @@
 
 require('dotenv').config();
 
-const baseConfig = require('./webpack.build.js');
+// const baseConfig = require('./webpack.config.js');
 const CompressionPlugin = require('compression-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const merge = require('webpack-merge');
 const path = require('path');
 const S3Plugin = require('webpack-s3-plugin');
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const version = '0.19.9';
 
@@ -189,13 +188,4 @@ module.exports = {
 			basePath: 'rds/latest',
 		}),
 	],
-	// optimization: {
-	// 	minimizer: [
-	// 		new UglifyJsPlugin({
-	// 			cache: true,
-	// 			parallel: true,
-	// 			sourceMap: true,
-	// 		}),
-	// 	],
-	// },
 };
