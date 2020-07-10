@@ -1,7 +1,7 @@
 import '../../../_themes/docs/scss/docs.scss';
 
 // *** CORE JS ***
-import '../../../_core/js/core';
+// import '../../../_core/js/core';
 
 // Tabs use on docs
 // import '../blocks/tabs/tabs';
