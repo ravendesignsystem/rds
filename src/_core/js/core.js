@@ -1,3 +1,6 @@
+// TODO move and rename to core
+import '../../_core/scss/core.scss';
+
 // polyfills
 import './polyfills/polyfills';
 import './polyfills/From-polyfill';

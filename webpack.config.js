@@ -2,9 +2,20 @@
  * RDS Webpack Config
  */
 
+const path = require('path');
+const CompressionPlugin = require('compression-webpack-plugin');
+const FileManagerPlugin = require('filemanager-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
+	entry: {
+		core: './src/_core/js/core.js',
+		docs: './src/_themes/docs/js/docs.js',
+	},
+	output: {
+		filename: 'js/[name].js',
+		path: path.resolve(__dirname, 'build/docs'),
+	},
 	module: {
 		rules: [
 			{
@@ -49,10 +60,28 @@ module.exports = {
 		],
 	},
 	plugins: [
+		new CompressionPlugin({
+			test: /\.(js|css|map)(\?.*)?$/i,
+			filename: '[path].gz[query]',
+			algorithm: 'gzip',
+		}),
+		new FileManagerPlugin({
+			onStart: {
+				delete: ['./build/docs'],
+			},
+			onEnd: {
+				copy: [
+					{
+						source: './build/docs',
+						destination: './docs',
+					},
+				],
+			},
+		}),
 		new BrowserSyncPlugin({
 			host: 'localhost',
 			proxy: 'http://localhost:8000/',
-			port: 5000,
+			port: 3000,
 			files: [
 				'build/**/*',
 				'src/_blocks/**/*.scss', // scss, js and main twig files
