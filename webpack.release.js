@@ -1,11 +1,13 @@
 /**
  * WordPress Webpack Config
  */
+require('dotenv').config();
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.config.js');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
+const S3Plugin = require('webpack-s3-plugin');
 
-const version = '0.19.9';
+const version = '0.20.0';
 
 // Build Config
 module.exports = merge(baseConfig, {
@@ -17,7 +19,7 @@ module.exports = merge(baseConfig, {
 					'./dist/_blocks',
 					'./dist/_components',
 					'./dist/_core',
-					'./dist/' + version,
+					// './dist/' + version,
 				],
 			},
 			onEnd: {
@@ -56,6 +58,86 @@ module.exports = merge(baseConfig, {
 					},
 				],
 			},
+		}),
+		new S3Plugin({
+			include: /.*\.(css.gz|js.gz|map.gz)/,
+			s3Options: {
+				accessKeyId: process.env.AWS_ACCESS_KEY,
+				secretAccessKey: process.env.AWS_SECRET_KEY,
+				region: 'us-east-1',
+			},
+			s3UploadOptions: {
+				Bucket: process.env.AWS_CDN_BUCKET,
+
+				// Set content encoding for gzip files
+				ContentEncoding(fileName) {
+					if (/\.gz/.test(fileName)) {
+						return 'gzip';
+					}
+				},
+
+				// Set content types for css and js
+				ContentType(fileName) {
+					if (/\.css/.test(fileName)) {
+						return 'text/css';
+					}
+					if (/\.js/.test(fileName)) {
+						return 'application/javascript';
+					}
+				},
+
+				// Set expiry date on all items
+				Expires() {
+					return new Date(Date.now() + 63072000000);
+				},
+
+				//Set permission level on all items
+				ACL() {
+					return 'public-read';
+				},
+			},
+			directory: 'dist/latest',
+			basePath: 'rds/' + version,
+		}),
+		new S3Plugin({
+			include: /.*\.(css.gz|js.gz|map.gz)/,
+			s3Options: {
+				accessKeyId: process.env.AWS_ACCESS_KEY,
+				secretAccessKey: process.env.AWS_SECRET_KEY,
+				region: 'us-east-1',
+			},
+			s3UploadOptions: {
+				Bucket: process.env.AWS_CDN_BUCKET,
+
+				// Set content encoding for gzip files
+				ContentEncoding(fileName) {
+					if (/\.gz/.test(fileName)) {
+						return 'gzip';
+					}
+				},
+
+				// Set content types for css and js
+				ContentType(fileName) {
+					if (/\.css/.test(fileName)) {
+						return 'text/css';
+					}
+					if (/\.js/.test(fileName)) {
+						return 'application/javascript';
+					}
+				},
+
+				// Set expiry date on all items
+				Expires() {
+					return new Date(Date.now() + 63072000000);
+				},
+
+				//Set permission level on all items
+				ACL() {
+					return 'public-read';
+				},
+			},
+			directory: 'dist/latest',
+			basePath: 'rds/latest',
 		}),
 	],
 });

@@ -16,7 +16,7 @@ const actionMenuButtons = document.querySelectorAll(
 ); // nodelist
 const actionMenuArray = Array.from(actionMenuButtons);
 
-const isTopNav = target => {
+const isTopNav = (target) => {
 	return target.parentNode.parentNode.parentNode.classList.contains(
 		'c-nav--topnav'
 	);
@@ -25,24 +25,26 @@ const isTopNav = target => {
 //there is a much better way to do this, but for now it's verbose.
 export const closeMenuState = () => {
 	if (!navMenu || !navMenuButtons) return;
-	document.addEventListener('click', e => {
+	document.addEventListener('click', (e) => {
 		if (!navMenu.contains(e.target) || e.key === 'Escape') {
-			navMenuButtonsArray.map(button => {
+			navMenuButtonsArray.map((button) => {
 				button.parentNode.classList.remove('open');
-				button.setAttribute('aria-expanded', false);
+				// TODO this was preventing aria from changing when mobile nav is displayed based on container width
+				// TODO see line 93-101 && line 109-117 in src/_blocks/masthead/masthead.js
+				// button.setAttribute('aria-expanded', false);
 			});
 		}
 		if (!actionsMenu.contains(e.target) || e.key === 'Escape') {
-			actionMenuArray.map(button => {
+			actionMenuArray.map((button) => {
 				button.parentNode.classList.remove('open');
 				button.setAttribute('aria-expanded', false);
 			});
 		}
 	});
-	document.addEventListener('keydown', e => {
+	document.addEventListener('keydown', (e) => {
 		const allMastheadButtons = navMenuButtonsArray.concat(actionMenuArray);
 		if (e.key === 'Escape') {
-			allMastheadButtons.map(button => {
+			allMastheadButtons.map((button) => {
 				button.parentNode.classList.remove('open');
 				button.setAttribute('aria-expanded', false);
 			});
@@ -51,13 +53,13 @@ export const closeMenuState = () => {
 };
 
 // function to toggle nav and side nav state
-const toggleMenuOpenState = buttonArray => {
-	buttonArray.map(button => {
-		button.addEventListener('click', e => {
+const toggleMenuOpenState = (buttonArray) => {
+	buttonArray.map((button) => {
+		button.addEventListener('click', (e) => {
 			const isExpanded = e.target.getAttribute('aria-expanded');
 			//check if top nav is target to close menu items before opening a new one
 			if (isTopNav(e.currentTarget)) {
-				buttonArray.map(button => {
+				buttonArray.map((button) => {
 					button.parentNode.classList.remove('open');
 					button.setAttribute('aria-expanded', false);
 				});
@@ -83,7 +85,7 @@ if (subMenuButtons && navExpandButton) {
 	toggleMenuOpenState(subMenuButtonsArray);
 
 	// add click event listener to .nav__expand button target
-	navExpandButton.addEventListener('click', e => {
+	navExpandButton.addEventListener('click', (e) => {
 		// deconstruct the event for cleanliness
 		const { currentTarget } = e;
 		const navExpandButtonText = currentTarget.querySelector('span');
@@ -103,7 +105,7 @@ if (subMenuButtons && navExpandButton) {
 		}
 
 		// loop over menu buttons that have a parent of .has-menu
-		subMenuButtonsArray.map(subMenuButton => {
+		subMenuButtonsArray.map((subMenuButton) => {
 			// if menu is expanded, toggle aria
 			if (isMenuExpanded === 'false') {
 				subMenuButton.setAttribute('aria-expanded', true);

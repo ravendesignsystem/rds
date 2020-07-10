@@ -4,7 +4,7 @@
 // ------------------------
 
 body {
-    margin-top: 75px;
+	margin-top: 75px;
 }
 
 //
@@ -16,18 +16,23 @@ body {
 // 	width: 100%;
 // }
 
+.b-masthead nav {
+	width: 100%;
+	margin-right: 50px;
+}
+
 //
 // Top Nav Modifier
 // TODO: move to /components/navmenu when QA is done
 // ------------------------
 
 .c-nav--topnav {
-    width: 100%;
+	width: 100%;
 
-    .nav__menu {
-        justify-content: flex-start !important;
-        margin-left: 0 !important;
-    }
+	.nav__menu {
+		justify-content: flex-start !important;
+		margin-left: 0 !important;
+	}
 }
 
 //
@@ -35,11 +40,11 @@ body {
 // -----------------------------
 
 #id-masthead {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10000;
 }
 
 //
@@ -47,185 +52,185 @@ body {
 // -----------------------------
 
 .b-masthead {
-    background-color: white;
-    border-top: 2px solid $red;
-    border-bottom: 1px solid $grey-kenobi;
-    height: calc(#{$masthead_height} + 3px);
+	background-color: white;
+	border-top: 2px solid $red;
+	border-bottom: 1px solid $grey-kenobi;
+	height: calc(#{$masthead_height} + 3px);
 
-    & .c-nav,
-    & > ul,
-    & .c-nav > ul {
-        height: $masthead_height;
-    }
+	& .c-nav,
+	& > ul,
+	& .c-nav > ul {
+		height: $masthead_height;
+	}
 }
 
 .b-masthead,
 .b-masthead .c-nav,
 .b-masthead > ul,
 .b-masthead .c-nav > ul {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 
-    li {
-        height: $masthead_height;
-        line-height: $masthead_height;
-    }
+	li {
+		height: $masthead_height;
+		line-height: $masthead_height;
+	}
 
-    & a:focus,
-    & button:focus {
-        outline: 5px solid $link;
-        position: relative;
-    }
+	& a:focus,
+	& button:focus {
+		outline: 5px solid $link;
+		position: relative;
+	}
 
-    // All unordered lists
-    ul {
-        // margin: 0;
-        list-style-type: none;
-    }
+	// All unordered lists
+	ul {
+		// margin: 0;
+		list-style-type: none;
+	}
 
-    // All links and buttons
-    a,
-    button {
-        display: block;
-        position: relative;
-        white-space: nowrap;
-        // align-items: center;
-        font-size: $pixel14;
-        font-weight: 500;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
+	// All links and buttons
+	a,
+	button {
+		display: block;
+		position: relative;
+		white-space: nowrap;
+		// align-items: center;
+		font-size: $pixel14;
+		font-weight: 500;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
 
-    a:hover,
-    button:hover,
-    button[aria-expanded="true"] {
-        background-color: $grey-yoda;
-        color: $black;
-    }
+	a:hover,
+	button:hover,
+	button[aria-expanded='true'] {
+		background-color: $grey-yoda;
+		color: $black;
+	}
 
-    // Modifiers
-    .js-has-shadow {
-        box-shadow: 0 10px 11px -7px $grey-yoda;
-        margin-bottom: 6px;
-    }
+	// Modifiers
+	.js-has-shadow {
+		box-shadow: 0 10px 11px -7px $grey-yoda;
+		margin-bottom: 6px;
+	}
 
-    .c-menupopup > button {
-        padding-right: 25px;
+	.c-menupopup > button {
+		padding-right: 25px;
 
-        &::after {
-            right: 14px;
-        }
-    }
+		&::after {
+			right: 14px;
+		}
+	}
 
-    //
-    // Styles for4 shared JS from navmenu component.
-    // -----------------------------
-    // TODO should this be changed to visually hidden?
-    // But if we do that then should you use aria tags
-    // as the screen readers will see the submenu??
-    .has-submenu {
-        // Hide child navs by default
-        & > ul {
-            display: none;
-        }
+	//
+	// Styles for4 shared JS from navmenu component.
+	// -----------------------------
+	// TODO should this be changed to visually hidden?
+	// But if we do that then should you use aria tags
+	// as the screen readers will see the submenu??
+	.has-submenu {
+		// Hide child navs by default
+		& > ul {
+			display: none;
+		}
 
-        // Show the child nav when expanded
-        &.open > ul {
-            display: block;
-        }
-    }
+		// Show the child nav when expanded
+		&.open > ul {
+			display: block;
+		}
+	}
 }
 
 .b-masthead h1 {
-    height: $masthead_height;
-    display: flex;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    white-space: nowrap;
+	height: $masthead_height;
+	display: flex;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+	white-space: nowrap;
 
-    span {
-        display: table;
-    }
+	span {
+		display: table;
+	}
 
-    @include media(">s") {
-        border-right: 1px solid $grey-yoda;
-    }
+	@include media('>s') {
+		border-right: 1px solid $grey-yoda;
+	}
 
-    a {
-        display: flex;
-        align-items: center;
-        padding: 0 8px;
-        font-size: 18px;
+	a {
+		display: flex;
+		align-items: center;
+		padding: 0 8px;
+		font-size: 18px;
 
-        &:hover {
-            color: $red;
-            background-color: transparent;
-        }
+		&:hover {
+			color: $red;
+			background-color: transparent;
+		}
 
-        @include media(">s") {
-            font-size: 20px;
-            padding: 0 15px;
-        }
-    }
+		@include media('>s') {
+			font-size: 20px;
+			padding: 0 15px;
+		}
+	}
 
-    svg {
-        width: 40px;
-        height: 40px;
-        // margin-top: -3px;
-        margin-right: 5px;
-        vertical-align: middle;
-    }
+	svg {
+		width: 40px;
+		height: 40px;
+		// margin-top: -3px;
+		margin-right: 5px;
+		vertical-align: middle;
+	}
 }
 
 .masthead__actions {
-    justify-content: flex-end;
-    margin-left: auto;
+	justify-content: flex-end;
+	margin-left: auto;
 
-    li {
-        border-left: 1px solid $grey-yoda;
+	li {
+		border-left: 1px solid $grey-yoda;
 
-        a,
-        button {
-            display: flex;
-            align-items: center;
-            height: 100%;
-        }
-    }
+		a,
+		button {
+			display: flex;
+			align-items: center;
+			height: 100%;
+		}
+	}
 
-    .masthead__cta > a {
-        background-color: $red;
-        color: white;
+	.masthead__cta > a {
+		background-color: $red;
+		color: white;
 
-        svg {
-            fill: white;
-        }
+		svg {
+			fill: white;
+		}
 
-        &:hover {
-            background: $grey;
-            color: black;
+		&:hover {
+			background: $grey;
+			color: black;
 
-            svg {
-                fill: black;
-            }
-        }
-    }
+			svg {
+				fill: black;
+			}
+		}
+	}
 
-    .masthead__cta--white > a {
-        background-color: white;
-        color: $black;
+	.masthead__cta--white > a {
+		background-color: white;
+		color: $black;
 
-        svg {
-            fill: $black;
-        }
+		svg {
+			fill: $black;
+		}
 
-        // &:hover {
-        // 	background: $grey;
-        // 	color: black;
+		// &:hover {
+		// 	background: $grey;
+		// 	color: black;
 
-        // 	svg {
-        // 		fill: black;
-        // 	}
-        // }
-    }
+		// 	svg {
+		// 		fill: black;
+		// 	}
+		// }
+	}
 }
