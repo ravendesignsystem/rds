@@ -4,9 +4,8 @@
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.config.js');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
-// const path = require('path');
 
-const version = '0.20.X';
+const version = '0.19.9';
 
 // Build Config
 module.exports = merge(baseConfig, {
