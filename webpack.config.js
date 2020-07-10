@@ -3,8 +3,9 @@
  */
 
 const path = require('path');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
 	entry: {
@@ -59,6 +60,11 @@ module.exports = {
 		],
 	},
 	plugins: [
+		new CompressionPlugin({
+			test: /\.(js|css|map)(\?.*)?$/i,
+			filename: '[path].gz[query]',
+			algorithm: 'gzip',
+		}),
 		new FileManagerPlugin({
 			onStart: {
 				delete: ['./build/docs'],

@@ -12,8 +12,7 @@
 	"scripts": {
 		"build": "webpack --mode=production --config webpack.config.js",
 		"watch": "vendor/bin/sculpin generate --watch --server & NODE_ENV=development webpack --env=dev --mode=development --config webpack.config.js --watch --colors",
-		"prod": "vendor/bin/sculpin generate --clean --server --env=prod & NODE_ENV=production webpack --env=prod --mode=production --config webpack.config.js --progress --hide-modules --colors",
-		"release": "webpack --env=prod --mode=production --config webpack.release.js"
+		"release": "vendor/bin/sculpin generate --clean --server --env=prod & NODE_ENV=production webpack --env=prod --mode=production --config webpack.release.js --progress --hide-modules --colors"
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.10.4",
