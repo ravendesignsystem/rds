@@ -1,5 +1,8 @@
 import dialogPolyfill from 'dialog-polyfill';
-import { closeMenuState } from '../../_components/navmenu/navmenu';
+
+// TODO revert this back when done fixing errors
+// import { closeMenuState } from '../../_components/navmenu/navmenu';
+import { closeMenuState } from '@carleton/rds/_components/navmenu/navmenu';
 
 let scrollPosition;
 let lastScrollTop = 0;
@@ -55,47 +58,47 @@ const detectOverflowOnMasthead = () => {
  *  @name toggleMobileMenu()
  *  @desc adds class to display red banner error stating the menu is too wide
  */
-// const navContainer = document.querySelector('.c-nav--topnav');
 
 const navContainer = document.querySelector('.b-masthead nav');
 const navMenu = document.querySelector('.nav__menu--top');
-const initialNavMenuWidth = navMenu && navMenu.offsetWidth + 20;
+const initialNavMenuWidth = navMenu && navMenu.offsetWidth + 50;
 
 const toggleMobileMenu = () => {
 	if (!mastheadNav) return;
 
-	const navWidth = mastheadNav.offsetWidth + 800;
 	const mastheadClassList = mastheadNavIcon.parentNode.classList;
-
 	const navContainerWidth = navContainer.offsetWidth;
-	const navMenuWidth = navMenu.offsetWidth + 20;
-
-	const windowW = window.innerWidth;
-
-	console.log({ navContainerWidth, navMenuWidth, initialNavMenuWidth, windowW });
 
 	// capture div width and compare against window width
-	// if (window.innerWidth <= navWidth || window.innerWidth <= 960) {
-
 	// TODO: aria expanded stays at true when nav comes back into view, this causes the grey bg on buttons with submenus
-
 	if (initialNavMenuWidth >= navContainerWidth) {
+		// Moves nav to mobile dialogue in footer
 		modalMenu.appendChild(mastheadNav);
+
+		// Remove hide class from hamburger menu
+		mastheadClassList.remove('u-hide-l');
+
+		// a11y
 		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map((li) => {
-			if (li.firstElementChild.getAttribute('aria-disabled') === 'false') {
-				li.firstElementChild.setAttribute('aria-disabled', true);
-				li.firstElementChild.setAttribute('aria-expanded', true);
-			} else {
-				li.firstElementChild.setAttribute('aria-disabled', false);
-				li.firstElementChild.setAttribute('aria-expanded', false);
-			}
+			// change aria tags on mobile menu
+			li.firstElementChild.setAttribute('aria-disabled', true);
+			li.firstElementChild.setAttribute('aria-expanded', true);
+
+			// make a note
 			li.classList.remove('c-menupopup');
 			li.classList.add('open');
 		});
-		mastheadClassList.remove('u-hide-l');
 	} else {
+		// Add hide class to hamburger menu
 		mastheadClassList.add('u-hide-l');
+
+		// a11y
 		Array.from(mastheadNavUl.querySelectorAll('.has-submenu')).map((li) => {
+			// change aria tags on mobile menu
+			li.firstElementChild.removeAttribute('aria-disabled');
+			li.firstElementChild.setAttribute('aria-expanded', false);
+
+			// make a note
 			li.classList.remove('open');
 			li.classList.add('c-menupopup');
 		});
