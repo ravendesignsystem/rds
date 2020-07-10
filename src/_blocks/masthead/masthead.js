@@ -1,8 +1,7 @@
 import dialogPolyfill from 'dialog-polyfill';
 
 // TODO revert this back when done fixing errors
-// import { closeMenuState } from '../../_components/navmenu/navmenu';
-import { closeMenuState } from '@carleton/rds/_components/navmenu/navmenu';
+import { closeMenuState } from '../../_components/navmenu/navmenu';
 
 let scrollPosition;
 let lastScrollTop = 0;
