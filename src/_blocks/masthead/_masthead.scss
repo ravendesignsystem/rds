@@ -146,22 +146,34 @@ body {
 	display: flex;
 	align-items: center;
 	padding: 0;
-	margin: 0;
-	white-space: nowrap;
+	margin: 0 0 0 15px;
 
-	span {
-		display: table;
-	}
+	// TODO new stuff
+	border-right: 1px solid $red;
+	// white-space: nowrap;
 
-	@include media('>s') {
-		border-right: 1px solid $grey-yoda;
-	}
+	// flex: 0 0 auto;
+
+	// span {
+	// 	display: table;
+	// }
+
+	// @include media('>s') {
+	// 	border-right: 1px solid $grey-yoda;
+	// }
 
 	a {
 		display: flex;
 		align-items: center;
 		padding: 0 8px;
 		font-size: 18px;
+
+		// TODO new stuff
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		// width: 85%;
+		background: rgba(red, 0.1);
+		white-space: initial;
 
 		&:hover {
 			color: $red;
@@ -170,14 +182,14 @@ body {
 
 		@include media('>s') {
 			font-size: 20px;
-			padding: 0 15px;
+			// padding: 0 15px;
+			padding: 0;
 		}
 	}
 
 	svg {
 		width: 40px;
 		height: 40px;
-		// margin-top: -3px;
 		margin-right: 5px;
 		vertical-align: middle;
 	}
