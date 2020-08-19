@@ -68,9 +68,6 @@ const toggleMobileMenu = () => {
 	const mastheadClassList = mastheadNavIcon.parentNode.classList;
 	const navContainerWidth = navContainer.offsetWidth;
 
-	console.log('NavContainer: ' + navContainerWidth);
-	console.log('NavWidth: ' + initialNavMenuWidth);
-
 	// capture div width and compare against window width
 	// TODO: aria expanded stays at true when nav comes back into view, this causes the grey bg on buttons with submenus
 	if (initialNavMenuWidth >= navContainerWidth) {
