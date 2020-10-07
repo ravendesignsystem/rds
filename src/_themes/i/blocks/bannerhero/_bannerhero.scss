@@ -1,0 +1,139 @@
+.b-bannerhero {
+	padding-bottom: 20px;
+	display: block;
+
+	@include media('>900px') {
+		padding-bottom: 0;
+		position: relative;
+	}
+
+	img {
+		width: 100%;
+		max-height: 600px;
+		object-fit: cover;
+
+		@include media('>=1600px') {
+			height: 700px;
+		}
+	}
+
+	&:hover .bannerhero__title::after {
+		@include media('<900px') {
+			border-bottom: 1px solid $red;
+			padding-bottom: 2px;
+		}
+	}
+}
+
+.bannerhero_text {
+	padding: 20px 30px;
+	background-color: white;
+	box-shadow: 0 5px 8px 2px rgba($grey-emperor, 0.3);
+
+	@include media('>=900px') {
+		background: none;
+		box-shadow: none;
+		position: absolute;
+		top: 47%;
+		left: 8%;
+		margin-top: -80px;
+		max-width: 330px;
+	}
+
+	@include media('>=1250px') {
+		left: 12%;
+		max-width: 370px;
+	}
+}
+
+.bannerhero_text--right {
+	@include media('>=900px') {
+		left: 58% !important;
+	}
+
+	@include media('>=1250px') {
+		left: 62% !important;
+	}
+}
+
+.bannerhero_text--center {
+	@include media('>=900px') {
+		left: 37% !important;
+	}
+}
+
+.bannerhero_text--centerright {
+	@include media('>=900px') {
+		left: 49% !important;
+	}
+}
+
+.bannerhero_text--centerleft{
+	@include media('>=900px') {
+		left: 23% !important;
+	}
+}
+
+.bannerhero__title {
+	display: inline;
+	font-size: $pixel16;
+	padding-bottom: 0;
+
+	&::after {
+		content: attr(data-text);
+		color: $red;
+	}
+
+	@include media('<900px') {
+		span::after {
+			content: ' - ';
+		}
+	}
+
+	@include media('>=900px') {
+		font-size: $pixel24;
+		box-decoration-break: clone;
+		outline: 7px solid rgba(255, 255, 255, 0.85);
+		background-color: rgba(255, 255, 255, 0.85);
+		transition: all 0.3s;
+		line-height: inherit;
+
+		&::after {
+			font-size: 16px;
+			content: '\A'attr(data-text);
+
+			content: '\A'attr(data-text);
+			white-space: pre;
+			transition: all 0.3s;
+		}
+
+		&:hover {
+			background-color: rgba(191, 17, 43, 0.85);
+			outline: 7px solid rgba(191, 17, 43, 0.85);
+			color: white;
+
+			&::after {
+				color: white;
+			}
+		}
+	}
+
+	@include media('>=1250px') {
+		font-size: $pixel28;
+	}
+}
+@include media('>=900px') {
+	// Target FF only
+	@supports (-moz-appearance: none) {
+		.bannerhero__title {
+			background-color: white;
+			outline: 6px solid white;
+			line-height: 1.3;
+
+			&:hover {
+				background-color: $red;
+				outline: 6px solid $red;
+			}
+		}
+	}
+}

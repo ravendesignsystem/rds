@@ -1,5 +1,5 @@
 /**
- * WordPress Webpack Config
+ * RDS release Webpack Config
  */
 require('dotenv').config();
 const merge = require('webpack-merge');

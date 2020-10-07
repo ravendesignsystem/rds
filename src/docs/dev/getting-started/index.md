@@ -97,7 +97,7 @@ Be sure to have your pages set up with RDS' template requirements, which at a mi
         </dialog>
 
         <!-- Required JavaScript -->
-        <script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/core.js.gz" crossorigin="anonymous">
+        <script src="https://cu-rds.s3.amazonaws.com/rds/{{site.version}}/core.js.gz" crossorigin="anonymous"></script>
 
     </body>
 </html>

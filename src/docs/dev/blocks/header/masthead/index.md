@@ -81,6 +81,8 @@ The masthead block has many options and configurations. At it's simplest, the ma
 {% endfilter %}
 ```
 
+{% include 'masthead/stories/base' %}
+
 <a class="c-buttoncta" href="stories/base/">View base example story</a>
 
 <div class="c-alert c-alert--info c-alert--icon">{% include 'icons/info.svg' %}

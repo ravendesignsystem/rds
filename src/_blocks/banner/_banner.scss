@@ -175,3 +175,21 @@
 .b-wideimage--bottom {
 	background-position: center bottom;
 }
+
+.b-banner--s { // has used in Intranet layout
+	margin-top: 0;
+	margin-bottom: 0;
+	display: block;
+	text-align: left;
+	padding: 0 25px !important;
+
+	@include media('>layout-l') {
+		padding: 0 !important;
+	}
+
+	h1 {
+		margin: 0;
+		padding:0;
+		font-size:15px
+	}
+}

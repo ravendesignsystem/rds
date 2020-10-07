@@ -1,7 +1,6 @@
 ---
 layout: docs
 subsite: dev
-main: l
 section: Blocks
 title: Text-Image
 banner:

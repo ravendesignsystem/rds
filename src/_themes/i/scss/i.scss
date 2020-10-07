@@ -1,0 +1,30 @@
+/*
+ * RDS Intranet v1.0.0
+ * Copyright 1973-2073 Carleton University
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// CORE RESOURCES
+// ----------
+
+@import '../../../_core/scss/tools/include-media';
+@import '../../../_core/scss/tools/vars';
+
+// I THEME
+// ----------
+@import 'base/utilities';
+
+// I Custom Blocks
+//------------------
+//@import '../blocks/footnote/footnote';
+//@import '../blocks/gridhome/gridhome';
+//@import '../blocks/textimg/textimg';
+//@import '../blocks/tabs/tabs';
+//@import '../../../../node_modules/highlight.js/scss/github.scss';
+
+// Modified Core Blocks
+// --------------------
+//@import '../blocks/search/search';
+//@import '../blocks/listing/listing';
+
+body {background-color: purple !important;}

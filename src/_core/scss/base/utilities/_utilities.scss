@@ -137,6 +137,7 @@
 	}
 }
 
+
 .u-block--white {
 	background-color: white;
 }
@@ -152,6 +153,12 @@
 	position: relative;
 }
 
+.u-block--border-top {
+	border-top: 1px solid $grey-vader;
+}
+
+
+
 //.multicol__content > .u-block--grey {
 //	background-color: white;
 //}
@@ -160,6 +167,43 @@
 	background-color: $black;
 	color: white;
 }
+
+.u-block--panel {
+	position: relative;
+	background-color: white;
+	max-width: 768px;
+	border-radius: 10px;
+	box-shadow: $ds-y;
+	padding: 20px !important;
+	margin-bottom: 30px;
+
+	> header {
+		border-bottom: 1px solid $grey-yoda;
+		margin-left:-20px;
+		margin-right:-20px;
+		padding: 0 20px;
+
+		h2 {
+			font-size: $pixel16;
+			border: none !important;
+			border-bottom: 1px solid green;
+		}
+	}
+
+	> .b-listing > ul  {
+		border-top: none !important;
+		border-bottom: none !important;
+
+		//li:last-child {
+		//	border-bottom: none !important;
+		//}
+	}
+}
+
+.u-block--panel > aside {
+	padding: 1000px !important;
+}
+
 
 // Block Spacing
 // -------------
@@ -194,10 +238,6 @@
 	> * {
 		max-width: none;
 	}
-}
-
-.u-block--border-top {
-	border-top: 1px solid $grey-vader;
 }
 
 // 3. Icon utils

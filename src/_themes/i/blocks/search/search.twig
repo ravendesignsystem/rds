@@ -1,0 +1,24 @@
+<div class="u-block u-block--grey">
+    <div class="b-search">
+        <form id="searchform" class="c-searchform" role="search" method="get" action="https://carleton.ca/directories/search/#anchor-1">
+            <label for="searchform__input">Search carleton.ca</label>
+            <input class="searchform__input" id="cu-search__input" name="q" type="search"
+                   autocomplete="off"
+                   placeholder="Search">
+            <input type="hidden" name="cx" value="000425654443457873923:u1z9vad_fsq">
+            <input type="hidden" name="cof" value="FORID:11">
+            <input type="hidden" name="ie" value="UTF-8">
+            <button class="searchform__button u-icon" type="submit"
+                    title="Search">
+                {% include "icons/search.svg" %}
+                <span class="u-visually-hidden">Search button</span>
+            </button>
+        </form>
+        <div class="search__suggestions">
+            <ul id="cu-search__results">
+            </ul>
+        </div>
+        <p class="u-link"><a href="https://carleton.ca/directories/">A-Z</a> | <a href="https://carleton.ca/phonebook/">Phonebook</a>  | <a href="https://carleton.ca/campus/map/">Campus Map</a>   | <a href="https://carleton.ca/parking/wp-content/uploads/parking-map-2015.pdf">Parking Map</a> </p>
+    </div>
+</div>
+

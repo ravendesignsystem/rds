@@ -1,0 +1,39 @@
+{% from "listing/listing.twig" import listing %}
+{{ listing (
+    {
+        color: "white",
+        heading: "Example with heading",
+        headingContent: "none"
+    },
+    [
+        {
+            title: "White-necked Raven",
+            url: "https://en.wikipedia.org/wiki/White-necked_raven",
+        },
+        {
+            title: "Common raven",
+            url: "https://en.wikipedia.org/wiki/Common_raven"
+        },
+        {
+            title: "Australian raven",
+            url: "https://en.wikipedia.org/wiki/Australian_raven"
+        },
+        {
+            title: "Thick-billed raven",
+            url: "https://en.wikipedia.org/wiki/Thick-billed_raven"
+        },
+        {
+            title: "Chihuahuan raven",
+            url: "https://en.wikipedia.org/wiki/Chihuahuan_raven"
+        }
+    ]
+) }}
+{% if docs %}
+    <div class="u-block u-block--white">
+        <div class="b-content">
+            <h3>Implementation note:</h3>
+            <p>If the Listing block directly follows a heading, a standard <code>H2</code> or <code>H3</code> should be used instead of using the <code>c-heading</code> component.
+            </p>
+        </div>
+    </div>
+{% endif %}
