@@ -13,9 +13,10 @@ fw: Elective
 cms: Clear
 cssDocsPath: /docs/css/docs.css
 cssCorePath: /docs/css/core.css
-homecssPath: /docs/css/hp.css
 jsCorePath: /docs/js/docs.js
 jsDocsPath: /docs/js/core.js
+# Theme Homepage
+homecssPath: /docs/css/hp.css
 jsPathHome: /docs/js/hp.js
 
 blocks:
