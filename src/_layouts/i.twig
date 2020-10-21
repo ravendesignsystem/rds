@@ -17,106 +17,32 @@
 
                 <div class="u-block u-block--l u-block--grey u-no-padding">
                     <div class="b-banner b-banner--s">
-                        <h1>My Dashboard</h1>
+                        <h1>Dashboard</h1>
                     </div>
                 </div>
 
         </header>
 
             <div class="l-multicol l-multicol--grey l-multicol--am l-multicol--i">
-                <aside style="border-radius: 10px;" class="multicol__nav">
+                <aside class="multicol__nav">
+                    {% include 'i/blocks/details-profile/details-profile' %}
 
-                    <section class="u-block u-block--white u-block--panel">
-                        <header><h2>Search</h2></header>
-                        <div class="b-details b-details--figure">
-                            <div class="details__aside">
-                                <figure>
-                                    <img src="http://cu-rds.s3.amazonaws.com/docs/assets/raven-profile.png" alt="Head of Common Raven">
-                                    <figcaption>Common Raven<br>Species: Corvus corax</figcaption>
-                                </figure>
-                            </div>
-                            <div class="details__meta">
-                                <dl class="u-link">
-                                    <dt>Kingdom</dt>
-                                    <dd>Animalia Raven</dd>
+                    {% include 'i/blocks/asides/contacts' %}
 
-                                    <dt>Phylum</dt>
-                                    <dd>Chordata</dd>
-
-                                    <dt>Class</dt>
-                                    <dd>Aves</dd>
-
-                                    <dt>Order</dt>
-                                    <dd>Passeriformes</dd>
-
-                                    <dt>Family</dt>
-                                    <dd>Corvidae</dd>
-
-                                    <dt>Genus</dt>
-                                    <dd>Corvus</dd>
-
-                                </dl>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="u-block u-block--white u-block--panel">
-                        <header>
-                            <h2>Phonebook</h2>
-                        </header>
-                        <div class="b-listing b-listing--people">
-                            <ul itemscope itemtype="http://schema.org/Person">
-                                <li itemprop="item">
-                                    <a href="http://www.imdb.com/name/nm0000195/" itemprop="url">
-                                        <figure>
-                                            <img src="https://cu-raven.s3.amazonaws.com/assets/img/photos/fill-murray.jpg" alt="" itemprop="image">
-                                        </figure>
-                                        <header>
-                                            <h3 itemprop="name">Bill Murray</h3>
-                                            <p itemprop="description">Actor/Writer</p>
-                                        </header>
-                                    </a>
-                                </li>
-                                <li itemprop="item">
-                                    <a href="http://www.imdb.com/name/nm0000195/" itemprop="url">
-                                        <figure>
-                                            <img src="https://cu-raven.s3.amazonaws.com/assets/img/photos/fill-murray.jpg" alt="" itemprop="image">
-                                        </figure>
-                                        <header>
-                                            <h3 itemprop="name">Peter Venkman</h3>
-                                            <p itemprop="description">Ghost buster</p>
-                                        </header>
-                                    </a>
-                                </li>
-                                <li itemprop="item">
-                                    <a href="http://www.imdb.com/name/nm0000195/" itemprop="url">
-                                        <figure>
-                                            <img src="https://cu-raven.s3.amazonaws.com/assets/img/photos/fill-murray.jpg" alt="" itemprop="image">
-                                        </figure>
-                                        <header>
-                                            <h3 itemprop="name">Carl Spackler</h3>
-                                            <p itemprop="description">Caddy for Shack</p>
-                                        </header>
-                                    </a>
-                                </li>
-                                <li itemprop="item">
-                                    <a href="http://www.imdb.com/name/nm0000195/" itemprop="url">
-                                        <figure>
-                                            <img src="https://cu-raven.s3.amazonaws.com/assets/img/photos/fill-murray.jpg" alt="" itemprop="image">
-                                        </figure>
-                                        <header>
-                                            <h3 itemprop="name">Phil Connors</h3>
-                                            <p itemprop="description">Groundhog for a Day</p>
-                                        </header>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
+                    {% include 'i/blocks/asides/apps' %}
 
                 </aside>
 
                 <main class="multicol__main">
+                    {% include 'i/blocks/details-profile/details-profile' %}
+
+                    {# 2 col masonry layout #}
+                    <div class="l-masonry">
+                        {% include 'i/blocks/asides/apps' %}
+                        {% include 'i/blocks/asides/apps' %}
+                        {% include 'i/blocks/asides/contacts' %}
+                    </div>
+
                     {#  Top 5 News #}
                     <section class="u-block u-block--white u-block--panel">
                         <header><h2>Top 5 News</h2></header>
@@ -161,189 +87,9 @@
                             </ul>
                         </div>
                         <footer>
-                            <p>© 2018 Gandalf</p>
+                            <a class="c-buttoncta c-buttoncta--grey " href="http://www.nooooooooooooooo.com">View Profile</a>
                         </footer>
                     </section>
-                    {# 2 col masonry layout #}
-                    <div class="l-masonry">
-
-                        <section class="u-block u-block--white u-block--panel">
-                            <header><h2 class="c-heading u-no-border">Base example 1</h2></header>
-                            <div class="b-listing">
-                                <ul itemscope itemtype="http://schema.org/ItemList">
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>White-necked Raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/Common_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>Common raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/Australian_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>Australian raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </section>
-
-                        <section class="u-block u-block--white u-block--panel">
-                            <header>
-                                <h2 class="c-heading u-no-border">Base example 2</h2>
-                            </header>
-                            <div class="b-listing">
-                                <ul itemscope itemtype="http://schema.org/ItemList">
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>White-necked Raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/Common_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>Common raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </section>
-
-                        <section class="u-block u-block--white u-block--panel">
-                            <header><h2 class="c-heading u-no-border">Base example 3</h2></header>
-                            <div class="b-listing">
-                                <ul itemscope itemtype="http://schema.org/ItemList">
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>White-necked Raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/Common_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>Common raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/Australian_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>Australian raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </section>
-                    </div>
-
-                    <div class="l-masonry--col3">
-                        <section class="u-block u-block--white u-block--panel">
-                            <header><h2 class="c-heading u-no-border">Base example</h2></header>
-                            <div class="b-listing">
-                                <ul itemscope itemtype="http://schema.org/ItemList">
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>White-necked Raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/Common_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>Common raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/Australian_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>Australian raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <footer>tt</footer>
-                        </section>
-
-                        <section class="u-block u-block--white u-block--panel">
-                            <header><h2 class="c-heading u-no-border">Base example</h2></header>
-                            <div class="b-listing">
-                                <ul itemscope itemtype="http://schema.org/ItemList">
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>White-necked Raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/Common_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>Common raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/Australian_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>Australian raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <footer>t</footer>
-                        </section>
-
-                        <section class="u-block u-block--white u-block--panel">
-                            <header><h2 class="c-heading u-no-border">Base example</h2></header>
-                            <div class="b-listing">
-                                <ul itemscope itemtype="http://schema.org/ItemList">
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/White-necked_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>White-necked Raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/Common_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>Common raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                    <li itemprop="item">
-                                        <a href="https://en.wikipedia.org/wiki/Australian_raven" itemprop="url">
-                                            <header itemprop="name">
-                                                <h3>Australian raven</h3>
-                                            </header>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <footer>t</footer>
-                        </section>
-                    </div>
-
-
-
                 </main>
             </div>
 
@@ -392,5 +138,6 @@
 
         <!-- Required JavaScript -->
         <script src="{{ site.jsCorePath }}"></script>
+        <script src="{{ site.jsDocsPath }}"></script>
     </body>
 </html>

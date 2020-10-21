@@ -3,6 +3,10 @@ layout: docs
 subsite: dev
 menu: dev
 section: Blocks
-title: Aside blocks
+subsection: Aside Blocks
+title: Aside Blocks
 ---
-## Aside blocks
+### Aside Blocks
+
+- {%include "link" with {'block': 'Alert Aside'} %}
+- {%include "link" with {'block': 'Sidebar'} %}

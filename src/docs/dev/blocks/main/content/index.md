@@ -4,7 +4,7 @@ subsite: dev
 menu: dev
 title: Content
 section: Blocks
-subsection: Main blocks
+subsection: Main Blocks
 ---
 The Content block can only be used within the `<main>` section of a page. Intended for content that is directly related to or expands upon the central topic of a page, including text, images, multimedia and [content type components](#), this is the most commonly used block across RDS sites.
 

@@ -9,8 +9,8 @@
 			<a href="{{ site.url }}dev/getting-started/">Getting Started</a>
 		</li>
 
-		<li class="has-submenu">
-			<a href="{{ site.url }}dev/main-concepts/">Main Concepts</a>
+		<li class="has-submenu{% if page.section == "Main Concepts" %} open{% endif %}">
+			<a class="{% if page.section == "Main Concepts" %}u-active{% endif %}" href="{{ site.url }}dev/main-concepts/">Main Concepts</a>
 			<button aria-expanded="false" aria-controls="submenu_level_b1">+</button>
 			<ul id="submenu_level_b1" class="is-submenu">
 				<li>
@@ -31,12 +31,12 @@
 			</ul>
 		</li>
 
-		<li class="has-submenu{% if page.section == " blocks" %} open{% endif %}">
+		<li class="has-submenu{% if page.section == "Blocks" %} open{% endif %}">
 			<a {% if page.title == "Blocks" %} class="u-active" {% endif %} href="{{ site.url }}dev/blocks/">Blocks</a>
 			<button aria-expanded="{% if page.section == "Blocks" %}true{% else %}false{% endif %}" aria-controls="submenu_Blocks">+</button>
 			<ul id="submenu_Blocks" class="is-submenu">
-				<li class="has-submenu{% if page.subsection == " header blocks" %} open{% endif %}">
-					<a {% if page.title == "Header Blocks" %} class="u-active" {% endif %} href="{{ site.url }}dev/main-concepts/components-overview/">Header Blocks</a>
+				<li class="has-submenu{% if page.subsection == "Header Blocks" %} open{% endif %}">
+					<a {% if page.title == "Header Blocks" %} class="u-active" {% endif %} href="{{ site.url }}dev/blocks/header/">Header Blocks</a>
 					<button aria-expanded="{% if page.subsection == "Header Blocks" %}true{% else %}false{% endif %}" aria-controls="submenu_header_blocks">+</button>
 					<ul id="submenu_header_blocks" class="is-submenu">
 						<li>
@@ -46,76 +46,76 @@
 							<a {% if page.title == "Banner" %} class="u-active" {% endif %} href="{{ site.url }}dev/blocks/header/banner/">Banner</a>
 						</li>
 						<li>
-							<a href="{{ site.url }}dev/blocks/header/masthead/">Masthead</a>
+							<a {% if page.title == "Masthead" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/header/masthead/">Masthead</a>
 						</li>
 					</ul>
 				</li>
-				<li class="has-submenu">
-					<a href="{{ site.url }}dev/main-concepts/components-overview/">Main Blocks</a>
+				<li class="has-submenu{% if page.subsection == "Main Blocks" %} open{% endif %}">
+					<a href="{{ site.url }}dev/blocks/main/">Main Blocks</a>
 					<button aria-expanded="false" aria-controls="submenu_level_b2">+</button>
 					<ul id="submenu_level_b2" class="is-submenu">
 						<li>
-							<a href="{{ site.url }}dev/blocks/main/cardgrid/">Card Grid</a>
+							<a {% if page.title == "Card Grid" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/main/cardgrid/">Card Grid</a>
 						</li>
 						<li>
-							<a href="{{ site.url }}dev/blocks/main/content/">Content</a>
+							<a {% if page.title == "Content" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/main/content/">Content</a>
 						</li>
 						<li>
-							<a href="{{ site.url }}dev/blocks/main/details/">Details</a>
+							<a {% if page.title == "Details" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/main/details/">Details</a>
 						</li>
 						<li>
-							<a href="{{ site.url }}dev/blocks/main/forms/">Forms</a>
+							<a {% if page.title == "Form" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/main/forms/">Form</a>
 						</li>
 						<li>
-							<a href="{{ site.url }}dev/blocks/main/imagetile/">Image Tiles</a>
+							<a {% if page.title == "Image Tiles" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/main/imagetile/">Image Tiles</a>
 						</li>
 						<li>
-							<a href="{{ site.url }}dev/blocks/main/listing/">Listing</a>
+							<a {% if page.title == "Listing" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/main/listing/">Listing</a>
 						</li>
 						<li>
-							<a href="{{ site.url }}dev/blocks/main/textimg/">Text Image</a>
+							<a {% if page.title == "Text Image" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/main/textimg/">Text Image</a>
 						</li>
 						<li>
-							<a href="{{ site.url }}dev/blocks/main/timeline/">Timeline</a>
+							<a {% if page.title == "Timeline" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/main/timeline/">Timeline</a>
 						</li>
 					</ul>
 				</li>
-				<li class="has-submenu">
-					<a href="{{ site.url }}dev/main-concepts/components-overview/">Aside Blocks</a>
+				<li class="has-submenu{% if page.subsection == "Aside Blocks" %} open{% endif %}">
+					<a href="{{ site.url }}dev/blocks/aside/">Aside Blocks</a>
 					<button aria-expanded="false" aria-controls="submenu_level_b2">+</button>
 					<ul id="submenu_level_b2" class="is-submenu">
 						<li>
-							<a href="{{ site.url }}dev/blocks/aside/alertaside/">Alert Aside</a>
+							<a {% if page.title == "Alert Aside" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/aside/alertaside/">Alert Aside</a>
 						</li>
 						<li>
-							<a href="{{ site.url }}dev/blocks/aside/sidebar/">Sidebar</a>
+							<a {% if page.title == "Sidebar" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/aside/sidebar/">Sidebar</a>
 						</li>
 					</ul>
 				</li>
-				<li class="has-submenu">
-					<a href="{{ site.url }}dev/main-concepts/components-overview/">Footer Blocks</a>
+				<li class="has-submenu{% if page.subsection == "Footer Blocks" %} open{% endif %}">
+					<a {% if page.title == "Footer Blocks" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/footer/">Footer Blocks</a>
 					<button aria-expanded="false" aria-controls="submenu_level_b2">+</button>
 					<ul id="submenu_level_b2" class="is-submenu">
 						<li>
-							<a href="{{ site.url }}dev/blocks/footer/footerbrand/">Footer Brand</a>
+							<a {% if page.title == "Footer Brand" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/footer/footerbrand/">Footer Brand</a>
 						</li>
 						<li>
-							<a href="{{ site.url }}dev/blocks/footer/footersimple/">Footer Simple</a>
+							<a {% if page.title == "Footer Simple" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/footer/footersimple/">Footer Simple</a>
 						</li>
 						<li>
-							<a href="{{ site.url }}dev/blocks/footer/footersitemap/">Footer Sitemap</a>
+							<a {% if page.title == "Footer Sitemap" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/footer/footersitemap/">Footer Sitemap</a>
 						</li>
 					</ul>
 				</li>
-				<li class="has-submenu">
-					<a href="{{ site.url }}dev/blocks/dialog/">Dialog Blocks</a>
+				<li class="has-submenu{% if page.subsection == "Dialog Blocks" %} open{% endif %}">
+					<a {% if page.title == "Dialog" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/dialog/">Dialog Blocks</a>
 					<button aria-expanded="false" aria-controls="submenu_level_b2">+</button>
 					<ul id="submenu_level_b2" class="is-submenu">
 						<li>
-							<a href="{{ site.url }}dev/blocks/dialog/login/">Login</a>
+							<a {% if page.title == "Login" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/dialog/login/">Login</a>
 						</li>
 						<li>
-							<a href="{{ site.url }}dev/blocks/dialog/search/">Search</a>
+							<a {% if page.title == "Search" %} class="u-active"{% endif %} href="{{ site.url }}dev/blocks/dialog/search/">Search</a>
 						</li>
 					</ul>
 				</li>

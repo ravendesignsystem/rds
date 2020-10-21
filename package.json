@@ -47,6 +47,7 @@
 		"postcss-pxtorem": "^5.1.1",
 		"prettier": "^2.1.2",
 		"sass-loader": "^9.0.2",
+		"stylelint": "^13.7.2",
 		"validator": "^13.1.1",
 		"webpack": "^4.44.2",
 		"webpack-cli": "^3.3.12",

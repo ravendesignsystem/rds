@@ -48,7 +48,8 @@
 		}
 	}
 
-	header {
+	header,
+	div {
 		flex: 1;
 		min-width: 0; // this allows text to be truncated inside a flex item
 	}
@@ -257,5 +258,43 @@
 .u-block--grey {
 	.b-listing a:hover {
 		background-color: $grey-yoda;
+	}
+}
+
+// Aside styles
+//===============
+
+aside .b-listing {
+	a {
+		padding: 0 !important;
+		background-image: none !important;
+		min-height: 40px !important;
+	}
+
+	h3 {
+		font-size: $pixel13 !important;
+		line-height: 1.25 !important;
+	}
+
+	p {
+		font-size: $pixel12 !important;
+		line-height: 1.25 !important;
+	}
+}
+
+aside .b-listing--people {
+
+	a {
+		min-height: 60px !important;
+	}
+	figure {
+		min-width: auto !important;
+		margin: 0 !important;
+		width: 25% !important;
+	}
+
+	img {
+		max-width: 65%;
+		min-width: 45px;
 	}
 }

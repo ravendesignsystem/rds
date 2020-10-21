@@ -4,7 +4,7 @@ subsite: dev
 menu: dev
 title: Timeline
 section: Blocks
-subsection: Main blocks
+subsection: Main Blocks
 ---
 The timeline block allows you to display a chronological list of items that have a start point, and end point. The most common use case for this block would be a list of events with a defined start and end year, with each individual item pertaining to a specific day, month, or even year.
 

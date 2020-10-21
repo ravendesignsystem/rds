@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: Main concepts
+title: Main Concepts
 subsite: dev
 menu: dev
-section: Main concepts
+section: Main Concepts
 banner:
   breadcrumbs:
     parent: Docs

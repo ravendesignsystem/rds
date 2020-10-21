@@ -2,9 +2,9 @@
 layout: docs
 subsite: dev
 menu: dev
-title: Image Tile
+title: Image Tiles
 section: Blocks
-subsection: Main blocks
+subsection: Main Blocks
 ---
 
 The image tile block allows you to feature content using images as the primary focal point. The left hand portion of the block is the featured content and uses a large image with title and excerpt, while the right hand side displays 4 additional items with hover effects to reveal the excerpt.

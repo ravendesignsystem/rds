@@ -2,7 +2,8 @@
 layout: docs
 title: Details
 subsite: dev
-main: null
+section: Blocks
+subsection: Main Blocks
 menu: dev
 banner:
   breadcrumbs:

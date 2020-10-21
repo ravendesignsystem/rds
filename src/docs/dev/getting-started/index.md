@@ -22,8 +22,6 @@ There are two ways to get started with RDS:
 
 To quickly get up and running, add RDS' CSS and JS from Carleton's CDN.
 
- - **TODO:** implement subresource integrity for css and js
-
 ### CSS
 
 Copy-paste the stylesheet <link> below into your `<head>` before any other stylesheets.

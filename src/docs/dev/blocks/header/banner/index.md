@@ -15,7 +15,7 @@ The banner block acts as the first prominent visual a visitor sees on a page, an
 
 ## Base Banner
 
-At its bare minimum, the Banner block displays the page's  `<h1>` title.
+At its bare minimum, the Banner block displays the page's `<h1>` title.
 
 {% include 'inc' with {'block': 'banner-base', 'code': true} %}
 

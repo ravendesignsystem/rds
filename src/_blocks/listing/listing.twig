@@ -1,16 +1,18 @@
 {% macro listing(data) %}
 {% if (data.blockHeading) or (data.h3) %}
 <section class="u-block {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
-    {% if data.blockHeading %}<h2 class="c-heading{% if (data.blockHeadingCenter) %} c-heading--center{% endif %} {% if (data.h3) or (data.blockParagraph) %}{% else %}u-no-border{% endif %}">{{ data.blockHeading }}</h2>{% endif %}
-    {% if data.blockParagraph %}<p>{{ data.blockParagraph }}</p>{% endif %}
-    {% if data.h3 %}<h3>{{ data.h3 }}</h3>{% endif %}
+    <header>
+{% if data.blockHeading %}      <h2 class="c-heading{% if (data.blockHeadingCenter) %} c-heading--center{% endif %} {% if (data.h3) or (data.blockParagraph) %}{% else %}u-no-border{% endif %}">{{ data.blockHeading }}</h2>
+{% endif %}
+{% if data.blockParagraph %}        <p>{{ data.blockParagraph }}</p>{% endif %}
+    </header>
 {% else %}
 <div class="u-block {% if data.blockColor %}u-block--{{ data.blockColor }}{% else %}u-block--white{% endif %}">
 {% endif %}
 {% if data.grid %}
 <div class="u-grid u-grid--{{ data.grid }}">
 {% endif %}
-<div class="b-listing{% if data.variant == "news" %} b-listing--news{% elseif data.variant == "event" %} b-listing--event{% elseif data.variant == "people" %} b-listing--people{% elseif data.variant == "icon" %} b-listing--icon{% elseif data.variant == "video" %} b-listing--video{% endif %}">
+    <div class="b-listing{% if data.variant == "news" %} b-listing--news{% elseif data.variant == "event" %} b-listing--event{% elseif data.variant == "people" %} b-listing--people{% elseif data.variant == "icon" %} b-listing--icon{% elseif data.variant == "video" %} b-listing--video{% endif %}">
         <ul itemscope{% if data.variant == 'people' %} itemtype="http://schema.org/Person"{% elseif data.variant == "event" %} itemtype="http://schema.org/Event"{% else %} itemtype="http://schema.org/ItemList"{% endif %}>
 {% for item in data.items %}
             <li itemprop="item">
@@ -45,20 +47,20 @@
                         <h3>{{ item.dateStart|date("h:i a") }}</h3>
                         <p>{{ item.dateEnd|date("h:i a") }}</p>
                     </div>
-                    <header>
+                    <div>
                         <h3 itemprop="name">{{ item.title }}</h3>
                         <p itemprop="location">{{ item.location }}</p>
-                    </header>
+                    </div>
 {# with subtitle -#}
 {% elseif item.subtitle %}
-                    <header>
+                    <div>
                         <h3 itemprop="name">{{ item.title }}</h3>
                         <p itemprop="description">{{ item.subtitle }}</p>
-                    </header>
+                    </div>
 {% else %}
-                    <header itemprop="name">
+                    <div itemprop="name">
                         <h3>{{ item.title }}</h3>
-                    </header>
+                    </div>
 {% endif %}
 {% if item.badge %}
                     <span class="c-badge">{{ item.badge }}</span>

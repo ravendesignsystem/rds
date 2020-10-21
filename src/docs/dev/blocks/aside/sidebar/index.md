@@ -3,7 +3,7 @@ layout: docs
 subsite: dev
 menu: dev
 section: Blocks
-subsection: Aside blocks
+subsection: Aside Blocks
 title: Sidebar
 banner:
   breadcrumbs:

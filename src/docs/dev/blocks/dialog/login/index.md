@@ -3,7 +3,7 @@ layout: docs
 subsite: dev
 menu: dev
 section: Blocks
-subsection: Dialogue blocks
+subsection: Dialog Blocks
 title: Login
 banner:
   breadcrumbs:

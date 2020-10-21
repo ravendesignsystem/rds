@@ -4,6 +4,8 @@ title: Listing
 subsite: dev
 main: null
 menu: dev
+section: Blocks
+subsection: Main Blocks
 banner:
   breadcrumbs:
     grandparent: Blocks

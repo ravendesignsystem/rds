@@ -4,7 +4,7 @@ title: Alert Aside
 subsite: dev
 menu: dev
 section: Blocks
-subsection: Aside blocks
+subsection: Aside Blocks
 sidebar: true
 banner:
   breadcrumbs:

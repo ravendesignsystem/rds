@@ -4,7 +4,6 @@ title: Blocks
 subsite: dev
 menu: dev
 section: Blocks
-subsection: Header Blocks
 banner:
   settings:
     variant: img
