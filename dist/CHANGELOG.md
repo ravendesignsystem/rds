@@ -2,6 +2,12 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.21.0](https://github.com/ravendesignsystem/rds/releases/tag/0.21.0) 2020-10-21
+
+**IMPORTANT:** Breaking changes update required
+
+- **Changed:** a fair amount to get the intranet layout setup including the introduction of u-block--panels. Apologies for the unclear update docs. Will be better post V1.
+
 ## [v0.20.0](https://github.com/ravendesignsystem/rds/releases/tag/0.20.0) 2020-07-10
 
 **IMPORTANT:** Breaking changes update required

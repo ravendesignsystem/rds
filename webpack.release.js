@@ -2,12 +2,12 @@
  * RDS release Webpack Config
  */
 require('dotenv').config();
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const baseConfig = require('./webpack.config.js');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const S3Plugin = require('webpack-s3-plugin');
 
-const version = '0.20.0';
+const version = '0.21.0';
 
 // Build Config
 module.exports = merge(baseConfig, {

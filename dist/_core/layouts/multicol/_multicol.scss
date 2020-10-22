@@ -1,6 +1,24 @@
 /**
  * Grid Global Styles
  */
+@include media('>s') {
+	.l-masonry { /* 2 col default */
+		column-gap: 30px;
+		column-count: 2;
+	}
+
+	.l-masonry--col3 {
+		column-count: 3;
+		column-gap: 30px;
+	}
+
+	.l-masonry > {
+		section, div { /* Masonry  elements */
+			display: inline-block;
+			width: 100%;
+		}
+	}
+}
 
 .l-multicol {
 	display: grid;
@@ -9,9 +27,10 @@
 	padding: $block-padding-s;
 	margin: 0 auto;
 
-	@include media('>layout-s') {
-		padding: $block-margin;
-	}
+	// TODO is this need
+	//@include media('>layout-s') {
+	//	padding: $block-margin;
+	//}
 
 	// Remove side padding on all u-block elements
 	.u-block {
@@ -23,11 +42,6 @@
 	main {
 		max-width: 760px;
 		min-width: 0; // Needed for responsive pre code blocks
-
-		// Change grey block bg to white
-		.u-block--grey {
-			background-color: white;
-		}
 
 		// Remove padding if u-block is last element
 		.u-block--white:last-child {
@@ -82,12 +96,23 @@
 
 	@include media('>layout-s') {
 		grid-template-columns: calc(200px + #{$layout-gutter}) auto;
-		max-width: calc(1021px + #{$block-margin} * 2);
+		//max-width: calc(1021px + #{$block-margin} * 2); TODO this was causing spacing issues with u-block--l use above or below commenting out fixed andd didnt seem to br4ak anything. discuss with Troy why this i shere.
 
 		// Add padding and border to nav element
 		.multicol__nav {
 			border-right: 1px solid $grey;
 			padding-right: $grid-gutter;
+		}
+	}
+}
+
+
+.l-multicol--i { // modifier for Intranet layout
+
+	@include media('>layout-s') {
+		.multicol__nav {
+			border-right: none;
+			padding-right: 0;
 		}
 	}
 }
@@ -190,6 +215,8 @@
 		}
 	}
 }
+
+
 
 // CSS Grid IE11 Fallback
 // TODO: look into @support grid

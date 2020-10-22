@@ -12,13 +12,13 @@ Using your preferred github gui, do the following:
 - Following the rest of the instructions below
 
 ### Update Version Numbers
-The version number exists in several files and is required to be updated:
+The version number requires updating in several files:
 
 - `/app/config/sculpin_site.yml` - change version on line 4
 - `/dist/package.json` - change version on line 3
 - `/src/_core/scss/tools/_vars.scss` - change version variable on line 19
 - `package.json` - change version on line 3
-- `webpack.release.js` - change version on line 15
+- `webpack.release.js` - change version on line 10
 
 ### Update the distribution CHANGELOG
 

@@ -58,16 +58,39 @@
 
 		svg {
 			width: 18px;
-			height: 18px;
+			//height: 18px;
 
 			@include media('>=s') {
 				width: 20px;
-				height: 20px;
+				//height: 20px;
 			}
 		}
 
 		// @include media('>=s') {
 		// 	line-height: 25px;
 		// }
+	}
+}
+
+// smaller version used in asides and panels
+.c-searchform--s {
+	padding: 0;
+	margin-bottom: 5px !important;
+
+	input {
+		width: calc(100% - 47px);
+		font-size: $pixel13; // Needs to be at least 16px to avoid mobile Safari zoom
+		//padding-top: 10px;
+		//padding-bottom: 10px;
+		//margin: 0 2px 0 10px;
+	}
+
+	button {
+		vertical-align: middle;
+		margin-top: 4px;
+
+		svg {
+			width: 15px !important;
+		}
 	}
 }

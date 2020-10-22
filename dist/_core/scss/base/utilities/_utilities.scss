@@ -152,13 +152,108 @@
 	position: relative;
 }
 
-//.multicol__content > .u-block--grey {
-//	background-color: white;
-//}
+.u-block--border-top {
+	border-top: 1px solid $grey-vader;
+}
 
 .u-block--black {
 	background-color: $black;
 	color: white;
+}
+
+.u-block--panel {
+	position: relative;
+	background-color: white;
+	max-width: 768px;
+	border-radius: 10px;
+	box-shadow: $ds-y;
+	padding: 20px !important;
+	margin-bottom: 30px;
+
+	> header {
+		border-bottom: 1px solid $grey-yoda;
+		margin-left: -20px;
+		margin-right: -20px;
+		padding: 0 20px;
+		position: relative;
+
+		h2 {
+			font-size: $pixel16;
+			border: none !important;
+		}
+
+		p {
+			font-size: $pixel14;
+			margin-bottom: 20px;
+		}
+
+		button {
+			position: absolute;
+			top: 0;
+			right: 20px;
+		}
+
+		span {
+			position: absolute;
+			left: -9999px;
+		}
+
+		svg {
+			width: 20px;
+		}
+	}
+
+	footer {
+		border-top: 1px solid $grey-yoda;
+		margin: 0 -20px;
+		padding: 20px 20px 0 20px;
+		display: flex;
+
+		p {
+			margin: 0;
+		}
+
+		a:not(.c-buttoncta) {
+			color: $link;
+			font-size: $pixel13;
+			padding-right: 5px;
+
+			+ a {
+				border-left: 1px solid green;
+				padding-left: 10px;
+			}
+
+			&:hover {
+				color: $red;
+			}
+		}
+
+		a.c-buttoncta {
+			flex: 1;
+		}
+	}
+
+	> .b-listing > ul {
+		border-top: none !important;
+		border-bottom: none !important;
+
+		//li:last-child {
+		//	border-bottom: none !important;
+		//}
+	}
+}
+
+aside > .u-block--panel {
+	padding: 14px !important;
+
+	> header > h2 {
+		padding: 0;
+		margin-bottom: 12px;
+	}
+
+	footer {
+		padding: 10px 20px 0 20px;
+	}
 }
 
 // Block Spacing
@@ -196,10 +291,6 @@
 	}
 }
 
-.u-block--border-top {
-	border-top: 1px solid $grey-vader;
-}
-
 // 3. Icon utils
 // -------------
 
@@ -220,6 +311,7 @@
 		width: 1em;
 		flex-shrink: 0;
 		margin-right: 0.3em;
+		margin-top: -1px;
 	}
 }
 
@@ -286,6 +378,10 @@ a.u-icon svg:hover {
 
 .u-margin-bottom-s {
 	margin-bottom: 20px !important;
+}
+
+.u-margin-top-s {
+	margin-top: 20px !important;
 }
 
 // 6. Misc utils
