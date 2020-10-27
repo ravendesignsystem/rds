@@ -38,7 +38,7 @@ The above commands assume you have composer installed globally. If you have comp
 
 The above command runs both the sculpin static site generator, [read more](https://sculpin.io) and the webpack watch task, [read more](https://webpack.js.org) concurrently.
 
-- `npm run dev`
+- `npm run watch`
 
 In order to fully stop the watch task and sculpin server, you need to do more than stop webpack. Once that is stopped, to the following:
 

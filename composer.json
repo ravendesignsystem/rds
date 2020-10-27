@@ -1,37 +1,5 @@
 {
-	"name": "cu/rds",
-	"description": "Raven Design System",
-	"type": "sculpin-rds",
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "Danny Brown",
-			"email": "danny.brown@carleton.ca",
-			"homepage": "http://dannybrown.ca"
-		},
-		{
-			"name": "Troy Chaplin",
-			"email": "troy.chaplin@carleton.ca",
-			"homepage": "http://troychaplin.ca"
-		}
-	],
-	"require": {
-		"sculpin/sculpin": "^2.1@dev",
-		"dflydev/embedded-composer": "^1.0@dev",
-		"kriswallsmith/assetic": "1.1.2"
-	},
-	"config": {
-		"component-dir": "source/components",
-		"components": []
-	},
-	"scripts": {
-		"post-install-cmd": [
-			"ComponentManager\\ComponentManager::postComposerInstall"
-		]
-	},
-	"autoload": {
-		"classmap": [
-			"component-manager.php"
-		]
-	}
+    "require": {
+        "sculpin/sculpin": "^3.0"
+    }
 }
