@@ -22,6 +22,8 @@ Check if they are installed and what version is installed. If either is not inst
 * `node --version` -- Read more about [Node.js](https://nodejs.org/en/)
 * `npm --version` -- NPM is install as a part of Node.js
 
+**IMPORTANT: the current package only installs with Composer v1. Until we move this to something more modern, grab the latest stable v1.
+
 #### Install packages
 
 Once the dependencies above are installed, run the commands below to install the required packages.
