@@ -5,7 +5,7 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 			<meta name="robots" content="noodp, noydir"/>
 			<meta http-equiv="x-ua-compatible" content="ie=edge">
-			<link rel="canonical" href="https://ravendesignsystem.github.io/rds//docs/dev/main-concepts/layouts"/>
+			<link rel="canonical" href="https://ravendesignsystem.github.io/rds//docs/dev/blocks/header"/>
 
 			<link rel="stylesheet" href="https://cloud.typography.com/6307052/6118752/css/fonts.css"/>
 																<link rel="stylesheet" href="https://ravendesignsystem.github.io/rds/css/core.css" media="print" onload="this.media='all'">
@@ -20,18 +20,18 @@
 			<meta name="msapplication-config" content="https://cu-rds.s3.amazonaws.com/assets/favicons/browserconfig.xml">
 			<meta name="theme-color" content="#ffffff">
 			<title>
-									Block Spacing and Layout
+									Header Blocks
 								|
 				Raven Design System
 				|
 				RDS</title>
-																		<meta property="og:url" content="https://ravendesignsystem.github.io/rds//docs/dev/main-concepts/layouts">
+																		<meta property="og:url" content="https://ravendesignsystem.github.io/rds//docs/dev/blocks/header">
 			<meta property="og:type" content="website">
 			<meta
-			property="og:title" content="Block Spacing and Layout">
+			property="og:title" content="Header Blocks">
 																		<meta name="twitter:card" content="summary_large_image">
 			<meta
-			name="twitter:title" content="Block Spacing and Layout">
+			name="twitter:title" content="Header Blocks">
 														</head>
 	
 	<body >
@@ -54,7 +54,7 @@ Raven Design System
                 <a class="" href="https://ravendesignsystem.github.io/rds/about/">About</a>
             </li>
             <li>
-                <a class="" href="https://ravendesignsystem.github.io/rds/dev/">Dev</a>
+                <a class=" u-active" href="https://ravendesignsystem.github.io/rds/dev/">Dev</a>
             </li>
             <li>
                 <a class="" href="https://ravendesignsystem.github.io/rds/design/">Design</a>
@@ -120,7 +120,14 @@ Raven Design System
 																							<div class="u-block u-block--s u-block--grey">
 <section class="b-banner">
     <section>
-        <h1>Block Spacing and Layout</h1>
+        <nav aria-label="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+                <li itemprop="breadcrumb"><a href="https://ravendesignsystem.github.io/rds/">Home</a></li>
+                                <li itemprop="breadcrumb"><a href="https://ravendesignsystem.github.io/rds//dev/">Dev</a></li>
+                                                <li itemprop="breadcrumb"><a href="../../">Blocks</a></li>                <li itemprop="breadcrumb"><a href="../">Header Blocks</a></li>                <li class="u-visually-hidden" itemprop="breadcrumb" aria-current="page"></li>
+            </ol>
+        </nav>
+        <h1>Header Blocks Block</h1>
     </section>
 </div>
 </div>
@@ -163,13 +170,13 @@ Raven Design System
 			</ul>
 		</li>
 
-		<li class="has-submenu">
+		<li class="has-submenu open">
 			<a  href="https://ravendesignsystem.github.io/rds/dev/blocks/">Blocks</a>
-			<button aria-expanded="false" aria-controls="submenu_Blocks">+</button>
+			<button aria-expanded="true" aria-controls="submenu_Blocks">+</button>
 			<ul id="submenu_Blocks" class="is-submenu">
-				<li class="has-submenu">
-					<a  href="https://ravendesignsystem.github.io/rds/dev/blocks/header/">Header Blocks</a>
-					<button aria-expanded="false" aria-controls="submenu_header_blocks">+</button>
+				<li class="has-submenu open">
+					<a  class="u-active"  href="https://ravendesignsystem.github.io/rds/dev/blocks/header/">Header Blocks</a>
+					<button aria-expanded="true" aria-controls="submenu_header_blocks">+</button>
 					<ul id="submenu_header_blocks" class="is-submenu">
 						<li>
 							<a  href="https://ravendesignsystem.github.io/rds/dev/blocks/header/alertheader/">Alert Header</a>
@@ -394,9 +401,19 @@ Raven Design System
 											<div class="u-block u-block--white">
 							<div class="b-content">
 							
-							<p>TODO Update this to talk about sections and layouts in general.</p>
+							<h2 id="header-blocks">Header Blocks</h2>
 
-<p>See the <a href="https://ravendesignsystem.github.io/rds/dev/dev/layouts/">Layouts</a> page for code examples.</p>
+<ul>
+<li>
+                <a href="https://ravendesignsystem.github.io/rds/dev/blocks/header/alertheader/">Alert Header</a>
+                                                                </li>
+<li>
+                    <a href="https://ravendesignsystem.github.io/rds/dev/blocks/header/banner/">Banner</a>
+                                                            </li>
+<li>
+                                                                <a href="https://ravendesignsystem.github.io/rds/dev/blocks/header/masthead/">Masthead</a>
+                </li>
+</ul>
 
 							  </div> </div>  </main>   
 		</div>

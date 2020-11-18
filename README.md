@@ -4,46 +4,33 @@ RDS, Carleton University’s design system, is a living digital organism uniting
 
 Let my heart be still a moment and this mystery explore...
 
-## Getting started
+## Design System Docs
 
-**Note**: instructions below are for working with the RDS Docs package. RDS design systems documentation can be found at https://ravendesignsystem.github.io/rds/
+**Note**: the instructions below are for working with and building the RDS and the system documentation. The latest RDS design systems documentation can be found at https://ravendesignsystem.github.io/rds/
+## Getting Set Up Locally
 
-### Clone repo
+### Clone Repo
 
-Clone this repo https://github.com/ravendesignsystem/rds.git into your project directory.
+Set up a project folder and clone this repo https://github.com/ravendesignsystem/rds.git into your project directory.
 
-### Install Dependencies
+### Dependencies
 
-Make sure you have composer, node and npm installed.
+* `node & npm` -- Make sure a recent stable version of node and npm are installed to work with your project.
+* `composer` -- composer is required to install Sculpin. The appropriate version .phar file is included with the repo.
 
-Check if they are installed and what version is installed. If either is not installed, use the links below to learn how.
+### Install packages
 
-* `composer --version` -- Read more about [Composer](https://getcomposer.org)
-* `node --version` -- Read more about [Node.js](https://nodejs.org/en/)
-* `npm --version` -- NPM is install as a part of Node.js
+Run the commands below:
 
-#### Install packages
+* `npm install` - install required packages.
+* `php composer.phar install` - installs [Sculpin](https://sculpin.io) and its dependencies.
+* `cp ./.env-example ./.env` - creates a local env file to be modified for deployment. **Note** talk to the core Carleton contributors for the required .env code.
 
-Once the dependencies above are installed, run the commands below to install the required packages.
+## Local Run Commands
 
-* `npm install` -- installs all the dependencies set in the package.json file
-* `composer install` -- installs all the dependencies set in the composer.json file
-* `cp ./.env-example ./.env` - creates a local env file
-
-**Note**: items in the `.env` file require manual changes, these are only available to a member of Carleton Web Services.
-
-The above commands assume you have composer installed globally. If you have composer install at the project level, you would need to run `php composer.phar`.
-
-## Running RDS Locally for dev
-
-The above command runs both the sculpin static site generator, [read more](https://sculpin.io) and the webpack watch task, [read more](https://webpack.js.org) concurrently.
-
-- `npm run dev`
-
-In order to fully stop the watch task and sculpin server, you need to do more than stop webpack. Once that is stopped, to the following:
-
-- `sudo lsof -i tcp:8000` - get the PID of the sculpin task and make note of it
-- `kill -9 PID` - replace PID with the number from the step above
+* `npm run watch` - deploys the Sculpin local static build, the WebPack watch task and BrowseSync.
+* `npm run build` - build the Sculpin local static files and prepares them for production.
+* `npm release` - prepares the files for a new release.
 
 ## Deployment
 
@@ -53,19 +40,9 @@ To deploy, terminate both the watch task as well as the sculpin services, and fo
 
 Further documentation on how to build the RDS docs is available in the [wiki](https://github.com/ravendesignsystem/rds/wiki/RDS-Docs).
 
-### Break down into end to end tests
+## Built With
 
-TODO
-
-## Technologies
-
-RDS and its documentation are built with:
-
-- [Love ❤️](https://i.redd.it/qh713wbo4r8y.jpg) 
-- [PostCSS](https://postcss.org)
-- [SCSS](https://sass-lang.com)
-- [Sculpin](https://sculpin.io)
-- [webpack](https://webpack.js.org)
+RDS and its documentation are built with [Love ❤️](https://i.redd.it/qh713wbo4r8y.jpg) 
 
 ## Contributing
 
@@ -89,5 +66,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 - Hat tip to anyone who's code was used.
 - We've stood on the backs of giants for sure.
-- Inspiration
-- TODO
+
+Like this README, this project is a WIP.
