@@ -5,7 +5,6 @@
 /node_modules/
 /rds/.idea/
 /vendor/
-composer.phar
 .DS_Store
 .env
 
