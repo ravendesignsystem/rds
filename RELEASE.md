@@ -9,7 +9,6 @@ Using your preferred github gui, do the following:
 
 - Make sure you are on the `dev` branch
 - Create a `release` branch using the version number that you will be releasing
-- Following the rest of the instructions below
 
 ### Update Version Numbers
 The version number requires updating in several files:
@@ -28,6 +27,8 @@ The version number requires updating in several files:
 
 - In a terminal window, run `npm run build ; npm run release`
 - Go into the `/dist` folder and run `npm publish` to push the new release to npm
+
+**Note:** Make sure the proper .env file is in place your directory.
 
 ### Finish Release Branch
 

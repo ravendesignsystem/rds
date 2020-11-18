@@ -2,6 +2,10 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.21.1](https://github.com/ravendesignsystem/rds/releases/tag/0.21.1 2020-10-21
+
+Small changes for testing.
+
 ## [v0.21.0](https://github.com/ravendesignsystem/rds/releases/tag/0.21.0) 2020-10-21
 
 **IMPORTANT:** Breaking changes update required
