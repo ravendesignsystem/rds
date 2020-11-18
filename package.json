@@ -1,6 +1,6 @@
 {
 	"name": "rds",
-	"version": "0.21.0",
+	"version": "0.21.1",
 	"description": "Never more",
 	"main": "webpack.config.js",
 	"author": "Carleton University",
@@ -11,8 +11,8 @@
 	},
 	"scripts": {
 		"build": "webpack --mode=production --config webpack.config.js",
-		"watch": "vendor/bin/sculpin generate --watch --server & NODE_ENV=development webpack --env=dev --mode=development --config webpack.config.js --watch --colors",
-		"release": "vendor/bin/sculpin generate --clean --server --env=prod & NODE_ENV=production webpack --env=prod --mode=production --config webpack.release.js --progress --hide-modules --colors"
+		"watch": "vendor/bin/sculpin generate --watch --server & NODE_ENV=development webpack --env=dev --mode=development --config webpack.config.js --watch --color",
+		"release": "vendor/bin/sculpin generate --clean --server --env=prod & NODE_ENV=production webpack --env=prod --mode=production --config webpack.release.js --progress --hide-modules --color"
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.10.4",

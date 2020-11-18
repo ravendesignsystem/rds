@@ -1,6 +1,6 @@
-.b-alertheader .c-alert {
+.b-alertheader > .c-alert {
 	margin: 0;
-	border: none;
+	border: none !important;
 	padding: 0 0 0 50px;
 
 	@include media('>s') {
