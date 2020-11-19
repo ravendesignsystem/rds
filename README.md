@@ -28,14 +28,16 @@ RDS, Carleton University’s design system, is a living digital organism uniting
 
 1. Create a feature branch from the `develop` branch:
    
-   ```git checkout -b feature_branch_name develop```
+   ```git checkout -b feature_name develop```
 
 2. Build the static files, set a watch task and launch BrowserSync by running the npm script:
    
-   ```git checkout -b feature_branch_name develop```
+   ```npm run watch```
 
 3. Make small, single-purpose commits often with clear commit messages.
-4. 
+4. When ready, push your branch to Github
+
+   ```git push origin $feature_name```
 ## NPM Scripts
 
 ### Dev Commands
