@@ -63,7 +63,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors & Contributors
 
-TODO ...list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+TODO...list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
