@@ -52,7 +52,8 @@ RDS, Carleton University’s design system, is a living digital organism uniting
    ```git push origin $feature_name```
 
 4. Squash and merge your feature branch into the develop branch.
-5. Merge the `develop` branch into `master`.
+5. Delete the feature branch.
+6. Merge the `develop` branch into `master`.
 ## Releases
 
 To create and deploy a new release, follow the steps outlined at [Release Doc](https://github.com/ravendesignsystem/rds/blob/master/RELEASE.md).
