@@ -2,7 +2,7 @@
 
 RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language.
 
-**Note**: the instructions below are for developing RDS and its documentation. For building projects with RDS, the latest documentation can be found at https://ravendesignsystem.github.io/rds/
+**Note**: the instructions below are for developing RDS and its documentation. For building projects with RDS, the latest documentation can be found at https://ravendesignsystem.github.io/rds/.
 
 ## Setting Up
 
