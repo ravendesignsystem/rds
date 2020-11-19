@@ -35,34 +35,7 @@ RDS, Carleton University’s design system, is a living digital organism uniting
    ```npm run watch```
 
 3. Make small, single-purpose commits often with clear commit messages.
-4. When ready, push your branch to Github
-
-   ```git push origin $feature_name```
-## NPM Scripts
-
-2. Install [Sculpin](https://sculpin.io) with [Composer](https://getcomposer.org):
-   
-   ```php composer.phar install```
-
-For local dev:
-
-4. Add an example .env file:
-   
-   ```cp ./.env-example ./.env```
-   
-5. Rename the `env-example.env` file and contact a RDS core contributor to get the code for this file.
-
-## Working Locally
-
-1. Create a feature branch from the `develop` branch:
-   
-   ```git checkout -b feature_name develop```
-
-2. Build the static files, set a watch task and launch BrowserSync by running the npm script:
-   
-   ```npm run watch```
-
-3. 🙏 make small, single-purpose commits often with clear messages. 
+4. 🙏 make small, single-purpose commits often with clear messages. 
 
 ## Publishing Changes
 
@@ -79,7 +52,7 @@ For local dev:
    ```git push origin $feature_name```
 
 4. Squash and merge your feature branch into the develop branch.
-5. Merge the `develop branch` into `master`.
+5. Merge the `develop` branch into `master`.
 ## Releases
 
 To create and deploy a new release, follow the steps outlined at [Release Doc](https://github.com/ravendesignsystem/rds/blob/master/RELEASE.md).
