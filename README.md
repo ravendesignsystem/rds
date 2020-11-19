@@ -56,7 +56,7 @@ RDS, Carleton University’s design system, is a living digital organism uniting
 6. Merge the `develop` branch into `master`.
 ## Releases
 
-To create and deploy a new release, follow the steps outlined at [Release Doc](https://github.com/ravendesignsystem/rds/blob/master/RELEASE.md).
+To create and deploy a new release, follow the steps outlined in the [Release Doc](https://github.com/ravendesignsystem/rds/blob/master/RELEASE.md).
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
