@@ -10,6 +10,10 @@ RDS, Carleton University’s design system, is a living digital organism uniting
 
     ```clone https://github.com/ravendesignsystem/rds.git```
 
+1. Clone project:
+
+    ```clone https://github.com/ravendesignsystem/rds.git```
+
 2. Install [Sculpin](https://sculpin.io) with [Composer](https://getcomposer.org):
    
    ```php composer.phar install```
@@ -17,6 +21,37 @@ RDS, Carleton University’s design system, is a living digital organism uniting
 3. Install required packages with [npm](https://www.npmjs.com):
    
    ```php composer.phar install```
+
+4. Add an example .env file:
+   
+   ```cp ./.env-example ./.env```
+   
+5. Rename the `env-example.env` file and contact a RDS core contributor to get the code for this file.
+
+## Working Locally
+
+1. Create a feature branch from the `develop` branch:
+   
+   ```git checkout -b feature_name develop```
+
+2. Build the static files, set a watch task and launch BrowserSync by running the npm script:
+   
+   ```npm run watch```
+
+3. Make small, single-purpose commits often with clear commit messages.
+4. When ready, push your branch to Github
+
+   ```git push origin $feature_name```
+## NPM Scripts
+
+2. Install [Sculpin](https://sculpin.io) with [Composer](https://getcomposer.org):
+   
+   ```php composer.phar install```
+
+3. Install required packages with [npm](https://www.npmjs.com):
+   
+   ```php composer.phar install```
+For local dev:
 
 4. Add an example .env file:
    
