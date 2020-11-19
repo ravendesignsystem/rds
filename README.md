@@ -45,7 +45,7 @@ RDS, Carleton University’s design system, is a living digital organism uniting
 
 2. Commit all changes:
    
-   ```git commit -am "A clear message"``
+   ```git commit -am "A clear message"```
 
 3. Push branch to Github
 
