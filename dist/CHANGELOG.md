@@ -6,6 +6,9 @@ All notable changes to the project will be documented here, in this file
 
 Small changes for testing.
 
+- **Added:** missing info from readme
+- **Added:** missing build command required for releases
+
 ## [v0.21.0](https://github.com/ravendesignsystem/rds/releases/tag/0.21.0) 2020-10-21
 
 **IMPORTANT:** Breaking changes update required
