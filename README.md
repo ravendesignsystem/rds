@@ -8,21 +8,17 @@ RDS, Carleton University’s design system, is a living digital organism uniting
 
 1. Clone project:
 
-    ```clone https://github.com/ravendesignsystem/rds.git```
+    ```git clone https://github.com/ravendesignsystem/rds.git foldername```
 
-2. Install [Sculpin](https://sculpin.io) with [Composer](https://getcomposer.org):
+2. Install [Sculpin](https://sculpin.io) and required [npm](https://www.npmjs.com) packages with [Composer](https://getcomposer.org):
    
    ```php composer.phar install```
 
-3. Install required packages with [npm](https://www.npmjs.com):
-   
-   ```php composer.phar install```
-
-4. Add an example .env file:
+3. Add an example .env file:
    
    ```cp ./.env-example ./.env```
    
-5. Rename the `env-example.env` file and contact a RDS core contributor to get the code for this file.
+4. Contact a RDS core contributor to get the info for the `.env` file.
 
 ## Working Locally
 
@@ -53,6 +49,13 @@ RDS, Carleton University’s design system, is a living digital organism uniting
 4. Squash and merge your feature branch into the develop branch.
 5. Delete the feature branch.
 6. Merge the `develop` branch into `master`.
+
+## Stop Sculpin Server
+
+In order to fully stop the watch task and sculpin server, you need to do more than stop webpack. Once that is stopped, to the following:
+
+* `sudo lsof -i tcp:8000` - get the PID of the sculpin task and make note of it
+* `kill -9 PID` - replace PID with the number from the step above
 ## Releases
 
 To create and deploy a new release, follow the steps outlined in the [Release Doc](https://github.com/ravendesignsystem/rds/blob/master/RELEASE.md).
