@@ -26,7 +26,10 @@ The version number requires updating in several files:
 ### Build Release for NPM and Prod Docs
 
 - In a terminal window, run `npm run build ; npm run release`
-- Go into the `/dist` folder and run `npm publish` to push the new release to npm
+- Go into the `/dist` folder
+- If you have not authenticated run `npm login`, this is a one time thing
+- Run `npm publish` to push the new release to npm
+
 
 **Note:** Make sure the proper .env file is in place your directory.
 
