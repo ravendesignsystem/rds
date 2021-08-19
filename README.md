@@ -30,7 +30,7 @@ RDS, Carleton University’s design system, is a living digital organism uniting
    
    ```npm run watch```
 
-3. 🙏 make small, single-purpose commits often with clear messages. 
+3. Pretty 🙏 make small, single-purpose commits often with clear messages. 
 
 ## Publishing Changes
 
