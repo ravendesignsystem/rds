@@ -2,6 +2,11 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.22.0](https://github.com/ravendesignsystem/rds/releases/tag/0.21.2 2021-03-04
+
+- **Fixed:**  fixed bug in twig template causing local compilation errors
+- **Fixed:**  fixed FileManagerPlugin syntax in Webpack config to align with updates
+- **Added:**  update logos to new brand!
 ## [v0.21.2](https://github.com/ravendesignsystem/rds/releases/tag/0.21.2 2021-03-04
 
 - **Fixed:**  fix masthead for mobile

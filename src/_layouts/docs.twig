@@ -107,7 +107,9 @@
 				{% block menu %}
 					<aside class="multicol__nav">
 						<div class="b-menu b-menu--sidenav u-sticky">
+							{% if (page.menu) %}
 							{%include 'docs/inc/menus/menu-' ~ page.menu %}
+							{% endif %}
 						</div>
 					</aside>
 				{% endblock %}
