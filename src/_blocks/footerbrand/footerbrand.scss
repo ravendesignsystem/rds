@@ -5,6 +5,7 @@
 .b-footerbrand {
 	max-width: 280px;
 	margin: auto;
+	padding-bottom: 140px;
 
 	@include media('>s') {
 		max-width: 330px;
