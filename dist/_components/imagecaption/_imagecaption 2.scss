@@ -1,0 +1,27 @@
+.c-imgcaption {
+	display: table;
+	margin-bottom: 20px;
+
+	img {
+		margin-bottom: 0 !important;
+
+		// Fixes image width when larger than content area
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			max-width: #{map-get($breakpoints, s)};
+		}
+	}
+
+	@include media('<=s') {
+		width: 100%;
+	}
+
+	figcaption {
+		display: table-caption;
+		caption-side: bottom;
+		background-color: $grey;
+		padding: 20px !important; // important forces override of last-child on u-block:p
+		font-size: $pixel14;
+		font-style: italic;
+		line-height: 1.4;
+	}
+}

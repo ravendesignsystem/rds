@@ -1,0 +1,139 @@
+.b-cardgrid + .c-buttoncta {
+	margin-top: $block-margin;
+}
+
+.b-cardgrid .c-card {
+	pointer-events: auto;
+	transition: 300ms opacity, 300ms transform;
+}
+
+.b-cardgrid.u-grid:hover .c-card,
+.b-cardgrid .u-grid:hover .c-card {
+	opacity: 0.5;
+}
+
+.b-cardgrid .u-grid:hover .c-card:hover,
+.b-cardgrid.u-grid:hover .c-card:hover {
+	transform: scale(1.05);
+	opacity: 1;
+}
+
+.b-cardgrid:not(.b-cardgrid--s2col).u-grid {
+	@include media('<=s') {
+		display: block;
+	}
+}
+
+.b-cardgrid:not(.b-cardgrid--s2col).u-grid > .c-card {
+	@include media('<=s') {
+		display: flex;
+		flex-direction: row;
+		border: 1px solid $grey;
+		margin-bottom: 20px;
+
+		p:not(.c-card--people p) {
+			display: none;
+		}
+
+		figure {
+			width: 40%;
+			float: left;
+
+			img {
+				border-top-right-radius: 0;
+				border-bottom-left-radius: 5px;
+				object-fit: cover;
+				min-height: 110px;
+			}
+		}
+
+		header {
+			float: left;
+			padding: 20px;
+			min-height: auto;
+			width: 60%;
+		}
+
+		@include media('<550px') {
+			h3 {
+				font-size: 15px;
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				max-height: 55px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				line-height: 1.35;
+				// TODO fix this with proper css clamping when available
+			}
+
+			time {
+				font-size: 13px;
+			}
+
+			header {
+				padding: 15px;
+			}
+		}
+
+		@include media('>400px') {
+			&:after {
+				left: 44%;
+				bottom: 20px;
+				margin-top: 20px;
+			}
+		}
+
+		@include media('<400px') {
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
+.b-cardgrid:not(.b-cardgrid--s2col).u-grid > article.c-card--people {
+	@include media('<=s') {
+		text-align: left;
+
+		figure {
+			padding: 15px 0;
+
+			img {
+				border-radius: 50% !important;
+				border: 5px solid rgba($grey-yoda, 0.75) !important;
+				min-height: 90px !important;
+				min-width: 90px !important;
+			}
+		}
+	}
+
+	@include media('<=s') {
+		&:after {
+			left: 44% !important;
+			bottom: 20px;
+			margin-top: 20px;
+			display: inline-block !important;
+		}
+	}
+}
+
+.l-body--am .u-grid--4 .card__title,
+.l-body--ama .u-grid--4 .card__title,
+.l-body--ama .u-grid--3 .card__title {
+	@include media('>=s') {
+		font-size: $pixel16;
+	}
+}
+
+.l-body--ama .u-grid--4 {
+	@include media('<=1350px') {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.l-body--ama .u-grid--3 {
+	@include media('>1112px','<1280px') {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

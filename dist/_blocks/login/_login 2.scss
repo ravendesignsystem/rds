@@ -1,0 +1,25 @@
+.b-login {
+	max-width: 440px;
+	margin: 0 auto;
+
+	h2 {
+		margin-bottom: 15px;
+		text-align: center;
+		font-size: $pixel24;
+		font-weight: 400;
+		letter-spacing: -0.5px;
+	}
+
+	form {
+		padding: 20px;
+		font-size: $pixel14;
+		background-color: #fff;
+		border-radius: 0 0 3px 3px;
+		border: 1px solid $grey-kenobi;
+		margin-bottom: 20px;
+	}
+
+	input[type=submit] {
+		width: 100%;
+	}
+}

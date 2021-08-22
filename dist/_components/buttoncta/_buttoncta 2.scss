@@ -1,0 +1,89 @@
+.c-buttoncta,
+a.c-buttoncta {
+	text-align: center;
+	white-space: nowrap;
+	border: 1px solid transparent;
+	padding: 0.85rem 1.35rem;
+	font-size: $pixel16;
+	line-height: 1.75;
+	transition: background 200ms, box-shadow 200ms;
+	background-color: $red;
+	color: white;
+	border-radius: 0.3rem;
+	box-shadow: 0 4px 9px rgba(black, 0.25);
+	display: inline-flex;
+	text-decoration: none;
+	margin: 0;
+	overflow: hidden;
+
+	&:hover {
+		text-decoration: none;
+		cursor: pointer;
+		background-color: $black;
+		color: white;
+	}
+}
+
+.c-buttoncta svg path,
+a.c-buttoncta:hover svg path {
+	fill: white;
+}
+
+.c-buttoncta--ghost,
+a.c-buttoncta--ghost {
+	background-color: white;
+	color: $red;
+	border: 1px solid $red;
+	box-shadow: 0 4px 9px rgba(0, 0, 0, 0.05);
+
+	&:hover,
+	&:hover path {
+		background-color: $red;
+		color: white;
+		fill: white;
+	}
+
+	& path {
+		fill: $red;
+	}
+}
+
+a.c-buttoncta--grey {
+	background-color: $grey;
+	color: $black !important;
+	border: 1px solid $grey-yoda;
+	box-shadow: 0 4px 9px rgba(black, 0.05);
+
+	&:hover,
+	&:hover path {
+		background-color: $black;
+		color: white !important;
+		fill: white;
+	}
+
+	& path {
+		fill: $red;
+	}
+}
+
+.c-buttoncta--center {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+a.c-buttoncta--full {
+	width: 100%;
+}
+
+.c-buttoncta.u-icon svg {
+	margin-right: 8px;
+}
+
+// Full buttons in asides and smaller panels
+aside .c-buttoncta, footer .c-buttoncta {
+	display: block !important;
+	margin: 0 !important;
+	padding: 0.5rem 1.25rem;
+	font-size: $pixel14;
+}

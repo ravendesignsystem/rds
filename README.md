@@ -10,15 +10,18 @@ RDS, Carleton University’s design system, is a living digital organism uniting
 
     ```git clone https://github.com/ravendesignsystem/rds.git foldername```
 
-2. Install [Sculpin](https://sculpin.io) and required [npm](https://www.npmjs.com) packages with [Composer](https://getcomposer.org):
+2. Install [Sculpin](https://sculpin.io) with [Composer](https://getcomposer.org):
    
    ```php composer.phar install```
 
-3. Add an example .env file:
+3. Install project NPM packages
+   ```npm install```
+
+4. If you are deploying releases, add a .en file based on the example .env file:
    
    ```cp ./.env-example ./.env```
    
-4. Contact a RDS core contributor to get the info for the `.env` file.
+   Contact a RDS core contributor to get the info for the `.env` file.
 
 ## Working Locally
 
@@ -52,7 +55,7 @@ RDS, Carleton University’s design system, is a living digital organism uniting
 
 ## Stop Sculpin Server
 
-In order to fully stop the watch task and sculpin server, you need to do more than stop webpack. Once that is stopped, to the following:
+In order to fully stop the watch task and sculpin server, you need to do more than stop the script. Once that is stopped, to the following:
 
 * `sudo lsof -i tcp:8000` - get the PID of the sculpin task and make note of it
 * `kill -9 PID` - replace PID with the number from the step above
