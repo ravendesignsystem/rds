@@ -1,0 +1,70 @@
+.c-heading {
+	border-bottom: 1px solid $grey;
+}
+
+.c-heading--center {
+	font-size: $pixel30;
+	text-align: center;
+	border-bottom: none !important;
+	padding-bottom: 20px;
+	margin-bottom: 25px;
+	position: relative;
+
+	&:after {
+		position: absolute;
+		content: '';
+		width: 50px;
+		height: 1px;
+		border-bottom: 1px solid $red;
+		bottom: 0;
+		left: 50%;
+		margin-left: -25px;
+	}
+
+	@include media('>=s') {
+		font-size: $pixel36;
+	}
+}
+
+.c-heading--center + p {
+	text-align: center;
+	font-size: $pixel18;
+	font-weight: 300;
+	position: relative;
+	padding-bottom: 25px;
+	max-width: 620px;
+	margin-top: -5px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include media('>=s') {
+		font-size: $pixel20;
+		padding-bottom: 25px;
+	}
+}
+
+.c-heading--center {
+	padding-bottom: 20px;
+	margin-bottom: 0;
+	border-bottom: 1px solid red;
+
+	&:after {
+		border-bottom: none;
+	}
+
+	& + p {
+		margin-bottom: 40px;
+		line-height: 1.45;
+
+		&:after {
+			position: absolute;
+			content: '';
+			width: 50px;
+			height: 1px;
+			border-bottom: 1px solid $red;
+			bottom: 0;
+			left: 50%;
+			margin-left: -25px;
+		}
+	}
+}

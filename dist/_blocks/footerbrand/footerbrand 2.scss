@@ -1,0 +1,47 @@
+.u-block--black + .u-block--black > .b-footerbrand {
+	padding-top: 40px;
+}
+
+.b-footerbrand {
+	max-width: 280px;
+	margin: auto;
+
+	@include media('>s') {
+		max-width: 330px;
+	}
+
+	svg {
+		width: 100%;
+	}
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 20px auto 0 auto;
+		list-style: none;
+
+		@include media(">s") {
+			justify-content: space-between;
+		}
+	}
+
+	li {
+		font-size: $pixel12;
+
+		@include media("<=s") {
+			margin: 0 10px;
+		}
+	}
+
+	li a {
+		color: $grey-kenobi;
+		border-bottom: 1px solid $grey-vader;
+		padding-bottom: 4px;
+
+		&:hover {
+			color: white;
+			border-bottom: 1px solid white;
+		}
+	}
+}

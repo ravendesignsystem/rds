@@ -1,0 +1,121 @@
+// Using div. to circumvent the specificity of b-content
+div.c-alert {
+	position: relative;
+	padding: 27px 25px 25px 65px;
+	margin-bottom: $margin-bottom;
+	background-color: #e6f7ff;
+	border: 1px solid #91d5ff;
+	border-radius: 4px;
+
+	svg {
+		position: absolute;
+		top: 25px;
+		left: 20px;
+		width: 30px;
+		height: 30px; // force same height as width to fix IE11 issue
+		fill: #1496da;
+	}
+
+	// If p immediately follows svg, match h2 styles
+	svg + p {
+		font-size: $pixel18;
+		font-weight: 500;
+	}
+
+	h2 {
+		font-size: $pixel18;
+		margin: 0;
+		border-bottom: none;
+	}
+
+	p {
+		font-size: $pixel16;
+		line-height: 1.4;
+		margin: 0;
+	}
+
+	a {
+		border-bottom: 1px solid $link !important; // !important to circumvent the specificity of b-content
+		background-color: transparent !important;
+
+		&:hover {
+			border-bottom: 1px solid $red !important;
+		}
+	}
+
+	button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 44px;
+		height: 44px;
+
+		svg {
+			position: relative;
+			top: 2px;
+			right: 0;
+			left: 0;
+			width: 12px;
+			margin: 0;
+		}
+	}
+}
+
+div.c-alert.c-alert--error {
+	border: 1px solid $red;
+	background-color: $pink;
+
+	svg {
+		fill: $red;
+	}
+
+	p a {
+		color: $red;
+		border-bottom: 1px solid $red !important; // !important to circumvent the specificity of b-content
+		background-color: transparent;
+
+		&:hover {
+			border-bottom: 1px solid $black !important;
+			color: $black !important;
+		}
+	}
+}
+
+div.c-alert--warning {
+	border: 1px solid #faab08;
+	background-color: #fffaf1;
+
+	svg,
+	circle {
+		fill: #faab08;
+	}
+
+	a {
+		color: #faab08 !important;
+		border-bottom: 1px solid #faab08 !important;
+
+		&:hover {
+			border-bottom: 1px solid $black !important;
+			color: $black !important;
+		}
+	}
+}
+
+div.c-alert--success {
+	border: 1px solid #45bf2e;
+	background-color: #fafff5;
+
+	svg {
+		fill: #45bf2e;
+	}
+
+	a {
+		color: #45bf2e !important;
+		border-bottom: 1px solid #45bf2e !important;
+
+		&:hover {
+			border-bottom: 1px solid $black !important;
+			color: $black !important;
+		}
+	}
+}

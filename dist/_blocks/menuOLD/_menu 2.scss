@@ -1,0 +1,240 @@
+// if the sticky nav is present,
+// add top margin so the top of menu is not hidden
+@include media('>s') {
+	.has-stickyscroll .b-menu {
+		margin-top: 90px;
+	}
+}
+
+// Main Nav Styles
+// ===============
+.b-menu {
+	// width: 220px;
+	margin-bottom: 60px;
+}
+
+.b-menu h2 {
+	background-color: $grey;
+	padding: 10px 15px;
+	color: $grey-vader;
+	margin: 0;
+	font-size: $pixel12;
+	text-transform: uppercase;
+}
+
+@include media('>s') {
+	// only show menu heading in overlay
+	.b-menu h2 {
+		display: none;
+	}
+
+	// when used as section nav show the title on all screen sizes
+	h2.menu__section {
+		background-color: white;
+		border-bottom: 1px solid $grey-yoda;
+		display: block;
+	}
+}
+
+.b-menu .active {
+	color: $red;
+}
+
+.b-menu ul {
+	margin: 0;
+	list-style-type: none;
+}
+
+.b-menu li {
+	position: relative;
+
+	label > i {
+		transition: transform 0.65s ease;
+	}
+
+	a {
+		display: block;
+		padding: 10px 15px;
+		border-bottom: 1px solid $grey;
+		//white-space: nowrap;
+		//overflow: hidden;
+		//text-overflow: ellipsis;
+		transition: all 0.25s ease-in; // TODO: what was this doing? can't figure it out
+	}
+
+// Remove expand / collapse menu for IE11
+	@media screen and (-ms-high-contrast: active),
+		screen and (-ms-high-contrast: none) {
+		&:last-child {
+			display: none;
+		}
+	}
+}
+
+.b-menu > ul li:last-of-type:not(.b-menu ul ul li:last-of-type) {
+	// tighten expand all line-height
+	line-height: 1;
+}
+
+// remove bottom border, if open
+.b-menu li input:checked + label a {
+	border-bottom: 1px solid rgba(255, 255, 255, 0);
+	padding-bottom: 5px;
+}
+
+.b-menu li:last-child a {
+	border-bottom: none;
+}
+
+.b-menu li a:hover {
+	color: $red;
+}
+
+.b-menu i {
+	font-style: normal;
+	// font-size: $pixel18;
+	position: absolute;
+	top: 0;
+	right: -20px;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: $grey-vader;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&:after {
+		content: '+';
+		display: inline-block;
+		transition: all 0.25s ease-in;
+		// left: 50%;
+		// line-height: normal;
+	}
+}
+
+div.modal__menu .b-menu i {
+	right: 0 !important;
+}
+
+.b-menu ul ul i {
+	line-height: 40px;
+}
+
+.b-menu input[type='checkbox']:checked + label > i:after {
+	transform: rotate(135deg);
+	transform-origin: center center;
+}
+
+// Hide nested lists
+// =======================================
+
+.b-menu ul ul,
+.b-menu ul ul ul,
+.b-menu ul ul ul ul {
+	// height: 100%;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease-in-out;
+}
+
+.b-menu ul input[type='checkbox']:checked + label + ul {
+	max-height: 1000px; // reset the height when checkbox is checked
+}
+
+// Child Level Nav Styles
+// =======================================
+// 1st level
+.b-menu ul {
+	// no background color if not in  overlay
+	font-size: $pixel16;
+}
+// 2nd level
+.b-menu ul ul {
+	box-shadow: inset 0px -11px 12px -12px $grey-yoda;
+}
+
+.b-menu ul ul ul {
+	box-shadow: none;
+}
+//
+//.b-menu ul ul:not(.multicol__nav .b-menu ul ul) { // no background color if not in  overlay
+//	background-color: $grey;
+//}
+//
+//.b-menu ul ul ul:not(.multicol__nav .b-menu ul ul ul) { // no background color if not in  overlay
+//	background-color: white;
+//}
+
+.b-menu ul ul a {
+	padding-left: 35px;
+	border-bottom: 1px solid white;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: $grey-emperor;
+	line-height: 1.65;
+	font-size: 15px;
+}
+
+// 3rd level
+.b-menu ul ul ul {
+	a {
+		padding-left: 50px;
+		font-size: $pixel14;
+	}
+}
+
+// 4th level
+.b-menu ul ul ul ul {
+	a {
+		padding-left: 90px;
+	}
+}
+
+// Expand/show nested lists
+// =======================================
+
+.menu__toggle {
+	display: inline-block;
+	font-style: normal;
+	font-size: $pixel12;
+	color: $grey-vader;
+	text-transform: capitalize;
+	padding: 15px 15px 15px 22px;
+	line-height: 20px;//
+
+	&:hover {
+		color: $red;
+	}
+
+	i {
+		top: 15px;
+		left: 0;
+		right: 0;
+		width: 25px;
+		height: 20px;
+		line-height: 20px;
+
+		&:after {
+			content: '+';
+			display: inline-block;
+			transition: all 0.25s ease-in;
+		}
+	}
+
+	&.menu__toggle--opened i:before {
+		transform: rotate(135deg);
+		transform-origin: center center;
+	}
+}
+
+input#menu--1-129:checked + label {
+	color: #f00;
+	font-style: normal;
+}
+
+.multicol__nav .b-menu ul ul li:last-child a {
+	padding-bottom: 10px;
+}

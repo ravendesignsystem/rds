@@ -1,0 +1,8 @@
+.l-col-l .u-block > * {
+	max-width: #{map-get($breakpoints, l)};
+	margin-left: auto;
+	margin-right: auto;
+	padding: $block-padding-s;
+}
+
+

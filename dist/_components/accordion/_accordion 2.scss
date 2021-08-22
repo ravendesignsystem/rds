@@ -1,0 +1,94 @@
+.c-accordion {
+	position: relative;
+	margin-bottom: 1px;
+	width: 100%;
+	overflow: hidden;
+
+	input {
+		position: absolute;
+		opacity: 0;
+		z-index: -1;
+	}
+
+	p {
+		font-size: 18px;
+		text-overflow: initial;
+		white-space: initial;
+	}
+
+	a {
+		color: $link;
+		background-color: #fbfdfd;
+		border-bottom: 1px solid #c8dae3;
+		word-wrap: break-word;
+
+		&:hover {
+			border-bottom: 1px solid $red;
+			color: $red;
+			background-color: #fefbfb;
+		}
+	}
+}
+
+.c-accordion + *:not(.c-accordion) {
+	margin-top: 25px;
+}
+
+.c-accordion label {
+	position: relative;
+	display: block;
+	padding: 18px 30px 18px 20px;
+	background-color: $grey;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.8;
+	cursor: pointer;
+}
+
+.accordion__content {
+	max-height: 0;
+	overflow: hidden;
+	background-color: white;
+	transition: max-height 0.75s;
+}
+
+.accordion__spacing {
+	padding: 25px 30px;
+}
+
+// Add Height when Content is Revealed
+// ----------------------------------------------
+
+.c-accordion input:checked ~ .accordion__content {
+	max-height: 5000px;
+	transition: max-height 1.5s;
+}
+
+// Accordion Icon Styles
+// ----------------------------------------------
+
+.c-accordion label::after {
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: block;
+	width: 3em;
+	height: 4em;
+	line-height: 4;
+	text-align: center;
+	transition: all 0.35s;
+}
+
+// Checkboxes: Multiple Open
+// ----------------------------------------------
+
+.c-accordion input[type='checkbox'] + label::after {
+	content: '+';
+}
+
+// Checkboxes: Single Open
+// ----------------------------------------------
+
+.c-accordion input[type='checkbox']:checked + label::after {
+	transform: rotate(135deg);
+}
