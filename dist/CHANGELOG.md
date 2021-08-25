@@ -2,6 +2,9 @@
 
 All notable changes to the project will be documented here, in this file
 
+## [v0.22.1](https://github.com/ravendesignsystem/rds/releases/tag/0.21.2 2021-08-25
+
+- **Fixed:**  fixed navbar issue
 ## [v0.22.0](https://github.com/ravendesignsystem/rds/releases/tag/0.21.2 2021-03-04
 
 - **Fixed:**  fixed bug in twig template causing local compilation errors

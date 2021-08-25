@@ -66,11 +66,13 @@ const toggleMobileMenu = () => {
 	if (!mastheadNav) return;
 
 	const mastheadClassList = mastheadNavIcon.parentNode.classList;
-	const navContainerWidth = mastheadClassList.contains('u-hide-l') ? navContainer.offsetWidth : navContainer.offsetWidth + 52;
+	const navContainerWidth = mastheadClassList.contains('u-hide-l')
+		? navContainer.offsetWidth
+		: navContainer.offsetWidth + 52;
 
 	// capture div width and compare against window width
 	// TODO: aria expanded stays at true when nav comes back into view, this causes the grey bg on buttons with submenus
-	if (initialNavMenuWidth >= navContainerWidth) {
+	if (initialNavMenuWidth >= navContainerWidth || window.innerWidth <= 760) {
 		// Moves nav to mobile dialogue in footer
 		modalMenu.appendChild(mastheadNav);
 
