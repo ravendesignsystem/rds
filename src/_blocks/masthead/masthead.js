@@ -307,7 +307,7 @@ const handleKeyPress = () => {
 const Masthead = () => {
 	if (!masthead) return;
 	handleScroll();
-	handleResize();
+	// handleResize();
 	handleLoading();
 	handleClick();
 	handleKeyPress();
