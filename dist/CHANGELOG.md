@@ -2,7 +2,7 @@
 
 All notable changes to the project will be documented here, in this file
 
-## [v0.22.6](https://github.com/ravendesignsystem/rds/releases/tag/0.22.6 2022-01-31
+## [v0.22.7](https://github.com/ravendesignsystem/rds/releases/tag/0.22.7 2022-01-31
 
 - **Fixed:**  Fixed Masthead disappearing on desktop
 
