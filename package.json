@@ -1,6 +1,6 @@
 {
 	"name": "rds",
-	"version": "0.22.6",
+	"version": "0.22.7",
 	"description": "Never more",
 	"main": "webpack.config.js",
 	"author": "Carleton University",
@@ -13,8 +13,8 @@
 		"build": "webpack --mode=production --config webpack.config.js",
 		"prod": "vendor/bin/sculpin generate --clean --env=prod & webpack --mode=production --config webpack.config.js",
 		"dev": "vendor/bin/sculpin generate & NODE_ENV=development webpack --env=dev --mode=development --config webpack.config.js",
-		"watch": "vendor/bin/sculpin generate --watch --server & NODE_ENV=development webpack --env=dev --mode=development --config webpack.config.js --watch --colors",
-		"release": "vendor/bin/sculpin generate --clean --env=prod & NODE_ENV=production webpack --env=prod --mode=production --config webpack.release.js --progress --hide-modules --colors"
+		"watch": "vendor/bin/sculpin generate --watch --server & NODE_ENV=development webpack --env=dev --mode=development --config webpack.config.js --watch",
+		"release": "vendor/bin/sculpin generate --clean --env=prod & NODE_ENV=production webpack --env=prod --mode=production --config webpack.release.js --progress"
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.10.4",
@@ -52,7 +52,7 @@
 		"stylelint": "^13.7.2",
 		"validator": "^13.1.1",
 		"webpack": "^5.51.1",
-		"webpack-cli": "^3.3.12",
+		"webpack-cli": "^4.9.2",
 		"webpack-merge": "^5.0.9",
 		"webpack-s3-plugin": "^1.0.3"
 	},
