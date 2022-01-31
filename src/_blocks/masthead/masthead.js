@@ -1,9 +1,9 @@
-import dialogPolyfill from 'dialog-polyfill';
+// import dialogPolyfill from 'dialog-polyfill';
 
 // TODO revert this back when done fixing errors
 import { closeMenuState } from '../../_components/navmenu/navmenu';
 
-let scrollPosition;
+// let scrollPosition;
 let lastScrollTop = 0;
 let st;
 const body = document.querySelector('body');
@@ -58,21 +58,22 @@ const detectOverflowOnMasthead = () => {
  *  @desc adds class to display red banner error stating the menu is too wide
  */
 
-const navContainer = document.querySelector('.b-masthead nav');
-const navMenu = document.querySelector('.nav__menu--top');
-const initialNavMenuWidth = navMenu && navMenu.offsetWidth + 50;
+// const navContainer = document.querySelector('.b-masthead nav');
+// const navMenu = document.querySelector('.nav__menu--top');
+// const initialNavMenuWidth = navMenu && navMenu.offsetWidth + 50;
 
 const toggleMobileMenu = () => {
 	if (!mastheadNav) return;
 
 	const mastheadClassList = mastheadNavIcon.parentNode.classList;
-	const navContainerWidth = mastheadClassList.contains('u-hide-l')
-		? navContainer.offsetWidth
-		: navContainer.offsetWidth + 52;
+	// const navContainerWidth = mastheadClassList.contains('u-hide-l')
+	// 	? navContainer.offsetWidth
+	// 	: navContainer.offsetWidth + 52;
 
 	// capture div width and compare against window width
 	// TODO: aria expanded stays at true when nav comes back into view, this causes the grey bg on buttons with submenus
-	if (window.innerWidth <= 800) {
+	// if (initialNavMenuWidth >= navContainerWidth || window.innerWidth <= 760) {
+	if (window.innerWidth <= 760) {
 		// Moves nav to mobile dialogue in footer
 		modalMenu.appendChild(mastheadNav);
 
@@ -244,15 +245,15 @@ const handleResize = () => {
  *  @desc init function for the masthead functionality
  */
 const handleLoading = () => {
-	window.addEventListener(
-		'load',
-		() => {
-			toggleMobileMenu();
-			toggleAppendMenu();
-			closeMenuState();
-		},
-		false
-	);
+	// window.addEventListener(
+	// 	'load',
+	// 	() => {
+	toggleMobileMenu();
+	toggleAppendMenu();
+	closeMenuState();
+	// 	},
+	// 	false
+	// );
 };
 
 const handleClick = () => {
@@ -306,9 +307,9 @@ const handleKeyPress = () => {
  */
 const Masthead = () => {
 	if (!masthead) return;
+	handleLoading();
 	handleScroll();
 	handleResize();
-	handleLoading();
 	handleClick();
 	handleKeyPress();
 };

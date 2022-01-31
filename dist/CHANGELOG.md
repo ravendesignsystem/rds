@@ -2,17 +2,28 @@
 
 All notable changes to the project will be documented here, in this file
 
-## [v0.22.1](https://github.com/ravendesignsystem/rds/releases/tag/0.21.2 2021-08-25
+## [v0.22.5](https://github.com/ravendesignsystem/rds/releases/tag/0.22.5 2022-01-31
+
+- **Fixed:**  Fixed Masthead disappearing on desktop
+
+
+## [v0.22.1](https://github.com/ravendesignsystem/rds/releases/tag/0.22.1 2021-08-25
 
 - **Fixed:**  fixed navbar issue
-## [v0.22.0](https://github.com/ravendesignsystem/rds/releases/tag/0.21.2 2021-03-04
+
+
+## [v0.22.0](https://github.com/ravendesignsystem/rds/releases/tag/0.22.0 2021-03-04
 
 - **Fixed:**  fixed bug in twig template causing local compilation errors
 - **Fixed:**  fixed FileManagerPlugin syntax in Webpack config to align with updates
 - **Added:**  update logos to new brand!
+
+
 ## [v0.21.2](https://github.com/ravendesignsystem/rds/releases/tag/0.21.2 2021-03-04
 
 - **Fixed:**  fix masthead for mobile
+
+
 ## [v0.21.1](https://github.com/ravendesignsystem/rds/releases/tag/0.21.1 2020-10-21
 
 Small changes for testing.

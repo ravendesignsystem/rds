@@ -7,7 +7,7 @@ const baseConfig = require('./webpack.config.js');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const S3Plugin = require('webpack-s3-plugin');
 
-const version = '0.22.4';
+const version = '0.22.5';
 
 // Build Config
 module.exports = merge(baseConfig, {
