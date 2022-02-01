@@ -1,9 +1,9 @@
-// import dialogPolyfill from 'dialog-polyfill';
+import dialogPolyfill from 'dialog-polyfill';
 
 // TODO revert this back when done fixing errors
 import { closeMenuState } from '../../_components/navmenu/navmenu';
 
-// let scrollPosition;
+let scrollPosition;
 let lastScrollTop = 0;
 let st;
 const body = document.querySelector('body');
